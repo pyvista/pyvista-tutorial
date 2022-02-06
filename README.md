@@ -71,7 +71,7 @@ The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista
 CAE software engineer in Japan.
 Interested in scientific computing and visualization with computer graphics.
 Developer team member of PyVista.
-Past experiences as a speaker is
+Past experience as a speaker:
 - [PyConJP 2019 speaker "Introduction to FEM Analysis with Python"](https://youtu.be/6JuB1GiDLQQ)
 - [PyConJP 2020 speaker "How to plot unstructured mesh file on Jupyter Notebook"](https://youtu.be/X3Z54Kw4I6Y)
 - [SciPy Japan 2020 speaker "Translation Project of Mayavi2 documents"](https://youtu.be/epxm9SjLMS0)
