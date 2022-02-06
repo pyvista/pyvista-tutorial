@@ -45,8 +45,8 @@ Same as Abstract.
 
 ### Additional Tutorial Information.
 
-We will use [example of pyvista page](https://docs.pyvista.org/examples/index.html) material for training.
-Tutorial itself will be on [pyvista-tutorial](https://github.com/pyvista/pyvista-tutorial).
+We will base the material for the tutorial on [the examples in PyVista's online documentation](https://docs.pyvista.org/examples/index.html).
+The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista/pyvista-tutorial) repository..
 
 ### Tutorial Prerequisites.
 
