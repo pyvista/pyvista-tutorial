@@ -50,13 +50,13 @@ The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista
 
 ### Tutorial Prerequisites.
 
-1. Basic knowlage of numpy.
+1. Basic knowledge of NumPy.
 
-2. Basic knowlage of scipy.
+2. Basic knowledge of SciPy.
 
-3. Basic knowlage of matplotlib.
+3. Basic knowledge of Matplotlib.
 
-4. It is ideal if you are heavy user of VTK.
+4. It is ideal if you are a heavy user of VTK.
 
 ## Appropriate level of the attendees' Python knowledge.
 
