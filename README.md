@@ -27,15 +27,13 @@ Same as Abstract.
 
 0. Getting Started - Why PyVista? (10 min for talk, 10 min for exercise)
 
-1. Basic usage - Reading and plotting 3D data.  (10 min for talk, 5 min for exercise)
+1. Basic usage - Reading and plotting 3D data.  (10 min for talk, 10 min for exercise)
 
-2. What is a Mesh? - Learn about "Point", "Cell" and "Attributes". (10 min for talk, 5 min for exercise)
+2. What is a Mesh? - Learn about "Point", "Cell" and "Attributes". (10 min for talk, 10 min for exercise)
 
 3. PyVista Data Model - Learn about the data model of the PyVista framework. (10 min for talk, 5 min for exercise)
 
 4. Mesh Creation - Exercise to build and plot meshes in PyVista. (10 min for talk, 5 min for exercise)
-
-5. Camera/Lights API - Exercise to use camera/light objects to customize your plot. (10 min for talk, 5 min for exercise)
 
 6. Charts API - Exercise to use the Charts API to plot your data in PyVista. (10 min for talk, 5 min for exercise)
 
@@ -52,11 +50,9 @@ The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista
 
 1. Basic knowledge of NumPy.
 
-2. Basic knowledge of SciPy.
 
-3. Basic knowledge of Matplotlib.
 
-4. It is ideal if you are a heavy user of VTK.
+2. It is ideal if you are a heavy user of VTK.
 
 ## Appropriate level of the attendees' Python knowledge.
 
