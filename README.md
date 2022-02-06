@@ -62,6 +62,14 @@ The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista
 
 ## Instructor Bio(s).
 
+### Alexander Kaszynski
+
+[https://github.com/akaszynski/resume](Alex Kaszynski), co-creator of [PyVista](https://github.com/pyvista/) and creator of the [PyAnsys](https://github.com/pyansys) organization.
+
+Advocate for all things Python with extensive experience presenting as a speaker at IGTI conferences for the past decade, and for the past almost three at Ansys pushing for automation through Python for CAE applications.
+
+Regularly present Python demos within [Ansys](https://ansys.github.io/), including talks with 500+ "live" virtual attendees, and prior to COVID, in person talks of 100+. Enjoys presenting and demoing Python, especially 3D visualization but also its application to CAE and automation.
+
 ### Tetsuo Koyama
 
 Interested in scientific computing and visualization with computer graphics.
