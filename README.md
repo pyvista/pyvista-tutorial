@@ -25,7 +25,7 @@ Same as Abstract.
 
 ### Tutorial Outline.
 
-0. Getting Started - Why PyVista? (10 min for talk, 5 min for exercise)
+0. Getting Started - Why PyVista? (10 min for talk, 10 min for exercise)
 
 1. Basic usage - Reading and plotting 3D data.  (10 min for talk, 5 min for exercise)
 
