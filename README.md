@@ -31,7 +31,7 @@ Same as Abstract.
 
 2. What is a Mesh? - Learn about "Point", "Cell" and "Attributes". (10 min for talk, 5 min for train)
 
-3. PyVista Data Model - Learn about the each data model of the PyVista framework. (10 min for talk, 5 min for train)
+3. PyVista Data Model - Learn about the data model of the PyVista framework. (10 min for talk, 5 min for train)
 
 4. Mesh Creation - Train to build and plot meshes in PyVista. (10 min for talk, 5 min for train)
 
@@ -41,12 +41,12 @@ Same as Abstract.
 
 7. Unique uses of PyVista -  About some unique applications of PyVista. (10 min for talk, 5 min for train)
 
-8. External Examples - How PyVista is used in external project. (15 min for talk)
+8. External Examples - How PyVista is used in external projects. (15 min for talk)
 
 ### Additional Tutorial Information.
 
 We will base the material for the tutorial on [the examples in PyVista's online documentation](https://docs.pyvista.org/examples/index.html).
-The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista/pyvista-tutorial) repository..
+The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista/pyvista-tutorial) repository.
 
 ### Tutorial Prerequisites.
 
