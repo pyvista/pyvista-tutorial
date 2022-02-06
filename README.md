@@ -2,8 +2,8 @@
 
 ## Abstract
 
-This tutorial will introduce the 3D visualization using PyVista (https://github.com/pyvista/pyvista).
-PyVista is 3D plotting and mesh analysis through a streamlined interface for the Visualization Toolkit (VTK).
+This tutorial will introduce 3D data visualization using PyVista (https://github.com/pyvista/pyvista).
+PyVista offers 3D plotting and mesh analysis through a streamlined interface for the Visualization Toolkit (VTK).
 PyVista uses VTK (http://www.vtk.org) under the covers and provides a very Python-friendly API.
 
 At the end of the tutorial users will be able to
