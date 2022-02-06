@@ -21,7 +21,7 @@ At the end of the tutorial users will be able to
 ## Other Information and Files
 
 ### Tutorial Description.
-Same with Abstract.
+Same as Abstract.
 
 ### Tutorial Outline.
 
