@@ -8,7 +8,7 @@ PyVista uses VTK (http://www.vtk.org) under the covers and provides a very Pytho
 
 At the end of the tutorial users will be able to
 
-- Use PyVista effectively to plotting 3D visualizations
+- Use PyVista effectively to create 3D visualizations. 
 - Understand the basic class structure of PyVista.
 
 ## Keywords
