@@ -25,21 +25,21 @@ Same as Abstract.
 
 ### Tutorial Outline.
 
-0. Getting Started - Why PyVista? (10 min for talk, 5 min for train)
+0. Getting Started - Why PyVista? (10 min for talk, 5 min for exercise)
 
-1. Basic usage - Reading and plotting 3D data.  (10 min for talk, 5 min for train)
+1. Basic usage - Reading and plotting 3D data.  (10 min for talk, 5 min for exercise)
 
-2. What is a Mesh? - Learn about "Point", "Cell" and "Attributes". (10 min for talk, 5 min for train)
+2. What is a Mesh? - Learn about "Point", "Cell" and "Attributes". (10 min for talk, 5 min for exercise)
 
-3. PyVista Data Model - Learn about the data model of the PyVista framework. (10 min for talk, 5 min for train)
+3. PyVista Data Model - Learn about the data model of the PyVista framework. (10 min for talk, 5 min for exercise)
 
-4. Mesh Creation - Train to build and plot meshes in PyVista. (10 min for talk, 5 min for train)
+4. Mesh Creation - Exercise to build and plot meshes in PyVista. (10 min for talk, 5 min for exercise)
 
-5. Camera/Lights API - Train to use camera/light objects to customize your plot. (10 min for talk, 5 min for train)
+5. Camera/Lights API - Exercise to use camera/light objects to customize your plot. (10 min for talk, 5 min for exercise)
 
-6. Charts API - Train to use the Charts API to plot your data in PyVista. (10 min for talk, 5 min for train)
+6. Charts API - Exercise to use the Charts API to plot your data in PyVista. (10 min for talk, 5 min for exercise)
 
-7. Unique uses of PyVista -  About some unique applications of PyVista. (10 min for talk, 5 min for train)
+7. Unique uses of PyVista -  About some unique applications of PyVista. (10 min for talk, 5 min for exercise)
 
 8. External Examples - How PyVista is used in external projects. (15 min for talk)
 
