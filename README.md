@@ -68,7 +68,6 @@ The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista
 
 ### Tetsuo Koyama
 
-CAE software engineer in Japan.
 Interested in scientific computing and visualization with computer graphics.
 Developer team member of PyVista.
 Past experience as a speaker:
