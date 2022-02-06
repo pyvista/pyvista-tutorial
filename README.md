@@ -48,11 +48,8 @@ The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista
 
 ### Tutorial Prerequisites.
 
-1. Basic knowledge of NumPy.
-
-
-
-2. It is ideal if you are a heavy user of VTK.
+#. Basic knowledge of Python to get started. Get jupyterlab on your machine and be up and running.
+#. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like `trimesh` or `meshio`.
 
 ## Appropriate level of the attendees' Python knowledge.
 
