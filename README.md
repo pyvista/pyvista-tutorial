@@ -2,14 +2,14 @@
 
 ## Abstract
 
-This tutorial will introduce 3D data visualization using PyVista (https://github.com/pyvista/pyvista).
-PyVista offers 3D plotting and mesh analysis through a streamlined interface for the Visualization Toolkit (VTK).
-PyVista uses VTK (http://www.vtk.org) under the covers and provides a very Python-friendly API.
 
-At the end of the tutorial users will be able to
+[PyVista](https://github.com/pyvista/pyvista) is a general purpose 3D visualization library used for over 500+ open source projects and many closed source projects for the visualization of everything from [computer aided engineering and geophysics to volcanoes and digital artwork](https://dev.pyvista.org/getting-started/external_examples.html).
 
-- Use PyVista effectively to create 3D visualizations. 
-- Understand the basic class structure of PyVista.
+PyVista leverages [VTK](http://www.vtk.org) to provide a python-friendly API that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of [matplotlib](https://matplotlib.org/), with plugins to [Jupyter](https://jupyter.org/) to enable visualization of results using both server and client-side rendering.
+
+We will provide a hands-on tutorial accessible to anyone with internet access and a computer via open and accessible [example Jupyter notebooks](https://docs.pyvista.org/examples/index.html) through a comprehensive tutorial highlighting popular use cases.
+
+
 
 ## Keywords
 
@@ -19,27 +19,40 @@ At the end of the tutorial users will be able to
 [3d](https://github.com/topics/3d)
 
 ## Other Information and Files
+See our examples at [PyVista Examples](http://docs.pyvista.org/examples/index.html)
 
 ### Tutorial Description.
-Same as Abstract.
+
+- Use PyVista effectively to create 3D visualizations from a variety of datasets.
+- Understand the basic class and data structure of PyVista.
+- Be familiar of the various filters and features of PyVista.
+- Know which Python libraries which are used and can be used by PyVista.
 
 ### Tutorial Outline.
 
-0. Getting Started - Why PyVista? (10 min for talk, 10 min for exercise)
+0. Getting Started - PyVista for 3D Visualization within Python. (10 min for talk, 10 min for exercise)
 
-1. Basic usage - Reading and plotting 3D data.  (10 min for talk, 10 min for exercise)
+1. Basic usage - Reading and plotting 3D data using built-in mesh data and external files.  (10 min for talk, 10 min for exercise)
 
-2. What is a Mesh? - Learn about "Point", "Cell" and "Attributes". (10 min for talk, 10 min for exercise)
+2. What is a Mesh? - Learn about the PyVista data types and how you can use it to visualize almost anything. (15 min for talk, 10 min for exercise)
 
-3. PyVista Data Model - Learn about the data model of the PyVista framework. (10 min for talk, 5 min for exercise)
+3. PyVista Data Model - Learn about the data model of the PyVista framework and how you can visualize your data in style using point, cell, and field data. (15 min for talk, 10 min for exercise)
 
-4. Mesh Creation - Exercise to build and plot meshes in PyVista. (10 min for talk, 5 min for exercise)
+4. Break. Stretch fingers and grab some coffee. (15 minutes)
 
-6. Mesh animation - Show how to animate meshes using the PyVista API. (10 min for talk, 5 min for exercise)
+5. Mesh animation - Show how to animate meshes using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
 
-7. Unique uses of PyVista -  About some unique applications of PyVista. (10 min for talk, 5 min for exercise)
+6. PyVista, jupyterlab, and sphinx - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
 
-8. External Examples - How PyVista is used in external projects. (15 min for talk)
+7. Quick break. Prepare for the final run. (10 minutes)
+
+8. PyVista & VTK - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 10 minutes for exercise)
+
+9. PyVista and Qt - Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
+
+10. PyVista in Action - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
+
+11. Open up to Questions. (15 minutes)
 
 ### Additional Tutorial Information.
 
@@ -48,14 +61,19 @@ The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista
 
 ### Tutorial Prerequisites.
 
-#. Basic knowledge of Python to get started. Get jupyterlab on your machine and be up and running.
-#. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like `trimesh` or `meshio`.
+We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
+
+1. Basic knowledge of Python to get started. Be able to install jupyterlab on your machine and be up and running.
+2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like `trimesh` or `meshio`.
+3. Advanced users will be familiar with GUI frameworks like Qt, VTK, and advanced data science.
 
 ## Appropriate level of the attendees' Python knowledge.
 
-- [ ] Beginner
+Something for everyone!
+
+- [x] Beginner
 - [x] Intermediate
-- [ ] Advanced
+- [x] Advanced
 
 ## Instructor Bio(s).
 
