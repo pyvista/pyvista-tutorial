@@ -57,6 +57,7 @@ See our examples at [PyVista Examples](http://docs.pyvista.org/examples/index.ht
 ### Additional Tutorial Information.
 
 We will base the material for the tutorial on [the examples in PyVista's online documentation](https://docs.pyvista.org/examples/index.html).
+[Transform 2021: Guide to PyVista Tutorial](https://github.com/banesullivan/transform-2021) will also be used as material.
 The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista/pyvista-tutorial) repository.
 
 ### Tutorial Prerequisites.
