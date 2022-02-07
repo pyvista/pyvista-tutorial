@@ -35,7 +35,7 @@ Same as Abstract.
 
 4. Mesh Creation - Exercise to build and plot meshes in PyVista. (10 min for talk, 5 min for exercise)
 
-6. Charts API - Exercise to use the Charts API to plot your data in PyVista. (10 min for talk, 5 min for exercise)
+6. Mesh animation - Show how to animate meshes using the PyVista API. (10 min for talk, 5 min for exercise)
 
 7. Unique uses of PyVista -  About some unique applications of PyVista. (10 min for talk, 5 min for exercise)
 
