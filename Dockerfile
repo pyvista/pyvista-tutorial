@@ -3,6 +3,6 @@ MAINTAINER "PyVista Developers"
 SHELL ["/bin/bash", "-c"]
 
 
-COPY requirements.txt $HOME
+COPY . $HOME
 
 RUN pip install -r requirements.txt
