@@ -27,7 +27,7 @@ See our examples at [PyVista Examples](http://docs.pyvista.org/examples/index.ht
 ### Tutorial Description.
 
 - Use PyVista to create 3D visualizations from a variety of datasets in common formats.
-- Understand the basic class and data structure of PyVista.
+- Overview the classes and data structures of PyVista with real-world examples.
 - Be familiar of the various filters and features of PyVista.
 - Know which Python libraries which are used and can be used by PyVista.
 We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
