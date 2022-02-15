@@ -33,7 +33,7 @@ See our examples at [PyVista Examples](http://docs.pyvista.org/examples/index.ht
 We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
 
 1. Basic knowledge of Python to get started. Be able to install jupyterlab on your machine and be up and running.
-2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like `trimesh` or `meshio`.
+2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like [trimesh](https://trimsh.org/examples.html) or [meshio](https://github.com/nschloe/meshio).
 3. Advanced users should be familiar the Visualization Toolkit (VTK), general data science, and GUI frameworks like Qt.
 
 ### Tutorial Outline.
@@ -73,7 +73,7 @@ The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista
 We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
 
 1. Basic knowledge of Python to get started. Be able to install jupyterlab on your machine and be up and running.
-2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like `trimesh` or `meshio`.
+2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like  [trimesh](https://trimsh.org/examples.html) or [meshio](https://github.com/nschloe/meshio).
 3. Advanced users will be familiar with GUI frameworks like Qt, VTK, and advanced data science.
 
 ## Appropriate level of the attendees' Python knowledge.
