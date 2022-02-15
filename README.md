@@ -34,7 +34,7 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 1. Basic knowledge of Python to get started. Be able to install jupyterlab on your machine and be up and running.
 2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like `trimesh` or `meshio`.
-3. Advanced users will be familiar with GUI frameworks like Qt, VTK, and advanced data science.
+3. Advanced users should be familiar the Visualization Toolkit (VTK), general data science, and GUI frameworks like Qt.
 
 ### Tutorial Outline.
 
