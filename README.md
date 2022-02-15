@@ -8,7 +8,7 @@
 
 [PyVista](https://github.com/pyvista/pyvista) is a general purpose 3D visualization library used for over 500+ open source projects and many closed source projects for the visualization of everything from [computer aided engineering and geophysics to volcanoes and digital artwork](https://dev.pyvista.org/getting-started/external_examples.html).
 
-PyVista leverages [VTK](http://www.vtk.org) to provide a python-friendly API that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of [matplotlib](https://matplotlib.org/), with plugins to [Jupyter](https://jupyter.org/) to enable visualization of results using both server and client-side rendering.
+PyVista leverages [VTK](http://www.vtk.org) to provide a Pythonic API that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of [matplotlib](https://matplotlib.org/), with plugins to [Jupyter](https://jupyter.org/) to enable visualization of results using both server and client-side rendering.
 
 We will provide a hands-on tutorial accessible to anyone with internet access and a computer via open and accessible [example Jupyter notebooks](https://docs.pyvista.org/examples/index.html) through a comprehensive tutorial highlighting popular use cases.
 
