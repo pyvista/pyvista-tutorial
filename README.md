@@ -29,7 +29,8 @@ See our examples at [PyVista Examples](http://docs.pyvista.org/examples/index.ht
 - Use PyVista to create 3D visualizations from a variety of datasets in common formats.
 - Overview the classes and data structures of PyVista with real-world examples.
 - Be familiar of the various filters and features of PyVista.
-- Know which Python libraries which are used and can be used by PyVista.
+- Know which Python libraries are used and can be used by PyVista (meshio, trimesh etc).
+
 We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
 
 1. Basic knowledge of Python to get started. Be able to install jupyterlab on your machine and be up and running.
@@ -40,7 +41,7 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 0. Getting Started - PyVista for 3D Visualization within Python. (10 min for talk, 10 min for exercise)
 
-1. Basic usage - Reading and plotting 3D data using built-in mesh data and external files.  (10 min for talk, 10 min for exercise)
+1. Basic usage - Reading and plotting 3D data using `examples` module and external files.  (10 min for talk, 10 min for exercise)
 
 2. What is a Mesh? - Learn about the PyVista data types and how you can use it to visualize almost anything. (15 min for talk, 10 min for exercise)
 
@@ -48,9 +49,9 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 4. Break. Stretch fingers and grab some coffee. (15 minutes)
 
-5. Mesh animation - Show how to animate meshes using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
+5. Animation/generating figures - Show how to animate/generating figures using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
 
-6. PyVista, jupyterlab, and sphinx - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
+6. PyVista and sphinx - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
 
 7. Quick break. Prepare for the final run. (10 minutes)
 
@@ -71,6 +72,7 @@ The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista
 ### Tutorial Prerequisites.
 
 We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
+In fact, our tutorial instructors and community members are involved in any domain.
 
 1. Basic knowledge of Python to get started. Be able to install jupyterlab on your machine and be up and running.
 2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like  [trimesh](https://trimsh.org/examples.html) or [meshio](https://github.com/nschloe/meshio).
