@@ -8,9 +8,9 @@
 
 [PyVista](https://github.com/pyvista/pyvista) is a general purpose 3D visualization library used for over 500+ open source projects and many closed source projects for the visualization of everything from [computer aided engineering and geophysics to volcanoes and digital artwork](https://dev.pyvista.org/getting-started/external_examples.html).
 
-PyVista leverages [VTK](http://www.vtk.org) to provide a Pythonic API that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of [matplotlib](https://matplotlib.org/), with plugins to [Jupyter](https://jupyter.org/) to enable visualization of results using both server and client-side rendering.
+PyVista exposes a Pythonic API to the [Visualization Toolkit (VTK)](http://www.vtk.org) to provide tooling that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of [matplotlib](https://matplotlib.org/), with plugins to [Jupyter](https://jupyter.org/) to enable visualization of 3D data using both server and client-side rendering.
 
-We will provide a hands-on tutorial accessible to anyone with internet access and a computer via open and accessible [example Jupyter notebooks](https://docs.pyvista.org/examples/index.html) through a comprehensive tutorial highlighting popular use cases.
+We will provide a hands-on tutorial accessible to anyone with internet access and a computer via many of PyVista's existing [example Jupyter notebooks](https://docs.pyvista.org/examples/index.html) and new material through a comprehensive overview highlighting popular 3D visualization use cases.
 
 
 
@@ -33,7 +33,7 @@ See our examples at [PyVista Examples](http://docs.pyvista.org/examples/index.ht
 
 We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
 
-1. Basic knowledge of Python to get started. Be able to install jupyterlab on your machine and be up and running.
+1. Basic knowledge of Python to get started. Be able to install Jupyter Lab on your machine and be up and running.
 2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like [trimesh](https://trimsh.org/examples.html) or [meshio](https://github.com/nschloe/meshio).
 3. Advanced users should be familiar the Visualization Toolkit (VTK), general data science, and GUI frameworks like Qt.
 
@@ -51,7 +51,7 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 5. Animation/generating figures - Show how to animate/generating figures using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
 
-6. PyVista and sphinx - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
+6. PyVista and Sphinx - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
 
 7. Quick break. Prepare for the final run. (10 minutes)
 
@@ -67,14 +67,14 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 We will base the material for the tutorial on [the examples in PyVista's online documentation](https://docs.pyvista.org/examples/index.html).
 [Transform 2021: Guide to PyVista Tutorial](https://github.com/banesullivan/transform-2021) will also be used as material.
-The tutorial itself will be in the [pyvista-tutorial](https://github.com/pyvista/pyvista-tutorial) repository.
+The tutorial itself will be in the [pyvista/pyvista-tutorial](https://github.com/pyvista/pyvista-tutorial) repository.
 
 ### Tutorial Prerequisites.
 
 We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
 In fact, our tutorial instructors and community members are involved in any domain.
 
-1. Basic knowledge of Python to get started. Be able to install jupyterlab on your machine and be up and running.
+1. Basic knowledge of Python to get started. Be able to install Jupyter Lab on your machine and be up and running.
 2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and other libraries that are compatible with PyVista, like  [trimesh](https://trimsh.org/examples.html) or [meshio](https://github.com/nschloe/meshio).
 3. Advanced users will be familiar with GUI frameworks like Qt, VTK, and advanced data science.
 
@@ -117,4 +117,3 @@ Bane is a geophysicist/hydrologist by training and has been working to grow PyVi
 ## Paper.
 
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.01450/status.svg)](https://doi.org/10.21105/joss.01450)
-
