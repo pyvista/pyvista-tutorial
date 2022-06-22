@@ -88,7 +88,7 @@ Something for everyone!
 
 ## Instructor Bio(s).
 
-### Alexander Kaszynski @akaszynski
+### [Alexander Kaszynski](https://github.com/akaszynski)
 
 [Alex Kaszynski](https://github.com/akaszynski/resume), co-creator of [PyVista](https://github.com/pyvista/) and creator of the [PyAnsys](https://github.com/pyansys) organization.
 
@@ -96,7 +96,13 @@ Advocate for all things Python with extensive experience presenting as a speaker
 
 Regularly present Python demos within [Ansys](https://ansys.github.io/), including talks with 500+ "live" virtual attendees, and prior to COVID, in person talks of 100+. Enjoys presenting and demoing Python, especially 3D visualization but also its application to CAE and automation.
 
-### Tetsuo Koyama @tkoyama010
+### [Bane Sullivan](https://github.com/banesullivan)
+
+[Bane Sullivan](https://banesullivan.com), co-creator of [PyVista](https://github.com/pyvista/), is a Research Software Engineer working at the intersection of geoscience, visualization, and data science.
+
+Bane is a geophysicist/hydrologist by training and has been working to grow PyVista's adoption within the subsurface geoscience communities, previously presenting PyVista at [Transform 2021](https://www.youtube.com/watch?v=FmNmRBsEBHE).
+
+### [Tetsuo Koyama](https://github.com/tkoyama010)
 
 Interested in scientific computing and visualization with computer graphics.
 Developer team member of PyVista.
@@ -106,12 +112,6 @@ Past experience as a speaker:
 - [SciPy Japan 2020 speaker "Translation Project of Mayavi2 documents"](https://youtu.be/epxm9SjLMS0)
 - [PyConJP 2021 speaker "Visualize 3D scientific data in a Pythonic way like matplotlib"](https://youtu.be/ru-nENLgleo)
 
-
-### Bane Sullivan @banesullivan
-
-[Bane Sullivan](https://banesullivan.com), co-creator of [PyVista](https://github.com/pyvista/), is a Research Software Engineer working at the intersection of geoscience, visualization, and data science.
-
-Bane is a geophysicist/hydrologist by training and has been working to grow PyVista's adoption within the subsurface geoscience communities, previously presenting PyVista at [Transform 2021](https://www.youtube.com/watch?v=FmNmRBsEBHE).
 
 
 ## Paper.
