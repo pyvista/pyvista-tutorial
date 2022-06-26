@@ -3,18 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to examples_sphinx's documentation!
-===========================================
+Sphinx PyVista Plot Directive
+=============================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+.. pyvista-plot::
+   :caption: This is a default sphere
+   :include-source: True
 
+   >>> import pyvista
+   >>> pyvista.set_plot_theme("document")
+   >>> import pyvista
+   >>> sphere = pyvista.Sphere()
+   >>> out = sphere.plot()
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
