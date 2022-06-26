@@ -16,3 +16,17 @@ Sphinx PyVista Plot Directive
    >>> sphere = pyvista.Sphere()
    >>> out = sphere.plot()
 
+.. pyvista-plot::
+
+   >>> import pyvista
+   >>> sphere = pyvista.Sphere()
+   >>> out = sphere.plot()
+
+.. pyvista-plot:: plot.py
+
+.. pyvista-plot:: plot.py
+
+   The plot's caption.
+
+.. pyvista-plot:: plot.py plot_function1
+
