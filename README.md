@@ -55,9 +55,9 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 7. Quick break. Prepare for the final run. (10 minutes)
 
-8. PyVista & VTK (Tetsuo Koyama) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 10 minutes for exercise)
+8. PyVista & VTK (Bane Sullivan) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 10 minutes for exercise)
 
-9. PyVista and Qt (Bane Sullivan) - Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
+9. PyVista and Qt (Tetsuo Koyama) - Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
 
 10. PyVista in Action (Tetsuo Koyama) - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
 
