@@ -1,1 +1,7 @@
 pyvista
+jupyterlab
+ipyvtklink
+pythreejs
+tqdm
+imageio>=2.5.0
+imageio-ffmpeg
