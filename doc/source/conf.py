@@ -20,11 +20,11 @@ import os
 import pyvista
 
 # Manage errors
-pyvista.set_error_output_file("errors.txt")
+pyvista.set_error_output_file('errors.txt')
 # Ensure that offscreen rendering is used for docs generation
 pyvista.OFF_SCREEN = True  # Not necessary - simply an insurance policy
 # Preferred plotting style for documentation
-pyvista.set_plot_theme("document")
+pyvista.set_plot_theme('document')
 pyvista.global_theme.window_size = [1024, 768]
 pyvista.global_theme.font.size = 22
 pyvista.global_theme.font.label_size = 22
@@ -32,7 +32,7 @@ pyvista.global_theme.font.title_size = 22
 pyvista.global_theme.return_cpos = False
 pyvista.set_jupyter_backend(None)
 # Save figures in specified directory
-pyvista.FIGURE_PATH = os.path.join(os.path.abspath("./images/"), "auto-generated/")
+pyvista.FIGURE_PATH = os.path.join(os.path.abspath('./images/'), 'auto-generated/')
 if not os.path.exists(pyvista.FIGURE_PATH):
     os.makedirs(pyvista.FIGURE_PATH)
 
@@ -54,15 +54,15 @@ author = 'PyVista Developers'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    # "notfound.extension",
-    "sphinx.ext.napoleon",
-    "sphinx.ext.autodoc",
-    "jupyter_sphinx",
-    "sphinx_copybutton",
-    "sphinx_panels",
-    "sphinx_gallery.gen_gallery",
-    "jupyter_sphinx",
-    "pyvista.ext.plot_directive",
+    # 'notfound.extension',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.autodoc',
+    'jupyter_sphinx',
+    'sphinx_copybutton',
+    'sphinx_panels',
+    'sphinx_gallery.gen_gallery',
+    'jupyter_sphinx',
+    'pyvista.ext.plot_directive',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -71,10 +71,10 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "**.ipynb_checkpoints"]
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = "friendly"
+pygments_style = 'friendly'
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -86,16 +86,16 @@ html_theme = 'alabaster'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
+# so a file named 'default.css' will overwrite the builtin 'default.css'.
 html_static_path = ['_static']
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
 html_title = project
-html_short_title = ""
-# html_favicon = "_static/favicon.png"
-html_extra_path = []  # TODO: "CNAME",
+html_short_title = ''
+# html_favicon = '_static/favicon.png'
+html_extra_path = []  # TODO: 'CNAME',
 html_use_smartypants = True
 
 
@@ -104,70 +104,70 @@ html_use_smartypants = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "pydata_sphinx_theme"
+html_theme = 'pydata_sphinx_theme'
 html_context = {
-    "github_user": "pyvista",
-    "github_repo": "pyvista-tutorial",
-    "github_version": "main",
-    "doc_path": "doc",
+    'github_user': 'pyvista',
+    'github_repo': 'pyvista-tutorial',
+    'github_version': 'main',
+    'doc_path': 'doc',
 }
 
 html_theme_options = {
-    # "default_mode": "light",
-    # "google_analytics_id": "",
-    "show_prev_next": True,
-    "github_url": "https://github.com/pyvista/pyvista-tutorial",
-    "icon_links": [
+    # 'default_mode': 'light',
+    # 'google_analytics_id': '',
+    'show_prev_next': True,
+    'github_url': 'https://github.com/pyvista/pyvista-tutorial',
+    'icon_links': [
         {
-            "name": "Support",
-            "url": "https://github.com/pyvista/pyvista/discussions",
-            "icon": "fa fa-comment fa-fw",
+            'name': 'Support',
+            'url': 'https://github.com/pyvista/pyvista/discussions',
+            'icon': 'fa fa-comment fa-fw',
         },
         {
-            "name": "Docs",
-            "url": "https://docs.pyvista.org/",
-            "icon": "fa fa-book fa-fw",
+            'name': 'Docs',
+            'url': 'https://docs.pyvista.org/',
+            'icon': 'fa fa-book fa-fw',
         },
         {
-            "name": "Slack Community",
-            "url": "http://slack.pyvista.org",
-            "icon": "fab fa-slack",
+            'name': 'Slack Community',
+            'url': 'http://slack.pyvista.org',
+            'icon': 'fab fa-slack',
         },
         {
-            "name": "Contributing",
-            "url": "https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst",
-            "icon": "fa fa-gavel fa-fw",
+            'name': 'Contributing',
+            'url': 'https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst',
+            'icon': 'fa fa-gavel fa-fw',
         },
         {
-            "name": "The Paper",
-            "url": "https://doi.org/10.21105/joss.01450",
-            "icon": "fa fa-file-text fa-fw",
+            'name': 'The Paper',
+            'url': 'https://doi.org/10.21105/joss.01450',
+            'icon': 'fa fa-file-text fa-fw',
         },
     ],
-    "navbar_end": ["navbar-icon-links"],
+    'navbar_end': ['navbar-icon-links'],
 }
 
 html_sidebars = {
-    "index": [],
+    'index': [],
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
-# so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["_static"]
+# so a file named 'default.css' will overwrite the builtin 'default.css'.
+html_static_path = ['_static']
 
 
 # notfound_context = {
-#     "body": """
-# <h1>Page not found.</h1>\n\nPerhaps try the <a href="/">home page.</a>.
+#     'body': '''
+# <h1>Page not found.</h1>\n\nPerhaps try the <a href='/'>home page.</a>.
 # <br>
-# """,
+# ''',
 # }
 notfound_no_urls_prefix = True
 
 # Copy button customization
 # exclude traditional Python prompts from the copied code
-copybutton_prompt_text = r">>> ?|\.\.\. "
+copybutton_prompt_text = r'>>> ?|\.\.\. '
 copybutton_prompt_is_regexp = True
 
 
@@ -175,46 +175,46 @@ copybutton_prompt_is_regexp = True
 from sphinx_gallery.sorting import FileNameSortKey
 
 tutorial_dirs = [
-    "../../tutorial/00_intro/",
-    "../../tutorial/01_basic/",
-    "../../tutorial/02_mesh/",
-    "../../tutorial/03_data/",
-    "../../tutorial/04_break/",
-    "../../tutorial/05_figures/",
-    "../../tutorial/06_sphinx/",
-    "../../tutorial/07_break/",
-    "../../tutorial/08_vtk/",
-    "../../tutorial/09_qt/",
-    "../../tutorial/10_action/",
+    '../../tutorial/00_intro/',
+    '../../tutorial/01_basic/',
+    '../../tutorial/02_mesh/',
+    '../../tutorial/03_data/',
+    '../../tutorial/04_break/',
+    '../../tutorial/05_figures/',
+    '../../tutorial/06_sphinx/',
+    '../../tutorial/07_break/',
+    '../../tutorial/08_vtk/',
+    '../../tutorial/09_qt/',
+    '../../tutorial/10_action/',
 ]
 
 sphinx_gallery_conf = {
     # convert rst to md for ipynb
-    "pypandoc": True,
+    'pypandoc': True,
     # path to your examples scripts
-    "examples_dirs": tutorial_dirs,
+    'examples_dirs': tutorial_dirs,
     # path where to save gallery generated examples
-    "gallery_dirs": [d.lstrip("../../") for d in tutorial_dirs],
+    'gallery_dirs': [d.lstrip('../../') for d in tutorial_dirs],
     # Pattern to search for example files
-    "filename_pattern": r"\.py",
-    # Remove the "Download all examples" button from the top level gallery
-    "download_all_examples": False,
+    'filename_pattern': r'\.py',
+    # Remove the 'Download all examples' button from the top level gallery
+    'download_all_examples': False,
     # Remove sphinx configuration comments from code blocks
-    "remove_config_comments": True,
+    'remove_config_comments': True,
     # Sort gallery example by file name instead of number of lines (default)
-    "within_subsection_order": FileNameSortKey,
+    'within_subsection_order': FileNameSortKey,
     # directory where function granular galleries are stored
-    "backreferences_dir": None,
+    'backreferences_dir': None,
     # Modules for which function level galleries are created.  In
-    "doc_module": "pyvista",
-    "image_scrapers": ("pyvista", "matplotlib"),
-    "first_notebook_cell": (
-        "%matplotlib inline\n" "from pyvista import set_plot_theme\n" "set_plot_theme('document')\n"
-    ),
+    'doc_module': 'pyvista',
+    'image_scrapers': ('pyvista', 'matplotlib'),
+    'first_notebook_cell': '%matplotlib inline\n'
+    'from pyvista import set_plot_theme\n'
+    'set_plot_theme("document")\n',
 }
 
 
 def setup(app):
-    app.add_css_file("copybutton.css")
-    app.add_css_file("no_search_highlight.css")
-    app.add_css_file("fontawesome/css/all.css")
+    app.add_css_file('copybutton.css')
+    app.add_css_file('no_search_highlight.css')
+    app.add_css_file('fontawesome/css/all.css')
