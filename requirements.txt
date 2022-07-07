@@ -1,2 +1,10 @@
 pyvista
 sphinx
+jupyterlab
+ipyvtklink
+pythreejs
+tqdm
+imageio>=2.5.0
+imageio-ffmpeg
+matplotlib
+cmocean
