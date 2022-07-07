@@ -44,7 +44,6 @@ jobs:
           echo PYVISTA_EXAMPLE_DATA_PATH=$(python -c "import pyvista; print(pyvista.EXAMPLES_PATH)") >> $GITHUB_ENV
 
       - name: Build Documentation
-        working-directory: doc
         run: make -C doc html SPHINXOPTS="-W --keep-going"
 
       - name: Tar build
