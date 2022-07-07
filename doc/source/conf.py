@@ -112,7 +112,7 @@ html_context = {
 }
 
 html_theme_options = {
-    "default_mode": "light",
+    # "default_mode": "light",
     # "google_analytics_id": "",
     "show_prev_next": True,
     "github_url": "https://github.com/pyvista/pyvista-tutorial",
