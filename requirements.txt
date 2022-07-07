@@ -1,3 +1,11 @@
 pyvista
 flask==2.1.2
 pyinstaller==5.1
+jupyterlab
+ipyvtklink
+pythreejs
+tqdm
+imageio>=2.5.0
+imageio-ffmpeg
+matplotlib
+cmocean
