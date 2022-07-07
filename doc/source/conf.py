@@ -127,6 +127,21 @@ html_theme_options = {
             "url": "https://docs.pyvista.org/",
             "icon": "fa fa-book fa-fw",
         },
+        {
+            "name": "Slack Community",
+            "url": "http://slack.pyvista.org",
+            "icon": "fab fa-slack",
+        },
+        {
+            "name": "Contributing",
+            "url": "https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst",
+            "icon": "fa fa-gavel fa-fw",
+        },
+        {
+            "name": "The Paper",
+            "url": "https://doi.org/10.21105/joss.01450",
+            "icon": "fa fa-file-text fa-fw",
+        },
     ],
     "navbar_end": ["navbar-icon-links"],
 }
