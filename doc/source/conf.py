@@ -15,6 +15,12 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 import os
+import sys
+
+if sys.version_info >= (3, 0):
+    import faulthandler
+
+    faulthandler.enable()
 
 # -- PyVista configuration ---------------------------------------------------
 import pyvista
@@ -111,6 +117,7 @@ html_context = {
     'github_version': 'main',
     'doc_path': 'doc',
 }
+html_logo = "./_static/pyvista_logo_sm.png"
 
 html_theme_options = {
     # 'default_mode': 'light',
@@ -169,6 +176,10 @@ notfound_no_urls_prefix = True
 # exclude traditional Python prompts from the copied code
 copybutton_prompt_text = r'>>> ?|\.\.\. '
 copybutton_prompt_is_regexp = True
+
+# sphinx-panels shouldn't add bootstrap css since the pydata-sphinx-theme
+# already loads it
+panels_add_bootstrap_css = False
 
 
 # -- sphinx-gallery --------
