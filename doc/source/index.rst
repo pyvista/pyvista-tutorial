@@ -75,6 +75,7 @@ Tetsuo Koyama
 Tetsuo Koyama is interested in scientific computing and visualization with computer graphics.
 Developer team member of PyVista.
 Past experience as a speaker:
+
 - `PyConJP 2019 speaker "Introduction to FEM Analysis with Python" <https://youtu.be/6JuB1GiDLQQ>`_
 - `PyConJP 2020 speaker "How to plot unstructured mesh file on Jupyter Notebook" <https://youtu.be/X3Z54Kw4I6Y>`_
 - `SciPy Japan 2020 speaker "Translation Project of Mayavi2 documents" <https://youtu.be/epxm9SjLMS0>`_
