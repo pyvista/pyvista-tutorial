@@ -1,4 +1,5 @@
 pyvista
+sphinx
 jupyterlab
 ipyvtklink
 pythreejs
