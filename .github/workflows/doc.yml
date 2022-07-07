@@ -61,7 +61,7 @@ jobs:
       - name: Get Notebooks
         run: |
           mkdir _notebooks
-          find doc/tutorial -type f -name '*.ipynb' | cpio -p -d -v _notebooks/
+          find doc/source/tutorial -type f -name '*.ipynb' | cpio -p -d -v _notebooks/
       - uses: actions/upload-artifact@v3
         with:
           name: tutorial-notebooks
