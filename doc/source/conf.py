@@ -14,9 +14,10 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import os
+
 # -- PyVista configuration ---------------------------------------------------
 import pyvista
-import os
 
 # Manage errors
 pyvista.set_error_output_file("errors.txt")
@@ -168,7 +169,6 @@ notfound_no_urls_prefix = True
 # exclude traditional Python prompts from the copied code
 copybutton_prompt_text = r">>> ?|\.\.\. "
 copybutton_prompt_is_regexp = True
-
 
 
 # -- sphinx-gallery --------

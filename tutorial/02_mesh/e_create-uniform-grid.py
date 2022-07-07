@@ -7,7 +7,6 @@ Create a simple uniform grid from a 3D NumPy array of values.
 """
 
 import numpy as np
-
 import pyvista as pv
 
 ###############################################################################

@@ -9,7 +9,6 @@ Creating a :class:`pyvista.PolyData` (surface mesh) from vertices and faces.
 """
 
 import numpy as np
-
 import pyvista as pv
 
 ###############################################################################
