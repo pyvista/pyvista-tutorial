@@ -1,7 +1,7 @@
 .. _figures:
 
-05 Plotting Options and Animations
-==================================
+Plotting Options and Animations
+===============================
 
 Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations (10 min for talk, 10 min for exercise)
 

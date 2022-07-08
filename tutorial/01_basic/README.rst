@@ -1,7 +1,7 @@
 .. _basic:
 
-01 Basic usage
-==============
+Basic usage
+===========
 
 Reading and plotting 3D data using ``examples`` module and external files.  (10 min for talk, 10 min for exercise)
 

@@ -1,7 +1,7 @@
 .. _intro:
 
-00 Getting Started
-==================
+Getting Started
+===============
 
 PyVista for 3D Visualization within Python. (10 min for talk, 10 min for exercise)
 
