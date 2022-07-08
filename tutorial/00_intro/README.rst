@@ -1,0 +1,21 @@
+.. _intro:
+
+Getting Started
+===============
+
+PyVista for 3D Visualization within Python. (10 min for talk, 10 min for exercise)
+
+.. tip::
+
+    This section of the tutorial was adopted from <insert link>
+    chapter of the PyVista documentation.
+
+
+.. insert section content here
+
+
+
+Exercises
+---------
+
+.. leave blank after this point for Sphinx-Gallery to populate examples

@@ -39,27 +39,27 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 ### Tutorial Outline.
 
-0. Getting Started - PyVista for 3D Visualization within Python. (10 min for talk, 10 min for exercise)
+0. Getting Started (Alexander Kaszynski) - PyVista for 3D Visualization within Python. (10 min for talk, 10 min for exercise)
 
-1. Basic usage - Reading and plotting 3D data using `examples` module and external files.  (10 min for talk, 10 min for exercise)
+1. Basic usage (Alexander Kaszynski) - Reading and plotting 3D data using `examples` module and external files.  (10 min for talk, 10 min for exercise)
 
-2. What is a Mesh? - Learn about the PyVista data types and how you can use it to visualize almost anything. (15 min for talk, 10 min for exercise)
+2. What is a Mesh? (Bane Sullivan) - Learn about the PyVista data types and how you can use it to visualize almost anything. (15 min for talk, 10 min for exercise)
 
-3. PyVista Data Model - Learn about the data model of the PyVista framework and how you can visualize your data in style using point, cell, and field data. (15 min for talk, 10 min for exercise)
+3. PyVista Data Model (Tetsuo Koyama) - Learn about the data model of the PyVista framework and how you can visualize your data in style using point, cell, and field data. (15 min for talk, 10 min for exercise)
 
 4. Break. Stretch fingers and grab some coffee. (15 minutes)
 
-5. Animation/generating figures - Show how to animate/generating figures using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
+5. Animation/generating figures (Bane Sullivan) - Show how to animate/generating figures using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
 
-6. PyVista and Sphinx - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
+6. PyVista and Sphinx (Alexander Kaszynski) - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
 
 7. Quick break. Prepare for the final run. (10 minutes)
 
-8. PyVista & VTK - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 10 minutes for exercise)
+8. PyVista & VTK (Bane Sullivan) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 10 minutes for exercise)
 
-9. PyVista and Qt - Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
+9. PyVista and Qt (Tetsuo Koyama) - Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
 
-10. PyVista in Action - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
+10. PyVista in Action (Tetsuo Koyama) - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
 
 11. Open up to Questions. (15 minutes)
 
@@ -88,7 +88,7 @@ Something for everyone!
 
 ## Instructor Bio(s).
 
-### Alexander Kaszynski
+### [Alexander Kaszynski](https://github.com/akaszynski)
 
 [Alex Kaszynski](https://github.com/akaszynski/resume), co-creator of [PyVista](https://github.com/pyvista/) and creator of the [PyAnsys](https://github.com/pyansys) organization.
 
@@ -96,7 +96,13 @@ Advocate for all things Python with extensive experience presenting as a speaker
 
 Regularly present Python demos within [Ansys](https://ansys.github.io/), including talks with 500+ "live" virtual attendees, and prior to COVID, in person talks of 100+. Enjoys presenting and demoing Python, especially 3D visualization but also its application to CAE and automation.
 
-### Tetsuo Koyama
+### [Bane Sullivan](https://github.com/banesullivan)
+
+[Bane Sullivan](https://banesullivan.com), co-creator of [PyVista](https://github.com/pyvista/), is a Research Software Engineer working at the intersection of geoscience, visualization, and data science.
+
+Bane is a geophysicist/hydrologist by training and has been working to grow PyVista's adoption within the subsurface geoscience communities, previously presenting PyVista at [Transform 2021](https://www.youtube.com/watch?v=FmNmRBsEBHE).
+
+### [Tetsuo Koyama](https://github.com/tkoyama010)
 
 Interested in scientific computing and visualization with computer graphics.
 Developer team member of PyVista.
@@ -106,12 +112,6 @@ Past experience as a speaker:
 - [SciPy Japan 2020 speaker "Translation Project of Mayavi2 documents"](https://youtu.be/epxm9SjLMS0)
 - [PyConJP 2021 speaker "Visualize 3D scientific data in a Pythonic way like matplotlib"](https://youtu.be/ru-nENLgleo)
 
-
-### Bane Sullivan
-
-[Bane Sullivan](https://banesullivan.com), co-creator of [PyVista](https://github.com/pyvista/), is a Research Software Engineer working at the intersection of geoscience, visualization, and data science.
-
-Bane is a geophysicist/hydrologist by training and has been working to grow PyVista's adoption within the subsurface geoscience communities, previously presenting PyVista at [Transform 2021](https://www.youtube.com/watch?v=FmNmRBsEBHE).
 
 
 ## Paper.
