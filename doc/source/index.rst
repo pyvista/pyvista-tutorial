@@ -1,5 +1,5 @@
-PyVista Tutorial for SciPy 2022
-===============================
+PyVista Tutorial for `SciPy 2022 <https://www.scipy2022.scipy.org/>`_
+=====================================================================
 
 .. toctree::
    :maxdepth: 2
@@ -8,12 +8,84 @@ PyVista Tutorial for SciPy 2022
    getting-started
    tutorial
 
+Welcome to PyVista's tutorial for `SciPy 2022 <https://www.scipy2022.scipy.org/>`_!
+
+Here you can find all the resources to be up and running with PyVista in no
+time. Feel free to reference our dedicated documentation at `PyVista
+Documentation <https://docs.pyvista.org/>`_
+
+.. tabs::
+
+   .. tab:: JupyterLab
+
+      Here's a quick demo of PyVista running within `Jupyterlab
+      <https://jupyter.org/>`_.
+
+      .. raw:: html
+
+         <video width="100%" height="auto" controls autoplay muted>
+           <source src="_static/pyvista_jupyterlab_demo.mp4" type="video/mp4">
+           Your browser does not support the video tag.
+         </video>
+
+   .. tab:: iPython
+
+      Here's a quick demo of PyVista running within a terminal using `iPython
+      <https://ipython.org/>`_.
+
+      .. raw:: html
+
+         <video width="100%" height="auto" controls autoplay muted>
+           <source src="_static/pyvista_ipython_demo.mp4" type="video/mp4">
+           Your browser does not support the video tag.
+         </video>
+
+
+Quick Links
+-----------
+
+.. panels::
+    :card: + install-card
+    :column: col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3
+
+    Getting Started
+    ^^^^^^^^^^^^^^^
+
+    Get PyVista setup on your enviornment.
+
+    ++++++++++++++++++++++
+
+    .. link-button:: getting-started
+        :type: ref
+        :text: Installation and Getting Started
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    Tutorial Content
+    ^^^^^^^^^^^^^^^^
+
+    Jump right to the tutorial content.
+
+    ++++++++++++++++++++++
+
+    .. link-button:: tutorial
+        :type: ref
+        :text: Tutorial
+        :classes: btn-outline-primary btn-block stretched-link
+
+
+Example Gallery
+---------------
+
+Click below for our extensive example gallery!
 
 .. image:: _static/pyvista_banner.png
+   :target: http://docs.pyvista.org/examples/index.html
 
 
-Abstract
---------
+PyVista Overview
+----------------
 
 `PyVista <https://github.com/pyvista/pyvista>`_ is a general purpose 3D visualization library used for over 500+ open source projects and many closed source projects for the visualization of everything from `computer aided engineering and geophysics to volcanoes and digital artwork <https://dev.pyvista.org/getting-started/external_examples.html>`_.
 
@@ -21,33 +93,28 @@ PyVista exposes a Pythonic API to the `Visualization Toolkit (VTK) <http://www.v
 
 We will provide a hands-on tutorial accessible to anyone with internet access and a computer via many of PyVista's existing `example Jupyter notebooks <https://docs.pyvista.org/examples/index.html>`_ and new material through a comprehensive overview highlighting popular 3D visualization use cases.
 
-Keywords
---------
-
-- `visualization <https://github.com/topics/visualization>`_
-- `meshviewer <https://github.com/topics/meshviewer>`_
-- `vtk <https://github.com/topics/vtk>`_
-- `3d <https://github.com/topics/3d>`_
-
-Other Information and Files
----------------------------
-
-See our `Example Gallery <http://docs.pyvista.org/examples/index.html>`_
-
 
 Tutorial Description
 --------------------
 
-- Use PyVista to create 3D visualizations from a variety of datasets in common formats.
+- Use PyVista to create 3D visualizations from a variety of datasets in common
+  formats.
 - Overview the classes and data structures of PyVista with real-world examples.
 - Be familiar of the various filters and features of PyVista.
-- Know which Python libraries are used and can be used by PyVista (meshio, trimesh etc).
+- Know which Python libraries are used and can be used by PyVista (meshio,
+  trimesh etc).
 
-We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
+We see this tutorial catering to anyone who wants to visualize data in any
+domain, and this ranges from basic Python users to advanced power users.
 
-1. Basic knowledge of Python to get started. Be able to install Jupyter Lab on your machine and be up and running.
-2. Intermediate users will want to be familiar with `NumPy <https://numpy.org/>`_ and other libraries that are compatible with PyVista, like `trimesh <https://trimsh.org/examples.html>`_ or `meshio <https://github.com/nschloe/meshio>`_.
-3. Advanced users should be familiar the Visualization Toolkit (VTK), general data science, and GUI frameworks like Qt.
+1. Basic knowledge of Python to get started. Be able to install Jupyter Lab on
+   your machine and be up and running.
+2. Intermediate users will want to be familiar with `NumPy
+   <https://numpy.org/>`_ and other libraries that are compatible with PyVista,
+   like `trimesh <https://trimsh.org/examples.html>`_ or `meshio
+   <https://github.com/nschloe/meshio>`_.
+3. Advanced users should be familiar the Visualization Toolkit (VTK), general
+   data science, and GUI frameworks like Qt.
 
 
 Instructor Bios
@@ -60,7 +127,10 @@ Alexander Kaszynski
 
 Advocate for all things Python with extensive experience presenting as a speaker at IGTI conferences for the past decade, and for the past almost three at Ansys pushing for automation through Python for CAE applications.
 
-Regularly present Python demos within `Ansys <https://ansys.github.io/>`_, including talks with 500+ "live" virtual attendees, and prior to COVID, in person talks of 100+. Enjoys presenting and demoing Python, especially 3D visualization but also its application to CAE and automation.
+Advocate for all things open source and has contributed to the creation of
+Ansys's open source projects `Ansys <https://ansys.github.io/>`_. Enjoys
+presenting and demoing Python, especially 3D visualization but also its
+application to CAE and automation.
 
 Bane Sullivan
 ~~~~~~~~~~~~~
