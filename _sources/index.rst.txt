@@ -72,7 +72,7 @@ Bane is a geophysicist/hydrologist by training and has been working to grow PyVi
 Tetsuo Koyama
 ~~~~~~~~~~~~~
 
-Tetsuo Koyama is interested in scientific computing and visualization with computer graphics.
+`Tetsuo Koyama <https://github.com/tkoyama010>`_ is interested in scientific computing and visualization with computer graphics.
 Developer team member of PyVista.
 Past experience as a speaker:
 

@@ -63,11 +63,11 @@ Let’s start with a point cloud – this is a mesh type that only has vertices.
  .. code-block:: none
 
 
-    array([[0.22680878, 0.69761774, 0.31064156],
-           [0.25758982, 0.09644169, 0.31536641],
-           [0.33541295, 0.94739479, 0.64406424],
-           [0.96023777, 0.822326  , 0.57293435],
-           [0.58088867, 0.99204759, 0.40201356]])
+    array([[0.9049241 , 0.60998466, 0.98848387],
+           [0.05206598, 0.71501345, 0.95326859],
+           [0.33077337, 0.06828198, 0.53493472],
+           [0.80671246, 0.12773189, 0.52348496],
+           [0.96050496, 0.57393358, 0.63419008]])
 
 
 
@@ -95,9 +95,9 @@ Pass numpy array of points (n by 3) to PolyData
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
-    <tr><td>X Bounds</td><td>4.125e-03, 9.992e-01</td></tr>
-    <tr><td>Y Bounds</td><td>7.139e-03, 9.920e-01</td></tr>
-    <tr><td>Z Bounds</td><td>3.385e-04, 9.896e-01</td></tr>
+    <tr><td>X Bounds</td><td>1.665e-02, 9.943e-01</td></tr>
+    <tr><td>Y Bounds</td><td>7.850e-03, 9.817e-01</td></tr>
+    <tr><td>Z Bounds</td><td>5.558e-03, 9.993e-01</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -354,7 +354,7 @@ Note how this varies from assigning scalars to each point
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.603 seconds)
+   **Total running time of the script:** ( 0 minutes  4.644 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_a_lesson.py:

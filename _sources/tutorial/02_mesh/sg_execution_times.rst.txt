@@ -5,18 +5,18 @@
 
 Computation times
 =================
-**00:14.204** total execution time for **tutorial_02_mesh** files:
+**00:16.863** total execution time for **tutorial_02_mesh** files:
 
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_a_lesson.py` (``a_lesson.py``)                           | 00:04.603 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_b_create-point-cloud.py` (``b_create-point-cloud.py``)   | 00:04.915 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_b_create-point-cloud.py` (``b_create-point-cloud.py``)   | 00:03.481 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_a_lesson.py` (``a_lesson.py``)                           | 00:04.644 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_f_read-file.py` (``f_read-file.py``)                     | 00:02.841 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_f_read-file.py` (``f_read-file.py``)                     | 00:04.104 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_d_create-tri-surface.py` (``d_create-tri-surface.py``)   | 00:01.607 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_d_create-tri-surface.py` (``d_create-tri-surface.py``)   | 00:01.603 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_e_create-uniform-grid.py` (``e_create-uniform-grid.py``) | 00:00.887 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_e_create-uniform-grid.py` (``e_create-uniform-grid.py``) | 00:00.830 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_c_create-poly.py` (``c_create-poly.py``)                 | 00:00.785 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_c_create-poly.py` (``c_create-poly.py``)                 | 00:00.767 | 0.0 MB |
 +------------------------------------------------------------------------------------------+-----------+--------+
