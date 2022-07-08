@@ -23,7 +23,7 @@ most common features include:
 * Use sophisticated lighting techniques like smooth shading or Eye Dome Lighting
 * Creating animations as GIFs or movie files
 
-This section will overview PyVista's :class:`pyvista.Plotter` API and how to perform a these tasks.
+This section will overview PyVista's :class:`pyvista.Plotter` API and how to perform these tasks.
 The goal of this lesson is not to be a comprehensive overview of PyVista's plotting API, but
 rather to demonstrate how it works and how you can learn to use it!
 
@@ -157,7 +157,7 @@ Creating side-by-side comparisons of datasets is easy with PyVista's subplotting
 
     p.show()
 
-Below is an example of a side-by-side comparisons of the contours and slices of a single datasets.
+Below is an example of side-by-side comparisons of the contours and slices of a single dataset.
 
 .. tip::
 
