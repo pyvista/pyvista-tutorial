@@ -232,10 +232,57 @@
    Break
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../05_figures/index.html">
-   Animation/generating Figures
+   Plotting Options and Animations
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_figures/a_lighting_mesh.html">
+     Lighting Properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_figures/b_shading.html">
+     Types of Shading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_figures/c_edl.html">
+     Eye Dome Lighting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_figures/d_pbr.html">
+     Physically Based Rendering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_figures/e_labels.html">
+     Label Points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_figures/f_gif.html">
+     Create a GIF Movie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_figures/g_orbit.html">
+     Orbiting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05_figures/h_texture.html">
+     Applying Textures
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../06_sphinx/index.html">
@@ -334,11 +381,11 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.</p
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81080075e+05, 4.40008180e+06, 1.76187000e+03],
-                 [4.81094475e+05, 4.40017380e+06, 1.75943994e+03],
-                 [4.81067375e+05, 4.40024210e+06, 1.75713000e+03],
-                 [4.81031075e+05, 4.40013470e+06, 1.77292004e+03],
-                 [4.80943175e+05, 4.40008180e+06, 1.76472998e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.80970575e+05, 4.40021140e+06, 1.75866003e+03],
+                 [4.81112275e+05, 4.40022910e+06, 1.76946997e+03],
+                 [4.81045775e+05, 4.40022250e+06, 1.75777002e+03],
+                 [4.81083275e+05, 4.40012350e+06, 1.76977002e+03],
+                 [4.80954275e+05, 4.40014000e+06, 1.76181995e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -427,11 +474,11 @@ cloud and add those vectors to the mesh.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[-0.45663961,  0.06433147,  0.88732278],
-                 [-0.42167269, -0.55679129,  0.71566445],
-                 [-0.0596023 , -0.82791057, -0.55768419],
-                 [ 0.52719322, -0.46528121, -0.71104198],
-                 [-0.38322878, -0.5186619 ,  0.76428106]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[-0.79541525,  0.00841621,  0.60600639],
+                 [ 0.56939633,  0.77860426,  0.2637484 ],
+                 [-0.55180953, -0.57630802, -0.60280619],
+                 [-0.81213632, -0.54644285, -0.20453557],
+                 [-0.06952239, -0.40469764,  0.91180396]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the mesh:</p>
@@ -459,7 +506,7 @@ cloud and add those vectors to the mesh.</p>
 <span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.660 seconds)</p>
+<img src="../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.037 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-b-create-point-cloud-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b89b4427e5692b40a8a7cd467156e344/b_create-point-cloud.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">b_create-point-cloud.py</span></code></a></p>
