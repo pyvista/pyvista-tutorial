@@ -47,12 +47,12 @@ jobs:
         run: make -C doc html SPHINXOPTS="-W --keep-going"
 
       - name: Tar build
-        run: tar -zcvf docs-build.tar.gz doc/build/
+        run: tar -zcvf doc-build.tar.gz doc/build/
 
       - uses: actions/upload-artifact@v3
         with:
-          name: docs-build
-          path: docs-build.tar.gz
+          name: doc-build
+          path: doc-build.tar.gz
 
       - uses: actions/upload-artifact@v3
         with:
@@ -81,7 +81,7 @@ jobs:
           path: doc/build
 
       - name: UnTar build
-        run: tar -zxvf docs-build.tar.gz
+        run: tar -zxvf doc-build.tar.gz
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v3
