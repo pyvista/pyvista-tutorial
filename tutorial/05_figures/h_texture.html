@@ -294,10 +294,27 @@
    Break
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../08_vtk/index.html">
    PyVista &amp; VTK
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_vtk/a_create.html">
+     Create VTK Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_vtk/b_algorithms.html">
+     Using VTK Algorithms
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../09_qt/index.html">
@@ -392,7 +409,6 @@ to download the full example code</p>
 <p>Plot a mesh with an image projected onto it as a texture.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib.cm</span> <span class="kn">import</span> <span class="n">get_cmap</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
@@ -606,7 +622,7 @@ overlappig</p>
 <span class="n">sphere</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">texture</span><span class="o">=</span><span class="n">tex</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_h_texture_011.png" srcset="../../_images/sphx_glr_h_texture_011.png" alt="h texture" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.456 seconds)</p>
+<img src="../../_images/sphx_glr_h_texture_011.png" srcset="../../_images/sphx_glr_h_texture_011.png" alt="h texture" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.434 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-05-figures-h-texture-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/cca6e1f6f053cef6f3508ac63da44c4b/h_texture.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">h_texture.py</span></code></a></p>

@@ -294,10 +294,27 @@
    Break
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../08_vtk/index.html">
    PyVista &amp; VTK
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_vtk/a_create.html">
+     Create VTK Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_vtk/b_algorithms.html">
+     Using VTK Algorithms
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../09_qt/index.html">
@@ -416,11 +433,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.09521781, 0.89046542, 0.75162216],
-       [0.86850015, 0.02391086, 0.56518306],
-       [0.53192891, 0.35060117, 0.42661213],
-       [0.30194237, 0.77860146, 0.89545857],
-       [0.19445466, 0.16721122, 0.6831051 ]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.79187454, 0.04216796, 0.00504814],
+       [0.04169438, 0.36360883, 0.09598744],
+       [0.46181631, 0.46646658, 0.83079539],
+       [0.55804942, 0.52362605, 0.32679912],
+       [0.54936616, 0.74443061, 0.42068257]])
 </pre></div>
 </div>
 <p>Pass numpy array of points (n by 3) to PolyData</p>
@@ -434,9 +451,9 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
-<tr><td>X Bounds</td><td>3.106e-03, 9.946e-01</td></tr>
-<tr><td>Y Bounds</td><td>5.191e-03, 9.992e-01</td></tr>
-<tr><td>Z Bounds</td><td>1.895e-02, 9.999e-01</td></tr>
+<tr><td>X Bounds</td><td>1.114e-02, 9.986e-01</td></tr>
+<tr><td>Y Bounds</td><td>1.711e-02, 9.787e-01</td></tr>
+<tr><td>Z Bounds</td><td>5.048e-03, 9.959e-01</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -574,7 +591,7 @@ generate cube containing 6 faces and assign each face an integer from
 <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_008.png" srcset="../../_images/sphx_glr_a_lesson_008.png" alt="a lesson" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.743 seconds)</p>
+<img src="../../_images/sphx_glr_a_lesson_008.png" srcset="../../_images/sphx_glr_a_lesson_008.png" alt="a lesson" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.801 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-a-lesson-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b39e3aa2cd7b3fc0ef698272b4121e62/a_lesson.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">a_lesson.py</span></code></a></p>

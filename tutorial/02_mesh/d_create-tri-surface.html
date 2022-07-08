@@ -294,10 +294,27 @@
    Break
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../08_vtk/index.html">
    PyVista &amp; VTK
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_vtk/a_create.html">
+     Create VTK Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../08_vtk/b_algorithms.html">
+     Using VTK Algorithms
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../09_qt/index.html">
@@ -391,11 +408,11 @@ to download the full example code</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-200.13641161, -199.82090999,    1.83312328],
-       [-177.35810582, -199.82090999,    2.81779735],
-       [-155.71070241, -199.82090999,    4.04086687],
-       [-137.74086925, -199.82090999,    5.25995793],
-       [-119.42414697, -199.82090999,    6.65683428]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-204.46931188, -202.23382695,    1.59976889],
+       [-181.72301751, -202.23382695,    2.48204147],
+       [-160.18580369, -202.23382695,    3.58683272],
+       [-139.34131495, -202.23382695,    4.90102342],
+       [-119.98476372, -202.23382695,    6.29922728]])
 </pre></div>
 </div>
 <p>Now use those points to create a point cloud PyVista data object. This will
@@ -513,8 +530,8 @@ delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound=False, inplace=False, edge_s
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
-<tr><td>X Bounds</td><td>1.199e-05, 9.280e+00</td></tr>
-<tr><td>Y Bounds</td><td>1.774e-02, 9.221e+00</td></tr>
+<tr><td>X Bounds</td><td>5.957e-03, 9.210e+00</td></tr>
+<tr><td>Y Bounds</td><td>7.101e-03, 9.233e+00</td></tr>
 <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
@@ -553,7 +570,7 @@ added unwanted triangles. We can mitigate that with the <code class="docutils li
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.585 seconds)</p>
+<img src="../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.399 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-d-create-tri-surface-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/63882c876038ea8226f518dfac0af187/d_create-tri-surface.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">d_create-tri-surface.py</span></code></a></p>

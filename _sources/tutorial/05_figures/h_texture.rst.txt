@@ -25,14 +25,13 @@ Applying Textures
 
 Plot a mesh with an image projected onto it as a texture.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-16
+.. GENERATED FROM PYTHON SOURCE LINES 9-15
 
 .. code-block:: default
 
 
     from matplotlib.cm import get_cmap
     import numpy as np
-
     import pyvista as pv
     from pyvista import examples
 
@@ -43,13 +42,13 @@ Plot a mesh with an image projected onto it as a texture.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-20
+.. GENERATED FROM PYTHON SOURCE LINES 16-19
 
 Texture mapping is easily implemented using PyVista. Many of the geometric
 objects come preloaded with texture coordinates, so quickly creating a
 surface and displaying an image is simply:
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-30
+.. GENERATED FROM PYTHON SOURCE LINES 19-29
 
 .. code-block:: default
 
@@ -75,14 +74,14 @@ surface and displaying an image is simply:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-35
+.. GENERATED FROM PYTHON SOURCE LINES 30-34
 
 But what if your dataset doesn't have texture coordinates? Then you can
 harness the :func:`pyvista.DataSetFilters.texture_map_to_plane` filter to
 properly map an image to a dataset's surface.
 For example, let's map that same image of bricks to a curvey surface:
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-49
+.. GENERATED FROM PYTHON SOURCE LINES 34-48
 
 .. code-block:: default
 
@@ -112,13 +111,13 @@ For example, let's map that same image of bricks to a curvey surface:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-53
+.. GENERATED FROM PYTHON SOURCE LINES 49-52
 
 Display scalar data along with a texture by ensuring the
 ``interpolate_before_map`` setting is ``False`` and specifying both the
 ``texture`` and ``scalars`` arguments.
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-59
+.. GENERATED FROM PYTHON SOURCE LINES 52-58
 
 .. code-block:: default
 
@@ -140,11 +139,11 @@ Display scalar data along with a texture by ensuring the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-61
+.. GENERATED FROM PYTHON SOURCE LINES 59-60
 
 Note that this process can be completed with any image texture!
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-67
+.. GENERATED FROM PYTHON SOURCE LINES 60-66
 
 .. code-block:: default
 
@@ -166,7 +165,7 @@ Note that this process can be completed with any image texture!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-75
+.. GENERATED FROM PYTHON SOURCE LINES 67-74
 
 Textures from Files
 +++++++++++++++++++
@@ -176,7 +175,7 @@ done using the :func:`pyvista.read_texture` function - simply pass an image
 file's path, and this function with handle making a ``vtkTexture`` for you to
 use.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-81
+.. GENERATED FROM PYTHON SOURCE LINES 74-80
 
 .. code-block:: default
 
@@ -198,7 +197,7 @@ use.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-89
+.. GENERATED FROM PYTHON SOURCE LINES 81-88
 
 NumPy Arrays as Textures
 ++++++++++++++++++++++++
@@ -208,7 +207,7 @@ objects can be converted to textures using :func:`pyvista.image_to_texture`
 and 3D NumPy (X by Y by RGB) arrays can be converted to textures using
 :func:`pyvista.numpy_to_texture`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-108
+.. GENERATED FROM PYTHON SOURCE LINES 88-107
 
 .. code-block:: default
 
@@ -243,13 +242,13 @@ and 3D NumPy (X by Y by RGB) arrays can be converted to textures using
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-112
+.. GENERATED FROM PYTHON SOURCE LINES 108-111
 
 Create a GIF Movie with updating textures
 +++++++++++++++++++++++++++++++++++++++++
 Generate a moving gif from an active plotter with updating textures.
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-149
+.. GENERATED FROM PYTHON SOURCE LINES 111-148
 
 .. code-block:: default
 
@@ -302,7 +301,7 @@ Generate a moving gif from an active plotter with updating textures.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-160
+.. GENERATED FROM PYTHON SOURCE LINES 149-159
 
 Textures with Transparency
 ++++++++++++++++++++++++++
@@ -315,7 +314,7 @@ contain a 4th channel specifying the opacity value from 0 [transparent] to
 
 Here we can download an image that has an alpha channel:
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-163
+.. GENERATED FROM PYTHON SOURCE LINES 159-162
 
 .. code-block:: default
 
@@ -337,7 +336,7 @@ Here we can download an image that has an alpha channel:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-169
+.. GENERATED FROM PYTHON SOURCE LINES 163-168
 
 .. code-block:: default
 
@@ -358,7 +357,7 @@ Here we can download an image that has an alpha channel:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 170-179
+.. GENERATED FROM PYTHON SOURCE LINES 169-178
 
 Repeating Textures
 ++++++++++++++++++
@@ -370,7 +369,7 @@ Here we create the texture coordinates to fill up the grid with several
 mappings of a single texture. In order to do this we must define texture
 coordinates outside of the typical ``(0, 1)`` range:
 
-.. GENERATED FROM PYTHON SOURCE LINES 179-187
+.. GENERATED FROM PYTHON SOURCE LINES 178-186
 
 .. code-block:: default
 
@@ -389,7 +388,7 @@ coordinates outside of the typical ``(0, 1)`` range:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-193
+.. GENERATED FROM PYTHON SOURCE LINES 187-192
 
 By defining texture coordinates that range ``(0, 4)`` on each axis, we will
 produce 4 repetitions of the same texture on this mesh.
@@ -397,7 +396,7 @@ produce 4 repetitions of the same texture on this mesh.
 Then we must associate those texture coordinates with the mesh through the
 :attr:`pyvista.DataSet.active_t_coords` property.
 
-.. GENERATED FROM PYTHON SOURCE LINES 193-196
+.. GENERATED FROM PYTHON SOURCE LINES 192-195
 
 .. code-block:: default
 
@@ -411,11 +410,11 @@ Then we must associate those texture coordinates with the mesh through the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 197-198
+.. GENERATED FROM PYTHON SOURCE LINES 196-197
 
 Now display all the puppies!
 
-.. GENERATED FROM PYTHON SOURCE LINES 198-204
+.. GENERATED FROM PYTHON SOURCE LINES 197-203
 
 .. code-block:: default
 
@@ -437,14 +436,14 @@ Now display all the puppies!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 205-209
+.. GENERATED FROM PYTHON SOURCE LINES 204-208
 
 Spherical Texture Coordinates
 +++++++++++++++++++++++++++++
 We have a built in convienance method for mapping textures to spherical
 coordinate systems much like the planar mapping demoed above.
 
-.. GENERATED FROM PYTHON SOURCE LINES 209-216
+.. GENERATED FROM PYTHON SOURCE LINES 208-215
 
 .. code-block:: default
 
@@ -467,7 +466,7 @@ coordinate systems much like the planar mapping demoed above.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 217-224
+.. GENERATED FROM PYTHON SOURCE LINES 216-223
 
 The helper method above does not always produce the desired texture
 coordinates, so sometimes it must be done manually. Here is a great, user
@@ -477,7 +476,7 @@ Manually create the texture coordinates for a globe map. First, we create
 the mesh that will be used as the globe. Note the `start_theta` for a slight
 overlappig
 
-.. GENERATED FROM PYTHON SOURCE LINES 224-241
+.. GENERATED FROM PYTHON SOURCE LINES 223-240
 
 .. code-block:: default
 
@@ -513,7 +512,7 @@ overlappig
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.456 seconds)
+   **Total running time of the script:** ( 0 minutes  9.434 seconds)
 
 
 .. _sphx_glr_download_tutorial_05_figures_h_texture.py:
