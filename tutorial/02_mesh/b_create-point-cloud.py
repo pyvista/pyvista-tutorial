@@ -21,7 +21,7 @@ from pyvista import examples
 # than creating a PyVista mesh with your own NumPy arrays of vertice locations.
 
 
-# Define some helpers - ignore these and use your own data!
+# Define some helpers - ignore these and use your own data if you like!
 def generate_points(subset=0.02):
     """A helper to make a 3D NumPy array of points (n_points by 3)"""
     dataset = examples.download_lidar()
@@ -36,7 +36,12 @@ points[0:5, :]
 
 ###############################################################################
 # Now that you have a NumPy array of points/vertices either from our sample
-# data or your own project, creating a PyVista mesh of those points is simply:
+# data or your own project, creating a PyVista mesh of those points:
+
+# insert your code here (answer below)
+point_cloud = ...
+
+###############################################################################
 point_cloud = pv.PolyData(points)
 point_cloud
 
@@ -63,7 +68,12 @@ point_cloud.plot(eye_dome_lighting=True)
 # Make data array using z-component of points array
 data = points[:, -1]
 
-# Add that data to the mesh with the name "uniform dist"
+###############################################################################
+# Add that data to the mesh with the name "elevation"
+
+# (add your code here, answer below)
+
+###############################################################################
 point_cloud["elevation"] = data
 
 ###############################################################################
@@ -97,7 +107,11 @@ vectors = compute_vectors(point_cloud)
 vectors[0:5, :]
 
 ###############################################################################
+# Add the vector array as point data to the mesh:
 
+# add your code here (answer below)
+
+###############################################################################
 point_cloud['vectors'] = vectors
 
 ###############################################################################

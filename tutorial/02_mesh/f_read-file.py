@@ -20,6 +20,15 @@ import pyvista as pv
 from pyvista import examples
 
 ###############################################################################
+help(pv.read)
+
+###############################################################################
+# PyVista supports a wide variety of file formats. The supported file
+# extensions are listed in an internal function:
+help(pv.utilities.reader.get_reader)
+
+
+###############################################################################
 # The following code block uses a built-in example
 # file, displays an airplane mesh and returns the camera's position:
 
@@ -84,3 +93,14 @@ mesh.plot(cpos=[-1, 2, -5], show_edges=True)
 mesh = examples.download_bunny_coarse()
 cpos = [(0.2, 0.3, 0.9), (0, 0, 0), (0, 1, 0)]
 mesh.plot(cpos=cpos, show_edges=True, color=True)
+
+
+###############################################################################
+# Exercise
+# ^^^^^^^^
+# Read a file yourself with :func:`pyvista.read`. If you have a supported file
+# format, use that! Otherwise, download this file:
+# https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
+
+# (your code here)
+# mesh = pv.read('path/to/file.vtk)
