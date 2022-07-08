@@ -1,6 +1,12 @@
 PyVista Tutorial for `SciPy 2022 <https://www.scipy2022.scipy.org/>`_
 =====================================================================
 
+.. video:: videos/pyvista_intro.mp4
+   :width: 960
+   :height: 540
+   :autoplay:
+   :nocontrols:
+
 .. panels::
     :card: + install-card
     :column: col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3
