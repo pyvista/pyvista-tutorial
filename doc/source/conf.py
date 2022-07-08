@@ -61,7 +61,6 @@ author = 'PyVista Developers'
 # ones.
 extensions = [
     'sphinx_tabs.tabs',
-    'sphinxcontrib.video',
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
     'jupyter_sphinx',
