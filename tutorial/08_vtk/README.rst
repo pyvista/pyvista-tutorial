@@ -1,7 +1,7 @@
 .. _vtk:
 
-08 PyVista & VTK
-================
+PyVista & VTK
+=============
 
 Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 10 minutes for exercise)
 
