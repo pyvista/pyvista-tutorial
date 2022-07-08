@@ -8,8 +8,6 @@ Create a surface from a set of points through a Delaunay triangulation.
 """
 
 import numpy as np
-
-# sphinx_gallery_thumbnail_number = 2
 import pyvista as pv
 
 ###############################################################################
@@ -41,7 +39,15 @@ cloud.plot(point_size=15)
 ###############################################################################
 # Now that we have a PyVista data structure of the points, we can perform a
 # triangulation to turn those boring discrete points into a connected surface.
+# See https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html
+help(cloud.delaunay_2d)
 
+###############################################################################
+# Apply the `delaunay_2d` filter
+
+# (your code here, answer below)
+
+###############################################################################
 surf = cloud.delaunay_2d()
 surf.plot(show_edges=True)
 

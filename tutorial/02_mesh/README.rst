@@ -234,3 +234,6 @@ Note how this varies from assigning scalars to each point
 
 Exercises
 ---------
+
+For more examples, please see the mesh creation section of the
+`PyVista Examples Gallery <https://docs.pyvista.org/examples/index.html#mesh-creation>`_
