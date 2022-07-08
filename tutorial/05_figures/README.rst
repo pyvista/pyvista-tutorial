@@ -157,7 +157,7 @@ Creating side-by-side comparisons of datasets is easy with PyVista's subplotting
 
     p.show()
 
-Below is an example of a side-by-side comparisons of the contours and slices of a single datasets.
+Below is an example of side-by-side comparisons of the contours and slices of a single dataset.
 
 .. tip::
 
