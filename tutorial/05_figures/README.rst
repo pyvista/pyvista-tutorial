@@ -1,7 +1,7 @@
 .. _figures:
 
-05 Animation/generating Figures
-===============================
+Animation/generating Figures
+============================
 
 Show how to animate/generating figures using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
 

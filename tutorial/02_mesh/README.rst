@@ -1,14 +1,14 @@
 .. _mesh:
 
-02 What is a Mesh?
-==================
+What is a Mesh?
+===============
 
 Learn about the PyVista data types and how you can use it to visualize almost anything. (15 min for talk, 10 min for exercise)
 
 .. tip::
 
-    This section of the tutorial was adopted from `What is a mesh? <https://docs.pyvista.org/user-guide/what-is-a-mesh.html>`_
-    chapter of the User Guide in the PyVista documentation.
+uide/what-is-a-mesh.html>`_
+    chapter of the User Gui
 
 
 In PyVista, a mesh is any spatially referenced information and usually

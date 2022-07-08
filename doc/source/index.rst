@@ -1,5 +1,36 @@
-PyVista Tutorial for SciPy 2022
-===============================
+PyVista Tutorial for `SciPy 2022 <https://www.scipy2022.scipy.org/>`_
+=====================================================================
+
+.. panels::
+    :card: + install-card
+    :column: col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3
+
+    Getting Started
+    ^^^^^^^^^^^^^^^
+
+    Get PyVista setup on your enviornment.
+
+    ++++++++++++++++++++++
+
+    .. link-button:: getting-started
+        :type: ref
+        :text: Installation and Getting Started
+        :classes: btn-outline-primary btn-block stretched-link
+
+    ---
+
+    Tutorial Content
+    ^^^^^^^^^^^^^^^^
+
+    Jump right to the tutorial content.
+
+    ++++++++++++++++++++++
+
+    .. link-button:: tutorial
+        :type: ref
+        :text: Tutorial
+        :classes: btn-outline-primary btn-block stretched-link
+
 
 .. toctree::
    :maxdepth: 2
@@ -38,16 +69,24 @@ See our `Example Gallery <http://docs.pyvista.org/examples/index.html>`_
 Tutorial Description
 --------------------
 
-- Use PyVista to create 3D visualizations from a variety of datasets in common formats.
+- Use PyVista to create 3D visualizations from a variety of datasets in common
+  formats.
 - Overview the classes and data structures of PyVista with real-world examples.
 - Be familiar of the various filters and features of PyVista.
-- Know which Python libraries are used and can be used by PyVista (meshio, trimesh etc).
+- Know which Python libraries are used and can be used by PyVista (meshio,
+  trimesh etc).
 
-We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
+We see this tutorial catering to anyone who wants to visualize data in any
+domain, and this ranges from basic Python users to advanced power users.
 
-1. Basic knowledge of Python to get started. Be able to install Jupyter Lab on your machine and be up and running.
-2. Intermediate users will want to be familiar with `NumPy <https://numpy.org/>`_ and other libraries that are compatible with PyVista, like `trimesh <https://trimsh.org/examples.html>`_ or `meshio <https://github.com/nschloe/meshio>`_.
-3. Advanced users should be familiar the Visualization Toolkit (VTK), general data science, and GUI frameworks like Qt.
+1. Basic knowledge of Python to get started. Be able to install Jupyter Lab on
+   your machine and be up and running.
+2. Intermediate users will want to be familiar with `NumPy
+   <https://numpy.org/>`_ and other libraries that are compatible with PyVista,
+   like `trimesh <https://trimsh.org/examples.html>`_ or `meshio
+   <https://github.com/nschloe/meshio>`_.
+3. Advanced users should be familiar the Visualization Toolkit (VTK), general
+   data science, and GUI frameworks like Qt.
 
 
 Instructor Bios
@@ -60,7 +99,10 @@ Alexander Kaszynski
 
 Advocate for all things Python with extensive experience presenting as a speaker at IGTI conferences for the past decade, and for the past almost three at Ansys pushing for automation through Python for CAE applications.
 
-Regularly present Python demos within `Ansys <https://ansys.github.io/>`_, including talks with 500+ "live" virtual attendees, and prior to COVID, in person talks of 100+. Enjoys presenting and demoing Python, especially 3D visualization but also its application to CAE and automation.
+Advocate for all things open source and has contributed to the creation of
+Ansys's open source projects `Ansys <https://ansys.github.io/>`_. Enjoys
+presenting and demoing Python, especially 3D visualization but also its
+application to CAE and automation.
 
 Bane Sullivan
 ~~~~~~~~~~~~~
