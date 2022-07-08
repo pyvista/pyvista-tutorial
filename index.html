@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>PyVista Tutorial for SciPy 2022 &#8212; PyVista Tutorial</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/no_search_highlight.css" />
+    <link rel="stylesheet" type="text/css" href="_static/fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="getting-started.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    <img src="_static/pyvista_logo_sm.png" class="logo__image only-light" alt="Logo image">
+    <img src="_static/pyvista_logo_sm.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="getting-started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="tutorial.html">
+  Tutorial
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyvista/pyvista-tutorial" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyvista/pyvista/discussions" rel="noopener" target="_blank" title="Support"><span><i class="fa fa-comment fa-fw"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://docs.pyvista.org/" rel="noopener" target="_blank" title="Docs"><span><i class="fa fa-book fa-fw"></i></span>
+            <label class="sr-only">Docs</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://slack.pyvista.org" rel="noopener" target="_blank" title="Slack Community"><span><i class="fab fa-slack"></i></span>
+            <label class="sr-only">Slack Community</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" rel="noopener" target="_blank" title="Contributing"><span><i class="fa fa-gavel fa-fw"></i></span>
+            <label class="sr-only">Contributing</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://doi.org/10.21105/joss.01450" rel="noopener" target="_blank" title="The Paper"><span><i class="fa fa-file-text fa-fw"></i></span>
+            <label class="sr-only">The Paper</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<div class="sidebar-primary col-12 col-md-1 col-xl-2 bd-sidebar no-sidebar"></div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-md-block col-md-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#abstract">
+   Abstract
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#keywords">
+   Keywords
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-information-and-files">
+   Other Information and Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorial-description">
+   Tutorial Description
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructor-bios">
+   Instructor Bios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#alexander-kaszynski">
+     Alexander Kaszynski
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bane-sullivan">
+     Bane Sullivan
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tetsuo-koyama">
+     Tetsuo Koyama
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-8">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="pyvista-tutorial-for-scipy-2022">
+<h1>PyVista Tutorial for SciPy 2022<a class="headerlink" href="#pyvista-tutorial-for-scipy-2022" title="Permalink to this headline">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<img alt="_images/pyvista_banner.png" src="_images/pyvista_banner.png" />
+<section id="abstract">
+<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">#</a></h2>
+<p><a class="reference external" href="https://github.com/pyvista/pyvista">PyVista</a> is a general purpose 3D visualization library used for over 500+ open source projects and many closed source projects for the visualization of everything from <a class="reference external" href="https://dev.pyvista.org/getting-started/external_examples.html">computer aided engineering and geophysics to volcanoes and digital artwork</a>.</p>
+<p>PyVista exposes a Pythonic API to the <a class="reference external" href="http://www.vtk.org">Visualization Toolkit (VTK)</a> to provide tooling that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of <a class="reference external" href="https://matplotlib.org/">matplotlib</a>, with plugins to <a class="reference external" href="https://jupyter.org/">Jupyter</a> to enable visualization of 3D data using both server and client-side rendering.</p>
+<p>We will provide a hands-on tutorial accessible to anyone with internet access and a computer via many of PyVista’s existing <a class="reference external" href="https://docs.pyvista.org/examples/index.html">example Jupyter notebooks</a> and new material through a comprehensive overview highlighting popular 3D visualization use cases.</p>
+</section>
+<section id="keywords">
+<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/topics/visualization">visualization</a></p></li>
+<li><p><a class="reference external" href="https://github.com/topics/meshviewer">meshviewer</a></p></li>
+<li><p><a class="reference external" href="https://github.com/topics/vtk">vtk</a></p></li>
+<li><p><a class="reference external" href="https://github.com/topics/3d">3d</a></p></li>
+</ul>
+</section>
+<section id="other-information-and-files">
+<h2>Other Information and Files<a class="headerlink" href="#other-information-and-files" title="Permalink to this headline">#</a></h2>
+<p>See our <a class="reference external" href="http://docs.pyvista.org/examples/index.html">Example Gallery</a></p>
+</section>
+<section id="tutorial-description">
+<h2>Tutorial Description<a class="headerlink" href="#tutorial-description" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Use PyVista to create 3D visualizations from a variety of datasets in common formats.</p></li>
+<li><p>Overview the classes and data structures of PyVista with real-world examples.</p></li>
+<li><p>Be familiar of the various filters and features of PyVista.</p></li>
+<li><p>Know which Python libraries are used and can be used by PyVista (meshio, trimesh etc).</p></li>
+</ul>
+<p>We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.</p>
+<ol class="arabic simple">
+<li><p>Basic knowledge of Python to get started. Be able to install Jupyter Lab on your machine and be up and running.</p></li>
+<li><p>Intermediate users will want to be familiar with <a class="reference external" href="https://numpy.org/">NumPy</a> and other libraries that are compatible with PyVista, like <a class="reference external" href="https://trimsh.org/examples.html">trimesh</a> or <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a>.</p></li>
+<li><p>Advanced users should be familiar the Visualization Toolkit (VTK), general data science, and GUI frameworks like Qt.</p></li>
+</ol>
+</section>
+<section id="instructor-bios">
+<h2>Instructor Bios<a class="headerlink" href="#instructor-bios" title="Permalink to this headline">#</a></h2>
+<section id="alexander-kaszynski">
+<h3>Alexander Kaszynski<a class="headerlink" href="#alexander-kaszynski" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://github.com/akaszynski/resume">Alex Kaszynski</a>, co-creator of PyVista and creator of the <a class="reference external" href="https://github.com/pyansys">PyAnsys</a> organization.</p>
+<p>Advocate for all things Python with extensive experience presenting as a speaker at IGTI conferences for the past decade, and for the past almost three at Ansys pushing for automation through Python for CAE applications.</p>
+<p>Regularly present Python demos within <a class="reference external" href="https://ansys.github.io/">Ansys</a>, including talks with 500+ “live” virtual attendees, and prior to COVID, in person talks of 100+. Enjoys presenting and demoing Python, especially 3D visualization but also its application to CAE and automation.</p>
+</section>
+<section id="bane-sullivan">
+<h3>Bane Sullivan<a class="headerlink" href="#bane-sullivan" title="Permalink to this headline">#</a></h3>
+<p><a class="reference external" href="https://banesullivan.com">Bane Sullivan</a>, co-creator of PyVista, is a Research Software Engineer working at the intersection of geoscience, visualization, and data science.</p>
+<p>Bane is a geophysicist/hydrologist by training and has been working to grow PyVista’s adoption within the subsurface geoscience communities, previously presenting PyVista at <a class="reference external" href="https://www.youtube.com/watch?v=FmNmRBsEBHE">Transform 2021</a>.</p>
+</section>
+<section id="tetsuo-koyama">
+<h3>Tetsuo Koyama<a class="headerlink" href="#tetsuo-koyama" title="Permalink to this headline">#</a></h3>
+<p>Tetsuo Koyama is interested in scientific computing and visualization with computer graphics.
+Developer team member of PyVista.
+Past experience as a speaker:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/6JuB1GiDLQQ">PyConJP 2019 speaker “Introduction to FEM Analysis with Python”</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/X3Z54Kw4I6Y">PyConJP 2020 speaker “How to plot unstructured mesh file on Jupyter Notebook”</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/epxm9SjLMS0">SciPy Japan 2020 speaker “Translation Project of Mayavi2 documents”</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/ru-nENLgleo">PyConJP 2021 speaker “Visualize 3D scientific data in a Pythonic way like matplotlib”</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='right-next' id="next-link" href="getting-started.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Getting Started</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, PyVista Developers.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
