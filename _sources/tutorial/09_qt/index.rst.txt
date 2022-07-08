@@ -6,8 +6,8 @@
 
 .. _qt:
 
-09 PyVista and Qt
-=================
+PyVista and Qt
+==============
 
 Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
 

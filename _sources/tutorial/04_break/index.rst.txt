@@ -4,10 +4,10 @@
 
 .. _sphx_glr_tutorial_04_break:
 
-04 Break
-========
-
+Break
+=====
 Break. Stretch fingers and grab some coffee. (15 minutes)
+
 
 
 .. raw:: html

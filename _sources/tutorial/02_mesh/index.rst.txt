@@ -6,8 +6,8 @@
 
 .. _mesh:
 
-02 What is a Mesh?
-==================
+What is a Mesh?
+===============
 
 Learn about the PyVista data types and how you can use it to visualize almost anything. (15 min for talk, 10 min for exercise)
 

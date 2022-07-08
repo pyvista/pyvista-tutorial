@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/no_search_highlight.css" />
     <link rel="stylesheet" type="text/css" href="_static/fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
@@ -48,6 +49,7 @@
     <script src="_static/thebelab-helper.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/tabs.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -173,18 +175,18 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#abstract">
-   Abstract
+  <a class="reference internal nav-link" href="#quick-links">
+   Quick Links
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#keywords">
-   Keywords
+  <a class="reference internal nav-link" href="#example-gallery">
+   Example Gallery
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#other-information-and-files">
-   Other Information and Files
+  <a class="reference internal nav-link" href="#pyvista-overview">
+   PyVista Overview
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -234,42 +236,86 @@
               <article class="bd-article" role="main">
                 
   <section id="pyvista-tutorial-for-scipy-2022">
-<h1>PyVista Tutorial for SciPy 2022<a class="headerlink" href="#pyvista-tutorial-for-scipy-2022" title="Permalink to this headline">#</a></h1>
+<h1>PyVista Tutorial for <a class="reference external" href="https://www.scipy2022.scipy.org/">SciPy 2022</a><a class="headerlink" href="#pyvista-tutorial-for-scipy-2022" title="Permalink to this headline">#</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<img alt="_images/pyvista_banner.png" src="_images/pyvista_banner.png" />
-<section id="abstract">
-<h2>Abstract<a class="headerlink" href="#abstract" title="Permalink to this headline">#</a></h2>
+<p>Welcome to PyVista’s tutorial for <a class="reference external" href="https://www.scipy2022.scipy.org/">SciPy 2022</a>!</p>
+<p>Here you can find all the resources to be up and running with PyVista in no
+time. Feel free to reference our dedicated documentation at <a class="reference external" href="https://docs.pyvista.org/">PyVista
+Documentation</a></p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">JupyterLab</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">iPython</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><p>Here’s a quick demo of PyVista running within <a class="reference external" href="https://jupyter.org/">Jupyterlab</a>.</p>
+<video width="100%" height="auto" controls autoplay muted>
+  <source src="_static/pyvista_jupyterlab_demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video></div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><p>Here’s a quick demo of PyVista running within a terminal using <a class="reference external" href="https://ipython.org/">iPython</a>.</p>
+<video width="100%" height="auto" controls autoplay muted>
+  <source src="_static/pyvista_ipython_demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video></div></div>
+<section id="quick-links">
+<h2>Quick Links<a class="headerlink" href="#quick-links" title="Permalink to this headline">#</a></h2>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3 docutils">
+<div class="card w-100 shadow install-card docutils">
+<div class="card-header docutils">
+<p class="card-text">Getting Started</p>
+</div>
+<div class="card-body docutils">
+<p class="card-text">Get PyVista setup on your enviornment.</p>
+</div>
+<div class="card-footer docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary btn-block stretched-link reference internal" href="getting-started.html"><span class="doc">Installation and Getting Started</span></a></p>
+</div>
+</div>
+</div>
+<div class="d-flex col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3 docutils">
+<div class="card w-100 shadow install-card docutils">
+<div class="card-header docutils">
+<p class="card-text">Tutorial Content</p>
+</div>
+<div class="card-body docutils">
+<p class="card-text">Jump right to the tutorial content.</p>
+</div>
+<div class="card-footer docutils">
+<p class="card-text"><a class="sphinx-bs btn text-wrap btn-outline-primary btn-block stretched-link reference internal" href="tutorial.html"><span class="doc">Tutorial</span></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-gallery">
+<h2>Example Gallery<a class="headerlink" href="#example-gallery" title="Permalink to this headline">#</a></h2>
+<p>Click below for our extensive example gallery!</p>
+<a class="reference external image-reference" href="http://docs.pyvista.org/examples/index.html"><img alt="_images/pyvista_banner.png" src="_images/pyvista_banner.png" /></a>
+</section>
+<section id="pyvista-overview">
+<h2>PyVista Overview<a class="headerlink" href="#pyvista-overview" title="Permalink to this headline">#</a></h2>
 <p><a class="reference external" href="https://github.com/pyvista/pyvista">PyVista</a> is a general purpose 3D visualization library used for over 500+ open source projects and many closed source projects for the visualization of everything from <a class="reference external" href="https://dev.pyvista.org/getting-started/external_examples.html">computer aided engineering and geophysics to volcanoes and digital artwork</a>.</p>
 <p>PyVista exposes a Pythonic API to the <a class="reference external" href="http://www.vtk.org">Visualization Toolkit (VTK)</a> to provide tooling that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of <a class="reference external" href="https://matplotlib.org/">matplotlib</a>, with plugins to <a class="reference external" href="https://jupyter.org/">Jupyter</a> to enable visualization of 3D data using both server and client-side rendering.</p>
 <p>We will provide a hands-on tutorial accessible to anyone with internet access and a computer via many of PyVista’s existing <a class="reference external" href="https://docs.pyvista.org/examples/index.html">example Jupyter notebooks</a> and new material through a comprehensive overview highlighting popular 3D visualization use cases.</p>
 </section>
-<section id="keywords">
-<h2>Keywords<a class="headerlink" href="#keywords" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p><a class="reference external" href="https://github.com/topics/visualization">visualization</a></p></li>
-<li><p><a class="reference external" href="https://github.com/topics/meshviewer">meshviewer</a></p></li>
-<li><p><a class="reference external" href="https://github.com/topics/vtk">vtk</a></p></li>
-<li><p><a class="reference external" href="https://github.com/topics/3d">3d</a></p></li>
-</ul>
-</section>
-<section id="other-information-and-files">
-<h2>Other Information and Files<a class="headerlink" href="#other-information-and-files" title="Permalink to this headline">#</a></h2>
-<p>See our <a class="reference external" href="http://docs.pyvista.org/examples/index.html">Example Gallery</a></p>
-</section>
 <section id="tutorial-description">
 <h2>Tutorial Description<a class="headerlink" href="#tutorial-description" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Use PyVista to create 3D visualizations from a variety of datasets in common formats.</p></li>
+<li><p>Use PyVista to create 3D visualizations from a variety of datasets in common
+formats.</p></li>
 <li><p>Overview the classes and data structures of PyVista with real-world examples.</p></li>
 <li><p>Be familiar of the various filters and features of PyVista.</p></li>
-<li><p>Know which Python libraries are used and can be used by PyVista (meshio, trimesh etc).</p></li>
+<li><p>Know which Python libraries are used and can be used by PyVista (meshio,
+trimesh etc).</p></li>
 </ul>
-<p>We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.</p>
+<p>We see this tutorial catering to anyone who wants to visualize data in any
+domain, and this ranges from basic Python users to advanced power users.</p>
 <ol class="arabic simple">
-<li><p>Basic knowledge of Python to get started. Be able to install Jupyter Lab on your machine and be up and running.</p></li>
-<li><p>Intermediate users will want to be familiar with <a class="reference external" href="https://numpy.org/">NumPy</a> and other libraries that are compatible with PyVista, like <a class="reference external" href="https://trimsh.org/examples.html">trimesh</a> or <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a>.</p></li>
-<li><p>Advanced users should be familiar the Visualization Toolkit (VTK), general data science, and GUI frameworks like Qt.</p></li>
+<li><p>Basic knowledge of Python to get started. Be able to install Jupyter Lab on
+your machine and be up and running.</p></li>
+<li><p>Intermediate users will want to be familiar with <a class="reference external" href="https://numpy.org/">NumPy</a> and other libraries that are compatible with PyVista,
+like <a class="reference external" href="https://trimsh.org/examples.html">trimesh</a> or <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a>.</p></li>
+<li><p>Advanced users should be familiar the Visualization Toolkit (VTK), general
+data science, and GUI frameworks like Qt.</p></li>
 </ol>
 </section>
 <section id="instructor-bios">
@@ -278,7 +324,10 @@
 <h3>Alexander Kaszynski<a class="headerlink" href="#alexander-kaszynski" title="Permalink to this headline">#</a></h3>
 <p><a class="reference external" href="https://github.com/akaszynski/resume">Alex Kaszynski</a>, co-creator of PyVista and creator of the <a class="reference external" href="https://github.com/pyansys">PyAnsys</a> organization.</p>
 <p>Advocate for all things Python with extensive experience presenting as a speaker at IGTI conferences for the past decade, and for the past almost three at Ansys pushing for automation through Python for CAE applications.</p>
-<p>Regularly present Python demos within <a class="reference external" href="https://ansys.github.io/">Ansys</a>, including talks with 500+ “live” virtual attendees, and prior to COVID, in person talks of 100+. Enjoys presenting and demoing Python, especially 3D visualization but also its application to CAE and automation.</p>
+<p>Advocate for all things open source and has contributed to the creation of
+Ansys’s open source projects <a class="reference external" href="https://ansys.github.io/">Ansys</a>. Enjoys
+presenting and demoing Python, especially 3D visualization but also its
+application to CAE and automation.</p>
 </section>
 <section id="bane-sullivan">
 <h3>Bane Sullivan<a class="headerlink" href="#bane-sullivan" title="Permalink to this headline">#</a></h3>

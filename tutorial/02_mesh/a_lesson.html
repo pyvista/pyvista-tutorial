@@ -31,6 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
@@ -53,7 +54,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Create Point Cloud" href="b_create-point-cloud.html" />
-    <link rel="prev" title="02 What is a Mesh?" href="index.html" />
+    <link rel="prev" title="What is a Mesh?" href="index.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="None">
   </head>
@@ -171,17 +172,17 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../00_intro/index.html">
-   00 Getting Started
+   Getting Started
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../01_basic/index.html">
-   01 Basic usage
+   Basic usage
   </a>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="index.html">
-   02 What is a Mesh?
+   What is a Mesh?
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -223,42 +224,42 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../03_data/index.html">
-   03 PyVista Data Model
+   PyVista Data Model
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../04_break/index.html">
-   04 Break
+   Break
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../05_figures/index.html">
-   05 Animation/generating Figures
+   Animation/generating Figures
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../06_sphinx/index.html">
-   06 PyVista and Sphinx
+   PyVista and Sphinx
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../07_break/index.html">
-   07 Break
+   Break
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../08_vtk/index.html">
-   08 PyVista &amp; VTK
+   PyVista &amp; VTK
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../09_qt/index.html">
-   09 PyVista and Qt
+   PyVista and Qt
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../10_action/index.html">
-   10 PyVista in Action
+   PyVista in Action
   </a>
  </li>
 </ul>
@@ -368,11 +369,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.79109945, 0.62913194, 0.62364944],
-       [0.87359532, 0.87949721, 0.63311449],
-       [0.52230795, 0.92158264, 0.71455563],
-       [0.50573014, 0.22712311, 0.2512884 ],
-       [0.7042916 , 0.89102194, 0.54797484]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.95783123, 0.30873758, 0.15120562],
+       [0.11029833, 0.40227821, 0.98917498],
+       [0.55561078, 0.22230064, 0.03139833],
+       [0.02799872, 0.45011291, 0.39724032],
+       [0.09739795, 0.99097444, 0.92142138]])
 </pre></div>
 </div>
 <p>Pass numpy array of points (n by 3) to PolyData</p>
@@ -386,9 +387,9 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
-<tr><td>X Bounds</td><td>2.732e-03, 9.994e-01</td></tr>
-<tr><td>Y Bounds</td><td>1.046e-02, 9.876e-01</td></tr>
-<tr><td>Z Bounds</td><td>2.379e-04, 9.758e-01</td></tr>
+<tr><td>X Bounds</td><td>2.696e-02, 9.917e-01</td></tr>
+<tr><td>Y Bounds</td><td>2.756e-03, 9.910e-01</td></tr>
+<tr><td>Z Bounds</td><td>1.636e-02, 9.892e-01</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -526,7 +527,7 @@ generate cube containing 6 faces and assign each face an integer from
 <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_008.png" srcset="../../_images/sphx_glr_a_lesson_008.png" alt="a lesson" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.740 seconds)</p>
+<img src="../../_images/sphx_glr_a_lesson_008.png" srcset="../../_images/sphx_glr_a_lesson_008.png" alt="a lesson" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.877 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-a-lesson-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b39e3aa2cd7b3fc0ef698272b4121e62/a_lesson.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">a_lesson.py</span></code></a></p>
@@ -550,7 +551,7 @@ generate cube containing 6 faces and assign each face an integer from
       <i class="fas fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">02 What is a Mesh?</p>
+          <p class="prev-next-title">What is a Mesh?</p>
       </div>
   </a>
   <a class='right-next' id="next-link" href="b_create-point-cloud.html" title="next page">

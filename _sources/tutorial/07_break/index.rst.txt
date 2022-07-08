@@ -4,10 +4,10 @@
 
 .. _sphx_glr_tutorial_07_break:
 
-07 Break
-========
-
+Break
+=====
 Quick break. Prepare for the final run. (10 minutes)
+
 
 
 .. raw:: html
