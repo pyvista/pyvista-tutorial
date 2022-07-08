@@ -7,8 +7,8 @@ Learn about the PyVista data types and how you can use it to visualize almost an
 
 .. tip::
 
-uide/what-is-a-mesh.html>`_
-    chapter of the User Gui
+    This section of the tutorial was adopted from `What is a mesh? <https://docs.pyvista.org/user-guide/what-is-a-mesh.html>`_
+    chapter of the User Guide in the PyVista documentation.
 
 
 In PyVista, a mesh is any spatially referenced information and usually
