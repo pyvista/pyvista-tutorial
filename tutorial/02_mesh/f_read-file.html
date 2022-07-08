@@ -279,9 +279,19 @@
     
     <div class="toc-item">
       
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
 
 <nav id="bd-toc-nav">
-    
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+</ul>
+
 </nav>
     </div>
     
@@ -314,6 +324,223 @@ referenced dataset into a PyVista mesh object.</p>
 airplane mesh.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">read</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function read in module pyvista.utilities.fileio:
+
+read(filename, attrs=None, force_ext=None, file_format=None, progress_bar=False)
+    Read any file type supported by ``vtk`` or ``meshio``.
+
+    .. deprecated:: 0.35.0
+        Use of `attrs` is deprecated.
+        Use a reader class using :func:`pyvista.get_reader`
+
+    Automatically determines the correct reader to use then wraps the
+    corresponding mesh as a pyvista object.  Attempts native ``vtk``
+    readers first then tries to use ``meshio``.
+
+    See :func:`pyvista.get_reader` for list of formats supported.
+
+    .. note::
+       See https://github.com/nschloe/meshio for formats supported by
+       ``meshio``. Be sure to install ``meshio`` with ``pip install
+       meshio`` if you wish to use it.
+
+    Parameters
+    ----------
+    filename : str
+        The string path to the file to read. If a list of files is
+        given, a :class:`pyvista.MultiBlock` dataset is returned with
+        each file being a separate block in the dataset.
+
+    attrs : dict, optional
+        Deprecated. Use a Reader class using :func:`pyvista.get_reader`.
+        A dictionary of attributes to call on the reader. Keys of
+        dictionary are the attribute/method names and values are the
+        arguments passed to those calls. If you do not have any
+        attributes to call, pass ``None`` as the value.
+
+    force_ext : str, optional
+        If specified, the reader will be chosen by an extension which
+        is different to its actual extension. For example, ``&#39;.vts&#39;``,
+        ``&#39;.vtu&#39;``.
+
+    file_format : str, optional
+        Format of file to read with meshio.
+
+    progress_bar : bool, optional
+        Optionally show a progress bar. Default ``False``. Ignored when using
+        ``meshio``.
+
+    Returns
+    -------
+    pyvista.DataSet
+        Wrapped PyVista dataset.
+
+    Examples
+    --------
+    Load an example mesh.
+
+    &gt;&gt;&gt; import pyvista
+    &gt;&gt;&gt; from pyvista import examples
+    &gt;&gt;&gt; mesh = pyvista.read(examples.antfile)
+    &gt;&gt;&gt; mesh.plot(cpos=&#39;xz&#39;)
+
+    Load a vtk file.
+
+    &gt;&gt;&gt; mesh = pyvista.read(&#39;my_mesh.vtk&#39;)  # doctest:+SKIP
+
+    Load a meshio file.
+
+    &gt;&gt;&gt; mesh = pyvista.read(&quot;mesh.obj&quot;)  # doctest:+SKIP
+</pre></div>
+</div>
+<p>PyVista supports a wide variety of file formats. The supported file
+extensions are listed in an internal function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">get_reader</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function get_reader in module pyvista.utilities.reader:
+
+get_reader(filename, force_ext=None)
+    Get a reader for fine-grained control of reading data files.
+
+    Supported file types and Readers:
+
+    +----------------+---------------------------------------------+
+    | File Extension | Class                                       |
+    +================+=============================================+
+    | ``.bmp``       | :class:`pyvista.BMPReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.cas``       | :class:`pyvista.FluentReader`               |
+    +----------------+---------------------------------------------+
+    | ``.case``      | :class:`pyvista.EnSightReader`              |
+    +----------------+---------------------------------------------+
+    | ``.cgns``      | :class:`pyvista.CGNSReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.dat``       | :class:`pyvista.TecplotReader`              |
+    +----------------+---------------------------------------------+
+    | ``.dcm``       | :class:`pyvista.DICOMReader`                |
+    +----------------+---------------------------------------------+
+    | ``.dem``       | :class:`pyvista.DEMReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.facet``     | :class:`pyvista.FacetReader`                |
+    +----------------+---------------------------------------------+
+    | ``.foam``      | :class:`pyvista.POpenFOAMReader`            |
+    +----------------+---------------------------------------------+
+    | ``.g``         | :class:`pyvista.BYUReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.glb``       | :class:`pyvista.GLTFReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.gltf``      | :class:`pyvista.GLTFReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.hdf``       | :class:`pyvista.HDFReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.img``       | :class:`pyvista.DICOMReader`                |
+    +----------------+---------------------------------------------+
+    | ``.inp``       | :class:`pyvista.AVSucdReader`               |
+    +----------------+---------------------------------------------+
+    | ``.jpg``       | :class:`pyvista.JPEGReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.jpeg``      | :class:`pyvista.JPEGReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.hdr``       | :class:`pyvista.HDRReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.mha``       | :class:`pyvista.MetaImageReader`            |
+    +----------------+---------------------------------------------+
+    | ``.mhd``       | :class:`pyvista.MetaImageReader`            |
+    +----------------+---------------------------------------------+
+    | ``.nhdr``      | :class:`pyvista.NRRDReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.nrrd``      | :class:`pyvista.NRRDReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.obj``       | :class:`pyvista.OBJReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.p3d``       | :class:`pyvista.Plot3DMetaReader`           |
+    +----------------+---------------------------------------------+
+    | ``.ply``       | :class:`pyvista.PLYReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.png``       | :class:`pyvista.PNGReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.pnm``       | :class:`pyvista.PNMReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.pts``       | :class:`pyvista.PTSReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.pvd``       | :class:`pyvista.PVDReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.pvti``      | :class:`pyvista.XMLPImageDataReader`        |
+    +----------------+---------------------------------------------+
+    | ``.pvtk``      | :class:`pyvista.VTKPDataSetReader`          |
+    +----------------+---------------------------------------------+
+    | ``.pvtr``      | :class:`pyvista.XMLPRectilinearGridReader`  |
+    +----------------+---------------------------------------------+
+    | ``.pvtu``      | :class:`pyvista.XMLPUnstructuredGridReader` |
+    +----------------+---------------------------------------------+
+    | ``.res``       | :class:`pyvista.MFIXReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.segy``      | :class:`pyvista.SegYReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.sgy``       | :class:`pyvista.SegYReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.slc``       | :class:`pyvista.SLCReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.stl``       | :class:`pyvista.STLReader`                  |
+    +----------------+---------------------------------------------+
+    | ``.tif``       | :class:`pyvista.TIFFReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.tiff``      | :class:`pyvista.TIFFReader`                 |
+    +----------------+---------------------------------------------+
+    | ``.tri``       | :class:`pyvista.BinaryMarchingCubesReader`  |
+    +----------------+---------------------------------------------+
+    | ``.vti``       | :class:`pyvista.XMLImageDataReader`         |
+    +----------------+---------------------------------------------+
+    | ``.vtk``       | :class:`pyvista.VTKDataSetReader`           |
+    +----------------+---------------------------------------------+
+    | ``.vtm``       | :class:`pyvista.XMLMultiBlockDataReader`    |
+    +----------------+---------------------------------------------+
+    | ``.vtmb``      | :class:`pyvista.XMLMultiBlockDataReader`    |
+    +----------------+---------------------------------------------+
+    | ``.vtp``       | :class:`pyvista.XMLPolyDataReader`          |
+    +----------------+---------------------------------------------+
+    | ``.vtr``       | :class:`pyvista.XMLRectilinearGridReader`   |
+    +----------------+---------------------------------------------+
+    | ``.vts``       | :class:`pyvista.XMLStructuredGridReader`    |
+    +----------------+---------------------------------------------+
+    | ``.vtu``       | :class:`pyvista.XMLUnstructuredGridReader`  |
+    +----------------+---------------------------------------------+
+
+    Parameters
+    ----------
+    filename : str
+        The string path to the file to read.
+
+    force_ext : str, optional
+        An extension to force a specific reader to be chosen.
+
+    Returns
+    -------
+    pyvista.BaseReader
+        A subclass of :class:`pyvista.BaseReader` is returned based on file type.
+
+    Examples
+    --------
+    &gt;&gt;&gt; import pyvista
+    &gt;&gt;&gt; from pyvista import examples
+    &gt;&gt;&gt; filename = examples.download_human(load=False)
+    &gt;&gt;&gt; filename.split(&quot;/&quot;)[-1]  # omit the path
+    &#39;Human.vtp&#39;
+    &gt;&gt;&gt; reader = pyvista.get_reader(filename)
+    &gt;&gt;&gt; reader  # doctest: +ELLIPSIS
+    XMLPolyDataReader(&#39;.../Human.vtp&#39;)
+    &gt;&gt;&gt; mesh = reader.read()
+    &gt;&gt;&gt; mesh # doctest: +ELLIPSIS
+    PolyData ...
+    &gt;&gt;&gt; mesh.plot(color=&#39;tan&#39;)
 </pre></div>
 </div>
 <p>The following code block uses a built-in example
@@ -394,7 +621,16 @@ examples below with <code class="docutils literal notranslate"><span class="pre"
 <span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="n">cpos</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_f_read-file_006.png" srcset="../../_images/sphx_glr_f_read-file_006.png" alt="f read file" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.220 seconds)</p>
+<img src="../../_images/sphx_glr_f_read-file_006.png" srcset="../../_images/sphx_glr_f_read-file_006.png" alt="f read file" class = "sphx-glr-single-img"/><section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
+<p>Read a file yourself with <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code>. If you have a supported file
+format, use that! Otherwise, download this file:
+<a class="reference external" href="https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk">https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># (your code here)</span>
+<span class="c1"># mesh = pv.read(&#39;path/to/file.vtk)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.306 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-f-read-file-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/c5320d311941f1a2912faa9b61a506c7/f_read-file.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">f_read-file.py</span></code></a></p>
@@ -404,6 +640,7 @@ examples below with <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
 </section>
 
 

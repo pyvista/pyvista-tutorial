@@ -318,7 +318,7 @@ and can easily have scalar/vector data arrays associated with the point
 cloud. In this example, we’ll work a bit backwards using a point cloud that
 that is available from our <code class="docutils literal notranslate"><span class="pre">examples</span></code> module. This however is no different
 than creating a PyVista mesh with your own NumPy arrays of vertice locations.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some helpers - ignore these and use your own data!</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some helpers - ignore these and use your own data if you like!</span>
 <span class="k">def</span> <span class="nf">generate_points</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="mf">0.02</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;A helper to make a 3D NumPy array of points (n_points by 3)&quot;&quot;&quot;</span>
     <span class="n">dataset</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_lidar</span><span class="p">()</span>
@@ -333,15 +333,19 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.</p
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81053875e+05, 4.40019540e+06, 1.75876001e+03],
-                 [4.80934575e+05, 4.40013870e+06, 1.76334998e+03],
-                 [4.81077175e+05, 4.40015490e+06, 1.77232996e+03],
-                 [4.80984875e+05, 4.40007660e+06, 1.77501001e+03],
-                 [4.81036975e+05, 4.40012670e+06, 1.77321997e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.80945775e+05, 4.40022820e+06, 1.75792004e+03],
+                 [4.81071875e+05, 4.40013620e+06, 1.76064001e+03],
+                 [4.80942075e+05, 4.40012450e+06, 1.76315002e+03],
+                 [4.81045175e+05, 4.40015090e+06, 1.76127002e+03],
+                 [4.81050975e+05, 4.40019760e+06, 1.75859998e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
-data or your own project, creating a PyVista mesh of those points is simply:</p>
+data or your own project, creating a PyVista mesh of those points:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># insert your code here (answer below)</span>
+<span class="n">point_cloud</span> <span class="o">=</span> <span class="o">...</span>
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">point_cloud</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
 <span class="n">point_cloud</span>
 </pre></div>
@@ -354,7 +358,7 @@ data or your own project, creating a PyVista mesh of those points is simply:</p>
 <tr><td>N Points</td><td>67841</td></tr>
 <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
 <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-<tr><td>Z Bounds</td><td>1.754e+03, 1.785e+03</td></tr>
+<tr><td>Z Bounds</td><td>1.754e+03, 1.787e+03</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -384,9 +388,13 @@ mesh.</p>
 Each element in this array will correspond to points at the same index:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make data array using z-component of points array</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">points</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="c1"># Add that data to the mesh with the name &quot;uniform dist&quot;</span>
-<span class="n">point_cloud</span><span class="p">[</span><span class="s2">&quot;elevation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
+</pre></div>
+</div>
+<p>Add that data to the mesh with the name “elevation”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># (add your code here, answer below)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">point_cloud</span><span class="p">[</span><span class="s2">&quot;elevation&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span>
 </pre></div>
 </div>
 <p>And now we can plot the point cloud with that random data. PyVista is smart
@@ -418,11 +426,15 @@ cloud and add those vectors to the mesh.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[-0.73031488, -0.55248361, -0.40174872],
-                 [ 0.56982006,  0.72885442, -0.37957389],
-                 [ 0.52760608, -0.09997365, -0.84358585],
-                 [-0.96729203, -0.17837041,  0.18036107],
-                 [-0.21473499, -0.74852328, -0.62737691]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.66377252, -0.74669362, -0.04306607],
+                 [-0.16587021,  0.80877121, -0.56424836],
+                 [-0.74838519,  0.57561611, -0.32952343],
+                 [-0.45290847, -0.76439107, -0.45889018],
+                 [ 0.63729671,  0.03846196, -0.7696581 ]])
+</pre></div>
+</div>
+<p>Add the vector array as point data to the mesh:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># add your code here (answer below)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">point_cloud</span><span class="p">[</span><span class="s1">&#39;vectors&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">vectors</span>
@@ -446,7 +458,7 @@ cloud and add those vectors to the mesh.</p>
 <span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.100 seconds)</p>
+<img src="../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.959 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-b-create-point-cloud-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b89b4427e5692b40a8a7cd467156e344/b_create-point-cloud.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">b_create-point-cloud.py</span></code></a></p>

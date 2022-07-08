@@ -323,7 +323,6 @@ to download the full example code</p>
 <span id="triangulated-surface"></span><span id="sphx-glr-tutorial-02-mesh-d-create-tri-surface-py"></span><h1>Create Triangulated Surface<a class="headerlink" href="#create-triangulated-surface" title="Permalink to this headline">#</a></h1>
 <p>Create a surface from a set of points through a Delaunay triangulation.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 </pre></div>
 </div>
@@ -344,11 +343,11 @@ to download the full example code</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-196.60570946, -203.96856282,    1.80818071],
-       [-182.64428832, -203.96856282,    2.35623417],
-       [-161.6394409 , -203.96856282,    3.38260463],
-       [-137.25698537, -203.96856282,    4.86972493],
-       [-115.84746916, -203.96856282,    6.3851798 ]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-198.07143794, -195.34565135,    2.0866487 ],
+       [-173.94817786, -195.34565135,    3.26831833],
+       [-161.77578434, -195.34565135,    4.00924839],
+       [-132.82825324, -195.34565135,    6.14111774],
+       [-114.74570704, -195.34565135,    7.6817328 ]])
 </pre></div>
 </div>
 <p>Now use those points to create a point cloud PyVista data object. This will
@@ -359,7 +358,89 @@ be encompassed in a <code class="xref py py-class docutils literal notranslate">
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_d_create-tri-surface_001.png" srcset="../../_images/sphx_glr_d_create-tri-surface_001.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p>Now that we have a PyVista data structure of the points, we can perform a
-triangulation to turn those boring discrete points into a connected surface.</p>
+triangulation to turn those boring discrete points into a connected surface.
+See <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html">https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">cloud</span><span class="o">.</span><span class="n">delaunay_2d</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on method delaunay_2d in module pyvista.core.filters.poly_data:
+
+delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound=False, inplace=False, edge_source=None, progress_bar=False) method of pyvista.core.pointset.PolyData instance
+    Apply a 2D Delaunay filter along the best fitting plane.
+
+    This filter can be used to generate a 2d surface from a set of
+    points on a plane.  If you want to create a surface from a
+    point cloud, see :func:`pyvista.PolyDataFilters.reconstruct_surface`.
+
+    Parameters
+    ----------
+    tol : float, optional
+        Specify a tolerance to control discarding of closely
+        spaced points. This tolerance is specified as a fraction
+        of the diagonal length of the bounding box of the points.
+        Defaults to ``1e-05``.
+
+    alpha : float, optional
+        Specify alpha (or distance) value to control output of
+        this filter. For a non-zero alpha value, only edges or
+        triangles contained within a sphere centered at mesh
+        vertices will be output. Otherwise, only triangles will be
+        output. Defaults to ``0.0``.
+
+    offset : float, optional
+        Specify a multiplier to control the size of the initial,
+        bounding Delaunay triangulation. Defaults to ``1.0``.
+
+    bound : bool, optional
+        Boolean controls whether bounding triangulation points
+        and associated triangles are included in the
+        output. These are introduced as an initial triangulation
+        to begin the triangulation process. This feature is nice
+        for debugging output. Default ``False``.
+
+    inplace : bool, optional
+        If ``True``, overwrite this mesh with the triangulated
+        mesh. Default ``False``.
+
+    edge_source : pyvista.PolyData, optional
+        Specify the source object used to specify constrained
+        edges and loops. If set, and lines/polygons are defined, a
+        constrained triangulation is created. The lines/polygons
+        are assumed to reference points in the input point set
+        (i.e. point ids are identical in the input and
+        source).
+
+    progress_bar : bool, optional
+        Display a progress bar to indicate progress. Default
+        ``False``.
+
+    Returns
+    -------
+    pyvista.PolyData
+        Mesh from the 2D delaunay filter.
+
+    Examples
+    --------
+    First, generate 30 points on circle and plot them.
+
+    &gt;&gt;&gt; import pyvista
+    &gt;&gt;&gt; points = pyvista.Polygon(n_sides=30).points
+    &gt;&gt;&gt; circle = pyvista.PolyData(points)
+    &gt;&gt;&gt; circle.plot(show_edges=True, point_size=15)
+
+    Use :func:`delaunay_2d` to fill the interior of the circle.
+
+    &gt;&gt;&gt; filled_circle = circle.delaunay_2d()
+    &gt;&gt;&gt; filled_circle.plot(show_edges=True, line_width=5)
+
+    See :ref:`triangulated_surface` for more examples using this filter.
+</pre></div>
+</div>
+<p>Apply the <cite>delaunay_2d</cite> filter</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># (your code here, answer below)</span>
+</pre></div>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surf</span> <span class="o">=</span> <span class="n">cloud</span><span class="o">.</span><span class="n">delaunay_2d</span><span class="p">()</span>
 <span class="n">surf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -384,8 +465,8 @@ triangulation to turn those boring discrete points into a connected surface.</p>
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
-<tr><td>X Bounds</td><td>1.111e-02, 9.271e+00</td></tr>
-<tr><td>Y Bounds</td><td>1.627e-03, 9.220e+00</td></tr>
+<tr><td>X Bounds</td><td>3.195e-02, 9.264e+00</td></tr>
+<tr><td>Y Bounds</td><td>1.651e-02, 9.277e+00</td></tr>
 <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
@@ -424,7 +505,7 @@ added unwanted triangles. We can mitigate that with the <code class="docutils li
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.327 seconds)</p>
+<img src="../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.303 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-d-create-tri-surface-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/63882c876038ea8226f518dfac0af187/d_create-tri-surface.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">d_create-tri-surface.py</span></code></a></p>

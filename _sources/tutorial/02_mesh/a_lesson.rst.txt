@@ -21,10 +21,11 @@
 Lesson Overview
 ~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 6-11
+This exercise overviews the code in the initial lesson for you to try out!
+
+.. GENERATED FROM PYTHON SOURCE LINES 8-12
 
 .. code-block:: default
-
 
     import numpy as np
     import pyvista as pv
@@ -37,14 +38,15 @@ Lesson Overview
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-16
+.. GENERATED FROM PYTHON SOURCE LINES 14-19
 
 What is a Point?
 ^^^^^^^^^^^^^^^^
 
-Let’s start with a point cloud – this is a mesh type that only has vertices. You can create one by defining a 2D array of Cartesian coordinates like so:
+Let’s start with a point cloud – this is a mesh type that only has vertices.
+You can create one by defining a 2D array of Cartesian coordinates like so:
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-20
+.. GENERATED FROM PYTHON SOURCE LINES 19-23
 
 .. code-block:: default
 
@@ -63,19 +65,19 @@ Let’s start with a point cloud – this is a mesh type that only has vertices.
  .. code-block:: none
 
 
-    array([[0.36138456, 0.86039695, 0.47512566],
-           [0.06146458, 0.49009167, 0.73924756],
-           [0.70571284, 0.14613323, 0.73039158],
-           [0.91207289, 0.24826219, 0.89951682],
-           [0.17338721, 0.63452063, 0.46852498]])
+    array([[0.79109945, 0.62913194, 0.62364944],
+           [0.87359532, 0.87949721, 0.63311449],
+           [0.52230795, 0.92158264, 0.71455563],
+           [0.50573014, 0.22712311, 0.2512884 ],
+           [0.7042916 , 0.89102194, 0.54797484]])
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-22
+.. GENERATED FROM PYTHON SOURCE LINES 24-25
 
 Pass numpy array of points (n by 3) to PolyData
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-25
+.. GENERATED FROM PYTHON SOURCE LINES 25-28
 
 .. code-block:: default
 
@@ -95,9 +97,9 @@ Pass numpy array of points (n by 3) to PolyData
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
-    <tr><td>X Bounds</td><td>2.006e-02, 9.853e-01</td></tr>
-    <tr><td>Y Bounds</td><td>1.689e-03, 9.962e-01</td></tr>
-    <tr><td>Z Bounds</td><td>8.204e-03, 9.816e-01</td></tr>
+    <tr><td>X Bounds</td><td>2.732e-03, 9.994e-01</td></tr>
+    <tr><td>Y Bounds</td><td>1.046e-02, 9.876e-01</td></tr>
+    <tr><td>Z Bounds</td><td>2.379e-04, 9.758e-01</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -106,7 +108,7 @@ Pass numpy array of points (n by 3) to PolyData
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-28
+.. GENERATED FROM PYTHON SOURCE LINES 29-31
 
 .. code-block:: default
 
@@ -124,11 +126,12 @@ Pass numpy array of points (n by 3) to PolyData
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-30
+.. GENERATED FROM PYTHON SOURCE LINES 32-34
 
-But it’s important to note that most meshes have some sort of connectivity between points such as this gridded mesh:
+But it’s important to note that most meshes have some sort of connectivity
+between points such as this gridded mesh:
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-40
+.. GENERATED FROM PYTHON SOURCE LINES 34-44
 
 .. code-block:: default
 
@@ -154,7 +157,7 @@ But it’s important to note that most meshes have some sort of connectivity bet
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-49
+.. GENERATED FROM PYTHON SOURCE LINES 45-53
 
 .. code-block:: default
 
@@ -178,14 +181,18 @@ But it’s important to note that most meshes have some sort of connectivity bet
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-54
+.. GENERATED FROM PYTHON SOURCE LINES 54-62
 
 What is a Cell?
 ^^^^^^^^^^^^^^^
 
-A cell is the geometry between points that defines the connectivity or topology of a mesh. In the examples above, cells are defined by the lines (edges colored in black) connecting points (colored in red). For example, a cell in the beam example is a voxel defined by the region between eight points in that mesh:
+A cell is the geometry between points that defines the connectivity or
+topology of a mesh. In the examples above, cells are defined by the lines
+(edges colored in black) connecting points (colored in red). For example, a
+cell in the beam example is a voxel defined by the region between eight
+points in that mesh:
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-67
+.. GENERATED FROM PYTHON SOURCE LINES 62-75
 
 .. code-block:: default
 
@@ -214,24 +221,34 @@ A cell is the geometry between points that defines the connectivity or topology 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-69
+.. GENERATED FROM PYTHON SOURCE LINES 76-79
 
-Cells aren’t limited to voxels, they could be a triangle between three points, a line between two points, or even a single point could be its own cell (but that’s a special case).
+Cells aren’t limited to voxels, they could be a triangle between three
+points, a line between two points, or even a single point could be its own
+cell (but that’s a special case).
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-75
+.. GENERATED FROM PYTHON SOURCE LINES 81-90
 
 What are attributes?
 ^^^^^^^^^^^^^^^^^^^^
 
-Attributes are data values that live on either the points or cells of a mesh. In PyVista, we work with both point data and cell data and allow easy access to data dictionaries to hold arrays for attributes that live either on all points or on all cells of a mesh. These attributes can be accessed in a dictionary-like attribute attached to any PyVista mesh accessible as one of the following:
+Attributes are data values that live on either the points or cells of a mesh.
+In PyVista, we work with both point data and cell data and allow easy access
+to data dictionaries to hold arrays for attributes that live either on all
+points or on all cells of a mesh. These attributes can be accessed in a
+dictionary-like attribute attached to any PyVista mesh accessible as one
+of the following:
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-80
+.. GENERATED FROM PYTHON SOURCE LINES 92-98
 
 Point Data
 ~~~~~~~~~~
-Point data refers to arrays of values (scalars, vectors, etc.) that live on each point of the mesh. Each element in an attribute array corresponds to a point in the mesh. Let’s create some point data for the beam mesh. When plotting, the values between points are interpolated across the cells.
+Point data refers to arrays of values (scalars, vectors, etc.) that live on
+each point of the mesh. Each element in an attribute array corresponds to a
+point in the mesh. Let’s create some point data for the beam mesh. When
+plotting, the values between points are interpolated across the cells.
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-84
+.. GENERATED FROM PYTHON SOURCE LINES 98-102
 
 .. code-block:: default
 
@@ -251,13 +268,15 @@ Point data refers to arrays of values (scalars, vectors, etc.) that live on each
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-88
+.. GENERATED FROM PYTHON SOURCE LINES 103-108
 
 Cell Data
 ~~~~~~~~~~
-Cell data refers to arrays of values (scalars, vectors, etc.) that live throughout each cell of the mesh. That is the entire cell (2D face or 3D volume) is assigned the value of that attribute.
+Cell data refers to arrays of values (scalars, vectors, etc.) that live
+throughout each cell of the mesh. That is the entire cell (2D face or 3D
+volume) is assigned the value of that attribute.
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-92
+.. GENERATED FROM PYTHON SOURCE LINES 108-112
 
 .. code-block:: default
 
@@ -277,11 +296,13 @@ Cell data refers to arrays of values (scalars, vectors, etc.) that live througho
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-94
+.. GENERATED FROM PYTHON SOURCE LINES 113-116
 
-Here’s a comparison of point data versus cell data and how point data is interpolated across cells when mapping colors. This is unlike cell data which has a single value across the cell’s domain:
+Here’s a comparison of point data versus cell data and how point data is
+interpolated across cells when mapping colors. This is unlike cell data
+which has a single value across the cell’s domain:
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-106
+.. GENERATED FROM PYTHON SOURCE LINES 116-128
 
 .. code-block:: default
 
@@ -309,22 +330,51 @@ Here’s a comparison of point data versus cell data and how point data is inter
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-110
+.. GENERATED FROM PYTHON SOURCE LINES 129-133
 
 Field Data
 ~~~~~~~~~~
-Field data is not directly associated with either the points or cells but still should be attached to the mesh. This may be a string array storing notes.
+Field data is not directly associated with either the points or cells but
+still should be attached to the mesh. This may be a string array storing notes.
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-118
+.. GENERATED FROM PYTHON SOURCE LINES 133-137
+
+.. code-block:: default
+
+    mesh = pv.Cube()
+    mesh.field_data['metadata'] = ['Foo', 'bar']
+    mesh.field_data
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+
+    pyvista DataSetAttributes
+    Association     : NONE
+    Contains arrays :
+        metadata                <U3        (2,)
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 138-146
 
 Assigning Scalars to a Mesh
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here’s how we assign values to cell attributes and plot it. Here, we generate cube containing 6 faces and assign each face an integer from range(6) and then have it plotted.
+Here’s how we assign values to cell attributes and plot it. Here, we
+generate cube containing 6 faces and assign each face an integer from
+``range(6)`` and then have it plotted.
 
 Note how this varies from assigning scalars to each point
 
-.. GENERATED FROM PYTHON SOURCE LINES 118-129
+.. GENERATED FROM PYTHON SOURCE LINES 146-157
 
 .. code-block:: default
 
@@ -354,7 +404,7 @@ Note how this varies from assigning scalars to each point
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.652 seconds)
+   **Total running time of the script:** ( 0 minutes  3.740 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_a_lesson.py:
