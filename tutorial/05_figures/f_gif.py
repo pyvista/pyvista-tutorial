@@ -12,7 +12,6 @@ Generate a moving gif from an active plotter.
 """
 
 import numpy as np
-
 import pyvista as pv
 
 x = np.arange(-10, 10, 0.5)
