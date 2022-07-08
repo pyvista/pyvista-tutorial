@@ -1,11 +1,48 @@
 PyVista Tutorial for `SciPy 2022 <https://www.scipy2022.scipy.org/>`_
 =====================================================================
 
-.. video:: videos/pyvista_intro.mp4
-   :width: 960
-   :height: 540
-   :autoplay:
-   :nocontrols:
+.. toctree::
+   :maxdepth: 2
+   :hidden:
+
+   getting-started
+   tutorial
+
+Welcome to PyVista's tutorial for `SciPy 2022 <https://www.scipy2022.scipy.org/>`_!
+
+Here you can find all the resources to be up and running with PyVista in no
+time. Feel free to reference our dedicated documentation at `PyVista
+Documentation <https://docs.pyvista.org/>`_
+
+.. tabs::
+
+   .. tab:: JupyterLab
+
+      Here's a quick demo of PyVista running within `Jupyterlab
+      <https://jupyter.org/>`_.
+
+      .. raw:: html
+
+         <video width="100%" height="auto" controls autoplay muted>
+           <source src="_static/pyvista_jupyterlab_demo.mp4" type="video/mp4">
+           Your browser does not support the video tag.
+         </video>
+
+   .. tab:: iPython
+
+      Here's a quick demo of PyVista running within a terminal using `iPython
+      <https://ipython.org/>`_.
+
+      .. raw:: html
+
+         <video width="100%" height="auto" controls autoplay muted>
+           <source src="_static/pyvista_ipython_demo.mp4" type="video/mp4">
+           Your browser does not support the video tag.
+         </video>
+
+
+Quick Links
+-----------
 
 .. panels::
     :card: + install-card
@@ -38,38 +75,23 @@ PyVista Tutorial for `SciPy 2022 <https://www.scipy2022.scipy.org/>`_
         :classes: btn-outline-primary btn-block stretched-link
 
 
-.. toctree::
-   :maxdepth: 2
-   :hidden:
+Example Gallery
+---------------
 
-   getting-started
-   tutorial
-
+Click below for our extensive example gallery!
 
 .. image:: _static/pyvista_banner.png
+   :target: http://docs.pyvista.org/examples/index.html
 
 
-Abstract
---------
+PyVista Overview
+----------------
 
 `PyVista <https://github.com/pyvista/pyvista>`_ is a general purpose 3D visualization library used for over 500+ open source projects and many closed source projects for the visualization of everything from `computer aided engineering and geophysics to volcanoes and digital artwork <https://dev.pyvista.org/getting-started/external_examples.html>`_.
 
 PyVista exposes a Pythonic API to the `Visualization Toolkit (VTK) <http://www.vtk.org>`_ to provide tooling that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of `matplotlib <https://matplotlib.org/>`_, with plugins to `Jupyter <https://jupyter.org/>`_ to enable visualization of 3D data using both server and client-side rendering.
 
 We will provide a hands-on tutorial accessible to anyone with internet access and a computer via many of PyVista's existing `example Jupyter notebooks <https://docs.pyvista.org/examples/index.html>`_ and new material through a comprehensive overview highlighting popular 3D visualization use cases.
-
-Keywords
---------
-
-- `visualization <https://github.com/topics/visualization>`_
-- `meshviewer <https://github.com/topics/meshviewer>`_
-- `vtk <https://github.com/topics/vtk>`_
-- `3d <https://github.com/topics/3d>`_
-
-Other Information and Files
----------------------------
-
-See our `Example Gallery <http://docs.pyvista.org/examples/index.html>`_
 
 
 Tutorial Description
