@@ -6,6 +6,7 @@ Demonstrate how to use PyVista to create standalone applications using pyinstall
 
 """
 # sphinx_gallery_thumbnail_number = 2
+import os
 
 ###############################################################################
 # Overview
@@ -22,12 +23,12 @@ Demonstrate how to use PyVista to create standalone applications using pyinstall
 # Getting Started
 # ^^^^^^^^^^^^^^^
 
-get_ipython().system('pip install pyqt5')
+os.system('pip install pyqt5')
 
 ###############################################################################
 # Installation using `pip` is:
 
-get_ipython().system('pip install pyvistaqt')
+os.system('pip install pyvistaqt')
 
 
 ###############################################################################
@@ -45,7 +46,7 @@ get_ipython().system('pip install pyvistaqt')
 
 import pyvistaqt
 
-get_ipython().run_line_magic('pinfo', 'pyvistaqt.BackgroundPlotter')
+help('pyvistaqt.BackgroundPlotter')
 
 
 ###############################################################################
@@ -54,7 +55,7 @@ get_ipython().run_line_magic('pinfo', 'pyvistaqt.BackgroundPlotter')
 #
 # Create an instance of the `pyvistaqt.BackgroundPlotter` and plot a sphere.
 
-get_ipython().run_line_magic('pinfo', 'pyvistaqt.BackgroundPlotter')
+help('pyvistaqt.BackgroundPlotter')
 
 ###############################################################################
 
@@ -128,7 +129,7 @@ mp[1, 1].add_mesh(pv.Cone())
 # The following example shows how to create a simple application that adds a
 # sphere to an empty plotting window.
 
-get_ipython().run_line_magic('load', './examples_qt/main.py')
+# %% load './examples_qt/main.py'
 
 
 ###############################################################################
@@ -138,7 +139,7 @@ get_ipython().run_line_magic('load', './examples_qt/main.py')
 # To use different Qt bindings you must first install them. For example, to use
 # `PySide2`, you install it via:
 
-get_ipython().system('pip install PySide2')
+os.system('pip install PySide2')
 
 
 ###############################################################################
@@ -189,11 +190,11 @@ os.environ["QT_API"] = "pyside2"
 # Python Application app.py
 # ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-get_ipython().run_line_magic('load', 'examples_flask/static_ex/app.py')
+# %%load 'examples_flask/static_ex/app.py'
 
 ###############################################################################
 
-get_ipython().system('cd examples_flask/static_ex && python app.py')
+os.system('cd examples_flask/static_ex && python app.py')
 
 
 ###############################################################################
@@ -206,5 +207,5 @@ get_ipython().system('cd examples_flask/static_ex && python app.py')
 # This template returns the `meshtype` parameter back to the `get_img` method
 # in the flask app, which is used to select the type of mesh to be plotted.
 
-get_ipython().run_line_magic('load', 'examples_flask/static_ex/templates/index.html')
+# %%load 'examples_flask/static_ex/templates/index.html
 
