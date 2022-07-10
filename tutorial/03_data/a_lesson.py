@@ -2,7 +2,7 @@
 Lesson Overview
 ~~~~~~~~~~~~~~~
 
-This exercise overviews the code in the initial lesson for you to try out!
+This exercise provides an overview of the content in the initial lesson for you to try out!
 
 """
 # sphinx_gallery_thumbnail_number = 2
