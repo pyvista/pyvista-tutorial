@@ -1,4 +1,6 @@
 pyvista
+flask==2.1.2
+pyinstaller==5.1
 sphinx
 jupyterlab
 ipyvtklink

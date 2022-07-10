@@ -11,7 +11,6 @@ PyVista can be installed with :ref:`conda`, with :ref:`pip`, run on the cloud
 using Google Colab or MyBinder. For more detailed instructions, see the Python
 installation guide below.
 
-
 Installation
 ------------
 
