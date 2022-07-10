@@ -60,6 +60,7 @@ author = 'PyVista Developers'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinxcontrib.asciinema',
     'sphinx_tabs.tabs',
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
