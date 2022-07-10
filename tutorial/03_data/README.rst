@@ -15,7 +15,7 @@ Learn about the data model of the PyVista framework and how you can visualize yo
 
 This section of the user guide explains in detail how to construct
 meshes from scratch and to utilize the underlying VTK data model but
-using the PyVista framework.  Many of our :ref:`ref_examples` simply
+using the PyVista framework.  Many of our `Examples <https://docs.pyvista.org/examples/index.html#ref-examples>`_ simply
 load data from files, but don't explain how to construct meshes or
 place data within datasets.
 
@@ -24,7 +24,7 @@ place data within datasets.
    not require that you have knowledge of VTK.  For those who wish to
    see a detailed comparison to VTK or translate code written for the
    Python bindings of VTK to PyVista, please see
-   :ref:`vtk_to_pyvista_docs`.
+   `Transitioning from VTK to PyVista <https://docs.pyvista.org/user-guide/vtk_to_pyvista.html#vtk-to-pyvista-docs>`_.
 
 For a more general description of our API, see :ref:`mesh`.
 
@@ -61,7 +61,7 @@ will help improve your understanding of why data sets are structured
 the way they are in libraries like VTK.
 
 At the most fundamental level, all PyVista geometry classes inherit
-from the :ref:`ref_dataset` class. A dataset has geometry, topology,
+from the `Data Sets <https://docs.pyvista.org/api/core/dataset.html#ref-dataset>`_ class. A dataset has geometry, topology,
 and attributes describing that geometry in the form of point, cell, or
 field arrays.
 
@@ -358,7 +358,7 @@ In this representation we see:
 * Number of data arrays :attr:`n_arrays <pyvista.DataSet.n_arrays>`
 
 This is vastly different from the output from VTK.  See
-:ref:`vtk_vs_pyvista_object_repr` for the comparison between the two
+`Object Representation <https://docs.pyvista.org/user-guide/vtk_to_pyvista.html#vtk-vs-pyvista-object-repr>`_ for the comparison between the two
 representations.
 
 This mesh contains no data arrays as it consists only of geometry. This
