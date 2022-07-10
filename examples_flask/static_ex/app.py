@@ -10,7 +10,6 @@ static_ex/
 import os
 
 from flask import Flask, escape, render_template, request
-
 import pyvista
 
 static_image_path = os.path.join('static', 'images')
