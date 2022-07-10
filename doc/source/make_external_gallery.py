@@ -179,7 +179,7 @@ Show how PyVista is already being used within several projects and can be used f
 
 .. tip::
 
-    This section of the tutorial was adopted from `External Examples <https://docs.pyvista.org/getting-started/external_examples.html>`
+    This section of the tutorial was adopted from `External Examples <https://docs.pyvista.org/getting-started/external_examples.html>`_
     chapter of the PyVista documentation.
 
 
