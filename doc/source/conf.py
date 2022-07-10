@@ -22,6 +22,11 @@ if sys.version_info >= (3, 0):
 
     faulthandler.enable()
 
+sys.path.insert(0, os.path.abspath("."))
+import make_external_gallery
+
+make_external_gallery.make_example_gallery()
+
 # -- PyVista configuration ---------------------------------------------------
 import pyvista
 
@@ -196,7 +201,6 @@ tutorial_dirs = [
     '../../tutorial/07_break/',
     '../../tutorial/08_vtk/',
     '../../tutorial/09_qt/',
-    '../../tutorial/10_action/',
 ]
 
 sphinx_gallery_conf = {
