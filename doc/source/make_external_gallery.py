@@ -224,6 +224,9 @@ Here are a list of longer, more technical examples of what PyVista can do!
 
     # write if different or does not exist
     if new_text != existing:
+        dirname = os.path.dirname(path)
+        if not os.path.exists(dirname):
+            os.makedirs(dirname)
         with open(path, "w") as fid:
             fid.write(new_text)
 
