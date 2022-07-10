@@ -28,11 +28,11 @@ Welcome to the PyVista Tutorial created for SciPy 2022
 
 2. :ref:`mesh` (Bane Sullivan) - Learn about the PyVista data types and how you can use it to visualize almost anything. (15 min for talk, 10 min for exercise)
 
-3. :ref:`data` (Tetsuo Koyama) - Learn about the data model of the PyVista framework and how you can visualize your data in style using point, cell, and field data. (15 min for talk, 10 min for exercise)
+3. :ref:`data` (Bane Sullivan) - Learn about the data model of the PyVista framework and how you can visualize your data in style using point, cell, and field data. (15 min for talk, 10 min for exercise)
 
 4. Break. Stretch fingers and grab some coffee. (15 minutes)
 
-5. :ref:`figures` (Bane Sullivan) - Show how to animate/generating figures using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
+5. :ref:`figures` (Tetsuo Koyama) - Show how to animate/generating figures using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
 
 6. :ref:`sphinx` (Alexander Kaszynski) - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
 
