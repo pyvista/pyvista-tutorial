@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Powerline Symbols';
+    src: url('PowerlineSymbols.otf') format('opentype');
+}
+
+.asciinema-terminal {
+  font-family: Consolas, Menlo, 'Bitstream Vera Sans Mono', monospace, 'Powerline Symbols';
+}
+
+.asciinema-player-wrapper {
+    text-align: left !important;
+    padding-bottom: 25px;
+}
