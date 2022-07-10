@@ -222,10 +222,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03_data/index.html">
    PyVista Data Model
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_data/a_lesson.html">
+     Lesson Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_data/b_exercise.html">
+     Exercise
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../04_break/index.html">
@@ -236,8 +253,8 @@
   <a class="reference internal" href="../05_figures/index.html">
    Plotting Options and Animations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -298,8 +315,8 @@
   <a class="reference internal" href="index.html">
    PyVista &amp; VTK
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -425,7 +442,7 @@ to download the full example code</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;vtkmodules.vtkCommonDataModel.vtkImageData(0x5619493db9f0) at 0x7f7fd43fdac0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;vtkmodules.vtkCommonDataModel.vtkImageData(0x561d911f6940) at 0x7f42a115f040&gt;
 </pre></div>
 </div>
 <p>Plot with PyVista for simplicity</p>
@@ -457,7 +474,7 @@ to download the full example code</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;vtkmodules.vtkCommonDataModel.vtkStructuredGrid(0x561948c43760) at 0x7f7fd43fddc0&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;vtkmodules.vtkCommonDataModel.vtkStructuredGrid(0x561d8c9e3df0) at 0x7f4297135a00&gt;
 </pre></div>
 </div>
 <p>Add point data</p>
@@ -474,7 +491,7 @@ to download the full example code</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pv</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_create_002.png" srcset="../../_images/sphx_glr_a_create_002.png" alt="a create" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.686 seconds)</p>
+<img src="../../_images/sphx_glr_a_create_002.png" srcset="../../_images/sphx_glr_a_create_002.png" alt="a create" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.628 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-08-vtk-a-create-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/dc6965f67ae1eb0898cf5914c340d93d/a_create.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">a_create.py</span></code></a></p>

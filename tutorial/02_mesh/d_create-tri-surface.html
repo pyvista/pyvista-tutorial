@@ -222,10 +222,27 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../03_data/index.html">
    PyVista Data Model
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_data/a_lesson.html">
+     Lesson Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_data/b_exercise.html">
+     Exercise
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../04_break/index.html">
@@ -236,8 +253,8 @@
   <a class="reference internal" href="../05_figures/index.html">
    Plotting Options and Animations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -298,8 +315,8 @@
   <a class="reference internal" href="../08_vtk/index.html">
    PyVista &amp; VTK
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -408,11 +425,11 @@ to download the full example code</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-199.80009872, -195.23463224,    2.02048611],
-       [-173.98411347, -195.23463224,    3.27336503],
-       [-152.99195794, -195.23463224,    4.61363083],
-       [-137.94658525, -195.23463224,    5.74241059],
-       [-112.1774911 , -195.23463224,    7.92603277]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-200.21925342, -195.6393172 ,    1.98783398],
+       [-180.24860653, -195.6393172 ,    2.90651584],
+       [-154.10549433, -195.6393172 ,    4.49968725],
+       [-141.6658192 , -195.6393172 ,    5.40850572],
+       [-118.01021847, -195.6393172 ,    7.35303006]])
 </pre></div>
 </div>
 <p>Now use those points to create a point cloud PyVista data object. This will
@@ -530,8 +547,8 @@ delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound=False, inplace=False, edge_s
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
-<tr><td>X Bounds</td><td>2.552e-02, 9.258e+00</td></tr>
-<tr><td>Y Bounds</td><td>2.466e-02, 9.296e+00</td></tr>
+<tr><td>X Bounds</td><td>2.193e-03, 9.274e+00</td></tr>
+<tr><td>Y Bounds</td><td>3.787e-02, 9.295e+00</td></tr>
 <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
@@ -570,7 +587,7 @@ added unwanted triangles. We can mitigate that with the <code class="docutils li
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.270 seconds)</p>
+<img src="../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.391 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-d-create-tri-surface-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/63882c876038ea8226f518dfac0af187/d_create-tri-surface.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">d_create-tri-surface.py</span></code></a></p>
