@@ -26,7 +26,7 @@ place data within datasets.
    Python bindings of VTK to PyVista, please see
    :ref:`vtk_to_pyvista_docs`.
 
-For a more general description of our API, see :ref:`what_is_a_mesh`.
+For a more general description of our API, see :ref:`mesh`.
 
 
 The PyVista DataSet
