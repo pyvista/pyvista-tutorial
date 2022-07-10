@@ -8095,7 +8095,7 @@ See the PyVista documentation for further details on
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.496 seconds)
+   **Total running time of the script:** ( 0 minutes  6.879 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_e_create-uniform-grid.py:

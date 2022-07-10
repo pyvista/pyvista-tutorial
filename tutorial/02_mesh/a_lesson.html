@@ -341,10 +341,102 @@
    PyVista and Qt
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../10_action/index.html">
    PyVista in Action
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/camurban/pterasoftware">
+     PteraSoftware
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://laustep.github.io/stlahblog/posts/MyPyVistaArtworks.html">
+     Stﾃｩphane Laurent's artwork
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://jacobbumgarner.github.io/VesselVio/">
+     VesselVio
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://dennissergeev.github.io/exoconvection-apj-2020/">
+     Atmospheric Convection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://nbviewer.jupyter.org/github/banesullivan/damavand-volcano/blob/master/Damavand_Volcano.ipynb">
+     Damavand Volcano
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.youtube.com/watch?v=cCPjnF_vHxw&amp;feature=youtu.be">
+     Anvil Cirrus Plumes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://gist.github.com/hichamjanati/6668d91848283c31ac18d801552fb582">
+     Optimization visualization with PyVista
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/johnjarmitage/flem">
+     FLEM: A diffusive landscape evolution model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/BartheG/Orvisu">
+     Orvisu Demo Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="http://pymeshfix.pyvista.org/examples/index.html">
+     PyMeshFix's example gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="http://tetgen.pyvista.org/examples/index.html">
+     TetGen's example gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://pvgeo.org/examples/index.html">
+     PVGeo's example gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://forge.pvgeo.org/project/index.html">
+     FORGE Geothermal Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://peterdsharpe.github.io/AeroSandbox/">
+     AeroSandbox
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://pswpswpsw.github.io/posts/2018/09/blog-post-modify-vtk-openfoam/">
+     OpenFOAM Rendering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="http://discretize.simpeg.xyz/en/main/examples/plot_pyvista_laguna.html">
+     3D Rendering with Discretize
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://opengeovis.github.io/omfvista/examples/index.html">
+     3D visualization for the Open Mining Format (omf)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -453,11 +545,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.41550921, 0.57899821, 0.76034933],
-       [0.2356575 , 0.77769194, 0.87119156],
-       [0.31617696, 0.43269391, 0.951875  ],
-       [0.03799786, 0.3336046 , 0.79519267],
-       [0.56115952, 0.68935524, 0.71705659]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.4468257 , 0.37505221, 0.5026686 ],
+       [0.49701442, 0.50447314, 0.54723689],
+       [0.21265265, 0.84523676, 0.78663746],
+       [0.82586744, 0.28195587, 0.09739098],
+       [0.39889415, 0.3603702 , 0.86113552]])
 </pre></div>
 </div>
 <p>Pass numpy array of points (n by 3) to PolyData</p>
@@ -471,9 +563,9 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
-<tr><td>X Bounds</td><td>8.101e-03, 9.938e-01</td></tr>
-<tr><td>Y Bounds</td><td>7.150e-03, 9.896e-01</td></tr>
-<tr><td>Z Bounds</td><td>3.876e-02, 9.980e-01</td></tr>
+<tr><td>X Bounds</td><td>1.674e-02, 9.951e-01</td></tr>
+<tr><td>Y Bounds</td><td>3.733e-02, 9.854e-01</td></tr>
+<tr><td>Z Bounds</td><td>1.405e-02, 9.921e-01</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -611,7 +703,7 @@ generate cube containing 6 faces and assign each face an integer from
 <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_008.png" srcset="../../_images/sphx_glr_a_lesson_008.png" alt="a lesson" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.678 seconds)</p>
+<img src="../../_images/sphx_glr_a_lesson_008.png" srcset="../../_images/sphx_glr_a_lesson_008.png" alt="a lesson" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.607 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-a-lesson-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b39e3aa2cd7b3fc0ef698272b4121e62/a_lesson.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">a_lesson.py</span></code></a></p>

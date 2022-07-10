@@ -341,10 +341,102 @@
    PyVista and Qt
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../10_action/index.html">
    PyVista in Action
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/camurban/pterasoftware">
+     PteraSoftware
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://laustep.github.io/stlahblog/posts/MyPyVistaArtworks.html">
+     Stﾃｩphane Laurent's artwork
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://jacobbumgarner.github.io/VesselVio/">
+     VesselVio
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://dennissergeev.github.io/exoconvection-apj-2020/">
+     Atmospheric Convection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://nbviewer.jupyter.org/github/banesullivan/damavand-volcano/blob/master/Damavand_Volcano.ipynb">
+     Damavand Volcano
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.youtube.com/watch?v=cCPjnF_vHxw&amp;feature=youtu.be">
+     Anvil Cirrus Plumes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://gist.github.com/hichamjanati/6668d91848283c31ac18d801552fb582">
+     Optimization visualization with PyVista
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/johnjarmitage/flem">
+     FLEM: A diffusive landscape evolution model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/BartheG/Orvisu">
+     Orvisu Demo Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="http://pymeshfix.pyvista.org/examples/index.html">
+     PyMeshFix's example gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="http://tetgen.pyvista.org/examples/index.html">
+     TetGen's example gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://pvgeo.org/examples/index.html">
+     PVGeo's example gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://forge.pvgeo.org/project/index.html">
+     FORGE Geothermal Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://peterdsharpe.github.io/AeroSandbox/">
+     AeroSandbox
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://pswpswpsw.github.io/posts/2018/09/blog-post-modify-vtk-openfoam/">
+     OpenFOAM Rendering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="http://discretize.simpeg.xyz/en/main/examples/plot_pyvista_laguna.html">
+     3D Rendering with Discretize
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://opengeovis.github.io/omfvista/examples/index.html">
+     3D visualization for the Open Mining Format (omf)
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -418,11 +510,11 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.</p
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81086675e+05, 4.40008400e+06, 1.77856995e+03],
-                 [4.81035675e+05, 4.40019380e+06, 1.75915002e+03],
-                 [4.80963875e+05, 4.40015790e+06, 1.76058997e+03],
-                 [4.81070875e+05, 4.40007860e+06, 1.77880005e+03],
-                 [4.81040975e+05, 4.40010310e+06, 1.76205005e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81021175e+05, 4.40009700e+06, 1.76255005e+03],
+                 [4.81023175e+05, 4.40009020e+06, 1.76673999e+03],
+                 [4.81055875e+05, 4.40023970e+06, 1.75756995e+03],
+                 [4.81122475e+05, 4.40010810e+06, 1.75948999e+03],
+                 [4.81072375e+05, 4.40018600e+06, 1.75883997e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -511,11 +603,11 @@ cloud and add those vectors to the mesh.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.5129626 ,  0.64846478,  0.56246137],
-                 [-0.59793913,  0.43583152,  0.67269584],
-                 [-0.61189147, -0.12037509, -0.781728  ],
-                 [-0.30096985, -0.83880335,  0.45368059],
-                 [ 0.98105792, -0.09368031,  0.16955637]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.74669544,  0.58833764, -0.31033006],
+                 [ 0.55885563,  0.45944347,  0.69035649],
+                 [ 0.74207227, -0.61333296,  0.27046519],
+                 [-0.43804403, -0.59023122,  0.67804464],
+                 [ 0.20953877,  0.07765778, -0.97471164]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the mesh:</p>
@@ -543,7 +635,7 @@ cloud and add those vectors to the mesh.</p>
 <span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.098 seconds)</p>
+<img src="../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.245 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-b-create-point-cloud-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b89b4427e5692b40a8a7cd467156e344/b_create-point-cloud.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">b_create-point-cloud.py</span></code></a></p>
