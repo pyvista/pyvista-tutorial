@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         Click :ref:`here <sphx_glr_download_tutorial_02_mesh_c_create-uniform-grid.py>`
-        to download the full example code
+        to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -8095,7 +8095,7 @@ See the PyVista documentation for further details on
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.839 seconds)
+   **Total running time of the script:** ( 0 minutes  5.473 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_c_create-uniform-grid.py:
@@ -8106,6 +8106,13 @@ See the PyVista documentation for further details on
  .. container:: sphx-glr-footer
     :class: sphx-glr-footer-example
 
+
+  .. container:: binder-badge
+
+    .. image:: images/binder_badge_logo.svg
+      :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/c_create-uniform-grid.ipynb
+      :alt: Launch binder
+      :width: 150 px
 
 
   .. container:: sphx-glr-download sphx-glr-download-python

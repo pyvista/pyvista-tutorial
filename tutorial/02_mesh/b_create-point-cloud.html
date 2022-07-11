@@ -491,7 +491,7 @@
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p>Click <a class="reference internal" href="#sphx-glr-download-tutorial-02-mesh-b-create-point-cloud-py"><span class="std std-ref">here</span></a>
-to download the full example code</p>
+to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="create-point-cloud">
 <span id="sphx-glr-tutorial-02-mesh-b-create-point-cloud-py"></span><span id="id1"></span><h1>Create Point Cloud<a class="headerlink" href="#create-point-cloud" title="Permalink to this headline">#</a></h1>
@@ -522,11 +522,11 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.</p
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81024675e+05, 4.40015450e+06, 1.76075000e+03],
-                 [4.81013675e+05, 4.40020510e+06, 1.75862000e+03],
-                 [4.80979675e+05, 4.40020700e+06, 1.75881006e+03],
-                 [4.81039975e+05, 4.40018260e+06, 1.75962000e+03],
-                 [4.80957675e+05, 4.40015880e+06, 1.76062000e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81092475e+05, 4.40011010e+06, 1.76342004e+03],
+                 [4.80946175e+05, 4.40013760e+06, 1.76243005e+03],
+                 [4.81062075e+05, 4.40024080e+06, 1.75710999e+03],
+                 [4.80946375e+05, 4.40022770e+06, 1.75798999e+03],
+                 [4.81083575e+05, 4.40014580e+06, 1.76018994e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -547,7 +547,7 @@ data or your own project, creating a PyVista mesh of those points:</p>
 <tr><td>N Points</td><td>67841</td></tr>
 <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
 <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-<tr><td>Z Bounds</td><td>1.754e+03, 1.785e+03</td></tr>
+<tr><td>Z Bounds</td><td>1.754e+03, 1.784e+03</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -615,11 +615,11 @@ cloud and add those vectors to the mesh.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[-0.16368262, -0.35179816, -0.92165398],
-                 [ 0.7797082 , -0.18285151, -0.59884927],
-                 [-0.59218473, -0.3305839 , -0.73486838],
-                 [-0.76548262,  0.08907753, -0.63726098],
-                 [ 0.59686991,  0.80102445,  0.04589277]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.63926212, -0.37722098,  0.67011065],
+                 [ 0.08713516, -0.82675022, -0.55578011],
+                 [-0.75709062, -0.4445617 , -0.4787261 ],
+                 [ 0.65915418,  0.62551871,  0.41742319],
+                 [ 0.62542736,  0.75439153, -0.19933396]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the mesh:</p>
@@ -647,8 +647,11 @@ cloud and add those vectors to the mesh.</p>
 <span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.908 seconds)</p>
+<img src="../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.701 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-b-create-point-cloud-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/b_create-point-cloud.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo1.svg" width="150px" /></a>
+</div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b89b4427e5692b40a8a7cd467156e344/b_create-point-cloud.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">b_create-point-cloud.py</span></code></a></p>
 </div>
