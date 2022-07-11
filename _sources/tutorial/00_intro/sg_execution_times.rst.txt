@@ -5,10 +5,10 @@
 
 Computation times
 =================
-**00:03.421** total execution time for **tutorial_00_intro** files:
+**00:03.229** total execution time for **tutorial_00_intro** files:
 
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_00_intro_b_load_example.py` (``b_load_example.py``) | 00:02.729 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_00_intro_b_load_example.py` (``b_load_example.py``) | 00:02.547 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_00_intro_a_basic.py` (``a_basic.py``)               | 00:00.692 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_00_intro_a_basic.py` (``a_basic.py``)               | 00:00.682 | 0.0 MB |
 +-----------------------------------------------------------------------------+-----------+--------+

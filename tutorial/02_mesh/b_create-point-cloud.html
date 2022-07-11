@@ -56,8 +56,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Create PolyData" href="c_create-poly.html" />
-    <link rel="prev" title="Lesson Overview" href="a_lesson.html" />
+    <link rel="next" title="Creating a Uniform Grid" href="c_create-uniform-grid.html" />
+    <link rel="prev" title="Lesson Overview" href="a_lesson_mesh.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="None">
   </head>
@@ -211,7 +211,7 @@
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="a_lesson.html">
+    <a class="reference internal" href="a_lesson_mesh.html">
      Lesson Overview
     </a>
    </li>
@@ -221,8 +221,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="c_create-poly.html">
-     Create PolyData
+    <a class="reference internal" href="c_create-uniform-grid.html">
+     Creating a Uniform Grid
     </a>
    </li>
    <li class="toctree-l2">
@@ -231,12 +231,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="e_create-uniform-grid.html">
-     Creating a Uniform Grid
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="f_read-file.html">
+    <a class="reference internal" href="e_read-file.html">
      Load and Plot from a File
     </a>
    </li>
@@ -253,13 +248,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_data/a_lesson.html">
+    <a class="reference internal" href="../03_data/a_lesson_data.html">
      Lesson Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_data/b_exercise.html">
-     Exercise
+    <a class="reference internal" href="../03_data/b_create-poly.html">
+     Create PolyData
     </a>
    </li>
   </ul>
@@ -527,11 +522,11 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.</p
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81089875e+05, 4.40012460e+06, 1.75992004e+03],
-                 [4.81103975e+05, 4.40012600e+06, 1.75938000e+03],
-                 [4.81010375e+05, 4.40020830e+06, 1.76828003e+03],
-                 [4.81037475e+05, 4.40008880e+06, 1.76201001e+03],
-                 [4.80958775e+05, 4.40015670e+06, 1.76070996e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81095475e+05, 4.40022100e+06, 1.76944995e+03],
+                 [4.81106175e+05, 4.40017000e+06, 1.75902002e+03],
+                 [4.81057375e+05, 4.40010090e+06, 1.76139001e+03],
+                 [4.81022875e+05, 4.40013270e+06, 1.76418005e+03],
+                 [4.80978375e+05, 4.40022530e+06, 1.75816003e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -552,7 +547,7 @@ data or your own project, creating a PyVista mesh of those points:</p>
 <tr><td>N Points</td><td>67841</td></tr>
 <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
 <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-<tr><td>Z Bounds</td><td>1.754e+03, 1.787e+03</td></tr>
+<tr><td>Z Bounds</td><td>1.754e+03, 1.785e+03</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -620,11 +615,11 @@ cloud and add those vectors to the mesh.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.46825242, -0.72440149,  0.50594679],
-                 [ 0.28356628, -0.75108615, -0.59620446],
-                 [-0.32738342, -0.8931445 , -0.30840395],
-                 [-0.18420819,  0.54089175, -0.82067256],
-                 [-0.64905198,  0.23077108,  0.72489739]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.29847283, -0.31185546, -0.90203112],
+                 [-0.9605672 , -0.27767194,  0.01445481],
+                 [ 0.22356195, -0.59788801, -0.76977268],
+                 [ 0.13948249,  0.38042582,  0.91423237],
+                 [-0.51128017,  0.28796514,  0.8097337 ]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the mesh:</p>
@@ -652,7 +647,7 @@ cloud and add those vectors to the mesh.</p>
 <span class="n">plotter</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.775 seconds)</p>
+<img src="../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.697 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-b-create-point-cloud-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/b89b4427e5692b40a8a7cd467156e344/b_create-point-cloud.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">b_create-point-cloud.py</span></code></a></p>
@@ -672,17 +667,17 @@ cloud and add those vectors to the mesh.</p>
               <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="a_lesson.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="a_lesson_mesh.html" title="previous page">
       <i class="fas fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
           <p class="prev-next-title">Lesson Overview</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="c_create-poly.html" title="next page">
+  <a class='right-next' id="next-link" href="c_create-uniform-grid.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Create PolyData</p>
+      <p class="prev-next-title">Creating a Uniform Grid</p>
   </div>
   <i class="fas fa-angle-right"></i>
   </a>

@@ -56,8 +56,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Creating a Uniform Grid" href="e_create-uniform-grid.html" />
-    <link rel="prev" title="Create PolyData" href="c_create-poly.html" />
+    <link rel="next" title="Load and Plot from a File" href="e_read-file.html" />
+    <link rel="prev" title="Creating a Uniform Grid" href="c_create-uniform-grid.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="None">
   </head>
@@ -211,7 +211,7 @@
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="a_lesson.html">
+    <a class="reference internal" href="a_lesson_mesh.html">
      Lesson Overview
     </a>
    </li>
@@ -221,8 +221,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="c_create-poly.html">
-     Create PolyData
+    <a class="reference internal" href="c_create-uniform-grid.html">
+     Creating a Uniform Grid
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -231,12 +231,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="e_create-uniform-grid.html">
-     Creating a Uniform Grid
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="f_read-file.html">
+    <a class="reference internal" href="e_read-file.html">
      Load and Plot from a File
     </a>
    </li>
@@ -253,13 +248,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_data/a_lesson.html">
+    <a class="reference internal" href="../03_data/a_lesson_data.html">
      Lesson Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_data/b_exercise.html">
-     Exercise
+    <a class="reference internal" href="../03_data/b_create-poly.html">
+     Create PolyData
     </a>
    </li>
   </ul>
@@ -537,11 +532,11 @@ to download the full example code</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-204.21398193, -202.94431636,    1.5851561 ],
-       [-182.15193265, -202.94431636,    2.42755379],
-       [-158.93704107, -202.94431636,    3.60672896],
-       [-132.375112  , -202.94431636,    5.31053134],
-       [-113.12124553, -202.94431636,    6.72632949]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-204.25587108, -195.73826432,    1.82845937],
+       [-182.25737339, -195.73826432,    2.79717302],
+       [-157.92094374, -195.73826432,    4.23145352],
+       [-134.54254312, -195.73826432,    5.95607665],
+       [-120.09188783, -195.73826432,    7.1591675 ]])
 </pre></div>
 </div>
 <p>Now use those points to create a point cloud PyVista data object. This will
@@ -659,8 +654,8 @@ delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound=False, inplace=False, edge_s
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
-<tr><td>X Bounds</td><td>1.163e-02, 9.277e+00</td></tr>
-<tr><td>Y Bounds</td><td>5.780e-03, 9.298e+00</td></tr>
+<tr><td>X Bounds</td><td>6.073e-03, 9.246e+00</td></tr>
+<tr><td>Y Bounds</td><td>2.268e-03, 9.286e+00</td></tr>
 <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
@@ -699,7 +694,7 @@ added unwanted triangles. We can mitigate that with the <code class="docutils li
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.362 seconds)</p>
+<img src="../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.357 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-d-create-tri-surface-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/63882c876038ea8226f518dfac0af187/d_create-tri-surface.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">d_create-tri-surface.py</span></code></a></p>
@@ -720,17 +715,17 @@ added unwanted triangles. We can mitigate that with the <code class="docutils li
               <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="c_create-poly.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="c_create-uniform-grid.html" title="previous page">
       <i class="fas fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Create PolyData</p>
+          <p class="prev-next-title">Creating a Uniform Grid</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="e_create-uniform-grid.html" title="next page">
+  <a class='right-next' id="next-link" href="e_read-file.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
-      <p class="prev-next-title">Creating a Uniform Grid</p>
+      <p class="prev-next-title">Load and Plot from a File</p>
   </div>
   <i class="fas fa-angle-right"></i>
   </a>

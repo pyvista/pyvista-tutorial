@@ -56,8 +56,8 @@
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Lesson Overview" href="a_lesson.html" />
-    <link rel="prev" title="Load and Plot from a File" href="../02_mesh/f_read-file.html" />
+    <link rel="next" title="Lesson Overview" href="a_lesson_data.html" />
+    <link rel="prev" title="Load and Plot from a File" href="../02_mesh/e_read-file.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="None">
   </head>
@@ -211,7 +211,7 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02_mesh/a_lesson.html">
+    <a class="reference internal" href="../02_mesh/a_lesson_mesh.html">
      Lesson Overview
     </a>
    </li>
@@ -221,8 +221,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02_mesh/c_create-poly.html">
-     Create PolyData
+    <a class="reference internal" href="../02_mesh/c_create-uniform-grid.html">
+     Creating a Uniform Grid
     </a>
    </li>
    <li class="toctree-l2">
@@ -231,12 +231,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../02_mesh/e_create-uniform-grid.html">
-     Creating a Uniform Grid
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02_mesh/f_read-file.html">
+    <a class="reference internal" href="../02_mesh/e_read-file.html">
      Load and Plot from a File
     </a>
    </li>
@@ -253,13 +248,13 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="a_lesson.html">
+    <a class="reference internal" href="a_lesson_data.html">
      Lesson Overview
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="b_exercise.html">
-     Exercise
+    <a class="reference internal" href="b_create-poly.html">
+     Create PolyData
     </a>
    </li>
   </ul>
@@ -586,7 +581,7 @@
                 
   <section id="pyvista-data-model">
 <span id="data"></span><span id="sphx-glr-tutorial-03-data"></span><h1>PyVista Data Model<a class="headerlink" href="#pyvista-data-model" title="Permalink to this headline">#</a></h1>
-<p>Learn about the data model of the PyVista framework and how you can visualize your data in style using point, cell, and field data. (15 min for talk, 10 min for exercise)</p>
+<p>Learn about PyVista’s data model in further detail. (15 min for talk, 10 min for exercise)</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>This section of the tutorial was adopted from <a class="reference external" href="https://docs.pyvista.org/user-guide/data_model.html">PyVista Data Model</a>
@@ -603,7 +598,8 @@ place data within datasets.</p>
 not require that you have knowledge of VTK.  For those who wish to
 see a detailed comparison to VTK or translate code written for the
 Python bindings of VTK to PyVista, please see
-<a class="reference external" href="https://docs.pyvista.org/user-guide/vtk_to_pyvista.html#vtk-to-pyvista-docs">Transitioning from VTK to PyVista</a>.</p>
+<a class="reference external" href="https://docs.pyvista.org/user-guide/vtk_to_pyvista.html#vtk-to-pyvista-docs">Transitioning from VTK to PyVista</a> or a summary of that chapter
+in this tutorial under <a class="reference internal" href="../08_vtk/index.html#vtk"><span class="std std-ref">PyVista &amp; VTK</span></a></p>
 </div>
 <p>For a more general description of our API, see <a class="reference internal" href="../02_mesh/index.html#mesh"><span class="std std-ref">What is a Mesh?</span></a>.</p>
 <section id="the-pyvista-dataset">
@@ -692,12 +688,15 @@ done with:</p>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDoubleArray</span><span class="p">()</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetNumberOfValues</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="c1"># First row</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Second row</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="c1"># Third row</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mf">0.667</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -706,7 +705,7 @@ done with:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>vtkDoubleArray (0x55b900cb54b0)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>vtkDoubleArray (0x5612c00f6f60)
   Debug: Off
   Modified Time: 55966
   Reference Count: 1
@@ -1518,17 +1517,17 @@ transformation.</p>
 <section id="exercises">
 <h2>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">#</a></h2>
 <div class="sphx-glr-thumbcontainer" tooltip="This exercise provides an overview of the content in the initial lesson for you to try out!"><figure class="align-default" id="id2">
-<img alt="Lesson Overview" src="../../_images/sphx_glr_a_lesson_thumb1.png" />
+<img alt="Lesson Overview" src="../../_images/sphx_glr_a_lesson_data_thumb.png" />
 <figcaption>
-<p><span class="caption-text"><a class="reference internal" href="a_lesson.html#sphx-glr-tutorial-03-data-a-lesson-py"><span class="std std-ref">Lesson Overview</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><a class="reference internal" href="a_lesson_data.html#sphx-glr-tutorial-03-data-a-lesson-data-py"><span class="std std-ref">Lesson Overview</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div><div class="toctree-wrapper compound">
 </div>
-<div class="sphx-glr-thumbcontainer" tooltip="Exercise"><figure class="align-default" id="id3">
-<img alt="Exercise" src="../../_images/sphx_glr_b_exercise_thumb.png" />
+<div class="sphx-glr-thumbcontainer" tooltip="Creating a pyvista.PolyData (surface mesh) from vertices and faces."><figure class="align-default" id="id3">
+<img alt="Create PolyData" src="../../_images/sphx_glr_b_create-poly_thumb.png" />
 <figcaption>
-<p><span class="caption-text"><a class="reference internal" href="b_exercise.html#sphx-glr-tutorial-03-data-b-exercise-py"><span class="std std-ref">Exercise</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+<p><span class="caption-text"><a class="reference internal" href="b_create-poly.html#sphx-glr-tutorial-03-data-b-create-poly-py"><span class="std std-ref">Create PolyData</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </div><div class="toctree-wrapper compound">
@@ -1545,14 +1544,14 @@ transformation.</p>
               <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="../02_mesh/f_read-file.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="../02_mesh/e_read-file.html" title="previous page">
       <i class="fas fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
           <p class="prev-next-title">Load and Plot from a File</p>
       </div>
   </a>
-  <a class='right-next' id="next-link" href="a_lesson.html" title="next page">
+  <a class='right-next' id="next-link" href="a_lesson_data.html" title="next page">
   <div class="prev-next-info">
       <p class="prev-next-subtitle">next</p>
       <p class="prev-next-title">Lesson Overview</p>

@@ -171,19 +171,18 @@ Volume DataSet - Plot
 ~~~~~~~~~~~~~~~~~~~~~
 Here, we plot the dataset using a custom view direction.
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-63
+.. GENERATED FROM PYTHON SOURCE LINES 53-62
 
 .. code-block:: default
 
     pl = pyvista.Plotter()
     _ = pl.add_volume(
-            dataset, cmap="coolwarm", opacity="sigmoid_5", show_scalar_bar=False,
+        dataset,
+        cmap="coolwarm",
+        opacity="sigmoid_5",
+        show_scalar_bar=False,
     )
-    pl.camera_position = [
-        (194.6, -141.8, 182.0),
-        (34.5, 61.0, 32.5),
-        (-0.229, 0.45, 0.86)
-    ]
+    pl.camera_position = [(194.6, -141.8, 182.0), (34.5, 61.0, 32.5), (-0.229, 0.45, 0.86)]
     pl.show()
 
 
@@ -200,7 +199,7 @@ Here, we plot the dataset using a custom view direction.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.729 seconds)
+   **Total running time of the script:** ( 0 minutes  2.547 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_intro_b_load_example.py:

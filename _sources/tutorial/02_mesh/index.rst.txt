@@ -9,7 +9,7 @@
 What is a Mesh?
 ===============
 
-Learn about the PyVista data types and how you can use it to visualize almost anything. (15 min for talk, 10 min for exercise)
+Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (15 min for talk, 10 min for exercise)
 
 .. tip::
 
@@ -34,9 +34,10 @@ PyVista work for datasets of either or mixed geometries so that you as a user
 do not have to get bogged down in the nuances.
 
 .. note::
-   This is a very high level overview of the PyVista API.  For further
-   details regarding our data model and how it relates to the
-   underlying VTK data model, please see :ref:`data`.
+   This is a very high level overview of the PyVista API to familiarize users
+   with PyVista's data structures.  For further details regarding our data
+   model, how it relates to the underlying VTK data model, and how to create
+   your own meshes, please see :ref:`data`.
 
 
 What is a point?
@@ -252,10 +253,10 @@ For more examples, please see the mesh creation section of the
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/images/thumb/sphx_glr_a_lesson_thumb.png
+ .. figure:: /tutorial/02_mesh/images/thumb/sphx_glr_a_lesson_mesh_thumb.png
      :alt: Lesson Overview
 
-     :ref:`sphx_glr_tutorial_02_mesh_a_lesson.py`
+     :ref:`sphx_glr_tutorial_02_mesh_a_lesson_mesh.py`
 
 .. raw:: html
 
@@ -265,7 +266,7 @@ For more examples, please see the mesh creation section of the
 .. toctree::
    :hidden:
 
-   /tutorial/02_mesh/a_lesson
+   /tutorial/02_mesh/a_lesson_mesh
 
 .. raw:: html
 
@@ -290,14 +291,14 @@ For more examples, please see the mesh creation section of the
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Creating a pyvista.PolyData (surface mesh) from vertices and faces.">
+    <div class="sphx-glr-thumbcontainer" tooltip="Create a simple uniform grid from a 3D NumPy array of values.">
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/images/thumb/sphx_glr_c_create-poly_thumb.png
-     :alt: Create PolyData
+ .. figure:: /tutorial/02_mesh/images/thumb/sphx_glr_c_create-uniform-grid_thumb.png
+     :alt: Creating a Uniform Grid
 
-     :ref:`sphx_glr_tutorial_02_mesh_c_create-poly.py`
+     :ref:`sphx_glr_tutorial_02_mesh_c_create-uniform-grid.py`
 
 .. raw:: html
 
@@ -307,7 +308,7 @@ For more examples, please see the mesh creation section of the
 .. toctree::
    :hidden:
 
-   /tutorial/02_mesh/c_create-poly
+   /tutorial/02_mesh/c_create-uniform-grid
 
 .. raw:: html
 
@@ -332,35 +333,14 @@ For more examples, please see the mesh creation section of the
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create a simple uniform grid from a 3D NumPy array of values.">
-
-.. only:: html
-
- .. figure:: /tutorial/02_mesh/images/thumb/sphx_glr_e_create-uniform-grid_thumb.png
-     :alt: Creating a Uniform Grid
-
-     :ref:`sphx_glr_tutorial_02_mesh_e_create-uniform-grid.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /tutorial/02_mesh/e_create-uniform-grid
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Read a dataset from a known file type.">
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/images/thumb/sphx_glr_f_read-file_thumb.png
+ .. figure:: /tutorial/02_mesh/images/thumb/sphx_glr_e_read-file_thumb.png
      :alt: Load and Plot from a File
 
-     :ref:`sphx_glr_tutorial_02_mesh_f_read-file.py`
+     :ref:`sphx_glr_tutorial_02_mesh_e_read-file.py`
 
 .. raw:: html
 
@@ -370,7 +350,7 @@ For more examples, please see the mesh creation section of the
 .. toctree::
    :hidden:
 
-   /tutorial/02_mesh/f_read-file
+   /tutorial/02_mesh/e_read-file
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

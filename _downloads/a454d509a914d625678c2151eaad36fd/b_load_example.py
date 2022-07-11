@@ -52,11 +52,10 @@ dataset
 # Here, we plot the dataset using a custom view direction.
 pl = pyvista.Plotter()
 _ = pl.add_volume(
-        dataset, cmap="coolwarm", opacity="sigmoid_5", show_scalar_bar=False,
+    dataset,
+    cmap="coolwarm",
+    opacity="sigmoid_5",
+    show_scalar_bar=False,
 )
-pl.camera_position = [
-    (194.6, -141.8, 182.0),
-    (34.5, 61.0, 32.5),
-    (-0.229, 0.45, 0.86)
-]
+pl.camera_position = [(194.6, -141.8, 182.0), (34.5, 61.0, 32.5), (-0.229, 0.45, 0.86)]
 pl.show()
