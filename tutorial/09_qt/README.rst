@@ -54,6 +54,7 @@ you can simultaneously have an active VTK plot and a non-blocking Python session
 
    usage
    pyinstaller
+   flask
 
 Getting Started
 ***************
