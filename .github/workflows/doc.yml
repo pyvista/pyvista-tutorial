@@ -29,6 +29,7 @@ jobs:
 
       - name: Install OS Packages
         run: |
+          ./setup_headless_display.sh
           sudo apt-get update
           sudo apt-get install libosmesa6-dev libgl1-mesa-dev python3-tk pandoc git-restore-mtime
           sudo apt-get install python3-tk xcb
