@@ -1,6 +1,4 @@
 """
-.. _glyph_example:
-
 Plotting Glyphs (Vectors or PolyData)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

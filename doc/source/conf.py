@@ -195,11 +195,11 @@ tutorial_dirs = [
     '../../tutorial/02_mesh/',
     '../../tutorial/03_figures/',
     '../../tutorial/04_filters/',
-    # '../../tutorial/04_action/',
-    '../../tutorial/07_vtk/',
-    '../../tutorial/09_sphinx/',
-    '../../tutorial/10_widgets/',
-    '../../tutorial/11_qt/',
+    # '../../tutorial/05_action/',
+    '../../tutorial/06_vtk/',
+    '../../tutorial/07_sphinx/',
+    '../../tutorial/08_widgets/',
+    '../../tutorial/09_qt/',
 ]
 
 sphinx_gallery_conf = {
