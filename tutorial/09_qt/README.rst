@@ -47,14 +47,6 @@ you can simultaneously have an active VTK plot and a non-blocking Python session
 
    self
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Getting Started
-   :hidden:
-
-   1_usage
-   2_pyinstaller
-   3_flask
 
 Getting Started
 ***************
@@ -98,8 +90,9 @@ sphere.
    :caption: Getting Started
    :hidden:
 
-   usage
-
+   1_usage
+   2_pyinstaller
+   3_flask
 
 License
 *******
