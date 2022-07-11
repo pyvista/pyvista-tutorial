@@ -39,9 +39,10 @@ Created out of a desire to make a reusable higher level abstraction layer that
 - Now over 100+ contributors and `~1.4k Stars
   <https://github.com/pyvista/pyvista/stargazers>`_ on GitHub!
 - Greatly expanded internal presence and continuing support thanks to
-  `@tkoyama010 <https://github.com/tkoyama010>`_
-  `@adeak <https://github.com/adeak>`_
-  `@MatthewFlamm <https://github.com/MatthewFlamm>`_
+
+  - `@tkoyama010 <https://github.com/tkoyama010>`_
+  - `@adeak <https://github.com/adeak>`_
+  - `@MatthewFlamm <https://github.com/MatthewFlamm>`_
 
 |PyPIact|
 |condaact|
@@ -278,6 +279,6 @@ Exercises
 Install PyVista by visiting :ref:`getting_started`.
 
 Once you've installed PyVista, open the example below and see if you can run
-"Hello World" of PyVista. You can download the example by scrolling to the
+the "Hello World" of PyVista. You can download the example by scrolling to the
 bottom of the page and clicking on either the ``*.py`` (script) or ``*.ipynb``
 (notebook) file format.
