@@ -47,6 +47,8 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 3. Plotting Options and Animations (Bane Sullivan) - Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations (15 min for talk, 20 min for exercise)
 
+4. Filters (Bane Sullivan) - Demonstrate the PyVista filters API to perform mesh analysis and alteration (15 minutes)
+
 4. PyVista in Action (Tetsuo Koyama) - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
 
 5. Break. Stretch fingers and grab some coffee. (15 minutes)
