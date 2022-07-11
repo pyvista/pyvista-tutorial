@@ -75,11 +75,11 @@ First, create some points for the surface.
  .. code-block:: none
 
 
-    array([[-204.41271935, -199.90554664,    1.67838298],
-           [-182.11607621, -199.90554664,    2.58246804],
-           [-158.83777227, -199.90554664,    3.84043988],
-           [-138.19707935, -199.90554664,    5.21811993],
-           [-116.07953943, -199.90554664,    6.91253087]])
+    array([[-197.46514098, -199.47105499,    1.94665205],
+           [-173.98145641, -199.47105499,    3.01095631],
+           [-157.51430346, -199.47105499,    3.95585717],
+           [-138.64004831, -199.47105499,    5.23141579],
+           [-118.42374575, -199.47105499,    6.783722  ]])
 
 
 
@@ -279,8 +279,8 @@ Masked Triangulations
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
-    <tr><td>X Bounds</td><td>1.274e-02, 9.288e+00</td></tr>
-    <tr><td>Y Bounds</td><td>5.133e-02, 9.286e+00</td></tr>
+    <tr><td>X Bounds</td><td>6.765e-02, 9.263e+00</td></tr>
+    <tr><td>Y Bounds</td><td>2.297e-03, 9.279e+00</td></tr>
     <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
@@ -380,7 +380,7 @@ We could also add a polygon to ignore during the triangulation via the
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.337 seconds)
+   **Total running time of the script:** ( 0 minutes  1.453 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_d_create-tri-surface.py:
