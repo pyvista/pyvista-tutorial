@@ -4,13 +4,13 @@ PyVista and Qt
 
 Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework.
 
+Overview
+~~~~~~~~
 """
 # sphinx_gallery_thumbnail_number = 2
 import os
 
 ###############################################################################
-# Overview
-# ~~~~~~~~
 #
 # The python package `pyvistaqt` extends the functionality of `pyvista` through
 # the usage of Qt. Since Qt applications operates in a separate thread than VTK,
