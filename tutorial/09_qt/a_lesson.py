@@ -10,7 +10,7 @@ import os
 
 ###############################################################################
 # Overview
-# ^^^^^^^^
+# ~~~~~~~~
 #
 # The python package `pyvistaqt` extends the functionality of `pyvista` through
 # the usage of Qt. Since Qt applications operates in a separate thread than VTK,
@@ -21,7 +21,7 @@ import os
 #
 ###############################################################################
 # Getting Started
-# ^^^^^^^^^^^^^^^
+# ~~~~~~~~~~~~~~~
 
 os.system('pip install pyqt5')
 
@@ -51,7 +51,7 @@ help('pyvistaqt.BackgroundPlotter')
 
 ###############################################################################
 # Brief Example
-# ^^^^^^^^^^^^^
+# ~~~~~~~~~~~~~
 #
 # Create an instance of the `pyvistaqt.BackgroundPlotter` and plot a sphere.
 
@@ -69,7 +69,7 @@ plotter.add_mesh(sphere)
 
 ###############################################################################
 # Usage
-# ^^^^^
+# ~~~~~
 # PyVista has an interface for placing plots in `pyvistaqt` that extends the
 # functionality of the `QVTKRenderWindowInteractor` class. The `pyvistaqt.QtInteractor`
 # class allows you to have the same functionality of the `Plotter` class within
@@ -86,7 +86,7 @@ plotter.add_mesh(sphere)
 
 ###############################################################################
 # Background Plotting
-# ^^^^^^^^^^^^^^^^^^^
+# ~~~~~~~~~~~~~~~~~~~
 #
 # Normal PyVista plotting windows exhibit blocking behavior, but it is possible
 # to plot in the background and update the plotter in real-time using the
