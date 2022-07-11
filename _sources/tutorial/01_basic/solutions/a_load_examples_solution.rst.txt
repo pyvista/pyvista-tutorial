@@ -132,13 +132,14 @@ Volume DataSet - Download
 Download the bolt dataset. This is an excellent dataset to visualize using
 "volumetric" plotting.
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-53
+.. GENERATED FROM PYTHON SOURCE LINES 49-54
 
 .. code-block:: default
 
 
     dataset = examples.download_bolt_nut()
     dataset
+
 
 
 
@@ -169,13 +170,13 @@ Download the bolt dataset. This is an excellent dataset to visualize using
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-57
+.. GENERATED FROM PYTHON SOURCE LINES 55-58
 
 Volume DataSet - Plot
 ~~~~~~~~~~~~~~~~~~~~~
 Here, we plot the dataset using a custom view direction.
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-67
+.. GENERATED FROM PYTHON SOURCE LINES 58-69
 
 .. code-block:: default
 
@@ -192,6 +193,7 @@ Here, we plot the dataset using a custom view direction.
 
 
 
+
 .. image-sg:: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_002.png
    :alt: a load examples solution
    :srcset: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_002.png
@@ -201,7 +203,7 @@ Here, we plot the dataset using a custom view direction.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-75
+.. GENERATED FROM PYTHON SOURCE LINES 70-77
 
 Exercise #1 - Use PyVista Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -211,7 +213,7 @@ If your IDE supports it, you should be able to type
 ``dataset examples.download_`` and press tab to see all the available
 examples you can download.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-83
+.. GENERATED FROM PYTHON SOURCE LINES 77-85
 
 .. code-block:: default
 
@@ -235,22 +237,23 @@ examples you can download.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-96
+.. GENERATED FROM PYTHON SOURCE LINES 86-99
 
 Exercise #2 - Download and View a File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Experiment on your own by downloading a dataset and reading it in with
 :class:`pyvista.read`. You can use one of your own files or try downloading
-one from following sources:
+one from the following sources:
 
 - `Sample VTK DataSets <https://github.com/pyvista/vtk-data/tree/master/Data>`_
 - `Sample STL files <https://www.amtekcompany.com/teaching-resources/stl-files/>`_
+- `Thingiverse <https://www.thingiverse.com/>`_
 
 **Solution**
 Download the file ``'P_shelf_pin.stl'`` from
 https://www.thingiverse.com/thing:5412753
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-99
+.. GENERATED FROM PYTHON SOURCE LINES 99-102
 
 .. code-block:: default
 
@@ -272,7 +275,7 @@ https://www.thingiverse.com/thing:5412753
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.304 seconds)
+   **Total running time of the script:** ( 0 minutes  4.464 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_solutions_a_load_examples_solution.py:
