@@ -196,13 +196,14 @@ tutorial_dirs = [
     '../../tutorial/00_intro/',
     '../../tutorial/01_basic/',
     '../../tutorial/02_mesh/',
-    '../../tutorial/03_data/',
-    '../../tutorial/04_break/',
-    '../../tutorial/05_figures/',
-    '../../tutorial/06_sphinx/',
-    '../../tutorial/07_break/',
-    '../../tutorial/08_vtk/',
-    '../../tutorial/09_qt/',
+    '../../tutorial/03_figures/',
+    # '../../tutorial/04_action/',
+    '../../tutorial/05_break/',
+    '../../tutorial/06_data/',
+    '../../tutorial/07_vtk/',
+    '../../tutorial/08_break/',
+    '../../tutorial/09_sphinx/',
+    '../../tutorial/10_qt/',
 ]
 
 sphinx_gallery_conf = {
