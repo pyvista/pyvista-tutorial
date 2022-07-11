@@ -76,8 +76,8 @@ the content of the data associated with those cells.
 
 .. note::
    One thing you might have noticed by now is that the plots here in the online
-   tutorial may look slightly different depending on how you're plotting them
-   on your computer. This will be depending on your ``jupyter_backend``, or if
+   tutorial may look slightly different than your plots depending on how you're plotting them
+   on your computer. This depends on your ``jupyter_backend``, or if
    you're even using a jupyter notebook. As you're playing around with these
    examples, feel free to change settings like disabling (or enabling)
    ``notebook``, or using a different plotting backend for displaying within
@@ -88,7 +88,7 @@ Read from a file
 ~~~~~~~~~~~~~~~~
 You can read datasets directly from a file if you have access to it locally on
 your computer. This can be one of the many file formats that VTK supports, and
-many more that it doesn't thanks to libraries like `meshio
+many more that it doesn't as PyVista can rely on libraries like `meshio
 <https://github.com/nschloe/meshio>`_.
 
 In the following example, we load VTK's iron protein dataset `ironProt.vtk
@@ -111,4 +111,4 @@ volumetrically with:
 Exercises
 ---------
 
-Try out downloading and plotting datasets on your own with the following example. 
+Try out downloading and plotting datasets on your own with the following example.
