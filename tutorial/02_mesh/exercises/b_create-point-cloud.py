@@ -1,6 +1,4 @@
 """
-.. _create_point_cloud:
-
 Create Point Cloud
 ~~~~~~~~~~~~~~~~~~
 
