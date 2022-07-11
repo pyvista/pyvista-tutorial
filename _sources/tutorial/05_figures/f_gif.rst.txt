@@ -89,7 +89,7 @@ Generate a moving gif from an active plotter.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.551 seconds)
+   **Total running time of the script:** ( 0 minutes  2.447 seconds)
 
 
 .. _sphx_glr_download_tutorial_05_figures_f_gif.py:
