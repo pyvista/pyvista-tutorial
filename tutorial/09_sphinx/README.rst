@@ -224,3 +224,44 @@ Which looks like:
 Exercises
 ---------
 
+Generate Sphinx documentation on your own using the
+`pyvista/pyvista-doc-example <https://github.com/pyvista/pyvista-doc-example>`_
+repository. Either clone the respository with::
+
+  git clone https://github.com/pyvista/pyvista-doc-example
+
+Or simply download the repository:
+
+.. panels::
+
+   `PyVista Documentation Example <https://github.com/pyvista/pyvista-doc-example>`_
+
+   +++
+
+    .. link-button:: https://github.com/pyvista/pyvista-doc-example/archive/refs/heads/main.zip
+        :text: Download Zip
+        :classes: btn-outline-primary btn-block stretched-link
+
+
+Build the documentation
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Once you've downloaded `pyvista/pyvista-doc-example
+<https://github.com/pyvista/pyvista-doc-example>`_, cd into the directory and
+install the documentation build requirements with::
+
+  cd pyvista-doc-example
+  pip install -r requirements_docs.txt
+
+Finally, build the documentation locally with::
+
+  cd doc
+  make html
+
+Or, if on Windows::
+
+  cd doc
+  make.bat
+
+You will then find the generated documentation within the ``doc/_build``
+directory. Open up ``index.html`` using your browser to see the documentation.
