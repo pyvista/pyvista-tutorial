@@ -42,12 +42,17 @@ you can simultaneously have an active VTK plot and a non-blocking Python session
 
     pyvistaqt BackgroundPlotter
 
-
 .. toctree::
    :hidden:
 
    self
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Getting Started
+   :hidden:
+
+   usage
 
 Getting Started
 ***************
