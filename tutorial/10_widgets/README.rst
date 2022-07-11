@@ -1,4 +1,4 @@
-.. _qt:
+.. _widgets:
 
 PyVistaQT and Widgets
 =====================
