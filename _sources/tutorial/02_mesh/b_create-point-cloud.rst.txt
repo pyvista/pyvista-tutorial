@@ -80,11 +80,11 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.
  .. code-block:: none
 
 
-    pyvista_ndarray([[4.81012575e+05, 4.40011960e+06, 1.76242004e+03],
-                     [4.81019475e+05, 4.40022510e+06, 1.75805005e+03],
-                     [4.80946975e+05, 4.40022650e+06, 1.75798999e+03],
-                     [4.81023875e+05, 4.40014730e+06, 1.76114001e+03],
-                     [4.81104575e+05, 4.40022400e+06, 1.76943005e+03]])
+    pyvista_ndarray([[4.81084375e+05, 4.40018840e+06, 1.76897998e+03],
+                     [4.81044275e+05, 4.40011970e+06, 1.76226001e+03],
+                     [4.80982875e+05, 4.40014120e+06, 1.76806006e+03],
+                     [4.80990175e+05, 4.40015310e+06, 1.76087000e+03],
+                     [4.80937775e+05, 4.40013190e+06, 1.76338000e+03]])
 
 
 
@@ -310,11 +310,11 @@ This time, we're going to create a totally new, random point cloud.
  .. code-block:: none
 
 
-    pyvista_ndarray([[-0.97441236, -0.04432271, -0.22035436],
-                     [-0.28797665,  0.2648515 ,  0.92028427],
-                     [ 0.1427728 , -0.74599326,  0.65046905],
-                     [-0.56630778,  0.68337224,  0.46075794],
-                     [ 0.53692324, -0.3052589 ,  0.78646706]])
+    pyvista_ndarray([[ 0.41448094, -0.48281772,  0.77142245],
+                     [ 0.17015284, -0.97145745, -0.16528287],
+                     [ 0.67353811,  0.64532298, -0.36042289],
+                     [ 0.36423971,  0.88628706,  0.28605013],
+                     [-0.20843531,  0.92213427,  0.32591888]])
 
 
 
@@ -388,7 +388,7 @@ Now we can make arrows using those vectors using the glyph filter
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.471 seconds)
+   **Total running time of the script:** ( 0 minutes  2.702 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_b_create-point-cloud.py:

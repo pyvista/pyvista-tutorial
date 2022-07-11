@@ -86,7 +86,7 @@ simple surface mesh:
 .. jupyter-execute::
    :hide-code:
 
-   # Configure for pythreejs
+   # Configure for panel
    import pyvista
    pyvista.set_jupyter_backend('panel')
    pyvista.global_theme.background = 'white'
@@ -275,7 +275,9 @@ Exercises
 ---------
 Install PyVista by visiting :ref:`getting_started`.
 
-Once you've installed PyVista, start to play around with some of the examples below.
+Once you've installed PyVista, open the example below and see if you can run
+it. You can download the example by scrolling to the bottom of the page and
+clicking on either the ``*.py`` (script) or ``*.ipynb`` (notebook) file format.
 
 
 
@@ -299,27 +301,6 @@ Once you've installed PyVista, start to play around with some of the examples be
    :hidden:
 
    /tutorial/00_intro/a_basic
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Download and plot example datasets.">
-
-.. only:: html
-
- .. figure:: /tutorial/00_intro/images/thumb/sphx_glr_b_load_example_thumb.png
-     :alt: Download and Plot Examples
-
-     :ref:`sphx_glr_tutorial_00_intro_b_load_example.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /tutorial/00_intro/b_load_example
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
