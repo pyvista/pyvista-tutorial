@@ -209,8 +209,10 @@ sphinx_gallery_conf = {
     'examples_dirs': tutorial_dirs,
     # path where to save gallery generated examples
     'gallery_dirs': [d.lstrip('../../') for d in tutorial_dirs],
-    # Pattern to search for example files
-    'filename_pattern': r'\.py',
+
+    # Don't execute any files containing "exercise" in the filename
+    'filename_pattern': r'^((?!exercise).)*$',
+
     # Remove the 'Download all examples' button from the top level gallery
     'download_all_examples': False,
     # Remove sphinx configuration comments from code blocks

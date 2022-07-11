@@ -1,8 +1,12 @@
 """
-.. _load_examples:
+.. _load_examples_solution:
 
 Download and Plot Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+   This is the solution to :ref:`load_examples`. If you haven't already tried to
+   solve it on your own, you probably should try that first.
 
 Download and plot example datasets.
 
@@ -69,6 +73,12 @@ pl.show()
 # ``dataset examples.download_`` and press tab to see all the available
 # examples you can download.
 
+dataset = examples.download_gears()
+bodies = dataset.split_bodies()
+bodies.plot(
+    cmap='jet', multi_colors=True, smooth_shading=True, split_sharp_edges=True,
+)
+
 
 ###############################################################################
 # Exercise #2 - Download and View a File
@@ -79,3 +89,10 @@ pl.show()
 #
 # - `Sample VTK DataSets <https://github.com/pyvista/vtk-data/tree/master/Data>`_
 # - `Sample STL files <https://www.amtekcompany.com/teaching-resources/stl-files/>`_
+#
+# **Solution**
+# Download the file ``'P_shelf_pin.stl'`` from
+# https://www.thingiverse.com/thing:5412753
+
+mesh = pyvista.read('P_shelf_pin.stl')
+mesh.plot()
