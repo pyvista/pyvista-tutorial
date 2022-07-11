@@ -43,7 +43,7 @@ surf.plot(
 
 ###############################################################################
 # Polygonal PolyData
-# ~~~~~~~~~~~~~~~~~~
+# ^^^^^^^^^^^^^^^^^^
 # Create a three face polygonal mesh directly from points and faces.
 #
 # .. note::
@@ -80,6 +80,8 @@ mesh.plot(show_edges=True, line_width=5)
 
 
 ###############################################################################
+# Quad PolyData
+# ^^^^^^^^^^^^^
 # Let's create a box :class:`pyvista.PolyData` (surface mesh) from vertices
 # and faces.
 # Below, we have defined the vertices and the connectivity of the mesh for you.
@@ -95,7 +97,8 @@ vertices = np.array(
         [1, 0, 1],
         [1, 1, 1],
         [0, 1, 1],
-    ], dtype=float
+    ],
+    dtype=float,
 )
 
 # mesh connectivity
@@ -107,7 +110,8 @@ connectivity = np.array(
         [1, 2, 6, 5],
         [2, 3, 7, 6],
         [3, 0, 4, 7],
-    ], dtype=int
+    ],
+    dtype=int,
 )
 ###############################################################################
 # It's important to note that PyVista and VTK expect the faces array to be
@@ -138,10 +142,10 @@ surf.plot(
 
 ###############################################################################
 
-import numpy as np
-
 surf["point_number"] = range(8)
 surf["face_number"] = range(6)
+
+###############################################################################
 
 # plot each face with a different color
 surf.plot(show_edges=True, line_width=5, scalars="face_number")
