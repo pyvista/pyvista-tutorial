@@ -53,6 +53,7 @@ you can simultaneously have an active VTK plot and a non-blocking Python session
    :hidden:
 
    usage
+   pyinstaller
 
 Getting Started
 ***************
