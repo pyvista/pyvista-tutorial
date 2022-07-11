@@ -65,8 +65,6 @@ Here's how people are using PyVista:
 - `PyVista User Stories <https://github.com/pyvista/pyvista/discussions/2133>`_
 - `PyVista User Stories <https://github.com/pyvista/pyvista/discussions/2133>`_
 
-Feel free to write about what you have achieved with PyVista or what you would
-like to achieve in the future.
 
 Brief Examples
 --------------
