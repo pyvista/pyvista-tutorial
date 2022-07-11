@@ -3,15 +3,12 @@
 PyVista Data Model
 ==================
 
-Learn about the data model of the PyVista framework and how you can visualize your data in style using point, cell, and field data. (15 min for talk, 10 min for exercise)
+Learn about PyVista's data model in further detail. (15 min for talk, 10 min for exercise)
 
 .. tip::
 
     This section of the tutorial was adopted from `PyVista Data Model <https://docs.pyvista.org/user-guide/data_model.html>`_
     chapter of the PyVista documentation.
-
-
-.. insert section content here
 
 This section of the user guide explains in detail how to construct
 meshes from scratch and to utilize the underlying VTK data model but
@@ -24,7 +21,8 @@ place data within datasets.
    not require that you have knowledge of VTK.  For those who wish to
    see a detailed comparison to VTK or translate code written for the
    Python bindings of VTK to PyVista, please see
-   `Transitioning from VTK to PyVista <https://docs.pyvista.org/user-guide/vtk_to_pyvista.html#vtk-to-pyvista-docs>`_.
+   `Transitioning from VTK to PyVista <https://docs.pyvista.org/user-guide/vtk_to_pyvista.html#vtk-to-pyvista-docs>`_ or a summary of that chapter
+   in this tutorial under :ref:`vtk`
 
 For a more general description of our API, see :ref:`mesh`.
 
@@ -143,12 +141,15 @@ done with:
    >>> vtk_array = vtk.vtkDoubleArray()
    >>> vtk_array.SetNumberOfComponents(3)
    >>> vtk_array.SetNumberOfValues(9)
+   # First row
    >>> vtk_array.SetValue(0, 0)
    >>> vtk_array.SetValue(1, 0)
    >>> vtk_array.SetValue(2, 0)
+   # Second row
    >>> vtk_array.SetValue(3, 1)
    >>> vtk_array.SetValue(4, 0)
    >>> vtk_array.SetValue(5, 0)
+   # Third row
    >>> vtk_array.SetValue(6, 0.5)
    >>> vtk_array.SetValue(7, 0.667)
    >>> vtk_array.SetValue(8, 0)
