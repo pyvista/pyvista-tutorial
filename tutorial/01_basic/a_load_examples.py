@@ -78,5 +78,4 @@ pl.show()
 # one from following sources:
 #
 # - `Sample VTK DataSets <https://github.com/pyvista/vtk-data/tree/master/Data>`_
-# -
-#
+# - `Sample STL files <https://www.amtekcompany.com/teaching-resources/stl-files/>`_
