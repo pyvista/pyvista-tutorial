@@ -46,7 +46,7 @@ Tutorial Schedule
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`mesh`    | Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D.        | `Bane Sullivan`_  | 25 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-| :ref:`figures` | Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations. | `Bane Sullivan`_  | 10 minutes |
+| :ref:`figures` | Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations. | `Bane Sullivan`_  | 20 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`action`  | Show how PyVista is already being used within several projects and can be used for all things visualization.          | `Tetsuo Koyama`_  | 15 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
@@ -56,11 +56,13 @@ Tutorial Schedule
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`vtk`     | Show how PyVista uses VTK and how you can combine the best of both worlds!                                            | `Bane Sullivan`_  | 20 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-|                | Quick break. Prepare for the final run.                                                                               |                   |            |
+|                | Quick break. Prepare for the final run.                                                                               |                   | 10 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-| :ref:`sphinx`  | Leverage PyVista to make some awesome interactive web documentation.                                                  | `Alex Kaszynski`_ | 30 minutes |
+| :ref:`sphinx`  | Leverage PyVista to make some awesome interactive web documentation.                                                  | `Alex Kaszynski`_ | 20 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-| :ref:`qt`      | Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework.              | `Tetsuo Koyama`_  | 25 minutes |
+| :ref:`widgets` | Use PyVista with a variety of helpful widgets.                                                                        | `Tetsuo Koyama`_  | 20 minutes |
++----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
+| :ref:`qt`      | Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework.              | `Alex Kaszynski`_ | 15 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 |                | Open up to Questions.                                                                                                 |                   | 15 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
