@@ -65,9 +65,7 @@ solids = [pv.PlatonicSolid(kind, radius=0.4, center=center) for kind, center in 
 
 p = pv.Plotter(window_size=[1000, 1000])
 for ind, solid in enumerate(solids):
-    p.add_mesh(
-        solid, color='silver', specular=1.0, specular_power=10
-    )
+    p.add_mesh(solid, color='silver', specular=1.0, specular_power=10)
 p.view_vector((5.0, 2, 3))
 p.add_floor('-z', lighting=True, color='tan', pad=1.0)
 p.enable_shadows()
