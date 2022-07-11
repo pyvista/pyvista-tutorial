@@ -146,34 +146,6 @@ os.system('pip install PySide2')
 # Then you set the `QT_API` value to the specific binding you would like to use:
 
 os.environ["QT_API"] = "pyside2"
-
-###############################################################################
-# # Freezing PyVista with pyinstaller
-#
-# You can make some fantastic standalone programs with `pyinstaller` and
-# `pyvista`, and you can even make a graphical user interface incorporating
-# `PyQt5` or `pyside2`. Depending on your version of VTK, this requires some
-# extra steps to setup.
-#
-# When running VTK v9, you need to add several additional `hiddenimports`.
-# For clarity and completeness, create a spec file (we’ll name it `pyvista.spec`)
-# following the directions given at [Using Spec Files](https://pyinstaller.readthedocs.io/en/stable/spec-files.html).
-# Modify the `Analysis` and add the following hidden imports:
-#
-# ```python
-# main_py = os.path.join(some_path, 'main.py')
-# a = Analysis([main_py],
-#              pathex=[],
-#              binaries=[],
-#              hiddenimports=['vtkmodules',
-#                             'vtkmodules.all',
-#                             'vtkmodules.qt.QVTKRenderWindowInteractor',
-#                             'vtkmodules.util',
-#                             'vtkmodules.util.numpy_support',
-#                             'vtkmodules.numpy_interface.dataset_adapter',
-#                            ],
-# ```
-#
 ###############################################################################
 # Flask Application
 # ~~~~~~~~~~~~~~~~~
