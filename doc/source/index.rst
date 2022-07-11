@@ -51,7 +51,7 @@ Quick Links
     Getting Started
     ^^^^^^^^^^^^^^^
 
-    Get PyVista setup on your enviornment.
+    Get PyVista setup on your environment.
 
     ++++++++++++++++++++++
 
