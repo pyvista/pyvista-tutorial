@@ -37,7 +37,7 @@ functionality of ``pyvista`` through the usage of *Qt*.
 Since *Qt* applications operates in a separate thread than VTK,
 you can simultaneously have an active VTK plot and a non-blocking Python session.
 
-.. figure:: ./images/user-generated/qt_multiplot.png
+.. figure:: ../../images/user-generated/qt_multiplot.png
     :width: 450pt
 
     pyvistaqt BackgroundPlotter
