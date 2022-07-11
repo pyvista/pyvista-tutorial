@@ -18,6 +18,7 @@ PyVista Tutorial
    tutorial/09_sphinx/index
    tutorial/10_widgets/index
    tutorial/11_qt/index
+   tutorial/12_questions/index
 
 Welcome to the PyVista Tutorial!
 
