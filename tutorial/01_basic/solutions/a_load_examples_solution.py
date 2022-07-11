@@ -50,6 +50,7 @@ dataset.plot()
 dataset = examples.download_bolt_nut()
 dataset
 
+
 ###############################################################################
 # Volume DataSet - Plot
 # ~~~~~~~~~~~~~~~~~~~~~
@@ -63,6 +64,7 @@ _ = pl.add_volume(
 )
 pl.camera_position = [(194.6, -141.8, 182.0), (34.5, 61.0, 32.5), (-0.229, 0.45, 0.86)]
 pl.show()
+
 
 ###############################################################################
 # Exercise #1 - Use PyVista Examples
@@ -85,10 +87,11 @@ bodies.plot(
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Experiment on your own by downloading a dataset and reading it in with
 # :class:`pyvista.read`. You can use one of your own files or try downloading
-# one from following sources:
+# one from the following sources:
 #
 # - `Sample VTK DataSets <https://github.com/pyvista/vtk-data/tree/master/Data>`_
 # - `Sample STL files <https://www.amtekcompany.com/teaching-resources/stl-files/>`_
+# - `Thingiverse <https://www.thingiverse.com/>`_
 #
 # **Solution**
 # Download the file ``'P_shelf_pin.stl'`` from
