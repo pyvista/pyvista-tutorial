@@ -24,7 +24,7 @@ Welcome to the PyVista Tutorial!
 Below you'll find the schedule for the tutorial. Each lesson is split up into
 a talk and an exercise section where you'll be able to practice what was
 demonstrated in the tutorial. These lessons are designed to be highly interactive,
-where each lesson page below contains a MyBinder button where you can run the notebooks in the `MyBinder <https://mybinder.org/`_ environment.
+where each lesson page below contains a MyBinder button where you can run the notebooks in the `MyBinder <https://mybinder.org/>`_ environment.
 You can also download notebooks and Python scripts for your local environment.
 
 During the tutorial, feel free to ask questions if you don't understand
