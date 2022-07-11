@@ -393,11 +393,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorial/05_break/index.html">
-   Break
-  </a>
- </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="tutorial/06_data/index.html">
    PyVista Data Model
@@ -441,11 +436,6 @@
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorial/08_break/index.html">
-   Break
-  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="tutorial/09_sphinx/index.html">
@@ -509,11 +499,6 @@
    PyVista and QT
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="tutorial/12_questions/index.html">
-   Open up to Questions
-  </a>
- </li>
 </ul>
 
   </div>
@@ -538,6 +523,11 @@
 
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tutorial-schedule">
    Tutorial Schedule
@@ -567,25 +557,32 @@
 <div class="toctree-wrapper compound">
 </div>
 <p>Welcome to the PyVista Tutorial!</p>
-<p>Below you’ll find the schedule for the tutorial. Each lesson is split up into
-a talk and an exercise section where you’ll be able to practice what was
-demonstrated in the tutorial. These lessons are designed to be highly interactive,
-where each lesson page below contains a MyBinder button where you can run the notebooks in the <a class="reference external" href="https://mybinder.org/">MyBinder</a> environment.
+<p>Below you’ll find the schedule for the tutorial. Each lesson is split up into a
+talk and an exercise section where you’ll be able to practice what was
+demonstrated in the tutorial. These lessons are designed to be highly
+interactive, where each lesson page below contains a MyBinder button where you
+can run the notebooks in the <a class="reference external" href="https://mybinder.org/">MyBinder</a> environment.
 You can also download notebooks and Python scripts for your local environment.</p>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h2>
 <p>During the tutorial, feel free to ask questions if you don’t understand
 something or need help getting started. We’re here to help!</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This tutorial was originally created for SciPy 2022, but we plan on maintaining
-it as it’s a great way to learn how to get started with PyVista. Once the
-recording is live, we’ll be sure to link that to this page as well.</p>
+<p>This tutorial was originally created for SciPy 2022, but we plan on
+maintaining it as it’s a great way to learn how to get started with
+PyVista. Once the recording is live, we’ll be sure to add a link to the
+recording here for all to see.</p>
+<p>If you have any questions about PyVista after the tutorial, feel free to
+post your questions in <a class="reference external" href="https://github.com/pyvista/pyvista/discussions"><img alt="discuss" src="https://img.shields.io/badge/GitHub-Discussions-green?logo=github" /></a> or <a class="reference external" href="http://slack.pyvista.org"><img alt="slack" src="https://img.shields.io/badge/Slack-pyvista-green.svg?logo=slack" /></a>.</p>
 </div>
+</section>
 <section id="tutorial-schedule">
 <h2>Tutorial Schedule<a class="headerlink" href="#tutorial-schedule" title="Permalink to this headline">#</a></h2>
 <table class="table">
 <colgroup>
 <col style="width: 10%" />
-<col style="width: 72%" />
+<col style="width: 71%" />
 <col style="width: 11%" />
 <col style="width: 7%" />
 </colgroup>
@@ -620,25 +617,15 @@ recording is live, we’ll be sure to link that to this page as well.</p>
 <td><p><a class="reference external" href="https://github.com/tkoyama010">Tetsuo Koyama</a></p></td>
 <td><p>15 minutes</p></td>
 </tr>
-<tr class="row-odd"><td></td>
-<td><p>Break</p></td>
-<td></td>
-<td><p>15 minutes</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="tutorial/06_data/index.html#data"><span class="std std-ref">PyVista Data Model</span></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="tutorial/06_data/index.html#data"><span class="std std-ref">PyVista Data Model</span></a></p></td>
 <td><p>Learn about PyVista’s data model in further detail</p></td>
 <td><p><a class="reference external" href="https://banesullivan.com">Bane Sullivan</a></p></td>
 <td><p>25 minutes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="tutorial/07_vtk/index.html#vtk"><span class="std std-ref">PyVista &amp; VTK</span></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="tutorial/07_vtk/index.html#vtk"><span class="std std-ref">PyVista &amp; VTK</span></a></p></td>
 <td><p>Show how PyVista uses VTK and how you can combine the best of both worlds!</p></td>
 <td><p><a class="reference external" href="https://banesullivan.com">Bane Sullivan</a></p></td>
 <td><p>20 minutes</p></td>
-</tr>
-<tr class="row-even"><td></td>
-<td><p>Quick break. Prepare for the final run.</p></td>
-<td></td>
-<td><p>10 minutes</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="tutorial/09_sphinx/index.html#sphinx"><span class="std std-ref">PyVista and Sphinx</span></a></p></td>
 <td><p>Leverage PyVista to make some awesome interactive web documentation.</p></td>
@@ -651,13 +638,8 @@ recording is live, we’ll be sure to link that to this page as well.</p>
 <td><p>20 minutes</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="tutorial/11_qt/index.html#qt"><span class="std std-ref">PyVista and QT</span></a></p></td>
-<td><p>Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework.</p></td>
+<td><p>Demonstrate how to use PyVista to create standalone applications using <code class="docutils literal notranslate"><span class="pre">pyinstaller</span></code> and the Qt framework.</p></td>
 <td><p><a class="reference external" href="https://github.com/akaszynski">Alex Kaszynski</a></p></td>
-<td><p>15 minutes</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="tutorial/12_questions/index.html#question"><span class="std std-ref">Open up to Questions</span></a></p></td>
-<td><p>Open up to Questions.</p></td>
-<td></td>
 <td><p>15 minutes</p></td>
 </tr>
 </tbody>

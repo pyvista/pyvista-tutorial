@@ -5,10 +5,10 @@
 
 Computation times
 =================
-**00:01.790** total execution time for **tutorial_07_vtk** files:
+**00:01.373** total execution time for **tutorial_07_vtk** files:
 
 +-----------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_07_vtk_b_algorithms.py` (``b_algorithms.py``) | 00:00.973 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_07_vtk_b_algorithms.py` (``b_algorithms.py``) | 00:00.747 | 0.0 MB |
 +-----------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_07_vtk_a_create.py` (``a_create.py``)         | 00:00.817 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_07_vtk_a_create.py` (``a_create.py``)         | 00:00.626 | 0.0 MB |
 +-----------------------------------------------------------------------+-----------+--------+
