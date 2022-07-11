@@ -16,7 +16,8 @@ Tutorial
    tutorial/07_vtk/index
    tutorial/08_break/index
    tutorial/09_sphinx/index
-   tutorial/10_qt/index
+   tutorial/10_widgets/index
+   tutorial/11_qt/index
 
 
 Welcome to the PyVista Tutorial created for SciPy 2022
