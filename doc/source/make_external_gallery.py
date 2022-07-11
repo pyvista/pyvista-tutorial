@@ -226,10 +226,6 @@ Here are a list of longer, more technical examples of what PyVista can do!
         with open(path) as existing_fid:
             existing = existing_fid.read()
 
-    dir_name = os.path.dirname(path)
-    if not os.path.isdir(dir_name):
-        os.makedirs(dir_name)
-
     # write if different or does not exist
     if new_text != existing:
         dirname = os.path.dirname(path)
