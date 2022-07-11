@@ -1,7 +1,7 @@
 .. _widgets:
 
-PyVistaQT and Widgets
-=====================
+PyVista and Widgets
+===================
 
 PyVista has several widgets that can be added to the rendering scene to control
 filters like clipping, slicing, and thresholding - specifically there are
