@@ -43,25 +43,23 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 1. Basic usage (Alexander Kaszynski) - Reading and plotting 3D data using ``examples`` module and external files.  (10 min for talk, 10 min for exercise)
 
-2. What is a Mesh? (Bane Sullivan) - Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (15 min for talk, 10 min for exercise)
+2. What is a Mesh? (Bane Sullivan) - Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (20 min for talk, 10 min for exercise)
 
-3. Plotting Options and Animations (Bane Sullivan) - Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations (10 min for talk, 10 min for exercise)
+3. Plotting Options and Animations (Bane Sullivan) - Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations (15 min for talk, 20 min for exercise)
 
 4. PyVista in Action (Tetsuo Koyama) - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
 
 5. Break. Stretch fingers and grab some coffee. (15 minutes)
 
-6. PyVista Data Model (Bane Sullivan) - Learn about PyVista's data model in further detail. (15 min for talk, 10 min for exercise)
+6. PyVista & VTK (Bane Sullivan) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 15 minutes for exercise)
 
-7. PyVista & VTK (Bane Sullivan) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 10 minutes for exercise)
+7. Quick break. Prepare for the final run. (10 minutes)
 
-8. Quick break. Prepare for the final run. (10 minutes)
+8. PyVista & Sphinx (Alexander Kaszynski) - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
 
-9. PyVista & Sphinx (Alexander Kaszynski) - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
+9. PyVista & Qt (Tetsuo Koyama) - Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
 
-10. PyVista & Qt (Tetsuo Koyama) - Demonstrate how to use PyVista to create standalone applications using pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
-
-11. Open up to Questions. (15 minutes)
+10. Open up to Questions. (15 minutes)
 
 
 ### Additional Tutorial Information.

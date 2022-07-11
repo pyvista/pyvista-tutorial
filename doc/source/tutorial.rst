@@ -12,7 +12,6 @@ PyVista Tutorial
    tutorial/03_figures/index
    tutorial/04_action/index
    tutorial/05_break/index
-   tutorial/06_data/index
    tutorial/07_vtk/index
    tutorial/08_break/index
    tutorial/09_sphinx/index
@@ -44,17 +43,15 @@ Tutorial Schedule
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`basic`   | Reading and plotting 3D data using ``examples`` module and external files.                                            | `Alex Kaszynski`_ | 20 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-| :ref:`mesh`    | Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D.        | `Bane Sullivan`_  | 25 minutes |
+| :ref:`mesh`    | Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D.        | `Bane Sullivan`_  | 30 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-| :ref:`figures` | Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations. | `Bane Sullivan`_  | 20 minutes |
+| :ref:`figures` | Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations. | `Bane Sullivan`_  | 35 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`action`  | Show how PyVista is already being used within several projects and can be used for all things visualization.          | `Tetsuo Koyama`_  | 15 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 |                | Break                                                                                                                 |                   | 15 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-| :ref:`data`    | Learn about PyVista's data model in further detail                                                                    | `Bane Sullivan`_  | 25 minutes |
-+----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-| :ref:`vtk`     | Show how PyVista uses VTK and how you can combine the best of both worlds!                                            | `Bane Sullivan`_  | 20 minutes |
+| :ref:`vtk`     | Show how PyVista uses VTK and how you can combine the best of both worlds!                                            | `Bane Sullivan`_  | 25 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 |                | Quick break. Prepare for the final run.                                                                               |                   | 10 minutes |
 +----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
