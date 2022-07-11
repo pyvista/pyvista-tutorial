@@ -54,7 +54,7 @@ dataset containing points, lines, and/or faces. We can immediately plot this wit
 
    dataset.plot(color='tan')
 
-Note how this is a fairly basic plot. You can change how its plotted by adding
+This is a fairly basic plot. You can change how its plotted by adding
 parameters as ``show_edges=True`` or changing the color by setting ``color`` to
 a different value. All of this is described in PyVista's API documentation in
 :func:`pyvista.plot`, but for now let's take a look at another dataset. This
