@@ -13,8 +13,8 @@ min for talk, 10 min for exercise)
     documentation.
 
 
-Using Exising Data
-~~~~~~~~~~~~~~~~~~
+Using Existing Data
+~~~~~~~~~~~~~~~~~~~
 There are two main ways of getting data into PyVista: creating it yourself from
 scratch or loading the dataset from any one of the `compatible file formats
 <https://docs.pyvista.org/api/readers/index.html>`_. Since we're starting out
@@ -77,7 +77,7 @@ the content of the data associated with those cells.
 .. note::
    One thing you might have noticed by now is that the plots here in the online
    tutorial may look slightly different depending on how you're plotting them
-   on your computer. This will depending on your ``jupyter_backend``, or if
+   on your computer. This will be depending on your ``jupyter_backend``, or if
    you're even using a jupyter notebook. As you're playing around with these
    examples, feel free to change settings like disabling (or enabling)
    ``notebook``, or using a different plotting backend for displaying within
