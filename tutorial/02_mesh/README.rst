@@ -3,7 +3,7 @@
 What is a Mesh?
 ===============
 
-Learn about the PyVista data types and how you can use it to visualize almost anything. (15 min for talk, 10 min for exercise)
+Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (15 min for talk, 10 min for exercise)
 
 .. tip::
 
@@ -28,9 +28,10 @@ PyVista work for datasets of either or mixed geometries so that you as a user
 do not have to get bogged down in the nuances.
 
 .. note::
-   This is a very high level overview of the PyVista API.  For further
-   details regarding our data model and how it relates to the
-   underlying VTK data model, please see :ref:`data`.
+   This is a very high level overview of the PyVista API to familiarize users
+   with PyVista's data structures.  For further details regarding our data
+   model, how it relates to the underlying VTK data model, and how to create
+   your own meshes, please see :ref:`data`.
 
 
 What is a point?
