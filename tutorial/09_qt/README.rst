@@ -97,7 +97,6 @@ sphere.
    :hidden:
 
    usage
-   api_reference
 
 
 License
