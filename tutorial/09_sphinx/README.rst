@@ -1,9 +1,3 @@
-:orphan:
-
-
-
-.. _sphx_glr_tutorial_09_sphinx:
-
 .. _sphinx:
 
 PyVista and Sphinx
