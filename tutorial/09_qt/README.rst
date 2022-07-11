@@ -52,9 +52,9 @@ you can simultaneously have an active VTK plot and a non-blocking Python session
    :caption: Getting Started
    :hidden:
 
-   usage
-   pyinstaller
-   flask
+   1_usage
+   2_pyinstaller
+   3_flask
 
 Getting Started
 ***************
