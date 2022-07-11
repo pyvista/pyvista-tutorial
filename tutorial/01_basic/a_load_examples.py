@@ -52,11 +52,31 @@ dataset
 # Here, we plot the dataset using a custom view direction.
 pl = pyvista.Plotter()
 _ = pl.add_volume(
-        dataset, cmap="coolwarm", opacity="sigmoid_5", show_scalar_bar=False,
+    dataset,
+    cmap="coolwarm",
+    opacity="sigmoid_5",
+    show_scalar_bar=False,
 )
-pl.camera_position = [
-    (194.6, -141.8, 182.0),
-    (34.5, 61.0, 32.5),
-    (-0.229, 0.45, 0.86)
-]
+pl.camera_position = [(194.6, -141.8, 182.0), (34.5, 61.0, 32.5), (-0.229, 0.45, 0.86)]
 pl.show()
+
+###############################################################################
+# Exercise #1 - Use PyVista Examples
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Visualize one of PyVista's built in examples.
+#
+# If your IDE supports it, you should be able to type
+# ``dataset examples.download_`` and press tab to see all the available
+# examples you can download.
+
+
+###############################################################################
+# Exercise #2 - Download and View a File
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Experiment on your own by downloading a dataset and reading it in with
+# :class:`pyvista.read`. You can use one of your own files or try downloading
+# one from following sources:
+#
+# - `Sample VTK DataSets <https://github.com/pyvista/vtk-data/tree/master/Data>`_
+# -
+#

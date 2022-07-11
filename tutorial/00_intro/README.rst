@@ -80,7 +80,7 @@ simple surface mesh:
 .. jupyter-execute::
    :hide-code:
 
-   # Configure for pythreejs
+   # Configure for panel
    import pyvista
    pyvista.set_jupyter_backend('panel')
    pyvista.global_theme.background = 'white'
@@ -269,4 +269,6 @@ Exercises
 ---------
 Install PyVista by visiting :ref:`getting_started`.
 
-Once you've installed PyVista, start to play around with some of the examples below.
+Once you've installed PyVista, open the example below and see if you can run
+it. You can download the example by scrolling to the bottom of the page and
+clicking on either the ``*.py`` (script) or ``*.ipynb`` (notebook) file format.
