@@ -15,12 +15,18 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 import os
+from pathlib import Path
 import sys
 
 if sys.version_info >= (3, 0):
     import faulthandler
 
     faulthandler.enable()
+
+sys.path.insert(0, str(Path(__file__).absolute().parent))
+import make_external_gallery
+
+make_external_gallery.make_example_gallery()
 
 # -- PyVista configuration ---------------------------------------------------
 import pyvista
@@ -60,6 +66,7 @@ author = 'PyVista Developers'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinxcontrib.asciinema',
     'sphinx_tabs.tabs',
     'sphinx.ext.napoleon',
     'sphinx.ext.autodoc',
@@ -196,7 +203,6 @@ tutorial_dirs = [
     '../../tutorial/07_break/',
     '../../tutorial/08_vtk/',
     '../../tutorial/09_qt/',
-    '../../tutorial/10_action/',
 ]
 
 sphinx_gallery_conf = {

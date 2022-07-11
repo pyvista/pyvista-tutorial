@@ -45,11 +45,11 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 2. What is a Mesh? (Bane Sullivan) - Learn about the PyVista data types and how you can use it to visualize almost anything. (15 min for talk, 10 min for exercise)
 
-3. PyVista Data Model (Tetsuo Koyama) - Learn about the data model of the PyVista framework and how you can visualize your data in style using point, cell, and field data. (15 min for talk, 10 min for exercise)
+3. PyVista Data Model (Bane Sullivan) - Learn about the data model of the PyVista framework and how you can visualize your data in style using point, cell, and field data. (15 min for talk, 10 min for exercise)
 
 4. Break. Stretch fingers and grab some coffee. (15 minutes)
 
-5. Animation/generating figures (Bane Sullivan) - Show how to animate/generating figures using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
+5. Animation/generating figures (Tetsuo Koyama) - Show how to animate/generating figures using the PyVista API to make awesome online documentation. (10 min for talk, 10 min for exercise)
 
 6. PyVista and Sphinx (Alexander Kaszynski) - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
 
