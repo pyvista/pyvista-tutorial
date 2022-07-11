@@ -14,6 +14,11 @@ Leverage PyVista to make some awesome interactive web documentation. (20 min for
 .. insert section content here
 
 
+.. literalinclude:: ../../../../tutorial/09_sphinx/1_theme.rst
+
+
+.. literalinclude:: ../../../../tutorial/09_sphinx/2_plot_directive.rst
+
 
 Exercises
 ---------
