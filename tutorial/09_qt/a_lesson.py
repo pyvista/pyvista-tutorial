@@ -146,38 +146,3 @@ os.system('pip install PySide2')
 # Then you set the `QT_API` value to the specific binding you would like to use:
 
 os.environ["QT_API"] = "pyside2"
-###############################################################################
-# Flask Application
-# ~~~~~~~~~~~~~~~~~
-#
-# You can use `pyvista` in to make a flask application to display static plots.
-# See the following example as well as the demo at [Flask Example](https://github.com/pyvista/pyvista/tree/main/examples_flask).
-#$
-# For dynamic examples, it’s recommended to use [Jupyter Notebooks](https://jupyter.org/).
-# See our documentation regarding this at [Jupyter Notebook Plotting](https://docs.pyvista.org/user-guide/jupyter/index.html#jupyter-plotting).
-# 
-# ![flask example](https://docs.pyvista.org/_images/flask_example.png)
-#
-###############################################################################
-# Python Application app.py
-# ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-# %%load 'examples_flask/static_ex/app.py'
-
-###############################################################################
-
-os.system('cd examples_flask/static_ex && python app.py')
-
-
-###############################################################################
-# Ajax Template index.html
-# ~~~~~~~~~~~~~~~~~~~~~~~~
-#
-# This template should be within the `templates` directory in the same path as
-# `app.py`.
-#
-# This template returns the `meshtype` parameter back to the `get_img` method
-# in the flask app, which is used to select the type of mesh to be plotted.
-
-# %%load 'examples_flask/static_ex/templates/index.html
-
