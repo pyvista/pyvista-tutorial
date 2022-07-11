@@ -1,18 +1,4 @@
 # Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
-
-# -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
 
 import os
 from pathlib import Path
@@ -76,7 +62,18 @@ extensions = [
     'sphinx_gallery.gen_gallery',
     'jupyter_sphinx',
     'pyvista.ext.plot_directive',
+    'sphinx.ext.intersphinx',
 ]
+
+intersphinx_mapping = {
+    "python": ("https://docs.python.org/dev", None),
+    "scipy": ("https://docs.scipy.org/doc/scipy/", None),
+    "numpy": ("https://numpy.org/devdocs", None),
+    "matplotlib": ("https://matplotlib.org/stable", None),
+    "pandas": ("https://pandas.pydata.org/pandas-docs/stable", None),
+    "pyvista": ("https://docs.pyvista.org/", None),
+}
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -213,8 +210,10 @@ sphinx_gallery_conf = {
     'examples_dirs': tutorial_dirs,
     # path where to save gallery generated examples
     'gallery_dirs': [d.lstrip('../../') for d in tutorial_dirs],
-    # Pattern to search for example files
-    'filename_pattern': r'\.py',
+
+    # Don't execute any files containing "exercise" in the filename
+    'filename_pattern': r'^((?!exercise).)*$',
+
     # Remove the 'Download all examples' button from the top level gallery
     'download_all_examples': False,
     # Remove sphinx configuration comments from code blocks
