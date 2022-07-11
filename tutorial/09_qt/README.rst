@@ -85,11 +85,11 @@ sphere.
     plotter.add_mesh(sphere)
 
 
-.. literalinclude:: ../../../tutorial/09_qt/1_usage.rst
+.. literalinclude:: ../../../../tutorial/09_qt/1_usage.rst
 
-.. literalinclude:: ../../../tutorial/09_qt/2_pyinstaller.rst
+.. literalinclude:: ../../../../tutorial/09_qt/2_pyinstaller.rst
 
-.. literalinclude:: ../../../tutorial/09_qt/3_flask.rst
+.. literalinclude:: ../../../../tutorial/09_qt/3_flask.rst
 
 License
 *******
