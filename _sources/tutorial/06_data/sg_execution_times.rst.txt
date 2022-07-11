@@ -1,0 +1,14 @@
+
+:orphan:
+
+.. _sphx_glr_tutorial_06_data_sg_execution_times:
+
+Computation times
+=================
+**00:04.229** total execution time for **tutorial_06_data** files:
+
++--------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_tutorial_06_data_a_lesson_data.py` (``a_lesson_data.py``) | 00:02.705 | 0.0 MB |
++--------------------------------------------------------------------------+-----------+--------+
+| :ref:`sphx_glr_tutorial_06_data_b_create-poly.py` (``b_create-poly.py``) | 00:01.524 | 0.0 MB |
++--------------------------------------------------------------------------+-----------+--------+
