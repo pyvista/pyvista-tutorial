@@ -22,9 +22,6 @@ jobs:
         with:
           python-version: '3.9'
 
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v2
-
       - uses: syphar/restore-virtualenv@v1
         id: cache-virtualenv
         with:
