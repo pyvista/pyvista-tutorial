@@ -85,14 +85,11 @@ sphere.
     plotter.add_mesh(sphere)
 
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Getting Started
-   :hidden:
+.. literalinclude:: ../../../tutorial/09_qt/1_usage.rst
 
-   1_usage
-   2_pyinstaller
-   3_flask
+.. literalinclude:: ../../../tutorial/09_qt/2_pyinstaller.rst
+
+.. literalinclude:: ../../../tutorial/09_qt/3_flask.rst
 
 License
 *******
