@@ -269,4 +269,4 @@ Exercises
 ---------
 Install PyVista by visiting :ref:`getting_started`.
 
-
+Once you've installed PyVista, start to play around with some of the examples below.
