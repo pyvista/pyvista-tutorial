@@ -16,7 +16,7 @@ guide below.
 Installation
 ------------
 
-PyVista can be installed on several enviornments, including, but not limited to:
+PyVista can be installed on several environments, including, but not limited to:
 
 * **Locally**
 
@@ -127,11 +127,11 @@ You can then plot using Jupyterlab or Jupyter Notebook interactively with one of
 Google Colab
 ------------
 Google Colab is a moving target and many of the "cloud ready" JavaScript
-plotting enviornments that make PyVista so great to work with do not seem to be
+plotting environments that make PyVista so great to work with do not seem to be
 available on Google Colab. However, we still have a working PyVista example for
 `Google Colab <https://colab.research.google.com/>`_ with static plotting.
 
-Visit the `PyVista on Colab  <https://colab.research.google.com/drive/15REd98bznqMGYVWxffpayfOOIwZ1s4Or?usp=sharing>`_ notebook to see PyVista in action. The minimum code to get PyVista running in a Colab enviornment is:
+Visit the `PyVista on Colab  <https://colab.research.google.com/drive/15REd98bznqMGYVWxffpayfOOIwZ1s4Or?usp=sharing>`_ notebook to see PyVista in action. The minimum code to get PyVista running in a Colab environment is:
 
 .. code::
 
@@ -151,7 +151,7 @@ Visit the `PyVista on Colab  <https://colab.research.google.com/drive/15REd98bzn
 MyBinder
 --------
 MyBinder, similar to Google Colab, allows you to run Jupyter notebooks on the
-cloud. Click on the link below to open up a MyBinder enviornment to run
+cloud. Click on the link below to open up a MyBinder environment to run
 PyVista.
 
 |binder|
