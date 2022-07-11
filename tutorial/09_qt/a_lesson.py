@@ -16,10 +16,6 @@ import os
 # the usage of Qt. Since Qt applications operates in a separate thread than VTK,
 # you can simultaneously have an active VTK plot and a non-blocking Python
 # session.
-#
-# ![qt_multiplot](https://qtdocs.pyvista.org/_images/qt_multiplot.png)
-#
-###############################################################################
 # Getting Started
 # ~~~~~~~~~~~~~~~
 
