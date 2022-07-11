@@ -14,7 +14,7 @@ Demonstrate how to use PyVista to create standalone applications using pyinstall
 .. insert section content here
 
 Overview
-********
+--------
 
 .. image:: https://img.shields.io/pypi/v/pyvistaqt
    :target: https://pypi.org/project/pyvistaqt/
@@ -49,7 +49,7 @@ you can simultaneously have an active VTK plot and a non-blocking Python session
 
 
 Getting Started
-***************
+---------------
 
 Installation using ``pip`` is::
 
