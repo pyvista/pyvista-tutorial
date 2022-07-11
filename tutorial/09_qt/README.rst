@@ -7,8 +7,8 @@ Demonstrate how to use PyVista to create standalone applications using pyinstall
 
 .. tip::
 
-    This section of the tutorial was adopted from `pyvistaqt <https://qtdocs.pyvista.org/>`_
-    chapter of the PyVista documentation.
+    This section of the tutorial was adopted from `pyvistaqt document <https://qtdocs.pyvista.org/>`_
+    and `Extras <https://docs.pyvista.org/extras/>`_ chapters of the PyVista documentation.
 
 
 .. insert section content here
