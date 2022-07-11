@@ -12,3 +12,4 @@ matplotlib
 cmocean
 pyqt5
 pyvistaqt
+QtPy
