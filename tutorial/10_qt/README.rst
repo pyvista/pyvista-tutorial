@@ -107,9 +107,4 @@ to the GPL license. See details at
 
 Please refer to the `QtPy documentation <https://github.com/spyder-ide/qtpy>`_
 to learn more.
-
-
-Exercises
----------
-
-.. leave blank after this point for Sphinx-Gallery to populate examples
+=======

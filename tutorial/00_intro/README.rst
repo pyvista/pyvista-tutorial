@@ -11,7 +11,7 @@ This section includes a brief explanation of the background and history of PyVis
     <https://docs.pyvista.org/getting-started/index.html>`_ chapter of the
     PyVista documentation.
 
-PyVista is one of many visulization libraries built ontop `VTK - The
+PyVista is one of many visulization libraries built on top `VTK - The
 Visualization Toolkit <https://vtk.org/>`_. It's primary intent was to be an
 abstraction layer over VTK to provide conviencece and functionality to VTK
 exposed "Pythonically".
@@ -34,7 +34,7 @@ Created out of a desire to make a reusable higher level abstraction layer that
   PyPI in 2019.
 - Now over 100+ contributors and `~1.4k
   <https://github.com/pyvista/pyvista/stargazers>`_ on GitHub!
-- Greatly expanded internal presense thanks to `@tkoyama010
+- Greatly expanded internal presence thanks to `@tkoyama010
   <https://github.com/tkoyama010>`_
 
 |PyPIact|
@@ -200,9 +200,9 @@ is to work directly with NumPy arrays.
           renderWindowInteractor.Start()
 
    .. tab:: PyVista
-      
+
       .. jupyter-execute::
-         
+
          import pyvista as pv
          import numpy as np
          points = np.random.random((1000, 3))
@@ -214,7 +214,7 @@ is to work directly with NumPy arrays.
 How other Libraries Compare
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are a ton of excellent visualization libaries out there and if you're
+There are a ton of excellent visualization libraries out there and if you're
 interested in data visualization, I'd encourage you for explore them all!
 
 - `Python Libraries for Mesh, Point Cloud, and Data Visualization <https://towardsdatascience.com/python-libraries-for-mesh-and-point-cloud-visualization-part-1-daa2af36de30?gi=70edd77e5fc>`_
