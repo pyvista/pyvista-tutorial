@@ -10,7 +10,6 @@ env:
   ALLOW_PLOTTING: true
   SHELLOPTS: 'errexit:pipefail'
   DISPLAY: ':99.0'
-  PYVISTA_OFF_SCREEN: 'True'
 
 jobs:
   build-doc:
