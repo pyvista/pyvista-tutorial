@@ -7,9 +7,11 @@ The only prerequisite for installing PyVista is Python itself. If you don’t ha
 Python yet and want the simplest way to get started, we recommend you use the
 `Anaconda Distribution`_.
 
-PyVista can be installed with :ref:`conda`, with :ref:`pip`, run on the cloud
-using Google Colab or MyBinder. For more detailed instructions, see the Python
-installation guide below.
+PyVista can be installed locally with :ref:`conda`, with :ref:`pip`. If you'd
+prefer it, you can also run PyVista on the cloud using :ref:`colab` or
+:ref:`mybinder`. For more detailed instructions, see the installation
+guide below.
+
 
 Installation
 ------------
@@ -23,12 +25,8 @@ PyVista can be installed on several enviornments, including, but not limited to:
 
 * **Cloud**
 
-  * Google Colab
-  * |binder|
-
-.. |binder| image:: https://static.mybinder.org/badge_logo.svg
-   :target: https://mybinder.org/v2/gh/pyvista/pyvista-examples/master
-   :alt: Launch on Binder
+  * :ref:`colab`
+  * :ref:`mybinder`
 
 
 .. _pip:
@@ -122,3 +120,42 @@ You can then plot using Jupyterlab or Jupyter Notebook interactively with one of
 
          dataset = examples.download_cad_model()
          dataset.plot(background='w', pbr=True, metallic=0.6, roughness=0.4, split_sharp_edges=True)
+
+
+.. _colab:
+
+Google Colab
+------------
+Google Colab is a moving target and many of the "cloud ready" JavaScript
+plotting enviornments that make PyVista so great to work with do not seem to be
+available on Google Colab. However, we still have a working PyVista example for
+`Google Colab <https://colab.research.google.com/>`_ with static plotting.
+
+Visit the `PyVista on Colab  <https://colab.research.google.com/drive/15REd98bznqMGYVWxffpayfOOIwZ1s4Or?usp=sharing>`_ notebook to see PyVista in action. The minimum code to get PyVista running in a Colab enviornment is:
+
+.. code::
+
+   !apt-get install -qq xvfb libgl1-mesa-glx
+   !pip install pyvista -qq
+
+.. code:: python
+
+   import pyvista
+
+   pyvista.global_theme.jupyter_backend = 'static'
+   pyvista.global_theme.notebook = True
+   pyvista.start_xvfb()
+
+.. _mybinder:
+
+MyBinder
+--------
+MyBinder, similar to Google Colab, allows you to run Jupyter notebooks on the
+cloud. Click on the link below to open up a MyBinder enviornment to run
+PyVista.
+
+|binder|
+
+.. |binder| image:: https://static.mybinder.org/badge_logo.svg
+   :target: https://mybinder.org/v2/gh/pyvista/pyvista-examples/master
+   :alt: Launch on Binder

@@ -233,5 +233,3 @@ Here are a list of longer, more technical examples of what PyVista can do!
             os.makedirs(dirname)
         with open(path, "w") as fid:
             fid.write(new_text)
-
-    return
