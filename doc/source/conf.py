@@ -228,6 +228,15 @@ sphinx_gallery_conf = {
     'first_notebook_cell': '%matplotlib inline\n'
     'from pyvista import set_plot_theme\n'
     'set_plot_theme("document")\n',
+    'binder': {
+       'org': "pyvista",
+       'repo': "pyvista-tutorial",
+       'ref': "gh-pages",
+       'branch': "main",
+       'binderhub_url': "https://mybinder.org",
+       'dependencies': "requirements.txt",
+       'use_jupyter_lab': True
+     }
 }
 
 
