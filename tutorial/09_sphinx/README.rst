@@ -252,7 +252,8 @@ Install the documentation build requirements with::
 
 Finally, build the documentation locally with::
 
-  make -C doc html
+  cd doc
+  make html
 
 Or, if on Windows::
 
