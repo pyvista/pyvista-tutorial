@@ -35,3 +35,4 @@ sphinx-tabs
 sphinxcontrib.asciinema
 pyqt5
 pyvistaqt
+QtPy
