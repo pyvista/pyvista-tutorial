@@ -196,7 +196,6 @@ tutorial_dirs = [
     '../../tutorial/03_figures/',
     # '../../tutorial/04_action/',
     '../../tutorial/05_break/',
-    '../../tutorial/06_data/',
     '../../tutorial/07_vtk/',
     '../../tutorial/08_break/',
     '../../tutorial/09_sphinx/',
