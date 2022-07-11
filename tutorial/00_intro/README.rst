@@ -32,11 +32,7 @@ Created out of a desire to make a reusable higher level abstraction layer that
   library.
 - First release of `PyVista <https://pypi.org/project/pyvista/#history>`_ on
   PyPI in 2019.
-- Published a paper `Sullivan, B., & Kaszynski, A. (2019). PyVista: 3D
-  plotting and mesh analysis through a streamlined interface for the
-  Visualization Toolkit (VTK). Journal of Open Source Software, 4(37), 1450.
-  https://doi.org/10.21105/joss.01450 <https://joss.theoj.org/papers/10.21105/joss.01450>`_
-- Now over 100+ contributors and `~1.4k Stars
+- Now over 100+ contributors and `~1.4k
   <https://github.com/pyvista/pyvista/stargazers>`_ on GitHub!
 - Greatly expanded internal presence and continuing support thanks to
   `@tkoyama010 <https://github.com/tkoyama010>`_
