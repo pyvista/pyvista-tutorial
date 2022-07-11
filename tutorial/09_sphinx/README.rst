@@ -246,8 +246,11 @@ Or simply download the repository:
 Build the documentation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Install the documentation build requirements with::
+Once you've downloaded `pyvista/pyvista-doc-example
+<https://github.com/pyvista/pyvista-doc-example>`_, cd into the directory and
+install the documentation build requirements with::
 
+  cd pyvista-doc-example
   pip install -r requirements_docs.txt
 
 Finally, build the documentation locally with::
