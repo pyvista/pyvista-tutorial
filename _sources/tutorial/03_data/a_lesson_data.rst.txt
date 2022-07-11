@@ -95,9 +95,9 @@ Let’s define points of a triangle. Using the VTK API, this can be done with:
 
  .. code-block:: none
 
-    vtkDoubleArray (0x55e198edcae0)
+    vtkDoubleArray (0x562b181da610)
       Debug: Off
-      Modified Time: 1082570
+      Modified Time: 1082540
       Reference Count: 1
       Registered Events: (none)
       Name: (none)
@@ -1349,7 +1349,7 @@ transformation.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.102 seconds)
+   **Total running time of the script:** ( 0 minutes  2.062 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_data_a_lesson_data.py:
