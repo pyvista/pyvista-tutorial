@@ -34,10 +34,8 @@ Created out of a desire to make a reusable higher level abstraction layer that
   PyPI in 2019.
 - Now over 100+ contributors and `~1.4k
   <https://github.com/pyvista/pyvista/stargazers>`_ on GitHub!
-- Greatly expanded internal presence and continuing support thanks to
-  `@tkoyama010 <https://github.com/tkoyama010>`_
-  `@adeak <https://github.com/adeak>`_
-  `@MatthewFlamm <https://github.com/MatthewFlamm>`_
+- Greatly expanded internal presence thanks to `@tkoyama010
+  <https://github.com/tkoyama010>`_
 
 |PyPIact|
 |condaact|
