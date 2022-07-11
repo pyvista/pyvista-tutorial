@@ -270,6 +270,5 @@ Exercises
 Install PyVista by visiting :ref:`getting_started`.
 
 Once you've installed PyVista, open the example below and see if you can run
-"Hello World" of PyVista. You can download the example by scrolling to the
-bottom of the page and clicking on either the ``*.py`` (script) or ``*.ipynb``
-(notebook) file format.
+it. You can download the example by scrolling to the bottom of the page and
+clicking on either the ``*.py`` (script) or ``*.ipynb`` (notebook) file format.
