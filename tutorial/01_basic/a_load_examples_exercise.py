@@ -77,7 +77,7 @@ pl.show()
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Experiment on your own by downloading a dataset and reading it in with
 # :class:`pyvista.read`. You can use one of your own files or try downloading
-# one from following sources:
+# one from the following sources:
 #
 # - `Sample VTK DataSets <https://github.com/pyvista/vtk-data/tree/master/Data>`_
 # - `Sample STL files <https://www.amtekcompany.com/teaching-resources/stl-files/>`_

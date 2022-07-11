@@ -13,8 +13,8 @@ min for talk, 10 min for exercise)
     documentation.
 
 
-Using Exising Data
-~~~~~~~~~~~~~~~~~~
+Using Existing Data
+~~~~~~~~~~~~~~~~~~~
 There are two main ways of getting data into PyVista: creating it yourself from
 scratch or loading the dataset from any one of the `compatible file formats
 <https://docs.pyvista.org/api/readers/index.html>`_. Since we're starting out
@@ -54,7 +54,7 @@ dataset containing points, lines, and/or faces. We can immediately plot this wit
 
    dataset.plot(color='tan')
 
-Note how this is a fairly basic plot. You can change how its plotted by adding
+This is a fairly basic plot. You can change how its plotted by adding
 parameters as ``show_edges=True`` or changing the color by setting ``color`` to
 a different value. All of this is described in PyVista's API documentation in
 :func:`pyvista.plot`, but for now let's take a look at another dataset. This
@@ -76,8 +76,8 @@ the content of the data associated with those cells.
 
 .. note::
    One thing you might have noticed by now is that the plots here in the online
-   tutorial may look slightly different depending on how you're plotting them
-   on your computer. This will depending on your ``jupyter_backend``, or if
+   tutorial may look slightly different than your plots depending on how you're plotting them
+   on your computer. This depends on your ``jupyter_backend``, or if
    you're even using a jupyter notebook. As you're playing around with these
    examples, feel free to change settings like disabling (or enabling)
    ``notebook``, or using a different plotting backend for displaying within
@@ -88,7 +88,7 @@ Read from a file
 ~~~~~~~~~~~~~~~~
 You can read datasets directly from a file if you have access to it locally on
 your computer. This can be one of the many file formats that VTK supports, and
-many more that it doesn't thanks to libraries like `meshio
+many more that it doesn't as PyVista can rely on libraries like `meshio
 <https://github.com/nschloe/meshio>`_.
 
 In the following example, we load VTK's iron protein dataset `ironProt.vtk
@@ -111,4 +111,4 @@ volumetrically with:
 Exercises
 ---------
 
-Try out downloading and plotting datasets on your own with the following example. 
+Try out downloading and plotting datasets on your own with the following example.
