@@ -33,7 +33,3 @@ Which will be rendered as:
    >>> import pyvista
    >>> sphere = pyvista.Sphere()
    >>> out = sphere.plot()
-
-
-.. automodule::
-   pyvista.ext.plot_directive
