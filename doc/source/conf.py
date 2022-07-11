@@ -233,7 +233,7 @@ sphinx_gallery_conf = {
        'repo': "pyvista-tutorial",
        'branch': "gh-pages",
        'binderhub_url': "https://mybinder.org",
-       'dependencies': "../../requirements.txt",
+       'dependencies': "../../Dockerfile",
        'use_jupyter_lab': True
      }
 }
