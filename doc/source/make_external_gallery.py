@@ -1,6 +1,7 @@
 """A helper script to generate the external examples gallery."""
 from io import StringIO
 import os
+from pathlib import Path
 
 
 def format_icon(title, description, link, image):
@@ -165,7 +166,10 @@ articles = dict(
 
 def make_example_gallery():
     """Make the example gallery."""
-    path = "./tutorial/10_action/index.rst"
+    d = Path(__file__).absolute().parent
+    path = Path(d, "tutorial/10_action/index.rst")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path = str(path)
 
     with StringIO() as new_fid:
         new_fid.write(
@@ -228,5 +232,8 @@ Here are a list of longer, more technical examples of what PyVista can do!
 
     # write if different or does not exist
     if new_text != existing:
+        dirname = os.path.dirname(path)
+        if not os.path.exists(dirname):
+            os.makedirs(dirname)
         with open(path, "w") as fid:
             fid.write(new_text)

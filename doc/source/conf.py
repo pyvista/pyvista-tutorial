@@ -15,6 +15,7 @@
 # sys.path.insert(0, os.path.abspath('.'))
 
 import os
+from pathlib import Path
 import sys
 
 if sys.version_info >= (3, 0):
@@ -22,7 +23,7 @@ if sys.version_info >= (3, 0):
 
     faulthandler.enable()
 
-sys.path.insert(0, os.path.abspath("."))
+sys.path.insert(0, str(Path(__file__).absolute().parent))
 import make_external_gallery
 
 make_external_gallery.make_example_gallery()
