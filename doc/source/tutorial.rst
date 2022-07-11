@@ -23,7 +23,7 @@ Welcome to the PyVista Tutorial!
 Below you'll find the schedule for the tutorial. Each lesson is split up into
 a talk and an exercise section where you'll be able to practice what was
 demonstrated in the tutorial. These lessons are designed to be highly interactive,
-where each lesson page below contain downloadable notebooks that you can run on your own.
+where each lesson page below contains downloadable notebooks that you can run on your own.
 
 During the tutorial, feel free to ask questions if you don't understand
 something or need help getting started. We're here to help!
