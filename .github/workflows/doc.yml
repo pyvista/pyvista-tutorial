@@ -48,7 +48,9 @@ jobs:
           echo PYVISTA_EXAMPLE_DATA_PATH=$(python -c "import pyvista; print(pyvista.EXAMPLES_PATH)") >> $GITHUB_ENV
 
       - name: Build Documentation
-        run: make -C doc html SPHINXOPTS="-W --keep-going"
+        run: |
+          /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -screen 0 1400x900x24 -ac +extension GLX +render -noreset
+          make -C doc html SPHINXOPTS="-W --keep-going"
 
       - name: Tar build
         run: tar -zcvf doc-build.tar.gz doc/build/
