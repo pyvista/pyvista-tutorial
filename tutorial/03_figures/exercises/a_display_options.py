@@ -2,7 +2,7 @@
 Display Options
 ~~~~~~~~~~~~~~~
 
-Take a look at the differnt display options offered by the ``add_mesh`` method.
+Take a look at the different display options offered by the ``add_mesh`` method.
 """
 import pyvista as pv
 from pyvista import examples
@@ -44,7 +44,7 @@ p.add_mesh(mesh, ...)
 p.show()
 
 ###############################################################################
-# Change the color map and the color limts
+# Change the color map and the color limits
 p = pv.Plotter()
 p.add_mesh(mesh, ...)
 p.show()

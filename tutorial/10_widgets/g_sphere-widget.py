@@ -23,7 +23,6 @@ Let's look at a few use cases that all update a surface mesh.
 # Use a single sphere widget
 
 import numpy as np
-
 import pyvista as pv
 
 # Create a triangle surface
@@ -63,7 +62,6 @@ p.show()
 # Use several sphere widgets at once
 
 import numpy as np
-
 import pyvista as pv
 
 # Create a triangle surface
@@ -104,9 +102,8 @@ p.show()
 # a surface and interpolate between them with some boundary conditions
 
 import numpy as np
-from scipy.interpolate import griddata
-
 import pyvista as pv
+from scipy.interpolate import griddata
 
 
 def get_colors(n):

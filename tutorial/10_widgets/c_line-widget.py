@@ -16,7 +16,6 @@ the ``name`` argument in ``add_mesh``.
 """
 
 import numpy as np
-
 import pyvista as pv
 from pyvista import examples
 

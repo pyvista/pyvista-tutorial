@@ -5,7 +5,7 @@ Create Triangulated Surface
 Create a surface from a set of points through a Delaunay triangulation.
 
 .. hint::
-    We will use a filter from PyVista to preform our triangulation: `delaunay_2d <https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html>`_
+    We will use a filter from PyVista to perform our triangulation: `delaunay_2d <https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html>`_
 """
 
 import numpy as np
