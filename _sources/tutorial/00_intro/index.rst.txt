@@ -275,9 +275,51 @@ Exercises
 ---------
 Install PyVista by visiting :ref:`getting_started`.
 
+Once you've installed PyVista, start to play around with some of the examples below.
 
 
 
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This is the &quot;Hello, world!&quot; of PyVista.">
+
+.. only:: html
+
+ .. figure:: /tutorial/00_intro/images/thumb/sphx_glr_a_basic_thumb.png
+     :alt: Create Basic Geometric Objects
+
+     :ref:`sphx_glr_tutorial_00_intro_a_basic.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /tutorial/00_intro/a_basic
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Download and plot example datasets.">
+
+.. only:: html
+
+ .. figure:: /tutorial/00_intro/images/thumb/sphx_glr_b_load_example_thumb.png
+     :alt: Download and Plot Examples
+
+     :ref:`sphx_glr_tutorial_00_intro_b_load_example.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /tutorial/00_intro/b_load_example
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

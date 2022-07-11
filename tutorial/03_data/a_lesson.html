@@ -173,10 +173,27 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../00_intro/index.html">
    Introduction
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_intro/a_basic.html">
+     Create Basic Geometric Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_intro/b_load_example.html">
+     Download and Plot Examples
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../01_basic/index.html">
@@ -187,8 +204,8 @@
   <a class="reference internal" href="../02_mesh/index.html">
    What is a Mesh?
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -229,8 +246,8 @@
   <a class="reference internal" href="index.html">
    PyVista Data Model
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -256,8 +273,8 @@
   <a class="reference internal" href="../05_figures/index.html">
    Plotting Options and Animations
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -318,8 +335,8 @@
   <a class="reference internal" href="../08_vtk/index.html">
    PyVista &amp; VTK
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -345,8 +362,8 @@
   <a class="reference internal" href="../10_action/index.html">
    PyVista in Action
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -608,9 +625,9 @@ is more convenient and avoids the looping overhead in Python.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vtkDoubleArray (0x55e3d366cdb0)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vtkDoubleArray (0x56026db50600)
   Debug: Off
-  Modified Time: 1052213
+  Modified Time: 1102158
   Reference Count: 1
   Registered Events: (none)
   Name: (none)
@@ -1222,7 +1239,7 @@ you wish to transform, set <cite>transform_all_input_vectors=True</cite> in [tra
 Be aware that this will transform any array with three components, so
 multi-component scalar arrays like RGB arrays will have to be discarded after
 transformation.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.971 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.924 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-data-a-lesson-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/4a1d1a60f34a227998c13a104b7275f4/a_lesson.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">a_lesson.py</span></code></a></p>
