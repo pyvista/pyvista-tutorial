@@ -452,9 +452,61 @@
    PyVista and Sphinx
   </a>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../10_widgets/index.html">
+   PyVistaQT and Widgets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_widgets/a_box-widget.html">
+     Box Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_widgets/b_checkbox-widget.html">
+     Checkbox Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_widgets/c_line-widget.html">
+     Line Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_widgets/d_multi-slider-widget.html">
+     Multiple Slider Widgets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_widgets/e_plane-widget.html">
+     Plane Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_widgets/f_slider-bar-widget.html">
+     Slider Bar Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_widgets/g_sphere-widget.html">
+     Sphere Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../10_widgets/h_spline-widget.html">
+     Spline Widget
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../10_qt/index.html">
-   PyVista and Qt
+  <a class="reference internal" href="../11_qt/index.html">
+   PyVista and QT
   </a>
  </li>
 </ul>
@@ -539,11 +591,11 @@ to download the full example code or to run this example in your browser via Bin
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-195.58309569, -199.0379258 ,    2.03750908],
-       [-178.98553381, -199.0379258 ,    2.78034307],
-       [-153.52676197, -199.0379258 ,    4.24542554],
-       [-141.82678945, -199.0379258 ,    5.04613942],
-       [-120.52158216, -199.0379258 ,    6.67315527]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-203.50413948, -202.95251523,    1.60799374],
+       [-174.50682828, -202.95251523,    2.78167248],
+       [-162.56351452, -202.95251523,    3.40191736],
+       [-140.93218851, -202.95251523,    4.72368836],
+       [-116.04985267, -202.95251523,    6.50327307]])
 </pre></div>
 </div>
 <p>Now use those points to create a point cloud PyVista data object. This will
@@ -661,8 +713,8 @@ delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound=False, inplace=False, edge_s
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
-<tr><td>X Bounds</td><td>8.712e-03, 9.299e+00</td></tr>
-<tr><td>Y Bounds</td><td>4.563e-02, 9.218e+00</td></tr>
+<tr><td>X Bounds</td><td>1.013e-02, 9.273e+00</td></tr>
+<tr><td>Y Bounds</td><td>3.081e-02, 9.265e+00</td></tr>
 <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
@@ -701,7 +753,7 @@ added unwanted triangles. We can mitigate that with the <code class="docutils li
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.319 seconds)</p>
+<img src="../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.299 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-d-create-tri-surface-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/d_create-tri-surface.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo3.svg" width="150px" /></a>
