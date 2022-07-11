@@ -7,7 +7,8 @@ Leverage PyVista to make some awesome interactive web documentation. (20 min for
 
 .. tip::
 
-    This section of the tutorial was adopted from <insert link>
+    This section of the tutorial was adopted from `Plotting Themes <https://docs.pyvista.org/user-guide/themes.html>`_
+    and `Sphinx PyVista Plot Directive <https://docs.pyvista.org/extras/plot_directive.html>`_
     chapter of the PyVista documentation.
 
 
