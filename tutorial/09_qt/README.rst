@@ -116,9 +116,6 @@ to the GPL license. See details at
 Please refer to the `QtPy documentation <https://github.com/spyder-ide/qtpy>`_
 to learn more.
 
-.. toctree::
-
-   pyinstaller
 
 Exercises
 ---------
