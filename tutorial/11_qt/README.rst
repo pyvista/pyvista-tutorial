@@ -16,7 +16,7 @@ pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
 Using PyVista with QT
 ---------------------
 
-PyVista has an interface for placing plots in `QT <https://www.qt.io/>` in the
+PyVista has an interface for placing plots in `QT <https://www.qt.io/>`_ in the
 `pyvistaqt <https://qtdocs.pyvista.org/>`_ library that allows you to combine
 QT with VTK.  This simplifies adding meshes, updating, and controlling them
 when using Qt.
