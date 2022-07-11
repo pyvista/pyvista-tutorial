@@ -4,6 +4,8 @@
 
 .. _sphx_glr_tutorial_12_questions:
 
+.. _question:
+
 Open up to Questions
 ====================
 If you have any questions, please take a turn. If we run out of time, please
