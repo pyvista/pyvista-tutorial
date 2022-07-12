@@ -5,10 +5,10 @@
 
 Computation times
 =================
-**00:04.012** total execution time for **tutorial_06_data** files:
+**00:03.098** total execution time for **tutorial_06_data** files:
 
 +--------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_06_data_a_lesson_data.py` (``a_lesson_data.py``) | 00:02.594 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_06_data_a_lesson_data.py` (``a_lesson_data.py``) | 00:01.992 | 0.0 MB |
 +--------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_06_data_b_create-poly.py` (``b_create-poly.py``) | 00:01.418 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_06_data_b_create-poly.py` (``b_create-poly.py``) | 00:01.105 | 0.0 MB |
 +--------------------------------------------------------------------------+-----------+--------+
