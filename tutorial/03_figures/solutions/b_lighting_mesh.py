@@ -10,6 +10,9 @@ and Specular. These options only work if the ``lighting`` argument to
 
 You can turn off all lighting for the given mesh by passing ``lighting=False``
 to ``add_mesh``.
+
+See the ``add_mesh`` docs for lighting options:
+https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html
 """
 # sphinx_gallery_thumbnail_number = 4
 import pyvista as pv
@@ -24,7 +27,7 @@ cpos = [(575848.0, 5128459.0, 22289.0), (562835.0, 5114981.5, 2294.5), (-0.5, -0
 mesh.plot(cpos=cpos, show_scalar_bar=False)
 
 ###############################################################################
-# What about with no lighting
+# What about with no lighting?
 mesh.plot(lighting=False, cpos=cpos, show_scalar_bar=False)
 
 ###############################################################################
@@ -38,17 +41,13 @@ p.add_mesh(mesh, show_scalar_bar=False)
 p.add_text('No Specular')
 
 p.subplot(0, 1)
-s = 1.0
-p.add_mesh(mesh, specular=s, show_scalar_bar=False)
-p.add_text(f'Specular of {s}')
+specular = 1.0
+p.add_mesh(mesh, specular=specular, show_scalar_bar=False)
+p.add_text(f'Specular of {specular}')
 
 p.link_views()
 p.view_isometric()
 p.show(cpos=cpos)
-
-###############################################################################
-# Just specular
-mesh.plot(specular=0.5, cpos=cpos, show_scalar_bar=False)
 
 ###############################################################################
 # Specular power (feel free to adjust)

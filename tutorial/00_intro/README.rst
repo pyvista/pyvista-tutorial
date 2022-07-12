@@ -19,8 +19,8 @@ exposed "Pythonically".
 
 Brief History
 -------------
-Created out of a desire to make a reusable higher level abstraction layer that
-"wraps" the lower level functionality of VTK.
+PyVista was created out of a desire to make a reusable higher level abstraction
+layer that "wraps" the lower level functionality of VTK.
 
 - Originally created as a sub-libary for `femorph
   <https://www.wpafb.af.mil/News/Article-Display/Article/1503043/afrl-signs-first-of-its-kind-software-license-with-pratt-whitney/>`_
@@ -79,7 +79,7 @@ Brief Examples
 
 Read a Surface Mesh and Plot it
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-VTK is powerful, really powerful. You can do just about anything within VTK and
+VTK is powerful, really powerful! You can do just about anything within VTK and
 PyVista just wants to make it easier to do it using ``numpy``-like and
 ``matplotlib``-like syntax. For example, if you wanted to be able to plot a
 simple surface mesh:
@@ -98,8 +98,10 @@ simple surface mesh:
    pyvista.global_theme.antialiasing = True
 
 
+**Load and plot a surface dataset** 
+
 +-------------------------------------------+-------------------------------------+
-| Read and plot STL file using ``vtk``      | Read an STL file using PyVista      |
+| Using ``vtk``                             | Using PyVista                       |
 +===========================================+=====================================+
 | .. code:: python                          | .. jupyter-execute::                |
 |                                           |                                     |

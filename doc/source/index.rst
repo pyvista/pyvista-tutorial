@@ -123,14 +123,14 @@ Instructor Bios
 Alexander Kaszynski
 ~~~~~~~~~~~~~~~~~~~
 
-`Alex Kaszynski <https://github.com/akaszynski/resume>`_, co-creator of PyVista and creator of the `PyAnsys <https://github.com/pyansys>`_ organization.
-
-Advocate for all things Python with extensive experience presenting as a speaker at IGTI conferences for the past decade, and for the past almost three at Ansys pushing for automation through Python for CAE applications.
+`Alex Kaszynski <https://github.com/akaszynski/resume>`_, co-creator of PyVista
+and creator of the `PyAnsys <https://github.com/pyansys>`_ organization.
 
 Advocate for all things open source and has contributed to the creation of
-Ansys's open source projects `Ansys <https://ansys.github.io/>`_. Enjoys
-presenting and demoing Python, especially 3D visualization but also its
-application to CAE and automation.
+Ansys's open source projects at `Ansys <https://ansys.github.io/>`_ and
+`PyMAPDL <https://https://github.com/pyansys/pymapdl>`_. Enjoys presenting and
+demoing Python, especially 3D visualization but also its application to CAE and
+automation.
 
 Bane Sullivan
 ~~~~~~~~~~~~~
