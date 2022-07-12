@@ -116,6 +116,7 @@ with:
 
    dataset.plot(volume=True)
 
+|
 
 Lesson Material
 ===============
