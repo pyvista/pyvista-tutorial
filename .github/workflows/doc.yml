@@ -94,7 +94,7 @@ jobs:
 
       - name: Zip Notebooks
         run: |
-          cp doc/build/html/notebooks/tutorial/ notebooks
+          cp -r doc/build/html/notebooks/tutorial/ notebooks
           zip -r notebooks.zip notebooks/
           mv notebooks.zip doc/build/html/
 
