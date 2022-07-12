@@ -11,7 +11,7 @@ functions.
 
 Here we’ll take a look at the various widgets, some helper methods that
 leverage those widgets to do common tasks, and demonstrate how to leverage the
-widgets for user defined tasks and processing routines. (20 min for talk)
+widgets for user defined tasks and processing routines.
 
 .. tip::
 
