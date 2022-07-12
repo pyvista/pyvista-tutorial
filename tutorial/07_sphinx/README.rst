@@ -3,8 +3,7 @@
 PyVista and Sphinx
 ==================
 
-Leverage PyVista to make some awesome interactive web documentation. (20 min
-for talk, 10 min for exercise)
+Leverage PyVista to make some awesome interactive web documentation.
 
 .. tip::
 
