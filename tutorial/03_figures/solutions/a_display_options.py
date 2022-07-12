@@ -16,6 +16,8 @@ p.show()
 ###############################################################################
 # Let's take a look at some different options for the ``add_mesh`` method to
 # alter how the above data are displayed.
+#
+# See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html
 help(p.add_mesh)
 
 ###############################################################################

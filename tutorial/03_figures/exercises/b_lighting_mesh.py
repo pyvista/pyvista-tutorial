@@ -1,6 +1,4 @@
 """
-.. _ref_lighting_properties_example:
-
 Lighting Properties
 ~~~~~~~~~~~~~~~~~~~
 
@@ -28,7 +26,7 @@ mesh.plot(cpos=cpos, show_scalar_bar=False)
 
 ###############################################################################
 # What about with no lighting?
-mesh.plot(lighting=False, cpos=cpos, show_scalar_bar=False)
+mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 
 ###############################################################################
 # Demonstration of the specular property
@@ -41,8 +39,8 @@ p.add_mesh(mesh, show_scalar_bar=False)
 p.add_text('No Specular')
 
 p.subplot(0, 1)
-specular = 1.0
-p.add_mesh(mesh, specular=specular, show_scalar_bar=False)
+specular = ...
+p.add_mesh(mesh, ..., show_scalar_bar=False)
 p.add_text(f'Specular of {specular}')
 
 p.link_views()
@@ -51,12 +49,12 @@ p.show(cpos=cpos)
 
 ###############################################################################
 # Specular power (feel free to adjust)
-mesh.plot(specular=0.5, specular_power=15, cpos=cpos, show_scalar_bar=False)
+mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 
 ###############################################################################
 # Demonstration of all diffues, specular, and ambient in use together
 # (feel free to adjust)
-mesh.plot(diffuse=0.5, specular=0.5, ambient=0.5, cpos=cpos, show_scalar_bar=False)
+mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 
 ###############################################################################
 # For detailed control over lighting conditions in general see the

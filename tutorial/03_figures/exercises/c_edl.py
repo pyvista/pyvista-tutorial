@@ -16,37 +16,6 @@ import pyvista as pv
 from pyvista import examples
 
 ###############################################################################
-# Statue
-# ++++++
-#
-# Eye-Dome Lighting can dramatically improve depth perception when plotting
-# incredibly sophisticated meshes like the creative commons Queen Nefertiti
-# statue:
-
-nefertiti = examples.download_nefertiti()
-nefertiti.plot(eye_dome_lighting=True, cpos=[-1, -1, 0.2], color=True)
-
-###############################################################################
-# Here we will compare a EDL shading side by side with normal shading
-
-p = pv.Plotter(shape=(1, 2), border=False)
-
-# With eye-dome lighting
-p.subplot(0, 0)
-p.add_mesh(nefertiti, color=True)
-p.enable_eye_dome_lighting()
-p.add_text("Eye-Dome Lighting", font_size=24)
-p.camera_position = [-1, -1, 0.2]
-
-# No eye-dome lighting
-p.subplot(0, 1)
-p.add_mesh(nefertiti, color=True)
-p.add_text("No Eye-Dome Lighting", font_size=24)
-p.camera_position = [-1, -1, 0.2]
-
-p.show()
-
-###############################################################################
 # Point Cloud
 # +++++++++++
 #
@@ -54,7 +23,7 @@ p.show()
 # Take this Lidar point cloud for example:
 
 point_cloud = examples.download_lidar()
-
+point_cloud
 
 ###############################################################################
 # And now plot this point cloud as-is:

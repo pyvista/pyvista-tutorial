@@ -18,9 +18,9 @@ the output with PyVista for streamlined plotting. For example:
 
 """
 
-import vtk
 import pyvista as pv
 from pyvista import examples
+import vtk
 
 ###############################################################################
 # Create a circle using vtk
@@ -64,7 +64,7 @@ splatter.SetInputData(mesh)
 # Set parameters
 n = 200
 splatter.SetSampleDimensions(n, n, n)
-splatter.SetRadius(.02)
+splatter.SetRadius(0.02)
 splatter.SetExponentFactor(-10)
 splatter.SetEccentricity(2)
 splatter.Update()
@@ -75,7 +75,7 @@ vol = pv.wrap(splatter.GetOutput())
 
 ###############################################################################
 # Use PyVista to produce contours
-cntrs = vol.contour([.95 * splatter.GetRadius()])
+cntrs = vol.contour([0.95 * splatter.GetRadius()])
 
 ###############################################################################
 # Use PyVista to plot

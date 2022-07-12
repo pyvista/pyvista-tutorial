@@ -18,8 +18,9 @@ structure using VTK Python's bindings, one would write the following:
 .. _vtkpoints: https://vtk.org/doc/nightly/html/classvtkPoints.html
 """
 
-import vtk
 from math import cos, sin
+
+import vtk
 
 ###############################################################################
 # Create values for a 300x300 image dataset
@@ -32,11 +33,11 @@ from math import cos, sin
 values = vtk.vtkDoubleArray()
 values.SetName("values")
 values.SetNumberOfComponents(1)
-values.SetNumberOfTuples(300*300)
+values.SetNumberOfTuples(300 * 300)
 
 for x in range(300):
     for y in range(300):
-        values.SetValue(x*300 + y, 127.5 + (1.0 + sin(x/25.0)*cos(y/25.0)))
+        values.SetValue(x * 300 + y, 127.5 + (1.0 + sin(x / 25.0) * cos(y / 25.0)))
 
 ###############################################################################
 # Create the image structure
@@ -55,8 +56,8 @@ image_data.GetPointData().SetScalars(values)
 # much more concise syntax that is more "Pythonic". The equivalent code in
 # PyVista is:
 
-import pyvista as pv
 import numpy as np
+import pyvista as pv
 
 ###############################################################################
 # Use the meshgrid function to create 2D "grids" of the x and y values.
@@ -64,7 +65,7 @@ import numpy as np
 
 xi = np.arange(300)
 x, y = np.meshgrid(xi, xi)
-values = 127.5 + (1.0 + np.sin(x/25.0)*np.cos(y/25.0))
+values = 127.5 + (1.0 + np.sin(x / 25.0) * np.cos(y / 25.0))
 
 ###############################################################################
 # Create the grid.  Note how the values must use Fortran ordering.
@@ -165,9 +166,7 @@ print(vtk_points)
 ###############################################################################
 # To do the same within PyVista, you simply need to create a NumPy array:
 
-np_points = np.array([[0, 0, 0],
-                      [1, 0, 0],
-                      [0.5, 0.667, 0]])
+np_points = np.array([[0, 0, 0], [1, 0, 0], [0.5, 0.667, 0]])
 
 ###############################################################################
 # .. note::
