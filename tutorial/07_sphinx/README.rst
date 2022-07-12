@@ -226,7 +226,7 @@ Exercises
 
 Generate Sphinx documentation on your own using the
 `pyvista/pyvista-doc-example <https://github.com/pyvista/pyvista-doc-example>`_
-repository. Either clone the respository with::
+repository. Either clone the repository with::
 
   git clone https://github.com/pyvista/pyvista-doc-example
 
