@@ -213,7 +213,7 @@ If your IDE supports it, you should be able to type
 ``dataset examples.download_`` and press tab to see all the available
 examples you can download.
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-85
+.. GENERATED FROM PYTHON SOURCE LINES 77-88
 
 .. code-block:: default
 
@@ -221,7 +221,10 @@ examples you can download.
     dataset = examples.download_gears()
     bodies = dataset.split_bodies()
     bodies.plot(
-        cmap='jet', multi_colors=True, smooth_shading=True, split_sharp_edges=True,
+        cmap='jet',
+        multi_colors=True,
+        smooth_shading=True,
+        split_sharp_edges=True,
     )
 
 
@@ -237,7 +240,7 @@ examples you can download.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-99
+.. GENERATED FROM PYTHON SOURCE LINES 89-102
 
 Exercise #2 - Download and View a File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -253,7 +256,7 @@ one from the following sources:
 Download the file ``'P_shelf_pin.stl'`` from
 https://www.thingiverse.com/thing:5412753
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-102
+.. GENERATED FROM PYTHON SOURCE LINES 102-105
 
 .. code-block:: default
 
@@ -275,7 +278,7 @@ https://www.thingiverse.com/thing:5412753
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.836 seconds)
+   **Total running time of the script:** ( 0 minutes  4.825 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_solutions_a_load_examples_solution.py:

@@ -1,0 +1,764 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Widgets in PyVista &#8212; PyVista Tutorial</title>
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_2.6.1.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/asciinema-player_2.6.1.js"></script>
+    <script src="../../_static/thebelab-helper.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Box Widget" href="a_box-widget.html" />
+    <link rel="prev" title="PyVista and Sphinx" href="../07_sphinx/index.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="None">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/pyvista_logo_sm.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/pyvista_logo_sm.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../getting-started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../../tutorial.html">
+  PyVista Tutorial
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyvista/pyvista-tutorial" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyvista/pyvista/discussions" rel="noopener" target="_blank" title="Support"><span><i class="fa fa-comment fa-fw"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://docs.pyvista.org/" rel="noopener" target="_blank" title="Docs"><span><i class="fa fa-book fa-fw"></i></span>
+            <label class="sr-only">Docs</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://slack.pyvista.org" rel="noopener" target="_blank" title="Slack Community"><span><i class="fab fa-slack"></i></span>
+            <label class="sr-only">Slack Community</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" rel="noopener" target="_blank" title="Contributing"><span><i class="fa fa-gavel fa-fw"></i></span>
+            <label class="sr-only">Contributing</label></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://doi.org/10.21105/joss.01450" rel="noopener" target="_blank" title="The Paper"><span><i class="fa fa-file-text fa-fw"></i></span>
+            <label class="sr-only">The Paper</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lessons
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../00_intro/index.html">
+   Introduction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../00_intro/a_basic.html">
+     Create Basic Geometric Objects
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../01_basic/index.html">
+   Basic usage
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../01_basic/a_load_examples_exercise.html">
+     Download and Plot Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../02_mesh/index.html">
+   What is a Mesh?
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_mesh/a_lesson_mesh.html">
+     Lesson Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_mesh/exercises/b_create-point-cloud.html">
+     Create Point Cloud
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_mesh/exercises/c_create-uniform-grid.html">
+     Creating a Uniform Grid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_mesh/exercises/d_create-tri-surface.html">
+     Create Triangulated Surface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_mesh/exercises/e_read-file.html">
+     Load and Plot from a File
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_mesh/soultions/b_create-point-cloud.html">
+     Create Point Cloud
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_mesh/soultions/c_create-uniform-grid.html">
+     Creating a Uniform Grid
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_mesh/soultions/d_create-tri-surface.html">
+     Create Triangulated Surface
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../02_mesh/soultions/e_read-file.html">
+     Load and Plot from a File
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../03_figures/index.html">
+   Plotting Options and Animations
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/a_lesson_figures.html">
+     Lesson Overview
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/b_shading.html">
+     Types of Shading
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/d_pbr.html">
+     Physically Based Rendering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/e_labels.html">
+     Label Points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/f_gif.html">
+     Create a GIF Movie
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/g_orbit.html">
+     Orbiting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/h_texture.html">
+     Applying Textures
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/exercises/a_display_options.html">
+     Display Options
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/exercises/c_edl.html">
+     Eye Dome Lighting
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/solutions/a_display_options.html">
+     Display Options
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/solutions/b_lighting_mesh.html">
+     Lighting Properties
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/solutions/c_edl.html">
+     Eye Dome Lighting
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../04_filters/index.html">
+   Filters
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_filters/a_lesson_filters.html">
+     Using Common Filters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_filters/exercises/b_clipping.html">
+     Clipping with Planes &amp; Boxes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_filters/exercises/c_compute-normals.html">
+     Computing Surface Normals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_filters/exercises/d_contouring.html">
+     Contouring
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_filters/exercises/e_glyphs.html">
+     Plotting Glyphs (Vectors or PolyData)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_filters/solutions/b_clipping.html">
+     Clipping with Planes &amp; Boxes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_filters/solutions/c_compute-normals.html">
+     Computing Surface Normals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_filters/solutions/d_contouring.html">
+     Contouring
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../04_filters/solutions/e_glyphs.html">
+     Plotting Glyphs (Vectors or PolyData)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05_action/index.html">
+   PyVista in Action
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/camurban/pterasoftware">
+     PteraSoftware
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://laustep.github.io/stlahblog/posts/MyPyVistaArtworks.html">
+     Stﾃｩphane Laurent's artwork
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://jacobbumgarner.github.io/VesselVio/">
+     VesselVio
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://dennissergeev.github.io/exoconvection-apj-2020/">
+     Atmospheric Convection
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://nbviewer.jupyter.org/github/banesullivan/damavand-volcano/blob/master/Damavand_Volcano.ipynb">
+     Damavand Volcano
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://www.youtube.com/watch?v=cCPjnF_vHxw&amp;feature=youtu.be">
+     Anvil Cirrus Plumes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://gist.github.com/hichamjanati/6668d91848283c31ac18d801552fb582">
+     Optimization visualization with PyVista
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/johnjarmitage/flem">
+     FLEM: A diffusive landscape evolution model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://github.com/BartheG/Orvisu">
+     Orvisu Demo Application
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="http://pymeshfix.pyvista.org/examples/index.html">
+     PyMeshFix's example gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="http://tetgen.pyvista.org/examples/index.html">
+     TetGen's example gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://pvgeo.org/examples/index.html">
+     PVGeo's example gallery
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://forge.pvgeo.org/project/index.html">
+     FORGE Geothermal Project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://peterdsharpe.github.io/AeroSandbox/">
+     AeroSandbox
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://pswpswpsw.github.io/posts/2018/09/blog-post-modify-vtk-openfoam/">
+     OpenFOAM Rendering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="http://discretize.simpeg.xyz/en/main/examples/plot_pyvista_laguna.html">
+     3D Rendering with Discretize
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference external" href="https://opengeovis.github.io/omfvista/examples/index.html">
+     3D visualization for the Open Mining Format (omf)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06_vtk/index.html">
+   PyVista &amp; VTK
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_vtk/a_create.html">
+     Create VTK Objects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06_vtk/b_algorithms.html">
+     Using VTK Algorithms
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_sphinx/index.html">
+   PyVista and Sphinx
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Widgets in PyVista
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="a_box-widget.html">
+     Box Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="b_checkbox-widget.html">
+     Checkbox Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="c_line-widget.html">
+     Line Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="d_multi-slider-widget.html">
+     Multiple Slider Widgets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="e_plane-widget.html">
+     Plane Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="f_slider-bar-widget.html">
+     Slider Bar Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="g_sphere-widget.html">
+     Sphere Widget
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="h_spline-widget.html">
+     Spline Widget
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09_qt/index.html">
+   PyVista and QT
+  </a>
+ </li>
+</ul>
+
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#widget-examples">
+   Widget Examples
+  </a>
+  <ul class="nav section-nav flex-column">
+  </ul>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="widgets-in-pyvista">
+<span id="widgets"></span><span id="sphx-glr-tutorial-08-widgets"></span><h1>Widgets in PyVista<a class="headerlink" href="#widgets-in-pyvista" title="Permalink to this headline">#</a></h1>
+<p>PyVista has several widgets that can be added to the rendering scene to control
+filters like clipping, slicing, and thresholding - specifically there are
+widgets to control the positions of boxes, planes, and lines or slider bars
+which can all be highly customized through the use of custom callback
+functions.</p>
+<p>Here we’ll take a look at the various widgets, some helper methods that
+leverage those widgets to do common tasks, and demonstrate how to leverage the
+widgets for user defined tasks and processing routines.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This section of the tutorial was adopted from the <a class="reference external" href="https://docs.pyvista.org/examples/index.html?highlight=widgets#widgets">widgets section</a>
+of the PyVista example documentation.</p>
+</div>
+<section id="widget-examples">
+<h2>Widget Examples<a class="headerlink" href="#widget-examples" title="Permalink to this headline">#</a></h2>
+<div class="sphx-glr-thumbcontainer" tooltip="The box widget can be enabled and disabled by the pyvista.Plotter.add_box_widget and pyvista.Pl..."><figure class="align-default" id="id1">
+<img alt="Box Widget" src="../../_images/sphx_glr_a_box-widget_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="a_box-widget.html#sphx-glr-tutorial-08-widgets-a-box-widget-py"><span class="std std-ref">Box Widget</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Use a checkbox to turn on/off the visibility of meshes in a scene."><figure class="align-default" id="id2">
+<img alt="Checkbox Widget" src="../../_images/sphx_glr_b_checkbox-widget_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="b_checkbox-widget.html#sphx-glr-tutorial-08-widgets-b-checkbox-widget-py"><span class="std std-ref">Checkbox Widget</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="The line widget can be enabled and disabled by the pyvista.Plotter.add_line_widget and pyvista...."><figure class="align-default" id="id3">
+<img alt="Line Widget" src="../../_images/sphx_glr_c_line-widget_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="c_line-widget.html#sphx-glr-tutorial-08-widgets-c-line-widget-py"><span class="std std-ref">Line Widget</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="Use a class based callback to track multiple slider widgets for updating a single mesh."><figure class="align-default" id="id4">
+<img alt="Multiple Slider Widgets" src="../../_images/sphx_glr_d_multi-slider-widget_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="d_multi-slider-widget.html#sphx-glr-tutorial-08-widgets-d-multi-slider-widget-py"><span class="std std-ref">Multiple Slider Widgets</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="The plane widget can be enabled and disabled by the pyvista.Plotter.add_plane_widget and pyvist..."><figure class="align-default" id="id5">
+<img alt="Plane Widget" src="../../_images/sphx_glr_e_plane-widget_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="e_plane-widget.html#sphx-glr-tutorial-08-widgets-e-plane-widget-py"><span class="std std-ref">Plane Widget</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="The slider widget can be enabled and disabled by the pyvista.Plotter.add_slider_widget and pyvi..."><figure class="align-default" id="id6">
+<img alt="Slider Bar Widget" src="../../_images/sphx_glr_f_slider-bar-widget_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="f_slider-bar-widget.html#sphx-glr-tutorial-08-widgets-f-slider-bar-widget-py"><span class="std std-ref">Slider Bar Widget</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip="The sphere widget can be enabled and disabled by the pyvista.Plotter.add_sphere_widget and pyvi..."><figure class="align-default" id="id7">
+<img alt="Sphere Widget" src="../../_images/sphx_glr_g_sphere-widget_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="g_sphere-widget.html#sphx-glr-tutorial-08-widgets-g-sphere-widget-py"><span class="std std-ref">Sphere Widget</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-thumbcontainer" tooltip=" A spline widget can be enabled and disabled by the pyvista.Plotter.add_spline_widget and pyvis..."><figure class="align-default" id="id8">
+<img alt="Spline Widget" src="../../_images/sphx_glr_h_spline-widget_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="h_spline-widget.html#sphx-glr-tutorial-08-widgets-h-spline-widget-py"><span class="std std-ref">Spline Widget</span></a></span><a class="headerlink" href="#id8" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div><div class="toctree-wrapper compound">
+</div>
+<div class="sphx-glr-clear"></div><p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+              <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+  <a class='left-prev' id="prev-link" href="../07_sphinx/index.html" title="previous page">
+      <i class="fas fa-angle-left"></i>
+      <div class="prev-next-info">
+          <p class="prev-next-subtitle">previous</p>
+          <p class="prev-next-title">PyVista and Sphinx</p>
+      </div>
+  </a>
+  <a class='right-next' id="next-link" href="a_box-widget.html" title="next page">
+  <div class="prev-next-info">
+      <p class="prev-next-subtitle">next</p>
+      <p class="prev-next-title">Box Widget</p>
+  </div>
+  <i class="fas fa-angle-right"></i>
+  </a>
+</div>
+              </footer>
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright 2022, PyVista Developers.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>
