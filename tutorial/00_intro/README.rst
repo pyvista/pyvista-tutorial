@@ -24,12 +24,11 @@ Created out of a desire to make a reusable higher level abstraction layer that
 
 - Originally created as a sub-libary for `femorph
   <https://www.wpafb.af.mil/News/Article-Display/Article/1503043/afrl-signs-first-of-its-kind-software-license-with-pratt-whitney/>`_
-  by `akaszynski <https://github.com/akaszynski>`_ in 2016.
+  by `@akaszynski <https://github.com/akaszynski>`_ in 2016.
 - First posted to GitHub as `akaszynski/vtki
   <https://github.com/akaszynski/vtki>`_ back in 2017.
 - `@banesullivan <https://github.com/banesullivan/>`_ joined the project in
-  2018 and vasty improved the documentation, examples, and features of the
-  library.
+  2018 to expand functionality, features, and improve the documentation with examples.
 - First release of `PyVista <https://pypi.org/project/pyvista/#history>`_ on
   PyPI in 2019.
 - Published a paper `Sullivan, B., & Kaszynski, A. (2019). PyVista: 3D
