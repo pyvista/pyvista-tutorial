@@ -75,7 +75,13 @@ Single Checkbox
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-39
+.. GENERATED FROM PYTHON SOURCE LINES 33-36
+
+And here is a screen capture of a user interacting with this
+
+.. image:: ../../images/gifs/single-checkbox-widget.gif
+
+.. GENERATED FROM PYTHON SOURCE LINES 38-44
 
 Multiple Checkboxes
 +++++++++++++++++++
@@ -84,7 +90,7 @@ In this example, we will add many meshes to a scene with unique colors and
 create corresponding checkboxes for those meshes of the same color to toggle
 their visibility in the scene.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-59
+.. GENERATED FROM PYTHON SOURCE LINES 44-64
 
 .. code-block:: default
 
@@ -115,7 +121,7 @@ their visibility in the scene.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-85
+.. GENERATED FROM PYTHON SOURCE LINES 65-91
 
 .. code-block:: default
 
@@ -147,6 +153,7 @@ their visibility in the scene.
 
 
 
+
 .. image-sg:: /tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_002.png
    :alt: b checkbox widget
    :srcset: /tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_002.png
@@ -156,10 +163,16 @@ their visibility in the scene.
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 92-95
+
+And here is a screen capture of a user interacting with this
+
+.. image:: ../../images/gifs/multiple-checkbox-widget.gif
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.919 seconds)
+   **Total running time of the script:** ( 0 minutes  0.945 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_b_checkbox-widget.py:

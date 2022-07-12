@@ -29,6 +29,11 @@ def toggle_vis(flag):
 p.add_checkbox_button_widget(toggle_vis, value=True)
 p.show()
 
+##############################################################################
+# And here is a screen capture of a user interacting with this
+#
+# .. image:: ../../images/gifs/single-checkbox-widget.gif
+
 ###############################################################################
 # Multiple Checkboxes
 # +++++++++++++++++++
@@ -82,3 +87,8 @@ for i, lst in enumerate(colors):
         Startpos = Startpos + size + (size // 10)
 
 p.show()
+
+##############################################################################
+# And here is a screen capture of a user interacting with this
+#
+# .. image:: ../../images/gifs/multiple-checkbox-widget.gif

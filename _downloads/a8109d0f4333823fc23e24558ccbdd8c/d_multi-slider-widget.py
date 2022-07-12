@@ -71,3 +71,8 @@ p.add_slider_widget(
     style='modern',
 )
 p.show()
+
+##############################################################################
+# And here is a screen capture of a user interacting with this
+#
+# .. image:: ../../images/gifs/multiple-slider-widget.gif

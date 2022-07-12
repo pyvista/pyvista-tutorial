@@ -45,7 +45,7 @@ https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-25
 
-First, lets take a look at the mesh with default lighting conditions
+First, let's take a look at the mesh with default lighting conditions
 
 .. GENERATED FROM PYTHON SOURCE LINES 25-27
 
