@@ -661,14 +661,14 @@ to download the full example code or to run this example in your browser via Bin
 use directly on the object. These filters include the following
 (see <a class="reference external" href="https://docs.pyvista.org/api/core/filters.html#filters-ref" title="(in PyVista v0.35.1)"><span>Filters</span></a> for a complete list):</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">slice</span></code>: creates a single slice through the input dataset on a user defined plane</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">slice_orthogonal</span></code>: creates a <code class="docutils literal notranslate"><span class="pre">MultiBlock</span></code> dataset of three orthogonal slices</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">slice_along_axis</span></code>: creates a <code class="docutils literal notranslate"><span class="pre">MultiBlock</span></code> dataset of many slices along a specified axis</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">threshold</span></code>: Thresholds a dataset by a single value or range of values</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">threshold_percent</span></code>: Threshold by percentages of the scalar range</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">clip</span></code>: Clips the dataset by a user defined plane</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">outline_corners</span></code>: Outlines the corners of the data extent</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">extract_geometry</span></code>: Extract surface geometry</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice.html">slice()</a> creates a single slice through the input dataset on a user defined plane</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_orthogonal.html">slice_orthogonal()</a>: creates a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.35.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> dataset of three orthogonal slices</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_along_axis.html">slice_along_axis()</a>: creates a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.35.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> dataset of many slices along a specified axis</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold.html">threshold()</a>: Thresholds a dataset by a single value or range of values</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html">threshold_percent()</a>: Threshold by percentages of the scalar range</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.clip.html">clip()</a>: Clips the dataset by a user defined plane</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.outline_corners.html">outline_corners()</a>: Outlines the corners of the data extent</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.extract_geometry.html">extract_geometry()</a>: Extract surface geometry</p></li>
 </ul>
 <p>To use these filters, call the method of your choice directly on your data
 object:</p>
@@ -755,7 +755,7 @@ In the following example, several filters are chained together:</p>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_filters_003.png" srcset="../../_images/sphx_glr_a_lesson_filters_003.png" alt="a lesson filters" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.541 seconds)</p>
+<img src="../../_images/sphx_glr_a_lesson_filters_003.png" srcset="../../_images/sphx_glr_a_lesson_filters_003.png" alt="a lesson filters" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.865 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-04-filters-a-lesson-filters-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/04_filters/a_lesson_filters.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo10.svg" width="150px" /></a>

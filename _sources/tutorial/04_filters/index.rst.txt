@@ -22,14 +22,24 @@ PyVista mesh objects have a suite of common filters ready for immediate
 use directly on the object. These filters include the following
 (see `Filters API <https://docs.pyvista.org/api/core/filters.html>`_ for a complete list):
 
-* ``slice``: creates a single slice through the input dataset on a user defined plane
-* ``slice_orthogonal``: creates a ``MultiBlock`` dataset of three orthogonal slices
-* ``slice_along_axis``: creates a ``MultiBlock`` dataset of many slices along a specified axis
-* ``threshold``: Thresholds a dataset by a single value or range of values
-* ``threshold_percent``: Threshold by percentages of the scalar range
-* ``clip``: Clips the dataset by a user defined plane
-* ``outline_corners``: Outlines the corners of the data extent
-* ``extract_geometry``: Extract surface geometry
+* `slice()`_ creates a single slice through the input dataset on a user defined plane
+* `slice_orthogonal()`_: creates a :class:`pyvista.MultiBlock` dataset of three orthogonal slices
+* `slice_along_axis()`_: creates a :class:`pyvista.MultiBlock` dataset of many slices along a specified axis
+* `threshold()`_: Thresholds a dataset by a single value or range of values
+* `threshold_percent()`_: Threshold by percentages of the scalar range
+* `clip()`_: Clips the dataset by a user defined plane
+* `outline_corners()`_: Outlines the corners of the data extent
+* `extract_geometry()`_: Extract surface geometry
+
+.. _slice(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice.html
+.. _slice_orthogonal(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_orthogonal.html
+.. _slice_along_axis(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_along_axis.html
+.. _threshold(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold.html
+.. _threshold_percent(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html
+.. _clip(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.clip.html
+.. _outline_corners(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.outline_corners.html
+.. _extract_geometry(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.extract_geometry.html
+
 
 To use these filters, call the method of your choice directly on your data
 object:

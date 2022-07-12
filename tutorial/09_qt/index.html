@@ -675,17 +675,16 @@
   <section id="pyvista-and-qt">
 <span id="qt"></span><span id="sphx-glr-tutorial-09-qt"></span><h1>PyVista and QT<a class="headerlink" href="#pyvista-and-qt" title="Permalink to this headline">#</a></h1>
 <p>Demonstrate how to use PyVista to create standalone applications using
-pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)</p>
+<a class="reference external" href="https://www.pyinstaller.org/">pyinstaller</a> and the Qt framework.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>This section of the tutorial was adopted from the <a class="reference external" href="https://qtdocs.pyvista.org/">pyvistaqt documentation</a> and the <a class="reference external" href="https://docs.pyvista.org/extras/">Extras</a> chapters of the PyVista documentation.</p>
 </div>
 <section id="using-pyvista-with-qt">
 <h2>Using PyVista with QT<a class="headerlink" href="#using-pyvista-with-qt" title="Permalink to this headline">#</a></h2>
-<p>PyVista has an interface for placing plots in QT <a class="reference external" href="https://www.qt.io/">(see QT)</a> in the
-<a class="reference external" href="https://qtdocs.pyvista.org/">pyvistaqt</a> library that allows you to combine
-QT with VTK.  This simplifies adding meshes, updating, and controlling them
-when using Qt.</p>
+<p>PyVista has an interface for placing plots in QT <a class="reference external" href="https://www.qt.io/">(see QT)</a> in the <a class="reference external" href="https://qtdocs.pyvista.org/">pyvistaqt</a>
+library that allows you to combine QT with VTK.  This simplifies adding meshes,
+updating, and controlling them when using Qt.</p>
 <p>Installation using <code class="docutils literal notranslate"><span class="pre">pip</span></code> is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyvistaqt</span>
 </pre></div>
@@ -694,11 +693,11 @@ when using Qt.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">pyvistaqt</span>
 </pre></div>
 </div>
-<p>Once installed, use the <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.BackgroundPlotter</span></code> like any PyVista
+<p>Once installed, use the <a class="reference external" href="https://qtdocs.pyvista.org/api_reference.html#pyvistaqt.BackgroundPlotter" title="(in PyVistaQt v0.6.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.BackgroundPlotter</span></code></a> like any PyVista
 plotter.</p>
 <section id="brief-example">
 <h3>Brief Example<a class="headerlink" href="#brief-example" title="Permalink to this headline">#</a></h3>
-<p>Create an instance of the <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.BackgroundPlotter</span></code> and plot a
+<p>Create an instance of the <a class="reference external" href="https://qtdocs.pyvista.org/api_reference.html#pyvistaqt.BackgroundPlotter" title="(in PyVistaQt v0.6.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.BackgroundPlotter</span></code></a> and plot a
 sphere.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvistaqt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
@@ -709,19 +708,19 @@ sphere.</p>
 <span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">sphere</span><span class="p">)</span>
 </pre></div>
 </div>
-<figure class="align-default" id="id1">
+<figure class="align-default" id="id3">
 <a class="reference internal image-reference" href="../../_images/qt_plotting_sphere.png"><img alt="../../_images/qt_plotting_sphere.png" src="../../_images/qt_plotting_sphere.png" style="width: 600pt;" /></a>
 <figcaption>
-<p><span class="caption-text">Sample PyQt5 pyvista QtInteractor</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-text">Sample PyQt5 pyvista QtInteractor</span><a class="headerlink" href="#id3" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="background-plotting">
 <h3>Background Plotting<a class="headerlink" href="#background-plotting" title="Permalink to this headline">#</a></h3>
 <p>Normal PyVista plotting windows exhibit blocking behavior, but it is possible
-to plot in the background and update the plotter in real-time using the
-<code class="docutils literal notranslate"><span class="pre">BackgroundPlotter</span></code> object.  This requires <code class="docutils literal notranslate"><span class="pre">pyvistaqt</span></code>, but otherwise appears
-and functions like a normal PyVista <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> instance. For example:</p>
+to plot in the background and update the plotter in real-time using
+<a class="reference external" href="https://qtdocs.pyvista.org/api_reference.html#pyvistaqt.BackgroundPlotter" title="(in PyVistaQt v0.6.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvistaqt.BackgroundPlotter</span></code></a>.  This requires <a class="reference external" href="https://qtdocs.pyvista.org/">pyvistaqt</a>, but otherwise appears and functions like a
+normal PyVista <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.35.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> instance. For example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvistaqt</span> <span class="kn">import</span> <span class="n">BackgroundPlotter</span>
 
@@ -737,8 +736,9 @@ and functions like a normal PyVista <code class="docutils literal notranslate"><
 </section>
 <section id="multiple-plotters">
 <h3>Multiple Plotters<a class="headerlink" href="#multiple-plotters" title="Permalink to this headline">#</a></h3>
-<p>The following example shows how to use an interface with multiple plotters. Each
-plotter can be selected and functions like a normal PyVista <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> instance:</p>
+<p>The following example shows how to use an interface with multiple
+plotters. Each plotter can be selected and functions like a normal PyVista
+<a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.35.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> instance:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvistaqt</span> <span class="kn">import</span> <span class="n">MultiPlotter</span>
 
@@ -753,9 +753,9 @@ plotter can be selected and functions like a normal PyVista <code class="docutil
 </section>
 <section id="freezing-pyvista-with-pyinstaller">
 <h2>Freezing PyVista with pyinstaller<a class="headerlink" href="#freezing-pyvista-with-pyinstaller" title="Permalink to this headline">#</a></h2>
-<p>You can make some fantastic standalone programs with <a class="reference external" href="https://www.pyinstaller.org/">pyinstaller</a> and <code class="docutils literal notranslate"><span class="pre">pyvista</span></code>, and you can even make a
-graphical user interface incorporating <code class="docutils literal notranslate"><span class="pre">PyQt5</span></code> or <code class="docutils literal notranslate"><span class="pre">pyside2</span></code>.  Depending on
-your version of VTK, this requires some extra steps to setup.</p>
+<p>You can make some fantastic standalone programs with <a class="reference external" href="https://www.pyinstaller.org/">pyinstaller</a> and PyVista, and you can even make a
+graphical user interface incorporating <a class="reference external" href="https://pypi.org/project/PyQt5/">PyQt5</a> or <a class="reference external" href="https://pypi.org/project/PySide2/">pyside2</a>.  Depending on your version of VTK, this
+requires some extra steps to setup.</p>
 <p>When running VTK v9, you need to add several additional <code class="docutils literal notranslate"><span class="pre">hiddenimports</span></code>.  For
 clarity and completeness, create a spec file (we’ll name it <code class="docutils literal notranslate"><span class="pre">pyvista.spec</span></code>)
 following the directions given at <a class="reference external" href="https://pyinstaller.readthedocs.io/en/stable/spec-files.html">Using Spec Files</a>.  Modify the
@@ -773,8 +773,8 @@ following the directions given at <a class="reference external" href="https://py
                            <span class="p">],</span>
 </pre></div>
 </div>
-<p>From there, you can freeze an application using <code class="docutils literal notranslate"><span class="pre">pyvista</span></code> and create
-a standalone application.</p>
+<p>From there, you can freeze an application using PyVista and create a standalone
+application.</p>
 </section>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>

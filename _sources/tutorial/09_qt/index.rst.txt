@@ -10,7 +10,7 @@ PyVista and QT
 ==============
 
 Demonstrate how to use PyVista to create standalone applications using
-pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
+`pyinstaller <https://www.pyinstaller.org/>`_ and the Qt framework.
 
 .. tip::
 
@@ -22,10 +22,10 @@ pyinstaller and the Qt framework. (15 min for talk, 10 for exercise)
 Using PyVista with QT
 ---------------------
 
-PyVista has an interface for placing plots in QT `(see QT) <https://www.qt.io/>`_ in the
-`pyvistaqt <https://qtdocs.pyvista.org/>`_ library that allows you to combine
-QT with VTK.  This simplifies adding meshes, updating, and controlling them
-when using Qt.
+PyVista has an interface for placing plots in QT `(see QT)
+<https://www.qt.io/>`_ in the `pyvistaqt <https://qtdocs.pyvista.org/>`_
+library that allows you to combine QT with VTK.  This simplifies adding meshes,
+updating, and controlling them when using Qt.
 
 Installation using ``pip`` is::
 
@@ -66,9 +66,10 @@ Background Plotting
 ~~~~~~~~~~~~~~~~~~~
 
 Normal PyVista plotting windows exhibit blocking behavior, but it is possible
-to plot in the background and update the plotter in real-time using the
-``BackgroundPlotter`` object.  This requires ``pyvistaqt``, but otherwise appears
-and functions like a normal PyVista ``Plotter`` instance. For example:
+to plot in the background and update the plotter in real-time using
+:class:`pyvistaqt.BackgroundPlotter`.  This requires `pyvistaqt
+<https://qtdocs.pyvista.org/>`_, but otherwise appears and functions like a
+normal PyVista :class:`pyvista.Plotter` instance. For example:
 
 .. code:: python
 
@@ -87,8 +88,9 @@ and functions like a normal PyVista ``Plotter`` instance. For example:
 Multiple Plotters
 ~~~~~~~~~~~~~~~~~
 
-The following example shows how to use an interface with multiple plotters. Each
-plotter can be selected and functions like a normal PyVista ``Plotter`` instance:
+The following example shows how to use an interface with multiple
+plotters. Each plotter can be selected and functions like a normal PyVista
+:class:`pyvista.Plotter` instance:
 
 .. code:: python
 
@@ -105,9 +107,11 @@ plotter can be selected and functions like a normal PyVista ``Plotter`` instance
 Freezing PyVista with pyinstaller
 ---------------------------------
 You can make some fantastic standalone programs with `pyinstaller
-<https://www.pyinstaller.org/>`_ and ``pyvista``, and you can even make a
-graphical user interface incorporating ``PyQt5`` or ``pyside2``.  Depending on
-your version of VTK, this requires some extra steps to setup.
+<https://www.pyinstaller.org/>`_ and PyVista, and you can even make a
+graphical user interface incorporating `PyQt5
+<https://pypi.org/project/PyQt5/>`_ or `pyside2
+<https://pypi.org/project/PySide2/>`_.  Depending on your version of VTK, this
+requires some extra steps to setup.
 
 When running VTK v9, you need to add several additional ``hiddenimports``.  For
 clarity and completeness, create a spec file (we'll name it ``pyvista.spec``)
@@ -129,8 +133,8 @@ following the directions given at `Using Spec Files
                                 'vtkmodules.numpy_interface.dataset_adapter',
                                ],
 
-From there, you can freeze an application using ``pyvista`` and create
-a standalone application.
+From there, you can freeze an application using PyVista and create a standalone
+application.
 
 
 Examples
