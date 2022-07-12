@@ -116,7 +116,9 @@ with:
 
    dataset.plot(volume=True)
 
-Exercises
----------
 
-Try out downloading and plotting datasets on your own with the following example.
+Lesson Material
+===============
+
+This is the notebook rendering of this page where you can interactively follow
+along with this lesson.
