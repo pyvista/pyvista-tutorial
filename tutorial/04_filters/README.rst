@@ -88,7 +88,7 @@ What about other filters? Let's collect a few filter results and compare them:
     threshed = dataset.threshold([100, 500])
     contours = dataset.contour()
     slices = dataset.slice_orthogonal()
-    glyphs = dataset.glyph(factor=1e-3, geom=pv.Sphere())
+    glyphs = dataset.glyph(factor=1e-3, geom=pv.Sphere(), orient=False)
 
     p = pv.Plotter(shape=(2, 2))
     # Show the threshold
