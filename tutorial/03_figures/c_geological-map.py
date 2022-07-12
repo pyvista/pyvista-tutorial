@@ -4,7 +4,7 @@ Geological Map on Topography
 
 Texture mapping for a GeoTIFF on a topography surface.
 
-To overlay an image/map from a GeoTIFF on to a topography surface, it's necessary to have texture coordinates ("texture mapping") matching the proper extents of the mesh/surface you'd like to drape the texture (GeoTIFF) on.
+To overlay an image/map from a GeoTIFF on to a topography surface, it's necessary to have texture coordinates ("texture mapping") matching the proper extends of the mesh/surface you'd like to drape the texture (GeoTIFF) on.
 
 We can do this by using the spatial reference of the GeoTIFF itself, as this allows you to preserve the entire mesh that the texture is being draped on without having to clip out the parts where you don't have imagery. In this example, we explicitly set the texture extents onto a topography surface where the texture/GeoTIFF has a much larger extent than the topography surface.
 
