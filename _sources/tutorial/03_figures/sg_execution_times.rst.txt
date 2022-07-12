@@ -5,22 +5,22 @@
 
 Computation times
 =================
-**02:31.475** total execution time for **tutorial_03_figures** files:
+**03:18.033** total execution time for **tutorial_03_figures** files:
 
 +---------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_03_figures_d_pbr.py` (``d_pbr.py``)                     | 00:56.724 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_03_figures_d_pbr.py` (``d_pbr.py``)                     | 01:15.134 | 0.0 MB |
 +---------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_03_figures_g_orbit.py` (``g_orbit.py``)                 | 00:56.294 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_03_figures_g_orbit.py` (``g_orbit.py``)                 | 01:10.876 | 0.0 MB |
 +---------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_03_figures_c_edl.py` (``c_edl.py``)                     | 00:19.512 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_03_figures_c_edl.py` (``c_edl.py``)                     | 00:27.296 | 0.0 MB |
 +---------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_03_figures_h_texture.py` (``h_texture.py``)             | 00:08.832 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_03_figures_h_texture.py` (``h_texture.py``)             | 00:11.596 | 0.0 MB |
 +---------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_03_figures_a_lighting_mesh.py` (``a_lighting_mesh.py``) | 00:05.153 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_03_figures_a_lighting_mesh.py` (``a_lighting_mesh.py``) | 00:06.869 | 0.0 MB |
 +---------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_03_figures_f_gif.py` (``f_gif.py``)                     | 00:02.657 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_03_figures_f_gif.py` (``f_gif.py``)                     | 00:03.282 | 0.0 MB |
 +---------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_03_figures_b_shading.py` (``b_shading.py``)             | 00:01.447 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_03_figures_b_shading.py` (``b_shading.py``)             | 00:01.810 | 0.0 MB |
 +---------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_03_figures_e_labels.py` (``e_labels.py``)               | 00:00.856 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_03_figures_e_labels.py` (``e_labels.py``)               | 00:01.170 | 0.0 MB |
 +---------------------------------------------------------------------------------+-----------+--------+
