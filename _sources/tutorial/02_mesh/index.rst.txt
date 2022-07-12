@@ -9,7 +9,8 @@
 What is a Mesh?
 ===============
 
-Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (15 min for talk, 10 min for exercise)
+Learn the basics of the PyVista data types and how to open common 3D file
+formats to visualize the data in 3D.
 
 .. tip::
 
@@ -37,7 +38,7 @@ do not have to get bogged down in the nuances.
    This is a very high level overview of the PyVista API to familiarize users
    with PyVista's data structures.  For further details regarding our data
    model, how it relates to the underlying VTK data model, and how to create
-   your own meshes, please see `this detailed guide of of the Data Model <https://docs.pyvista.org/user-guide/data_model.html>`_
+   your own meshes, please see `this detailed guide of of the Data Model <https://docs.pyvista.org/user-guide/data_model.html>`_.
 
 
 What is a point?
@@ -74,7 +75,9 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
 
     points = np.random.rand(100, 3)
     mesh = pv.PolyData(points)
-    mesh.plot(point_size=10, style='points')
+    mesh.plot(point_size=10, style='points', color='tan')
+
+|
 
 But it's important to note that most meshes have some sort of
 connectivity between points such as this gridded mesh:
@@ -90,10 +93,11 @@ connectivity between points such as this gridded mesh:
 
     pl = pv.Plotter()
     pl.add_mesh(mesh, show_edges=True, color='white')
-    pl.add_points(mesh.points, color='red',
-                  point_size=20)
+    pl.add_points(mesh.points, color='red', point_size=20)
     pl.camera_position = cpos
     pl.show()
+
+|
 
 Or this triangulated surface:
 
@@ -103,8 +107,7 @@ Or this triangulated surface:
 
     pl = pv.Plotter()
     pl.add_mesh(mesh, show_edges=True, color='white')
-    pl.add_points(mesh.points, color='red',
-                  point_size=20)
+    pl.add_points(mesh.points, color='red', point_size=20)
     pl.camera_position = [(0.02, 0.30, 0.73),
                           (0.02, 0.03, -0.022),
                           (-0.03, 0.94, -0.34)]
@@ -137,6 +140,7 @@ between eight points in that mesh:
                           (-0.28, 0.94, -0.21)]
     pl.show()
 
+|
 
 Cells aren't limited to voxels, they could be a triangle between three
 points, a line between two points, or even a single point could be its
@@ -179,6 +183,8 @@ face or 3D volume) is assigned the value of that attribute.
 
     mesh.cell_data['my cell values'] = np.arange(mesh.n_cells)
     mesh.plot(scalars='my cell values', cpos=cpos, show_edges=True)
+
+|
 
 Here's a comparison of point data versus cell data and how point data
 is interpolated across cells when mapping colors. This is unlike cell
@@ -242,7 +248,7 @@ Exercises
 ---------
 
 For more examples, please see the mesh creation section of the
-`PyVista Examples Gallery <https://docs.pyvista.org/examples/index.html#mesh-creation>`_
+`PyVista Examples Gallery <https://docs.pyvista.org/examples/index.html#mesh-creation>`_.
 
 
 
