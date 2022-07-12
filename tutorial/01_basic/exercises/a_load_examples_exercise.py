@@ -68,7 +68,7 @@ pl.show()
 # Visualize one of PyVista's built in examples.
 #
 # If your IDE supports it, you should be able to type
-# ``dataset examples.download_`` and press tab to see all the available
+# ``dataset = examples.download_`` and press tab to see all the available
 # examples you can download.
 
 
