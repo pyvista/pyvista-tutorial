@@ -122,23 +122,26 @@ with:
 
    dataset.plot(volume=True)
 
-Exercises
----------
+|
 
-Try out downloading and plotting datasets on your own with the following example.
+Lesson Material
+===============
+
+This is the notebook rendering of this page where you can interactively follow
+along with this lesson.
 
 
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Download and plot example datasets.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This section demonstrates how to use PyVista to reading and plotting 3D data using the `pyvista...">
 
 .. only:: html
 
- .. figure:: /tutorial/01_basic/images/thumb/sphx_glr_a_load_examples_exercise_thumb.png
-     :alt: Download and Plot Examples
+ .. figure:: /tutorial/01_basic/images/thumb/sphx_glr_a_lesson_basic_thumb.png
+     :alt: Basic Usage Lesson
 
-     :ref:`sphx_glr_tutorial_01_basic_a_load_examples_exercise.py`
+     :ref:`sphx_glr_tutorial_01_basic_a_lesson_basic.py`
 
 .. raw:: html
 
@@ -148,7 +151,40 @@ Try out downloading and plotting datasets on your own with the following example
 .. toctree::
    :hidden:
 
-   /tutorial/01_basic/a_load_examples_exercise
+   /tutorial/01_basic/a_lesson_basic
+.. raw:: html
+
+    <div class="sphx-glr-clear"></div>
+
+
+
+.. _sphx_glr_tutorial_01_basic_exercises:
+
+Exercises
+=========
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Download and plot example datasets.">
+
+.. only:: html
+
+ .. figure:: /tutorial/01_basic/exercises/images/thumb/sphx_glr_a_load_examples_exercise_thumb.png
+     :alt: Download and Plot Examples
+
+     :ref:`sphx_glr_tutorial_01_basic_exercises_a_load_examples_exercise.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /tutorial/01_basic/exercises/a_load_examples_exercise
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>
