@@ -46,11 +46,11 @@ Tutorial Schedule
 ~~~~~~~~~~~~~~~~~
 
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-| Lesson          | Description                                                                                                           | Presenter         | Time       |
+| **Lesson**      | **Description**                                                                                                       | **Presenter**     | **Time**   |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`intro`    | Introduction - Using PyVista for 3D Visualization within Python.                                                      | `Alex Kaszynski`_ | 20 minutes |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-| :ref:`basic`    | Reading and plotting 3D data using ``examples`` module and external files.                                            | `Alex Kaszynski`_ | 20 minutes |
+| :ref:`basic`    | Reading and plotting 3D data using the `pyvista.examples`_ module and external files.                                 | `Alex Kaszynski`_ | 20 minutes |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`mesh`     | Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D.        | `Bane Sullivan`_  | 25 minutes |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
@@ -66,7 +66,7 @@ Tutorial Schedule
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`widgets`  | Use PyVista with a variety of helpful widgets.                                                                        | `Tetsuo Koyama`_  | 20 minutes |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
-| :ref:`qt`       | Demonstrate how to use PyVista to create standalone applications using ``pyinstaller`` and the Qt framework.          | `Alex Kaszynski`_ | 15 minutes |
+| :ref:`qt`       | Demonstrate how to use PyVista to create standalone applications using `pyinstaller`_ and the Qt framework.           | `Alex Kaszynski`_ | 15 minutes |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 
 .. |discuss| image:: https://img.shields.io/badge/GitHub-Discussions-green?logo=github
@@ -78,3 +78,5 @@ Tutorial Schedule
 .. _Alex Kaszynski: https://github.com/akaszynski
 .. _Bane Sullivan: https://banesullivan.com
 .. _Tetsuo Koyama: https://github.com/tkoyama010
+.. _pyvista.examples: https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.examples.html#
+.. _pyinstaller: https://www.pyinstaller.org/
