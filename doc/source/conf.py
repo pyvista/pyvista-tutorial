@@ -155,7 +155,6 @@ html_theme_options = {
             'icon': 'fa fa-file-text fa-fw',
         },
     ],
-    'navbar_end': ['navbar-icon-links'],
 }
 
 html_sidebars = {
