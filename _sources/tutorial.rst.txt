@@ -57,7 +57,7 @@ Tutorial Schedule
 | :ref:`figures`  | Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations. | `Bane Sullivan`_  | 20 minutes |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`filters`  | Demonstrate the PyVista filters API to perform mesh analysis and alteration.                                          | `Bane Sullivan`_  | 15 minutes |
-+----------------+------------------------------------------------------------------------------------------------------------------------+-------------------+------------+
++-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`action`   | Show how PyVista is already being used within several projects and can be used for all things visualization.          | `Tetsuo Koyama`_  | 15 minutes |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+-------------------+------------+
 | :ref:`vtk`      | Show how PyVista uses VTK and how you can combine the best of both worlds!                                            | `Bane Sullivan`_  | 20 minutes |

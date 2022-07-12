@@ -36,52 +36,7 @@ To learn more, please see `this blog post`_.
     from pyvista import examples
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-25
-
-Statue
-++++++
-
-Eye-Dome Lighting can dramatically improve depth perception when plotting
-incredibly sophisticated meshes like the creative commons Queen Nefertiti
-statue:
-
-.. GENERATED FROM PYTHON SOURCE LINES 25-29
-
-.. code-block:: default
-
-
-    nefertiti = examples.download_nefertiti()
-    nefertiti.plot(eye_dome_lighting=True, cpos=[-1, -1, 0.2], color=True)
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 30-31
-
-Here we will compare a EDL shading side by side with normal shading
-
-.. GENERATED FROM PYTHON SOURCE LINES 31-49
-
-.. code-block:: default
-
-
-    p = pv.Plotter(shape=(1, 2), border=False)
-
-    # With eye-dome lighting
-    p.subplot(0, 0)
-    p.add_mesh(nefertiti, color=True)
-    p.enable_eye_dome_lighting()
-    p.add_text("Eye-Dome Lighting", font_size=24)
-    p.camera_position = [-1, -1, 0.2]
-
-    # No eye-dome lighting
-    p.subplot(0, 1)
-    p.add_mesh(nefertiti, color=True)
-    p.add_text("No Eye-Dome Lighting", font_size=24)
-    p.camera_position = [-1, -1, 0.2]
-
-    p.show()
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 50-55
+.. GENERATED FROM PYTHON SOURCE LINES 19-24
 
 Point Cloud
 +++++++++++
@@ -89,20 +44,20 @@ Point Cloud
 When plotting a simple point cloud, it can be difficult to perceive depth.
 Take this Lidar point cloud for example:
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-59
+.. GENERATED FROM PYTHON SOURCE LINES 24-28
 
 .. code-block:: default
 
 
     point_cloud = examples.download_lidar()
+    point_cloud
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 60-61
+.. GENERATED FROM PYTHON SOURCE LINES 29-30
 
 And now plot this point cloud as-is:
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-68
+.. GENERATED FROM PYTHON SOURCE LINES 30-37
 
 .. code-block:: default
 
@@ -114,14 +69,14 @@ And now plot this point cloud as-is:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-73
+.. GENERATED FROM PYTHON SOURCE LINES 38-42
 
 We can improve the depth mapping by enabling eye dome lighting on the
 renderer with :func:`pyvista.Renderer.enable_eye_dome_lighting`.
 
 Try plotting that point cloud with Eye-Dome-Lighting yourself below:
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-80
+.. GENERATED FROM PYTHON SOURCE LINES 42-49
 
 .. code-block:: default
 
@@ -133,7 +88,7 @@ Try plotting that point cloud with Eye-Dome-Lighting yourself below:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-84
+.. GENERATED FROM PYTHON SOURCE LINES 50-53
 
 The eye dome lighting mode can also handle plotting scalar arrays. Try the
 above block but by specifying a ``scalars`` array instead of ``color`` in

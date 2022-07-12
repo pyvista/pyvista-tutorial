@@ -293,33 +293,38 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_figures/d_pbr.html">
-     Physically Based Rendering
+    <a class="reference internal" href="../03_figures/c_geological-map.html">
+     Geological Map on Topography
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_figures/e_labels.html">
-     Label Points
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_figures/f_gif.html">
+    <a class="reference internal" href="../03_figures/d_gif.html">
      Create a GIF Movie
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_figures/g_orbit.html">
-     Orbiting
+    <a class="reference internal" href="../03_figures/bonus/d_pbr.html">
+     Physically Based Rendering
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_figures/h_texture.html">
-     Applying Textures
+    <a class="reference internal" href="../03_figures/bonus/e_labels.html">
+     Label Points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/bonus/g_orbit.html">
+     Orbiting
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03_figures/exercises/a_display_options.html">
      Display Options
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/exercises/b_lighting_mesh.html">
+     Lighting Properties
     </a>
    </li>
    <li class="toctree-l2">
@@ -699,11 +704,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.24783453, 0.42472877, 0.34889616],
-       [0.17134342, 0.96453152, 0.07048072],
-       [0.89438006, 0.67335263, 0.60818503],
-       [0.71339695, 0.70266905, 0.88421295],
-       [0.21695855, 0.36728872, 0.85714392]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.39981343, 0.32181912, 0.7863471 ],
+       [0.8273453 , 0.92006262, 0.21006979],
+       [0.67600753, 0.86915084, 0.98873678],
+       [0.07995453, 0.89977918, 0.13705574],
+       [0.28740874, 0.84809037, 0.01911015]])
 </pre></div>
 </div>
 <p>Pass numpy array of points (n by 3) to PolyData</p>
@@ -717,9 +722,9 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
-<tr><td>X Bounds</td><td>1.982e-03, 9.861e-01</td></tr>
-<tr><td>Y Bounds</td><td>9.565e-03, 9.985e-01</td></tr>
-<tr><td>Z Bounds</td><td>3.607e-03, 9.843e-01</td></tr>
+<tr><td>X Bounds</td><td>2.330e-02, 9.995e-01</td></tr>
+<tr><td>Y Bounds</td><td>1.707e-03, 9.931e-01</td></tr>
+<tr><td>Z Bounds</td><td>6.202e-03, 9.887e-01</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -857,7 +862,7 @@ generate cube containing 6 faces and assign each face an integer from
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_mesh_008.png" srcset="../../_images/sphx_glr_a_lesson_mesh_008.png" alt="a lesson mesh" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.126 seconds)</p>
+<img src="../../_images/sphx_glr_a_lesson_mesh_008.png" srcset="../../_images/sphx_glr_a_lesson_mesh_008.png" alt="a lesson mesh" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.115 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-a-lesson-mesh-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/a_lesson_mesh.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo3.svg" width="150px" /></a>

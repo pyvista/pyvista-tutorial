@@ -293,33 +293,38 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_figures/d_pbr.html">
-     Physically Based Rendering
+    <a class="reference internal" href="../03_figures/c_geological-map.html">
+     Geological Map on Topography
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_figures/e_labels.html">
-     Label Points
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03_figures/f_gif.html">
+    <a class="reference internal" href="../03_figures/d_gif.html">
      Create a GIF Movie
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_figures/g_orbit.html">
-     Orbiting
+    <a class="reference internal" href="../03_figures/bonus/d_pbr.html">
+     Physically Based Rendering
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03_figures/h_texture.html">
-     Applying Textures
+    <a class="reference internal" href="../03_figures/bonus/e_labels.html">
+     Label Points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/bonus/g_orbit.html">
+     Orbiting
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../03_figures/exercises/a_display_options.html">
      Display Options
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../03_figures/exercises/b_lighting_mesh.html">
+     Lighting Properties
     </a>
    </li>
    <li class="toctree-l2">
@@ -659,9 +664,9 @@ to download the full example code or to run this example in your browser via Bin
 </div>
 <p>Nothing stops you from using VTK classes and then wrapping
 the output with PyVista for streamlined plotting. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vtk</span>
-<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
+<span class="kn">import</span> <span class="nn">vtk</span>
 </pre></div>
 </div>
 <p>Create a circle using vtk</p>
@@ -703,7 +708,7 @@ the above VTK code.</p>
 <p>Set parameters</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n</span></a> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">splatter</span><span class="o">.</span><span class="n">SetSampleDimensions</span><span class="p">(</span><a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/functions.html#int" title="builtins.int" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">n</span></a><span class="p">)</span>
-<span class="n">splatter</span><span class="o">.</span><span class="n">SetRadius</span><span class="p">(</span><span class="mf">.02</span><span class="p">)</span>
+<span class="n">splatter</span><span class="o">.</span><span class="n">SetRadius</span><span class="p">(</span><span class="mf">0.02</span><span class="p">)</span>
 <span class="n">splatter</span><span class="o">.</span><span class="n">SetExponentFactor</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">splatter</span><span class="o">.</span><span class="n">SetEccentricity</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">splatter</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
@@ -714,7 +719,7 @@ the above VTK code.</p>
 </pre></div>
 </div>
 <p>Use PyVista to produce contours</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cntrs</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.contour.html#pyvista.UniformGrid.contour" title="pyvista.UniformGrid.contour" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">contour</span></a><span class="p">([</span><span class="mf">.95</span> <span class="o">*</span> <span class="n">splatter</span><span class="o">.</span><span class="n">GetRadius</span><span class="p">()])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cntrs</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.contour.html#pyvista.UniformGrid.contour" title="pyvista.UniformGrid.contour" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">contour</span></a><span class="p">([</span><span class="mf">0.95</span> <span class="o">*</span> <span class="n">splatter</span><span class="o">.</span><span class="n">GetRadius</span><span class="p">()])</span>
 </pre></div>
 </div>
 <p>Use PyVista to plot</p>
@@ -728,10 +733,10 @@ the above VTK code.</p>
 <p class="admonition-title">Note</p>
 <p>The above example was adapted from VTK’s <a class="reference external" href="https://kitware.github.io/vtk-examples/site/Cxx/PolyData/EmbedPointsIntoVolume/">Embed Points Into Volume</a></p>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.264 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.602 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-a-2-pyvista-vtk-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/a_2_pyvista_vtk.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo12.svg" width="150px" /></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/a_2_pyvista_vtk.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo13.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/8d95f231e44f09c16af5a67e62bf56b6/a_2_pyvista_vtk.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">a_2_pyvista_vtk.py</span></code></a></p>

@@ -44,74 +44,7 @@ To learn more, please see `this blog post`_.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-27
-
-Statue
-++++++
-
-Eye-Dome Lighting can dramatically improve depth perception when plotting
-incredibly sophisticated meshes like the creative commons Queen Nefertiti
-statue:
-
-.. GENERATED FROM PYTHON SOURCE LINES 27-31
-
-.. code-block:: default
-
-
-    nefertiti = examples.download_nefertiti()
-    nefertiti.plot(eye_dome_lighting=True, cpos=[-1, -1, 0.2], color=True)
-
-
-
-
-.. image-sg:: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_001.png
-   :alt: c edl
-   :srcset: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_001.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 32-33
-
-Here we will compare a EDL shading side by side with normal shading
-
-.. GENERATED FROM PYTHON SOURCE LINES 33-51
-
-.. code-block:: default
-
-
-    p = pv.Plotter(shape=(1, 2), border=False)
-
-    # With eye-dome lighting
-    p.subplot(0, 0)
-    p.add_mesh(nefertiti, color=True)
-    p.enable_eye_dome_lighting()
-    p.add_text("Eye-Dome Lighting", font_size=24)
-    p.camera_position = [-1, -1, 0.2]
-
-    # No eye-dome lighting
-    p.subplot(0, 1)
-    p.add_mesh(nefertiti, color=True)
-    p.add_text("No Eye-Dome Lighting", font_size=24)
-    p.camera_position = [-1, -1, 0.2]
-
-    p.show()
-
-
-
-
-.. image-sg:: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_002.png
-   :alt: c edl
-   :srcset: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_002.png
-   :class: sphx-glr-single-img
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 52-57
+.. GENERATED FROM PYTHON SOURCE LINES 21-26
 
 Point Cloud
 +++++++++++
@@ -119,26 +52,49 @@ Point Cloud
 When plotting a simple point cloud, it can be difficult to perceive depth.
 Take this Lidar point cloud for example:
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-61
+.. GENERATED FROM PYTHON SOURCE LINES 26-30
 
 .. code-block:: default
 
 
     point_cloud = examples.download_lidar()
+    point_cloud
 
 
 
 
 
 
+.. raw:: html
 
+    <div class="output_subarea output_html rendered_html output_result">
+    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table>
+    <tr><th>PolyData</th><th>Information</th></tr>
+    <tr><td>N Cells</td><td>3392091</td></tr>
+    <tr><td>N Points</td><td>3392091</td></tr>
+    <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
+    <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
+    <tr><td>Z Bounds</td><td>1.754e+03, 1.787e+03</td></tr>
+    <tr><td>N Arrays</td><td>1</td></tr>
+    </table>
 
+    </td><td>
+    <table>
+    <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
+    <tr><td><b>Elevation</b></td><td>Points</td><td>float64</td><td>1</td><td>1.754e+03</td><td>1.787e+03</td></tr>
+    </table>
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-63
+    </td></tr> </table>
+    </div>
+    <br />
+    <br />
+
+.. GENERATED FROM PYTHON SOURCE LINES 31-32
 
 And now plot this point cloud as-is:
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-70
+.. GENERATED FROM PYTHON SOURCE LINES 32-39
 
 .. code-block:: default
 
@@ -152,23 +108,23 @@ And now plot this point cloud as-is:
 
 
 
-.. image-sg:: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_003.png
+.. image-sg:: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_001.png
    :alt: c edl
-   :srcset: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_003.png
+   :srcset: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_001.png
    :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-75
+.. GENERATED FROM PYTHON SOURCE LINES 40-44
 
 We can improve the depth mapping by enabling eye dome lighting on the
 renderer with :func:`pyvista.Renderer.enable_eye_dome_lighting`.
 
 Try plotting that point cloud with Eye-Dome-Lighting yourself below:
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-82
+.. GENERATED FROM PYTHON SOURCE LINES 44-51
 
 .. code-block:: default
 
@@ -182,25 +138,46 @@ Try plotting that point cloud with Eye-Dome-Lighting yourself below:
 
 
 
-.. image-sg:: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_004.png
+.. image-sg:: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_002.png
    :alt: c edl
-   :srcset: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_004.png
+   :srcset: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_002.png
    :class: sphx-glr-single-img
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-86
+.. GENERATED FROM PYTHON SOURCE LINES 52-55
 
 The eye dome lighting mode can also handle plotting scalar arrays. Try the
 above block but by specifying a ``scalars`` array instead of ``color`` in
 the ``add_mesh`` call.
 
+.. GENERATED FROM PYTHON SOURCE LINES 55-60
+
+.. code-block:: default
+
+
+    p = pv.Plotter()
+    p.add_mesh(point_cloud, scalars="Elevation", point_size=5)
+    p.enable_eye_dome_lighting()  # Turn on eye dome lighting here
+    p.show()
+
+
+
+.. image-sg:: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_003.png
+   :alt: c edl
+   :srcset: /tutorial/03_figures/solutions/images/sphx_glr_c_edl_003.png
+   :class: sphx-glr-single-img
+
+
+
+
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.267 seconds)
+   **Total running time of the script:** ( 0 minutes  19.514 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_c_edl.py:

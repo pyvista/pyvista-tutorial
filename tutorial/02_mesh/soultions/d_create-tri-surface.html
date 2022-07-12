@@ -293,33 +293,38 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/d_pbr.html">
-     Physically Based Rendering
+    <a class="reference internal" href="../../03_figures/c_geological-map.html">
+     Geological Map on Topography
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/e_labels.html">
-     Label Points
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/f_gif.html">
+    <a class="reference internal" href="../../03_figures/d_gif.html">
      Create a GIF Movie
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/g_orbit.html">
-     Orbiting
+    <a class="reference internal" href="../../03_figures/bonus/d_pbr.html">
+     Physically Based Rendering
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/h_texture.html">
-     Applying Textures
+    <a class="reference internal" href="../../03_figures/bonus/e_labels.html">
+     Label Points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_figures/bonus/g_orbit.html">
+     Orbiting
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../03_figures/exercises/a_display_options.html">
      Display Options
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../03_figures/exercises/b_lighting_mesh.html">
+     Lighting Properties
     </a>
    </li>
    <li class="toctree-l2">
@@ -678,11 +683,11 @@ to download the full example code or to run this example in your browser via Bin
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-199.31530271, -201.35418798,    1.80699499],
-       [-183.41081778, -201.35418798,    2.44982926],
-       [-160.24573737, -201.35418798,    3.64756535],
-       [-140.21011371, -201.35418798,    4.92858011],
-       [-113.80940296, -201.35418798,    6.89203037]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-196.86072663, -197.49407202,    2.04882709],
+       [-181.20424861, -197.49407202,    2.75447201],
+       [-156.58543508, -197.49407202,    4.17462627],
+       [-139.96929979, -197.49407202,    5.34095522],
+       [-111.22992743, -197.49407202,    7.66274231]])
 </pre></div>
 </div>
 <p>Now use those points to create a point cloud PyVista data object. This will
@@ -801,8 +806,8 @@ delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound=False, inplace=False, edge_s
 <tr><th>PolyData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
-<tr><td>X Bounds</td><td>1.576e-02, 9.278e+00</td></tr>
-<tr><td>Y Bounds</td><td>1.534e-03, 9.295e+00</td></tr>
+<tr><td>X Bounds</td><td>1.430e-01, 9.294e+00</td></tr>
+<tr><td>Y Bounds</td><td>2.225e-02, 9.283e+00</td></tr>
 <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
@@ -824,7 +829,7 @@ added unwanted triangles. We can mitigate that with the <code class="docutils li
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.plot.html#pyvista.PolyData.plot" title="pyvista.PolyData.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">surf</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.189 seconds)</p>
+<img src="../../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.373 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-d-create-tri-surface-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/d_create-tri-surface.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo5.svg" width="150px" /></a>

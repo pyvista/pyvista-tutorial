@@ -40,9 +40,9 @@ the output with PyVista for streamlined plotting. For example:
 .. code-block:: default
 
 
-    import vtk
     import pyvista as pv
     from pyvista import examples
+    import vtk
 
 
 
@@ -170,7 +170,7 @@ Set parameters
 
     n = 200
     splatter.SetSampleDimensions(n, n, n)
-    splatter.SetRadius(.02)
+    splatter.SetRadius(0.02)
     splatter.SetExponentFactor(-10)
     splatter.SetEccentricity(2)
     splatter.Update()
@@ -207,7 +207,7 @@ Use PyVista to produce contours
 
 .. code-block:: default
 
-    cntrs = vol.contour([.95 * splatter.GetRadius()])
+    cntrs = vol.contour([0.95 * splatter.GetRadius()])
 
 
 
@@ -250,7 +250,7 @@ Use PyVista to plot
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.264 seconds)
+   **Total running time of the script:** ( 0 minutes  1.602 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_a_2_pyvista_vtk.py:

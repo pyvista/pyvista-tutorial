@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Display Options" href="../solutions/a_display_options.html" />
-    <link rel="prev" title="Display Options" href="a_display_options.html" />
+    <link rel="prev" title="Lighting Properties" href="b_lighting_mesh.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="None">
   </head>
@@ -293,33 +293,38 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../d_pbr.html">
-     Physically Based Rendering
+    <a class="reference internal" href="../c_geological-map.html">
+     Geological Map on Topography
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../e_labels.html">
-     Label Points
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../f_gif.html">
+    <a class="reference internal" href="../d_gif.html">
      Create a GIF Movie
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../g_orbit.html">
-     Orbiting
+    <a class="reference internal" href="../bonus/d_pbr.html">
+     Physically Based Rendering
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../h_texture.html">
-     Applying Textures
+    <a class="reference internal" href="../bonus/e_labels.html">
+     Label Points
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../bonus/g_orbit.html">
+     Orbiting
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="a_display_options.html">
      Display Options
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="b_lighting_mesh.html">
+     Lighting Properties
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -617,11 +622,6 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#statue">
-   Statue
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#point-cloud">
    Point Cloud
   </a>
@@ -659,40 +659,12 @@ To learn more, please see <a class="reference external" href="https://blog.kitwa
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
-<section id="statue">
-<h2>Statue<a class="headerlink" href="#statue" title="Permalink to this headline">#</a></h2>
-<p>Eye-Dome Lighting can dramatically improve depth perception when plotting
-incredibly sophisticated meshes like the creative commons Queen Nefertiti
-statue:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nefertiti</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_nefertiti</span><span class="p">()</span>
-<span class="n">nefertiti</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">eye_dome_lighting</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Here we will compare a EDL shading side by side with normal shading</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">border</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># With eye-dome lighting</span>
-<span class="n">p</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">nefertiti</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">enable_eye_dome_lighting</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;Eye-Dome Lighting&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
-
-<span class="c1"># No eye-dome lighting</span>
-<span class="n">p</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">nefertiti</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_text</span><span class="p">(</span><span class="s2">&quot;No Eye-Dome Lighting&quot;</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">24</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">]</span>
-
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</section>
 <section id="point-cloud">
 <h2>Point Cloud<a class="headerlink" href="#point-cloud" title="Permalink to this headline">#</a></h2>
 <p>When plotting a simple point cloud, it can be difficult to perceive depth.
 Take this Lidar point cloud for example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">point_cloud</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_lidar</span><span class="p">()</span>
+<span class="n">point_cloud</span>
 </pre></div>
 </div>
 <p>And now plot this point cloud as-is:</p>
@@ -717,7 +689,7 @@ the <code class="docutils literal notranslate"><span class="pre">add_mesh</span>
 <p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-figures-exercises-c-edl-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/exercises/c_edl.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" width="150px" /></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/exercises/c_edl.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo8.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../../_downloads/bb5d13e5225b391ac88dccfe0f652399/c_edl.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">c_edl.py</span></code></a></p>
@@ -738,11 +710,11 @@ the <code class="docutils literal notranslate"><span class="pre">add_mesh</span>
               <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="a_display_options.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="b_lighting_mesh.html" title="previous page">
       <i class="fas fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
-          <p class="prev-next-title">Display Options</p>
+          <p class="prev-next-title">Lighting Properties</p>
       </div>
   </a>
   <a class='right-next' id="next-link" href="../solutions/a_display_options.html" title="next page">

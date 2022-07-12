@@ -36,14 +36,14 @@ structure using VTK Python's bindings, one would write the following:
 .. _vtkImageData: https://vtk.org/doc/nightly/html/classvtkImageData.html
 .. _vtkpoints: https://vtk.org/doc/nightly/html/classvtkPoints.html
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-24
+.. GENERATED FROM PYTHON SOURCE LINES 20-25
 
 .. code-block:: default
 
 
-    import vtk
     from math import cos, sin
 
+    import vtk
 
 
 
@@ -51,7 +51,8 @@ structure using VTK Python's bindings, one would write the following:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-32
+
+.. GENERATED FROM PYTHON SOURCE LINES 26-33
 
 Create values for a 300x300 image dataset
 
@@ -61,18 +62,18 @@ In our example, we want to have values from the function
 
   127.5 + (1.0 + sin(x/25.0)*cos(y/25.0))
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-41
+.. GENERATED FROM PYTHON SOURCE LINES 33-42
 
 .. code-block:: default
 
     values = vtk.vtkDoubleArray()
     values.SetName("values")
     values.SetNumberOfComponents(1)
-    values.SetNumberOfTuples(300*300)
+    values.SetNumberOfTuples(300 * 300)
 
     for x in range(300):
         for y in range(300):
-            values.SetValue(x*300 + y, 127.5 + (1.0 + sin(x/25.0)*cos(y/25.0)))
+            values.SetValue(x * 300 + y, 127.5 + (1.0 + sin(x / 25.0) * cos(y / 25.0)))
 
 
 
@@ -81,11 +82,11 @@ In our example, we want to have values from the function
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-43
+.. GENERATED FROM PYTHON SOURCE LINES 43-44
 
 Create the image structure
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-48
+.. GENERATED FROM PYTHON SOURCE LINES 44-49
 
 .. code-block:: default
 
@@ -101,11 +102,11 @@ Create the image structure
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-50
+.. GENERATED FROM PYTHON SOURCE LINES 50-51
 
 Assign the values to the image
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-52
+.. GENERATED FROM PYTHON SOURCE LINES 51-53
 
 .. code-block:: default
 
@@ -126,20 +127,20 @@ Assign the values to the image
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-57
+.. GENERATED FROM PYTHON SOURCE LINES 54-58
 
 As you can see, there is quite a bit of boilerplate that goes into
 the creation of a simple `vtk.vtkImageData`_ dataset. PyVista provides
 much more concise syntax that is more "Pythonic". The equivalent code in
 PyVista is:
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-61
+.. GENERATED FROM PYTHON SOURCE LINES 58-62
 
 .. code-block:: default
 
 
-    import pyvista as pv
     import numpy as np
+    import pyvista as pv
 
 
 
@@ -148,19 +149,19 @@ PyVista is:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-64
+.. GENERATED FROM PYTHON SOURCE LINES 63-65
 
 Use the meshgrid function to create 2D "grids" of the x and y values.
 This section effectively replaces the vtkDoubleArray.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-69
+.. GENERATED FROM PYTHON SOURCE LINES 65-70
 
 .. code-block:: default
 
 
     xi = np.arange(300)
     x, y = np.meshgrid(xi, xi)
-    values = 127.5 + (1.0 + np.sin(x/25.0)*np.cos(y/25.0))
+    values = 127.5 + (1.0 + np.sin(x / 25.0) * np.cos(y / 25.0))
 
 
 
@@ -169,11 +170,11 @@ This section effectively replaces the vtkDoubleArray.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-71
+.. GENERATED FROM PYTHON SOURCE LINES 71-72
 
 Create the grid.  Note how the values must use Fortran ordering.
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-75
+.. GENERATED FROM PYTHON SOURCE LINES 72-76
 
 .. code-block:: default
 
@@ -188,7 +189,7 @@ Create the grid.  Note how the values must use Fortran ordering.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-134
+.. GENERATED FROM PYTHON SOURCE LINES 77-135
 
 Here, PyVista has done several things for us:
 
@@ -249,11 +250,11 @@ For example, in VTK you would have to do:
     renWin.Render()
     iren.Start()
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-137
+.. GENERATED FROM PYTHON SOURCE LINES 137-138
 
 However, with PyVista you only need:
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-141
+.. GENERATED FROM PYTHON SOURCE LINES 138-142
 
 .. code-block:: default
 
@@ -273,7 +274,7 @@ However, with PyVista you only need:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-148
+.. GENERATED FROM PYTHON SOURCE LINES 143-149
 
 PointSet Construction
 ^^^^^^^^^^^^^^^^^^^^^
@@ -282,7 +283,7 @@ VTK's C arrays.  For example, to create an array of points within VTK
 one would normally loop through all the points of a list and supply
 that to a  `vtkPoints`_ class.  For example:
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-165
+.. GENERATED FROM PYTHON SOURCE LINES 149-166
 
 .. code-block:: default
 
@@ -313,12 +314,12 @@ that to a  `vtkPoints`_ class.  For example:
 
  .. code-block:: none
 
-    vtkPoints (0x55b5ac0c2040)
+    vtkPoints (0x55dcebdfb770)
       Debug: Off
-      Modified Time: 17609481
+      Modified Time: 13108048
       Reference Count: 1
       Registered Events: (none)
-      Data: 0x55b5b2991c90
+      Data: 0x55dcf2b302e0
       Data Array Name: Points
       Number Of Points: 3
       Bounds: 
@@ -331,18 +332,16 @@ that to a  `vtkPoints`_ class.  For example:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 166-167
+.. GENERATED FROM PYTHON SOURCE LINES 167-168
 
 To do the same within PyVista, you simply need to create a NumPy array:
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-172
+.. GENERATED FROM PYTHON SOURCE LINES 168-171
 
 .. code-block:: default
 
 
-    np_points = np.array([[0, 0, 0],
-                          [1, 0, 0],
-                          [0.5, 0.667, 0]])
+    np_points = np.array([[0, 0, 0], [1, 0, 0], [0.5, 0.667, 0]])
 
 
 
@@ -351,7 +350,7 @@ To do the same within PyVista, you simply need to create a NumPy array:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 173-180
+.. GENERATED FROM PYTHON SOURCE LINES 172-179
 
 .. note::
    You can use :func:`pyvista.vtk_points` to construct a `vtkPoints`_
@@ -361,7 +360,7 @@ Since the end goal is to construct a :class:`pyvista.DataSet
 <pyvista.core.dataset.DataSet>`, you would simply pass the
 ``np_points`` array to the :class:`pyvista.PolyData` constructor:
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-184
+.. GENERATED FROM PYTHON SOURCE LINES 179-183
 
 .. code-block:: default
 
@@ -376,11 +375,11 @@ Since the end goal is to construct a :class:`pyvista.DataSet
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 185-186
+.. GENERATED FROM PYTHON SOURCE LINES 184-185
 
 Whereas in VTK you would have to do:
 
-.. GENERATED FROM PYTHON SOURCE LINES 186-190
+.. GENERATED FROM PYTHON SOURCE LINES 185-189
 
 .. code-block:: default
 
@@ -395,14 +394,14 @@ Whereas in VTK you would have to do:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-195
+.. GENERATED FROM PYTHON SOURCE LINES 190-194
 
 The same goes with assigning face or cell connectivity/topology.  With
 VTK you would normally have to loop using :func:`InsertNextCell` and
 :func:`InsertCellPoint`.  For example, to create a single cell
 (triangle) and then assign it to `vtkPolyData`_:
 
-.. GENERATED FROM PYTHON SOURCE LINES 195-203
+.. GENERATED FROM PYTHON SOURCE LINES 194-202
 
 .. code-block:: default
 
@@ -421,13 +420,13 @@ VTK you would normally have to loop using :func:`InsertNextCell` and
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 204-207
+.. GENERATED FROM PYTHON SOURCE LINES 203-206
 
 In PyVista, we can assign this directly in the constructor and then
 access it (or change it) from the :attr:`faces
 <pyvista.PolyData.faces>` attribute.
 
-.. GENERATED FROM PYTHON SOURCE LINES 207-213
+.. GENERATED FROM PYTHON SOURCE LINES 206-212
 
 .. code-block:: default
 
@@ -452,7 +451,7 @@ access it (or change it) from the :attr:`faces
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 214-222
+.. GENERATED FROM PYTHON SOURCE LINES 213-221
 
 PyVista Tradeoffs
 ~~~~~~~~~~~~~~~~~
@@ -463,7 +462,7 @@ In the :class:`collision <pyvista.PolyDataFilters.collision>` filter,
 we demonstrate how to calculate the collision between two meshes.  For
 example:
 
-.. GENERATED FROM PYTHON SOURCE LINES 222-228
+.. GENERATED FROM PYTHON SOURCE LINES 221-227
 
 .. code-block:: default
 
@@ -480,7 +479,7 @@ example:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 229-236
+.. GENERATED FROM PYTHON SOURCE LINES 228-235
 
 .. code-block:: default
 
@@ -503,7 +502,7 @@ example:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 237-246
+.. GENERATED FROM PYTHON SOURCE LINES 236-245
 
 Under the hood, the collision filter detects mesh collisions using
 oriented bounding box (OBB) trees.  For a single collision, this filter
@@ -518,7 +517,7 @@ you may want to use VTK classes directly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.220 seconds)
+   **Total running time of the script:** ( 0 minutes  1.464 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_a_1_transition_vtk.py:
