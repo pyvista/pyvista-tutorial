@@ -89,8 +89,18 @@ jobs:
           name: doc-build
           path: .
 
+      - uses: actions/download-artifact@v3
+        with:
+          name: tutorial-notebooks
+          path: notebooks
+
       - name: UnTar build
         run: tar -xzvf doc-build.tar.gz
+
+      - name: Zip Notebooks
+        run: |
+          zip --symlinks -r notebooks.zip notebooks/
+          mv notebooks.zip doc/build/html/
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v3
