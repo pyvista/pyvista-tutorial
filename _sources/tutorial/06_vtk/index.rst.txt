@@ -260,10 +260,12 @@ example:
 .. jupyter-execute::
    :hide-code:
 
-   # must have this here as our global backend may not be static
+   # Configure for panel
    import pyvista
-   pyvista.set_jupyter_backend('pythreejs')
-   pyvista.global_theme.window_size = [600, 400]
+   pyvista.set_jupyter_backend('panel')
+   pyvista.global_theme.background = 'white'
+   pyvista.global_theme.axes.show = False
+   pyvista.global_theme.smooth_shading = True
    pyvista.global_theme.antialiasing = True
 
 
@@ -390,14 +392,14 @@ Exercises
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This exercise walks through the creation of a few different types of VTK datasets.">
+    <div class="sphx-glr-thumbcontainer" tooltip="VTK is primarily developed in C++ and uses chained setter and getter commands to access data. I...">
 
 .. only:: html
 
- .. figure:: /tutorial/06_vtk/images/thumb/sphx_glr_a_create_thumb.png
-     :alt: Create VTK Objects
+ .. figure:: /tutorial/06_vtk/images/thumb/sphx_glr_a_1_transition_vtk_thumb.png
+     :alt: Transitioning from VTK to PyVista
 
-     :ref:`sphx_glr_tutorial_06_vtk_a_create.py`
+     :ref:`sphx_glr_tutorial_06_vtk_a_1_transition_vtk.py`
 
 .. raw:: html
 
@@ -407,7 +409,49 @@ Exercises
 .. toctree::
    :hidden:
 
-   /tutorial/06_vtk/a_create
+   /tutorial/06_vtk/a_1_transition_vtk
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="PyVista is best known for is easy to use plotting API -- being familiar to most Python users al...">
+
+.. only:: html
+
+ .. figure:: /tutorial/06_vtk/images/thumb/sphx_glr_a_2_pyvista_vtk_thumb.png
+     :alt: PyVista and VTK Together
+
+     :ref:`sphx_glr_tutorial_06_vtk_a_2_pyvista_vtk.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /tutorial/06_vtk/a_2_pyvista_vtk
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This exercise walks through the creation of a few different types of VTK datasets.">
+
+.. only:: html
+
+ .. figure:: /tutorial/06_vtk/images/thumb/sphx_glr_b_create_vtk_thumb.png
+     :alt: Create VTK Objects
+
+     :ref:`sphx_glr_tutorial_06_vtk_b_create_vtk.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /tutorial/06_vtk/b_create_vtk
 
 .. raw:: html
 
@@ -415,10 +459,10 @@ Exercises
 
 .. only:: html
 
- .. figure:: /tutorial/06_vtk/images/thumb/sphx_glr_b_algorithms_thumb.png
+ .. figure:: /tutorial/06_vtk/images/thumb/sphx_glr_c_vtk_algorithms_thumb.png
      :alt: Using VTK Algorithms
 
-     :ref:`sphx_glr_tutorial_06_vtk_b_algorithms.py`
+     :ref:`sphx_glr_tutorial_06_vtk_c_vtk_algorithms.py`
 
 .. raw:: html
 
@@ -428,7 +472,7 @@ Exercises
 .. toctree::
    :hidden:
 
-   /tutorial/06_vtk/b_algorithms
+   /tutorial/06_vtk/c_vtk_algorithms
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

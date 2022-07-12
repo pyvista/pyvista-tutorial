@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="PyVista and Sphinx" href="../07_sphinx/index.html" />
-    <link rel="prev" title="Create VTK Objects" href="a_create.html" />
+    <link rel="prev" title="Create VTK Objects" href="b_create_vtk.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="None">
   </head>
@@ -501,7 +501,17 @@
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="a_create.html">
+    <a class="reference internal" href="a_1_transition_vtk.html">
+     Transitioning from VTK to PyVista
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="a_2_pyvista_vtk.html">
+     PyVista and VTK Together
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="b_create_vtk.html">
      Create VTK Objects
     </a>
    </li>
@@ -629,11 +639,11 @@
                 
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
-<p>Click <a class="reference internal" href="#sphx-glr-download-tutorial-06-vtk-b-algorithms-py"><span class="std std-ref">here</span></a>
+<p>Click <a class="reference internal" href="#sphx-glr-download-tutorial-06-vtk-c-vtk-algorithms-py"><span class="std std-ref">here</span></a>
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="using-vtk-algorithms">
-<span id="sphx-glr-tutorial-06-vtk-b-algorithms-py"></span><h1>Using VTK Algorithms<a class="headerlink" href="#using-vtk-algorithms" title="Permalink to this headline">#</a></h1>
+<span id="sphx-glr-tutorial-06-vtk-c-vtk-algorithms-py"></span><h1>Using VTK Algorithms<a class="headerlink" href="#using-vtk-algorithms" title="Permalink to this headline">#</a></h1>
 <p>In this exercise, you will use a VTK Algorithm directly to filter a PyVista mesh.</p>
 <p>VTK algorithms (filters) follow a standard flow for most cases:</p>
 <ol class="arabic simple">
@@ -679,7 +689,7 @@ to download the full example code or to run this example in your browser via Bin
 <br /><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.plot.html#pyvista.PolyData.plot" title="pyvista.PolyData.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">mesh</span><span class="o">.</span><span class="n">plot</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_b_algorithms_001.png" srcset="../../_images/sphx_glr_b_algorithms_001.png" alt="b algorithms" class = "sphx-glr-single-img"/><section id="simple-filter">
+<img src="../../_images/sphx_glr_c_vtk_algorithms_001.png" srcset="../../_images/sphx_glr_c_vtk_algorithms_001.png" alt="c vtk algorithms" class = "sphx-glr-single-img"/><section id="simple-filter">
 <h2>Simple Filter<a class="headerlink" href="#simple-filter" title="Permalink to this headline">#</a></h2>
 <p>Let’s start out with a simple VTK filter: <code class="docutils literal notranslate"><span class="pre">vtkOutlineFilter</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">vtk</span><span class="o">.</span><span class="n">vtkOutlineFilter</span><span class="p">)</span>
@@ -1853,22 +1863,22 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_b_algorithms_002.png" srcset="../../_images/sphx_glr_b_algorithms_002.png" alt="b algorithms" class = "sphx-glr-single-img"/></section>
+<img src="../../_images/sphx_glr_c_vtk_algorithms_002.png" srcset="../../_images/sphx_glr_c_vtk_algorithms_002.png" alt="c vtk algorithms" class = "sphx-glr-single-img"/></section>
 <section id="find-your-own-filter">
 <h2>Find your own filter<a class="headerlink" href="#find-your-own-filter" title="Permalink to this headline">#</a></h2>
 <p>Take a look at VTK’s examples and documentation to find a filter you’d like
 to apply to you mesh. The instructors will be around to help you implement.</p>
 <p>See <a class="reference external" href="https://kitware.github.io/vtk-examples/site/Python/">https://kitware.github.io/vtk-examples/site/Python/</a></p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.738 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-b-algorithms-py">
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.912 seconds)</p>
+<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-c-vtk-algorithms-py">
 <div class="binder-badge docutils container">
-<a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/b_algorithms.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo12.svg" width="150px" /></a>
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/c_vtk_algorithms.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo12.svg" width="150px" /></a>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/11b2264e39ed859d21d6530676eca993/b_algorithms.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">b_algorithms.py</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/ddf2406dbf8ef542fad2ea7194495bc2/c_vtk_algorithms.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">c_vtk_algorithms.py</span></code></a></p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
-<p><a class="reference download internal" download="" href="../../_downloads/345020eb71456b2184c0e37e73dc76bd/b_algorithms.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">b_algorithms.ipynb</span></code></a></p>
+<p><a class="reference download internal" download="" href="../../_downloads/25ea3d3ddf3b865b4ecd54d3386ebc2d/c_vtk_algorithms.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">c_vtk_algorithms.ipynb</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
@@ -1883,7 +1893,7 @@ to apply to you mesh. The instructors will be around to help you implement.</p>
               <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-  <a class='left-prev' id="prev-link" href="a_create.html" title="previous page">
+  <a class='left-prev' id="prev-link" href="b_create_vtk.html" title="previous page">
       <i class="fas fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
