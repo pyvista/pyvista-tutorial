@@ -13,7 +13,7 @@ def format_icon(title, description, link, image):
 
 .. only:: html
 
-    .. figure:: ../../images/05_action/{}
+    .. figure:: ../../images/action/{}
        :target: {}
 
        {}
