@@ -1,7 +1,7 @@
 """
 .. _basic_lesson:
 
-Basic usage Lesson
+Basic Usage Lesson
 ==================
 
 This section demonstrates how to use PyVista to reading and plotting 3D data
