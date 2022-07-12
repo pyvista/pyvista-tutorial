@@ -13,7 +13,7 @@ def format_icon(title, description, link, image):
 
 .. only:: html
 
-    .. figure:: ../../images/04_action/{}
+    .. figure:: ../../images/action/{}
        :target: {}
 
        {}
@@ -167,7 +167,7 @@ articles = dict(
 def make_example_gallery():
     """Make the example gallery."""
     d = Path(__file__).absolute().parent
-    path = Path(d, "tutorial/04_action/index.rst")
+    path = Path(d, "tutorial/05_action/index.rst")
     path.parent.mkdir(parents=True, exist_ok=True)
     path = str(path)
 

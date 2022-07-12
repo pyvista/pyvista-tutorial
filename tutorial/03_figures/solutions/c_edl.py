@@ -19,7 +19,7 @@ from pyvista import examples
 
 ###############################################################################
 # Statue
-# +++++++++++
+# ++++++
 #
 # Eye-Dome Lighting can dramatically improve depth perception when plotting
 # incredibly sophisticated meshes like the creative commons Queen Nefertiti
@@ -73,24 +73,13 @@ p.show()
 #
 # Try plotting that point cloud with Eye-Dome-Lighting yourself below:
 
-# (your code here, answer below)
-p = ...
-
-
-###############################################################################
-
-# SOLUTION
 p = pv.Plotter()
 p.add_mesh(point_cloud, color="tan", point_size=5)
-p.enable_eye_dome_lighting()
+p.enable_eye_dome_lighting()  # Turn on eye dome lighting here
 p.show()
 
 
 ###############################################################################
-# The eye dome lighting mode can also handle plotting scalar arrays:
-
-# Plot with EDL and scalar data
-p = pv.Plotter()
-p.add_mesh(point_cloud, scalars="Elevation", point_size=5)
-p.enable_eye_dome_lighting()
-p.show()
+# The eye dome lighting mode can also handle plotting scalar arrays. Try the
+# above block but by specifying a ``scalars`` array instead of ``color`` in
+# the ``add_mesh`` call.

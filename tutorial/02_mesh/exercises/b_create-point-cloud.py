@@ -1,6 +1,4 @@
 """
-.. _create_point_cloud:
-
 Create Point Cloud
 ~~~~~~~~~~~~~~~~~~
 
@@ -38,15 +36,12 @@ points[0:5, :]
 # Now that you have a NumPy array of points/vertices either from our sample
 # data or your own project, creating a PyVista mesh of those points:
 
-# insert your code here (answer below)
+# insert your code here
 point_cloud = ...
 
 ###############################################################################
-point_cloud = pv.PolyData(points)
-point_cloud
+# Now, perform a sanity check
 
-###############################################################################
-# And we can even do a sanity check
 np.allclose(points, point_cloud.points)
 
 ###############################################################################
@@ -64,20 +59,19 @@ point_cloud.plot(eye_dome_lighting=True)
 #
 # Make an array of scalar values with the same length as the points array.
 # Each element in this array will correspond to points at the same index:
+#
+# Hint, you can use a component of the ``points`` array or use the ``n_points``
+# property of the mesh object to make an array of that length.
 
-# Make data array using z-component of points array
-data = points[:, -1]
+
+data = ...
 
 ###############################################################################
 # Add that data to the mesh with the name "elevation"
 
-# (add your code here, answer below)
 
 ###############################################################################
-point_cloud["elevation"] = data
-
-###############################################################################
-# And now we can plot the point cloud with that random data. PyVista is smart
+# And now we can plot the point cloud with that elevation data. PyVista is smart
 # enough to plot the scalar array you added by default. Note that this time,
 # we specify to render every point as its own sphere.
 point_cloud.plot(render_points_as_spheres=True)
@@ -107,12 +101,7 @@ vectors = compute_vectors(point_cloud)
 vectors[0:5, :]
 
 ###############################################################################
-# Add the vector array as point data to the mesh:
-
-# add your code here (answer below)
-
-###############################################################################
-point_cloud['vectors'] = vectors
+# Add the vector array as point data to the new mesh:
 
 ###############################################################################
 # Now we can make arrows using those vectors using the glyph filter

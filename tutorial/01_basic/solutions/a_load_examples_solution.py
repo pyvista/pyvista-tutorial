@@ -78,7 +78,10 @@ pl.show()
 dataset = examples.download_gears()
 bodies = dataset.split_bodies()
 bodies.plot(
-    cmap='jet', multi_colors=True, smooth_shading=True, split_sharp_edges=True,
+    cmap='jet',
+    multi_colors=True,
+    smooth_shading=True,
+    split_sharp_edges=True,
 )
 
 

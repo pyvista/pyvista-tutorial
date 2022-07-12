@@ -93,16 +93,13 @@ arr.shape
 
 ###############################################################################
 # Create the :class:`pyvista.UniformGrid`
+#
+# Hint, you will likely need to ``ravel`` the array with F-ordering:
+# ``arr.ravel(order="F")``
 
-# (your code here, answer below)
-vol = pv.UniformGrid()
-# Set attributes and data
-...
-
-###############################################################################
 vol = pv.UniformGrid()
 vol.dimensions = arr.shape
-vol['array'] = arr.flatten(order="F")
+vol['array'] = arr.ravel(order="F")
 
 ###############################################################################
 vol.plot()

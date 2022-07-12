@@ -8,9 +8,9 @@ Read a dataset from a known file type.
 
 """
 ###############################################################################
-# Loading a mesh is trivial - if your data is in one of the many supported
-# file formats, simply use :func:`pyvista.read` to load your spatially
-# referenced dataset into a PyVista mesh object.
+# We try to make loading a mesh as easy as possible - if your data is in one
+# of the many supported file formats, simply use :func:`pyvista.read` to
+# load your spatially referenced dataset into a PyVista mesh object.
 #
 # The following code block uses a built-in example file and displays an
 # airplane mesh.
@@ -39,17 +39,11 @@ filename
 ###############################################################################
 # Note the above filename, it's a ``.ply`` file - one of the many supported
 # formats in PyVista.
+#
+# Use ``pv.read`` to load the file as a mesh:
 
 mesh = pv.read(filename)
 cpos = mesh.plot()
-
-###############################################################################
-# You can also take a screenshot without creating an interactive plot window
-# using the ``Plotter``:
-
-plotter = pv.Plotter(off_screen=True)
-plotter.add_mesh(mesh)
-plotter.show(screenshot="myscreenshot.png")
 
 
 ###############################################################################

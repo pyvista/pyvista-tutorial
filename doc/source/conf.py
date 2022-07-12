@@ -194,11 +194,12 @@ tutorial_dirs = [
     '../../tutorial/01_basic/',
     '../../tutorial/02_mesh/',
     '../../tutorial/03_figures/',
-    '../../tutorial/06_data/',
-    '../../tutorial/07_vtk/',
-    '../../tutorial/09_sphinx/',
-    '../../tutorial/10_widgets/',
-    '../../tutorial/11_qt/',
+    '../../tutorial/04_filters/',
+    # '../../tutorial/05_action/',
+    '../../tutorial/06_vtk/',
+    '../../tutorial/07_sphinx/',
+    '../../tutorial/08_widgets/',
+    '../../tutorial/09_qt/',
 ]
 
 sphinx_gallery_conf = {
@@ -208,10 +209,8 @@ sphinx_gallery_conf = {
     'examples_dirs': tutorial_dirs,
     # path where to save gallery generated examples
     'gallery_dirs': [d.lstrip('../../') for d in tutorial_dirs],
-
     # Don't execute any files containing "exercise" in the filename
     'filename_pattern': r'^((?!exercise).)*$',
-
     # Remove the 'Download all examples' button from the top level gallery
     'download_all_examples': False,
     # Remove sphinx configuration comments from code blocks
@@ -227,13 +226,13 @@ sphinx_gallery_conf = {
     'from pyvista import set_plot_theme\n'
     'set_plot_theme("document")\n',
     'binder': {
-       'org': "pyvista",
-       'repo': "pyvista-tutorial",
-       'branch': "gh-pages",
-       'binderhub_url': "https://mybinder.org",
-       'dependencies': "../../Dockerfile",
-       'use_jupyter_lab': True
-     }
+        'org': "pyvista",
+        'repo': "pyvista-tutorial",
+        'branch': "gh-pages",
+        'binderhub_url': "https://mybinder.org",
+        'dependencies': "../../Dockerfile",
+        'use_jupyter_lab': True,
+    },
 }
 
 
