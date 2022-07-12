@@ -21,7 +21,7 @@ mesh = examples.download_st_helens().warp_by_scalar()
 cpos = [(575848.0, 5128459.0, 22289.0), (562835.0, 5114981.5, 2294.5), (-0.5, -0.5, 0.7)]
 
 ###############################################################################
-# First, lets take a look at the mesh with default lighting conditions
+# First, let's take a look at the mesh with default lighting conditions
 mesh.plot(cpos=cpos, show_scalar_bar=False)
 
 ###############################################################################
