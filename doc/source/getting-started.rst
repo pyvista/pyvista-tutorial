@@ -114,6 +114,7 @@ You can then plot using Jupyterlab or Jupyter Notebook interactively with one of
       .. jupyter-execute::
 
          import pyvista as pv
+         from pyvista import examples
          pv.global_theme.jupyter_backend = 'pythreejs'
          pv.global_theme.window_size = (700, 300)
          pv.global_theme.antialiasing = True
