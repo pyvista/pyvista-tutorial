@@ -26,6 +26,24 @@ interactive, where each lesson page below contains a MyBinder button where you
 can run the notebooks in the `MyBinder <https://mybinder.org/>`_ environment.
 You can also download notebooks and Python scripts for your local environment.
 
+
+.. panels::
+    :card: + install-card
+    :column: col-lg-12 p-2
+
+    Download Notebooks
+    ^^^^^^^^^^^^^^^^^^
+
+    Download all of the Jupyter Notebooks for the tutorial.
+
+    ++++++++++++++++++++++
+
+    .. link-button:: https://github.com/pyvista/pyvista-tutorial/raw/gh-pages/notebooks.zip
+        :type: url
+        :text: Download
+        :classes: btn-outline-primary btn-block stretched-link
+
+
 Questions
 ~~~~~~~~~
 
