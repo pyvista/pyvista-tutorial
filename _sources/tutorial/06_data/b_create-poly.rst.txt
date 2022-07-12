@@ -309,7 +309,7 @@ point as point data. Also, add a face number to each face as cell data.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.408 seconds)
+   **Total running time of the script:** ( 0 minutes  1.274 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_data_b_create-poly.py:

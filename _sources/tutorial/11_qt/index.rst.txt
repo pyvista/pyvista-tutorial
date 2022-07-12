@@ -156,7 +156,7 @@ Examples
       .. image:: https://pbs.twimg.com/media/FFjkcpvXsAwm3OQ?format=jpg&name=900x900
          :alt: MNE
 
-   .. tab:: vtk
+   .. tab:: femorph
 
       `femorph
       <https://www.wpafb.af.mil/News/Article-Display/Article/1503043/afrl-signs-first-of-its-kind-software-license-with-pratt-whitney/>`_
