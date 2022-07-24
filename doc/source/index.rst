@@ -28,9 +28,9 @@ Documentation <https://docs.pyvista.org/>`_
            Your browser does not support the video tag.
          </video>
 
-   .. tab:: iPython
+   .. tab:: IPython
 
-      Here's a quick demo of PyVista running within a terminal using `iPython
+      Here's a quick demo of PyVista running within a terminal using `IPython
       <https://ipython.org/>`_.
 
       .. raw:: html
