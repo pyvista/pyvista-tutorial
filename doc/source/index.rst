@@ -100,7 +100,7 @@ Tutorial Description
 - Use PyVista to create 3D visualizations from a variety of datasets in common
   formats.
 - Overview the classes and data structures of PyVista with real-world examples.
-- Be familiar of the various filters and features of PyVista.
+- Be familiar with the various filters and features of PyVista.
 - Know which Python libraries are used and can be used by PyVista (meshio,
   trimesh etc).
 
