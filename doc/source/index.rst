@@ -113,7 +113,7 @@ domain, and this ranges from basic Python users to advanced power users.
    <https://numpy.org/>`_ and other libraries that are compatible with PyVista,
    like `trimesh <https://trimsh.org/examples.html>`_ or `meshio
    <https://github.com/nschloe/meshio>`_.
-3. Advanced users should be familiar the Visualization Toolkit (VTK), general
+3. Advanced users should be familiar with the Visualization Toolkit (VTK), general
    data science, and GUI frameworks like Qt.
 
 
