@@ -11,9 +11,9 @@ This section includes a brief explanation of the background and history of PyVis
     <https://docs.pyvista.org/getting-started/index.html>`_ chapter of the
     PyVista documentation.
 
-PyVista is one of many visulization libraries built on top `VTK - The
+PyVista is one of many visualization libraries built on top `VTK - The
 Visualization Toolkit <https://vtk.org/>`_. It's primary intent was to be an
-abstraction layer over VTK to provide conviencece and functionality to VTK
+abstraction layer over VTK to provide convenience and functionality to VTK
 exposed "Pythonically".
 
 
