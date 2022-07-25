@@ -2,7 +2,7 @@
 PyVista and VTK Together
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-PyVista is best known for is easy to use plotting API -- being familiar to most Python users already experienced with libraries like matplotlib. Many people benefit from combining the power of VTK's Python bindings for their data pipelines and the flexibility and simplicity of PyVista for 3D rendering. The following section demonstrates this usage scenario.
+PyVista is best known for is easy to use plotting API -- being familiar to most Python users already experienced with libraries like Matplotlib. Many people benefit from combining the power of VTK's Python bindings for their data pipelines and the flexibility and simplicity of PyVista for 3D rendering. The following section demonstrates this usage scenario.
 
 .. tip::
 

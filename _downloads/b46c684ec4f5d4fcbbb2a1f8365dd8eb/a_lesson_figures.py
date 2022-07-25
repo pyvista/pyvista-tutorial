@@ -12,7 +12,7 @@ mesh = pv.Wavelet()
 # ``add_mesh``
 # ++++++++++++++
 #
-# When plotting, users must first create a :class:`pyvista.Plotter` instance (much like a matplotlib figure). Then data are added to the plotter instance through the :func:`pyvista.Plotter.add_mesh` method. This workflow typically looks like:
+# When plotting, users must first create a :class:`pyvista.Plotter` instance (much like a Matplotlib figure). Then data are added to the plotter instance through the :func:`pyvista.Plotter.add_mesh` method. This workflow typically looks like:
 
 p = pv.Plotter()
 p.add_mesh(mesh)

@@ -3069,12 +3069,12 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      True
      |  
      |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text='', return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, use_ipyvtk=None, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, hidden_line_removal=None, anti_aliasing=None, zoom=None, **kwargs)
-     |      Plot a vtk or numpy object.
+     |      Plot a PyVista, numpy, or vtk object.
      |      
      |      Parameters
      |      ----------
      |      var_item : pyvista.DataSet, vtk, or numpy object
-     |          VTK object or ``numpy`` array to be plotted.
+     |          PyVista, VTK, or ``numpy`` object to be plotted.
      |      
      |      off_screen : bool, optional
      |          Plots off screen when ``True``.  Helpful for saving
@@ -3213,9 +3213,18 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      --------
      |      Plot a simple sphere while showing its edges.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.plot(show_edges=True)
+     |      
+     |      Plot a volume mesh. Color by distance from the center of the
+     |      UniformGrid. Note ``volume=True`` is passed.
+     |      
+     |      >>> import numpy as np
+     |      >>> grid = pv.UniformGrid(dims=(32, 32, 32), spacing=(0.5, 0.5, 0.5))
+     |      >>> grid['data'] = np.linalg.norm(grid.center - grid.points, axis=1)
+     |      >>> grid['data'] = np.abs(grid['data'] - grid['data'].max())**3
+     |      >>> grid.plot(volume=True)
      |  
      |  point_is_inside_cell(self, ind: int, point: Union[numpy.ndarray, Sequence[Union[List[float], Tuple[float, float, float], numpy.ndarray]], Sequence[Union[float, int, numpy.number]]]) -> Union[int, numpy.ndarray]
      |      Return whether one or more points are inside a cell.
@@ -4592,7 +4601,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      >>> from pyvista import examples
      |      >>> surf = examples.load_airplane()
      |      >>> surf = surf.compute_cell_sizes(length=False, volume=False)
-     |      >>> surf.plot(smooth_shading=True)
+     |      >>> surf.plot(scalars='Area')
      |      
      |      These cell scalars can be applied to individual points to
      |      effectively smooth out the cell data onto the points.
@@ -4601,7 +4610,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      >>> surf = examples.load_airplane()
      |      >>> surf = surf.compute_cell_sizes(length=False, volume=False)
      |      >>> surf = surf.cell_data_to_point_data()
-     |      >>> surf.plot(smooth_shading=True)
+     |      >>> surf.plot(scalars='Area')
      |  
      |  clip(self, normal='x', origin=None, invert=True, value=0.0, inplace=False, return_clipped=False, progress_bar=False, crinkle=False)
      |      Clip a dataset by a plane by specifying the origin and normal.
@@ -4944,7 +4953,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      >>> from pyvista import examples
      |      >>> surf = examples.load_airplane()
      |      >>> surf = surf.compute_cell_sizes(length=False, volume=False)
-     |      >>> surf.plot(show_edges=True)
+     |      >>> surf.plot(show_edges=True, scalars='Area')
      |  
      |  compute_derivative(self, scalars=None, gradient=True, divergence=None, vorticity=None, qcriterion=None, faster=False, preference='point', progress_bar=False)
      |      Compute derivative-based quantities of point/cell scalar field.
@@ -8074,7 +8083,7 @@ See the PyVista documentation for further details on
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.353 seconds)
+   **Total running time of the script:** ( 0 minutes  5.193 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_soultions_c_create-uniform-grid.py:
