@@ -81,7 +81,7 @@ Read a Surface Mesh and Plot it
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 VTK is powerful, really powerful! You can do just about anything within VTK and
 PyVista just wants to make it easier to do it using ``numpy``-like and
-``matplotlib``-like syntax. For example, if you wanted to be able to plot a
+``Matplotlib``-like syntax. For example, if you wanted to be able to plot a
 simple surface mesh:
 
 
