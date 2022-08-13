@@ -235,7 +235,7 @@ Controlling the Scene
 Axes and Bounds
 ~~~~~~~~~~~~~~~
 
-Aexs can be added to the scene with :func:`pyvista.Plotter.show_axes`
+Axes can be added to the scene with :func:`pyvista.Plotter.show_axes`
 
 .. pyvista-plot::
 
