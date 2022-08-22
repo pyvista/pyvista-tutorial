@@ -53,7 +53,7 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Label Points" href="e_labels.html" />
@@ -632,7 +632,7 @@ to download the full example code or to run this example in your browser via Bin
 <span id="pbr-example"></span><span id="sphx-glr-tutorial-03-figures-bonus-d-pbr-py"></span><h1>Physically Based Rendering<a class="headerlink" href="#physically-based-rendering" title="Permalink to this headline">#</a></h1>
 <p>VTK 9 introduced Physically Based Rendering (PBR) and we have exposed
 that functionality in PyVista. Read the <a class="reference external" href="https://blog.kitware.com/vtk-pbr/">blog about PBR</a> for more details.</p>
-<p>PBR is only supported for <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.36.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> and can be
+<p>PBR is only supported for <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.36.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> and can be
 triggered via the <code class="docutils literal notranslate"><span class="pre">pbr</span></code> keyword argument of <code class="docutils literal notranslate"><span class="pre">add_mesh</span></code>. Also use
 the <code class="docutils literal notranslate"><span class="pre">metallic</span></code> and <code class="docutils literal notranslate"><span class="pre">roughness</span></code> arguments for further control.</p>
 <p>Let’s show off this functionality by rendering a high quality mesh of
@@ -705,7 +705,7 @@ increasing from bottom to top.</p>
 <span class="n">cpos</span> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_pbr_003.png" srcset="../../../_images/sphx_glr_d_pbr_003.png" alt="d pbr" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  15.618 seconds)</p>
+<img src="../../../_images/sphx_glr_d_pbr_003.png" srcset="../../../_images/sphx_glr_d_pbr_003.png" alt="d pbr" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  59.961 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-figures-bonus-d-pbr-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/bonus/d_pbr.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo8.svg" width="150px" /></a>

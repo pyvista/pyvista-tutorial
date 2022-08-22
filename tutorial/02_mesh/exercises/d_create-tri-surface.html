@@ -53,7 +53,7 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Load and Plot from a File" href="e_read-file.html" />
@@ -671,7 +671,7 @@ to download the full example code or to run this example in your browser via Bin
 </pre></div>
 </div>
 <p>Now use those points to create a point cloud PyVista data object. This will
-be encompassed in a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.36.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> object.</p>
+be encompassed in a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.36.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> object.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># simply pass the numpy points to the PolyData constructor</span>
 <span class="n">cloud</span> <span class="o">=</span> <span class="o">...</span>
 <span class="n">cloud</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">point_size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>

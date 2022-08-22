@@ -20,7 +20,7 @@ Demonstrate many features of the PyVista plotting API to create compelling 3D vi
 PyVista enables many possibilities for altering how you display 3D data, a few of our
 most common features include:
 
-* Color mapping scalar values with ``matplotlib`` colormaps
+* Color mapping scalar values with ``Matplotlib`` colormaps
 * Showing the edges and nodes of different mesh types
 * Label points in 3D space along side your meshes
 * Creating side-by-side comparisons
@@ -38,13 +38,13 @@ The Basics
 ----------
 
 PyVista's plotting API is data-centric, where the 3D data are individually added to the scene with different display parameters
-in a matplotlib-like fashion.
+in a Matplotlib-like fashion.
 
 
 ``add_mesh``
 ~~~~~~~~~~~~
 
-When plotting, users must first create a :class:`pyvista.Plotter` instance (much like a matplotlib figure). Then data are added to the plotter instance through the :func:`pyvista.Plotter.add_mesh` method. This workflow typically looks like:
+When plotting, users must first create a :class:`pyvista.Plotter` instance (much like a Matplotlib figure). Then data are added to the plotter instance through the :func:`pyvista.Plotter.add_mesh` method. This workflow typically looks like:
 
 .. jupyter-execute::
    :hide-code:
@@ -241,7 +241,7 @@ Controlling the Scene
 Axes and Bounds
 ~~~~~~~~~~~~~~~
 
-Aexs can be added to the scene with :func:`pyvista.Plotter.show_axes`
+Axes can be added to the scene with :func:`pyvista.Plotter.show_axes`
 
 .. pyvista-plot::
 

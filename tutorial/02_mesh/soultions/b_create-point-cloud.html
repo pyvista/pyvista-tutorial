@@ -53,7 +53,7 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Creating a Uniform Grid" href="c_create-uniform-grid.html" />
@@ -630,14 +630,14 @@ to download the full example code or to run this example in your browser via Bin
 </div>
 <section class="sphx-glr-example-title" id="create-point-cloud">
 <span id="sphx-glr-tutorial-02-mesh-soultions-b-create-point-cloud-py"></span><span id="id1"></span><h1>Create Point Cloud<a class="headerlink" href="#create-point-cloud" title="Permalink to this headline">#</a></h1>
-<p>Create a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.36.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> object from a point cloud of vertices and
+<p>Create a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.36.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> object from a point cloud of vertices and
 scalar arrays for those points.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
-<p>Point clouds are generally constructed in the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.36.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> class
+<p>Point clouds are generally constructed in the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.36.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> class
 and can easily have scalar/vector data arrays associated with the point
 cloud. In this example, we’ll work a bit backwards using a point cloud that
 that is available from our <code class="docutils literal notranslate"><span class="pre">examples</span></code> module. This however is no different
@@ -657,11 +657,11 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.</p
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81098375e+05, 4.40011030e+06, 1.76045996e+03],
-                 [4.81022175e+05, 4.40015870e+06, 1.76059998e+03],
-                 [4.81052275e+05, 4.40011860e+06, 1.76196997e+03],
-                 [4.80971875e+05, 4.40014760e+06, 1.77657996e+03],
-                 [4.80943375e+05, 4.40022170e+06, 1.75804004e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81101675e+05, 4.40021830e+06, 1.76939001e+03],
+                 [4.81079175e+05, 4.40008680e+06, 1.76168994e+03],
+                 [4.80976375e+05, 4.40021580e+06, 1.75844995e+03],
+                 [4.80984375e+05, 4.40019390e+06, 1.77140002e+03],
+                 [4.81010775e+05, 4.40008020e+06, 1.76308997e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -679,7 +679,7 @@ data or your own project, creating a PyVista mesh of those points:</p>
 <tr><td>N Points</td><td>67841</td></tr>
 <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
 <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-<tr><td>Z Bounds</td><td>1.754e+03, 1.785e+03</td></tr>
+<tr><td>Z Bounds</td><td>1.754e+03, 1.784e+03</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -746,11 +746,11 @@ cloud and add those vectors to the mesh.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[-0.53011356,  0.07908878, -0.84423017],
-                 [-0.788974  ,  0.61399811,  0.02294217],
-                 [ 0.71530237, -0.40422797, -0.57003707],
-                 [-0.53527531, -0.5113463 ,  0.6723134 ],
-                 [-0.33290209,  0.00519035,  0.94294711]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[-0.05092727,  0.9758831 ,  0.2122701 ],
+                 [-0.56057127, -0.54477744,  0.62368052],
+                 [ 0.32262531, -0.75651654,  0.56885467],
+                 [ 0.52924761,  0.75771171, -0.38179828],
+                 [ 0.56329079, -0.31503358, -0.76384378]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the new mesh:</p>
@@ -775,7 +775,7 @@ cloud and add those vectors to the mesh.</p>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.848 seconds)</p>
+<img src="../../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.951 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-b-create-point-cloud-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/b_create-point-cloud.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo6.svg" width="150px" /></a>

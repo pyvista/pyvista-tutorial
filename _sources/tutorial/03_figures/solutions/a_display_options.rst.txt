@@ -73,7 +73,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
 
     Help on method add_mesh in module pyvista.plotting.plotting:
 
-    add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=5.0, line_width=None, opacity=1.0, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=True, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=False, smooth_shading=None, split_sharp_edges=None, ambient=0.0, diffuse=1.0, specular=0.0, specular_power=100.0, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=False, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference='point', log_scale=False, pbr=False, metallic=0.0, roughness=0.5, render=True, component=None, **kwargs) method of pyvista.plotting.plotting.Plotter instance
+    add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=5.0, line_width=None, opacity=1.0, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=True, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=False, smooth_shading=None, split_sharp_edges=None, ambient=0.0, diffuse=1.0, specular=0.0, specular_power=100.0, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=False, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference='point', log_scale=False, pbr=False, metallic=0.0, roughness=0.5, render=True, component=None, copy_mesh=False, **kwargs) method of pyvista.plotting.plotting.Plotter instance
         Add any PyVista/VTK mesh or dataset that PyVista can wrap to the scene.
     
         This method is using a mesh representation to view the surfaces
@@ -177,7 +177,11 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             :func:`pyvista.BasePlotter.add_legend`.
     
         reset_camera : bool, optional
-            Reset the camera after adding this mesh to the scene.
+            Reset the camera after adding this mesh to the scene. The default
+            setting is ``None``, where the camera is only reset if this plotter
+            has already been shown. If ``False``, the camera is not reset
+            regardless of the state of the ``Plotter``. When ``True``, the
+            camera is always reset.
     
         scalar_bar_args : dict, optional
             Dictionary of keyword arguments to pass when adding the
@@ -314,7 +318,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
         log_scale : bool, optional
             Use log scale when mapping data to colors. Scalars less
             than zero are mapped to the smallest representable
-            positive float. Default: ``True``.
+            positive float. Default: ``False``.
     
         pbr : bool, optional
             Enable physics based rendering (PBR) if the mesh is
@@ -339,6 +343,14 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             Set component of vector valued scalars to plot.  Must be
             nonnegative, if supplied. If ``None``, the magnitude of
             the vector is plotted.
+    
+        copy_mesh : bool, optional
+            If ``True``, a copy of the mesh will be made before adding it to the plotter.
+            This is useful if e.g. you would like to add the same mesh to a plotter multiple
+            times and display different scalars. Setting ``copy_mesh`` to ``False`` is necessary
+            if you would like to update the mesh after adding it to the plotter and have these
+            updates rendered, e.g. by changing the active scalars or through an interactive widget.
+            Defaults to ``False``.
     
         **kwargs : dict, optional
             Optional developer keyword arguments.
@@ -553,7 +565,7 @@ There you go! Those are a few of the most commonly used display options!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.205 seconds)
+   **Total running time of the script:** ( 0 minutes  2.664 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py:

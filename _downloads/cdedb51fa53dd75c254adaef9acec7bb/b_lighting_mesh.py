@@ -52,7 +52,7 @@ p.show(cpos=cpos)
 mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 
 ###############################################################################
-# Demonstration of all diffues, specular, and ambient in use together
+# Demonstration of all diffuse, specular, and ambient in use together
 # (feel free to adjust)
 mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 

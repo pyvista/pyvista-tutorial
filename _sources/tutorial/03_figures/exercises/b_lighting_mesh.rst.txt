@@ -104,7 +104,7 @@ Specular power (feel free to adjust)
 
 .. GENERATED FROM PYTHON SOURCE LINES 55-57
 
-Demonstration of all diffues, specular, and ambient in use together
+Demonstration of all diffuse, specular, and ambient in use together
 (feel free to adjust)
 
 .. GENERATED FROM PYTHON SOURCE LINES 57-59

@@ -111,7 +111,7 @@ p.show()
 # Axes and Bounds
 # +++++++++++++++
 #
-# Aexs can be added to the scene with :func:`pyvista.Plotter.show_axes`
+# Axes can be added to the scene with :func:`pyvista.Plotter.show_axes`
 
 
 mesh = examples.load_random_hills()

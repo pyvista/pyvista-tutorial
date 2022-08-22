@@ -53,7 +53,7 @@
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="PyVista and Sphinx" href="../07_sphinx/index.html" />
@@ -1806,7 +1806,7 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
 </pre></div>
 </div>
 <p>Try using this VTK filter yourself here:</p>
-<p>Remember that you will have to wrap the output of the algorithm with <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.wrap.html#pyvista.wrap" title="(in PyVista v0.36.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.wrap()</span></code></a></p>
+<p>Remember that you will have to wrap the output of the algorithm with <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.wrap.html#pyvista.wrap" title="(in PyVista v0.36.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.wrap()</span></code></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alg</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkOutlineFilter</span><span class="p">()</span>
 
 <span class="c1"># (your code here, answer below)</span>
@@ -1868,9 +1868,9 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
 <section id="find-your-own-filter">
 <h2>Find your own filter<a class="headerlink" href="#find-your-own-filter" title="Permalink to this headline">#</a></h2>
 <p>Take a look at VTK’s examples and documentation to find a filter you’d like
-to apply to you mesh. The instructors will be around to help you implement.</p>
+to apply to your mesh. The instructors will be around to help you implement.</p>
 <p>See <a class="reference external" href="https://kitware.github.io/vtk-examples/site/Python/">https://kitware.github.io/vtk-examples/site/Python/</a></p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.881 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.744 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-c-vtk-algorithms-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/c_vtk_algorithms.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo14.svg" width="150px" /></a>

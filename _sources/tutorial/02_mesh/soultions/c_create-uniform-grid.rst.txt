@@ -3068,7 +3068,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      >>> mesh_a == mesh_b
      |      True
      |  
-     |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text='', return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, use_ipyvtk=None, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, hidden_line_removal=None, anti_aliasing=None, zoom=None, **kwargs)
+     |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text='', return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, use_ipyvtk=None, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, hidden_line_removal=None, anti_aliasing=None, zoom=None, border=None, border_color='k', border_width=2.0, **kwargs)
      |      Plot a PyVista, numpy, or vtk object.
      |      
      |      Parameters
@@ -3180,9 +3180,23 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |          setting :attr:`pyvista.global_theme.antialiasing
      |          <pyvista.themes.DefaultTheme.antialiasing>`.
      |      
-     |      zoom : float, optional
-     |          Camera zoom.  A value greater than 1 is a zoom-in, a value
-     |          less than 1 is a zoom-out.  Must be greater than 0.
+     |      zoom : float, str, optional
+     |          Camera zoom.  Either ``'tight'`` or a float. A value greater than 1 is
+     |          a zoom-in, a value less than 1 is a zoom-out.  Must be greater than 0.
+     |      
+     |      border : bool, optional
+     |          Draw a border around each render window.  Default ``False``.
+     |      
+     |      border_color : color_like, optional
+     |          Either a string, rgb list, or hex color string.  For example:
+     |      
+     |              * ``color='white'``
+     |              * ``color='w'``
+     |              * ``color=[1.0, 1.0, 1.0]``
+     |              * ``color='#FFFFFF'``
+     |      
+     |      border_width : float, optional
+     |          Width of the border in pixels when enabled.
      |      
      |      **kwargs : optional keyword arguments
      |          See :func:`pyvista.Plotter.add_mesh` for additional options.
@@ -3662,7 +3676,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      >>> mesh = pyvista.Sphere()
      |      >>> mesh['Z Height'] = mesh.points[:, 2]
      |      >>> mesh.active_scalars_info
-     |      ActiveArrayInfo(association=<FieldAssociation.POINT: 0>, name='Z Height')
+     |      ActiveArrayInfoTuple(association=<FieldAssociation.POINT: 0>, name='Z Height')
      |  
      |  active_tensors
      |      Return the active tensors array.
@@ -3720,7 +3734,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      >>> _ = mesh.compute_normals(inplace=True)
      |      >>> mesh.active_vectors_name = 'Normals'
      |      >>> mesh.active_vectors_info
-     |      ActiveArrayInfo(association=<FieldAssociation.POINT: 0>, name='Normals')
+     |      ActiveArrayInfoTuple(association=<FieldAssociation.POINT: 0>, name='Normals')
      |  
      |  array_names
      |      Return a list of array names for the dataset.
@@ -5722,7 +5736,8 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      Area or volume is also provided in point data.
      |      
      |      This filter uses the VTK `vtkIntegrateAttributes
-     |      <https://vtk.org/doc/nightly/html/classvtkIntegrateAttributes.html>`_.
+     |      <https://vtk.org/doc/nightly/html/classvtkIntegrateAttributes.html>`_
+     |      and requires VTK v9.1.0 or newer.
      |      
      |      Parameters
      |      ----------
@@ -5732,7 +5747,8 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      Returns
      |      -------
      |      pyvista.UnstructuredGird
-     |          Mesh with 1 point and 1 vertex cell with integrated data in point and cell data.
+     |          Mesh with 1 point and 1 vertex cell with integrated data in point
+     |          and cell data.
      |      
      |      Examples
      |      --------
@@ -8083,7 +8099,7 @@ See the PyVista documentation for further details on
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.526 seconds)
+   **Total running time of the script:** ( 0 minutes  4.794 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_soultions_c_create-uniform-grid.py:
