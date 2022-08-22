@@ -8,7 +8,7 @@
 
 [PyVista](https://github.com/pyvista/pyvista) is a general purpose 3D visualization library used for over 500+ open source projects and many closed source projects for the visualization of everything from [computer aided engineering and geophysics to volcanoes and digital artwork](https://dev.pyvista.org/getting-started/external_examples.html).
 
-PyVista exposes a Pythonic API to the [Visualization Toolkit (VTK)](http://www.vtk.org) to provide tooling that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of [matplotlib](https://matplotlib.org/), with plugins to [Jupyter](https://jupyter.org/) to enable visualization of 3D data using both server and client-side rendering.
+PyVista exposes a Pythonic API to the [Visualization Toolkit (VTK)](http://www.vtk.org) to provide tooling that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of [Matplotlib](https://matplotlib.org/), with plugins to [Jupyter](https://jupyter.org/) to enable visualization of 3D data using both server and client-side rendering.
 
 We will provide a hands-on tutorial accessible to anyone with internet access and a computer via many of PyVista's existing [example Jupyter notebooks](https://docs.pyvista.org/examples/index.html) and new material through a comprehensive overview highlighting popular 3D visualization use cases.
 
@@ -111,7 +111,7 @@ Past experience as a speaker:
 - [PyConJP 2019 speaker "Introduction to FEM Analysis with Python"](https://youtu.be/6JuB1GiDLQQ)
 - [PyConJP 2020 speaker "How to plot unstructured mesh file on Jupyter Notebook"](https://youtu.be/X3Z54Kw4I6Y)
 - [SciPy Japan 2020 speaker "Translation Project of Mayavi2 documents"](https://youtu.be/epxm9SjLMS0)
-- [PyConJP 2021 speaker "Visualize 3D scientific data in a Pythonic way like matplotlib"](https://youtu.be/ru-nENLgleo)
+- [PyConJP 2021 speaker "Visualize 3D scientific data in a Pythonic way like Matplotlib"](https://youtu.be/ru-nENLgleo)
 
 
 

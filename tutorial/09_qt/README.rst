@@ -139,7 +139,7 @@ Examples
    .. tab:: VesselVio
 
       `VesselVio <https://jacobbumgarner.github.io/VesselVio/>`_ is open-source
-      application for the analysis and visualization of segemented vasculature
+      application for the analysis and visualization of segmented vasculature
       datasets.
 
       .. image:: https://user-images.githubusercontent.com/70919881/149365137-fd526326-3d01-4588-a91f-1dc0f44bcb21.png

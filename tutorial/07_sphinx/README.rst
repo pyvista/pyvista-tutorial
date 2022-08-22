@@ -15,13 +15,13 @@ Leverage PyVista to make some awesome interactive web documentation.
 Dynamically Generating 3D Plots in your Documentation
 -----------------------------------------------------
 PyVista allows you to generate static or dynamic images directly within Sphinx
-much like the `matplotlib plot_directive
+much like the `Matplotlib plot_directive
 <https://matplotlib.org/stable/api/sphinxext_plot_directive_api.html>`_. Rather
 than manually creating and adding plots after code sections, you can instead
 dynamically generate images and embed them directly within your
 documentation. This also works seamlessly with `sphinx-gallery
 <https://sphinx-gallery.github.io/>`_, so you can create notebook examples just
-like the `matplotlib Example Gallery
+like the `Matplotlib Example Gallery
 <https://matplotlib.org/stable/gallery/index.html>`_.
 
 As an added side benefit, you can be sure that the documentation you generate

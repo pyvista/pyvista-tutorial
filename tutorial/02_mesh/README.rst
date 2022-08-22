@@ -32,7 +32,7 @@ do not have to get bogged down in the nuances.
    This is a very high level overview of the PyVista API to familiarize users
    with PyVista's data structures.  For further details regarding our data
    model, how it relates to the underlying VTK data model, and how to create
-   your own meshes, please see `this detailed guide of of the Data Model <https://docs.pyvista.org/user-guide/data_model.html>`_.
+   your own meshes, please see `this detailed guide of the Data Model <https://docs.pyvista.org/user-guide/data_model.html>`_.
 
 
 What is a point?
