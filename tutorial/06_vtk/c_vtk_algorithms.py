@@ -70,6 +70,6 @@ p.show()
 # ^^^^^^^^^^^^^^^^^^^^
 #
 # Take a look at VTK's examples and documentation to find a filter you'd like
-# to apply to you mesh. The instructors will be around to help you implement.
+# to apply to your mesh. The instructors will be around to help you implement.
 #
 # See https://kitware.github.io/vtk-examples/site/Python/
