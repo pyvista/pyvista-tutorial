@@ -26,44 +26,43 @@ Generate iso-lines or -surfaces for the scalars of a surface or volume.
 3D meshes can have 2D iso-surfaces of a scalar field extracted and 2D surface
 meshes can have 1D iso-lines of a scalar field extracted.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-14
+.. GENERATED FROM PYTHON SOURCE LINES 10-13
 
 .. code-block:: default
 
-    import numpy as np
     import pyvista as pv
     from pyvista import examples
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-19
+.. GENERATED FROM PYTHON SOURCE LINES 14-18
 
 Iso-Lines
 +++++++++
 
 Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-21
+.. GENERATED FROM PYTHON SOURCE LINES 18-20
 
 .. code-block:: default
 
     mesh = examples.load_random_hills()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-24
+.. GENERATED FROM PYTHON SOURCE LINES 21-23
 
 .. code-block:: default
 
     help(mesh.contour)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-27
+.. GENERATED FROM PYTHON SOURCE LINES 24-26
 
 .. code-block:: default
 
     contours = ...
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-34
+.. GENERATED FROM PYTHON SOURCE LINES 27-33
 
 .. code-block:: default
 
@@ -74,14 +73,14 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-39
+.. GENERATED FROM PYTHON SOURCE LINES 34-38
 
 Iso-Surfaces
 ++++++++++++
 
 Let's extract 2D iso-surfaces of a scalar field from a 3D mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-43
+.. GENERATED FROM PYTHON SOURCE LINES 38-42
 
 .. code-block:: default
 
@@ -90,12 +89,12 @@ Let's extract 2D iso-surfaces of a scalar field from a 3D mesh.
     mesh
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-46
+.. GENERATED FROM PYTHON SOURCE LINES 43-45
 
 For this example dataset, let's create 5 contour levels between the values
 of 50 and 200
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-49
+.. GENERATED FROM PYTHON SOURCE LINES 45-48
 
 .. code-block:: default
 
@@ -103,7 +102,7 @@ of 50 and 200
     contours = ...
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-59
+.. GENERATED FROM PYTHON SOURCE LINES 49-58
 
 .. code-block:: default
 

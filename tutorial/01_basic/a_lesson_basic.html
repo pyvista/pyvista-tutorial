@@ -650,6 +650,7 @@ using the <a class="reference external" href="https://docs.pyvista.org/api/examp
 module and external files.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Configure for panel</span>
 <span class="kn">import</span> <span class="nn">pyvista</span>
+
 <a href="https://docs.pyvista.org/user-guide/jupyter/index.html#pyvista.set_jupyter_backend" title="pyvista.set_jupyter_backend" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pyvista</span><span class="o">.</span><span class="n">set_jupyter_backend</span></a><span class="p">(</span><span class="s1">&#39;panel&#39;</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.set_plot_theme.html#pyvista.set_plot_theme" title="pyvista.set_plot_theme" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pyvista</span><span class="o">.</span><span class="n">set_plot_theme</span></a><span class="p">(</span><span class="s1">&#39;document&#39;</span><span class="p">)</span>
 </pre></div>
@@ -666,6 +667,7 @@ out, let’s load a file.</p>
 <span class="c1">#</span>
 
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
+
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_saddle_surface</span><span class="p">()</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a>
 </pre></div>
@@ -738,6 +740,7 @@ many more that it doesn’t as PyVista can rely on libraries like <a class="refe
 <p>In the following example, we load VTK’s iron protein dataset <a class="reference external" href="https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk">ironProt.vtk</a> from a
 file using <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.36.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="pyvista.read" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">read</span></a><span class="p">(</span><span class="s1">&#39;ironProt.vtk&#39;</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a>
 </pre></div>
@@ -770,7 +773,7 @@ with:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.plot.html#pyvista.UniformGrid.plot" title="pyvista.UniformGrid.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_basic_003.png" srcset="../../_images/sphx_glr_a_lesson_basic_003.png" alt="a lesson basic" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.473 seconds)</p>
+<img src="../../_images/sphx_glr_a_lesson_basic_003.png" srcset="../../_images/sphx_glr_a_lesson_basic_003.png" alt="a lesson basic" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.596 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-01-basic-a-lesson-basic-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/01_basic/a_lesson_basic.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo1.svg" width="150px" /></a>

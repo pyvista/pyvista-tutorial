@@ -29,7 +29,7 @@ We can do this by using the spatial reference of the GeoTIFF itself, as this all
 
 Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-18
+.. GENERATED FROM PYTHON SOURCE LINES 13-17
 
 .. code-block:: default
 
@@ -44,8 +44,7 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 20-24
+.. GENERATED FROM PYTHON SOURCE LINES 19-23
 
 .. code-block:: default
 
@@ -77,12 +76,12 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-27
+.. GENERATED FROM PYTHON SOURCE LINES 24-26
 
 Load the GeoTIFF/texture (this could take a minute to download)
 https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-31
+.. GENERATED FROM PYTHON SOURCE LINES 26-30
 
 .. code-block:: default
 
@@ -105,16 +104,17 @@ https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.t
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-36
+.. GENERATED FROM PYTHON SOURCE LINES 31-35
 
 In the block below, we can use the ``get_gcps`` function to get the
 Ground Control Points of the raster, however this depends on GDAL. For this
 tutorial, we are going to hard code the GCPs to avoid having users install
 GDAL.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-55
+.. GENERATED FROM PYTHON SOURCE LINES 35-56
 
 .. code-block:: default
+
 
 
     def get_gcps(filename):
@@ -142,7 +142,8 @@ GDAL.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-65
+
+.. GENERATED FROM PYTHON SOURCE LINES 57-66
 
 .. code-block:: default
 
@@ -162,7 +163,7 @@ GDAL.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-70
+.. GENERATED FROM PYTHON SOURCE LINES 67-71
 
 .. code-block:: default
 
@@ -200,11 +201,11 @@ GDAL.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-72
+.. GENERATED FROM PYTHON SOURCE LINES 72-73
 
 Show GCPs in relation to topo surface with texture coordinates displayed
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-89
+.. GENERATED FROM PYTHON SOURCE LINES 73-90
 
 .. code-block:: default
 
@@ -237,11 +238,11 @@ Show GCPs in relation to topo surface with texture coordinates displayed
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-91
+.. GENERATED FROM PYTHON SOURCE LINES 91-92
 
 Read the GeoTIFF as a ``Texture`` in PyVista:
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-103
+.. GENERATED FROM PYTHON SOURCE LINES 92-104
 
 .. code-block:: default
 
@@ -272,7 +273,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.259 seconds)
+   **Total running time of the script:** ( 0 minutes  7.881 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_c_geological-map.py:

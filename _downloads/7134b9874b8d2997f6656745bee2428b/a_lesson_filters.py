@@ -24,7 +24,7 @@ from pyvista import examples
 # * `clip()`_: Clips the dataset by a user defined plane
 # * `outline_corners()`_: Outlines the corners of the data extent
 # * `extract_geometry()`_: Extract surface geometry
-# 
+#
 # .. _slice(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice.html
 # .. _slice_orthogonal(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_orthogonal.html
 # .. _slice_along_axis(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_along_axis.html
@@ -106,7 +106,7 @@ p.show()
 # 2. Use an ``elevation`` filter to generate scalar values corresponding to height.
 # 3. Use the ``clip`` filter to cut the dataset in half.
 # 4. Create three slices along each axial plane using the ``slice_orthogonal`` filter.
-# 
+#
 #
 # Apply a filtering chain
 result = dataset.threshold().elevation().clip(normal="z").slice_orthogonal()

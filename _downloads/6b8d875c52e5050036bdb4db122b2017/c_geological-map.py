@@ -15,7 +15,6 @@ import numpy as np
 import pyvista as pv
 from pyvista import examples
 
-
 ###############################################################################
 path, _ = examples.downloads._download_file("topo_clean.vtk")
 topo = pv.read(path)
@@ -34,6 +33,7 @@ filename
 # tutorial, we are going to hard code the GCPs to avoid having users install
 # GDAL.
 
+
 def get_gcps(filename):
     """This helper function retrieves the Ground Control
     Points of a GeoTIFF. Note that this requires gdal"""
@@ -51,6 +51,7 @@ def get_gcps(filename):
     point_u = [bounds[1], bounds[2], bounds[4]]  # BOTTOM RIGHT CORNER
     point_v = [bounds[0], bounds[3], bounds[4]]  # TOP LEFT CORNER
     return origin, point_u, point_v
+
 
 ###############################################################################
 
