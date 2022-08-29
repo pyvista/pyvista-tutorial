@@ -12,6 +12,7 @@ module and external files.
 
 # Configure for panel
 import pyvista
+
 pyvista.set_jupyter_backend('panel')
 pyvista.set_plot_theme('document')
 
@@ -28,9 +29,10 @@ pyvista.set_plot_theme('document')
 # you can use that. If you don't have something immediately available, PyVista
 # has a variety of files you can download in its `pyvista.examples.downloads
 # <https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_
-# 
+#
 
 from pyvista import examples
+
 dataset = examples.download_saddle_surface()
 dataset
 
@@ -72,6 +74,7 @@ dataset.plot(volume=True)
 # file using :func:`pyvista.read`.
 
 import pyvista as pv
+
 dataset = pv.read('ironProt.vtk')
 dataset
 
