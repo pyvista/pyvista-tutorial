@@ -104,9 +104,6 @@ html_short_title = ''
 html_extra_path = []  # TODO: 'CNAME',
 html_use_smartypants = True
 
-
-# -- Options for HTML output -------------------------------------------------
-
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
