@@ -117,7 +117,7 @@ You can then plot using Jupyterlab or Jupyter Notebook interactively with one of
          from pyvista import examples
          pv.global_theme.jupyter_backend = 'pythreejs'
          pv.global_theme.window_size = (700, 300)
-         pv.global_theme.antialiasing = True
+         pv.global_theme.anti_aliasing = 'fxaa'
 
          dataset = examples.download_cad_model()
          dataset.plot(background='w', pbr=True, metallic=0.6, roughness=0.4, split_sharp_edges=True)
