@@ -1,77 +1,101 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Creating a Uniform Grid &#8212; PyVista Tutorial</title>
-<script>
-  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
-</script>
-
+  <script>
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
-<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+  <link href="../../../_static/styles/theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1e1de1a1873e13ef5536" rel="stylesheet">
 
-
+  
   <link rel="stylesheet"
-    href="../../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_2.6.1.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_2.6.1.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-custom.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/no_search_highlight.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/fontawesome/css/all.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css" />
-
+    <link rel="stylesheet" type="text/css" href="../../../_static/cards.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536">
 
     <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/asciinema-player_2.6.1.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/thebelab-helper.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/asciinema-player_2.6.1.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.1/dist/embed-amd.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Create Triangulated Surface" href="d_create-tri-surface.html" />
     <link rel="prev" title="Create Point Cloud" href="b_create-point-cloud.html" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="docsearch:language" content="None">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="docsearch:language" content="en">
   </head>
   
   
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
-    <div class="bd-header-announcement container-fluid" id="banner">
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__primary" id="__primary">
+  <label class="overlay overlay-primary" for="__primary"></label>
+
+  
+  <input type="checkbox" class="sidebar-toggle" name="__secondary" id="__secondary">
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
       
-
+<form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
     </div>
+  </div>
 
-    
-    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
-
+  
+  <nav class="bd-header navbar navbar-expand-lg bd-navbar" id="navbar-main"><div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+      <span class="fa-solid fa-bars"></span>
+  </label>
   <div id="navbar-start">
     
     
@@ -79,9 +103,15 @@
 
 
 <a class="navbar-brand logo" href="../../../index.html">
+
   
   
   
+  
+  
+  
+  
+
   
     <img src="../../../_static/pyvista_logo_sm.png" class="logo__image only-light" alt="Logo image">
     <img src="../../../_static/pyvista_logo_sm.png" class="logo__image only-dark" alt="Logo image">
@@ -91,68 +121,118 @@
     
   </div>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="fas fa-bars"></span>
-  </button>
-
   
-  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+  <div class="col-lg-9 navbar-header-items">
     <div id="navbar-center" class="mr-auto">
       
       <div class="navbar-center-item">
-        <ul id="navbar-main-elements" class="navbar-nav">
-    <li class="toctree-l1 nav-item">
- <a class="reference internal nav-link" href="../../../getting-started.html">
-  Getting Started
- </a>
-</li>
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../getting-started.html">
+                        Getting Started
+                    </a>
+                </li>
+                
 
-<li class="toctree-l1 current active nav-item">
- <a class="reference internal nav-link" href="../../../tutorial.html">
-  PyVista Tutorial
- </a>
-</li>
-
-    
-</ul>
+                <li class="nav-item current active">
+                    <a class="nav-link" href="../../../tutorial.html">
+                        PyVista Tutorial
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
       </div>
       
     </div>
 
     <div id="navbar-end">
+      <div class="navbar-end-item navbar-end__search-button-container">
+        
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+      </div>
       
       <div class="navbar-end-item">
-        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
-    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
-    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
-    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" data-toggle="tooltip">
+    <a class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="fa-regular fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></a>
 </span>
       </div>
       
       <div class="navbar-end-item">
         <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyvista/pyvista-tutorial" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista-tutorial" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
             <label class="sr-only">GitHub</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyvista/pyvista/discussions" rel="noopener" target="_blank" title="Support"><span><i class="fa fa-comment fa-fw"></i></span>
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/discussions" title="Support" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa fa-comment fa-fw"></i></span>
             <label class="sr-only">Support</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://docs.pyvista.org/" rel="noopener" target="_blank" title="Docs"><span><i class="fa fa-book fa-fw"></i></span>
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://docs.pyvista.org/" title="Docs" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa fa-book fa-fw"></i></span>
             <label class="sr-only">Docs</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://slack.pyvista.org" rel="noopener" target="_blank" title="Slack Community"><span><i class="fab fa-slack"></i></span>
+          
+          
+          
+          
+          
+          
+          
+          <a href="http://slack.pyvista.org" title="Slack Community" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-slack"></i></span>
             <label class="sr-only">Slack Community</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" rel="noopener" target="_blank" title="Contributing"><span><i class="fa fa-gavel fa-fw"></i></span>
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" title="Contributing" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa fa-gavel fa-fw"></i></span>
             <label class="sr-only">Contributing</label></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://doi.org/10.21105/joss.01450" rel="noopener" target="_blank" title="The Paper"><span><i class="fa fa-file-text fa-fw"></i></span>
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://doi.org/10.21105/joss.01450" title="The Paper" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa fa-file-text fa-fw"></i></span>
             <label class="sr-only">The Paper</label></a>
         </li>
       </ul>
@@ -160,491 +240,309 @@
       
     </div>
   </div>
-</div>
-    </nav>
-    
-
-    <div class="bd-container container-xl">
-      <div class="bd-container__inner row">
-          
-
-<!-- Only show if we have sidebars configured, else just a small margin  -->
-<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
-  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <div class="bd-toc-item active">
-    <p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Lessons
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../00_intro/index.html">
-   Introduction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../00_intro/a_basic.html">
-     Create Basic Geometric Objects
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../01_basic/index.html">
-   Basic usage
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../index.html">
-   What is a Mesh?
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../a_lesson_mesh.html">
-     Lesson Overview
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../exercises/b_create-point-cloud.html">
-     Create Point Cloud
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../exercises/c_create-uniform-grid.html">
-     Creating a Uniform Grid
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../exercises/d_create-tri-surface.html">
-     Create Triangulated Surface
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../exercises/e_read-file.html">
-     Load and Plot from a File
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="b_create-point-cloud.html">
-     Create Point Cloud
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Creating a Uniform Grid
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="d_create-tri-surface.html">
-     Create Triangulated Surface
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="e_read-file.html">
-     Load and Plot from a File
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../03_figures/index.html">
-   Plotting Options and Animations
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/a_lesson_figures.html">
-     Lesson Overview
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/b_shading.html">
-     Types of Shading
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/c_geological-map.html">
-     Geological Map on Topography
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/d_gif.html">
-     Create a GIF Movie
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/bonus/d_pbr.html">
-     Physically Based Rendering
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/bonus/e_labels.html">
-     Label Points
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/bonus/g_orbit.html">
-     Orbiting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/exercises/a_display_options.html">
-     Display Options
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/exercises/b_lighting_mesh.html">
-     Lighting Properties
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/exercises/c_edl.html">
-     Eye Dome Lighting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/solutions/a_display_options.html">
-     Display Options
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/solutions/b_lighting_mesh.html">
-     Lighting Properties
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../03_figures/solutions/c_edl.html">
-     Eye Dome Lighting
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../04_filters/index.html">
-   Filters
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../04_filters/a_lesson_filters.html">
-     Using Common Filters
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../04_filters/exercises/b_clipping.html">
-     Clipping with Planes &amp; Boxes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../04_filters/exercises/c_compute-normals.html">
-     Computing Surface Normals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../04_filters/exercises/d_contouring.html">
-     Contouring
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../04_filters/exercises/e_glyphs.html">
-     Plotting Glyphs (Vectors or PolyData)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../04_filters/solutions/b_clipping.html">
-     Clipping with Planes &amp; Boxes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../04_filters/solutions/c_compute-normals.html">
-     Computing Surface Normals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../04_filters/solutions/d_contouring.html">
-     Contouring
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../04_filters/solutions/e_glyphs.html">
-     Plotting Glyphs (Vectors or PolyData)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../05_action/index.html">
-   PyVista in Action
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/camurban/pterasoftware">
-     PteraSoftware
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://laustep.github.io/stlahblog/posts/MyPyVistaArtworks.html">
-     Stﾃｩphane Laurent's artwork
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://jacobbumgarner.github.io/VesselVio/">
-     VesselVio
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://dennissergeev.github.io/exoconvection-apj-2020/">
-     Atmospheric Convection
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://nbviewer.jupyter.org/github/banesullivan/damavand-volcano/blob/master/Damavand_Volcano.ipynb">
-     Damavand Volcano
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://www.youtube.com/watch?v=cCPjnF_vHxw&amp;feature=youtu.be">
-     Anvil Cirrus Plumes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://gist.github.com/hichamjanati/6668d91848283c31ac18d801552fb582">
-     Optimization visualization with PyVista
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/johnjarmitage/flem">
-     FLEM: A diffusive landscape evolution model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://github.com/BartheG/Orvisu">
-     Orvisu Demo Application
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="http://pymeshfix.pyvista.org/examples/index.html">
-     PyMeshFix's example gallery
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="http://tetgen.pyvista.org/examples/index.html">
-     TetGen's example gallery
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://pvgeo.org/examples/index.html">
-     PVGeo's example gallery
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://forge.pvgeo.org/project/index.html">
-     FORGE Geothermal Project
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://peterdsharpe.github.io/AeroSandbox/">
-     AeroSandbox
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://pswpswpsw.github.io/posts/2018/09/blog-post-modify-vtk-openfoam/">
-     OpenFOAM Rendering
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="http://discretize.simpeg.xyz/en/main/examples/plot_pyvista_laguna.html">
-     3D Rendering with Discretize
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference external" href="https://opengeovis.github.io/omfvista/examples/index.html">
-     3D visualization for the Open Mining Format (omf)
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../06_vtk/index.html">
-   PyVista &amp; VTK
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../06_vtk/a_1_transition_vtk.html">
-     Transitioning from VTK to PyVista
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../06_vtk/a_2_pyvista_vtk.html">
-     PyVista and VTK Together
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../06_vtk/b_create_vtk.html">
-     Create VTK Objects
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../06_vtk/c_vtk_algorithms.html">
-     Using VTK Algorithms
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../07_sphinx/index.html">
-   PyVista and Sphinx
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../08_widgets/index.html">
-   Widgets in PyVista
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../08_widgets/a_box-widget.html">
-     Box Widget
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../08_widgets/b_checkbox-widget.html">
-     Checkbox Widget
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../08_widgets/c_line-widget.html">
-     Line Widget
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../08_widgets/d_multi-slider-widget.html">
-     Multiple Slider Widgets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../08_widgets/e_plane-widget.html">
-     Plane Widget
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../08_widgets/f_slider-bar-widget.html">
-     Slider Bar Widget
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../08_widgets/g_sphere-widget.html">
-     Sphere Widget
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../08_widgets/h_spline-widget.html">
-     Spline Widget
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../09_qt/index.html">
-   PyVista and QT
-  </a>
- </li>
-</ul>
-
-  </div>
-</nav>
-  </div>
-  <div class="sidebar-end-items">
-  </div>
-</div>
 
 
-          
-
-
-<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
   
-    
-    <div class="toc-item">
-      
-<div class="tocsection onthispage mt-5 pt-1 pb-3">
-    <i class="fas fa-list"></i> On this page
-</div>
+  <div class="search-button-container--mobile">
+<button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" data-toggle="tooltip">
+  <i class="fa-solid fa-magnifying-glass"></i>
+</button>
+  </div>
 
-<nav id="bd-toc-nav">
-    <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#exercise">
-   Exercise
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   Example
-  </a>
- </li>
-</ul>
-
-</nav>
-    </div>
-    
-    <div class="toc-item">
-      
-    </div>
-    
   
+  <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+  </label>
+  
+
 </div>
+  </nav>
+  
 
-
-          
-          
-          <div class="bd-content col-12 col-md-9 col-xl-7">
-              
-              <article class="bd-article" role="main">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+      
+      <div class="navbar-center-item">
+        <nav class="navbar-nav">
+    <p class="sidebar-header-items__title" role="heading" aria-level="1" aria-label="Site Navigation">
+        Site Navigation
+    </p>
+    <ul id="navbar-main-elements" class="navbar-nav">
+        
+                <li class="nav-item">
+                    <a class="nav-link" href="../../../getting-started.html">
+                        Getting Started
+                    </a>
+                </li>
                 
+
+                <li class="nav-item current active">
+                    <a class="nav-link" href="../../../tutorial.html">
+                        PyVista Tutorial
+                    </a>
+                </li>
+                
+    </ul>
+</nav>
+      </div>
+      
+      </div>
+    
+
+    
+    
+    <div class="sidebar-header-items__end">
+      
+      <div class="navbar-end-item">
+        <span class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" data-toggle="tooltip">
+    <a class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="fa-regular fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista-tutorial" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/discussions" title="Support" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa fa-comment fa-fw"></i></span>
+            <label class="sr-only">Support</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://docs.pyvista.org/" title="Docs" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa fa-book fa-fw"></i></span>
+            <label class="sr-only">Docs</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="http://slack.pyvista.org" title="Slack Community" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fab fa-slack"></i></span>
+            <label class="sr-only">Slack Community</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" title="Contributing" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa fa-gavel fa-fw"></i></span>
+            <label class="sr-only">Contributing</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://doi.org/10.21105/joss.01450" title="The Paper" class="nav-link" rel="noopener" target="_blank" data-toggle="tooltip"><span><i class="fa fa-file-text fa-fw"></i></span>
+            <label class="sr-only">The Paper</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+    
+  </div>
+
+  
+  <div class="sidebar-start-items sidebar-primary__section">
+    <div class="sidebar-start-items__item"><nav class="bd-links" id="bd-docs-nav" aria-label="Section navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">
+    Section Navigation
+  </p>
+  <div class="bd-toc-item navbar-nav">
+    <p aria-level="2" class="caption" role="heading"><span class="caption-text">Lessons</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../00_intro/index.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../00_intro/a_basic.html">Create Basic Geometric Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../01_basic/index.html">Basic usage</a></li>
+
+
+
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html">What is a Mesh?</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../a_lesson_mesh.html">Lesson Overview</a></li>
+
+
+
+
+<li class="toctree-l2 has-children"><a class="reference internal" href="../exercises/index.html">Do it yourself</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/b_create-point-cloud.html">Create Point Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/d_create-tri-surface.html">Create Triangulated Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/e_read-file.html">Load and Plot from a File</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">Solutions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="b_create-point-cloud.html">Create Point Cloud</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Creating a Uniform Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="d_create-tri-surface.html">Create Triangulated Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="e_read-file.html">Load and Plot from a File</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../03_figures/index.html">Plotting Options and Animations</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../03_figures/a_lesson_figures.html">Lesson Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_figures/b_shading.html">Types of Shading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_figures/c_geological-map.html">Geological Map on Topography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../03_figures/d_gif.html">Create a GIF Movie</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../03_figures/bonus/index.html">Bonus Content</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/bonus/d_pbr.html">Physically Based Rendering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/bonus/e_labels.html">Label Points</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/bonus/g_orbit.html">Orbiting</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../03_figures/exercises/index.html">Do it yourself</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/exercises/a_display_options.html">Display Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/exercises/b_lighting_mesh.html">Lighting Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/exercises/c_edl.html">Eye Dome Lighting</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../03_figures/solutions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/solutions/a_display_options.html">Display Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/solutions/b_lighting_mesh.html">Lighting Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/solutions/c_edl.html">Eye Dome Lighting</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../04_filters/index.html">Filters</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../04_filters/a_lesson_filters.html">Using Common Filters</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../04_filters/exercises/index.html">Do it yourself</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/exercises/b_clipping.html">Clipping with Planes &amp; Boxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/exercises/c_compute-normals.html">Computing Surface Normals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/exercises/d_contouring.html">Contouring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/exercises/e_glyphs.html">Plotting Glyphs (Vectors or PolyData)</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../04_filters/solutions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/solutions/b_clipping.html">Clipping with Planes &amp; Boxes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/solutions/c_compute-normals.html">Computing Surface Normals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/solutions/d_contouring.html">Contouring</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/solutions/e_glyphs.html">Plotting Glyphs (Vectors or PolyData)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../05_action/index.html">PyVista in Action</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/camurban/pterasoftware">PteraSoftware</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://laustep.github.io/stlahblog/posts/MyPyVistaArtworks.html">Stﾃｩphane Laurent's artwork</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://jacobbumgarner.github.io/VesselVio/">VesselVio</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://dennissergeev.github.io/exoconvection-apj-2020/">Atmospheric Convection</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://nbviewer.jupyter.org/github/banesullivan/damavand-volcano/blob/master/Damavand_Volcano.ipynb">Damavand Volcano</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://www.youtube.com/watch?v=cCPjnF_vHxw&amp;feature=youtu.be">Anvil Cirrus Plumes</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://gist.github.com/hichamjanati/6668d91848283c31ac18d801552fb582">Optimization visualization with PyVista</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/johnjarmitage/flem">FLEM: A diffusive landscape evolution model</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/BartheG/Orvisu">Orvisu Demo Application</a></li>
+<li class="toctree-l2"><a class="reference external" href="http://pymeshfix.pyvista.org/examples/index.html">PyMeshFix's example gallery</a></li>
+<li class="toctree-l2"><a class="reference external" href="http://tetgen.pyvista.org/examples/index.html">TetGen's example gallery</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://pvgeo.org/examples/index.html">PVGeo's example gallery</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://forge.pvgeo.org/project/index.html">FORGE Geothermal Project</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://peterdsharpe.github.io/AeroSandbox/">AeroSandbox</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://pswpswpsw.github.io/posts/2018/09/blog-post-modify-vtk-openfoam/">OpenFOAM Rendering</a></li>
+<li class="toctree-l2"><a class="reference external" href="http://discretize.simpeg.xyz/en/main/examples/plot_pyvista_laguna.html">3D Rendering with Discretize</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://opengeovis.github.io/omfvista/examples/index.html">3D visualization for the Open Mining Format (omf)</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../06_vtk/index.html">PyVista &amp; VTK</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../06_vtk/a_1_transition_vtk.html">Transitioning from VTK to PyVista</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../06_vtk/a_2_pyvista_vtk.html">PyVista and VTK Together</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../06_vtk/b_create_vtk.html">Create VTK Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../06_vtk/c_vtk_algorithms.html">Using VTK Algorithms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../07_sphinx/index.html">PyVista and Sphinx</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../08_widgets/index.html">Widgets in PyVista</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../08_widgets/a_box-widget.html">Box Widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_widgets/b_checkbox-widget.html">Checkbox Widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_widgets/c_line-widget.html">Line Widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_widgets/d_multi-slider-widget.html">Multiple Slider Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_widgets/e_plane-widget.html">Plane Widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_widgets/f_slider-bar-widget.html">Slider Bar Widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_widgets/g_sphere-widget.html">Sphere Widget</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../08_widgets/h_spline-widget.html">Spline Widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../09_qt/index.html">PyVista and QT</a></li>
+</ul>
+
+  </div>
+</nav>
+    </div>
+  </div>
+  
+
+  
+  <div class="sidebar-end-items sidebar-primary__section">
+    <div class="sidebar-end-items__item">
+    </div>
+  </div>
+
+      </div>
+      <main class="bd-main">
+        
+        
+        <div class="bd-content">
+          <div class="bd-article-container">
+            
+            <div class="bd-header-article">
+                
+            </div>
+            
+            
+            <article class="bd-article" role="main">
+              
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p>Click <a class="reference internal" href="#sphx-glr-download-tutorial-02-mesh-soultions-c-create-uniform-grid-py"><span class="std std-ref">here</span></a>
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="creating-a-uniform-grid">
-<span id="sphx-glr-tutorial-02-mesh-soultions-c-create-uniform-grid-py"></span><h1>Creating a Uniform Grid<a class="headerlink" href="#creating-a-uniform-grid" title="Permalink to this headline">#</a></h1>
+<span id="sphx-glr-tutorial-02-mesh-soultions-c-create-uniform-grid-py"></span><h1>Creating a Uniform Grid<a class="headerlink" href="#creating-a-uniform-grid" title="Permalink to this heading">#</a></h1>
 <p>Create a simple uniform grid from a 3D NumPy array of values.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
@@ -652,7 +550,7 @@ to download the full example code or to run this example in your browser via Bin
 </div>
 <p>Take a 3D NumPy array of data values that holds some spatial data where each
 axis corresponds to the XYZ cartesian axes. This example will create a
-<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.36.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> object that will hold the spatial reference for
+<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> object that will hold the spatial reference for
 a 3D grid which a 3D NumPy array of values can be plotted against.</p>
 <p>Create the 3D NumPy array of spatially referenced data.
 This is spatially referenced such that the grid is 20 by 5 by 10
@@ -661,7 +559,6 @@ This is spatially referenced such that the grid is 20 by 5 by 10
 <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span><span class="o">.</span><span class="n">shape</span></a>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(20, 5, 10)
 </pre></div>
 </div>
@@ -673,16 +570,16 @@ This is spatially referenced such that the grid is 20 by 5 by 10
 <dt>Set the grid dimensions: shape + 1 because we want to inject our values on</dt><dd><p>the CELL data</p>
 </dd>
 </dl>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.dimensions.html#pyvista.UniformGrid.dimensions" title="pyvista.UniformGrid.dimensions" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>Edit the spatial reference</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.origin.html#pyvista.UniformGrid.origin" title="pyvista.UniformGrid.origin" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">origin</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mf">55.6</span><span class="p">)</span>  <span class="c1"># The bottom left corner of the data set</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.spacing.html#pyvista.UniformGrid.spacing" title="pyvista.UniformGrid.spacing" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">spacing</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># These are the cell sizes along each axis</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid.origin" title="pyvista.UniformGrid.origin" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">origin</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mf">55.6</span><span class="p">)</span>  <span class="c1"># The bottom left corner of the data set</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid.spacing" title="pyvista.UniformGrid.spacing" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">spacing</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># These are the cell sizes along each axis</span>
 </pre></div>
 </div>
 <p>Add the data values to the cell data</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.cell_data.html#pyvista.UniformGrid.cell_data" title="pyvista.UniformGrid.cell_data" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">cell_data</span></a><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span></a><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>  <span class="c1"># Flatten the array!</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet.cell_data" title="pyvista.DataSet.cell_data" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">cell_data</span></a><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span></a><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>  <span class="c1"># Flatten the array!</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a>
 </pre></div>
 </div>
@@ -710,11 +607,11 @@ This is spatially referenced such that the grid is 20 by 5 by 10
 </div>
 <br />
 <br /><p>Now plot the grid!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.plot.html#pyvista.UniformGrid.plot" title="pyvista.UniformGrid.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">grid</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">grid</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <img src="../../../_images/sphx_glr_c_create-uniform-grid_001.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_001.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p>Don’t like cell data? You could also add the NumPy array to the point data of
-a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.36.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a>. Take note of the subtle difference when
+a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a>. Take note of the subtle difference when
 setting the grid dimensions upon initialization.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the 3D NumPy array of spatially referenced data</span>
 <span class="c1"># This is spatially referenced such that the grid is 20 by 5 by 10</span>
@@ -723,7 +620,6 @@ setting the grid dimensions upon initialization.</p>
 <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span><span class="o">.</span><span class="n">shape</span></a>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(20, 5, 10)
 </pre></div>
 </div>
@@ -732,15 +628,15 @@ setting the grid dimensions upon initialization.</p>
 
 <span class="c1"># Set the grid dimensions: shape because we want to inject our values on the</span>
 <span class="c1">#   POINT data</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.dimensions.html#pyvista.UniformGrid.dimensions" title="pyvista.UniformGrid.dimensions" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span></a> <span class="o">=</span> <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span><span class="o">.</span><span class="n">shape</span></a>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span><span class="o">.</span><span class="n">shape</span></a>
 
 <span class="c1"># Edit the spatial reference</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.origin.html#pyvista.UniformGrid.origin" title="pyvista.UniformGrid.origin" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">origin</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mf">55.6</span><span class="p">)</span>  <span class="c1"># The bottom left corner of the data set</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.spacing.html#pyvista.UniformGrid.spacing" title="pyvista.UniformGrid.spacing" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">spacing</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># These are the cell sizes along each axis</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid.origin" title="pyvista.UniformGrid.origin" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">origin</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mf">55.6</span><span class="p">)</span>  <span class="c1"># The bottom left corner of the data set</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid.spacing" title="pyvista.UniformGrid.spacing" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">spacing</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># These are the cell sizes along each axis</span>
 </pre></div>
 </div>
 <p>Add the data values to the cell data</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.point_data.html#pyvista.UniformGrid.point_data" title="pyvista.UniformGrid.point_data" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">point_data</span></a><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span></a><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>  <span class="c1"># Flatten the array!</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet.point_data" title="pyvista.DataSet.point_data" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">point_data</span></a><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span></a><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>  <span class="c1"># Flatten the array!</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a>
 </pre></div>
 </div>
@@ -768,20 +664,19 @@ setting the grid dimensions upon initialization.</p>
 </div>
 <br />
 <br /><p>Now plot the grid!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.plot.html#pyvista.UniformGrid.plot" title="pyvista.UniformGrid.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">grid</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">grid</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <img src="../../../_images/sphx_glr_c_create-uniform-grid_002.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_002.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><section id="exercise">
-<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h2>
-<p>Now create your own <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.36.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> from a 3D NumPy array!</p>
+<h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
+<p>Now create your own <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> from a 3D NumPy array!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on class UniformGrid in module pyvista.core.grid:
 
 class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.filters.uniform_grid.UniformGridFilters)
- |  UniformGrid(uinput=None, *args, dims=None, spacing=(1.0, 1.0, 1.0), origin=(0.0, 0.0, 0.0))
+ |  UniformGrid(uinput=None, *args, dimensions=None, spacing=(1.0, 1.0, 1.0), origin=(0.0, 0.0, 0.0), deep=False, **kwargs)
  |
  |  Models datasets with uniform spacing in the three coordinate directions.
  |
@@ -796,13 +691,16 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      ``vtk.vtkImageData``. Use keyword arguments to specify the
  |      dimensions, spacing, and origin of the uniform grid.
  |
+ |  .. versionchanged:: 0.37.0
+ |      The ``dims`` parameter has been renamed to ``dimensions``.
+ |
  |  Parameters
  |  ----------
  |  uinput : str, vtk.vtkImageData, pyvista.UniformGrid, optional
  |      Filename or dataset to initialize the uniform grid from.  If
  |      set, remainder of arguments are ignored.
  |
- |  dims : iterable, optional
+ |  dimensions : iterable, optional
  |      Dimensions of the uniform grid.
  |
  |  spacing : iterable, optional
@@ -811,6 +709,10 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |  origin : iterable, optional
  |      Origin of the uniform grid.  Defaults to ``(0.0, 0.0, 0.0)``.
+ |
+ |  deep : bool, optional
+ |      Whether to deep copy a ``vtk.vtkImageData`` object.
+ |      Default is ``False``.  Keyword only.
  |
  |  Examples
  |  --------
@@ -828,19 +730,19 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  Initialize using using just the grid dimensions and default
  |  spacing and origin. These must be keyword arguments.
  |
- |  &gt;&gt;&gt; grid = pyvista.UniformGrid(dims=(10, 10, 10))
+ |  &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(10, 10, 10))
  |
  |  Initialize using dimensions and spacing.
  |
  |  &gt;&gt;&gt; grid = pyvista.UniformGrid(
- |  ...     dims=(10, 10, 10),
+ |  ...     dimensions=(10, 10, 10),
  |  ...     spacing=(2, 1, 5),
  |  ... )
  |
  |  Initialize using dimensions, spacing, and an origin.
  |
  |  &gt;&gt;&gt; grid = pyvista.UniformGrid(
- |  ...     dims=(10, 10, 10),
+ |  ...     dimensions=(10, 10, 10),
  |  ...     spacing=(2, 1, 5),
  |  ...     origin=(10, 35, 50),
  |  ... )
@@ -848,7 +750,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  Initialize from another UniformGrid.
  |
  |  &gt;&gt;&gt; grid = pyvista.UniformGrid(
- |  ...     dims=(10, 10, 10),
+ |  ...     dimensions=(10, 10, 10),
  |  ...     spacing=(2, 1, 5),
  |  ...     origin=(10, 35, 50),
  |  ... )
@@ -872,7 +774,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |  Methods defined here:
  |
- |  __init__(self, uinput=None, *args, dims=None, spacing=(1.0, 1.0, 1.0), origin=(0.0, 0.0, 0.0))
+ |  __init__(self, uinput=None, *args, dimensions=None, spacing=(1.0, 1.0, 1.0), origin=(0.0, 0.0, 0.0), deep=False, **kwargs)
  |      Initialize the uniform grid.
  |
  |  __repr__(self)
@@ -897,6 +799,65 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      pyvista.StructuredGrid
  |          This grid as a structured grid.
  |
+ |  to_tetrahedra(self, tetra_per_cell: int = 5, mixed: Union[Sequence[int], bool] = False, pass_cell_ids: bool = False, progress_bar: bool = False)
+ |      Create a tetrahedral mesh structured grid.
+ |
+ |      Parameters
+ |      ----------
+ |      tetra_per_cell : int, default: 5
+ |          The number of tetrahedrons to divide each cell into. Can be
+ |          either ``5``, ``6``, or ``12``. If ``mixed=True``, this value is
+ |          overridden.
+ |
+ |      mixed : str, bool, sequence, default: False
+ |          When set, subdivides some cells into 5 and some cells into 12. Set
+ |          to ``True`` to use the active cell scalars of the
+ |          :class:`pyvista.RectilinearGrid` to be either 5 or 12 to
+ |          determining the number of tetrahedra to generate per cell.
+ |
+ |          When a sequence, uses these values to subdivide the cells. When a
+ |          string uses a cell array rather than the active array to determine
+ |          the number of tetrahedra to generate per cell.
+ |
+ |      pass_cell_ids : bool, default: False
+ |          Set to ``True`` to make the tetrahedra have scalar data indicating
+ |          which cell they came from in the original
+ |          :class:`pyvista.RectilinearGrid`.
+ |
+ |      progress_bar : bool, optional
+ |          Display a progress bar to indicate progress.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.UnstructuredGrid
+ |          UnstructuredGrid containing the tetrahedral cells.
+ |
+ |      Examples
+ |      --------
+ |      Divide a rectangular grid into tetrahedrons. Each cell contains by
+ |      default 5 tetrahedrons.
+ |
+ |      First, create and plot the grid.
+ |
+ |      &gt;&gt;&gt; import numpy as np
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; xrng = np.linspace(0, 1, 2)
+ |      &gt;&gt;&gt; yrng = np.linspace(0, 1, 2)
+ |      &gt;&gt;&gt; zrng = np.linspace(0, 2, 3)
+ |      &gt;&gt;&gt; grid = pv.RectilinearGrid(xrng, yrng, zrng)
+ |      &gt;&gt;&gt; grid.plot()
+ |
+ |      Now, generate the tetrahedra plot in the exploded view of the cell.
+ |
+ |      &gt;&gt;&gt; tet_grid = grid.to_tetrahedra()
+ |      &gt;&gt;&gt; tet_grid.explode(factor=0.5).plot(show_edges=True)
+ |
+ |      Take the same grid but divide the first cell into 5 cells and the other
+ |      cell into 12 tetrahedrons per cell.
+ |
+ |      &gt;&gt;&gt; tet_grid = grid.to_tetrahedra(mixed=[5, 12])
+ |      &gt;&gt;&gt; tet_grid.explode(factor=0.5).plot(show_edges=True)
+ |
  |  ----------------------------------------------------------------------
  |  Readonly properties defined here:
  |
@@ -906,7 +867,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dims=(2, 2, 2))
+ |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(2, 2, 2))
  |      &gt;&gt;&gt; grid.x
  |      array([0., 1., 0., 1., 0., 1., 0., 1.])
  |
@@ -916,7 +877,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dims=(2, 2, 2))
+ |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(2, 2, 2))
  |      &gt;&gt;&gt; grid.y
  |      array([0., 0., 1., 1., 0., 0., 1., 1.])
  |
@@ -926,7 +887,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dims=(2, 2, 2))
+ |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(2, 2, 2))
  |      &gt;&gt;&gt; grid.z
  |      array([0., 0., 0., 0., 1., 1., 1., 1.])
  |
@@ -943,7 +904,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Create a ``UniformGrid`` and show its extent.
  |
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dims=(10, 10, 10))
+ |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(10, 10, 10))
  |      &gt;&gt;&gt; grid.extent
  |      (0, 9, 0, 9, 0, 9)
  |
@@ -965,7 +926,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dims=(5, 5, 5))
+ |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(5, 5, 5))
  |      &gt;&gt;&gt; grid.origin
  |      (0.0, 0.0, 0.0)
  |
@@ -998,7 +959,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dims=(2, 2, 2))
+ |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(2, 2, 2))
  |      &gt;&gt;&gt; grid.points
  |      array([[0., 0., 0.],
  |             [1., 0., 0.],
@@ -1023,7 +984,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Create a 5 x 5 x 5 uniform grid.
  |
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dims=(5, 5, 5))
+ |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(5, 5, 5))
  |      &gt;&gt;&gt; grid.spacing
  |      (1.0, 1.0, 1.0)
  |      &gt;&gt;&gt; grid.plot(show_edges=True)
@@ -2695,7 +2656,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Create a uniform grid with dimensions ``(1, 2, 3)``.
  |
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dims=(2, 3, 4))
+ |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(2, 3, 4))
  |      &gt;&gt;&gt; grid.dimensions
  |      (2, 3, 4)
  |      &gt;&gt;&gt; grid.plot(show_edges=True)
@@ -2938,6 +2899,26 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; globe.clear_textures()
  |      &gt;&gt;&gt; globe.textures
  |      {}
+ |
+ |  copy_from(self, mesh: vtkmodules.vtkCommonDataModel.vtkDataSet)
+ |      Overwrite this dataset inplace with the new dataset&#39;s geometries and data.
+ |
+ |      Parameters
+ |      ----------
+ |      mesh : vtk.vtkDataSet
+ |          The overwriting mesh.
+ |
+ |      Examples
+ |      --------
+ |      Create two meshes and overwrite ``mesh_a`` with ``mesh_b``.
+ |      Show that ``mesh_a`` is equal to ``mesh_b``.
+ |
+ |      &gt;&gt;&gt; import pyvista
+ |      &gt;&gt;&gt; mesh_a = pyvista.Sphere()
+ |      &gt;&gt;&gt; mesh_b = pyvista.Cube()
+ |      &gt;&gt;&gt; mesh_a.copy_from(mesh_b)
+ |      &gt;&gt;&gt; mesh_a == mesh_b
+ |      True
  |
  |  copy_meta_from(self, ido: &#39;DataSet&#39;, deep: bool = True)
  |      Copy pyvista meta data onto this object from another object.
@@ -3188,7 +3169,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      containing the point ``[0.3, 0.3, 0.0]`` is found.
  |
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; mesh = pyvista.UniformGrid(dims=[5, 5, 1], spacing=[1/4, 1/4, 0])
+ |      &gt;&gt;&gt; mesh = pyvista.UniformGrid(dimensions=[5, 5, 1], spacing=[1/4, 1/4, 0])
  |      &gt;&gt;&gt; mesh
  |      UniformGrid...
  |      &gt;&gt;&gt; mesh.find_containing_cell([0.3, 0.3, 0.0])
@@ -3492,24 +3473,15 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  overwrite(self, mesh: vtkmodules.vtkCommonDataModel.vtkDataSet)
  |      Overwrite this dataset inplace with the new dataset&#39;s geometries and data.
  |
+ |      .. deprecated:: 0.37.0
+ |          Use :func:`DataSet.copy_from` instead.
+ |
  |      Parameters
  |      ----------
  |      mesh : vtk.vtkDataSet
  |          The overwriting mesh.
  |
- |      Examples
- |      --------
- |      Create two meshes and overwrite ``mesh_a`` with ``mesh_b``.
- |      Show that ``mesh_a`` is equal to ``mesh_b``.
- |
- |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; mesh_a = pyvista.Sphere()
- |      &gt;&gt;&gt; mesh_b = pyvista.Cube()
- |      &gt;&gt;&gt; mesh_a.overwrite(mesh_b)
- |      &gt;&gt;&gt; mesh_a == mesh_b
- |      True
- |
- |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text=&#39;&#39;, return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, use_ipyvtk=None, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, hidden_line_removal=None, anti_aliasing=None, zoom=None, border=None, border_color=&#39;k&#39;, border_width=2.0, **kwargs)
+ |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text=&#39;&#39;, return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, use_ipyvtk=None, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, hidden_line_removal=None, anti_aliasing=None, zoom=None, border=None, border_color=&#39;k&#39;, border_width=2.0, ssao=False, **kwargs)
  |      Plot a PyVista, numpy, or vtk object.
  |
  |      Parameters
@@ -3618,8 +3590,8 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      anti_aliasing : bool, optional
  |          Enable or disable anti-aliasing.  Defaults to the theme
- |          setting :attr:`pyvista.global_theme.antialiasing
- |          &lt;pyvista.themes.DefaultTheme.antialiasing&gt;`.
+ |          setting :attr:`pyvista.global_theme.anti_aliasing
+ |          &lt;pyvista.themes.DefaultTheme.anti_aliasing&gt;`.
  |
  |      zoom : float, str, optional
  |          Camera zoom.  Either ``&#39;tight&#39;`` or a float. A value greater than 1 is
@@ -3638,6 +3610,10 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      border_width : float, optional
  |          Width of the border in pixels when enabled.
+ |
+ |      ssao : bool, optional
+ |          Enable surface space ambient occlusion (SSAO). See
+ |          :func:`Plotter.enable_ssao` for more details.
  |
  |      **kwargs : optional keyword arguments
  |          See :func:`pyvista.Plotter.add_mesh` for additional options.
@@ -3676,7 +3652,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      UniformGrid. Note ``volume=True`` is passed.
  |
  |      &gt;&gt;&gt; import numpy as np
- |      &gt;&gt;&gt; grid = pv.UniformGrid(dims=(32, 32, 32), spacing=(0.5, 0.5, 0.5))
+ |      &gt;&gt;&gt; grid = pv.UniformGrid(dimensions=(32, 32, 32), spacing=(0.5, 0.5, 0.5))
  |      &gt;&gt;&gt; grid[&#39;data&#39;] = np.linalg.norm(grid.center - grid.points, axis=1)
  |      &gt;&gt;&gt; grid[&#39;data&#39;] = np.abs(grid[&#39;data&#39;] - grid[&#39;data&#39;].max())**3
  |      &gt;&gt;&gt; grid.plot(volume=True)
@@ -3985,6 +3961,14 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          points or cells, it will prioritize an array matching this
  |          type.  Can be either ``&#39;cell&#39;`` or ``&#39;point&#39;``.
  |
+ |      Returns
+ |      -------
+ |      pyvista.FieldAssociation
+ |          Association of the scalars matching ``name``.
+ |
+ |      numpy.ndarray
+ |          An array from the dataset matching ``name``.
+ |
  |  set_active_tensors(self, name: Optional[str], preference=&#39;point&#39;)
  |      Find the tensors by name and appropriately sets it as active.
  |
@@ -4176,6 +4160,40 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; mesh.active_vectors_name = &#39;Normals&#39;
  |      &gt;&gt;&gt; mesh.active_vectors_info
  |      ActiveArrayInfoTuple(association=&lt;FieldAssociation.POINT: 0&gt;, name=&#39;Normals&#39;)
+ |
+ |  area
+ |      Return the mesh area if 2D.
+ |
+ |      This will return 0 for meshes with 3D cells.
+ |
+ |      Returns
+ |      -------
+ |      float
+ |          Total area of the mesh.
+ |
+ |      Examples
+ |      --------
+ |      Get the area of a square of size 2x2.
+ |      Note 5 points in each direction.
+ |
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; mesh = pv.UniformGrid(dimensions=(5, 5, 1))
+ |      &gt;&gt;&gt; mesh.area
+ |      16.0
+ |
+ |      A mesh with 3D cells does not have an area.  To get
+ |      the outer surface area, first extract the surface using
+ |      :func:`pyvista.DataSetFilters.extract_surface`.
+ |
+ |      &gt;&gt;&gt; mesh = pv.UniformGrid(dimensions=(5, 5, 5))
+ |      &gt;&gt;&gt; mesh.area
+ |      0.0
+ |
+ |      Get the area of a sphere.
+ |
+ |      &gt;&gt;&gt; mesh = pv.Sphere()
+ |      &gt;&gt;&gt; mesh.volume
+ |      0.51825
  |
  |  array_names
  |      Return a list of array names for the dataset.
@@ -4394,6 +4412,8 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  volume
  |      Return the mesh volume.
  |
+ |      This will return 0 for meshes with 2D cells.
+ |
  |      Returns
  |      -------
  |      float
@@ -4401,10 +4421,24 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Examples
  |      --------
- |      Get the volume of a sphere.
+ |      Get the volume of a cube of size 4x4x4.
+ |      Note that there are 5 points in each direction.
  |
- |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; mesh = pyvista.Sphere()
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; mesh = pv.UniformGrid(dimensions=(5, 5, 5))
+ |      &gt;&gt;&gt; mesh.volume
+ |      64.0
+ |
+ |      A mesh with 2D cells has no volume.
+ |
+ |      &gt;&gt;&gt; mesh = pv.UniformGrid(dimensions=(5, 5, 1))
+ |      &gt;&gt;&gt; mesh.volume
+ |      0.0
+ |
+ |      :class:`pyvista.PolyData` is special as a 2D surface can
+ |      enclose a 3D volume.
+ |
+ |      &gt;&gt;&gt; mesh = pv.Sphere()
  |      &gt;&gt;&gt; mesh.volume
  |      0.51825
  |
@@ -4606,7 +4640,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      First, create sample data to smooth. Here, we use
- |      :func:`pyvista.perlin_noise() &lt;pyvista.core.common_data.perlin_noise&gt;`
+ |      :func:`pyvista.perlin_noise() &lt;pyvista.utilities.common.perlin_noise&gt;`
  |      to create meaningful data.
  |
  |      &gt;&gt;&gt; import numpy as np
@@ -4902,7 +4936,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      First, create sample data to smooth. Here, we use
- |      :func:`pyvista.perlin_noise() &lt;pyvista.core.common_data.perlin_noise&gt;`
+ |      :func:`pyvista.perlin_noise() &lt;pyvista.utilities.common.perlin_noise&gt;`
  |      to create meaningful data.
  |
  |      &gt;&gt;&gt; import numpy as np
@@ -4995,7 +5029,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Parameters
  |      ----------
- |      vertex : bool
+ |      vertex : bool, default: True
  |          Enable or disable the generation of vertex cells.
  |
  |      progress_bar : bool, optional
@@ -5021,7 +5055,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      See :ref:`cell_centers_example` for more examples using this filter.
  |
- |  cell_data_to_point_data(self, pass_cell_data=False, progress_bar=False)
+ |  cell_data_to_point_data(self, pass_cell_data=False, progress_bar=False, **kwargs)
  |      Transform cell data into point data.
  |
  |      Point data are specified per node and cell data specified
@@ -5041,6 +5075,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
+ |
+ |      **kwargs : dict, optional
+ |          Depreciated keyword argument ``pass_cell_arrays``.
  |
  |      Returns
  |      -------
@@ -5075,7 +5112,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Parameters
  |      ----------
- |      normal : tuple(float) or str
+ |      normal : tuple(float) or str, default: &#39;x&#39;
  |          Length 3 tuple for the normal vector direction. Can also
  |          be specified as a string conventional direction such as
  |          ``&#39;x&#39;`` for ``(1,0,0)`` or ``&#39;-x&#39;`` for ``(-1,0,0)``, etc.
@@ -5342,10 +5379,10 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Parameters
  |      ----------
- |      quality_measure : str
+ |      quality_measure : str, default: &#39;scaled_jacobian&#39;
  |          The cell quality measure to use.
  |
- |      null_value : float
+ |      null_value : float, default: -1.0
  |          Float value for undefined quality. Undefined quality are qualities
  |          that could be addressed by this filter but is not well defined for
  |          the particular geometry of cell in question, e.g. a volume query
@@ -5542,7 +5579,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Parameters
  |      ----------
- |      largest : bool
+ |      largest : bool, default: False
  |          Extract the largest connected part of the mesh.
  |
  |      progress_bar : bool, optional
@@ -5645,7 +5682,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; n = 100
  |      &gt;&gt;&gt; x_min, y_min, z_min = -1.35, -1.7, -0.65
  |      &gt;&gt;&gt; grid = pv.UniformGrid(
- |      ...     dims=(n, n, n),
+ |      ...     dimensions=(n, n, n),
  |      ...     spacing=(abs(x_min)/n*2, abs(y_min)/n*2, abs(z_min)/n*2),
  |      ...     origin=(x_min, y_min, z_min),
  |      ... )
@@ -5660,7 +5697,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      :ref:`marching_cubes_example` for more examples using this
  |      filter.
  |
- |  ctp(self, pass_cell_data=False, progress_bar=False)
+ |  ctp(self, pass_cell_data=False, progress_bar=False, **kwargs)
  |      Transform cell data into point data.
  |
  |      Point data are specified per node and cell data specified
@@ -5678,6 +5715,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
  |
+ |      **kwargs : dict, optional
+ |          Depreciated keyword argument ``pass_cell_arrays``.
+ |
  |      Returns
  |      -------
  |      pyvista.DataSet
@@ -5691,8 +5731,8 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Parameters
  |      ----------
- |      target_reduction : float
- |          Fraction of the original mesh to remove. Default is ``0.5``
+ |      target_reduction : float, default: 0.5
+ |          Fraction of the original mesh to remove.
  |          TargetReduction is set to ``0.9``, this filter will try to reduce
  |          the data set to 10% of its original size and will remove 90%
  |          of the input triangles.
@@ -5823,13 +5863,55 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      See :ref:`common_filter_example` for more examples using this filter.
  |
- |  extract_all_edges(self, progress_bar=False)
+ |  explode(self, factor=0.1)
+ |      Push each individual cell away from the center of the dataset.
+ |
+ |      Parameters
+ |      ----------
+ |      factor : float, default: 0.1
+ |          How much each cell will move from the center of the dataset
+ |          relative to its distance from it. Increase this number to push the
+ |          cells farther away.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.UnstructuredGrid
+ |          UnstructuredGrid containing the exploded cells.
+ |
+ |      Notes
+ |      -----
+ |      This is similar to :func:`shrink &lt;pyvista.DataSetFilters.shrink&gt;`
+ |      except that it does not change the size of the cells.
+ |
+ |      Examples
+ |      --------
+ |      &gt;&gt;&gt; import numpy as np
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; xrng = np.linspace(0, 1, 3)
+ |      &gt;&gt;&gt; yrng = np.linspace(0, 2, 4)
+ |      &gt;&gt;&gt; zrng = np.linspace(0, 3, 5)
+ |      &gt;&gt;&gt; grid = pv.RectilinearGrid(xrng, yrng, zrng)
+ |      &gt;&gt;&gt; exploded = grid.explode()
+ |      &gt;&gt;&gt; exploded.plot(show_edges=True)
+ |
+ |  extract_all_edges(self, use_all_points=False, progress_bar=False)
  |      Extract all the internal/external edges of the dataset as PolyData.
  |
  |      This produces a full wireframe representation of the input dataset.
  |
  |      Parameters
  |      ----------
+ |      use_all_points : bool, default: False
+ |          Indicates whether all of the points of the input mesh should exist
+ |          in the output. When ``True`` enables point renumbering.  If set to
+ |          ``True``, then a threaded approach is used which avoids the use of
+ |          a point locator and is quicker.
+ |
+ |          By default this is set to ``False``, and unused points are omitted
+ |          from the output.
+ |
+ |          This parameter can only be set to ``True`` with ``vtk==9.1.0`` or newer.
+ |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
  |
@@ -5856,10 +5938,10 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Parameters
  |      ----------
- |      ind : np.ndarray
+ |      ind : numpy.ndarray
  |          Numpy array of cell indices to be extracted.
  |
- |      progress_bar : bool, optional
+ |      progress_bar : bool, default: False
  |          Display a progress bar to indicate progress.
  |
  |      Returns
@@ -5935,7 +6017,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      See the :ref:`extract_edges_example` for more examples using this filter.
  |
- |  extract_geometry(self, progress_bar=False)
+ |  extract_geometry(self, extent: Optional[Sequence[float]] = None, progress_bar=False)
  |      Extract the outer surface of a volume or structured grid dataset.
  |
  |      This will extract all 0D, 1D, and 2D cells producing the
@@ -5946,6 +6028,10 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Parameters
  |      ----------
+ |      extent : sequence, optional
+ |          Specify a (xmin,xmax, ymin,ymax, zmin,zmax) bounding box
+ |          to clip data.
+ |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
  |
@@ -6187,7 +6273,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.UnstructuredGird
+ |      pyvista.UnstructuredGrid
  |          Mesh with 1 point and 1 vertex cell with integrated data in point
  |          and cell data.
  |
@@ -6210,7 +6296,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      See the :ref:`integrate_example` for more examples using this filter.
  |
- |  interpolate(self, target, sharpness=2, radius=1.0, strategy=&#39;null_value&#39;, null_value=0.0, n_points=None, pass_cell_arrays=True, pass_point_data=True, progress_bar=False)
+ |  interpolate(self, target, sharpness=2, radius=1.0, strategy=&#39;null_value&#39;, null_value=0.0, n_points=None, pass_cell_data=True, pass_point_data=True, progress_bar=False, **kwargs)
  |      Interpolate values onto this mesh from a given dataset.
  |
  |      The input dataset is typically a point cloud.
@@ -6256,7 +6342,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          in favor of an N closest points approach. This typically has poorer
  |          results.
  |
- |      pass_cell_arrays : bool, optional
+ |      pass_cell_data : bool, optional
  |          Preserve input mesh&#39;s original cell data arrays.
  |
  |      pass_point_data : bool, optional
@@ -6264,6 +6350,10 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
+ |
+ |      **kwargs : dict, optional
+ |          Depreciated keyword arguments ``pass_cell_arrays`` and
+ |          ``pass_point_arrays``.
  |
  |      Returns
  |      -------
@@ -6308,7 +6398,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Parameters
  |      ----------
- |      grid : vtk.UnstructuredGrid or list of vtk.UnstructuredGrids
+ |      grid : vtk.UnstructuredGrid or list of vtk.UnstructuredGrids, optional
  |          Grids to merge to this grid.
  |
  |      merge_points : bool, optional
@@ -6403,6 +6493,64 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; sphere = pyvista.Sphere()
  |      &gt;&gt;&gt; corners = sphere.outline_corners(factor=0.1)
  |      &gt;&gt;&gt; pyvista.plot([sphere, corners], line_width=5)
+ |
+ |  partition(self, n_partitions, generate_global_id=False, as_composite=True)
+ |      Break down input dataset into a requested number of partitions.
+ |
+ |       Cells on boundaries are uniquely assigned to each partition without duplication.
+ |
+ |       It uses a kdtree implementation that builds balances the cell
+ |       centers among a requested number of partitions. The current implementation
+ |       only supports power-of-2 target partition. If a non-power of two value
+ |       is specified for ``n_partitions``, then the load balancing simply
+ |       uses the power-of-two greater than the requested value
+ |
+ |       For more details, see `vtkRedistributeDataSetFilter
+ |       &lt;https://vtk.org/doc/nightly/html/classvtkRedistributeDataSetFilter.html&gt;`_.
+ |
+ |       Parameters
+ |       ----------
+ |       n_partitions : int
+ |           Specify the number of partitions to split the input dataset
+ |           into. Current implementation results in a number of partitions equal
+ |           to the power of 2 greater than or equal to the chosen value.
+ |
+ |       generate_global_id : bool, default: False
+ |           Generate global cell ids if ``None`` are present in the input.  If
+ |           global cell ids are present in the input then this flag is
+ |           ignored.
+ |
+ |           This is stored as ``&quot;vtkGlobalCellIds&quot;`` within the ``cell_data``
+ |           of the output dataset(s).
+ |
+ |       as_composite : bool, default: False
+ |           Return the partitioned dataset as a :class:`pyvista.MultiBlock`.
+ |
+ |       Returns
+ |       -------
+ |      pyvista.MultiBlock or pyvista.UnstructuredGrid
+ |           UnStructuredGird if ``as_composite=False`` and MultiBlock when ``True``.
+ |
+ |       Notes
+ |       -----
+ |       This filter requires ``vtk&gt;=9.0.0``.
+ |
+ |       Examples
+ |       --------
+ |       Partition a simple UniformGrid into a :class:`pyvista.MultiBlock`
+ |       containing each partition.
+ |
+ |       &gt;&gt;&gt; import pyvista as pv
+ |       &gt;&gt;&gt; grid = pv.UniformGrid(dimensions=(5, 5, 5))
+ |       &gt;&gt;&gt; out = grid.partition(4, as_composite=True)
+ |       &gt;&gt;&gt; out.plot(multi_colors=True, show_edges=True)
+ |
+ |       Partition of the Stanford bunny.
+ |
+ |       &gt;&gt;&gt; from pyvista import examples
+ |       &gt;&gt;&gt; mesh = examples.download_bunny()
+ |       &gt;&gt;&gt; out = mesh.partition(4, as_composite=True)
+ |       &gt;&gt;&gt; out.plot(multi_colors=True, cpos=&#39;xy&#39;)
  |
  |  plot_over_circular_arc(self, pointa, pointb, center, resolution=None, scalars=None, title=None, ylabel=None, figsize=None, figure=True, show=True, tolerance=None, fname=None, progress_bar=False)
  |      Sample a dataset along a circular arc and plot it.
@@ -6591,7 +6739,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      --------
  |      See the :ref:`plot_over_line_example` example.
  |
- |  point_data_to_cell_data(self, pass_point_data=False, progress_bar=False)
+ |  point_data_to_cell_data(self, pass_point_data=False, progress_bar=False, **kwargs)
  |      Transform point data into cell data.
  |
  |      Point data are specified per node and cell data specified within cells.
@@ -6606,6 +6754,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
+ |
+ |      **kwargs : dict, optional
+ |          Depreciated keyword argument ``pass_point_arrays``.
  |
  |      Returns
  |      -------
@@ -6636,7 +6787,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; sphere = sphere.point_data_to_cell_data()
  |      &gt;&gt;&gt; sphere.plot()
  |
- |  probe(self, points, tolerance=None, pass_cell_arrays=True, pass_point_arrays=True, categorical=False, progress_bar=False, locator=None)
+ |  probe(self, points, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None, **kwargs)
  |      Sample data values at specified point locations.
  |
  |      This uses :class:`vtk.vtkProbeFilter`.
@@ -6652,10 +6803,10 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          in a cell of the input.  If not given, tolerance is
  |          automatically generated.
  |
- |      pass_cell_arrays : bool, optional
+ |      pass_cell_data : bool, optional
  |          Preserve source mesh&#39;s original cell data arrays.
  |
- |      pass_point_arrays : bool, optional
+ |      pass_point_data : bool, optional
  |          Preserve source mesh&#39;s original point data arrays.
  |
  |      categorical : bool, optional
@@ -6669,6 +6820,10 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      locator : vtkAbstractCellLocator, optional
  |          Prototype cell locator to perform the ``FindCell()``
  |          operation.  This requires VTK 9.0.0 or newer.
+ |
+ |      **kwargs : dict, optional
+ |          Depreciated keyword arguments ``pass_cell_arrays`` and
+ |          ``pass_point_arrays``.
  |
  |      Returns
  |      -------
@@ -6687,7 +6842,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; &#39;Spatial Point Data&#39; in result.point_data
  |      True
  |
- |  ptc(self, pass_point_data=False, progress_bar=False)
+ |  ptc(self, pass_point_data=False, progress_bar=False, **kwargs)
  |      Transform point data into cell data.
  |
  |      Point data are specified per node and cell data specified
@@ -6704,6 +6859,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
+ |
+ |      **kwargs : dict, optional
+ |          Depreciated keyword argument ``pass_point_arrays``.
  |
  |      Returns
  |      -------
@@ -6747,7 +6905,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      See the :ref:`ref_reflect_example` for more examples using this filter.
  |
- |  sample(self, target, tolerance=None, pass_cell_arrays=True, pass_point_data=True, categorical=False, progress_bar=False)
+ |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, **kwargs)
  |      Resample array data from a passed mesh onto this mesh.
  |
  |      This uses :class:`vtk.vtkResampleWithDataSet`.
@@ -6763,7 +6921,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          in a cell of the input.  If not given, tolerance is
  |          automatically generated.
  |
- |      pass_cell_arrays : bool, optional
+ |      pass_cell_data : bool, optional
  |          Preserve source mesh&#39;s original cell data arrays.
  |
  |      pass_point_data : bool, optional
@@ -6776,6 +6934,10 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
+ |
+ |      **kwargs : dict, optional
+ |          Depreciated keyword arguments ``pass_cell_arrays`` and
+ |          ``pass_point_arrays``.
  |
  |      Returns
  |      -------
@@ -7061,6 +7223,35 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; _ = pl.add_points(pts, color=&#39;r&#39;)
  |      &gt;&gt;&gt; pl.show()
  |
+ |  separate_cells(self)
+ |      Return a copy of the dataset with separated cells with no shared points.
+ |
+ |      This method may be useful when datasets have scalars that need to be
+ |      associated to each point of each cell rather than either each cell or
+ |      just the points of the dataset.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.UnstructuredGrid
+ |          UnstructuredGrid with isolated cells.
+ |
+ |      Examples
+ |      --------
+ |      Load the example hex beam and separate its cells. This increases the
+ |      total number of points in the dataset since points are no longer
+ |      shared.
+ |
+ |      &gt;&gt;&gt; from pyvista import examples
+ |      &gt;&gt;&gt; grid = examples.load_hexbeam()
+ |      &gt;&gt;&gt; grid.n_points
+ |      99
+ |      &gt;&gt;&gt; sep_grid = grid.separate_cells()
+ |      &gt;&gt;&gt; sep_grid.n_points
+ |      320
+ |
+ |      See the :ref:`point_cell_scalars_example` for a more detailed example
+ |      using this filter.
+ |
  |  shrink(self, shrink_factor=1.0, progress_bar=False)
  |      Shrink the individual faces of a mesh.
  |
@@ -7102,12 +7293,12 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Parameters
  |      ----------
- |      normal : tuple(float) or str
+ |      normal : tuple(float) or str, default: &#39;x&#39;
  |          Length 3 tuple for the normal vector direction. Can also be
  |          specified as a string conventional direction such as ``&#39;x&#39;`` for
  |          ``(1, 0, 0)`` or ``&#39;-x&#39;`` for ``(-1, 0, 0)``, etc.
  |
- |      origin : tuple(float)
+ |      origin : tuple(float), optional
  |          The center ``(x, y, z)`` coordinate of the plane on which
  |          the slice occurs.
  |
@@ -7149,7 +7340,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      n : int, optional
  |          The number of slices to create.
  |
- |      axis : str or int
+ |      axis : str or int, default: &#39;x&#39;
  |          The axis to generate the slices along. Perpendicular to the
  |          slices. Can be string name (``&#39;x&#39;``, ``&#39;y&#39;``, or ``&#39;z&#39;``) or
  |          axis index (``0``, ``1``, or ``2``).
@@ -7256,6 +7447,50 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      See :ref:`slice_example` for more examples using this filter.
  |
+ |  slice_implicit(self, implicit_function, generate_triangles=False, contour=False, progress_bar=False)
+ |      Slice a dataset by a VTK implicit function.
+ |
+ |      Parameters
+ |      ----------
+ |      implicit_function : vtk.vtkImplicitFunction
+ |          Specify the implicit function to perform the cutting.
+ |
+ |      generate_triangles : bool, default: False
+ |          If this is enabled (``False`` by default), the output will
+ |          be triangles. Otherwise the output will be the intersection
+ |          polygons. If the cutting function is not a plane, the
+ |          output will be 3D polygons, which might be nice to look at
+ |          but hard to compute with downstream.
+ |
+ |      contour : bool, default: False
+ |          If ``True``, apply a ``contour`` filter after slicing.
+ |
+ |      progress_bar : bool, optional
+ |          Display a progress bar to indicate progress.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.PolyData
+ |          Sliced dataset.
+ |
+ |      Examples
+ |      --------
+ |      Slice the surface of a sphere.
+ |
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; import vtk
+ |      &gt;&gt;&gt; sphere = vtk.vtkSphere()
+ |      &gt;&gt;&gt; sphere.SetRadius(10)
+ |      &gt;&gt;&gt; mesh = pv.Wavelet()
+ |      &gt;&gt;&gt; slice = mesh.slice_implicit(sphere)
+ |      &gt;&gt;&gt; slice.plot(show_edges=True, line_width=5)
+ |
+ |      &gt;&gt;&gt; sphere = vtk.vtkCylinder()
+ |      &gt;&gt;&gt; sphere.SetRadius(10)
+ |      &gt;&gt;&gt; mesh = pv.Wavelet()
+ |      &gt;&gt;&gt; slice = mesh.slice_implicit(sphere)
+ |      &gt;&gt;&gt; slice.plot(show_edges=True, line_width=5)
+ |
  |  slice_orthogonal(self, x=None, y=None, z=None, generate_triangles=False, contour=False, progress_bar=False)
  |      Create three orthogonal slices through the dataset on the three cartesian planes.
  |
@@ -7325,7 +7560,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      &gt;&gt;&gt; from pyvista import examples
  |      &gt;&gt;&gt; dataset = examples.load_uniform()
- |      &gt;&gt;&gt; dataset.set_active_scalars(&#39;Spatial Cell Data&#39;)
+ |      &gt;&gt;&gt; _ = dataset.set_active_scalars(&#39;Spatial Cell Data&#39;)
  |      &gt;&gt;&gt; threshed = dataset.threshold_percent([0.15, 0.50], invert=True)
  |      &gt;&gt;&gt; bodies = threshed.split_bodies()
  |      &gt;&gt;&gt; len(bodies)
@@ -7732,7 +7967,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Parameters
  |      ----------
- |      center : tuple(float)
+ |      center : tuple(float), optional
  |          Length 3 iterable of floats defining the XYZ coordinates of the
  |          center of the sphere. If ``None``, this will be automatically
  |          calculated.
@@ -7827,9 +8062,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          components to meet criteria.  &#39;any&#39; is when
  |          any component satisfies the criteria.
  |
- |      component : int
+ |      component : int, default: 0
  |          When using ``component_mode=&#39;selected&#39;``, this sets
- |          which component to threshold on.  Default is ``0``.
+ |          which component to threshold on.
  |
  |      Returns
  |      -------
@@ -8143,7 +8378,11 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Test equivalency between data objects.
  |
  |  __getstate__(self)
- |      Support pickle. Serialize the VTK object to ASCII string.
+ |      Support pickle by serializing the VTK object data to something which can be pickled natively.
+ |
+ |      The format of the serialized VTK object data depends on `pyvista.PICKLE_FORMAT` (case-insensitive).
+ |      - If `pyvista.PICKLE_FORMAT == &#39;xml&#39;`, the data is serialized as an XML-formatted string.
+ |      - If `pyvista.PICKLE_FORMAT == &#39;legacy&#39;`, the data is serialized to bytes in VTK&#39;s binary format.
  |
  |  __setstate__(self, state)
  |      Support unpickle.
@@ -8186,7 +8425,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Add field data to a UniformGrid dataset.
  |
- |      &gt;&gt;&gt; mesh = pyvista.UniformGrid(dims=(2, 2, 1))
+ |      &gt;&gt;&gt; mesh = pyvista.UniformGrid(dimensions=(2, 2, 1))
  |      &gt;&gt;&gt; mesh.add_field_data([&#39;I could&#39;, &#39;write&#39;, &#39;notes&#39;, &#39;here&#39;],
  |      ...                      &#39;my-field-data&#39;)
  |      &gt;&gt;&gt; mesh[&#39;my-field-data&#39;]
@@ -8260,9 +8499,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista as pv
- |      &gt;&gt;&gt; source = pv.UniformGrid(dims=(10, 10, 5))
+ |      &gt;&gt;&gt; source = pv.UniformGrid(dimensions=(10, 10, 5))
  |      &gt;&gt;&gt; source = source.compute_cell_sizes()
- |      &gt;&gt;&gt; target = pv.UniformGrid(dims=(10, 10, 5))
+ |      &gt;&gt;&gt; target = pv.UniformGrid(dimensions=(10, 10, 5))
  |      &gt;&gt;&gt; target.copy_attributes(source)
  |      &gt;&gt;&gt; target.plot(scalars=&#39;Volume&#39;, show_edges=True)
  |
@@ -8277,7 +8516,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista as pv
- |      &gt;&gt;&gt; source = pv.UniformGrid(dims=(10, 10, 5))
+ |      &gt;&gt;&gt; source = pv.UniformGrid(dimensions=(10, 10, 5))
  |      &gt;&gt;&gt; target = pv.UniformGrid()
  |      &gt;&gt;&gt; target.copy_structure(source)
  |      &gt;&gt;&gt; target.plot(show_edges=True)
@@ -8420,24 +8659,23 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
 <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arr</span><span class="o">.</span><span class="n">shape</span></a>
 </pre></div>
 </div>
-<p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(100, 100, 100)
 </pre></div>
 </div>
-<p>Create the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.36.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a></p>
+<p>Create the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a></p>
 <p>Hint, you will likely need to <code class="docutils literal notranslate"><span class="pre">ravel</span></code> the array with F-ordering:
 <code class="docutils literal notranslate"><span class="pre">arr.ravel(order=&quot;F&quot;)</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span></a><span class="p">()</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.dimensions.html#pyvista.UniformGrid.dimensions" title="pyvista.UniformGrid.dimensions" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">vol</span><span class="o">.</span><span class="n">dimensions</span></a> <span class="o">=</span> <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arr</span><span class="o">.</span><span class="n">shape</span></a>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arr</span><span class="o">.</span><span class="n">shape</span></a>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arr</span></a><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.plot.html#pyvista.UniformGrid.plot" title="pyvista.UniformGrid.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">plot</span></a><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">plot</span></a><span class="p">()</span>
 </pre></div>
 </div>
 <img src="../../../_images/sphx_glr_c_create-uniform-grid_003.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_003.png" alt="c create uniform grid" class = "sphx-glr-single-img"/></section>
 <section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h2>
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this heading">#</a></h2>
 <p>Here are some examples of this kind of data in PyVista!</p>
 <p>See the PyVista documentation for further details on
 <a class="reference external" href="https://docs.pyvista.org/examples/02-plot/volume.html">Volume Rendering</a></p>
@@ -8446,16 +8684,16 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_knee_full</span><span class="p">()</span>
 
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_volume.html#pyvista.Plotter.add_volume" title="pyvista.Plotter.add_volume" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_volume</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bone&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">)</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a><span class="o">.</span><span class="n">add_volume</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bone&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
 <img src="../../../_images/sphx_glr_c_create-uniform-grid_004.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_004.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Wavelet.html#pyvista.Wavelet" title="pyvista.Wavelet" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">Wavelet</span></a><span class="p">()</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.plot.html#pyvista.UniformGrid.plot" title="pyvista.UniformGrid.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.148 seconds)</p>
-<div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-c-create-uniform-grid-py">
+<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.910 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-c-create-uniform-grid-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/c_create-uniform-grid.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo6.svg" width="150px" /></a>
 </div>
@@ -8471,15 +8709,15 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
 </section>
 
 
-              </article>
-              
-
-              
-              <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+            </article>
+            
+            
+            
+            <footer class="bd-footer-article">
+                <!-- Previous / next buttons -->
 <div class='prev-next-area'>
   <a class='left-prev' id="prev-link" href="b_create-point-cloud.html" title="previous page">
-      <i class="fas fa-angle-left"></i>
+      <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
           <p class="prev-next-subtitle">previous</p>
           <p class="prev-next-title">Create Point Cloud</p>
@@ -8490,36 +8728,98 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
       <p class="prev-next-subtitle">next</p>
       <p class="prev-next-title">Create Triangulated Surface</p>
   </div>
-  <i class="fas fa-angle-right"></i>
+  <i class="fa-solid fa-angle-right"></i>
   </a>
 </div>
-              </footer>
-              
+            </footer>
+            
           </div>
           
-      </div>
+          
+          
+            <div class="bd-sidebar-secondary bd-toc">
+              
+<div class="toc-item">
+  
+<div class="tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+</div>
+<nav id="bd-toc-nav" class="page-toc">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise">
+   Exercise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+</ul>
+
+</nav>
+</div>
+
+<div class="toc-item">
+  
+<div id="searchbox"></div>
+</div>
+
+<div class="toc-item">
+  
+</div>
+
+<div class="toc-item">
+  
+<div class="tocsection sourcelink">
+    <a href="../../../_sources/tutorial/02_mesh/soultions/c_create-uniform-grid.rst.txt">
+        <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+</div>
+
+</div>
+
+            </div>
+          
+          
+        </div>
+        <footer class="bd-footer-content">
+          <div class="bd-footer-content__inner">
+            
+          </div>
+        </footer>
+        
+      </main>
     </div>
+  </div>
 
   
-  
+    
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1e1de1a1873e13ef5536"></script>
 
-<footer class="bd-footer"><div class="bd-footer__inner container">
+  <footer class="bd-footer"><div class="bd-footer__inner container">
   
   <div class="footer-item">
-    <p class="copyright">
+    
+<p class="copyright">
+
     &copy; Copyright 2022, PyVista Developers.<br>
+
 </p>
+
   </div>
   
   <div class="footer-item">
-    <p class="sphinx-version">
-Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.5.0.<br>
+    
+<p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.3.0.<br>
 </p>
+
   </div>
   
 </div>
-</footer>
+  </footer>
   </body>
 </html>

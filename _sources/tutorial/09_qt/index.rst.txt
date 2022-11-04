@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_tutorial_09_qt:
-
 .. _qt:
 
 PyVista and QT
@@ -171,9 +167,15 @@ Examples
          :alt: femorph
 
 
+
 .. raw:: html
 
-    <div class="sphx-glr-clear"></div>
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    </div>
 
 
 

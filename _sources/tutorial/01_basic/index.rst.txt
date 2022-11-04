@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_tutorial_01_basic:
-
 .. _basic:
 
 Basic usage
@@ -44,7 +40,7 @@ Here's a very basic dataset you can download.
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
-   pyvista.global_theme.antialiasing = True
+   pyvista.global_theme.anti_aliasing = 'fxaa'
 
 
 .. jupyter-execute::
@@ -134,14 +130,25 @@ along with this lesson.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This section demonstrates how to use PyVista to reading and plotting 3D data using the `pyvista...">
 
 .. only:: html
 
- .. figure:: /tutorial/01_basic/images/thumb/sphx_glr_a_lesson_basic_thumb.png
-     :alt: Basic Usage Lesson
+  .. image:: /tutorial/01_basic/images/thumb/sphx_glr_a_lesson_basic_thumb.png
+    :alt: Basic Usage Lesson
 
-     :ref:`sphx_glr_tutorial_01_basic_a_lesson_basic.py`
+  :ref:`sphx_glr_tutorial_01_basic_a_lesson_basic.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Basic Usage Lesson</div>
+    </div>
+
 
 .. raw:: html
 
@@ -152,13 +159,6 @@ along with this lesson.
    :hidden:
 
    /tutorial/01_basic/a_lesson_basic
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorial_01_basic_exercises:
 
 Exercises
 =========
@@ -167,31 +167,29 @@ Exercises
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Download and plot example datasets.">
 
 .. only:: html
 
- .. figure:: /tutorial/01_basic/exercises/images/thumb/sphx_glr_a_load_examples_exercise_thumb.png
-     :alt: Download and Plot Examples
+  .. image:: /tutorial/01_basic/exercises/images/thumb/sphx_glr_a_load_examples_exercise_thumb.png
+    :alt: Download and Plot Examples
 
-     :ref:`sphx_glr_tutorial_01_basic_exercises_a_load_examples_exercise.py`
+  :ref:`sphx_glr_tutorial_01_basic_exercises_a_load_examples_exercise.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Download and Plot Examples</div>
+    </div>
+
 
 .. raw:: html
 
     </div>
-
-
-.. toctree::
-   :hidden:
-
-   /tutorial/01_basic/exercises/a_load_examples_exercise
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorial_01_basic_solutions:
 
 Solutions
 =========
@@ -202,14 +200,25 @@ These are the solutions to the above examples.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Download and plot example datasets.">
 
 .. only:: html
 
- .. figure:: /tutorial/01_basic/solutions/images/thumb/sphx_glr_a_load_examples_solution_thumb.png
-     :alt: Download and Plot Examples
+  .. image:: /tutorial/01_basic/solutions/images/thumb/sphx_glr_a_load_examples_solution_thumb.png
+    :alt: Download and Plot Examples
 
-     :ref:`sphx_glr_tutorial_01_basic_solutions_a_load_examples_solution.py`
+  :ref:`sphx_glr_tutorial_01_basic_solutions_a_load_examples_solution.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Download and Plot Examples</div>
+    </div>
+
 
 .. raw:: html
 
@@ -218,11 +227,10 @@ These are the solutions to the above examples.
 
 .. toctree::
    :hidden:
+   :includehidden:
 
-   /tutorial/01_basic/solutions/a_load_examples_solution
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
+   /tutorial/01_basic//exercises/index.rst
+   /tutorial/01_basic//solutions/index.rst
 
 
 

@@ -85,12 +85,10 @@ Add point data
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    <vtkmodules.vtkCommonDataModel.vtkImageData(0x55e41db114c0) at 0x7f6441535e20>
+    <vtkmodules.vtkCommonDataModel.vtkImageData(0x55aa1a6e1ac0) at 0x7f4dce423220>
 
 
 
@@ -152,12 +150,10 @@ Create ``vtkStructuredGrid``
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    <vtkmodules.vtkCommonDataModel.vtkStructuredGrid(0x55e41c527030) at 0x7f6441535d00>
+    <vtkmodules.vtkCommonDataModel.vtkStructuredGrid(0x55aa174541b0) at 0x7f4dad0d6940>
 
 
 
@@ -179,8 +175,6 @@ Add point data
 
 
 .. rst-class:: sphx-glr-script-out
-
- Out:
 
  .. code-block:: none
 
@@ -213,35 +207,30 @@ Plot with PyVista for simplicity
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.650 seconds)
+   **Total running time of the script:** ( 0 minutes  0.459 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_b_create_vtk.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/b_create_vtk.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/b_create_vtk.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: b_create_vtk.py <b_create_vtk.py>`
 
-     :download:`Download Python source code: b_create_vtk.py <b_create_vtk.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: b_create_vtk.ipynb <b_create_vtk.ipynb>`
+      :download:`Download Jupyter notebook: b_create_vtk.ipynb <b_create_vtk.ipynb>`
 
 
 .. only:: html

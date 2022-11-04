@@ -75,16 +75,14 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    pyvista_ndarray([[4.81100475e+05, 4.40020760e+06, 1.76944995e+03],
-                     [4.81055175e+05, 4.40008900e+06, 1.76185999e+03],
-                     [4.80971275e+05, 4.40019730e+06, 1.75920996e+03],
-                     [4.81116775e+05, 4.40017100e+06, 1.76943994e+03],
-                     [4.80939375e+05, 4.40024750e+06, 1.76330005e+03]])
+    pyvista_ndarray([[4.81116875e+05, 4.40016460e+06, 1.76952002e+03],
+                     [4.80964575e+05, 4.40020940e+06, 1.75877002e+03],
+                     [4.81118075e+05, 4.40010330e+06, 1.76023999e+03],
+                     [4.80944375e+05, 4.40014370e+06, 1.76187000e+03],
+                     [4.80962475e+05, 4.40014820e+06, 1.77204004e+03]])
 
 
 
@@ -115,9 +113,10 @@ data or your own project, creating a PyVista mesh of those points:
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>67841</td></tr>
     <tr><td>N Points</td><td>67841</td></tr>
+    <tr><td>N Strips</td><td>0</td></tr>
     <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
     <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-    <tr><td>Z Bounds</td><td>1.754e+03, 1.784e+03</td></tr>
+    <tr><td>Z Bounds</td><td>1.754e+03, 1.787e+03</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -142,8 +141,6 @@ Now, perform a sanity check
 
 
 .. rst-class:: sphx-glr-script-out
-
- Out:
 
  .. code-block:: none
 
@@ -283,16 +280,14 @@ This time, we're going to create a totally new, random point cloud.
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    pyvista_ndarray([[-0.339974  , -0.84529667,  0.41217863],
-                     [-0.24140703,  0.46423536,  0.85217849],
-                     [ 0.84016949,  0.53885906,  0.06120582],
-                     [-0.7262165 ,  0.66674195,  0.16752543],
-                     [ 0.84588773,  0.53306467, -0.01777656]])
+    pyvista_ndarray([[ 0.28401562,  0.75728333,  0.58809615],
+                     [-0.68183964, -0.72644667, -0.08584833],
+                     [-0.80513959,  0.59210799,  0.03403478],
+                     [-0.26181223, -0.92313331, -0.28156572],
+                     [-0.58200957,  0.07432524,  0.80977813]])
 
 
 
@@ -353,35 +348,30 @@ Now we can make arrows using those vectors using the glyph filter
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.173 seconds)
+   **Total running time of the script:** ( 0 minutes  5.747 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_soultions_b_create-point-cloud.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/b_create-point-cloud.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/b_create-point-cloud.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: b_create-point-cloud.py <b_create-point-cloud.py>`
 
-     :download:`Download Python source code: b_create-point-cloud.py <b_create-point-cloud.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: b_create-point-cloud.ipynb <b_create-point-cloud.ipynb>`
+      :download:`Download Jupyter notebook: b_create-point-cloud.ipynb <b_create-point-cloud.ipynb>`
 
 
 .. only:: html

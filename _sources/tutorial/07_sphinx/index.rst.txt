@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_tutorial_07_sphinx:
-
 .. _sphinx:
 
 PyVista and Sphinx
@@ -235,17 +231,13 @@ repository. Either clone the repository with::
 
   git clone https://github.com/pyvista/pyvista-doc-example
 
-Or simply download the repository:
+Or just download the zip of the repository.
 
-.. panels::
+.. button-link:: https://github.com/pyvista/pyvista-doc-example/archive/refs/heads/main.zip
+    :color: primary
+    :shadow:
 
-   `PyVista Documentation Example <https://github.com/pyvista/pyvista-doc-example>`_
-
-   +++
-
-    .. link-button:: https://github.com/pyvista/pyvista-doc-example/archive/refs/heads/main.zip
-        :text: Download Zip
-        :classes: btn-outline-primary btn-block stretched-link
+    pyvista-doc-example-main.zip
 
 
 Build the documentation
@@ -272,9 +264,15 @@ You will then find the generated documentation within the ``doc/_build``
 directory. Open up ``index.html`` using your browser to see the documentation.
 
 
+
 .. raw:: html
 
-    <div class="sphx-glr-clear"></div>
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    </div>
 
 
 

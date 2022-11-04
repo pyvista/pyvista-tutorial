@@ -144,30 +144,25 @@ one from the following sources:
 
 .. _sphx_glr_download_tutorial_01_basic_exercises_a_load_examples_exercise.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/01_basic/exercises/a_load_examples_exercise.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/01_basic/exercises/a_load_examples_exercise.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: a_load_examples_exercise.py <a_load_examples_exercise.py>`
 
-     :download:`Download Python source code: a_load_examples_exercise.py <a_load_examples_exercise.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: a_load_examples_exercise.ipynb <a_load_examples_exercise.ipynb>`
+      :download:`Download Jupyter notebook: a_load_examples_exercise.ipynb <a_load_examples_exercise.ipynb>`
 
 
 .. only:: html

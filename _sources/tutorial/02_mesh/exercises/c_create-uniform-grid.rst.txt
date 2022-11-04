@@ -261,30 +261,25 @@ See the PyVista documentation for further details on
 
 .. _sphx_glr_download_tutorial_02_mesh_exercises_c_create-uniform-grid.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/exercises/c_create-uniform-grid.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/exercises/c_create-uniform-grid.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: c_create-uniform-grid.py <c_create-uniform-grid.py>`
 
-     :download:`Download Python source code: c_create-uniform-grid.py <c_create-uniform-grid.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: c_create-uniform-grid.ipynb <c_create-uniform-grid.ipynb>`
+      :download:`Download Jupyter notebook: c_create-uniform-grid.ipynb <c_create-uniform-grid.ipynb>`
 
 
 .. only:: html

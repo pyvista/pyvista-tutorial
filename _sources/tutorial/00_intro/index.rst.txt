@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_tutorial_00_intro:
-
 .. _intro:
 
 Introduction
@@ -101,7 +97,7 @@ simple surface mesh:
    pyvista.global_theme.window_size = [600, 400]
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
-   pyvista.global_theme.antialiasing = True
+   pyvista.global_theme.anti_aliasing = 'fxaa'
 
 
 **Load and plot a surface dataset** 
@@ -294,14 +290,25 @@ bottom of the page and clicking on either the ``*.py`` (script) or ``*.ipynb``
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This is the &quot;Hello, world!&quot; of PyVista.">
 
 .. only:: html
 
- .. figure:: /tutorial/00_intro/images/thumb/sphx_glr_a_basic_thumb.png
-     :alt: Create Basic Geometric Objects
+  .. image:: /tutorial/00_intro/images/thumb/sphx_glr_a_basic_thumb.png
+    :alt: Create Basic Geometric Objects
 
-     :ref:`sphx_glr_tutorial_00_intro_a_basic.py`
+  :ref:`sphx_glr_tutorial_00_intro_a_basic.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Create Basic Geometric Objects</div>
+    </div>
+
 
 .. raw:: html
 
@@ -312,9 +319,6 @@ bottom of the page and clicking on either the ``*.py`` (script) or ``*.ipynb``
    :hidden:
 
    /tutorial/00_intro/a_basic
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
 
 
 

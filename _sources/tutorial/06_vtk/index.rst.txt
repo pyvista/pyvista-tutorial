@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_tutorial_06_vtk:
-
 .. _vtk:
 
 PyVista & VTK
@@ -77,7 +73,7 @@ PyVista is:
 
    Create the grid.  Note how the values must use Fortran ordering.
 
-   >>> grid = pv.UniformGrid(dims=(300, 300, 1))
+   >>> grid = pv.UniformGrid(dimensions=(300, 300, 1))
    >>> grid.point_data["values"] = values.flatten(order="F")
 
 Here, PyVista has done several things for us:
@@ -160,7 +156,7 @@ However, with PyVista you only need:
    xi = np.arange(300)
    x, y = np.meshgrid(xi, xi)
    values = 127.5 + (1.0 + np.sin(x/25.0)*np.cos(y/25.0))
-   grid = pv.UniformGrid(dims=(300, 300, 1))
+   grid = pv.UniformGrid(dimensions=(300, 300, 1))
    grid.point_data["values"] = values.flatten(order="F")
    grid.plot(cpos='xy', show_scalar_bar=False, cmap='coolwarm')
 
@@ -266,7 +262,7 @@ example:
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
-   pyvista.global_theme.antialiasing = True
+   pyvista.global_theme.anti_aliasing = 'fxaa'
 
 
 .. jupyter-execute::
@@ -392,14 +388,76 @@ Exercises
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="VTK is primarily developed in C++ and uses chained setter and getter commands to access data. I...">
 
 .. only:: html
 
- .. figure:: /tutorial/06_vtk/images/thumb/sphx_glr_a_1_transition_vtk_thumb.png
-     :alt: Transitioning from VTK to PyVista
+  .. image:: /tutorial/06_vtk/images/thumb/sphx_glr_a_1_transition_vtk_thumb.png
+    :alt: Transitioning from VTK to PyVista
 
-     :ref:`sphx_glr_tutorial_06_vtk_a_1_transition_vtk.py`
+  :ref:`sphx_glr_tutorial_06_vtk_a_1_transition_vtk.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Transitioning from VTK to PyVista</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="PyVista is best known for is easy to use plotting API -- being familiar to most Python users al...">
+
+.. only:: html
+
+  .. image:: /tutorial/06_vtk/images/thumb/sphx_glr_a_2_pyvista_vtk_thumb.png
+    :alt: PyVista and VTK Together
+
+  :ref:`sphx_glr_tutorial_06_vtk_a_2_pyvista_vtk.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">PyVista and VTK Together</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This exercise walks through the creation of a few different types of VTK datasets.">
+
+.. only:: html
+
+  .. image:: /tutorial/06_vtk/images/thumb/sphx_glr_b_create_vtk_thumb.png
+    :alt: Create VTK Objects
+
+  :ref:`sphx_glr_tutorial_06_vtk_b_create_vtk.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Create VTK Objects</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this exercise, you will use a VTK Algorithm directly to filter a PyVista mesh.">
+
+.. only:: html
+
+  .. image:: /tutorial/06_vtk/images/thumb/sphx_glr_c_vtk_algorithms_thumb.png
+    :alt: Using VTK Algorithms
+
+  :ref:`sphx_glr_tutorial_06_vtk_c_vtk_algorithms.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Using VTK Algorithms</div>
+    </div>
+
 
 .. raw:: html
 
@@ -410,72 +468,9 @@ Exercises
    :hidden:
 
    /tutorial/06_vtk/a_1_transition_vtk
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="PyVista is best known for is easy to use plotting API -- being familiar to most Python users al...">
-
-.. only:: html
-
- .. figure:: /tutorial/06_vtk/images/thumb/sphx_glr_a_2_pyvista_vtk_thumb.png
-     :alt: PyVista and VTK Together
-
-     :ref:`sphx_glr_tutorial_06_vtk_a_2_pyvista_vtk.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/06_vtk/a_2_pyvista_vtk
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This exercise walks through the creation of a few different types of VTK datasets.">
-
-.. only:: html
-
- .. figure:: /tutorial/06_vtk/images/thumb/sphx_glr_b_create_vtk_thumb.png
-     :alt: Create VTK Objects
-
-     :ref:`sphx_glr_tutorial_06_vtk_b_create_vtk.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/06_vtk/b_create_vtk
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="In this exercise, you will use a VTK Algorithm directly to filter a PyVista mesh.">
-
-.. only:: html
-
- .. figure:: /tutorial/06_vtk/images/thumb/sphx_glr_c_vtk_algorithms_thumb.png
-     :alt: Using VTK Algorithms
-
-     :ref:`sphx_glr_tutorial_06_vtk_c_vtk_algorithms.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/06_vtk/c_vtk_algorithms
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
 
 
 

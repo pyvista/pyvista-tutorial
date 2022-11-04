@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_tutorial_02_mesh:
-
 .. _mesh:
 
 What is a Mesh?
@@ -65,7 +61,7 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
-   pyvista.global_theme.antialiasing = True
+   pyvista.global_theme.anti_aliasing = 'fxaa'
 
 
 .. jupyter-execute::
@@ -254,14 +250,25 @@ For more examples, please see the mesh creation section of the
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This exercise overviews the code in the initial lesson for you to try out!">
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/images/thumb/sphx_glr_a_lesson_mesh_thumb.png
-     :alt: Lesson Overview
+  .. image:: /tutorial/02_mesh/images/thumb/sphx_glr_a_lesson_mesh_thumb.png
+    :alt: Lesson Overview
 
-     :ref:`sphx_glr_tutorial_02_mesh_a_lesson_mesh.py`
+  :ref:`sphx_glr_tutorial_02_mesh_a_lesson_mesh.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Lesson Overview</div>
+    </div>
+
 
 .. raw:: html
 
@@ -272,13 +279,6 @@ For more examples, please see the mesh creation section of the
    :hidden:
 
    /tutorial/02_mesh/a_lesson_mesh
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorial_02_mesh_exercises:
 
 Do it yourself
 ~~~~~~~~~~~~~~
@@ -287,24 +287,25 @@ Do it yourself
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Create a pyvista.PolyData object from a point cloud of vertices and scalar arrays for those poi...">
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_b_create-point-cloud_thumb.png
-     :alt: Create Point Cloud
+  .. image:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_b_create-point-cloud_thumb.png
+    :alt: Create Point Cloud
 
-     :ref:`sphx_glr_tutorial_02_mesh_exercises_b_create-point-cloud.py`
+  :ref:`sphx_glr_tutorial_02_mesh_exercises_b_create-point-cloud.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Create Point Cloud</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/02_mesh/exercises/b_create-point-cloud
 
 .. raw:: html
 
@@ -312,20 +313,16 @@ Do it yourself
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_c_create-uniform-grid_thumb.png
-     :alt: Creating a Uniform Grid
+  .. image:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_c_create-uniform-grid_thumb.png
+    :alt: Creating a Uniform Grid
 
-     :ref:`sphx_glr_tutorial_02_mesh_exercises_c_create-uniform-grid.py`
+  :ref:`sphx_glr_tutorial_02_mesh_exercises_c_create-uniform-grid.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Creating a Uniform Grid</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/02_mesh/exercises/c_create-uniform-grid
 
 .. raw:: html
 
@@ -333,20 +330,16 @@ Do it yourself
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_d_create-tri-surface_thumb.png
-     :alt: Create Triangulated Surface
+  .. image:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_d_create-tri-surface_thumb.png
+    :alt: Create Triangulated Surface
 
-     :ref:`sphx_glr_tutorial_02_mesh_exercises_d_create-tri-surface.py`
+  :ref:`sphx_glr_tutorial_02_mesh_exercises_d_create-tri-surface.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Create Triangulated Surface</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/02_mesh/exercises/d_create-tri-surface
 
 .. raw:: html
 
@@ -354,27 +347,20 @@ Do it yourself
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_e_read-file_thumb.png
-     :alt: Load and Plot from a File
+  .. image:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_e_read-file_thumb.png
+    :alt: Load and Plot from a File
 
-     :ref:`sphx_glr_tutorial_02_mesh_exercises_e_read-file.py`
+  :ref:`sphx_glr_tutorial_02_mesh_exercises_e_read-file.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Load and Plot from a File</div>
+    </div>
+
 
 .. raw:: html
 
     </div>
-
-
-.. toctree::
-   :hidden:
-
-   /tutorial/02_mesh/exercises/e_read-file
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorial_02_mesh_soultions:
 
 Solutions
 ~~~~~~~~~
@@ -383,24 +369,25 @@ Solutions
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Create a pyvista.PolyData object from a point cloud of vertices and scalar arrays for those poi...">
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_b_create-point-cloud_thumb.png
-     :alt: Create Point Cloud
+  .. image:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_b_create-point-cloud_thumb.png
+    :alt: Create Point Cloud
 
-     :ref:`sphx_glr_tutorial_02_mesh_soultions_b_create-point-cloud.py`
+  :ref:`sphx_glr_tutorial_02_mesh_soultions_b_create-point-cloud.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Create Point Cloud</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/02_mesh/soultions/b_create-point-cloud
 
 .. raw:: html
 
@@ -408,20 +395,16 @@ Solutions
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_c_create-uniform-grid_thumb.png
-     :alt: Creating a Uniform Grid
+  .. image:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_c_create-uniform-grid_thumb.png
+    :alt: Creating a Uniform Grid
 
-     :ref:`sphx_glr_tutorial_02_mesh_soultions_c_create-uniform-grid.py`
+  :ref:`sphx_glr_tutorial_02_mesh_soultions_c_create-uniform-grid.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Creating a Uniform Grid</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/02_mesh/soultions/c_create-uniform-grid
 
 .. raw:: html
 
@@ -429,20 +412,16 @@ Solutions
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_d_create-tri-surface_thumb.png
-     :alt: Create Triangulated Surface
+  .. image:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_d_create-tri-surface_thumb.png
+    :alt: Create Triangulated Surface
 
-     :ref:`sphx_glr_tutorial_02_mesh_soultions_d_create-tri-surface.py`
+  :ref:`sphx_glr_tutorial_02_mesh_soultions_d_create-tri-surface.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Create Triangulated Surface</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/02_mesh/soultions/d_create-tri-surface
 
 .. raw:: html
 
@@ -450,10 +429,16 @@ Solutions
 
 .. only:: html
 
- .. figure:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_e_read-file_thumb.png
-     :alt: Load and Plot from a File
+  .. image:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_e_read-file_thumb.png
+    :alt: Load and Plot from a File
 
-     :ref:`sphx_glr_tutorial_02_mesh_soultions_e_read-file.py`
+  :ref:`sphx_glr_tutorial_02_mesh_soultions_e_read-file.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Load and Plot from a File</div>
+    </div>
+
 
 .. raw:: html
 
@@ -462,11 +447,10 @@ Solutions
 
 .. toctree::
    :hidden:
+   :includehidden:
 
-   /tutorial/02_mesh/soultions/e_read-file
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
+   /tutorial/02_mesh//exercises/index.rst
+   /tutorial/02_mesh//soultions/index.rst
 
 
 

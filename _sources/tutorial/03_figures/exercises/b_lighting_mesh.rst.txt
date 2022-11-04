@@ -127,30 +127,25 @@ For detailed control over lighting conditions in general see the
 
 .. _sphx_glr_download_tutorial_03_figures_exercises_b_lighting_mesh.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/exercises/b_lighting_mesh.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/exercises/b_lighting_mesh.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: b_lighting_mesh.py <b_lighting_mesh.py>`
 
-     :download:`Download Python source code: b_lighting_mesh.py <b_lighting_mesh.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: b_lighting_mesh.ipynb <b_lighting_mesh.ipynb>`
+      :download:`Download Jupyter notebook: b_lighting_mesh.ipynb <b_lighting_mesh.ipynb>`
 
 
 .. only:: html

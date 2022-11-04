@@ -1,5 +1,5 @@
-PyVista Tutorial for `SciPy 2022 <https://www.scipy2022.scipy.org/>`_
-=====================================================================
+PyVista Tutorial
+================
 
 .. toctree::
    :maxdepth: 2
@@ -8,15 +8,15 @@ PyVista Tutorial for `SciPy 2022 <https://www.scipy2022.scipy.org/>`_
    getting-started
    tutorial
 
-Welcome to PyVista's tutorial for `SciPy 2022 <https://www.scipy2022.scipy.org/>`_!
+Welcome to PyVista's tutorial!
 
 Here you can find all the resources to be up and running with PyVista in no
 time. Feel free to reference our dedicated documentation at `PyVista
 Documentation <https://docs.pyvista.org/>`_
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: JupyterLab
+   .. tab-item:: JupyterLab
 
       Here's a quick demo of PyVista running within `Jupyterlab
       <https://jupyter.org/>`_.
@@ -28,7 +28,7 @@ Documentation <https://docs.pyvista.org/>`_
            Your browser does not support the video tag.
          </video>
 
-   .. tab:: IPython
+   .. tab-item:: IPython
 
       Here's a quick demo of PyVista running within a terminal using `IPython
       <https://ipython.org/>`_.
@@ -44,35 +44,39 @@ Documentation <https://docs.pyvista.org/>`_
 Quick Links
 -----------
 
-.. panels::
-    :card: + install-card
-    :column: col-lg-6 col-md-6 col-sm-12 col-xs-12 p-3
+.. grid:: 2
 
-    Getting Started
-    ^^^^^^^^^^^^^^^
+   .. grid-item-card:: Tutorial
+      :class-title: pyvista-card-title
+      :link: tutorial
+      :link-type: ref
 
-    Get PyVista setup on your environment.
+      Jump right to the tutorial content.
 
-    ++++++++++++++++++++++
+      .. jupyter-execute::
+         :hide-code:
 
-    .. link-button:: getting-started
-        :type: ref
-        :text: Installation and Getting Started
-        :classes: btn-outline-primary btn-block stretched-link
+         # Configure for static image
+         import pyvista
+         pyvista.set_jupyter_backend('static')
+         pyvista.global_theme.background = 'white'
+         pyvista.global_theme.axes.show = False
+         pyvista.global_theme.smooth_shading = True
 
-    ---
+      .. jupyter-execute::
 
-    Tutorial Content
-    ^^^^^^^^^^^^^^^^
+         from pyvista import examples
+         dataset = examples.download_saddle_surface()
+         dataset.plot()
 
-    Jump right to the tutorial content.
+   .. grid-item-card:: Installation and Getting Started
+      :class-title: pyvista-card-title
+      :link: getting_started
+      :link-type: ref
 
-    ++++++++++++++++++++++
+      Get PyVista setup on your environment.
 
-    .. link-button:: tutorial
-        :type: ref
-        :text: Tutorial
-        :classes: btn-outline-primary btn-block stretched-link
+      .. asciinema:: 507562
 
 
 Example Gallery

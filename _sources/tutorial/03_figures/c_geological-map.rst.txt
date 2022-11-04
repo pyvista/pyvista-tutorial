@@ -29,13 +29,17 @@ We can do this by using the spatial reference of the GeoTIFF itself, as this all
 
 Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-17
+.. GENERATED FROM PYTHON SOURCE LINES 13-21
 
 .. code-block:: default
+
+    import os
+    import tempfile
 
     import numpy as np
     import pyvista as pv
     from pyvista import examples
+    import requests
 
 
 
@@ -44,11 +48,11 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-23
+.. GENERATED FROM PYTHON SOURCE LINES 23-27
 
 .. code-block:: default
 
-    path, _ = examples.downloads._download_file("topo_clean.vtk")
+    path = examples.download_file("topo_clean.vtk")
     topo = pv.read(path)
     topo
 
@@ -76,18 +80,21 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-26
+.. GENERATED FROM PYTHON SOURCE LINES 28-30
 
 Load the GeoTIFF/texture (this could take a minute to download)
 https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-30
+.. GENERATED FROM PYTHON SOURCE LINES 30-37
 
 .. code-block:: default
 
     url = "https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0"
-    filename, _ = examples.downloads._retrieve_file(url, "downsampled_Geologic_map_on_air_photo.tif")
-    filename
+
+    response = requests.get(url)
+    filename = os.path.join(tempfile.gettempdir(), "downsampled_Geologic_map_on_air_photo.tif")
+    open(filename, "wb").write(response.content)
+
 
 
 
@@ -95,23 +102,21 @@ https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.t
 
 .. rst-class:: sphx-glr-script-out
 
- Out:
-
  .. code-block:: none
 
 
-    '/home/runner/.local/share/pyvista/examples/downsampled_Geologic_map_on_air_photo.tif'
+    8175934
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-35
+.. GENERATED FROM PYTHON SOURCE LINES 38-42
 
 In the block below, we can use the ``get_gcps`` function to get the
 Ground Control Points of the raster, however this depends on GDAL. For this
 tutorial, we are going to hard code the GCPs to avoid having users install
 GDAL.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-56
+.. GENERATED FROM PYTHON SOURCE LINES 42-63
 
 .. code-block:: default
 
@@ -143,7 +148,7 @@ GDAL.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-66
+.. GENERATED FROM PYTHON SOURCE LINES 64-73
 
 .. code-block:: default
 
@@ -163,7 +168,7 @@ GDAL.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-71
+.. GENERATED FROM PYTHON SOURCE LINES 74-78
 
 .. code-block:: default
 
@@ -201,11 +206,11 @@ GDAL.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-73
+.. GENERATED FROM PYTHON SOURCE LINES 79-80
 
 Show GCPs in relation to topo surface with texture coordinates displayed
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-90
+.. GENERATED FROM PYTHON SOURCE LINES 80-97
 
 .. code-block:: default
 
@@ -238,11 +243,11 @@ Show GCPs in relation to topo surface with texture coordinates displayed
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-92
+.. GENERATED FROM PYTHON SOURCE LINES 98-99
 
 Read the GeoTIFF as a ``Texture`` in PyVista:
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-104
+.. GENERATED FROM PYTHON SOURCE LINES 99-111
 
 .. code-block:: default
 
@@ -273,35 +278,30 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.632 seconds)
+   **Total running time of the script:** ( 0 minutes  4.300 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_c_geological-map.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/c_geological-map.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/c_geological-map.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: c_geological-map.py <c_geological-map.py>`
 
-     :download:`Download Python source code: c_geological-map.py <c_geological-map.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: c_geological-map.ipynb <c_geological-map.ipynb>`
+      :download:`Download Jupyter notebook: c_geological-map.ipynb <c_geological-map.ipynb>`
 
 
 .. only:: html

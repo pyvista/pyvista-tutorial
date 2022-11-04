@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_tutorial_04_filters:
-
 .. _filters:
 
 Filters
@@ -53,7 +49,7 @@ object:
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
-   pyvista.global_theme.antialiasing = True
+   pyvista.global_theme.anti_aliasing = 'fxaa'
 
 
 .. jupyter-execute::
@@ -168,14 +164,25 @@ Exercises
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Using common filters like thresholding and clipping.">
 
 .. only:: html
 
- .. figure:: /tutorial/04_filters/images/thumb/sphx_glr_a_lesson_filters_thumb.png
-     :alt: Using Common Filters
+  .. image:: /tutorial/04_filters/images/thumb/sphx_glr_a_lesson_filters_thumb.png
+    :alt: Using Common Filters
 
-     :ref:`sphx_glr_tutorial_04_filters_a_lesson_filters.py`
+  :ref:`sphx_glr_tutorial_04_filters_a_lesson_filters.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Using Common Filters</div>
+    </div>
+
 
 .. raw:: html
 
@@ -186,13 +193,6 @@ Exercises
    :hidden:
 
    /tutorial/04_filters/a_lesson_filters
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorial_04_filters_exercises:
 
 Do it yourself
 ~~~~~~~~~~~~~~
@@ -201,24 +201,25 @@ Do it yourself
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Clip/cut any dataset using using planes or boxes.">
 
 .. only:: html
 
- .. figure:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_b_clipping_thumb.png
-     :alt: Clipping with Planes & Boxes
+  .. image:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_b_clipping_thumb.png
+    :alt: Clipping with Planes & Boxes
 
-     :ref:`sphx_glr_tutorial_04_filters_exercises_b_clipping.py`
+  :ref:`sphx_glr_tutorial_04_filters_exercises_b_clipping.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Clipping with Planes & Boxes</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/04_filters/exercises/b_clipping
 
 .. raw:: html
 
@@ -226,20 +227,16 @@ Do it yourself
 
 .. only:: html
 
- .. figure:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_c_compute-normals_thumb.png
-     :alt: Computing Surface Normals
+  .. image:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_c_compute-normals_thumb.png
+    :alt: Computing Surface Normals
 
-     :ref:`sphx_glr_tutorial_04_filters_exercises_c_compute-normals.py`
+  :ref:`sphx_glr_tutorial_04_filters_exercises_c_compute-normals.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Computing Surface Normals</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/04_filters/exercises/c_compute-normals
 
 .. raw:: html
 
@@ -247,20 +244,16 @@ Do it yourself
 
 .. only:: html
 
- .. figure:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_d_contouring_thumb.png
-     :alt: Contouring
+  .. image:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_d_contouring_thumb.png
+    :alt: Contouring
 
-     :ref:`sphx_glr_tutorial_04_filters_exercises_d_contouring.py`
+  :ref:`sphx_glr_tutorial_04_filters_exercises_d_contouring.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Contouring</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/04_filters/exercises/d_contouring
 
 .. raw:: html
 
@@ -268,27 +261,20 @@ Do it yourself
 
 .. only:: html
 
- .. figure:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_e_glyphs_thumb.png
-     :alt: Plotting Glyphs (Vectors or PolyData)
+  .. image:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_e_glyphs_thumb.png
+    :alt: Plotting Glyphs (Vectors or PolyData)
 
-     :ref:`sphx_glr_tutorial_04_filters_exercises_e_glyphs.py`
+  :ref:`sphx_glr_tutorial_04_filters_exercises_e_glyphs.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Plotting Glyphs (Vectors or PolyData)</div>
+    </div>
+
 
 .. raw:: html
 
     </div>
-
-
-.. toctree::
-   :hidden:
-
-   /tutorial/04_filters/exercises/e_glyphs
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorial_04_filters_solutions:
 
 Solutions
 ~~~~~~~~~
@@ -297,24 +283,25 @@ Solutions
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Clip/cut any dataset using using planes or boxes.">
 
 .. only:: html
 
- .. figure:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_b_clipping_thumb.png
-     :alt: Clipping with Planes & Boxes
+  .. image:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_b_clipping_thumb.png
+    :alt: Clipping with Planes & Boxes
 
-     :ref:`sphx_glr_tutorial_04_filters_solutions_b_clipping.py`
+  :ref:`sphx_glr_tutorial_04_filters_solutions_b_clipping.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Clipping with Planes & Boxes</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/04_filters/solutions/b_clipping
 
 .. raw:: html
 
@@ -322,20 +309,16 @@ Solutions
 
 .. only:: html
 
- .. figure:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_c_compute-normals_thumb.png
-     :alt: Computing Surface Normals
+  .. image:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_c_compute-normals_thumb.png
+    :alt: Computing Surface Normals
 
-     :ref:`sphx_glr_tutorial_04_filters_solutions_c_compute-normals.py`
+  :ref:`sphx_glr_tutorial_04_filters_solutions_c_compute-normals.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Computing Surface Normals</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/04_filters/solutions/c_compute-normals
 
 .. raw:: html
 
@@ -343,20 +326,16 @@ Solutions
 
 .. only:: html
 
- .. figure:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_d_contouring_thumb.png
-     :alt: Contouring
+  .. image:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_d_contouring_thumb.png
+    :alt: Contouring
 
-     :ref:`sphx_glr_tutorial_04_filters_solutions_d_contouring.py`
+  :ref:`sphx_glr_tutorial_04_filters_solutions_d_contouring.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Contouring</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/04_filters/solutions/d_contouring
 
 .. raw:: html
 
@@ -364,10 +343,16 @@ Solutions
 
 .. only:: html
 
- .. figure:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_e_glyphs_thumb.png
-     :alt: Plotting Glyphs (Vectors or PolyData)
+  .. image:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_e_glyphs_thumb.png
+    :alt: Plotting Glyphs (Vectors or PolyData)
 
-     :ref:`sphx_glr_tutorial_04_filters_solutions_e_glyphs.py`
+  :ref:`sphx_glr_tutorial_04_filters_solutions_e_glyphs.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Plotting Glyphs (Vectors or PolyData)</div>
+    </div>
+
 
 .. raw:: html
 
@@ -376,11 +361,10 @@ Solutions
 
 .. toctree::
    :hidden:
+   :includehidden:
 
-   /tutorial/04_filters/solutions/e_glyphs
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
+   /tutorial/04_filters//exercises/index.rst
+   /tutorial/04_filters//solutions/index.rst
 
 
 

@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_tutorial_03_figures:
-
 .. _figures:
 
 Plotting Options and Animations
@@ -55,7 +51,7 @@ When plotting, users must first create a :class:`pyvista.Plotter` instance (much
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
-   pyvista.global_theme.antialiasing = True
+   pyvista.global_theme.anti_aliasing = 'fxaa'
 
 
 .. jupyter-execute::
@@ -285,14 +281,76 @@ Exercises
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Lesson Overview">
 
 .. only:: html
 
- .. figure:: /tutorial/03_figures/images/thumb/sphx_glr_a_lesson_figures_thumb.png
-     :alt: Lesson Overview
+  .. image:: /tutorial/03_figures/images/thumb/sphx_glr_a_lesson_figures_thumb.png
+    :alt: Lesson Overview
 
-     :ref:`sphx_glr_tutorial_03_figures_a_lesson_figures.py`
+  :ref:`sphx_glr_tutorial_03_figures_a_lesson_figures.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Lesson Overview</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Comparison of default, flat shading vs. smooth shading.">
+
+.. only:: html
+
+  .. image:: /tutorial/03_figures/images/thumb/sphx_glr_b_shading_thumb.png
+    :alt: Types of Shading
+
+  :ref:`sphx_glr_tutorial_03_figures_b_shading.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Types of Shading</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Texture mapping for a GeoTIFF on a topography surface.">
+
+.. only:: html
+
+  .. image:: /tutorial/03_figures/images/thumb/sphx_glr_c_geological-map_thumb.png
+    :alt: Geological Map on Topography
+
+  :ref:`sphx_glr_tutorial_03_figures_c_geological-map.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Geological Map on Topography</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Create a GIF Movie">
+
+.. only:: html
+
+  .. image:: /tutorial/03_figures/images/thumb/sphx_glr_d_gif_thumb.png
+    :alt: Create a GIF Movie
+
+  :ref:`sphx_glr_tutorial_03_figures_d_gif.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Create a GIF Movie</div>
+    </div>
+
 
 .. raw:: html
 
@@ -303,76 +361,9 @@ Exercises
    :hidden:
 
    /tutorial/03_figures/a_lesson_figures
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Comparison of default, flat shading vs. smooth shading.">
-
-.. only:: html
-
- .. figure:: /tutorial/03_figures/images/thumb/sphx_glr_b_shading_thumb.png
-     :alt: Types of Shading
-
-     :ref:`sphx_glr_tutorial_03_figures_b_shading.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/03_figures/b_shading
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Texture mapping for a GeoTIFF on a topography surface.">
-
-.. only:: html
-
- .. figure:: /tutorial/03_figures/images/thumb/sphx_glr_c_geological-map_thumb.png
-     :alt: Geological Map on Topography
-
-     :ref:`sphx_glr_tutorial_03_figures_c_geological-map.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/03_figures/c_geological-map
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Create a GIF Movie">
-
-.. only:: html
-
- .. figure:: /tutorial/03_figures/images/thumb/sphx_glr_d_gif_thumb.png
-     :alt: Create a GIF Movie
-
-     :ref:`sphx_glr_tutorial_03_figures_d_gif.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/03_figures/d_gif
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorial_03_figures_bonus:
 
 Bonus Content
 ~~~~~~~~~~~~~
@@ -381,24 +372,25 @@ Bonus Content
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="VTK 9 introduced Physically Based Rendering (PBR) and we have exposed that functionality in PyV...">
 
 .. only:: html
 
- .. figure:: /tutorial/03_figures/bonus/images/thumb/sphx_glr_d_pbr_thumb.png
-     :alt: Physically Based Rendering
+  .. image:: /tutorial/03_figures/bonus/images/thumb/sphx_glr_d_pbr_thumb.png
+    :alt: Physically Based Rendering
 
-     :ref:`sphx_glr_tutorial_03_figures_bonus_d_pbr.py`
+  :ref:`sphx_glr_tutorial_03_figures_bonus_d_pbr.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Physically Based Rendering</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/03_figures/bonus/d_pbr
 
 .. raw:: html
 
@@ -406,20 +398,16 @@ Bonus Content
 
 .. only:: html
 
- .. figure:: /tutorial/03_figures/bonus/images/thumb/sphx_glr_e_labels_thumb.png
-     :alt: Label Points
+  .. image:: /tutorial/03_figures/bonus/images/thumb/sphx_glr_e_labels_thumb.png
+    :alt: Label Points
 
-     :ref:`sphx_glr_tutorial_03_figures_bonus_e_labels.py`
+  :ref:`sphx_glr_tutorial_03_figures_bonus_e_labels.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Label Points</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/03_figures/bonus/e_labels
 
 .. raw:: html
 
@@ -427,27 +415,20 @@ Bonus Content
 
 .. only:: html
 
- .. figure:: /tutorial/03_figures/bonus/images/thumb/sphx_glr_g_orbit_thumb.png
-     :alt: Orbiting
+  .. image:: /tutorial/03_figures/bonus/images/thumb/sphx_glr_g_orbit_thumb.png
+    :alt: Orbiting
 
-     :ref:`sphx_glr_tutorial_03_figures_bonus_g_orbit.py`
+  :ref:`sphx_glr_tutorial_03_figures_bonus_g_orbit.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Orbiting</div>
+    </div>
+
 
 .. raw:: html
 
     </div>
-
-
-.. toctree::
-   :hidden:
-
-   /tutorial/03_figures/bonus/g_orbit
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorial_03_figures_exercises:
 
 Do it yourself
 ~~~~~~~~~~~~~~
@@ -456,24 +437,25 @@ Do it yourself
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Take a look at the different display options offered by the add_mesh method.">
 
 .. only:: html
 
- .. figure:: /tutorial/03_figures/exercises/images/thumb/sphx_glr_a_display_options_thumb.png
-     :alt: Display Options
+  .. image:: /tutorial/03_figures/exercises/images/thumb/sphx_glr_a_display_options_thumb.png
+    :alt: Display Options
 
-     :ref:`sphx_glr_tutorial_03_figures_exercises_a_display_options.py`
+  :ref:`sphx_glr_tutorial_03_figures_exercises_a_display_options.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Display Options</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/03_figures/exercises/a_display_options
 
 .. raw:: html
 
@@ -481,20 +463,16 @@ Do it yourself
 
 .. only:: html
 
- .. figure:: /tutorial/03_figures/exercises/images/thumb/sphx_glr_b_lighting_mesh_thumb.png
-     :alt: Lighting Properties
+  .. image:: /tutorial/03_figures/exercises/images/thumb/sphx_glr_b_lighting_mesh_thumb.png
+    :alt: Lighting Properties
 
-     :ref:`sphx_glr_tutorial_03_figures_exercises_b_lighting_mesh.py`
+  :ref:`sphx_glr_tutorial_03_figures_exercises_b_lighting_mesh.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Lighting Properties</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/03_figures/exercises/b_lighting_mesh
 
 .. raw:: html
 
@@ -502,27 +480,20 @@ Do it yourself
 
 .. only:: html
 
- .. figure:: /tutorial/03_figures/exercises/images/thumb/sphx_glr_c_edl_thumb.png
-     :alt: Eye Dome Lighting
+  .. image:: /tutorial/03_figures/exercises/images/thumb/sphx_glr_c_edl_thumb.png
+    :alt: Eye Dome Lighting
 
-     :ref:`sphx_glr_tutorial_03_figures_exercises_c_edl.py`
+  :ref:`sphx_glr_tutorial_03_figures_exercises_c_edl.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Eye Dome Lighting</div>
+    </div>
+
 
 .. raw:: html
 
     </div>
-
-
-.. toctree::
-   :hidden:
-
-   /tutorial/03_figures/exercises/c_edl
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
-
-
-
-.. _sphx_glr_tutorial_03_figures_solutions:
 
 Solutions
 ~~~~~~~~~
@@ -531,24 +502,25 @@ Solutions
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Take a look at the different display options offered by the add_mesh method.">
 
 .. only:: html
 
- .. figure:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_a_display_options_thumb.png
-     :alt: Display Options
+  .. image:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_a_display_options_thumb.png
+    :alt: Display Options
 
-     :ref:`sphx_glr_tutorial_03_figures_solutions_a_display_options.py`
+  :ref:`sphx_glr_tutorial_03_figures_solutions_a_display_options.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Display Options</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/03_figures/solutions/a_display_options
 
 .. raw:: html
 
@@ -556,20 +528,16 @@ Solutions
 
 .. only:: html
 
- .. figure:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_b_lighting_mesh_thumb.png
-     :alt: Lighting Properties
+  .. image:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_b_lighting_mesh_thumb.png
+    :alt: Lighting Properties
 
-     :ref:`sphx_glr_tutorial_03_figures_solutions_b_lighting_mesh.py`
+  :ref:`sphx_glr_tutorial_03_figures_solutions_b_lighting_mesh.py`
 
 .. raw:: html
 
+      <div class="sphx-glr-thumbnail-title">Lighting Properties</div>
     </div>
 
-
-.. toctree::
-   :hidden:
-
-   /tutorial/03_figures/solutions/b_lighting_mesh
 
 .. raw:: html
 
@@ -577,10 +545,16 @@ Solutions
 
 .. only:: html
 
- .. figure:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_c_edl_thumb.png
-     :alt: Eye Dome Lighting
+  .. image:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_c_edl_thumb.png
+    :alt: Eye Dome Lighting
 
-     :ref:`sphx_glr_tutorial_03_figures_solutions_c_edl.py`
+  :ref:`sphx_glr_tutorial_03_figures_solutions_c_edl.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Eye Dome Lighting</div>
+    </div>
+
 
 .. raw:: html
 
@@ -589,11 +563,11 @@ Solutions
 
 .. toctree::
    :hidden:
+   :includehidden:
 
-   /tutorial/03_figures/solutions/c_edl
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
+   /tutorial/03_figures//bonus/index.rst
+   /tutorial/03_figures//exercises/index.rst
+   /tutorial/03_figures//solutions/index.rst
 
 
 

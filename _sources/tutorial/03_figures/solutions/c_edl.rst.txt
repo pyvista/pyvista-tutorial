@@ -73,6 +73,7 @@ Take this Lidar point cloud for example:
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>3392091</td></tr>
     <tr><td>N Points</td><td>3392091</td></tr>
+    <tr><td>N Strips</td><td>0</td></tr>
     <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
     <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
     <tr><td>Z Bounds</td><td>1.754e+03, 1.787e+03</td></tr>
@@ -177,35 +178,30 @@ the ``add_mesh`` call.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.820 seconds)
+   **Total running time of the script:** ( 0 minutes  8.682 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_c_edl.py:
 
+.. only:: html
 
-.. only :: html
-
- .. container:: sphx-glr-footer
-    :class: sphx-glr-footer-example
+  .. container:: sphx-glr-footer sphx-glr-footer-example
 
 
-  .. container:: binder-badge
+    .. container:: binder-badge
 
-    .. image:: images/binder_badge_logo.svg
-      :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/solutions/c_edl.ipynb
-      :alt: Launch binder
-      :width: 150 px
+      .. image:: images/binder_badge_logo.svg
+        :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/solutions/c_edl.ipynb
+        :alt: Launch binder
+        :width: 150 px
 
+    .. container:: sphx-glr-download sphx-glr-download-python
 
-  .. container:: sphx-glr-download sphx-glr-download-python
+      :download:`Download Python source code: c_edl.py <c_edl.py>`
 
-     :download:`Download Python source code: c_edl.py <c_edl.py>`
+    .. container:: sphx-glr-download sphx-glr-download-jupyter
 
-
-
-  .. container:: sphx-glr-download sphx-glr-download-jupyter
-
-     :download:`Download Jupyter notebook: c_edl.ipynb <c_edl.ipynb>`
+      :download:`Download Jupyter notebook: c_edl.ipynb <c_edl.ipynb>`
 
 
 .. only:: html

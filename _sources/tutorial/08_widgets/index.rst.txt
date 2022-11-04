@@ -1,9 +1,5 @@
 :orphan:
 
-
-
-.. _sphx_glr_tutorial_08_widgets:
-
 .. _widgets:
 
 Widgets in PyVista
@@ -35,14 +31,144 @@ Widget Examples
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="The box widget can be enabled and disabled by the pyvista.Plotter.add_box_widget and pyvista.Pl...">
 
 .. only:: html
 
- .. figure:: /tutorial/08_widgets/images/thumb/sphx_glr_a_box-widget_thumb.png
-     :alt: Box Widget
+  .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_a_box-widget_thumb.png
+    :alt: Box Widget
 
-     :ref:`sphx_glr_tutorial_08_widgets_a_box-widget.py`
+  :ref:`sphx_glr_tutorial_08_widgets_a_box-widget.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Box Widget</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use a checkbox to turn on/off the visibility of meshes in a scene.">
+
+.. only:: html
+
+  .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_b_checkbox-widget_thumb.png
+    :alt: Checkbox Widget
+
+  :ref:`sphx_glr_tutorial_08_widgets_b_checkbox-widget.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Checkbox Widget</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The line widget can be enabled and disabled by the pyvista.Plotter.add_line_widget and pyvista....">
+
+.. only:: html
+
+  .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_c_line-widget_thumb.png
+    :alt: Line Widget
+
+  :ref:`sphx_glr_tutorial_08_widgets_c_line-widget.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Line Widget</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Use a class based callback to track multiple slider widgets for updating a single mesh.">
+
+.. only:: html
+
+  .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_d_multi-slider-widget_thumb.png
+    :alt: Multiple Slider Widgets
+
+  :ref:`sphx_glr_tutorial_08_widgets_d_multi-slider-widget.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Multiple Slider Widgets</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The plane widget can be enabled and disabled by the pyvista.Plotter.add_plane_widget and pyvist...">
+
+.. only:: html
+
+  .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_e_plane-widget_thumb.png
+    :alt: Plane Widget
+
+  :ref:`sphx_glr_tutorial_08_widgets_e_plane-widget.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Plane Widget</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The slider widget can be enabled and disabled by the pyvista.Plotter.add_slider_widget and pyvi...">
+
+.. only:: html
+
+  .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_f_slider-bar-widget_thumb.png
+    :alt: Slider Bar Widget
+
+  :ref:`sphx_glr_tutorial_08_widgets_f_slider-bar-widget.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Slider Bar Widget</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="The sphere widget can be enabled and disabled by the pyvista.Plotter.add_sphere_widget and pyvi...">
+
+.. only:: html
+
+  .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_g_sphere-widget_thumb.png
+    :alt: Sphere Widget
+
+  :ref:`sphx_glr_tutorial_08_widgets_g_sphere-widget.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sphere Widget</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip=" A spline widget can be enabled and disabled by the pyvista.Plotter.add_spline_widget and pyvis...">
+
+.. only:: html
+
+  .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_h_spline-widget_thumb.png
+    :alt: Spline Widget
+
+  :ref:`sphx_glr_tutorial_08_widgets_h_spline-widget.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Spline Widget</div>
+    </div>
+
 
 .. raw:: html
 
@@ -53,156 +179,13 @@ Widget Examples
    :hidden:
 
    /tutorial/08_widgets/a_box-widget
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Use a checkbox to turn on/off the visibility of meshes in a scene.">
-
-.. only:: html
-
- .. figure:: /tutorial/08_widgets/images/thumb/sphx_glr_b_checkbox-widget_thumb.png
-     :alt: Checkbox Widget
-
-     :ref:`sphx_glr_tutorial_08_widgets_b_checkbox-widget.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/08_widgets/b_checkbox-widget
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="The line widget can be enabled and disabled by the pyvista.Plotter.add_line_widget and pyvista....">
-
-.. only:: html
-
- .. figure:: /tutorial/08_widgets/images/thumb/sphx_glr_c_line-widget_thumb.png
-     :alt: Line Widget
-
-     :ref:`sphx_glr_tutorial_08_widgets_c_line-widget.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/08_widgets/c_line-widget
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Use a class based callback to track multiple slider widgets for updating a single mesh.">
-
-.. only:: html
-
- .. figure:: /tutorial/08_widgets/images/thumb/sphx_glr_d_multi-slider-widget_thumb.png
-     :alt: Multiple Slider Widgets
-
-     :ref:`sphx_glr_tutorial_08_widgets_d_multi-slider-widget.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/08_widgets/d_multi-slider-widget
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="The plane widget can be enabled and disabled by the pyvista.Plotter.add_plane_widget and pyvist...">
-
-.. only:: html
-
- .. figure:: /tutorial/08_widgets/images/thumb/sphx_glr_e_plane-widget_thumb.png
-     :alt: Plane Widget
-
-     :ref:`sphx_glr_tutorial_08_widgets_e_plane-widget.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/08_widgets/e_plane-widget
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="The slider widget can be enabled and disabled by the pyvista.Plotter.add_slider_widget and pyvi...">
-
-.. only:: html
-
- .. figure:: /tutorial/08_widgets/images/thumb/sphx_glr_f_slider-bar-widget_thumb.png
-     :alt: Slider Bar Widget
-
-     :ref:`sphx_glr_tutorial_08_widgets_f_slider-bar-widget.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/08_widgets/f_slider-bar-widget
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="The sphere widget can be enabled and disabled by the pyvista.Plotter.add_sphere_widget and pyvi...">
-
-.. only:: html
-
- .. figure:: /tutorial/08_widgets/images/thumb/sphx_glr_g_sphere-widget_thumb.png
-     :alt: Sphere Widget
-
-     :ref:`sphx_glr_tutorial_08_widgets_g_sphere-widget.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/08_widgets/g_sphere-widget
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip=" A spline widget can be enabled and disabled by the pyvista.Plotter.add_spline_widget and pyvis...">
-
-.. only:: html
-
- .. figure:: /tutorial/08_widgets/images/thumb/sphx_glr_h_spline-widget_thumb.png
-     :alt: Spline Widget
-
-     :ref:`sphx_glr_tutorial_08_widgets_h_spline-widget.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
    /tutorial/08_widgets/h_spline-widget
-.. raw:: html
-
-    <div class="sphx-glr-clear"></div>
 
 
 
