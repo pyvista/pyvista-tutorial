@@ -52,17 +52,16 @@ author = 'PyVista Developers'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinxcontrib.asciinema',
-    'sphinx_tabs.tabs',
-    'sphinx.ext.napoleon',
-    'sphinx.ext.autodoc',
-    'jupyter_sphinx',
-    'sphinx_copybutton',
-    'sphinx_panels',
-    'sphinx_gallery.gen_gallery',
+    "sphinx_design",
     'jupyter_sphinx',
     'pyvista.ext.plot_directive',
+    'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.napoleon',
+    'sphinx_copybutton',
+    'sphinx_gallery.gen_gallery',
+    'sphinx_tabs.tabs',
+    'sphinxcontrib.asciinema',
 ]
 
 intersphinx_mapping = {
@@ -94,6 +93,9 @@ pygments_style = 'friendly'
 # relative to this directory. They are copied after the builtin static files,
 # so a file named 'default.css' will overwrite the builtin 'default.css'.
 html_static_path = ['_static']
+html_css_files = [
+    'cards.css',  # used in card CSS
+]
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
@@ -153,12 +155,6 @@ html_theme_options = {
 html_sidebars = {
     'index': [],
 }
-
-# Add any paths that contain custom static files (such as style sheets) here,
-# relative to this directory. They are copied after the builtin static files,
-# so a file named 'default.css' will overwrite the builtin 'default.css'.
-html_static_path = ['_static']
-
 
 # notfound_context = {
 #     'body': '''

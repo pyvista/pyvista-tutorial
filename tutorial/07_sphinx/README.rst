@@ -229,17 +229,13 @@ repository. Either clone the repository with::
 
   git clone https://github.com/pyvista/pyvista-doc-example
 
-Or simply download the repository:
+Or just download the zip of the repository.
 
-.. panels::
+.. button-link:: https://github.com/pyvista/pyvista-doc-example/archive/refs/heads/main.zip
+    :color: primary
+    :shadow:
 
-   `PyVista Documentation Example <https://github.com/pyvista/pyvista-doc-example>`_
-
-   +++
-
-    .. link-button:: https://github.com/pyvista/pyvista-doc-example/archive/refs/heads/main.zip
-        :text: Download Zip
-        :classes: btn-outline-primary btn-block stretched-link
+    pyvista-doc-example-main.zip
 
 
 Build the documentation
