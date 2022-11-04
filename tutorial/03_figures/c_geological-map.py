@@ -13,10 +13,11 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 # sphinx_gallery_thumbnail_number = 2
 import os
 import tempfile
-import requests
+
 import numpy as np
 import pyvista as pv
 from pyvista import examples
+import requests
 
 ###############################################################################
 path = examples.download_file("topo_clean.vtk")
@@ -29,9 +30,7 @@ topo
 url = "https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0"
 
 response = requests.get(url)
-filename = os.path.join(
-    tempfile.gettempdir(), "downsampled_Geologic_map_on_air_photo.tif"
-)
+filename = os.path.join(tempfile.gettempdir(), "downsampled_Geologic_map_on_air_photo.tif")
 open(filename, "wb").write(response.content)
 
 
