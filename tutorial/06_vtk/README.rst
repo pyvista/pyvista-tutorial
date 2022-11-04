@@ -71,7 +71,7 @@ PyVista is:
 
    Create the grid.  Note how the values must use Fortran ordering.
 
-   >>> grid = pv.UniformGrid(dims=(300, 300, 1))
+   >>> grid = pv.UniformGrid(dimensions=(300, 300, 1))
    >>> grid.point_data["values"] = values.flatten(order="F")
 
 Here, PyVista has done several things for us:
@@ -154,7 +154,7 @@ However, with PyVista you only need:
    xi = np.arange(300)
    x, y = np.meshgrid(xi, xi)
    values = 127.5 + (1.0 + np.sin(x/25.0)*np.cos(y/25.0))
-   grid = pv.UniformGrid(dims=(300, 300, 1))
+   grid = pv.UniformGrid(dimensions=(300, 300, 1))
    grid.point_data["values"] = values.flatten(order="F")
    grid.plot(cpos='xy', show_scalar_bar=False, cmap='coolwarm')
 
@@ -260,7 +260,7 @@ example:
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
-   pyvista.global_theme.antialiasing = True
+   pyvista.global_theme.anti_aliasing = 'fxaa'
 
 
 .. jupyter-execute::

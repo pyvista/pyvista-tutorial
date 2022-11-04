@@ -11,12 +11,16 @@ We can do this by using the spatial reference of the GeoTIFF itself, as this all
 Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 """
 # sphinx_gallery_thumbnail_number = 2
+import os
+import tempfile
+
 import numpy as np
 import pyvista as pv
 from pyvista import examples
+import requests
 
 ###############################################################################
-path, _ = examples.downloads._download_file("topo_clean.vtk")
+path = examples.download_file("topo_clean.vtk")
 topo = pv.read(path)
 topo
 
@@ -24,8 +28,11 @@ topo
 # Load the GeoTIFF/texture (this could take a minute to download)
 # https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0
 url = "https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0"
-filename, _ = examples.downloads._retrieve_file(url, "downsampled_Geologic_map_on_air_photo.tif")
-filename
+
+response = requests.get(url)
+filename = os.path.join(tempfile.gettempdir(), "downsampled_Geologic_map_on_air_photo.tif")
+open(filename, "wb").write(response.content)
+
 
 ###############################################################################
 # In the block below, we can use the ``get_gcps`` function to get the
