@@ -4,10 +4,9 @@ import os
 from pathlib import Path
 import sys
 
-if sys.version_info >= (3, 0):
-    import faulthandler
+import faulthandler
 
-    faulthandler.enable()
+faulthandler.enable()
 
 sys.path.insert(0, str(Path(__file__).absolute().parent))
 import make_external_gallery
