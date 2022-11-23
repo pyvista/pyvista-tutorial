@@ -1,10 +1,9 @@
 # Configuration file for the Sphinx documentation builder.
 
+import faulthandler
 import os
 from pathlib import Path
 import sys
-
-import faulthandler
 
 faulthandler.enable()
 
