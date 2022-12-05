@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:00.481** total execution time for **tutorial_00_intro** files:
+**00:00.449** total execution time for **tutorial_00_intro** files:
 
 +---------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_00_intro_a_basic.py` (``a_basic.py``) | 00:00.481 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_00_intro_a_basic.py` (``a_basic.py``) | 00:00.449 | 0.0 MB |
 +---------------------------------------------------------------+-----------+--------+
