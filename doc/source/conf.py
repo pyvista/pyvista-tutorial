@@ -1,13 +1,11 @@
 # Configuration file for the Sphinx documentation builder.
 
+import faulthandler
 import os
 from pathlib import Path
 import sys
 
-if sys.version_info >= (3, 0):
-    import faulthandler
-
-    faulthandler.enable()
+faulthandler.enable()
 
 sys.path.insert(0, str(Path(__file__).absolute().parent))
 import make_external_gallery
