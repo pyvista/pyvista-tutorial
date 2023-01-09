@@ -99,7 +99,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.871 seconds)
+   **Total running time of the script:** ( 0 minutes  2.113 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_c_line-widget.py:
