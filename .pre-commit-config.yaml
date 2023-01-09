@@ -29,7 +29,7 @@ repos:
     ]
 
 - repo: https://github.com/pycqa/pydocstyle
-  rev: 6.1.1
+  rev: 6.2.3
   hooks:
   - id: pydocstyle
     additional_dependencies: [toml==0.10.2]
@@ -37,7 +37,7 @@ repos:
     exclude: ^pyvista/ext/
 
 - repo: https://github.com/asottile/pyupgrade
-  rev: v3.2.2
+  rev: v3.3.1
   hooks:
   - id: pyupgrade
     args: [--py37-plus, --keep-runtime-typing]
@@ -53,6 +53,6 @@ repos:
 
 # this validates our github workflow files
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.19.2
+  rev: 0.20.0
   hooks:
     - id: check-github-workflows
