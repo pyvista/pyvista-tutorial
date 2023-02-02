@@ -35,8 +35,10 @@ layer that "wraps" the lower level functionality of VTK.
   plotting and mesh analysis through a streamlined interface for the
   Visualization Toolkit (VTK). Journal of Open Source Software, 4(37), 1450.
   https://doi.org/10.21105/joss.01450 <https://joss.theoj.org/papers/10.21105/joss.01450>`_
-- Now over 100+ contributors, `~1.6k Stars
-  <https://github.com/pyvista/pyvista/stargazers>`_ and `~1.6k Used by <https://github.com/pyvista/pyvista/network/dependents>`_ on GitHub!
+- Over 100+ contributors and `~1.4k Stars
+  <https://github.com/pyvista/pyvista/stargazers>`_ on GitHub in 2022!
+- Over 100+ contributors, `~1.6k Stars
+  <https://github.com/pyvista/pyvista/stargazers>`_ and `~1.0k Used by <https://github.com/pyvista/pyvista/network/dependents>`_ on GitHub now!
 - Greatly expanded internal presence and continuing support thanks to
 
   - `@tkoyama010 <https://github.com/tkoyama010>`_
