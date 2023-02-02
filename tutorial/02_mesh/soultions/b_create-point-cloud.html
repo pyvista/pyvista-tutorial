@@ -543,14 +543,14 @@ to download the full example code or to run this example in your browser via Bin
 </div>
 <section class="sphx-glr-example-title" id="create-point-cloud">
 <span id="sphx-glr-tutorial-02-mesh-soultions-b-create-point-cloud-py"></span><span id="id1"></span><h1>Create Point Cloud<a class="headerlink" href="#create-point-cloud" title="Permalink to this heading">#</a></h1>
-<p>Create a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> object from a point cloud of vertices and
+<p>Create a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> object from a point cloud of vertices and
 scalar arrays for those points.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
-<p>Point clouds are generally constructed in the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> class
+<p>Point clouds are generally constructed in the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> class
 and can easily have scalar/vector data arrays associated with the point
 cloud. In this example, we’ll work a bit backwards using a point cloud that
 that is available from our <code class="docutils literal notranslate"><span class="pre">examples</span></code> module. This however is no different
@@ -569,11 +569,11 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.</p
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81002875e+05, 4.40021040e+06, 1.75850000e+03],
-                 [4.81003275e+05, 4.40022910e+06, 1.75797998e+03],
-                 [4.80970375e+05, 4.40007940e+06, 1.78143005e+03],
-                 [4.81116275e+05, 4.40019450e+06, 1.76941003e+03],
-                 [4.81006775e+05, 4.40016560e+06, 1.76043994e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81096975e+05, 4.40019900e+06, 1.76942004e+03],
+                 [4.80957175e+05, 4.40016090e+06, 1.76052002e+03],
+                 [4.80966375e+05, 4.40011900e+06, 1.76266003e+03],
+                 [4.80954375e+05, 4.40013830e+06, 1.76193994e+03],
+                 [4.80991975e+05, 4.40017540e+06, 1.77162000e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -592,7 +592,7 @@ data or your own project, creating a PyVista mesh of those points:</p>
 <tr><td>N Strips</td><td>0</td></tr>
 <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
 <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-<tr><td>Z Bounds</td><td>1.754e+03, 1.785e+03</td></tr>
+<tr><td>Z Bounds</td><td>1.754e+03, 1.787e+03</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -600,7 +600,7 @@ data or your own project, creating a PyVista mesh of those points:</p>
 </div>
 <br />
 <br /><p>Now, perform a sanity check</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/devdocs/reference/generated/numpy.allclose.html#numpy.allclose" title="numpy.allclose" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">allclose</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">,</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.points.html#pyvista.PolyData.points" title="pyvista.PolyData.points" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">point_cloud</span><span class="o">.</span><span class="n">points</span></a><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/devdocs/reference/generated/numpy.allclose.html#numpy.allclose" title="numpy.allclose" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">allclose</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">,</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.points.html#pyvista.DataSet.points" title="pyvista.DataSet.points" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">point_cloud</span><span class="o">.</span><span class="n">points</span></a><span class="p">)</span>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>True
@@ -609,7 +609,7 @@ data or your own project, creating a PyVista mesh of those points:</p>
 <p>And now that we have a PyVista mesh, we can plot it. Note that we add an
 option to use eye dome lighting - this is a shading technique to improve
 depth perception with point clouds (learn more about <a class="reference external" href="https://docs.pyvista.org/examples/02-plot/edl.html">EDL</a>).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.plot.html#pyvista.PolyData.plot" title="pyvista.PolyData.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">point_cloud</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">eye_dome_lighting</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">point_cloud</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">eye_dome_lighting</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <img src="../../../_images/sphx_glr_b_create-point-cloud_001.png" srcset="../../../_images/sphx_glr_b_create-point-cloud_001.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p>Now what if you have data attributes (scalar/vector arrays) that you’d like
@@ -632,7 +632,7 @@ property of the mesh object to make an array of that length.</p>
 <p>And now we can plot the point cloud with that elevation data. PyVista is smart
 enough to plot the scalar array you added by default. Note that this time,
 we specify to render every point as its own sphere.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.plot.html#pyvista.PolyData.plot" title="pyvista.PolyData.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">point_cloud</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">point_cloud</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <img src="../../../_images/sphx_glr_b_create-point-cloud_002.png" srcset="../../../_images/sphx_glr_b_create-point-cloud_002.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p>That data is kind of boring, right? You can also add data arrays with
@@ -657,11 +657,11 @@ cloud and add those vectors to the mesh.</p>
 <span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[-0.12672416,  0.20047211, -0.97146895],
-                 [-0.32538568,  0.77755419,  0.53808331],
-                 [-0.12868652,  0.34327437,  0.9303776 ],
-                 [-0.1953793 , -0.92347223,  0.33019081],
-                 [ 0.36000499, -0.7855313 , -0.50332591]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.53395179,  0.63606699,  0.55705859],
+                 [-0.67979839, -0.33546025,  0.6521814 ],
+                 [ 0.73677052, -0.62136738, -0.26659291],
+                 [ 0.3249686 , -0.3717281 , -0.86960545],
+                 [-0.72097982,  0.66009544,  0.2108604 ]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the new mesh:</p>
@@ -670,7 +670,7 @@ cloud and add those vectors to the mesh.</p>
 </div>
 <p>Now we can make arrows using those vectors using the glyph filter
 (see <a class="reference external" href="https://docs.pyvista.org/examples/01-filter/glyphs.html">this example</a> for more details).</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arrows</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.glyph.html#pyvista.PolyData.glyph" title="pyvista.PolyData.glyph" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">point_cloud</span><span class="o">.</span><span class="n">glyph</span></a><span class="p">(</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arrows</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.glyph.html#pyvista.DataSetFilters.glyph" title="pyvista.DataSetFilters.glyph" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">point_cloud</span><span class="o">.</span><span class="n">glyph</span></a><span class="p">(</span>
     <span class="n">orient</span><span class="o">=</span><span class="s1">&#39;vectors&#39;</span><span class="p">,</span>
     <span class="n">scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">factor</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
@@ -678,15 +678,15 @@ cloud and add those vectors to the mesh.</p>
 
 <span class="c1"># Display the arrows</span>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">plotter</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">point_cloud</span></a><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;maroon&#39;</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arrows</span></a><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.BasePlotter.add_mesh.html#pyvista.BasePlotter.add_mesh" title="pyvista.BasePlotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">point_cloud</span></a><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;maroon&#39;</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">render_points_as_spheres</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.BasePlotter.add_mesh.html#pyvista.BasePlotter.add_mesh" title="pyvista.BasePlotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arrows</span></a><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">)</span>
 <span class="c1"># plotter.add_point_labels([point_cloud.center,], [&#39;Center&#39;,],</span>
 <span class="c1">#                          point_color=&#39;yellow&#39;, point_size=20)</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show_grid.html#pyvista.Plotter.show_grid" title="pyvista.Plotter.show_grid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">show_grid</span></a><span class="p">()</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.BasePlotter.show_grid.html#pyvista.BasePlotter.show_grid" title="pyvista.BasePlotter.show_grid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">show_grid</span></a><span class="p">()</span>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.444 seconds)</p>
+<img src="../../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.509 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-b-create-point-cloud-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/b_create-point-cloud.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo6.svg" width="150px" /></a>

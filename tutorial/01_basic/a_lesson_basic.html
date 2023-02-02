@@ -586,15 +586,15 @@ out, let’s load a file.</p>
 
 </div>
 <br />
-<br /><p>Note how this is a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a>, which is effectively a surface
+<br /><p>Note how this is a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a>, which is effectively a surface
 dataset containing points, lines, and/or faces. We can immediately plot this with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.plot.html#pyvista.UniformGrid.plot" title="pyvista.UniformGrid.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tan&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tan&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_a_lesson_basic_001.png" srcset="../../_images/sphx_glr_a_lesson_basic_001.png" alt="a lesson basic" class = "sphx-glr-single-img"/><p>This is a fairly basic plot. You can change how its plotted by adding
 parameters as <code class="docutils literal notranslate"><span class="pre">show_edges=True</span></code> or changing the color by setting <code class="docutils literal notranslate"><span class="pre">color</span></code> to
 a different value. All of this is described in PyVista’s API documentation in
-<a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.plot.html#pyvista.plot" title="(in PyVista v0.37.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.plot()</span></code></a>, but for now let’s take a look at another dataset. This
+<a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.plot.html#pyvista.plot" title="(in PyVista v0.38.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.plot()</span></code></a>, but for now let’s take a look at another dataset. This
 one is a volumetric dataset.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_frog</span><span class="p">()</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a>
@@ -623,11 +623,11 @@ one is a volumetric dataset.</p>
 </td></tr> </table>
 </div>
 <br />
-<br /><p>This is a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a>, which is a dataset containing a uniform
+<br /><p>This is a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a>, which is a dataset containing a uniform
 set of points with consistent spacing. When we plot this dataset, we have the
 option of enabling volumetric plotting, which plots individual cells based on
 the content of the data associated with those cells.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.plot.html#pyvista.UniformGrid.plot" title="pyvista.UniformGrid.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_a_lesson_basic_002.png" srcset="../../_images/sphx_glr_a_lesson_basic_002.png" alt="a lesson basic" class = "sphx-glr-single-img"/></section>
@@ -637,7 +637,7 @@ the content of the data associated with those cells.</p>
 your computer. This can be one of the many file formats that VTK supports, and
 many more that it doesn’t as PyVista can rely on libraries like <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a>.</p>
 <p>In the following example, we load VTK’s iron protein dataset <a class="reference external" href="https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk">ironProt.vtk</a> from a
-file using <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.37.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a>.</p>
+file using <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.38.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="pyvista.read" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">read</span></a><span class="p">(</span><span class="s1">&#39;ironProt.vtk&#39;</span><span class="p">)</span>
@@ -667,12 +667,12 @@ file using <a class="reference external" href="https://docs.pyvista.org/api/util
 </td></tr> </table>
 </div>
 <br />
-<br /><p>This is again a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> and we can plot it volumetrically
+<br /><p>This is again a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> and we can plot it volumetrically
 with:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.plot.html#pyvista.UniformGrid.plot" title="pyvista.UniformGrid.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_basic_003.png" srcset="../../_images/sphx_glr_a_lesson_basic_003.png" alt="a lesson basic" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.656 seconds)</p>
+<img src="../../_images/sphx_glr_a_lesson_basic_003.png" srcset="../../_images/sphx_glr_a_lesson_basic_003.png" alt="a lesson basic" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.235 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-01-basic-a-lesson-basic-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/01_basic/a_lesson_basic.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo1.svg" width="150px" /></a>

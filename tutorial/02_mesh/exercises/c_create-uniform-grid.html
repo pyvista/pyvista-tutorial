@@ -550,7 +550,7 @@ to download the full example code or to run this example in your browser via Bin
 </div>
 <p>Take a 3D NumPy array of data values that holds some spatial data where each
 axis corresponds to the XYZ cartesian axes. This example will create a
-<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> object that will hold the spatial reference for
+<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> object that will hold the spatial reference for
 a 3D grid which a 3D NumPy array of values can be plotted against.</p>
 <p>Create the 3D NumPy array of spatially referenced data.
 This is spatially referenced such that the grid is 20 by 5 by 10
@@ -585,7 +585,7 @@ This is spatially referenced such that the grid is 20 by 5 by 10
 </pre></div>
 </div>
 <p>Don’t like cell data? You could also add the NumPy array to the point data of
-a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a>. Take note of the subtle difference when
+a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a>. Take note of the subtle difference when
 setting the grid dimensions upon initialization.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the 3D NumPy array of spatially referenced data</span>
 <span class="c1"># This is spatially referenced such that the grid is 20 by 5 by 10</span>
@@ -617,7 +617,7 @@ setting the grid dimensions upon initialization.</p>
 </div>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
-<p>Now create your own <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> from a 3D NumPy array!</p>
+<p>Now create your own <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> from a 3D NumPy array!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span></a><span class="p">)</span>
 </pre></div>
 </div>
@@ -627,7 +627,7 @@ setting the grid dimensions upon initialization.</p>
 <span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
-<p>Create the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.37.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a></p>
+<p>Create the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a></p>
 <p>Hint, you will likely need to <code class="docutils literal notranslate"><span class="pre">ravel</span></code> the array with F-ordering:
 <code class="docutils literal notranslate"><span class="pre">arr.ravel(order=&quot;F&quot;)</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vol</span> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span></a><span class="p">()</span>
