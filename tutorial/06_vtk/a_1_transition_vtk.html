@@ -617,7 +617,7 @@ and “components” to describe the type of data (1 = scalars/scalar
 fields, 2 = vectors/vector fields, n = tensors/tensor
 fields). Here, shape and values are stored concretely in one
 variable.</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> wraps <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtk.vtkImageData</a>, just with a
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> wraps <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtk.vtkImageData</a>, just with a
 different name; they are both containers of evenly spaced points. Your
 data does not have to be an “image” to use it with
 <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtk.vtkImageData</a>; rather, like images, values in the dataset are
@@ -689,12 +689,12 @@ that to a  <a class="reference external" href="https://vtk.org/doc/nightly/html/
 <span class="nb">print</span><span class="p">(</span><span class="n">vtk_points</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vtkPoints (0x55c3eda02b40)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vtkPoints (0x557c435c5090)
   Debug: Off
-  Modified Time: 13184333
+  Modified Time: 13184080
   Reference Count: 1
   Registered Events: (none)
-  Data: 0x55c3f5299f30
+  Data: 0x557c464e37b0
   Data Array Name: Points
   Number Of Points: 3
   Bounds:
@@ -709,11 +709,11 @@ that to a  <a class="reference external" href="https://vtk.org/doc/nightly/html/
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.38.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> to construct a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a>
+<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.38.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> to construct a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a>
 object, but this is unnecessary in almost all situations.</p>
 </div>
-<p>Since the end goal is to construct a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span></code></a>, you would simply pass the
-<code class="docutils literal notranslate"><span class="pre">np_points</span></code> array to the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.38.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> constructor:</p>
+<p>Since the end goal is to construct a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="(in PyVista v0.38.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span></code></a>, you would simply pass the
+<code class="docutils literal notranslate"><span class="pre">np_points</span></code> array to the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.38.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> constructor:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">poly_data</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np_points</span></a><span class="p">)</span>
 </pre></div>
 </div>
@@ -735,7 +735,7 @@ VTK you would normally have to loop using <code class="xref py py-func docutils 
 </pre></div>
 </div>
 <p>In PyVista, we can assign this directly in the constructor and then
-access it (or change it) from the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="(in PyVista v0.38.0)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">faces</span></code></a> attribute.</p>
+access it (or change it) from the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="(in PyVista v0.38.1)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">faces</span></code></a> attribute.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">faces</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">poly_data</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np_points</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">faces</span></a><span class="p">)</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="pyvista.PolyData.faces" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">poly_data</span><span class="o">.</span><span class="n">faces</span></a>
@@ -774,7 +774,7 @@ example, it is more efficient to use the <a class="reference external" href="htt
 as the OBB tree is computed once for each mesh.  In most cases, pure
 PyVista is sufficient for most data science, but there are times when
 you may want to use VTK classes directly.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.975 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.744 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-a-1-transition-vtk-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/a_1_transition_vtk.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo14.svg" width="150px" /></a>
