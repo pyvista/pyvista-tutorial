@@ -115,7 +115,7 @@ Which is rendered as:
 
 Using the ``Trame`` backend with PyVista
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-PyVista supports the usage of the `trame <https://github.com/holoviz/trame>`_
+PyVista supports the usage of the `trame <https://github.com/Kitware/trame>`_
 library as a ``vtk.js`` jupyterlab plotting backend that can be utilized as
 either a standalone VTK viewer, or as a tightly integrated ``pyvista`` plotting
 backend.  For example, within a Jupyter notebook environment, you can pass
@@ -140,7 +140,7 @@ Which is shown within the documentation as:
 
 Examples and Usage
 ~~~~~~~~~~~~~~~~~~
-There are two ways to use `trame <https://github.com/holoviz/trame>`_ within
+There are two ways to use `trame <https://github.com/Kitware/trame>`_ within
 Jupyter notebooks.  You can use it on a plot by plot basis by setting the
 ``jupyter_backend`` in ``mesh.plot()``::
 
@@ -214,9 +214,9 @@ Which looks like:
 
 
 .. note::
-   You have the option of choosing `trame <https://github.com/holoviz/trame>`_
+   You have the option of choosing `trame <https://github.com/Kitware/trame>`_
    or `pythreejs <https://github.com/jupyter-widgets/pythreejs>`_ as a backend,
-   but you might find that `trame <https://github.com/holoviz/trame>`_ has
+   but you might find that `trame <https://github.com/Kitware/trame>`_ has
    better support as it's being actively developed.
 
 
