@@ -96,7 +96,7 @@ Will be rendered as:
 Likewise, output from PyVista that would normally be rendered within a notebook
 will be rendered in the output cell from the ``jupyter-execute`` directive. For
 example, here's a plot using the `trame
-<https://github.com/jupyter-widgets/trame>`_ backend::
+<https://github.com/Kitware/trame>`_ backend::
 
   .. jupyter-execute::
 
@@ -215,7 +215,7 @@ Which looks like:
 
 .. note::
    You have the option of choosing `trame <https://github.com/Kitware/trame>`_
-   or `trame <https://github.com/jupyter-widgets/trame>`_ as a backend,
+   or `trame <https://github.com/Kitware/trame>`_ as a backend,
    but you might find that `trame <https://github.com/Kitware/trame>`_ has
    better support as it's being actively developed.
 
