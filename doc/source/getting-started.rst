@@ -68,13 +68,13 @@ the following packages:
 
       .. code::
 
-         pip install jupyterlab pythreejs ipyvtklink panel
+         pip install jupyterlab trame
 
    .. tab:: conda
 
       .. code::
 
-         conda install -c conda-forge jupyterlab pythreejs ipyvtklink panel
+         conda install -c conda-forge jupyterlab trame
 
 
 You can then plot using Jupyterlab or Jupyter Notebook interactively with one of three backends:
