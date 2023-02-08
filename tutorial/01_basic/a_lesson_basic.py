@@ -10,10 +10,10 @@ using the `pyvista.examples.downloads
 module and external files.
 """
 
-# Configure for panel
+# Configure for trame
 import pyvista
 
-pyvista.set_jupyter_backend('panel')
+pyvista.set_jupyter_backend('trame')
 pyvista.set_plot_theme('document')
 
 

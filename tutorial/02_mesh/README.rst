@@ -53,9 +53,9 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
 .. jupyter-execute::
    :hide-code:
 
-   # Configure for panel
+   # Configure for trame
    import pyvista
-   pyvista.set_jupyter_backend('panel')
+   pyvista.set_jupyter_backend('trame')
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True

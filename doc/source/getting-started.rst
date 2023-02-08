@@ -104,7 +104,7 @@ You can then plot using Jupyterlab or Jupyter Notebook interactively with one of
 
          import pyvista as pv
          from pyvista import examples
-         pv.global_theme.jupyter_backend = 'panel'
+         pv.global_theme.jupyter_backend = 'trame'
 
          dataset = examples.download_lidar()
          dataset.plot(cmap="gist_earth")
