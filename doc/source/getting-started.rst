@@ -79,48 +79,20 @@ the following packages:
 
 You can then plot using Jupyterlab or Jupyter Notebook interactively with one of three backends:
 
-.. tabs::
+   .. jupyter-execute::
+      :hide-code:
 
-   .. tab:: trame
+      import pyvista as pv
+      pv.set_plot_theme('document')
+      pv.global_theme.jupyter_backend = 'static'
 
-      .. jupyter-execute::
-         :hide-code:
+   .. jupyter-execute::
 
-         import pyvista as pv
-         pv.set_plot_theme('document')
-         pv.global_theme.jupyter_backend = 'static'
+      import pyvista as pv
+      from pyvista import examples
 
-      .. jupyter-execute::
-
-         import pyvista as pv
-         from pyvista import examples
-
-         dataset = examples.download_lucy()
-         dataset.plot(smooth_shading=True, color='white')
-
-   .. tab:: panel
-
-      .. jupyter-execute::
-
-         import pyvista as pv
-         from pyvista import examples
-         pv.global_theme.jupyter_backend = 'trame'
-
-         dataset = examples.download_lidar()
-         dataset.plot(cmap="gist_earth")
-
-   .. tab:: trame
-
-      .. jupyter-execute::
-
-         import pyvista as pv
-         from pyvista import examples
-         pv.global_theme.jupyter_backend = 'trame'
-         pv.global_theme.window_size = (700, 300)
-         pv.global_theme.anti_aliasing = 'fxaa'
-
-         dataset = examples.download_cad_model()
-         dataset.plot(background='w', pbr=True, metallic=0.6, roughness=0.4, split_sharp_edges=True)
+      dataset = examples.download_lucy()
+      dataset.plot(smooth_shading=True, color='white')
 
 
 .. _colab:
