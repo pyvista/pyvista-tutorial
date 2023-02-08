@@ -95,14 +95,14 @@ Will be rendered as:
 
 Likewise, output from PyVista that would normally be rendered within a notebook
 will be rendered in the output cell from the ``jupyter-execute`` directive. For
-example, here's a plot using the `pythreejs
-<https://github.com/jupyter-widgets/pythreejs>`_ backend::
+example, here's a plot using the `trame
+<https://github.com/jupyter-widgets/trame>`_ backend::
 
   .. jupyter-execute::
 
      from pyvista import examples
      dataset = examples.download_urn()
-     dataset.plot(color='tan', jupyter_backend='pythreejs', window_size=(700, 400))
+     dataset.plot(color='tan', jupyter_backend='trame', window_size=(700, 400))
 
 Which is rendered as:
 
@@ -110,7 +110,7 @@ Which is rendered as:
 
    from pyvista import examples
    dataset = examples.download_urn()
-   dataset.plot(color='tan', jupyter_backend='pythreejs', window_size=(700, 400))
+   dataset.plot(color='tan', jupyter_backend='trame', window_size=(700, 400))
 
 
 Using the ``Trame`` backend with PyVista
@@ -215,7 +215,7 @@ Which looks like:
 
 .. note::
    You have the option of choosing `trame <https://github.com/Kitware/trame>`_
-   or `pythreejs <https://github.com/jupyter-widgets/pythreejs>`_ as a backend,
+   or `trame <https://github.com/jupyter-widgets/trame>`_ as a backend,
    but you might find that `trame <https://github.com/Kitware/trame>`_ has
    better support as it's being actively developed.
 
