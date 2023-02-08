@@ -81,7 +81,7 @@ You can then plot using Jupyterlab or Jupyter Notebook interactively with one of
 
 .. tabs::
 
-   .. tab:: ipyvtklink
+   .. tab:: trame
 
       .. jupyter-execute::
          :hide-code:
