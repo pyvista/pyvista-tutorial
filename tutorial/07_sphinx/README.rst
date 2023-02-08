@@ -113,7 +113,7 @@ Which is rendered as:
    dataset.plot(color='tan', jupyter_backend='pythreejs', window_size=(700, 400))
 
 
-Using the ``Panel`` backend with PyVista
+Using the ``Trame`` backend with PyVista
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 PyVista supports the usage of the `trame <https://github.com/holoviz/trame>`_
 library as a ``vtk.js`` jupyterlab plotting backend that can be utilized as
