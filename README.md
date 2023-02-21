@@ -41,7 +41,7 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 1. Basic usage (Alexander Kaszynski) - Reading and plotting 3D data using ``examples`` module and external files.  (10 min for talk, 10 min for exercise)
 
-2. What is a Mesh? (Bane Sullivan) - Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (20 min for talk, 10 min for exercise)
+2. What is a Mesh? (Alexander Kaszynski) - Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (20 min for talk, 10 min for exercise)
 
 3. PyVista & Jupyter (Bane Sullivan) - Demonstrate how to use PyVista in Jupyter for state-of-the-art 3D visualization in Notebooks. (15 min for talk, 10 for exercise)
 
@@ -49,15 +49,15 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 5. Plotting Options and Animations (Bane Sullivan) - Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations (15 min for talk, 20 min for exercise)
 
-6. Filters (Bane Sullivan) - Demonstrate the PyVista filters API to perform mesh analysis and alteration (15 minutes)
+6. Filters (Alexander Kaszynski) - Demonstrate the PyVista filters API to perform mesh analysis and alteration (15 minutes)
 
 7. PyVista in Action (Tetsuo Koyama) - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
 
-8. PyVista & VTK (Bane Sullivan) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 15 minutes for exercise)
+8. Quick break. Prepare for the final run. (10 minutes)
 
-9. Quick break. Prepare for the final run. (10 minutes)
+9. PyVista & VTK (Bane Sullivan) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 15 minutes for exercise)
 
-10. PyVista & Sphinx (Alexander Kaszynski) - Leverage PyVista to make some awesome interactive web documentation. (20 min for talk, 10 min for exercise)
+10. PyVista & Trame (Bane Sullivan) - Leverage PyVista and Trame to make awesome interactive web applications. (20 min for talk, 10 min for exercise)
 
 11. Open up to Questions. (15 minutes)
 
