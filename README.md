@@ -11,7 +11,7 @@ PyVista exposes a Pythonic API to the [Visualization Toolkit (VTK)](http://www.v
 
 We will provide a hands-on tutorial accessible to anyone with internet access and a computer via many of PyVista's existing [example Jupyter notebooks](https://docs.pyvista.org/examples/index.html) and new material through a comprehensive overview highlighting popular 3D visualization use cases.
 
-Out tutorial will demonstrate PyVista's latest capabilities and bring a wide range of users to the forefront of 3D visualizaion in Python.
+Our tutorial will demonstrate PyVista's latest capabilities and bring a wide range of users to the forefront of 3D visualization in Python.
 
 ## Keywords
 
@@ -75,7 +75,7 @@ In fact, our tutorial instructors and community members are involved in any doma
 
 1. Basic knowledge of Python to get started. Be able to install Jupyter Lab on your machine and be up and running.
 2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and [Matplotlib](https://matplotlib.org/) and perhaps other libraries that are compatible with PyVista, like [trimesh](https://trimsh.org/examples.html) or [meshio](https://github.com/nschloe/meshio).
-3. Advanced users should be familiar the Visualization Toolkit (VTK) and general data science.
+3. Advanced users should be familiar with the Visualization Toolkit (VTK) and general data science.
 
 ## Appropriate level of the attendees' Python knowledge
 
