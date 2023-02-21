@@ -71,24 +71,28 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
 
     Help on method add_mesh in module pyvista.plotting.plotting:
 
-    add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=5.0, line_width=None, opacity=1.0, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=True, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=False, smooth_shading=None, split_sharp_edges=None, ambient=0.0, diffuse=1.0, specular=0.0, specular_power=100.0, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=False, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference='point', log_scale=False, pbr=False, metallic=0.0, roughness=0.5, render=True, component=None, emissive=False, copy_mesh=False, backface_params=None, **kwargs) method of pyvista.plotting.plotting.Plotter instance
+    add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=None, line_width=None, opacity=None, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=None, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=None, smooth_shading=None, split_sharp_edges=None, ambient=None, diffuse=None, specular=None, specular_power=None, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=None, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference='point', log_scale=False, pbr=None, metallic=None, roughness=None, render=True, component=None, emissive=None, copy_mesh=False, backface_params=None, show_vertices=None, **kwargs) method of pyvista.plotting.plotting.Plotter instance
         Add any PyVista/VTK mesh or dataset that PyVista can wrap to the scene.
     
         This method is using a mesh representation to view the surfaces
         and/or geometry of datasets. For volume rendering, see
-        :func:`pyvista.BasePlotter.add_volume`.
+        :func:`pyvista.Plotter.add_volume`.
     
         To see the what most of the following parameters look like in action,
         please refer to :class:`pyvista.Property`.
     
         Parameters
         ----------
-        mesh : pyvista.DataSet or pyvista.MultiBlock
+        mesh : pyvista.DataSet or pyvista.MultiBlock or vtk.vtkAlgorithm
             Any PyVista or VTK mesh is supported. Also, any dataset
             that :func:`pyvista.wrap` can handle including NumPy
-            arrays of XYZ points.
+            arrays of XYZ points. Plotting also supports VTK algorithm
+            objects (``vtk.vtkAlgorithm`` and ``vtk.vtkAlgorithmOutput``).
+            When passing an algorithm, the rendering pipeline will be
+            connected to the passed algorithm to dynamically update
+            the scene.
     
-        color : color_like, optional
+        color : ColorLike, optional
             Use to make the entire mesh have a single solid color.
             Either a string, RGB list, or hex color string.  For example:
             ``color='white'``, ``color='w'``, ``color=[1.0, 1.0, 1.0]``, or
@@ -123,7 +127,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             Shows the edges of a mesh.  Does not apply to a wireframe
             representation.
     
-        edge_color : color_like, optional
+        edge_color : ColorLike, optional
             The solid color to give the edges when ``show_edges=True``.
             Either a string, RGB list, or hex color string.
     
@@ -186,7 +190,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
     
         label : str, optional
             String label to use when adding a legend to the scene with
-            :func:`pyvista.BasePlotter.add_legend`.
+            :func:`pyvista.Plotter.add_legend`.
     
         reset_camera : bool, optional
             Reset the camera after adding this mesh to the scene. The default
@@ -198,7 +202,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
         scalar_bar_args : dict, optional
             Dictionary of keyword arguments to pass when adding the
             scalar bar to the scene. For options, see
-            :func:`pyvista.BasePlotter.add_scalar_bar`.
+            :func:`pyvista.Plotter.add_scalar_bar`.
     
         show_scalar_bar : bool
             If ``False``, a scalar bar will not be added to the
@@ -257,7 +261,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
         specular_power : float, optional
             The specular power. Between 0.0 and 128.0.
     
-        nan_color : color_like, optional, defaults to gray
+        nan_color : ColorLike, optional, defaults to gray
             The color to use for all ``NaN`` values in the plotted
             scalar array.
     
@@ -291,7 +295,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             ``PolyData``.  As a ``dict``, it contains the properties
             of the silhouette to display:
     
-                * ``color``: ``color_like``, color of the silhouette
+                * ``color``: ``ColorLike``, color of the silhouette
                 * ``line_width``: ``float``, edge width
                 * ``opacity``: ``float`` between 0 and 1, edge transparency
                 * ``feature_angle``: If a ``float``, display sharp edges
@@ -302,15 +306,15 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             Invert the opacity mappings and make the values correspond
             to transparency.
     
-        below_color : color_like, optional
+        below_color : ColorLike, optional
             Solid color for values below the scalars range
             (``clim``). This will automatically set the scalar bar
-            ``below_label`` to ``'Below'``.
+            ``below_label`` to ``'below'``.
     
-        above_color : color_like, optional
+        above_color : ColorLike, optional
             Solid color for values below the scalars range
             (``clim``). This will automatically set the scalar bar
-            ``above_label`` to ``'Above'``.
+            ``above_label`` to ``'above'``.
     
         annotations : dict, optional
             Pass a dictionary of annotations. Keys are the float
@@ -356,7 +360,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             nonnegative, if supplied. If ``None``, the magnitude of
             the vector is plotted.
     
-        emissive : bool, default: False
+        emissive : bool, optional
             Treat the points/splats as emissive light sources. Only valid for
             ``style='points_gaussian'`` representation.
     
@@ -368,7 +372,8 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             would like to update the mesh after adding it to the plotter and
             have these updates rendered, e.g. by changing the active scalars or
             through an interactive widget. This should only be set to ``True``
-            with caution. Defaults to ``False``.
+            with caution. Defaults to ``False``. This is ignored if the input
+            is a ``vtkAlgorithm`` subclass.
     
         backface_params : dict or pyvista.Property, optional
             A :class:`pyvista.Property` or a dict of parameters to use for
@@ -381,8 +386,17 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             ``backface_params=None``) default to the corresponding frontface
             properties.
     
+        show_vertices : bool, optional
+            When ``style`` is not ``'points'``, render the external surface
+            vertices. The following optional keyword arguments may be used to
+            control the style of the vertices:
+    
+            * ``vertex_color`` - The color of the vertices
+            * ``vertex_style`` - Change style to ``'points_gaussian'``
+            * ``vertex_opacity`` - Control the opacity of the vertices
+    
         **kwargs : dict, optional
-            Optional developer keyword arguments.
+            Optional keyword arguments.
     
         Returns
         -------
@@ -607,7 +621,7 @@ There you go! Those are a few of the most commonly used display options!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.681 seconds)
+   **Total running time of the script:** ( 0 minutes  2.560 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py:

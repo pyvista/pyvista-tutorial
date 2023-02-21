@@ -550,7 +550,7 @@ to download the full example code or to run this example in your browser via Bin
 </div>
 <p>Take a 3D NumPy array of data values that holds some spatial data where each
 axis corresponds to the XYZ cartesian axes. This example will create a
-<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> object that will hold the spatial reference for
+<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> object that will hold the spatial reference for
 a 3D grid which a 3D NumPy array of values can be plotted against.</p>
 <p>Create the 3D NumPy array of spatially referenced data.
 This is spatially referenced such that the grid is 20 by 5 by 10
@@ -611,7 +611,7 @@ This is spatially referenced such that the grid is 20 by 5 by 10
 </pre></div>
 </div>
 <img src="../../../_images/sphx_glr_c_create-uniform-grid_001.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_001.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p>Don’t like cell data? You could also add the NumPy array to the point data of
-a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a>. Take note of the subtle difference when
+a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a>. Take note of the subtle difference when
 setting the grid dimensions upon initialization.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the 3D NumPy array of spatially referenced data</span>
 <span class="c1"># This is spatially referenced such that the grid is 20 by 5 by 10</span>
@@ -669,7 +669,7 @@ setting the grid dimensions upon initialization.</p>
 </div>
 <img src="../../../_images/sphx_glr_c_create-uniform-grid_002.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_002.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
-<p>Now create your own <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> from a 3D NumPy array!</p>
+<p>Now create your own <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> from a 3D NumPy array!</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span></a><span class="p">)</span>
 </pre></div>
 </div>
@@ -2680,28 +2680,79 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      It depends on the array&#39;s length, or specified mode.
  |
- |  cast_to_pointset(self, deep: bool = False) -&gt; &#39;pyvista.PointSet&#39;
- |      Get a new representation of this object as a :class:`pyvista.PointSet`.
+ |  cast_to_pointset(self, pass_cell_data: bool = False) -&gt; &#39;pyvista.PointSet&#39;
+ |      Extract the points of this dataset and return a :class:`pyvista.PointSet`.
  |
  |      Parameters
  |      ----------
- |      deep : bool, optional
- |          When ``True`` makes a full copy of the object.  When ``False``,
- |          performs a shallow copy where the points and data arrays are
- |          references to the original object.
+ |      pass_cell_data : bool, optional
+ |          Run the ``cell_data_to_point_data`` filter and pass cell data
+ |          fields to the new pointset.
  |
  |      Returns
  |      -------
  |      pyvista.PointSet
  |          Dataset cast into a :class:`pyvista.PointSet`.
  |
+ |      Notes
+ |      -----
+ |      This will produce a deep copy of the points and point/cell data of
+ |      the original mesh.
+ |
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; mesh = pyvista.Sphere()
+ |      &gt;&gt;&gt; mesh = pyvista.Wavelet()
  |      &gt;&gt;&gt; pointset = mesh.cast_to_pointset()
  |      &gt;&gt;&gt; type(pointset)
  |      &lt;class &#39;pyvista.core.pointset.PointSet&#39;&gt;
+ |
+ |  cast_to_poly_points(self, pass_cell_data: bool = False) -&gt; &#39;pyvista.PolyData&#39;
+ |      Extract the points of this dataset and return a :class:`pyvista.PolyData`.
+ |
+ |      Parameters
+ |      ----------
+ |      pass_cell_data : bool, optional
+ |          Run the ``cell_data_to_point_data`` filter and pass cell data
+ |          fields to the new pointset.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.PolyData
+ |          Dataset cast into a :class:`pyvista.PolyData`.
+ |
+ |      Notes
+ |      -----
+ |      This will produce a deep copy of the points and point/cell data of
+ |      the original mesh.
+ |
+ |      Examples
+ |      --------
+ |      &gt;&gt;&gt; from pyvista import examples
+ |      &gt;&gt;&gt; mesh = examples.load_uniform()
+ |      &gt;&gt;&gt; points = mesh.cast_to_poly_points(pass_cell_data=True)
+ |      &gt;&gt;&gt; type(points)
+ |      &lt;class &#39;pyvista.core.pointset.PolyData&#39;&gt;
+ |      &gt;&gt;&gt; points.n_arrays
+ |      2
+ |      &gt;&gt;&gt; points.point_data
+ |      pyvista DataSetAttributes
+ |      Association     : POINT
+ |      Active Scalars  : Spatial Point Data
+ |      Active Vectors  : None
+ |      Active Texture  : None
+ |      Active Normals  : None
+ |      Contains arrays :
+ |          Spatial Point Data      float64    (1000,)              SCALARS
+ |      &gt;&gt;&gt; points.cell_data
+ |      pyvista DataSetAttributes
+ |      Association     : CELL
+ |      Active Scalars  : None
+ |      Active Vectors  : None
+ |      Active Texture  : None
+ |      Active Normals  : None
+ |      Contains arrays :
+ |          Spatial Cell Data       float64    (1000,)
  |
  |  cast_to_unstructured_grid(self) -&gt; &#39;pyvista.UnstructuredGrid&#39;
  |      Get a new representation of this object as a :class:`pyvista.UnstructuredGrid`.
@@ -2724,8 +2775,11 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; type(grid)
  |      &lt;class &#39;pyvista.core.pointset.UnstructuredGrid&#39;&gt;
  |
- |  cell_bounds(self, ind: int) -&gt; Tuple[float, float, float, float, float, float]
+ |  cell_bounds(self, ind: int) -&gt; Tuple[Union[float, int, numpy.number], Union[float, int, numpy.number], Union[float, int, numpy.number], Union[float, int, numpy.number], Union[float, int, numpy.number], Union[float, int, numpy.number]]
  |      Return the bounding box of a cell.
+ |
+ |      ..  deprecated:: 0.38.0
+ |          Use :attr:`pyvista.Cell.bounds` instead.
  |
  |      Parameters
  |      ----------
@@ -2737,15 +2791,11 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      tuple(float)
  |          The limits of the cell in the X, Y and Z directions respectively.
  |
- |      Examples
- |      --------
- |      &gt;&gt;&gt; from pyvista import examples
- |      &gt;&gt;&gt; mesh = examples.load_airplane()
- |      &gt;&gt;&gt; mesh.cell_bounds(0)
- |      (896.9940185546875, 907.5390014648438, 48.760101318359375, 55.49020004272461, 80.74520111083984, 83.65809631347656)
- |
  |  cell_n_points(self, ind: int) -&gt; int
  |      Return the number of points in a cell.
+ |
+ |      .. deprecated:: 0.38.0
+ |          Use :attr:`pyvista.Cell.n_points` instead.
  |
  |      Parameters
  |      ----------
@@ -2757,15 +2807,11 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      int
  |          Number of points in the cell.
  |
- |      Examples
- |      --------
- |      &gt;&gt;&gt; from pyvista import examples
- |      &gt;&gt;&gt; mesh = examples.load_airplane()
- |      &gt;&gt;&gt; mesh.cell_n_points(0)
- |      3
- |
  |  cell_point_ids(self, ind: int) -&gt; List[int]
  |      Return the point ids in a cell.
+ |
+ |      .. deprecated:: 0.38.0
+ |          You can use :attr:`pyvista.Cell.point_ids` instead.
  |
  |      Parameters
  |      ----------
@@ -2777,20 +2823,11 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      list[int]
  |          Point Ids that are associated with the cell.
  |
- |      Examples
- |      --------
- |      &gt;&gt;&gt; from pyvista import examples
- |      &gt;&gt;&gt; mesh = examples.load_airplane()
- |      &gt;&gt;&gt; mesh.cell_type(0)
- |      5
- |
- |      Cell type 5 is a triangular cell with three points.
- |
- |      &gt;&gt;&gt; mesh.cell_point_ids(0)
- |      [0, 1, 2]
- |
  |  cell_points(self, ind: int) -&gt; numpy.ndarray
  |      Return the points in a cell.
+ |
+ |      ..  deprecated:: 0.38.0
+ |          Use :attr:`pyvista.Cell.points` instead.
  |
  |      Parameters
  |      ----------
@@ -2803,17 +2840,11 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          An array of floats with shape (number of points, 3) containing the coordinates of the
  |          cell corners.
  |
- |      Examples
- |      --------
- |      &gt;&gt;&gt; from pyvista import examples
- |      &gt;&gt;&gt; mesh = examples.load_airplane()
- |      &gt;&gt;&gt; mesh.cell_points(0)  # doctest:+SKIP
- |      [[896.99401855  48.76010132  82.26560211]
- |       [906.59301758  48.76010132  80.74520111]
- |       [907.53900146  55.49020004  83.65809631]]
- |
  |  cell_type(self, ind: int) -&gt; int
  |      Return the type of a cell.
+ |
+ |      .. deprecated:: 0.38.0
+ |          You can use :attr:`pyvista.Cell.type` instead.
  |
  |      Parameters
  |      ----------
@@ -2824,25 +2855,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      -------
  |      int
  |          VTK cell type. See `vtkCellType.h &lt;https://vtk.org/doc/nightly/html/vtkCellType_8h_source.html&gt;`_ .
- |
- |      Examples
- |      --------
- |      &gt;&gt;&gt; from pyvista import examples
- |      &gt;&gt;&gt; mesh = examples.load_airplane()
- |      &gt;&gt;&gt; mesh.cell_type(0)
- |      5
- |
- |  clear_arrays(self)
- |      Remove all arrays from point/cell/field data.
- |
- |      .. deprecated:: 0.32.0
- |          Use :func:`DataSet.clear_data` instead.
- |
- |  clear_cell_arrays(self)
- |      Remove all cell data.
- |
- |      .. deprecated:: 0.32.0
- |          Use :func:`DataSet.clear_cell_data` instead.
  |
  |  clear_cell_data(self)
  |      Remove all cell arrays.
@@ -2862,12 +2874,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; mesh.clear_data()
  |      &gt;&gt;&gt; mesh.point_data.keys()
  |      []
- |
- |  clear_point_arrays(self)
- |      Remove all point data.
- |
- |      .. deprecated:: 0.32.0
- |          Use :func:`DataSet.clear_point_data` instead.
  |
  |  clear_point_data(self)
  |      Remove all point arrays.
@@ -2900,13 +2906,16 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; globe.textures
  |      {}
  |
- |  copy_from(self, mesh: vtkmodules.vtkCommonDataModel.vtkDataSet)
+ |  copy_from(self, mesh: vtkmodules.vtkCommonDataModel.vtkDataSet, deep: bool = True)
  |      Overwrite this dataset inplace with the new dataset&#39;s geometries and data.
  |
  |      Parameters
  |      ----------
  |      mesh : vtk.vtkDataSet
  |          The overwriting mesh.
+ |
+ |      deep : bool, default: True
+ |          Whether to perform a deep or shallow copy.
  |
  |      Examples
  |      --------
@@ -3451,6 +3460,43 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; mesh.get_array_association(&#39;field-data&#39;)
  |      &lt;FieldAssociation.NONE: 2&gt;
  |
+ |  get_cell(self, index: int) -&gt; &#39;pyvista.Cell&#39;
+ |      Return a :class:`pyvista.Cell` object.
+ |
+ |      Parameters
+ |      ----------
+ |      index : int
+ |          Cell ID.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.Cell
+ |          The i-th pyvista.Cell.
+ |
+ |      Notes
+ |      -----
+ |      Cells returned from this method are deep copies of the original
+ |      cells. Changing properties (for example, ``points``) will not affect
+ |      the dataset they originated from.
+ |
+ |      Examples
+ |      --------
+ |      Get the 0-th cell.
+ |
+ |      &gt;&gt;&gt; from pyvista import examples
+ |      &gt;&gt;&gt; mesh = examples.load_airplane()
+ |      &gt;&gt;&gt; mesh.get_cell(0) # doctest:+SKIP
+ |      GenericCell (0x7f6304e0a730)
+ |        Type: CellType.TRIANGLE
+ |        Linear:       True
+ |        Dimension:    2
+ |        N Points:     3
+ |        N Faces:      0
+ |        N Edges:      3
+ |        X Bounds:     8.970e+02, 9.075e+02
+ |        Y Bounds:     4.876e+01, 5.549e+01
+ |        Z Bounds:     8.075e+01, 8.366e+01
+ |
  |  get_data_range(self, arr_var: Union[str, numpy.ndarray, NoneType] = None, preference=&#39;cell&#39;) -&gt; Tuple[Union[float, numpy.ndarray], Union[float, numpy.ndarray]]
  |      Get the non-NaN min and max of a named array.
  |
@@ -3481,7 +3527,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      mesh : vtk.vtkDataSet
  |          The overwriting mesh.
  |
- |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text=&#39;&#39;, return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, use_ipyvtk=None, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, hidden_line_removal=None, anti_aliasing=None, zoom=None, border=None, border_color=&#39;k&#39;, border_width=2.0, ssao=False, **kwargs)
+ |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text=&#39;&#39;, return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, hidden_line_removal=None, anti_aliasing=None, zoom=None, border=None, border_color=&#39;k&#39;, border_width=2.0, ssao=False, **kwargs)
  |      Plot a PyVista, numpy, or vtk object.
  |
  |      Parameters
@@ -3530,7 +3576,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          When ``True``, the resulting plot is placed inline a jupyter
  |          notebook.  Assumes a jupyter console is active.
  |
- |      background : color_like, optional
+ |      background : ColorLike, optional
  |          Color of the background.
  |
  |      text : str, optional
@@ -3548,11 +3594,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      parallel_projection : bool, optional
  |          Enable parallel projection.
- |
- |      use_ipyvtk : bool, optional
- |          Deprecated.  Instead, set the backend either globally with
- |          ``pyvista.set_jupyter_backend(&#39;ipyvtklink&#39;)`` or with
- |          ``backend=&#39;ipyvtklink&#39;``.
  |
  |      jupyter_backend : str, optional
  |          Jupyter notebook plotting backend to use.  One of the
@@ -3600,7 +3641,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      border : bool, optional
  |          Draw a border around each render window.  Default ``False``.
  |
- |      border_color : color_like, optional
+ |      border_color : ColorLike, optional
  |          Either a string, rgb list, or hex color string.  For example:
  |
  |              * ``color=&#39;white&#39;``
@@ -3681,7 +3722,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      --------
  |      &gt;&gt;&gt; from pyvista import examples
  |      &gt;&gt;&gt; mesh = examples.load_hexbeam()
- |      &gt;&gt;&gt; mesh.cell_bounds(0)
+ |      &gt;&gt;&gt; mesh.cell[0].bounds
  |      (0.0, 0.5, 0.0, 0.5, 0.0, 0.5)
  |      &gt;&gt;&gt; mesh.point_is_inside_cell(0, [0.2, 0.2, 0.2])
  |      True
@@ -4248,11 +4289,83 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; cube.bounds
  |      (-0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
  |
- |  cell_arrays
- |      Return vtkCellData as DataSetAttributes.
+ |  cell
+ |      Return a list of cells.
  |
- |      .. deprecated:: 0.32.0
- |          Use :attr:`DataSet.cell_data` to return cell data.
+ |      Returns
+ |      -------
+ |      list[pyvista.Cell]
+ |          A list of :class:`pyvista.Cell` objects.
+ |
+ |      Warnings
+ |      --------
+ |      For large meshes, the list can take some time to compute and you might
+ |      prefer to use the :func:`DataSet.get_cell` method within a for-loop.
+ |
+ |      Examples
+ |      --------
+ |      Get the last cell of a dataset.
+ |
+ |      &gt;&gt;&gt; from pyvista import examples
+ |      &gt;&gt;&gt; mesh = examples.load_hexbeam()
+ |      &gt;&gt;&gt; mesh.cell[-1] # doctest:+SKIP
+ |      Type: CellType.HEXAHEDRON
+ |      Linear: True
+ |      Dimension: 3
+ |      N Points: 8
+ |      N Faces: 6
+ |      N Edges: 12
+ |      X Bounds: 5.000e-01, 1.000e+00
+ |      Y Bounds: 5.000e-01, 1.000e+00
+ |      Z Bounds: 4.500e+00, 5.000e+00
+ |
+ |      Get the point ids of the last cell
+ |
+ |      &gt;&gt;&gt; mesh.cell[-1].point_ids
+ |      [98, 62, 53, 80, 17, 13, 12, 15]
+ |
+ |      Get the points coordinates of the last cell
+ |
+ |      &gt;&gt;&gt; mesh.cell[-1].points
+ |      array([[0.5, 0.5, 4.5],
+ |             [1. , 0.5, 4.5],
+ |             [1. , 1. , 4.5],
+ |             [0.5, 1. , 4.5],
+ |             [0.5, 0.5, 5. ],
+ |             [1. , 0.5, 5. ],
+ |             [1. , 1. , 5. ],
+ |             [0.5, 1. , 5. ]])
+ |
+ |      Get the point ids of the edges of the last cell.
+ |      Note that the `edges` attributes returns a generator of
+ |      `pyvista.Cell` objects.
+ |
+ |      &gt;&gt;&gt; for e in mesh.cell[-1].edges:
+ |      ...     print(e.point_ids)
+ |      [98, 62]
+ |      [62, 53]
+ |      [80, 53]
+ |      [98, 80]
+ |      [17, 13]
+ |      [13, 12]
+ |      [15, 12]
+ |      [17, 15]
+ |      [98, 17]
+ |      [62, 13]
+ |      [80, 15]
+ |      [53, 12]
+ |
+ |      Get the point ids of the faces of the last cell.
+ |
+ |      &gt;&gt;&gt; from pyvista.examples.cells import Tetrahedron
+ |      &gt;&gt;&gt; mesh = Tetrahedron()
+ |      &gt;&gt;&gt; cell = mesh.cell[-1]
+ |      &gt;&gt;&gt; for face in cell.faces:
+ |      ...     print(face.point_ids)
+ |      [0, 1, 3]
+ |      [1, 2, 3]
+ |      [2, 0, 3]
+ |      [0, 2, 1]
  |
  |  cell_data
  |      Return vtkCellData as DataSetAttributes.
@@ -4270,13 +4383,13 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; mesh.cell_data
  |      pyvista DataSetAttributes
  |      Association     : CELL
- |      Active Scalars  : my_other_array
+ |      Active Scalars  : my_array
  |      Active Vectors  : None
  |      Active Texture  : None
  |      Active Normals  : None
  |      Contains arrays :
- |          my_array                float64    (6,)
- |          my_other_array          int64      (6,)                 SCALARS
+ |          my_array                float64    (6,)                 SCALARS
+ |          my_other_array          int64      (6,)
  |
  |      Access an array from ``cell_data``.
  |
@@ -4354,12 +4467,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  number_of_points
  |      Return the number of points.
  |
- |  point_arrays
- |      Return vtkPointData as DataSetAttributes.
- |
- |      .. deprecated:: 0.32.0
- |          Use :attr:`DataSet.point_data` to return point data.
- |
  |  point_data
  |      Return vtkPointData as DataSetAttributes.
  |
@@ -4376,13 +4483,13 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; mesh.point_data
  |      pyvista DataSetAttributes
  |      Association     : POINT
- |      Active Scalars  : my_other_array
+ |      Active Scalars  : my_array
  |      Active Vectors  : None
  |      Active Texture  : None
  |      Active Normals  : None
  |      Contains arrays :
- |          my_array                float64    (8,)
- |          my_other_array          int64      (8,)                 SCALARS
+ |          my_array                float64    (8,)                 SCALARS
+ |          my_other_array          int64      (8,)
  |
  |      Access an array from ``point_data``.
  |
@@ -4494,19 +4601,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; mesh_w_normals.active_vectors_name = &#39;Normals&#39;
  |      &gt;&gt;&gt; mesh_w_normals.active_vectors_name
  |      &#39;Normals&#39;
- |
- |  t_coords
- |      Return the active texture coordinates on the points.
- |
- |      .. deprecated:: 0.32.0
- |          Use :attr:`DataSet.active_t_coords` to return the active
- |          texture coordinates.
- |
- |  vectors
- |      Return active vectors.
- |
- |      .. deprecated:: 0.32.0
- |         Use of `DataSet.vectors` to return vector data is deprecated.
  |
  |  ----------------------------------------------------------------------
  |  Methods inherited from pyvista.core.filters.uniform_grid.UniformGridFilters:
@@ -5055,7 +5149,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      See :ref:`cell_centers_example` for more examples using this filter.
  |
- |  cell_data_to_point_data(self, pass_cell_data=False, progress_bar=False, **kwargs)
+ |  cell_data_to_point_data(self, pass_cell_data=False, progress_bar=False)
  |      Transform cell data into point data.
  |
  |      Point data are specified per node and cell data specified
@@ -5075,9 +5169,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
- |
- |      **kwargs : dict, optional
- |          Depreciated keyword argument ``pass_cell_arrays``.
  |
  |      Returns
  |      -------
@@ -6296,10 +6387,14 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      See the :ref:`integrate_example` for more examples using this filter.
  |
- |  interpolate(self, target, sharpness=2, radius=1.0, strategy=&#39;null_value&#39;, null_value=0.0, n_points=None, pass_cell_data=True, pass_point_data=True, progress_bar=False, **kwargs)
+ |  interpolate(self, target, sharpness=2, radius=1.0, strategy=&#39;null_value&#39;, null_value=0.0, n_points=None, pass_cell_data=True, pass_point_data=True, progress_bar=False)
  |      Interpolate values onto this mesh from a given dataset.
  |
- |      The input dataset is typically a point cloud.
+ |      The input dataset is typically a point cloud. Only point data from
+ |      the source mesh will be interpolated onto points of this mesh. Whether
+ |      preexisting point and cell data of this mesh are preserved in the
+ |      output can be customized with the ``pass_point_data`` and
+ |      ``pass_cell_data`` parameters.
  |
  |      This uses a Gaussian interpolation kernel. Use the ``sharpness`` and
  |      ``radius`` parameters to adjust this kernel. You can also switch this
@@ -6350,10 +6445,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
- |
- |      **kwargs : dict, optional
- |          Depreciated keyword arguments ``pass_cell_arrays`` and
- |          ``pass_point_arrays``.
  |
  |      Returns
  |      -------
@@ -6497,60 +6588,60 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  partition(self, n_partitions, generate_global_id=False, as_composite=True)
  |      Break down input dataset into a requested number of partitions.
  |
- |       Cells on boundaries are uniquely assigned to each partition without duplication.
+ |      Cells on boundaries are uniquely assigned to each partition without duplication.
  |
- |       It uses a kdtree implementation that builds balances the cell
- |       centers among a requested number of partitions. The current implementation
- |       only supports power-of-2 target partition. If a non-power of two value
- |       is specified for ``n_partitions``, then the load balancing simply
- |       uses the power-of-two greater than the requested value
+ |      It uses a kdtree implementation that builds balances the cell
+ |      centers among a requested number of partitions. The current implementation
+ |      only supports power-of-2 target partition. If a non-power of two value
+ |      is specified for ``n_partitions``, then the load balancing simply
+ |      uses the power-of-two greater than the requested value
  |
- |       For more details, see `vtkRedistributeDataSetFilter
- |       &lt;https://vtk.org/doc/nightly/html/classvtkRedistributeDataSetFilter.html&gt;`_.
+ |      For more details, see `vtkRedistributeDataSetFilter
+ |      &lt;https://vtk.org/doc/nightly/html/classvtkRedistributeDataSetFilter.html&gt;`_.
  |
- |       Parameters
- |       ----------
- |       n_partitions : int
- |           Specify the number of partitions to split the input dataset
- |           into. Current implementation results in a number of partitions equal
- |           to the power of 2 greater than or equal to the chosen value.
+ |      Parameters
+ |      ----------
+ |      n_partitions : int
+ |          Specify the number of partitions to split the input dataset
+ |          into. Current implementation results in a number of partitions equal
+ |          to the power of 2 greater than or equal to the chosen value.
  |
- |       generate_global_id : bool, default: False
- |           Generate global cell ids if ``None`` are present in the input.  If
- |           global cell ids are present in the input then this flag is
- |           ignored.
+ |      generate_global_id : bool, default: False
+ |          Generate global cell ids if ``None`` are present in the input.  If
+ |          global cell ids are present in the input then this flag is
+ |          ignored.
  |
- |           This is stored as ``&quot;vtkGlobalCellIds&quot;`` within the ``cell_data``
- |           of the output dataset(s).
+ |          This is stored as ``&quot;vtkGlobalCellIds&quot;`` within the ``cell_data``
+ |          of the output dataset(s).
  |
- |       as_composite : bool, default: False
- |           Return the partitioned dataset as a :class:`pyvista.MultiBlock`.
+ |      as_composite : bool, default: False
+ |          Return the partitioned dataset as a :class:`pyvista.MultiBlock`.
  |
- |       Returns
- |       -------
+ |      Returns
+ |      -------
  |      pyvista.MultiBlock or pyvista.UnstructuredGrid
- |           UnStructuredGird if ``as_composite=False`` and MultiBlock when ``True``.
+ |          UnStructuredGird if ``as_composite=False`` and MultiBlock when ``True``.
  |
- |       Notes
- |       -----
- |       This filter requires ``vtk&gt;=9.0.0``.
+ |      Notes
+ |      -----
+ |      This filter requires ``vtk&gt;=9.0.0``.
  |
- |       Examples
- |       --------
- |       Partition a simple UniformGrid into a :class:`pyvista.MultiBlock`
- |       containing each partition.
+ |      Examples
+ |      --------
+ |      Partition a simple UniformGrid into a :class:`pyvista.MultiBlock`
+ |      containing each partition.
  |
- |       &gt;&gt;&gt; import pyvista as pv
- |       &gt;&gt;&gt; grid = pv.UniformGrid(dimensions=(5, 5, 5))
- |       &gt;&gt;&gt; out = grid.partition(4, as_composite=True)
- |       &gt;&gt;&gt; out.plot(multi_colors=True, show_edges=True)
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; grid = pv.UniformGrid(dimensions=(5, 5, 5))
+ |      &gt;&gt;&gt; out = grid.partition(4, as_composite=True)
+ |      &gt;&gt;&gt; out.plot(multi_colors=True, show_edges=True)
  |
- |       Partition of the Stanford bunny.
+ |      Partition of the Stanford bunny.
  |
- |       &gt;&gt;&gt; from pyvista import examples
- |       &gt;&gt;&gt; mesh = examples.download_bunny()
- |       &gt;&gt;&gt; out = mesh.partition(4, as_composite=True)
- |       &gt;&gt;&gt; out.plot(multi_colors=True, cpos=&#39;xy&#39;)
+ |      &gt;&gt;&gt; from pyvista import examples
+ |      &gt;&gt;&gt; mesh = examples.download_bunny()
+ |      &gt;&gt;&gt; out = mesh.partition(4, as_composite=True)
+ |      &gt;&gt;&gt; out.plot(multi_colors=True, cpos=&#39;xy&#39;)
  |
  |  plot_over_circular_arc(self, pointa, pointb, center, resolution=None, scalars=None, title=None, ylabel=None, figsize=None, figure=True, show=True, tolerance=None, fname=None, progress_bar=False)
  |      Sample a dataset along a circular arc and plot it.
@@ -6739,7 +6830,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      --------
  |      See the :ref:`plot_over_line_example` example.
  |
- |  point_data_to_cell_data(self, pass_point_data=False, progress_bar=False, **kwargs)
+ |  point_data_to_cell_data(self, pass_point_data=False, progress_bar=False)
  |      Transform point data into cell data.
  |
  |      Point data are specified per node and cell data specified within cells.
@@ -6754,9 +6845,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
- |
- |      **kwargs : dict, optional
- |          Depreciated keyword argument ``pass_point_arrays``.
  |
  |      Returns
  |      -------
@@ -6787,7 +6875,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; sphere = sphere.point_data_to_cell_data()
  |      &gt;&gt;&gt; sphere.plot()
  |
- |  probe(self, points, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None, **kwargs)
+ |  probe(self, points, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None)
  |      Sample data values at specified point locations.
  |
  |      This uses :class:`vtk.vtkProbeFilter`.
@@ -6820,10 +6908,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      locator : vtkAbstractCellLocator, optional
  |          Prototype cell locator to perform the ``FindCell()``
  |          operation.  This requires VTK 9.0.0 or newer.
- |
- |      **kwargs : dict, optional
- |          Depreciated keyword arguments ``pass_cell_arrays`` and
- |          ``pass_point_arrays``.
  |
  |      Returns
  |      -------
@@ -6905,7 +6989,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      See the :ref:`ref_reflect_example` for more examples using this filter.
  |
- |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, **kwargs)
+ |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False)
  |      Resample array data from a passed mesh onto this mesh.
  |
  |      This uses :class:`vtk.vtkResampleWithDataSet`.
@@ -6934,10 +7018,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      progress_bar : bool, optional
  |          Display a progress bar to indicate progress.
- |
- |      **kwargs : dict, optional
- |          Depreciated keyword arguments ``pass_cell_arrays`` and
- |          ``pass_point_arrays``.
  |
  |      Returns
  |      -------
@@ -8002,7 +8082,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      --------
  |      See :ref:`ref_texture_example`.
  |
- |  threshold(self, value=None, scalars=None, invert=False, continuous=False, preference=&#39;cell&#39;, all_scalars=False, progress_bar=False, component_mode=&#39;all&#39;, component=0)
+ |  threshold(self, value=None, scalars=None, invert=False, continuous=False, preference=&#39;cell&#39;, all_scalars=False, component_mode=&#39;all&#39;, component=0, method=&#39;upper&#39;, progress_bar=False)
  |      Apply a ``vtkThreshold`` filter to the input dataset.
  |
  |      This filter will apply a ``vtkThreshold`` filter to the input
@@ -8018,42 +8098,53 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |         thresholding depends on whether that point is part of a cell that
  |         is kept after thresholding.
  |
+ |         Please also note the default ``preference`` choice for CELL data
+ |         over POINT data. This is contrary to most other places in PyVista&#39;s
+ |         API where the preference typically defaults to POINT data. We chose
+ |         to prefer CELL data here so that if thresholding by a named array
+ |         that exists for both the POINT and CELL data, this filter will
+ |         default to the CELL data array while performing the CELL-wise
+ |         operation.
+ |
  |      Parameters
  |      ----------
  |      value : float or sequence, optional
- |          Single value or (min, max) to be used for the data threshold.  If
+ |          Single value or (min, max) to be used for the data threshold. If
  |          a sequence, then length must be 2. If no value is specified, the
  |          non-NaN data range will be used to remove any NaN values.
+ |          Please reference the ``method`` parameter for how single values
+ |          are handled.
  |
  |      scalars : str, optional
  |          Name of scalars to threshold on. Defaults to currently active scalars.
  |
- |      invert : bool, optional
- |          If value is a single value, when invert is ``True`` cells
- |          are kept when their values are below parameter ``&quot;value&quot;``.
- |          When invert is ``False`` cells are kept when their value is
- |          above the threshold ``&quot;value&quot;``.  Default is ``False``:
- |          yielding above the threshold ``&quot;value&quot;``.
+ |      invert : bool, default: False
+ |          Invert the threshold results. That is, cells that would have been
+ |          in the output with this option off are excluded, while cells that
+ |          would have been excluded from the output are included.
  |
- |      continuous : bool, optional
+ |          .. warning::
+ |              This option is only supported for VTK version 9+
+ |
+ |      continuous : bool, default: False
  |          When True, the continuous interval [minimum cell scalar,
  |          maximum cell scalar] will be used to intersect the threshold bound,
  |          rather than the set of discrete scalar values from the vertices.
  |
- |      preference : str, optional
+ |      preference : str, default: &#39;cell&#39;
  |          When ``scalars`` is specified, this is the preferred array
  |          type to search for in the dataset.  Must be either
- |          ``&#39;point&#39;`` or ``&#39;cell&#39;``.
+ |          ``&#39;point&#39;`` or ``&#39;cell&#39;``. Throughout PyVista, the preference
+ |          is typically ``&#39;point&#39;`` but since the threshold filter is a
+ |          cell-wise operation, we prefer cell data for thresholding
+ |          operations.
  |
- |      all_scalars : bool, optional
+ |      all_scalars : bool, default: False
  |          If using scalars from point data, all
  |          points in a cell must satisfy the threshold when this
  |          value is ``True``.  When ``False``, any point of the cell
  |          with a scalar value satisfying the threshold criterion
  |          will extract the cell. Has no effect when using cell data.
- |
- |      progress_bar : bool, optional
- |          Display a progress bar to indicate progress.
  |
  |      component_mode : {&#39;selected&#39;, &#39;all&#39;, &#39;any&#39;}
  |          The method to satisfy the criteria for the threshold of
@@ -8065,6 +8156,17 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      component : int, default: 0
  |          When using ``component_mode=&#39;selected&#39;``, this sets
  |          which component to threshold on.
+ |
+ |      method : str, default: &#39;upper&#39;
+ |          Set the threshold method for single-values, defining which
+ |          threshold bounds to use. If the ``value`` is a range, this
+ |          parameter will be ignored, extracting data between the two
+ |          values. For single values, ``&#39;lower&#39;`` will extract data
+ |          lower than the  ``value``. ``&#39;upper&#39;`` will extract data
+ |          larger than the ``value``.
+ |
+ |      progress_bar : bool, default: False
+ |          Display a progress bar to indicate progress.
  |
  |      Returns
  |      -------
@@ -8108,7 +8210,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      See :ref:`common_filter_example` for more examples using this filter.
  |
- |  threshold_percent(self, percent=0.5, scalars=None, invert=False, continuous=False, preference=&#39;cell&#39;, progress_bar=False)
+ |  threshold_percent(self, percent=0.5, scalars=None, invert=False, continuous=False, preference=&#39;cell&#39;, method=&#39;upper&#39;, progress_bar=False)
  |      Threshold the dataset by a percentage of its range on the active scalars array.
  |
  |      .. warning::
@@ -8127,25 +8229,36 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      scalars : str, optional
  |          Name of scalars to threshold on. Defaults to currently active scalars.
  |
- |      invert : bool, optional
- |          When invert is ``True`` cells are kept when their values are
- |          below the percentage of the range.  When invert is
- |          ``False``, cells are kept when their value is above the
- |          percentage of the range. Default is ``False``: yielding
- |          above the threshold ``&quot;value&quot;``.
+ |      invert : bool, default: False
+ |          Invert the threshold results. That is, cells that would have been
+ |          in the output with this option off are excluded, while cells that
+ |          would have been excluded from the output are included.
  |
- |      continuous : bool, optional
- |          When ``True``, the continuous interval [minimum cell scalar,
- |          maximum cell scalar] will be used to intersect the threshold
- |          bound, rather than the set of discrete scalar values from
- |          the vertices.
+ |          .. warning::
+ |              This option is only supported for VTK version 9+
  |
- |      preference : str, optional
+ |      continuous : bool, default: False
+ |          When True, the continuous interval [minimum cell scalar,
+ |          maximum cell scalar] will be used to intersect the threshold bound,
+ |          rather than the set of discrete scalar values from the vertices.
+ |
+ |      preference : str, default: &#39;cell&#39;
  |          When ``scalars`` is specified, this is the preferred array
  |          type to search for in the dataset.  Must be either
- |          ``&#39;point&#39;`` or ``&#39;cell&#39;``.
+ |          ``&#39;point&#39;`` or ``&#39;cell&#39;``. Throughout PyVista, the preference
+ |          is typically ``&#39;point&#39;`` but since the threshold filter is a
+ |          cell-wise operation, we prefer cell data for thresholding
+ |          operations.
  |
- |      progress_bar : bool, optional
+ |      method : str, default: &#39;upper&#39;
+ |          Set the threshold method for single-values, defining which
+ |          threshold bounds to use. If the ``value`` is a range, this
+ |          parameter will be ignored, extracting data between the two
+ |          values. For single values, ``&#39;lower&#39;`` will extract data
+ |          lower than the  ``value``. ``&#39;upper&#39;`` will extract data
+ |          larger than the ``value``.
+ |
+ |      progress_bar : bool, default: False
  |          Display a progress bar to indicate progress.
  |
  |      Returns
@@ -8387,12 +8500,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  __setstate__(self, state)
  |      Support unpickle.
  |
- |  add_field_array(self, scalars: numpy.ndarray, name: str, deep=True)
- |      Add field data.
- |
- |      .. deprecated:: 0.32.0
- |         Use :func:`DataObject.add_field_data` instead.
- |
  |  add_field_data(self, array: numpy.ndarray, name: str, deep=True)
  |      Add field data.
  |
@@ -8439,12 +8546,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; blocks.add_field_data([1, 2, 3], &#39;my-field-data&#39;)
  |      &gt;&gt;&gt; blocks.field_data[&#39;my-field-data&#39;]
  |      pyvista_ndarray([1, 2, 3])
- |
- |  clear_field_arrays(self)
- |      Remove all field data.
- |
- |      .. deprecated:: 0.32.0
- |          Use :func:`DataObject.clear_field_data` instead.
  |
  |  clear_field_data(self)
  |      Remove all field data.
@@ -8529,7 +8630,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      to_copy : pyvista.DataObject or vtk.vtkDataObject
  |          Data object to perform a deep copy from.
  |
- |  head(self, display=True, html: bool = None)
+ |  head(self, display=True, html=None)
  |      Return the header stats of this dataset.
  |
  |      If in IPython, this will be formatted to HTML. Otherwise
@@ -8606,12 +8707,6 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; mesh.actual_memory_size  # doctest:+SKIP
  |      93
  |
- |  field_arrays
- |      Return vtkFieldData as DataSetAttributes.
- |
- |      .. deprecated:: 0.32.0
- |          Use :attr:`DataObject.field_data` to return field data.
- |
  |  field_data
  |      Return FieldData as DataSetAttributes.
  |
@@ -8662,7 +8757,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(100, 100, 100)
 </pre></div>
 </div>
-<p>Create the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a></p>
+<p>Create the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a></p>
 <p>Hint, you will likely need to <code class="docutils literal notranslate"><span class="pre">ravel</span></code> the array with F-ordering:
 <code class="docutils literal notranslate"><span class="pre">arr.ravel(order=&quot;F&quot;)</span></code></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span></a><span class="p">()</span>
@@ -8692,7 +8787,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.173 seconds)</p>
+<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.195 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-c-create-uniform-grid-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/c_create-uniform-grid.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo6.svg" width="150px" /></a>
