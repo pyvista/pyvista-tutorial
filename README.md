@@ -1,4 +1,4 @@
-# PyVista Tutorial
+# 3D Visualization with PyVista
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -10,8 +10,6 @@
 PyVista exposes a Pythonic API to the [Visualization Toolkit (VTK)](http://www.vtk.org) to provide tooling that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of [Matplotlib](https://matplotlib.org/), with plugins to [Jupyter](https://jupyter.org/) to enable visualization of 3D data using both server- and client-side rendering.
 
 We will provide a hands-on tutorial accessible to anyone with internet access and a computer via many of PyVista's existing [example Jupyter notebooks](https://docs.pyvista.org/examples/index.html) and new material through a comprehensive overview highlighting popular 3D visualization use cases.
-
-Our tutorial will demonstrate PyVista's latest capabilities and bring a wide range of users to the forefront of 3D visualization in Python.
 
 ## Keywords
 
@@ -27,6 +25,8 @@ See our examples at [PyVista Examples](http://docs.pyvista.org/examples/index.ht
 PyVista is a [NumFOCUS Affiliated Project](https://numfocus.org/sponsored-projects/affiliated-projects)
 
 ### Tutorial Description
+
+Our tutorial will demonstrate PyVista's latest capabilities and bring a wide range of users to the forefront of 3D visualization in Python.
 
 - Use PyVista to create 3D visualizations from a variety of datasets in common formats.
 - Overview the classes and data structures of PyVista with real-world examples.
@@ -61,7 +61,6 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 11. Open up to Questions. (15 minutes)
 
-
 ### Additional Tutorial Information
 
 We will base the material for the tutorial on [the examples in PyVista's online documentation](https://docs.pyvista.org/examples/index.html).
@@ -71,7 +70,8 @@ The tutorial itself will be in the [pyvista/pyvista-tutorial](https://github.com
 ### Tutorial Prerequisites
 
 We see this tutorial catering to anyone who wants to visualize data in any domain, and this ranges from basic Python users to advanced power users.
-In fact, our tutorial instructors and community members are involved in any domain.
+
+In fact, our tutorial instructors and community members come from a diverse set of backgrounds.
 
 1. Basic knowledge of Python to get started. Be able to install Jupyter Lab on your machine and be up and running.
 2. Intermediate users will want to be familiar with [NumPy](https://numpy.org/) and [Matplotlib](https://matplotlib.org/) and perhaps other libraries that are compatible with PyVista, like [trimesh](https://trimsh.org/examples.html) or [meshio](https://github.com/nschloe/meshio).
