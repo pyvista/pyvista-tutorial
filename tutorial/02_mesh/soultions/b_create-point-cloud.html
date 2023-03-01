@@ -569,11 +569,11 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.</p
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81031075e+05, 4.40020730e+06, 1.75837000e+03],
-                 [4.80952475e+05, 4.40021350e+06, 1.76435999e+03],
-                 [4.81017975e+05, 4.40023520e+06, 1.76738000e+03],
-                 [4.81117875e+05, 4.40021450e+06, 1.76943994e+03],
-                 [4.80943975e+05, 4.40009220e+06, 1.77005005e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.80931375e+05, 4.40017840e+06, 1.76031995e+03],
+                 [4.81065875e+05, 4.40016710e+06, 1.76346997e+03],
+                 [4.81076075e+05, 4.40024220e+06, 1.75681995e+03],
+                 [4.81084475e+05, 4.40021080e+06, 1.76950000e+03],
+                 [4.81020075e+05, 4.40020170e+06, 1.76364001e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -592,7 +592,7 @@ data or your own project, creating a PyVista mesh of those points:</p>
 <tr><td>N Strips</td><td>0</td></tr>
 <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
 <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-<tr><td>Z Bounds</td><td>1.754e+03, 1.785e+03</td></tr>
+<tr><td>Z Bounds</td><td>1.754e+03, 1.787e+03</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -657,11 +657,11 @@ cloud and add those vectors to the mesh.</p>
 <span class="n">vectors</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[-0.25440135,  0.75828094,  0.6002416 ],
-                 [-0.13227407,  0.70494233, -0.69682127],
-                 [-0.81016511, -0.16454776, -0.56263357],
-                 [-0.38823338,  0.67391242, -0.62858325],
-                 [ 0.43293146,  0.63907816, -0.6357275 ]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.63333681, -0.47855977,  0.6081653 ],
+                 [-0.6840051 , -0.46665155, -0.56069007],
+                 [-0.60785206,  0.4212105 , -0.67312524],
+                 [-0.73309093, -0.54664048,  0.40467502],
+                 [-0.23204105,  0.47979379, -0.84614117]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the new mesh:</p>
@@ -686,7 +686,7 @@ cloud and add those vectors to the mesh.</p>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.033 seconds)</p>
+<img src="../../../_images/sphx_glr_b_create-point-cloud_003.png" srcset="../../../_images/sphx_glr_b_create-point-cloud_003.png" alt="b create point cloud" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.375 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-b-create-point-cloud-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/b_create-point-cloud.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo6.svg" width="150px" /></a>
