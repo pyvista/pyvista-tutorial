@@ -118,7 +118,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             ``color`` and ``scalars`` are ``None``, then the active
             scalars are used.
     
-        clim : 2 item list, optional
+        clim : Sequence[float, float], optional
             Color bar range for scalars.  Defaults to minimum and
             maximum of scalars array.  Example: ``[-1, 2]``. ``rng``
             is also an accepted alias for this.
@@ -261,7 +261,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
         specular_power : float, optional
             The specular power. Between 0.0 and 128.0.
     
-        nan_color : ColorLike, optional, defaults to gray
+        nan_color : ColorLike, optional
             The color to use for all ``NaN`` values in the plotted
             scalar array.
     
@@ -621,7 +621,7 @@ There you go! Those are a few of the most commonly used display options!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.245 seconds)
+   **Total running time of the script:** ( 0 minutes  2.462 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py:

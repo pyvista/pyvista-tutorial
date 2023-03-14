@@ -2512,7 +2512,8 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      Returns
      |      -------
      |      int
-     |          VTK cell type. See `vtkCellType.h <https://vtk.org/doc/nightly/html/vtkCellType_8h_source.html>`_ .
+     |          VTK cell type. See `vtkCellType.h
+     |          <https://vtk.org/doc/nightly/html/vtkCellType_8h_source.html>`_ .
      |  
      |  clear_cell_data(self)
      |      Remove all cell arrays.
@@ -3087,7 +3088,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      
      |      Returns
      |      -------
-     |      pyvista.FieldAssociation
+     |      pyvista.utilities.helpers.FieldAssociation
      |          Field association of the array.
      |      
      |      Examples
@@ -3314,7 +3315,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |          Enable surface space ambient occlusion (SSAO). See
      |          :func:`Plotter.enable_ssao` for more details.
      |      
-     |      **kwargs : optional keyword arguments
+     |      **kwargs : dict, optional
      |          See :func:`pyvista.Plotter.add_mesh` for additional options.
      |      
      |      Returns
@@ -3336,7 +3337,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |          * [Window height x Window width x 4] if the theme sets
      |            ``transparent_background=True``.
      |      
-     |      widget
+     |      widget : ipywidgets.Widget
      |          IPython widget when ``return_viewer=True``.
      |      
      |      Examples
@@ -3662,7 +3663,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      
      |      Returns
      |      -------
-     |      pyvista.FieldAssociation
+     |      pyvista.utilities.helpers.FieldAssociation
      |          Association of the scalars matching ``name``.
      |      
      |      numpy.ndarray
@@ -4385,9 +4386,10 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      
      |      Notes
      |      -----
-     |      This filter only supports point data. Consider converting any cell
-     |      data to point data using the :func:`DataSet.cell_data_to_point_data`
-     |      filter to convert any cell data to point data.
+     |      This filter only supports point data. Consider converting any cell data
+     |      to point data using the :func:`cell_data_to_point_data()
+     |      <pyvista.DataSetFilters.cell_data_to_point_data>` filter to convert any
+     |      cell data to point data.
      |      
      |      Examples
      |      --------
@@ -4430,13 +4432,13 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      
      |      Parameters
      |      ----------
-     |      x_cutoff : double
+     |      x_cutoff : float
      |          The cutoff frequency for the x axis.
      |      
-     |      y_cutoff : double
+     |      y_cutoff : float
      |          The cutoff frequency for the y axis.
      |      
-     |      z_cutoff : double
+     |      z_cutoff : float
      |          The cutoff frequency for the z axis.
      |      
      |      order : int, optional
@@ -4500,9 +4502,10 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      
      |      Notes
      |      -----
-     |      This filter only supports point data. Consider converting any cell
-     |      data to point data using the :func:`DataSet.cell_data_to_point_data`
-     |      filter to convert ny cell data to point data.
+     |      This filter only supports point data. Consider converting any cell data
+     |      to point data using the :func:`cell_data_to_point_data()
+     |      <pyvista.DataSetFilters.cell_data_to_point_data>` filter to convert ny
+     |      cell data to point data.
      |      
      |      Examples
      |      --------
@@ -4608,13 +4611,13 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      
      |      Parameters
      |      ----------
-     |      x_cutoff : double
+     |      x_cutoff : float
      |          The cutoff frequency for the x axis.
      |      
-     |      y_cutoff : double
+     |      y_cutoff : float
      |          The cutoff frequency for the y axis.
      |      
-     |      z_cutoff : double
+     |      z_cutoff : float
      |          The cutoff frequency for the z axis.
      |      
      |      order : int, optional
@@ -6278,7 +6281,7 @@ Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
      |      Returns
      |      -------
      |      pyvista.MultiBlock or pyvista.UnstructuredGrid
-     |          UnStructuredGird if ``as_composite=False`` and MultiBlock when ``True``.
+     |          UnStructuredGrid if ``as_composite=False`` and MultiBlock when ``True``.
      |      
      |      Notes
      |      -----
@@ -8530,7 +8533,7 @@ See the PyVista documentation for further details on
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.528 seconds)
+   **Total running time of the script:** ( 0 minutes  6.331 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_soultions_c_create-uniform-grid.py:

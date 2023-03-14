@@ -546,7 +546,7 @@ to download the full example code or to run this example in your browser via Bin
 <p>Use a class based callback to track multiple slider widgets for updating a
 single mesh.</p>
 <p>In this example we simply change a few parameters for the
-<a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Sphere.html#pyvista.Sphere" title="(in PyVista v0.38.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Sphere()</span></code></a> method, but this could easily be applied to any
+<a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Sphere.html#pyvista.Sphere" title="(in PyVista v0.38.4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Sphere()</span></code></a> method, but this could easily be applied to any
 mesh-generating/altering code.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 
@@ -577,8 +577,8 @@ mesh-generating/altering code.</p>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.BasePlotter.add_mesh.html#pyvista.BasePlotter.add_mesh" title="pyvista.BasePlotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">starting_mesh</span></a><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a><span class="o">.</span><span class="n">add_slider_widget</span><span class="p">(</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">starting_mesh</span></a><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_slider_widget.html#pyvista.Plotter.add_slider_widget" title="pyvista.Plotter.add_slider_widget" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_slider_widget</span></a><span class="p">(</span>
     <span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">value</span><span class="p">:</span> <span class="n">engine</span><span class="p">(</span><span class="s1">&#39;phi_resolution&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)),</span>
     <span class="n">rng</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
     <span class="n">value</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
@@ -587,7 +587,7 @@ mesh-generating/altering code.</p>
     <span class="n">pointb</span><span class="o">=</span><span class="p">(</span><span class="mf">0.31</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
     <span class="n">style</span><span class="o">=</span><span class="s1">&#39;modern&#39;</span><span class="p">,</span>
 <span class="p">)</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a><span class="o">.</span><span class="n">add_slider_widget</span><span class="p">(</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_slider_widget.html#pyvista.Plotter.add_slider_widget" title="pyvista.Plotter.add_slider_widget" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_slider_widget</span></a><span class="p">(</span>
     <span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">value</span><span class="p">:</span> <span class="n">engine</span><span class="p">(</span><span class="s1">&#39;theta_resolution&#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)),</span>
     <span class="n">rng</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">60</span><span class="p">],</span>
     <span class="n">value</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span>
@@ -596,7 +596,7 @@ mesh-generating/altering code.</p>
     <span class="n">pointb</span><span class="o">=</span><span class="p">(</span><span class="mf">0.64</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">),</span>
     <span class="n">style</span><span class="o">=</span><span class="s1">&#39;modern&#39;</span><span class="p">,</span>
 <span class="p">)</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a><span class="o">.</span><span class="n">add_slider_widget</span><span class="p">(</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_slider_widget.html#pyvista.Plotter.add_slider_widget" title="pyvista.Plotter.add_slider_widget" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_slider_widget</span></a><span class="p">(</span>
     <span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">value</span><span class="p">:</span> <span class="n">engine</span><span class="p">(</span><span class="s1">&#39;radius&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
     <span class="n">rng</span><span class="o">=</span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">],</span>
     <span class="n">value</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
@@ -608,13 +608,13 @@ mesh-generating/altering code.</p>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_d_multi-slider-widget_001.png" srcset="../../_images/sphx_glr_d_multi-slider-widget_001.png" alt="d multi slider widget" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/pyvista/core/dataset.py:2013: PyVistaDeprecationWarning: Use of `DataSet.overwrite` is deprecated. Use `DataSet.copy_from` instead.
+<img src="../../_images/sphx_glr_d_multi-slider-widget_001.png" srcset="../../_images/sphx_glr_d_multi-slider-widget_001.png" alt="d multi slider widget" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/pyvista/core/dataset.py:2020: PyVistaDeprecationWarning: Use of `DataSet.overwrite` is deprecated. Use `DataSet.copy_from` instead.
   warnings.warn(
 </pre></div>
 </div>
 <p>And here is a screen capture of a user interacting with this</p>
 <img alt="../../_images/multiple-slider-widget.gif" src="../../_images/multiple-slider-widget.gif" />
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.187 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.209 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-08-widgets-d-multi-slider-widget-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/08_widgets/d_multi-slider-widget.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo15.svg" width="150px" /></a>
