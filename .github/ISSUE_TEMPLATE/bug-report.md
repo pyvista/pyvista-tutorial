@@ -9,7 +9,7 @@ assignees: ''
 
 **Describe the bug, what's wrong, and what you expect:**
 
-A clear and concise description of what the bug is. 
+A clear and concise description of what the bug is.
 
 A clear and concise description of what you expected to happen.
 
