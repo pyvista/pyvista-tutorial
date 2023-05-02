@@ -1,5 +1,5 @@
 cmocean
-flask==2.2.2
+flask==2.3.2
 imageio>=2.5.0
 imageio-ffmpeg
 ipyvtklink
