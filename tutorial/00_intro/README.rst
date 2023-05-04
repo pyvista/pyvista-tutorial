@@ -98,7 +98,7 @@ simple surface mesh:
    pyvista.global_theme.anti_aliasing = 'fxaa'
 
 
-**Load and plot a surface dataset** 
+**Load and plot a surface dataset**
 
 +-------------------------------------------+-------------------------------------+
 | Using ``vtk``                             | Using PyVista                       |
