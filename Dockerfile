@@ -1,4 +1,4 @@
-FROM ghcr.io/pyvista/pyvista:v0.38.5
+FROM ghcr.io/pyvista/pyvista:v0.38.6
 MAINTAINER "PyVista Developers"
 SHELL ["/bin/bash", "-c"]
 
