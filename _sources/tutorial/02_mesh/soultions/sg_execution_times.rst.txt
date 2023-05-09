@@ -5,14 +5,14 @@
 
 Computation times
 =================
-**00:19.153** total execution time for **tutorial_02_mesh_soultions** files:
+**00:13.334** total execution time for **tutorial_02_mesh_soultions** files:
 
 +----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_soultions_b_create-point-cloud.py` (``b_create-point-cloud.py``)   | 00:07.529 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_soultions_b_create-point-cloud.py` (``b_create-point-cloud.py``)   | 00:05.510 | 0.0 MB |
 +----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_soultions_c_create-uniform-grid.py` (``c_create-uniform-grid.py``) | 00:07.512 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_soultions_c_create-uniform-grid.py` (``c_create-uniform-grid.py``) | 00:05.168 | 0.0 MB |
 +----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_soultions_e_read-file.py` (``e_read-file.py``)                     | 00:03.226 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_soultions_e_read-file.py` (``e_read-file.py``)                     | 00:01.968 | 0.0 MB |
 +----------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_soultions_d_create-tri-surface.py` (``d_create-tri-surface.py``)   | 00:00.886 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_soultions_d_create-tri-surface.py` (``d_create-tri-surface.py``)   | 00:00.687 | 0.0 MB |
 +----------------------------------------------------------------------------------------------------+-----------+--------+
