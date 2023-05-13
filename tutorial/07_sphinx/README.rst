@@ -154,7 +154,6 @@ Jupyter notebooks.  You can use it on a plot by plot basis by setting the
        point_cloud = pv.PolyData(dataset.points[::100])
        point_cloud['height'] = point_cloud.points[:, 2]
        point_cloud.plot(window_size=[500, 500],
-                        jupyter_backend='trame',
                         cmap='jet',
                         point_size=2,
                         background='w')
@@ -171,7 +170,6 @@ And here's the resulting output in Sphinx:
     point_cloud = pv.PolyData(dataset.points[::100])
     point_cloud['height'] = point_cloud.points[:, 2]
     point_cloud.plot(window_size=[500, 500],
-                     jupyter_backend='trame',
                      cmap='jet',
                      point_size=2,
                      background='w')
@@ -188,13 +186,11 @@ Or you can first hide code that sets up the plotting backend and global theme::
        # Set the global jupyterlab backend.  All plots from this point
        # onward will use the ``trame`` backend and do not have to be
        # specified in ``show``
-       pv.set_jupyter_backend('trame')
 
 .. jupyter-execute::
    :hide-code:
 
    import pyvista as pv
-   pv.set_jupyter_backend('trame')
 
 And now just directly execute ``plot`` on any dataset::
 

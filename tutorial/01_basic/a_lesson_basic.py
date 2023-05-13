@@ -13,7 +13,6 @@ module and external files.
 # Configure for trame
 import pyvista
 
-pyvista.set_jupyter_backend('trame')
 pyvista.set_plot_theme('document')
 
 
