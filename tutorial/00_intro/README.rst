@@ -37,8 +37,8 @@ layer that "wraps" the lower level functionality of VTK.
   https://doi.org/10.21105/joss.01450 <https://joss.theoj.org/papers/10.21105/joss.01450>`_
 - Over 100+ contributors and `~1.4k Stars
   <https://github.com/pyvista/pyvista/stargazers>`_ on GitHub in 2022!
-- `~1.6k Stars
-  <https://github.com/pyvista/pyvista/stargazers>`_ and `~1.0k Used by <https://github.com/pyvista/pyvista/network/dependents>`_ on GitHub now!
+- `~1.8k Stars
+  <https://github.com/pyvista/pyvista/stargazers>`_ and `~1.7k Used by <https://github.com/pyvista/pyvista/network/dependents>`_ on GitHub now!
 - Greatly expanded internal presence and continuing support thanks to
 
   - `@tkoyama010 <https://github.com/tkoyama010>`_
