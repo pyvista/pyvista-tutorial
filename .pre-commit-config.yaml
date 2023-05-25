@@ -37,7 +37,7 @@ repos:
     exclude: ^pyvista/ext/
 
 - repo: https://github.com/asottile/pyupgrade
-  rev: v3.3.2
+  rev: v3.4.0
   hooks:
   - id: pyupgrade
     args: [--py37-plus, --keep-runtime-typing]
@@ -50,9 +50,10 @@ repos:
   - id: no-commit-to-branch
     args: [--branch, main]
   - id: requirements-txt-fixer
+  - id: trailing-whitespace
+    exclude: ^(|doc/source/_static/*)
 
-# this validates our github workflow files
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.22.0
+  rev: 0.23.0
   hooks:
     - id: check-github-workflows
