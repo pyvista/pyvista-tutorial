@@ -89,17 +89,17 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
     
         Parameters
         ----------
-        orient : bool or str, optional
+        orient : bool | str, default: True
             If ``True``, use the active vectors array to orient the glyphs.
             If string, the vector array to use to orient the glyphs.
             If ``False``, the glyphs will not be orientated.
     
-        scale : bool, str or sequence, optional
+        scale : bool | str | sequence[float], default: True
             If ``True``, use the active scalars to scale the glyphs.
             If string, the scalar array to use to scale the glyphs.
             If ``False``, the glyphs will not be scaled.
     
-        factor : float, optional
+        factor : float, default: 1.0
             Scale factor applied to scaling array.
     
         geom : vtk.vtkDataSet or tuple(vtk.vtkDataSet), optional
@@ -110,7 +110,7 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
             ``indices``. The values of the range (see ``rng``) affect lookup
             in the table.
     
-        indices : tuple(float), optional
+        indices : sequence[float], optional
             Specifies the index of each glyph in the table for lookup in case
             ``geom`` is a sequence. If given, must be the same length as
             ``geom``. If missing, a default value of ``range(len(geom))`` is
@@ -123,17 +123,17 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
             is ``True`` then the tolerance can be an absolute distance.
             If ``None``, points merging as a preprocessing step is disabled.
     
-        absolute : bool, optional
+        absolute : bool, default: False
             Control if ``tolerance`` is an absolute distance or a fraction.
     
-        clamping : bool, optional
-            Turn on/off clamping of "scalar" values to range. Default ``False``.
+        clamping : bool, default: False
+            Turn on/off clamping of "scalar" values to range.
     
-        rng : tuple(float), optional
+        rng : sequence[float], optional
             Set the range of values to be considered by the filter
             when scalars values are provided.
     
-        progress_bar : bool, optional
+        progress_bar : bool, default: False
             Display a progress bar to indicate progress.
     
         Returns
@@ -149,11 +149,17 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
         >>> import pyvista
         >>> from pyvista import examples
         >>> mesh = examples.load_random_hills()
-        >>> arrows = mesh.glyph(scale="Normals", orient="Normals", tolerance=0.05)
+        >>> arrows = mesh.glyph(
+        ...     scale="Normals", orient="Normals", tolerance=0.05
+        ... )
         >>> pl = pyvista.Plotter()
         >>> actor = pl.add_mesh(arrows, color="black")
-        >>> actor = pl.add_mesh(mesh, scalars="Elevation", cmap="terrain",
-        ...                     show_scalar_bar=False)
+        >>> actor = pl.add_mesh(
+        ...     mesh,
+        ...     scalars="Elevation",
+        ...     cmap="terrain",
+        ...     show_scalar_bar=False,
+        ... )
         >>> pl.show()
     
         See :ref:`glyph_example` and :ref:`glyph_table_example` for more
@@ -300,7 +306,7 @@ Plot the arrows and the sphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.846 seconds)
+   **Total running time of the script:** ( 0 minutes  0.845 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py:

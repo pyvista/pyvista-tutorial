@@ -571,40 +571,40 @@ contour(isosurfaces=10, scalars=None, compute_normals=False, compute_gradients=F
 
     Parameters
     ----------
-    isosurfaces : int or sequence, optional
+    isosurfaces : int | sequence[float], optional
         Number of isosurfaces to compute across valid data range or a
         sequence of float values to explicitly use as the isosurfaces.
 
-    scalars : str, collections.abc.Sequence, numpy.ndarray, optional
+    scalars : str | array_like[float], optional
         Name or array of scalars to threshold on. If this is an array, the
         output of this filter will save them as ``&quot;Contour Data&quot;``.
         Defaults to currently active scalars.
 
-    compute_normals : bool, optional
+    compute_normals : bool, default: False
         Compute normals for the dataset.
 
-    compute_gradients : bool, optional
+    compute_gradients : bool, default: False
         Compute gradients for the dataset.
 
-    compute_scalars : bool, optional
+    compute_scalars : bool, default: True
         Preserves the scalar values that are being contoured.
 
-    rng : tuple(float), optional
+    rng : sequence[float], optional
         If an integer number of isosurfaces is specified, this is
         the range over which to generate contours. Default is the
         scalars array&#39;s full data range.
 
-    preference : str, optional
+    preference : str, default: &quot;point&quot;
         When ``scalars`` is specified, this is the preferred array
         type to search for in the dataset.  Must be either
         ``&#39;point&#39;`` or ``&#39;cell&#39;``.
 
-    method : str, optional
+    method : str, default:  &quot;contour&quot;
         Specify to choose which vtk filter is used to create the contour.
         Must be one of ``&#39;contour&#39;``, ``&#39;marching_cubes&#39;`` and
-        ``&#39;flying_edges&#39;``. Defaults to ``&#39;contour&#39;``.
+        ``&#39;flying_edges&#39;``.
 
-    progress_bar : bool, optional
+    progress_bar : bool, default: False
         Display a progress bar to indicate progress.
 
     Returns
@@ -627,29 +627,38 @@ contour(isosurfaces=10, scalars=None, compute_normals=False, compute_gradients=F
     &gt;&gt;&gt; a = 0.4
     &gt;&gt;&gt; b = 0.1
     &gt;&gt;&gt; def f(x, y, z):
-    ...     xx = x*x
-    ...     yy = y*y
-    ...     zz = z*z
-    ...     xyz = x*y*z
+    ...     xx = x * x
+    ...     yy = y * y
+    ...     zz = z * z
+    ...     xyz = x * y * z
     ...     xx_yy = xx + yy
-    ...     a_xx = a*xx
-    ...     b_yy = b*yy
+    ...     a_xx = a * xx
+    ...     b_yy = b * yy
     ...     return (
     ...         (xx_yy + 1) * (a_xx + b_yy)
-    ...         + zz * (b * xx + a * yy) - 2 * (a - b) * xyz
+    ...         + zz * (b * xx + a * yy)
+    ...         - 2 * (a - b) * xyz
     ...         - a * b * xx_yy
-    ...     )**2 - 4 * (xx + yy) * (a_xx + b_yy - xyz * (a - b))**2
+    ...     ) ** 2 - 4 * (xx + yy) * (a_xx + b_yy - xyz * (a - b)) ** 2
+    ...
     &gt;&gt;&gt; n = 100
     &gt;&gt;&gt; x_min, y_min, z_min = -1.35, -1.7, -0.65
     &gt;&gt;&gt; grid = pv.UniformGrid(
     ...     dimensions=(n, n, n),
-    ...     spacing=(abs(x_min)/n*2, abs(y_min)/n*2, abs(z_min)/n*2),
+    ...     spacing=(
+    ...         abs(x_min) / n * 2,
+    ...         abs(y_min) / n * 2,
+    ...         abs(z_min) / n * 2,
+    ...     ),
     ...     origin=(x_min, y_min, z_min),
     ... )
     &gt;&gt;&gt; x, y, z = grid.points.T
     &gt;&gt;&gt; values = f(x, y, z)
     &gt;&gt;&gt; out = grid.contour(
-    ...     1, scalars=values, rng=[0, 0], method=&#39;flying_edges&#39;,
+    ...     1,
+    ...     scalars=values,
+    ...     rng=[0, 0],
+    ...     method=&#39;flying_edges&#39;,
     ... )
     &gt;&gt;&gt; out.plot(color=&#39;tan&#39;, smooth_shading=True)
 
@@ -714,7 +723,7 @@ of 50 and 200</p>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_contouring_002.png" srcset="../../../_images/sphx_glr_d_contouring_002.png" alt="d contouring" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.667 seconds)</p>
+<img src="../../../_images/sphx_glr_d_contouring_002.png" srcset="../../../_images/sphx_glr_d_contouring_002.png" alt="d contouring" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.610 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-04-filters-solutions-d-contouring-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/04_filters/solutions/d_contouring.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo13.svg" width="150px" /></a>

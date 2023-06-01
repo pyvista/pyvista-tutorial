@@ -561,23 +561,23 @@ add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, 
 
     Parameters
     ----------
-    points : sequence or pyvista.DataSet or vtk.vtkAlgorithm
-        An ``n x 3`` sequence points or pyvista dataset with points or
-        mesh-producing algorithm.
+    points : sequence | pyvista.DataSet | vtk.vtkAlgorithm
+        An ``n x 3`` sequence points or :class:`pyvista.DataSet` with
+        points or mesh-producing algorithm.
 
-    labels : list or str
+    labels : list | str
         List of labels.  Must be the same length as points. If a
         string name is given with a :class:`pyvista.DataSet` input for
         points, then these are fetched.
 
-    italic : bool, optional
-        Italicises title and bar labels.  Default ``False``.
+    italic : bool, default: False
+        Italicises title and bar labels.
 
-    bold : bool, optional
-        Bolds title and bar labels.  Default ``True``.
+    bold : bool, default: True
+        Bolds title and bar labels.
 
     font_size : float, optional
-        Sets the size of the title font.  Defaults to 16.
+        Sets the size of the title font.
 
     text_color : ColorLike, optional
         Color of text. Either a string, RGB sequence, or hex color string.
@@ -591,11 +591,11 @@ add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, 
         Font family.  Must be either ``&#39;courier&#39;``, ``&#39;times&#39;``,
         or ``&#39;arial``.
 
-    shadow : bool, optional
-        Adds a black shadow to the text.  Defaults to ``False``.
+    shadow : bool, default: False
+        Adds a black shadow to the text.
 
-    show_points : bool, optional
-        Controls if points are visible.  Default ``True``.
+    show_points : bool, default: True
+        Controls if points are visible.
 
     point_color : ColorLike, optional
         Either a string, rgb list, or hex color string.  One of
@@ -614,30 +614,30 @@ add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, 
         updated.  If an actor of this name already exists in the
         rendering window, it will be replaced by the new actor.
 
-    shape_color : ColorLike, optional
+    shape_color : ColorLike, default: &quot;grey&quot;
         Color of shape (if visible).  Either a string, rgb
         sequence, or hex color string.
 
-    shape : str, optional
+    shape : str, default: &quot;rounded_rect&quot;
         The string name of the shape to use. Options are ``&#39;rect&#39;`` or
         ``&#39;rounded_rect&#39;``. If you want no shape, pass ``None``.
 
-    fill_shape : bool, optional
+    fill_shape : bool, default: True
         Fill the shape with the ``shape_color``. Outlines if ``False``.
 
-    margin : int, optional
-        The size of the margin on the label background shape. Default is 3.
+    margin : int, default: 3
+        The size of the margin on the label background shape.
 
-    shape_opacity : float, optional
+    shape_opacity : float, default: 1.0
         The opacity of the shape in the range of ``[0, 1]``.
 
-    pickable : bool, optional
+    pickable : bool, default: False
         Set whether this actor is pickable.
 
-    render_points_as_spheres : bool, optional
+    render_points_as_spheres : bool, default: False
         Render points as spheres rather than dots.
 
-    tolerance : float, optional
+    tolerance : float, default: 0.001
         A tolerance to use to determine whether a point label is
         visible.  A tolerance is usually required because the
         conversion from world space to display space during
@@ -646,11 +646,11 @@ add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, 
     reset_camera : bool, optional
         Reset the camera after adding the points to the scene.
 
-    always_visible : bool, optional
-        Skip adding the visibility filter. Default False.
+    always_visible : bool, default: False
+        Skip adding the visibility filter.
 
-    render : bool, optional
-        Force a render when ``True`` (default).
+    render : bool, default: True
+        Force a render when ``True``.
 
     Returns
     -------
@@ -662,14 +662,21 @@ add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, 
     &gt;&gt;&gt; import numpy as np
     &gt;&gt;&gt; import pyvista
     &gt;&gt;&gt; pl = pyvista.Plotter()
-    &gt;&gt;&gt; points = np.array([[0.0, 0.0, 0.0],
-    ...                    [1.0, 1.0, 0.0],
-    ...                    [2.0, 0.0, 0.0]])
+    &gt;&gt;&gt; points = np.array(
+    ...     [[0.0, 0.0, 0.0], [1.0, 1.0, 0.0], [2.0, 0.0, 0.0]]
+    ... )
     &gt;&gt;&gt; labels = [&#39;Point A&#39;, &#39;Point B&#39;, &#39;Point C&#39;]
-    &gt;&gt;&gt; actor = pl.add_point_labels(points, labels, italic=True, font_size=20,
-    ...                             point_color=&#39;red&#39;, point_size=20,
-    ...                             render_points_as_spheres=True,
-    ...                             always_visible=True, shadow=True)
+    &gt;&gt;&gt; actor = pl.add_point_labels(
+    ...     points,
+    ...     labels,
+    ...     italic=True,
+    ...     font_size=20,
+    ...     point_color=&#39;red&#39;,
+    ...     point_size=20,
+    ...     render_points_as_spheres=True,
+    ...     always_visible=True,
+    ...     shadow=True,
+    ... )
     &gt;&gt;&gt; pl.camera_position = &#39;xy&#39;
     &gt;&gt;&gt; pl.show()
 </pre></div>
@@ -694,9 +701,9 @@ node:</p>
 <tr><td>N Cells</td><td>10</td></tr>
 <tr><td>N Points</td><td>10</td></tr>
 <tr><td>N Strips</td><td>0</td></tr>
-<tr><td>X Bounds</td><td>2.576e-02, 9.871e-01</td></tr>
-<tr><td>Y Bounds</td><td>4.199e-02, 8.455e-01</td></tr>
-<tr><td>Z Bounds</td><td>3.897e-02, 9.750e-01</td></tr>
+<tr><td>X Bounds</td><td>7.073e-03, 9.190e-01</td></tr>
+<tr><td>Y Bounds</td><td>1.454e-01, 9.297e-01</td></tr>
+<tr><td>Z Bounds</td><td>9.486e-03, 9.926e-01</td></tr>
 <tr><td>N Arrays</td><td>1</td></tr>
 </table>
 
@@ -760,7 +767,7 @@ node:</p>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_e_labels_003.png" srcset="../../../_images/sphx_glr_e_labels_003.png" alt="e labels" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.645 seconds)</p>
+<img src="../../../_images/sphx_glr_e_labels_003.png" srcset="../../../_images/sphx_glr_e_labels_003.png" alt="e labels" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.663 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-figures-bonus-e-labels-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/bonus/e_labels.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo8.svg" width="150px" /></a>

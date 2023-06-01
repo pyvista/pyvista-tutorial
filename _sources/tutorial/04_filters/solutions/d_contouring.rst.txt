@@ -88,40 +88,40 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
     
         Parameters
         ----------
-        isosurfaces : int or sequence, optional
+        isosurfaces : int | sequence[float], optional
             Number of isosurfaces to compute across valid data range or a
             sequence of float values to explicitly use as the isosurfaces.
     
-        scalars : str, collections.abc.Sequence, numpy.ndarray, optional
+        scalars : str | array_like[float], optional
             Name or array of scalars to threshold on. If this is an array, the
             output of this filter will save them as ``"Contour Data"``.
             Defaults to currently active scalars.
     
-        compute_normals : bool, optional
+        compute_normals : bool, default: False
             Compute normals for the dataset.
     
-        compute_gradients : bool, optional
+        compute_gradients : bool, default: False
             Compute gradients for the dataset.
     
-        compute_scalars : bool, optional
+        compute_scalars : bool, default: True
             Preserves the scalar values that are being contoured.
     
-        rng : tuple(float), optional
+        rng : sequence[float], optional
             If an integer number of isosurfaces is specified, this is
             the range over which to generate contours. Default is the
             scalars array's full data range.
     
-        preference : str, optional
+        preference : str, default: "point"
             When ``scalars`` is specified, this is the preferred array
             type to search for in the dataset.  Must be either
             ``'point'`` or ``'cell'``.
     
-        method : str, optional
+        method : str, default:  "contour"
             Specify to choose which vtk filter is used to create the contour.
             Must be one of ``'contour'``, ``'marching_cubes'`` and
-            ``'flying_edges'``. Defaults to ``'contour'``.
+            ``'flying_edges'``.
     
-        progress_bar : bool, optional
+        progress_bar : bool, default: False
             Display a progress bar to indicate progress.
     
         Returns
@@ -144,29 +144,38 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
         >>> a = 0.4
         >>> b = 0.1
         >>> def f(x, y, z):
-        ...     xx = x*x
-        ...     yy = y*y
-        ...     zz = z*z
-        ...     xyz = x*y*z
+        ...     xx = x * x
+        ...     yy = y * y
+        ...     zz = z * z
+        ...     xyz = x * y * z
         ...     xx_yy = xx + yy
-        ...     a_xx = a*xx
-        ...     b_yy = b*yy
+        ...     a_xx = a * xx
+        ...     b_yy = b * yy
         ...     return (
         ...         (xx_yy + 1) * (a_xx + b_yy)
-        ...         + zz * (b * xx + a * yy) - 2 * (a - b) * xyz
+        ...         + zz * (b * xx + a * yy)
+        ...         - 2 * (a - b) * xyz
         ...         - a * b * xx_yy
-        ...     )**2 - 4 * (xx + yy) * (a_xx + b_yy - xyz * (a - b))**2
+        ...     ) ** 2 - 4 * (xx + yy) * (a_xx + b_yy - xyz * (a - b)) ** 2
+        ...
         >>> n = 100
         >>> x_min, y_min, z_min = -1.35, -1.7, -0.65
         >>> grid = pv.UniformGrid(
         ...     dimensions=(n, n, n),
-        ...     spacing=(abs(x_min)/n*2, abs(y_min)/n*2, abs(z_min)/n*2),
+        ...     spacing=(
+        ...         abs(x_min) / n * 2,
+        ...         abs(y_min) / n * 2,
+        ...         abs(z_min) / n * 2,
+        ...     ),
         ...     origin=(x_min, y_min, z_min),
         ... )
         >>> x, y, z = grid.points.T
         >>> values = f(x, y, z)
         >>> out = grid.contour(
-        ...     1, scalars=values, rng=[0, 0], method='flying_edges',
+        ...     1,
+        ...     scalars=values,
+        ...     rng=[0, 0],
+        ...     method='flying_edges',
         ... )
         >>> out.plot(color='tan', smooth_shading=True)
     
@@ -307,7 +316,7 @@ of 50 and 200
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.667 seconds)
+   **Total running time of the script:** ( 0 minutes  4.610 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_d_contouring.py:

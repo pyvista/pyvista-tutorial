@@ -268,6 +268,8 @@ extensions are listed in an internal function:
         +----------------+---------------------------------------------+
         | ``.vtu``       | :class:`pyvista.XMLUnstructuredGridReader`  |
         +----------------+---------------------------------------------+
+        | ``.xdmf``      | :class:`pyvista.XdmfReader`                 |
+        +----------------+---------------------------------------------+
     
         Parameters
         ----------
@@ -290,10 +292,10 @@ extensions are listed in an internal function:
         >>> filename.split("/")[-1]  # omit the path
         'Human.vtp'
         >>> reader = pyvista.get_reader(filename)
-        >>> reader  # doctest: +ELLIPSIS
+        >>> reader
         XMLPolyDataReader('.../Human.vtp')
         >>> mesh = reader.read()
-        >>> mesh # doctest: +ELLIPSIS
+        >>> mesh
         PolyData ...
         >>> mesh.plot(color='tan')
 
@@ -547,7 +549,7 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.968 seconds)
+   **Total running time of the script:** ( 0 minutes  1.932 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_soultions_e_read-file.py:

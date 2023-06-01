@@ -110,7 +110,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             ``'points_gaussian'`` can be modified with the ``emissive``,
             ``render_points_as_spheres`` options.
     
-        scalars : str or numpy.ndarray, optional
+        scalars : str | numpy.ndarray, optional
             Scalars used to "color" the mesh.  Accepts a string name
             of an array that is present on the mesh or an array equal
             to the number of cells or the number of points in the
@@ -118,10 +118,10 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             ``color`` and ``scalars`` are ``None``, then the active
             scalars are used.
     
-        clim : Sequence[float, float], optional
-            Color bar range for scalars.  Defaults to minimum and
-            maximum of scalars array.  Example: ``[-1, 2]``. ``rng``
-            is also an accepted alias for this.
+        clim : sequence[float], optional
+            Two item color bar range for scalars.  Defaults to minimum and
+            maximum of scalars array.  Example: ``[-1, 2]``. ``rng`` is
+            also an accepted alias for this.
     
         show_edges : bool, optional
             Shows the edges of a mesh.  Does not apply to a wireframe
@@ -142,7 +142,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             Thickness of lines.  Only valid for wireframe and surface
             representations.  Default ``None``.
     
-        opacity : float, str, array-like
+        opacity : float | str| array_like
             Opacity of the mesh. If a single float value is given, it
             will be the global opacity of the mesh and uniformly
             applied everywhere - should be between 0 and 1. A string
@@ -155,7 +155,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             made transfer function that is an array either
             ``n_colors`` in length or shorter.
     
-        flip_scalars : bool, optional
+        flip_scalars : bool, default: False
             Flip direction of cmap. Most colormaps allow ``*_r``
             suffix to do this as well.
     
@@ -172,11 +172,11 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             mapped colors which can result is showing colors that are
             not present in the color map.
     
-        cmap : str, list, or pyvista.LookupTable, default: :attr:`pyvista.themes.DefaultTheme.cmap`
+        cmap : str | list | pyvista.LookupTable, default: :attr:`pyvista.themes.DefaultTheme.cmap`
             If a string, this is the name of the ``matplotlib`` colormap to use
             when mapping the ``scalars``.  See available Matplotlib colormaps.
-            Only applicable for when displaying ``scalars``. Requires
-            Matplotlib to be installed.  ``colormap`` is also an accepted alias
+            Only applicable for when displaying ``scalars``.
+            ``colormap`` is also an accepted alias
             for this. If ``colorcet`` or ``cmocean`` are installed, their
             colormaps can be specified by name.
     
@@ -204,11 +204,11 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             scalar bar to the scene. For options, see
             :func:`pyvista.Plotter.add_scalar_bar`.
     
-        show_scalar_bar : bool
+        show_scalar_bar : bool, optional
             If ``False``, a scalar bar will not be added to the
-            scene. Defaults to ``True``.
+            scene.
     
-        multi_colors : bool, optional
+        multi_colors : bool, default: False
             If a :class:`pyvista.MultiBlock` dataset is given this will color
             each block by a solid color using matplotlib's color cycler.
     
@@ -319,41 +319,41 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
         annotations : dict, optional
             Pass a dictionary of annotations. Keys are the float
             values in the scalars range to annotate on the scalar bar
-            and the values are the the string annotations.
+            and the values are the string annotations.
     
         pickable : bool, optional
             Set whether this actor is pickable.
     
-        preference : str, optional
+        preference : str, default: "point"
             When ``mesh.n_points == mesh.n_cells`` and setting
             scalars, this parameter sets how the scalars will be
             mapped to the mesh.  Default ``'point'``, causes the
             scalars will be associated with the mesh points.  Can be
             either ``'point'`` or ``'cell'``.
     
-        log_scale : bool, optional
+        log_scale : bool, default: False
             Use log scale when mapping data to colors. Scalars less
             than zero are mapped to the smallest representable
-            positive float. Default ``False``.
+            positive float.
     
         pbr : bool, optional
             Enable physics based rendering (PBR) if the mesh is
             ``PolyData``.  Use the ``color`` argument to set the base
-            color. This is only available in VTK>=9.
+            color.
     
         metallic : float, optional
             Usually this value is either 0 or 1 for a real material
             but any value in between is valid. This parameter is only
-            used by PBR interpolation. Default value is 0.0.
+            used by PBR interpolation.
     
         roughness : float, optional
             This value has to be between 0 (glossy) and 1 (rough). A
             glossy material has reflections and a high specular
             part. This parameter is only used by PBR
-            interpolation. Default value is 0.5.
+            interpolation.
     
-        render : bool, optional
-            Force a render when ``True``.  Default ``True``.
+        render : bool, default: True
+            Force a render when ``True``.
     
         component : int, optional
             Set component of vector valued scalars to plot.  Must be
@@ -364,7 +364,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             Treat the points/splats as emissive light sources. Only valid for
             ``style='points_gaussian'`` representation.
     
-        copy_mesh : bool, optional
+        copy_mesh : bool, default: False
             If ``True``, a copy of the mesh will be made before adding it to
             the plotter.  This is useful if you would like to add the same
             mesh to a plotter multiple times and display different
@@ -375,7 +375,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             with caution. Defaults to ``False``. This is ignored if the input
             is a ``vtkAlgorithm`` subclass.
     
-        backface_params : dict or pyvista.Property, optional
+        backface_params : dict | pyvista.Property, optional
             A :class:`pyvista.Property` or a dict of parameters to use for
             backface rendering. This is useful for instance when the inside of
             oriented surfaces has a different color than the outside. When a
@@ -412,8 +412,9 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
         >>> sphere = pv.Sphere()
         >>> sphere['Data'] = sphere.points[:, 2]
         >>> plotter = pv.Plotter()
-        >>> _ = plotter.add_mesh(sphere,
-        ...                      scalar_bar_args={'title': 'Z Position'})
+        >>> _ = plotter.add_mesh(
+        ...     sphere, scalar_bar_args={'title': 'Z Position'}
+        ... )
         >>> plotter.show()
     
         Plot using RGB on a single cell.  Note that since the number of
@@ -422,17 +423,33 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
     
         >>> import pyvista as pv
         >>> import numpy as np
-        >>> vertices = np.array([[0, 0, 0], [1, 0, 0], [.5, .667, 0], [0.5, .33, 0.667]])
-        >>> faces = np.hstack([[3, 0, 1, 2], [3, 0, 3, 2], [3, 0, 1, 3], [3, 1, 2, 3]])
+        >>> vertices = np.array(
+        ...     [
+        ...         [0, 0, 0],
+        ...         [1, 0, 0],
+        ...         [0.5, 0.667, 0],
+        ...         [0.5, 0.33, 0.667],
+        ...     ]
+        ... )
+        >>> faces = np.hstack(
+        ...     [[3, 0, 1, 2], [3, 0, 3, 2], [3, 0, 1, 3], [3, 1, 2, 3]]
+        ... )
         >>> mesh = pv.PolyData(vertices, faces)
-        >>> mesh.cell_data['colors'] = [[255, 255, 255],
-        ...                               [0, 255, 0],
-        ...                               [0, 0, 255],
-        ...                               [255, 0, 0]]
+        >>> mesh.cell_data['colors'] = [
+        ...     [255, 255, 255],
+        ...     [0, 255, 0],
+        ...     [0, 0, 255],
+        ...     [255, 0, 0],
+        ... ]
         >>> plotter = pv.Plotter()
-        >>> _ = plotter.add_mesh(mesh, scalars='colors', lighting=False,
-        ...                      rgb=True, preference='cell')
-        >>> plotter.camera_position='xy'
+        >>> _ = plotter.add_mesh(
+        ...     mesh,
+        ...     scalars='colors',
+        ...     lighting=False,
+        ...     rgb=True,
+        ...     preference='cell',
+        ... )
+        >>> plotter.camera_position = 'xy'
         >>> plotter.show()
     
         Note how this varies from ``preference=='point'``.  This is
@@ -441,18 +458,26 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
         colored.
     
         >>> plotter = pv.Plotter()
-        >>> _ = plotter.add_mesh(mesh, scalars='colors', lighting=False,
-        ...                      rgb=True, preference='point')
-        >>> plotter.camera_position='xy'
+        >>> _ = plotter.add_mesh(
+        ...     mesh,
+        ...     scalars='colors',
+        ...     lighting=False,
+        ...     rgb=True,
+        ...     preference='point',
+        ... )
+        >>> plotter.camera_position = 'xy'
         >>> plotter.show()
     
         Plot a plane with a constant color and vary its opacity by point.
     
         >>> plane = pv.Plane()
-        >>> plane.plot(color='b', opacity=np.linspace(0, 1, plane.n_points),
-        ...            show_edges=True)
+        >>> plane.plot(
+        ...     color='b',
+        ...     opacity=np.linspace(0, 1, plane.n_points),
+        ...     show_edges=True,
+        ... )
     
-        Plot the points of a sphere with gaussian smoothing while coloring by z
+        Plot the points of a sphere with Gaussian smoothing while coloring by z
         position.
     
         >>> mesh = pv.Sphere()
@@ -621,7 +646,7 @@ There you go! Those are a few of the most commonly used display options!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.192 seconds)
+   **Total running time of the script:** ( 0 minutes  2.204 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py:

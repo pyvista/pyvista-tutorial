@@ -112,29 +112,28 @@ Clip any dataset by a user defined plane using the
         normal : tuple(float) or str, default: 'x'
             Length 3 tuple for the normal vector direction. Can also
             be specified as a string conventional direction such as
-            ``'x'`` for ``(1,0,0)`` or ``'-x'`` for ``(-1,0,0)``, etc.
+            ``'x'`` for ``(1, 0, 0)`` or ``'-x'`` for ``(-1, 0, 0)``, etc.
     
-        origin : tuple(float), optional
-            The center ``(x,y,z)`` coordinate of the plane on which the clip
+        origin : sequence[float], optional
+            The center ``(x, y, z)`` coordinate of the plane on which the clip
             occurs. The default is the center of the dataset.
     
-        invert : bool, optional
+        invert : bool, default: True
             Flag on whether to flip/invert the clip.
     
-        value : float, optional
+        value : float, default: 0.0
             Set the clipping value along the normal direction.
-            The default value is 0.0.
     
-        inplace : bool, optional
+        inplace : bool, default: False
             Updates mesh in-place.
     
-        return_clipped : bool, optional
+        return_clipped : bool, default: False
             Return both unclipped and clipped parts of the dataset.
     
-        progress_bar : bool, optional
+        progress_bar : bool, default: False
             Display a progress bar to indicate progress.
     
-        crinkle : bool, optional
+        crinkle : bool, default: False
             Crinkle the clip by extracting the entire cells along the
             clip. This adds the ``"cell_ids"`` array to the ``cell_data``
             attribute that tracks the original cell IDs of the original
@@ -281,8 +280,8 @@ Clip any dataset by a set of XYZ bounds using the
     
         Parameters
         ----------
-        bounds : tuple(float), optional
-            Length 6 sequence of floats: (xmin, xmax, ymin, ymax, zmin, zmax).
+        bounds : sequence[float], optional
+            Length 6 sequence of floats: ``(xmin, xmax, ymin, ymax, zmin, zmax)``.
             Length 3 sequence of floats: distances from the min coordinate of
             of the input mesh. Single float value: uniform distance from the
             min coordinate. Length 12 sequence of length 3 sequence of floats:
@@ -291,21 +290,21 @@ Clip any dataset by a set of XYZ bounds using the
             a box with 6 faces that all form a standard box, then planes will
             be extracted from the box to define the clipping region.
     
-        invert : bool, optional
+        invert : bool, default: True
             Flag on whether to flip/invert the clip.
     
-        factor : float, optional
+        factor : float, default: 0.35
             If bounds are not given this is the factor along each axis to
             extract the default box.
     
-        progress_bar : bool, optional
+        progress_bar : bool, default: False
             Display a progress bar to indicate progress.
     
-        merge_points : bool, optional
-            If ``True`` (default), coinciding points of independently
-            defined mesh elements will be merged.
+        merge_points : bool, default: True
+            If ``True``, coinciding points of independently defined mesh
+            elements will be merged.
     
-        crinkle : bool, optional
+        crinkle : bool, default: False
             Crinkle the clip by extracting the entire cells along the
             clip. This adds the ``"cell_ids"`` array to the ``cell_data``
             attribute that tracks the original cell IDs of the original
@@ -578,7 +577,7 @@ Plot comparison
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.005 seconds)
+   **Total running time of the script:** ( 0 minutes  2.009 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_b_clipping.py:

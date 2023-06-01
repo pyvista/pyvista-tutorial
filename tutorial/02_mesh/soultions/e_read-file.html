@@ -743,6 +743,8 @@ get_reader(filename, force_ext=None)
     +----------------+---------------------------------------------+
     | ``.vtu``       | :class:`pyvista.XMLUnstructuredGridReader`  |
     +----------------+---------------------------------------------+
+    | ``.xdmf``      | :class:`pyvista.XdmfReader`                 |
+    +----------------+---------------------------------------------+
 
     Parameters
     ----------
@@ -765,10 +767,10 @@ get_reader(filename, force_ext=None)
     &gt;&gt;&gt; filename.split(&quot;/&quot;)[-1]  # omit the path
     &#39;Human.vtp&#39;
     &gt;&gt;&gt; reader = pyvista.get_reader(filename)
-    &gt;&gt;&gt; reader  # doctest: +ELLIPSIS
+    &gt;&gt;&gt; reader
     XMLPolyDataReader(&#39;.../Human.vtp&#39;)
     &gt;&gt;&gt; mesh = reader.read()
-    &gt;&gt;&gt; mesh # doctest: +ELLIPSIS
+    &gt;&gt;&gt; mesh
     PolyData ...
     &gt;&gt;&gt; mesh.plot(color=&#39;tan&#39;)
 </pre></div>
@@ -851,7 +853,7 @@ format, use that! Otherwise, download this file:
 <span class="c1"># mesh = pv.read(&#39;path/to/file.vtk)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.968 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.932 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-e-read-file-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/e_read-file.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo6.svg" width="150px" /></a>
