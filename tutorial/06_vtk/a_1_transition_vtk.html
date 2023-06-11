@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
@@ -611,7 +612,7 @@ This section effectively replaces the vtkDoubleArray.</p>
 <p>Here, PyVista has done several things for us:</p>
 <ol class="arabic">
 <li><p>PyVista combines the dimensionality of the data (in the shape of
-the <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25rc1+90.g50984037f)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) with the values of the data in one line. VTK uses
+the <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v1.25rc1+104.g19f86c318)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) with the values of the data in one line. VTK uses
 “tuples” to describe the shape of the data (where it sits in space)
 and “components” to describe the type of data (1 = scalars/scalar
 fields, 2 = vectors/vector fields, n = tensors/tensor
@@ -689,12 +690,12 @@ that to a  <a class="reference external" href="https://vtk.org/doc/nightly/html/
 <span class="nb">print</span><span class="p">(</span><span class="n">vtk_points</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vtkPoints (0x5632bb143d50)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vtkPoints (0x5567bdd21be0)
   Debug: Off
-  Modified Time: 13559628
+  Modified Time: 13561424
   Reference Count: 1
   Registered Events: (none)
-  Data: 0x5632b90bc920
+  Data: 0x5567ba365920
   Data Array Name: Points
   Number Of Points: 3
   Bounds:
@@ -774,7 +775,7 @@ example, it is more efficient to use the <a class="reference external" href="htt
 as the OBB tree is computed once for each mesh.  In most cases, pure
 PyVista is sufficient for most data science, but there are times when
 you may want to use VTK classes directly.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.000 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.049 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-a-1-transition-vtk-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/a_1_transition_vtk.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo14.svg" width="150px" /></a>
