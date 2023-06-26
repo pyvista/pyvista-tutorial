@@ -226,3 +226,4 @@ def setup(app):
     app.add_css_file('copybutton.css')
     app.add_css_file('no_search_highlight.css')
     app.add_css_file('fontawesome/css/all.css')
+    app.add_css_file("table.css")
