@@ -19,7 +19,7 @@ from pfsspy import tracing
 from pfsspy.sample_data import get_gong_map
 import pyvista as pv
 from sunkit_pyvista import SunpyPlotter
-from sunkit_pyvista.sample import LOW_RES_AIA_193
+from sunkit_pyvista.sample import low_res_aia_193
 from sunpy.coordinates import frames
 import sunpy.map
 
@@ -30,7 +30,7 @@ import sunpy.map
 plotter = SunpyPlotter()
 
 # Plot a map
-plotter.plot_map(LOW_RES_AIA_193, clip_interval=[1, 99] * u.percent)
+plotter.plot_map(low_res_aia_193, clip_interval=[1, 99] * u.percent)
 # Add an arrow to show the solar rotation axis
 plotter.plot_solar_axis()
 
@@ -80,7 +80,7 @@ camera_coord = SkyCoord(
     0 * u.deg,
     6 * R_sun,
     frame=frames.HeliographicStonyhurst,
-    obstime=LOW_RES_AIA_193.date,
+    obstime=low_res_aia_193.date,
 )
 plotter.set_camera_coordinate(camera_coord)
 
