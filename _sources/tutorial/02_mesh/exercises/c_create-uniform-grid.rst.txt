@@ -36,7 +36,7 @@ Create a simple uniform grid from a 3D NumPy array of values.
 
 Take a 3D NumPy array of data values that holds some spatial data where each
 axis corresponds to the XYZ cartesian axes. This example will create a
-:class:`pyvista.UniformGrid` object that will hold the spatial reference for
+:class:`pyvista.ImageData` object that will hold the spatial reference for
 a 3D grid which a 3D NumPy array of values can be plotted against.
 
 .. GENERATED FROM PYTHON SOURCE LINES 19-22
@@ -61,7 +61,7 @@ Create the PyVista object
 
 .. code-block:: default
 
-    grid = pv.UniformGrid()
+    grid = pv.ImageData()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-32
@@ -115,7 +115,7 @@ Now plot the grid!
 .. GENERATED FROM PYTHON SOURCE LINES 50-53
 
 Don't like cell data? You could also add the NumPy array to the point data of
-a :class:`pyvista.UniformGrid`. Take note of the subtle difference when
+a :class:`pyvista.ImageData`. Take note of the subtle difference when
 setting the grid dimensions upon initialization.
 
 .. GENERATED FROM PYTHON SOURCE LINES 53-60
@@ -138,7 +138,7 @@ Create the PyVista object and set the same attributes like above
 
 .. code-block:: default
 
-    grid = pv.UniformGrid()
+    grid = pv.ImageData()
 
     # Set the grid dimensions: shape because we want to inject our values on the
     #   POINT data
@@ -177,13 +177,13 @@ Now plot the grid!
 
 Exercise
 ^^^^^^^^
-Now create your own :class:`pyvista.UniformGrid` from a 3D NumPy array!
+Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
 
 .. GENERATED FROM PYTHON SOURCE LINES 86-88
 
 .. code-block:: default
 
-    help(pv.UniformGrid)
+    help(pv.ImageData)
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 89-91
@@ -201,7 +201,7 @@ Here are some example 3D data using random data. Feel free to use your own
 
 .. GENERATED FROM PYTHON SOURCE LINES 95-99
 
-Create the :class:`pyvista.UniformGrid`
+Create the :class:`pyvista.ImageData`
 
 Hint, you will likely need to ``ravel`` the array with F-ordering:
 ``arr.ravel(order="F")``
@@ -211,7 +211,7 @@ Hint, you will likely need to ``ravel`` the array with F-ordering:
 .. code-block:: default
 
 
-    vol = pv.UniformGrid()
+    vol = pv.ImageData()
     # Set attributes and data
     ...
 

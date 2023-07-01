@@ -160,7 +160,7 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
         ...
         >>> n = 100
         >>> x_min, y_min, z_min = -1.35, -1.7, -0.65
-        >>> grid = pv.UniformGrid(
+        >>> grid = pv.ImageData(
         ...     dimensions=(n, n, n),
         ...     spacing=(
         ...         abs(x_min) / n * 2,
@@ -177,7 +177,7 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
         ...     rng=[0, 0],
         ...     method='flying_edges',
         ... )
-        >>> out.plot(color='tan', smooth_shading=True)
+        >>> out.plot(color='lightblue', smooth_shading=True)
     
         See :ref:`common_filter_example` or
         :ref:`marching_cubes_example` for more examples using this
@@ -245,9 +245,9 @@ Let's extract 2D iso-surfaces of a scalar field from a 3D mesh.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-    <table>
-    <tr><th>UniformGrid</th><th>Information</th></tr>
+    <table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table style='width: 100%;'>
+    <tr><th>ImageData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>16581375</td></tr>
     <tr><td>N Points</td><td>16777216</td></tr>
     <tr><td>X Bounds</td><td>0.000e+00, 2.550e+02</td></tr>
@@ -259,7 +259,7 @@ Let's extract 2D iso-surfaces of a scalar field from a 3D mesh.
     </table>
 
     </td><td>
-    <table>
+    <table style='width: 100%;'>
     <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
     <tr><td><b>SLCImage</b></td><td>Points</td><td>uint8</td><td>1</td><td>0.000e+00</td><td>1.970e+02</td></tr>
     </table>
@@ -316,7 +316,7 @@ of 50 and 200
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.815 seconds)
+   **Total running time of the script:** ( 0 minutes  11.917 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_d_contouring.py:

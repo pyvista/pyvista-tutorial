@@ -78,8 +78,8 @@ automatically loaded right into Python.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-    <table>
+    <table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table style='width: 100%;'>
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>351536</td></tr>
     <tr><td>N Points</td><td>178091</td></tr>
@@ -91,7 +91,7 @@ automatically loaded right into Python.
     </table>
 
     </td><td>
-    <table>
+    <table style='width: 100%;'>
     <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
     <tr><td>Unnamed_0</td><td>Points</td><td>float32</td><td>3</td><td>-1.000e+00</td><td>1.000e+00</td></tr>
     </table>
@@ -150,7 +150,7 @@ Download the bolt dataset. This is an excellent dataset to visualize using
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Information</th><th>Blocks</th></tr><tr><td>
+    <table style='width: 100%;'><tr><th>Information</th><th>Blocks</th></tr><tr><td>
     <table>
     <tr><th>MultiBlock</th><th>Values</th></tr>
     <tr><td>N Blocks</td><td>2</td></tr>
@@ -162,8 +162,8 @@ Download the bolt dataset. This is an excellent dataset to visualize using
     </td><td>
     <table>
     <tr><th>Index</th><th>Name</th><th>Type</th></tr>
-    <tr><th>0</th><th>bolt</th><th>UniformGrid</th></tr>
-    <tr><th>1</th><th>nut</th><th>UniformGrid</th></tr>
+    <tr><th>0</th><th>bolt</th><th>ImageData</th></tr>
+    <tr><th>1</th><th>nut</th><th>ImageData</th></tr>
     </table>
 
     </td></tr> </table>
@@ -279,7 +279,7 @@ https://www.thingiverse.com/thing:5412753
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.508 seconds)
+   **Total running time of the script:** ( 0 minutes  6.869 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_solutions_a_load_examples_solution.py:

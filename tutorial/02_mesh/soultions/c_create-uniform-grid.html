@@ -551,7 +551,7 @@ to download the full example code or to run this example in your browser via Bin
 </div>
 <p>Take a 3D NumPy array of data values that holds some spatial data where each
 axis corresponds to the XYZ cartesian axes. This example will create a
-<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> object that will hold the spatial reference for
+<code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code> object that will hold the spatial reference for
 a 3D grid which a 3D NumPy array of values can be plotted against.</p>
 <p>Create the 3D NumPy array of spatially referenced data.
 This is spatially referenced such that the grid is 20 by 5 by 10
@@ -564,30 +564,30 @@ This is spatially referenced such that the grid is 20 by 5 by 10
 </pre></div>
 </div>
 <p>Create the PyVista object</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span></a><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="pyvista.DataSet" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">ImageData</span></a><span class="p">()</span>
 </pre></div>
 </div>
 <dl class="simple">
 <dt>Set the grid dimensions: shape + 1 because we want to inject our values on</dt><dd><p>the CELL data</p>
 </dd>
 </dl>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span><span class="o">.</span><span class="n">shape</span></a><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>Edit the spatial reference</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.origin.html#pyvista.UniformGrid.origin" title="pyvista.UniformGrid.origin" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">origin</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mf">55.6</span><span class="p">)</span>  <span class="c1"># The bottom left corner of the data set</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.spacing.html#pyvista.UniformGrid.spacing" title="pyvista.UniformGrid.spacing" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">spacing</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># These are the cell sizes along each axis</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mf">55.6</span><span class="p">)</span>  <span class="c1"># The bottom left corner of the data set</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># These are the cell sizes along each axis</span>
 </pre></div>
 </div>
 <p>Add the data values to the cell data</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.cell_data.html#pyvista.DataSet.cell_data" title="pyvista.DataSet.cell_data" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">cell_data</span></a><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span></a><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>  <span class="c1"># Flatten the array!</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a>
+<span class="n">grid</span>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table>
-<tr><th>UniformGrid</th><th>Information</th></tr>
+<table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table style='width: 100%;'>
+<tr><th>ImageData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>1000</td></tr>
 <tr><td>N Points</td><td>1386</td></tr>
 <tr><td>X Bounds</td><td>1.000e+02, 1.200e+02</td></tr>
@@ -599,7 +599,7 @@ This is spatially referenced such that the grid is 20 by 5 by 10
 </table>
 
 </td><td>
-<table>
+<table style='width: 100%;'>
 <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
 <tr><td><b>values</b></td><td>Cells</td><td>float64</td><td>1</td><td>0.000e+00</td><td>1.000e+01</td></tr>
 </table>
@@ -612,7 +612,7 @@ This is spatially referenced such that the grid is 20 by 5 by 10
 </pre></div>
 </div>
 <img src="../../../_images/sphx_glr_c_create-uniform-grid_001.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_001.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p>Don’t like cell data? You could also add the NumPy array to the point data of
-a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a>. Take note of the subtle difference when
+a <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code>. Take note of the subtle difference when
 setting the grid dimensions upon initialization.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the 3D NumPy array of spatially referenced data</span>
 <span class="c1"># This is spatially referenced such that the grid is 20 by 5 by 10</span>
@@ -625,26 +625,26 @@ setting the grid dimensions upon initialization.</p>
 </pre></div>
 </div>
 <p>Create the PyVista object and set the same attributes like above</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span></a><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="pyvista.DataSet" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">ImageData</span></a><span class="p">()</span>
 
 <span class="c1"># Set the grid dimensions: shape because we want to inject our values on the</span>
 <span class="c1">#   POINT data</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span><span class="o">.</span><span class="n">shape</span></a>
+<span class="n">grid</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span><span class="o">.</span><span class="n">shape</span></a>
 
 <span class="c1"># Edit the spatial reference</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.origin.html#pyvista.UniformGrid.origin" title="pyvista.UniformGrid.origin" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">origin</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mf">55.6</span><span class="p">)</span>  <span class="c1"># The bottom left corner of the data set</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.spacing.html#pyvista.UniformGrid.spacing" title="pyvista.UniformGrid.spacing" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">spacing</span></a> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># These are the cell sizes along each axis</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mf">55.6</span><span class="p">)</span>  <span class="c1"># The bottom left corner of the data set</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># These are the cell sizes along each axis</span>
 </pre></div>
 </div>
 <p>Add the data values to the cell data</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.point_data.html#pyvista.DataSet.point_data" title="pyvista.DataSet.point_data" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">point_data</span></a><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span></a><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>  <span class="c1"># Flatten the array!</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a>
+<span class="n">grid</span>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table>
-<tr><th>UniformGrid</th><th>Information</th></tr>
+<table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table style='width: 100%;'>
+<tr><th>ImageData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>684</td></tr>
 <tr><td>N Points</td><td>1000</td></tr>
 <tr><td>X Bounds</td><td>1.000e+02, 1.190e+02</td></tr>
@@ -656,7 +656,7 @@ setting the grid dimensions upon initialization.</p>
 </table>
 
 </td><td>
-<table>
+<table style='width: 100%;'>
 <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
 <tr><td><b>values</b></td><td>Points</td><td>float64</td><td>1</td><td>0.000e+00</td><td>1.000e+01</td></tr>
 </table>
@@ -670,14 +670,14 @@ setting the grid dimensions upon initialization.</p>
 </div>
 <img src="../../../_images/sphx_glr_c_create-uniform-grid_002.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_002.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h2>
-<p>Now create your own <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a> from a 3D NumPy array!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span></a><span class="p">)</span>
+<p>Now create your own <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code> from a 3D NumPy array!</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="pyvista.DataSet" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">ImageData</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on class UniformGrid in module pyvista.core.grid:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on class ImageData in module pyvista.core.grid:
 
-class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.filters.uniform_grid.UniformGridFilters)
- |  UniformGrid(uinput=None, *args, dimensions=None, spacing=(1.0, 1.0, 1.0), origin=(0.0, 0.0, 0.0), deep=False, **kwargs)
+class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.filters.image_data.ImageDataFilters)
+ |  ImageData(uinput=None, *args, dimensions=None, spacing=(1.0, 1.0, 1.0), origin=(0.0, 0.0, 0.0), deep=False, **kwargs)
  |
  |  Models datasets with uniform spacing in the three coordinate directions.
  |
@@ -697,7 +697,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |  Parameters
  |  ----------
- |  uinput : str, vtk.vtkImageData, pyvista.UniformGrid, optional
+ |  uinput : str, vtk.vtkImageData, pyvista.ImageData, optional
  |      Filename or dataset to initialize the uniform grid from.  If
  |      set, remainder of arguments are ignored.
  |
@@ -715,50 +715,50 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |  Examples
  |  --------
- |  Create an empty UniformGrid.
+ |  Create an empty ImageData.
  |
  |  &gt;&gt;&gt; import pyvista
- |  &gt;&gt;&gt; grid = pyvista.UniformGrid()
+ |  &gt;&gt;&gt; grid = pyvista.ImageData()
  |
  |  Initialize from a ``vtk.vtkImageData`` object.
  |
  |  &gt;&gt;&gt; import vtk
  |  &gt;&gt;&gt; vtkgrid = vtk.vtkImageData()
- |  &gt;&gt;&gt; grid = pyvista.UniformGrid(vtkgrid)
+ |  &gt;&gt;&gt; grid = pyvista.ImageData(vtkgrid)
  |
  |  Initialize using just the grid dimensions and default
  |  spacing and origin. These must be keyword arguments.
  |
- |  &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(10, 10, 10))
+ |  &gt;&gt;&gt; grid = pyvista.ImageData(dimensions=(10, 10, 10))
  |
  |  Initialize using dimensions and spacing.
  |
- |  &gt;&gt;&gt; grid = pyvista.UniformGrid(
+ |  &gt;&gt;&gt; grid = pyvista.ImageData(
  |  ...     dimensions=(10, 10, 10),
  |  ...     spacing=(2, 1, 5),
  |  ... )
  |
  |  Initialize using dimensions, spacing, and an origin.
  |
- |  &gt;&gt;&gt; grid = pyvista.UniformGrid(
+ |  &gt;&gt;&gt; grid = pyvista.ImageData(
  |  ...     dimensions=(10, 10, 10),
  |  ...     spacing=(2, 1, 5),
  |  ...     origin=(10, 35, 50),
  |  ... )
  |
- |  Initialize from another UniformGrid.
+ |  Initialize from another ImageData.
  |
- |  &gt;&gt;&gt; grid = pyvista.UniformGrid(
+ |  &gt;&gt;&gt; grid = pyvista.ImageData(
  |  ...     dimensions=(10, 10, 10),
  |  ...     spacing=(2, 1, 5),
  |  ...     origin=(10, 35, 50),
  |  ... )
- |  &gt;&gt;&gt; grid_from_grid = pyvista.UniformGrid(grid)
+ |  &gt;&gt;&gt; grid_from_grid = pyvista.ImageData(grid)
  |  &gt;&gt;&gt; grid_from_grid == grid
  |  True
  |
  |  Method resolution order:
- |      UniformGrid
+ |      ImageData
  |      vtkmodules.vtkCommonDataModel.vtkImageData
  |      vtkmodules.vtkCommonDataModel.vtkDataSet
  |      vtkmodules.vtkCommonDataModel.vtkDataObject
@@ -766,7 +766,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      vtkmodules.vtkCommonCore.vtkObjectBase
  |      Grid
  |      pyvista.core.dataset.DataSet
- |      pyvista.core.filters.uniform_grid.UniformGridFilters
+ |      pyvista.core.filters.image_data.ImageDataFilters
  |      pyvista.core.filters.data_set.DataSetFilters
  |      pyvista.core.dataobject.DataObject
  |      builtins.object
@@ -876,7 +876,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(2, 2, 2))
+ |      &gt;&gt;&gt; grid = pyvista.ImageData(dimensions=(2, 2, 2))
  |      &gt;&gt;&gt; grid.x
  |      array([0., 1., 0., 1., 0., 1., 0., 1.])
  |
@@ -886,7 +886,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(2, 2, 2))
+ |      &gt;&gt;&gt; grid = pyvista.ImageData(dimensions=(2, 2, 2))
  |      &gt;&gt;&gt; grid.y
  |      array([0., 0., 1., 1., 0., 0., 1., 1.])
  |
@@ -896,7 +896,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(2, 2, 2))
+ |      &gt;&gt;&gt; grid = pyvista.ImageData(dimensions=(2, 2, 2))
  |      &gt;&gt;&gt; grid.z
  |      array([0., 0., 0., 0., 1., 1., 1., 1.])
  |
@@ -904,16 +904,16 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  Data descriptors defined here:
  |
  |  extent
- |      Return or set the extent of the UniformGrid.
+ |      Return or set the extent of the ImageData.
  |
  |      The extent is simply the first and last indices for each of the three axes.
  |
  |      Examples
  |      --------
- |      Create a ``UniformGrid`` and show its extent.
+ |      Create a ``ImageData`` and show its extent.
  |
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(10, 10, 10))
+ |      &gt;&gt;&gt; grid = pyvista.ImageData(dimensions=(10, 10, 10))
  |      &gt;&gt;&gt; grid.extent
  |      (0, 9, 0, 9, 0, 9)
  |
@@ -935,12 +935,12 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(5, 5, 5))
+ |      &gt;&gt;&gt; grid = pyvista.ImageData(dimensions=(5, 5, 5))
  |      &gt;&gt;&gt; grid.origin
  |      (0.0, 0.0, 0.0)
  |
  |      Show how the origin is in the bottom &quot;southwest&quot; corner of the
- |      UniformGrid.
+ |      ImageData.
  |
  |      &gt;&gt;&gt; pl = pyvista.Plotter()
  |      &gt;&gt;&gt; _ = pl.add_mesh(grid, show_edges=True)
@@ -949,7 +949,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; pl.show()
  |
  |      Set the origin to ``(1, 1, 1)`` and show how this shifts the
- |      UniformGrid.
+ |      ImageData.
  |
  |      &gt;&gt;&gt; grid.origin = (1, 1, 1)
  |      &gt;&gt;&gt; pl = pyvista.Plotter()
@@ -963,12 +963,12 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Notes
  |      -----
- |      The ``points`` for a :class:`pyvista.UniformGrid` cannot be set.
+ |      The ``points`` for a :class:`pyvista.ImageData` cannot be set.
  |
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(2, 2, 2))
+ |      &gt;&gt;&gt; grid = pyvista.ImageData(dimensions=(2, 2, 2))
  |      &gt;&gt;&gt; grid.points
  |      array([[0., 0., 0.],
  |             [1., 0., 0.],
@@ -993,7 +993,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Create a 5 x 5 x 5 uniform grid.
  |
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(5, 5, 5))
+ |      &gt;&gt;&gt; grid = pyvista.ImageData(dimensions=(5, 5, 5))
  |      &gt;&gt;&gt; grid.spacing
  |      (1.0, 1.0, 1.0)
  |      &gt;&gt;&gt; grid.plot(show_edges=True)
@@ -2665,7 +2665,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Create a uniform grid with dimensions ``(1, 2, 3)``.
  |
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; grid = pyvista.UniformGrid(dimensions=(2, 3, 4))
+ |      &gt;&gt;&gt; grid = pyvista.ImageData(dimensions=(2, 3, 4))
  |      &gt;&gt;&gt; grid.dimensions
  |      (2, 3, 4)
  |      &gt;&gt;&gt; grid.plot(show_edges=True)
@@ -3107,17 +3107,8 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  clear_textures(self)
  |      Clear the textures from this mesh.
  |
- |      Examples
- |      --------
- |      Clear the texture from the globe example.
- |
- |      &gt;&gt;&gt; from pyvista import examples
- |      &gt;&gt;&gt; globe = examples.load_globe()
- |      &gt;&gt;&gt; globe.textures
- |      {&#39;2k_earth_daymap&#39;: ...}
- |      &gt;&gt;&gt; globe.clear_textures()
- |      &gt;&gt;&gt; globe.textures
- |      {}
+ |      .. deprecated:: 0.40.0
+ |          Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
  |
  |  copy_from(self, mesh: &#39;_vtk.vtkDataSet&#39;, deep: &#39;bool&#39; = True)
  |      Overwrite this dataset inplace with the new dataset&#39;s geometries and data.
@@ -3154,7 +3145,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          Deep or shallow copy.
  |
  |  find_cells_along_line(self, pointa: &#39;Iterable[float]&#39;, pointb: &#39;Iterable[float]&#39;, tolerance=0.0) -&gt; &#39;np.ndarray&#39;
- |      Find the index of cells in this mesh along a line.
+ |      Find the index of cells whose bounds intersect a line.
  |
  |      Line is defined from ``pointa`` to ``pointb``.
  |
@@ -3166,14 +3157,21 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      pointb : sequence[float]
  |          Length 3 coordinate of the end of the line.
  |
- |      tolerance : float, default: False
+ |      tolerance : float, default: 0.0
  |          The absolute tolerance to use to find cells along line.
  |
  |      Returns
  |      -------
  |      numpy.ndarray
- |          Index or indices of the cell in this mesh that are closest
- |          to the given point.
+ |          Index or indices of the cell(s) whose bounds intersect
+ |          the line.
+ |
+ |      Warnings
+ |      --------
+ |      This method returns cells whose bounds intersect the line.
+ |      This means that the line may not intersect the cell itself.
+ |      To obtain cells that intersect the line, use
+ |      :func:`pyvista.DataSet.find_cells_intersecting_line`.
  |
  |      See Also
  |      --------
@@ -3181,12 +3179,52 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      DataSet.find_closest_cell
  |      DataSet.find_containing_cell
  |      DataSet.find_cells_within_bounds
+ |      DataSet.find_cells_intersecting_line
  |
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista
  |      &gt;&gt;&gt; mesh = pyvista.Sphere()
- |      &gt;&gt;&gt; index = mesh.find_cells_along_line([0, 0, 0], [0, 0, 1.0])
+ |      &gt;&gt;&gt; mesh.find_cells_along_line([0.0, 0, 0], [1.0, 0, 0])
+ |      array([842, 843, 896, 897])
+ |
+ |  find_cells_intersecting_line(self, pointa: &#39;Iterable[float]&#39;, pointb: &#39;Iterable[float]&#39;, tolerance=0.0) -&gt; &#39;np.ndarray&#39;
+ |      Find the index of cells that intersect a line.
+ |
+ |      Line is defined from ``pointa`` to ``pointb``.  This
+ |      method requires vtk version &gt;=9.2.0.
+ |
+ |      Parameters
+ |      ----------
+ |      pointa : sequence[float]
+ |          Length 3 coordinate of the start of the line.
+ |
+ |      pointb : sequence[float]
+ |          Length 3 coordinate of the end of the line.
+ |
+ |      tolerance : float, default: 0.0
+ |          The absolute tolerance to use to find cells along line.
+ |
+ |      Returns
+ |      -------
+ |      numpy.ndarray
+ |          Index or indices of the cell(s) that intersect
+ |          the line.
+ |
+ |      See Also
+ |      --------
+ |      DataSet.find_closest_point
+ |      DataSet.find_closest_cell
+ |      DataSet.find_containing_cell
+ |      DataSet.find_cells_within_bounds
+ |      DataSet.find_cells_along_line
+ |
+ |      Examples
+ |      --------
+ |      &gt;&gt;&gt; import pyvista
+ |      &gt;&gt;&gt; mesh = pyvista.Sphere()
+ |      &gt;&gt;&gt; mesh.find_cells_intersecting_line([0.0, 0, 0], [1.0, 0, 0])
+ |      array([896])
  |
  |  find_cells_within_bounds(self, bounds: &#39;Iterable[float]&#39;) -&gt; &#39;np.ndarray&#39;
  |      Find the index of cells in this mesh within bounds.
@@ -3391,11 +3429,11 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      containing the point ``[0.3, 0.3, 0.0]`` is found.
  |
  |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; mesh = pyvista.UniformGrid(
+ |      &gt;&gt;&gt; mesh = pyvista.ImageData(
  |      ...     dimensions=[5, 5, 1], spacing=[1 / 4, 1 / 4, 0]
  |      ... )
  |      &gt;&gt;&gt; mesh
- |      UniformGrid...
+ |      ImageData...
  |      &gt;&gt;&gt; mesh.find_containing_cell([0.3, 0.3, 0.0])
  |      5
  |
@@ -3644,7 +3682,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.utilities.helpers.FieldAssociation
+ |      pyvista.core.utilities.arrays.FieldAssociation
  |          Field association of the array.
  |
  |      Examples
@@ -3772,7 +3810,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          screenshots without a window popping up.  Defaults to the
  |          global setting ``pyvista.OFF_SCREEN``.
  |
- |      full_screen : bool, default: :attr:`pyvista.themes.DefaultTheme.full_screen`
+ |      full_screen : bool, default: :attr:`pyvista.themes.Theme.full_screen`
  |          Opens window in full screen.  When enabled, ignores
  |          ``window_size``.
  |
@@ -3784,13 +3822,13 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          When ``True``, takes screenshot and returns ``numpy`` array of
  |          image.
  |
- |      interactive : bool, default: :attr:`pyvista.themes.DefaultTheme.interactive`
+ |      interactive : bool, default: :attr:`pyvista.themes.Theme.interactive`
  |          Allows user to pan and move figure.
  |
  |      cpos : list, optional
  |          List of camera position, focal point, and view up.
  |
- |      window_size : sequence, default: :attr:`pyvista.themes.DefaultTheme.window_size`
+ |      window_size : sequence, default: :attr:`pyvista.themes.Theme.window_size`
  |          Window size in pixels.
  |
  |      show_bounds : bool, default: False
@@ -3799,11 +3837,11 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      show_axes : bool, default: :attr:`pyvista.themes._AxesConfig.show`
  |          Shows a vtk axes widget.
  |
- |      notebook : bool, default: :attr:`pyvista.themes.DefaultTheme.notebook`
+ |      notebook : bool, default: :attr:`pyvista.themes.Theme.notebook`
  |          When ``True``, the resulting plot is placed inline a jupyter
  |          notebook.  Assumes a jupyter console is active.
  |
- |      background : ColorLike, default: :attr:`pyvista.themes.DefaultTheme.background`
+ |      background : ColorLike, default: :attr:`pyvista.themes.Theme.background`
  |          Color of the background.
  |
  |      text : str, optional
@@ -3822,7 +3860,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      parallel_projection : bool, default: False
  |          Enable parallel projection.
  |
- |      jupyter_backend : str, default: :attr:`pyvista.themes.DefaultTheme.jupyter_backend`
+ |      jupyter_backend : str, default: :attr:`pyvista.themes.Theme.jupyter_backend`
  |          Jupyter notebook plotting backend to use.  One of the
  |          following:
  |
@@ -3846,16 +3884,16 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      jupyter_kwargs : dict, optional
  |          Keyword arguments for the Jupyter notebook plotting backend.
  |
- |      theme : pyvista.themes.DefaultTheme, optional
+ |      theme : pyvista.themes.Theme, optional
  |          Plot-specific theme.
  |
- |      hidden_line_removal : bool, default: :attr:`pyvista.themes.DefaultTheme.hidden_line_removal`
+ |      hidden_line_removal : bool, default: :attr:`pyvista.themes.Theme.hidden_line_removal`
  |          Wireframe geometry will be drawn using hidden line removal if
  |          the rendering engine supports it.  See
  |          :func:`Plotter.enable_hidden_line_removal
  |          &lt;Plotter.enable_hidden_line_removal&gt;`.
  |
- |      anti_aliasing : bool, default: :attr:`pyvista.themes.DefaultTheme.anti_aliasing`
+ |      anti_aliasing : bool, default: :attr:`pyvista.themes.Theme.anti_aliasing`
  |          Enable or disable anti-aliasing.
  |
  |      zoom : float, str, optional
@@ -3915,10 +3953,10 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; mesh.plot(show_edges=True)
  |
  |      Plot a volume mesh. Color by distance from the center of the
- |      UniformGrid. Note ``volume=True`` is passed.
+ |      ImageData. Note ``volume=True`` is passed.
  |
  |      &gt;&gt;&gt; import numpy as np
- |      &gt;&gt;&gt; grid = pv.UniformGrid(
+ |      &gt;&gt;&gt; grid = pv.ImageData(
  |      ...     dimensions=(32, 32, 32), spacing=(0.5, 0.5, 0.5)
  |      ... )
  |      &gt;&gt;&gt; grid[&#39;data&#39;] = np.linalg.norm(grid.center - grid.points, axis=1)
@@ -4405,7 +4443,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.utilities.helpers.FieldAssociation
+ |      pyvista.core.utilities.arrays.FieldAssociation
  |          Association of the scalars matching ``name``.
  |
  |      numpy.ndarray
@@ -4619,7 +4657,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Note 5 points in each direction.
  |
  |      &gt;&gt;&gt; import pyvista as pv
- |      &gt;&gt;&gt; mesh = pv.UniformGrid(dimensions=(5, 5, 1))
+ |      &gt;&gt;&gt; mesh = pv.ImageData(dimensions=(5, 5, 1))
  |      &gt;&gt;&gt; mesh.area
  |      16.0
  |
@@ -4627,7 +4665,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      the outer surface area, first extract the surface using
  |      :func:`pyvista.DataSetFilters.extract_surface`.
  |
- |      &gt;&gt;&gt; mesh = pv.UniformGrid(dimensions=(5, 5, 5))
+ |      &gt;&gt;&gt; mesh = pv.ImageData(dimensions=(5, 5, 5))
  |      &gt;&gt;&gt; mesh.area
  |      0.0
  |
@@ -4713,7 +4751,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      &gt;&gt;&gt; import pyvista as pv
  |      &gt;&gt;&gt; # Create a grid with 9 points and 4 cells
- |      &gt;&gt;&gt; mesh = pv.UniformGrid(dimensions=(3, 3, 1))
+ |      &gt;&gt;&gt; mesh = pv.ImageData(dimensions=(3, 3, 1))
  |      &gt;&gt;&gt; for cell in mesh.cell:  # doctest: +SKIP
  |      ...     cell
  |      ...
@@ -4853,19 +4891,13 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      (8,)
  |
  |  textures
- |      Return a dictionary to hold compatible ``vtk.vtkTexture`` objects.
+ |      Return a dictionary to hold compatible ``pyvista.Texture`` objects.
+ |
+ |      .. deprecated:: 0.40.0
+ |          Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
  |
  |      When casting back to a VTK dataset or filtering this dataset,
  |      these textures will not be passed.
- |
- |      Examples
- |      --------
- |      Return the active texture datasets from the globe example.
- |
- |      &gt;&gt;&gt; from pyvista import examples
- |      &gt;&gt;&gt; globe = examples.load_globe()
- |      &gt;&gt;&gt; globe.textures
- |      {&#39;2k_earth_daymap&#39;: ...}
  |
  |  volume
  |      Return the mesh volume.
@@ -4883,13 +4915,13 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Note that there are 5 points in each direction.
  |
  |      &gt;&gt;&gt; import pyvista as pv
- |      &gt;&gt;&gt; mesh = pv.UniformGrid(dimensions=(5, 5, 5))
+ |      &gt;&gt;&gt; mesh = pv.ImageData(dimensions=(5, 5, 5))
  |      &gt;&gt;&gt; mesh.volume
  |      64.0
  |
  |      A mesh with 2D cells has no volume.
  |
- |      &gt;&gt;&gt; mesh = pv.UniformGrid(dimensions=(5, 5, 1))
+ |      &gt;&gt;&gt; mesh = pv.ImageData(dimensions=(5, 5, 1))
  |      &gt;&gt;&gt; mesh.volume
  |      0.0
  |
@@ -4954,7 +4986,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &#39;Normals&#39;
  |
  |  ----------------------------------------------------------------------
- |  Methods inherited from pyvista.core.filters.uniform_grid.UniformGridFilters:
+ |  Methods inherited from pyvista.core.filters.image_data.ImageDataFilters:
  |
  |  extract_subset(self, voi, rate=(1, 1, 1), boundary=False, progress_bar=False)
  |      Select piece (e.g., volume of interest).
@@ -4992,8 +5024,8 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.UniformGrid
- |          UniformGrid subset.
+ |      pyvista.ImageData
+ |          ImageData subset.
  |
  |  fft(self, output_scalars_name=None, progress_bar=False)
  |      Apply a fast Fourier transform (FFT) to the active scalars.
@@ -5025,8 +5057,8 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.UniformGrid
- |          :class:`pyvista.UniformGrid` with applied FFT.
+ |      pyvista.ImageData
+ |          :class:`pyvista.ImageData` with applied FFT.
  |
  |      See Also
  |      --------
@@ -5072,7 +5104,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.UniformGrid
+ |      pyvista.ImageData
  |          Uniform grid with smoothed scalars.
  |
  |      Notes
@@ -5085,7 +5117,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      First, create sample data to smooth. Here, we use
- |      :func:`pyvista.perlin_noise() &lt;pyvista.utilities.common.perlin_noise&gt;`
+ |      :func:`pyvista.perlin_noise() &lt;pyvista.core.utilities.features.perlin_noise&gt;`
  |      to create meaningful data.
  |
  |      &gt;&gt;&gt; import numpy as np
@@ -5106,12 +5138,12 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  high_pass(self, x_cutoff, y_cutoff, z_cutoff, order=1, output_scalars_name=None, progress_bar=False)
  |      Perform a Butterworth high pass filter in the frequency domain.
  |
- |      This filter requires that the :class:`UniformGrid` have a complex point
- |      scalars, usually generated after the :class:`UniformGrid` has been
- |      converted to the frequency domain by a :func:`UniformGridFilters.fft`
+ |      This filter requires that the :class:`ImageData` have a complex point
+ |      scalars, usually generated after the :class:`ImageData` has been
+ |      converted to the frequency domain by a :func:`ImageDataFilters.fft`
  |      filter.
  |
- |      A :func:`UniformGridFilters.rfft` filter can be used to convert the
+ |      A :func:`ImageDataFilters.rfft` filter can be used to convert the
  |      output back into the spatial domain. This filter attenuates low
  |      frequency components.  Input and output are complex arrays with
  |      datatype :attr:`numpy.complex128`.
@@ -5147,8 +5179,8 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.UniformGrid
- |          :class:`pyvista.UniformGrid` with the applied high pass filter.
+ |      pyvista.ImageData
+ |          :class:`pyvista.ImageData` with the applied high pass filter.
  |
  |      See Also
  |      --------
@@ -5188,7 +5220,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.UniformGrid
+ |      pyvista.ImageData
  |          Dataset that has been dilated/eroded on the boundary of the specified scalars.
  |
  |      Notes
@@ -5260,7 +5292,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.UniformGrid
+ |      pyvista.ImageData
  |          Dataset with the specified scalars thresholded.
  |
  |      Examples
@@ -5281,12 +5313,12 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |  low_pass(self, x_cutoff, y_cutoff, z_cutoff, order=1, output_scalars_name=None, progress_bar=False)
  |      Perform a Butterworth low pass filter in the frequency domain.
  |
- |      This filter requires that the :class:`UniformGrid` have a complex point
- |      scalars, usually generated after the :class:`UniformGrid` has been
- |      converted to the frequency domain by a :func:`UniformGridFilters.fft`
+ |      This filter requires that the :class:`ImageData` have a complex point
+ |      scalars, usually generated after the :class:`ImageData` has been
+ |      converted to the frequency domain by a :func:`ImageDataFilters.fft`
  |      filter.
  |
- |      A :func:`UniformGridFilters.rfft` filter can be used to convert the
+ |      A :func:`ImageDataFilters.rfft` filter can be used to convert the
  |      output back into the spatial domain. This filter attenuates high
  |      frequency components.  Input and output are complex arrays with
  |      datatype :attr:`numpy.complex128`.
@@ -5322,8 +5354,8 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.UniformGrid
- |          :class:`pyvista.UniformGrid` with the applied low pass filter.
+ |      pyvista.ImageData
+ |          :class:`pyvista.ImageData` with the applied low pass filter.
  |
  |      See Also
  |      --------
@@ -5368,7 +5400,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.UniformGrid
+ |      pyvista.ImageData
  |          Uniform grid with smoothed scalars.
  |
  |      Warnings
@@ -5380,7 +5412,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      First, create sample data to smooth. Here, we use
- |      :func:`pyvista.perlin_noise() &lt;pyvista.utilities.common.perlin_noise&gt;`
+ |      :func:`pyvista.perlin_noise() &lt;pyvista.core.utilities.features.perlin_noise&gt;`
  |      to create meaningful data.
  |
  |      &gt;&gt;&gt; import numpy as np
@@ -5426,8 +5458,8 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Returns
  |      -------
- |      pyvista.UniformGrid
- |          :class:`pyvista.UniformGrid` with the applied reverse FFT.
+ |      pyvista.ImageData
+ |          :class:`pyvista.ImageData` with the applied reverse FFT.
  |
  |      See Also
  |      --------
@@ -6219,7 +6251,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      ...
  |      &gt;&gt;&gt; n = 100
  |      &gt;&gt;&gt; x_min, y_min, z_min = -1.35, -1.7, -0.65
- |      &gt;&gt;&gt; grid = pv.UniformGrid(
+ |      &gt;&gt;&gt; grid = pv.ImageData(
  |      ...     dimensions=(n, n, n),
  |      ...     spacing=(
  |      ...         abs(x_min) / n * 2,
@@ -6236,7 +6268,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      ...     rng=[0, 0],
  |      ...     method=&#39;flying_edges&#39;,
  |      ... )
- |      &gt;&gt;&gt; out.plot(color=&#39;tan&#39;, smooth_shading=True)
+ |      &gt;&gt;&gt; out.plot(color=&#39;lightblue&#39;, smooth_shading=True)
  |
  |      See :ref:`common_filter_example` or
  |      :ref:`marching_cubes_example` for more examples using this
@@ -6261,7 +6293,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          Display a progress bar to indicate progress.
  |
  |      **kwargs : dict, optional
- |          Depreciated keyword argument ``pass_cell_arrays``.
+ |          Deprecated keyword argument ``pass_cell_arrays``.
  |
  |      Returns
  |      -------
@@ -6448,9 +6480,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      ----------
  |      use_all_points : bool, default: False
  |          Indicates whether all of the points of the input mesh should exist
- |          in the output. When ``True`` enables point renumbering.  If set to
- |          ``True``, then a threaded approach is used which avoids the use of
- |          a point locator and is quicker.
+ |          in the output. When ``True``, point numbering does not change and
+ |          a threaded approach is used, which avoids the use of a point locator
+ |          and is quicker.
  |
  |          By default this is set to ``False``, and unused points are omitted
  |          from the output.
@@ -6526,9 +6558,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      is shallow copied to the output.
  |
  |      The type of output dataset is always the same as the input type. Since
- |      structured types of data (i.e., :class:`pyvista.UniformGrid`,
- |      :class:`pyvista.StructuredGrid`, :class`pyvista.RectilnearGrid`,
- |      :class:`pyvista.UniformGrid`) are all composed of a cell of the same
+ |      structured types of data (i.e., :class:`pyvista.ImageData`,
+ |      :class:`pyvista.StructuredGrid`, :class`pyvista.RectilnearGrid`)
+ |      are all composed of a cell of the same
  |      type, the output is either empty, or a shallow copy of the input.
  |      Unstructured data (:class:`pyvista.UnstructuredGrid`,
  |      :class:`pyvista.PolyData`) input may produce a subset of the input data
@@ -7161,11 +7193,11 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Examples
  |      --------
- |      Partition a simple UniformGrid into a :class:`pyvista.MultiBlock`
+ |      Partition a simple ImageData into a :class:`pyvista.MultiBlock`
  |      containing each partition.
  |
  |      &gt;&gt;&gt; import pyvista as pv
- |      &gt;&gt;&gt; grid = pv.UniformGrid(dimensions=(5, 5, 5))
+ |      &gt;&gt;&gt; grid = pv.ImageData(dimensions=(5, 5, 5))
  |      &gt;&gt;&gt; out = grid.partition(4, as_composite=True)
  |      &gt;&gt;&gt; out.plot(multi_colors=True, show_edges=True)
  |
@@ -7421,7 +7453,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      ----------
  |      points : pyvista.DataSet
  |          The points to probe values on to. This should be a PyVista mesh
- |          or something :func:`pyvista.wrap` can handle.
+ |          or something :func:`wrap` can handle.
  |
  |      tolerance : float, optional
  |          Tolerance used to compute whether a point in the source is
@@ -7482,7 +7514,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |          Display a progress bar to indicate progress.
  |
  |      **kwargs : dict, optional
- |          Depreciated keyword argument ``pass_point_arrays``.
+ |          Deprecated keyword argument ``pass_point_arrays``.
  |
  |      Returns
  |      -------
@@ -8734,11 +8766,11 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Examples
  |      --------
- |      &gt;&gt;&gt; import pyvista
+ |      &gt;&gt;&gt; import pyvista as pv
  |      &gt;&gt;&gt; import numpy as np
  |      &gt;&gt;&gt; volume = np.zeros([10, 10, 10])
  |      &gt;&gt;&gt; volume[:3] = 1
- |      &gt;&gt;&gt; vol = pyvista.wrap(volume)
+ |      &gt;&gt;&gt; vol = pv.wrap(volume)
  |      &gt;&gt;&gt; threshed = vol.threshold(0.1)
  |      &gt;&gt;&gt; threshed
  |      UnstructuredGrid (...)
@@ -8752,9 +8784,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Apply the threshold filter to Perlin noise.  First generate
  |      the structured grid.
  |
- |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; noise = pyvista.perlin_noise(0.1, (1, 1, 1), (0, 0, 0))
- |      &gt;&gt;&gt; grid = pyvista.sample_function(
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; noise = pv.perlin_noise(0.1, (1, 1, 1), (0, 0, 0))
+ |      &gt;&gt;&gt; grid = pv.sample_function(
  |      ...     noise, [0, 1.0, -0, 1.0, 0, 1.0], dim=(20, 20, 20)
  |      ... )
  |      &gt;&gt;&gt; grid.plot(
@@ -8765,9 +8797,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |
  |      Next, apply the threshold.
  |
- |      &gt;&gt;&gt; import pyvista
- |      &gt;&gt;&gt; noise = pyvista.perlin_noise(0.1, (1, 1, 1), (0, 0, 0))
- |      &gt;&gt;&gt; grid = pyvista.sample_function(
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; noise = pv.perlin_noise(0.1, (1, 1, 1), (0, 0, 0))
+ |      &gt;&gt;&gt; grid = pv.sample_function(
  |      ...     noise, [0, 1.0, -0, 1.0, 0, 1.0], dim=(20, 20, 20)
  |      ... )
  |      &gt;&gt;&gt; threshed = grid.threshold(value=0.02)
@@ -8903,7 +8935,7 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      -------
  |      pyvista.DataSet
  |          Transformed dataset.  Return type matches input unless
- |          input dataset is a :class:`pyvista.UniformGrid`, in which
+ |          input dataset is a :class:`pyvista.ImageData`, in which
  |          case the output datatype is a :class:`pyvista.StructuredGrid`.
  |
  |      Examples
@@ -9111,9 +9143,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      &gt;&gt;&gt; mesh[&#39;my-field-data&#39;]
  |      pyvista_ndarray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
  |
- |      Add field data to a UniformGrid dataset.
+ |      Add field data to a ImageData dataset.
  |
- |      &gt;&gt;&gt; mesh = pyvista.UniformGrid(dimensions=(2, 2, 1))
+ |      &gt;&gt;&gt; mesh = pyvista.ImageData(dimensions=(2, 2, 1))
  |      &gt;&gt;&gt; mesh.add_field_data(
  |      ...     [&#39;I could&#39;, &#39;write&#39;, &#39;notes&#39;, &#39;here&#39;], &#39;my-field-data&#39;
  |      ... )
@@ -9182,9 +9214,9 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista as pv
- |      &gt;&gt;&gt; source = pv.UniformGrid(dimensions=(10, 10, 5))
+ |      &gt;&gt;&gt; source = pv.ImageData(dimensions=(10, 10, 5))
  |      &gt;&gt;&gt; source = source.compute_cell_sizes()
- |      &gt;&gt;&gt; target = pv.UniformGrid(dimensions=(10, 10, 5))
+ |      &gt;&gt;&gt; target = pv.ImageData(dimensions=(10, 10, 5))
  |      &gt;&gt;&gt; target.copy_attributes(source)
  |      &gt;&gt;&gt; target.plot(scalars=&#39;Volume&#39;, show_edges=True)
  |
@@ -9199,8 +9231,8 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
  |      Examples
  |      --------
  |      &gt;&gt;&gt; import pyvista as pv
- |      &gt;&gt;&gt; source = pv.UniformGrid(dimensions=(10, 10, 5))
- |      &gt;&gt;&gt; target = pv.UniformGrid()
+ |      &gt;&gt;&gt; source = pv.ImageData(dimensions=(10, 10, 5))
+ |      &gt;&gt;&gt; target = pv.ImageData()
  |      &gt;&gt;&gt; target.copy_structure(source)
  |      &gt;&gt;&gt; target.plot(show_edges=True)
  |
@@ -9339,12 +9371,12 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(100, 100, 100)
 </pre></div>
 </div>
-<p>Create the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.UniformGrid</span></code></a></p>
+<p>Create the <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></p>
 <p>Hint, you will likely need to <code class="docutils literal notranslate"><span class="pre">ravel</span></code> the array with F-ordering:
 <code class="docutils literal notranslate"><span class="pre">arr.ravel(order=&quot;F&quot;)</span></code></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">UniformGrid</span></a><span class="p">()</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arr</span><span class="o">.</span><span class="n">shape</span></a>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arr</span></a><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vol</span> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="pyvista.DataSet" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">ImageData</span></a><span class="p">()</span>
+<span class="n">vol</span><span class="o">.</span><span class="n">dimensions</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="builtins.tuple" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arr</span><span class="o">.</span><span class="n">shape</span></a>
+<span class="n">vol</span><span class="p">[</span><span class="s1">&#39;array&#39;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">arr</span></a><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">plot</span></a><span class="p">()</span>
@@ -9358,18 +9390,18 @@ class UniformGrid(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core
 <a class="reference external" href="https://docs.pyvista.org/examples/02-plot/volume.html">Volume Rendering</a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_knee_full</span><span class="p">()</span>
+<span class="n">vol</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_knee_full</span><span class="p">()</span>
 
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_volume.html#pyvista.Plotter.add_volume" title="pyvista.Plotter.add_volume" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_volume</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bone&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_volume.html#pyvista.Plotter.add_volume" title="pyvista.Plotter.add_volume" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_volume</span></a><span class="p">(</span><span class="n">vol</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;bone&quot;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_create-uniform-grid_004.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_004.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vol</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Wavelet.html#pyvista.Wavelet" title="pyvista.Wavelet" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">Wavelet</span></a><span class="p">()</span>
+<img src="../../../_images/sphx_glr_c_create-uniform-grid_004.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_004.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vol</span> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Wavelet.html#pyvista.Wavelet" title="pyvista.Wavelet" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">Wavelet</span></a><span class="p">()</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.711 seconds)</p>
+<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.376 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-c-create-uniform-grid-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/c_create-uniform-grid.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo6.svg" width="150px" /></a>

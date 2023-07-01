@@ -555,7 +555,7 @@ meshes can have 1D iso-lines of a scalar field extracted.</p>
 <section id="iso-lines">
 <h2>Iso-Lines<a class="headerlink" href="#iso-lines" title="Permalink to this heading">#</a></h2>
 <p>Let’s extract 1D iso-lines of a scalar field from a 2D surface mesh.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_random_hills</span><span class="p">()</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_random_hills</span><span class="p">()</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.contour.html#pyvista.DataSetFilters.contour" title="pyvista.DataSetFilters.contour" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">mesh</span><span class="o">.</span><span class="n">contour</span></a><span class="p">)</span>
@@ -644,7 +644,7 @@ contour(isosurfaces=10, scalars=None, compute_normals=False, compute_gradients=F
     ...
     &gt;&gt;&gt; n = 100
     &gt;&gt;&gt; x_min, y_min, z_min = -1.35, -1.7, -0.65
-    &gt;&gt;&gt; grid = pv.UniformGrid(
+    &gt;&gt;&gt; grid = pv.ImageData(
     ...     dimensions=(n, n, n),
     ...     spacing=(
     ...         abs(x_min) / n * 2,
@@ -661,7 +661,7 @@ contour(isosurfaces=10, scalars=None, compute_normals=False, compute_gradients=F
     ...     rng=[0, 0],
     ...     method=&#39;flying_edges&#39;,
     ... )
-    &gt;&gt;&gt; out.plot(color=&#39;tan&#39;, smooth_shading=True)
+    &gt;&gt;&gt; out.plot(color=&#39;lightblue&#39;, smooth_shading=True)
 
     See :ref:`common_filter_example` or
     :ref:`marching_cubes_example` for more examples using this
@@ -672,7 +672,7 @@ contour(isosurfaces=10, scalars=None, compute_normals=False, compute_gradients=F
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">contours</span></a><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
@@ -681,14 +681,14 @@ contour(isosurfaces=10, scalars=None, compute_normals=False, compute_gradients=F
 <section id="iso-surfaces">
 <h2>Iso-Surfaces<a class="headerlink" href="#iso-surfaces" title="Permalink to this heading">#</a></h2>
 <p>Let’s extract 2D iso-surfaces of a scalar field from a 3D mesh.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_embryo</span><span class="p">()</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UniformGrid.html#pyvista.UniformGrid" title="pyvista.UniformGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_embryo</span><span class="p">()</span>
+<span class="n">mesh</span>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
-<table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table>
-<tr><th>UniformGrid</th><th>Information</th></tr>
+<table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table style='width: 100%;'>
+<tr><th>ImageData</th><th>Information</th></tr>
 <tr><td>N Cells</td><td>16581375</td></tr>
 <tr><td>N Points</td><td>16777216</td></tr>
 <tr><td>X Bounds</td><td>0.000e+00, 2.550e+02</td></tr>
@@ -700,7 +700,7 @@ contour(isosurfaces=10, scalars=None, compute_normals=False, compute_gradients=F
 </table>
 
 </td><td>
-<table>
+<table style='width: 100%;'>
 <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
 <tr><td><b>SLCImage</b></td><td>Points</td><td>uint8</td><td>1</td><td>0.000e+00</td><td>1.970e+02</td></tr>
 </table>
@@ -724,7 +724,7 @@ of 50 and 200</p>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_contouring_002.png" srcset="../../../_images/sphx_glr_d_contouring_002.png" alt="d contouring" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.815 seconds)</p>
+<img src="../../../_images/sphx_glr_d_contouring_002.png" srcset="../../../_images/sphx_glr_d_contouring_002.png" alt="d contouring" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.917 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-04-filters-solutions-d-contouring-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/04_filters/solutions/d_contouring.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo13.svg" width="150px" /></a>

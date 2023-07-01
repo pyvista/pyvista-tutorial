@@ -557,7 +557,7 @@ airplane mesh.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="pyvista.read" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">read</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function read in module pyvista.utilities.fileio:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function read in module pyvista.core.utilities.fileio:
 
 read(filename, attrs=None, force_ext=None, file_format=None, progress_bar=False)
     Read any file type supported by ``vtk`` or ``meshio``.
@@ -630,7 +630,9 @@ extensions are listed in an internal function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/readers/_autosummary/pyvista.get_reader.html#pyvista.get_reader" title="pyvista.get_reader" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">get_reader</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function get_reader in module pyvista.utilities.reader:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/pyvista/utilities/__init__.py:69: PyVistaDeprecationWarning: The `pyvista.utilities` module has been deprecated. `get_reader` is now imported as: `from pyvista.core.utilities import get_reader`.
+  warnings.warn(
+Help on function get_reader in module pyvista.core.utilities.reader:
 
 get_reader(filename, force_ext=None)
     Get a reader for fine-grained control of reading data files.
@@ -773,7 +775,7 @@ get_reader(filename, force_ext=None)
     &gt;&gt;&gt; mesh = reader.read()
     &gt;&gt;&gt; mesh
     PolyData ...
-    &gt;&gt;&gt; mesh.plot(color=&#39;tan&#39;)
+    &gt;&gt;&gt; mesh.plot(color=&#39;lightblue&#39;)
 </pre></div>
 </div>
 <p>The following code block uses a built-in example
@@ -854,7 +856,7 @@ format, use that! Otherwise, download this file:
 <span class="c1"># mesh = pv.read(&#39;path/to/file.vtk)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.435 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.275 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-e-read-file-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/e_read-file.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo6.svg" width="150px" /></a>

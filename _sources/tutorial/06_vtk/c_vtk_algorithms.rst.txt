@@ -68,8 +68,8 @@ Here is a sample mesh
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-    <table>
+    <table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table style='width: 100%;'>
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>19602</td></tr>
     <tr><td>N Points</td><td>10000</td></tr>
@@ -81,7 +81,7 @@ Here is a sample mesh
     </table>
 
     </td><td>
-    <table>
+    <table style='width: 100%;'>
     <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
     <tr><td>Normals</td><td>Points</td><td>float32</td><td>3</td><td>-8.663e-01</td><td>9.999e-01</td></tr>
     <tr><td><b>Elevation</b></td><td>Points</td><td>float32</td><td>1</td><td>1.416e-01</td><td>7.483e+00</td></tr>
@@ -1268,7 +1268,7 @@ Remember that you will have to wrap the output of the algorithm with :func:`pyvi
 
     <div class="output_subarea output_html rendered_html output_result">
 
-    <table>
+    <table style='width: 100%;'>
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>0</td></tr>
     <tr><td>N Points</td><td>0</td></tr>
@@ -1304,7 +1304,7 @@ Remember that you will have to wrap the output of the algorithm with :func:`pyvi
 
     <div class="output_subarea output_html rendered_html output_result">
 
-    <table>
+    <table style='width: 100%;'>
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>12</td></tr>
     <tr><td>N Points</td><td>8</td></tr>
@@ -1361,7 +1361,7 @@ See https://kitware.github.io/vtk-examples/site/Python/
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.605 seconds)
+   **Total running time of the script:** ( 0 minutes  0.728 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_c_vtk_algorithms.py:

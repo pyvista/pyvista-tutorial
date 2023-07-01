@@ -69,9 +69,9 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
 
  .. code-block:: none
 
-    Help on method add_mesh in module pyvista.plotting.plotting:
+    Help on method add_mesh in module pyvista.plotting.plotter:
 
-    add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=None, line_width=None, opacity=None, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=None, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=None, smooth_shading=None, split_sharp_edges=None, ambient=None, diffuse=None, specular=None, specular_power=None, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=None, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference='point', log_scale=False, pbr=None, metallic=None, roughness=None, render=True, component=None, emissive=None, copy_mesh=False, backface_params=None, show_vertices=None, **kwargs) method of pyvista.plotting.plotting.Plotter instance
+    add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=None, line_width=None, opacity=None, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=None, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=None, smooth_shading=None, split_sharp_edges=None, ambient=None, diffuse=None, specular=None, specular_power=None, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=None, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference='point', log_scale=False, pbr=None, metallic=None, roughness=None, render=True, component=None, emissive=None, copy_mesh=False, backface_params=None, show_vertices=None, **kwargs) method of pyvista.plotting.plotter.Plotter instance
         Add any PyVista/VTK mesh or dataset that PyVista can wrap to the scene.
     
         This method is using a mesh representation to view the surfaces
@@ -100,7 +100,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             specified.
     
             Defaults to :attr:`pyvista.global_theme.color
-            <pyvista.themes.DefaultTheme.color>`.
+            <pyvista.themes.Theme.color>`.
     
         style : str, optional
             Visualization style of the mesh.  One of the following:
@@ -132,7 +132,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             Either a string, RGB list, or hex color string.
     
             Defaults to :attr:`pyvista.global_theme.edge_color
-            <pyvista.themes.DefaultTheme.edge_color>`.
+            <pyvista.themes.Theme.edge_color>`.
     
         point_size : float, optional
             Point size of any nodes in the dataset plotted. Also
@@ -172,7 +172,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             mapped colors which can result is showing colors that are
             not present in the color map.
     
-        cmap : str | list | pyvista.LookupTable, default: :attr:`pyvista.themes.DefaultTheme.cmap`
+        cmap : str | list | pyvista.LookupTable, default: :attr:`pyvista.themes.Theme.cmap`
             If a string, this is the name of the ``matplotlib`` colormap to use
             when mapping the ``scalars``.  See available Matplotlib colormaps.
             Only applicable for when displaying ``scalars``.
@@ -217,13 +217,10 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             updated.  If an actor of this name already exists in the
             rendering window, it will be replaced by the new actor.
     
-        texture : vtk.vtkTexture or np.ndarray or bool or str, optional
+        texture : vtk.vtkTexture or np.ndarray, optional
             A texture to apply if the input mesh has texture
             coordinates.  This will not work with MultiBlock
-            datasets. If set to ``True``, the first available texture
-            on the object will be used. If a string name is given, it
-            will pull a texture with that name associated to the input
-            mesh.
+            datasets.
     
         render_points_as_spheres : bool, optional
             Render points as spheres rather than dots.
@@ -646,7 +643,7 @@ There you go! Those are a few of the most commonly used display options!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.654 seconds)
+   **Total running time of the script:** ( 0 minutes  2.894 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py:

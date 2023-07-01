@@ -63,7 +63,7 @@ airplane mesh.
 
  .. code-block:: none
 
-    Help on function read in module pyvista.utilities.fileio:
+    Help on function read in module pyvista.core.utilities.fileio:
 
     read(filename, attrs=None, force_ext=None, file_format=None, progress_bar=False)
         Read any file type supported by ``vtk`` or ``meshio``.
@@ -154,7 +154,9 @@ extensions are listed in an internal function:
 
  .. code-block:: none
 
-    Help on function get_reader in module pyvista.utilities.reader:
+    /home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/pyvista/utilities/__init__.py:69: PyVistaDeprecationWarning: The `pyvista.utilities` module has been deprecated. `get_reader` is now imported as: `from pyvista.core.utilities import get_reader`.
+      warnings.warn(
+    Help on function get_reader in module pyvista.core.utilities.reader:
 
     get_reader(filename, force_ext=None)
         Get a reader for fine-grained control of reading data files.
@@ -297,7 +299,7 @@ extensions are listed in an internal function:
         >>> mesh = reader.read()
         >>> mesh
         PolyData ...
-        >>> mesh.plot(color='tan')
+        >>> mesh.plot(color='lightblue')
 
 
 
@@ -549,7 +551,7 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.435 seconds)
+   **Total running time of the script:** ( 0 minutes  2.275 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_soultions_e_read-file.py:

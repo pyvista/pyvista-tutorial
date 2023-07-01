@@ -62,8 +62,8 @@ Clip any dataset by a user defined plane using the
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-    <table>
+    <table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table style='width: 100%;'>
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>1000</td></tr>
     <tr><td>N Points</td><td>872</td></tr>
@@ -75,7 +75,7 @@ Clip any dataset by a user defined plane using the
     </table>
 
     </td><td>
-    <table>
+    <table style='width: 100%;'>
     <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
     <tr><td>Normals</td><td>Points</td><td>float32</td><td>3</td><td>-9.998e-01</td><td>9.977e-01</td></tr>
     </table>
@@ -189,8 +189,8 @@ Perform a clip with a Y axis normal
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-    <table>
+    <table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table style='width: 100%;'>
     <tr><th>PolyData</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>427</td></tr>
     <tr><td>N Points</td><td>248</td></tr>
@@ -202,7 +202,7 @@ Perform a clip with a Y axis normal
     </table>
 
     </td><td>
-    <table>
+    <table style='width: 100%;'>
     <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
     <tr><td>Normals</td><td>Points</td><td>float32</td><td>3</td><td>-9.927e-01</td><td>9.977e-01</td></tr>
     </table>
@@ -353,8 +353,8 @@ Clip the dataset with a bounding box defined by the values in ``bounds``
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <table><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-    <table>
+    <table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+    <table style='width: 100%;'>
     <tr><th>UnstructuredGrid</th><th>Information</th></tr>
     <tr><td>N Cells</td><td>38690</td></tr>
     <tr><td>N Points</td><td>9438</td></tr>
@@ -365,7 +365,7 @@ Clip the dataset with a bounding box defined by the values in ``bounds``
     </table>
 
     </td><td>
-    <table>
+    <table style='width: 100%;'>
     <tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
     <tr><td><b>scalars</b></td><td>Points</td><td>float32</td><td>1</td><td>-3.870e+00</td><td>7.186e-01</td></tr>
     <tr><td>vectors</td><td>Points</td><td>float32</td><td>3</td><td>-6.729e-01</td><td>4.289e-01</td></tr>
@@ -577,7 +577,7 @@ Plot comparison
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.559 seconds)
+   **Total running time of the script:** ( 0 minutes  2.335 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_b_clipping.py:
