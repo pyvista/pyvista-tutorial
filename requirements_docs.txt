@@ -34,6 +34,7 @@ sphinx-tabs
 sphinx_design==0.3.0
 sphinxcontrib-websupport==1.2.4
 sphinxcontrib.asciinema
+streamtracer==2.0.1
 sunkit-pyvista==0.1.0
 trame==2.5.0
 trame-client==2.9.4
