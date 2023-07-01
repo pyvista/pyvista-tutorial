@@ -14,3 +14,4 @@ pyvistaqt
 QtPy
 sphinx
 tqdm
+sunkit-pyvista
