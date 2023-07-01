@@ -43,3 +43,4 @@ trame-vtk==2.5.4
 trimesh==3.15.8
 typed-ast==1.5.4
 typing_extensions==4.4.0
+pyvista-xarray==0.1.3
