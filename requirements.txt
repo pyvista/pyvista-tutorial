@@ -1,6 +1,5 @@
 cmocean
 flask==2.3.2
-geovista
 imageio>=2.5.0
 imageio-ffmpeg
 ipyvtklink
@@ -13,5 +12,4 @@ pyvista
 pyvistaqt
 QtPy
 sphinx
-sunkit-pyvista
 tqdm
