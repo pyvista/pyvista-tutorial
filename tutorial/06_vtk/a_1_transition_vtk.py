@@ -70,7 +70,7 @@ values = 127.5 + (1.0 + np.sin(x / 25.0) * np.cos(y / 25.0))
 ###############################################################################
 # Create the grid.  Note how the values must use Fortran ordering.
 
-grid = pv.UniformGrid(dims=(300, 300, 1))
+grid = pv.ImageData(dims=(300, 300, 1))
 grid.point_data["values"] = values.flatten(order="F")
 
 ###############################################################################
@@ -84,7 +84,7 @@ grid.point_data["values"] = values.flatten(order="F")
 #    fields). Here, shape and values are stored concretely in one
 #    variable.
 #
-# #. :class:`pyvista.UniformGrid` wraps `vtk.vtkImageData`_, just with a
+# #. :class:`pyvista.ImageData` wraps `vtk.vtkImageData`_, just with a
 #    different name; they are both containers of evenly spaced points. Your
 #    data does not have to be an "image" to use it with
 #    `vtk.vtkImageData`_; rather, like images, values in the dataset are
