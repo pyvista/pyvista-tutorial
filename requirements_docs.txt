@@ -35,3 +35,5 @@ sphinxcontrib.asciinema
 trimesh==3.15.8
 typed-ast==1.5.4
 typing_extensions==4.4.0
+geovista==0.2.0
+sunkit-pyvista==0.1.0
