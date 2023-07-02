@@ -1,4 +1,4 @@
-.. include:: ./external_gallery.rst
+.. include:: ./external_gallery.txt
 
 Exercises
 ---------

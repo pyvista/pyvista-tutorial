@@ -239,7 +239,7 @@ articles = dict(
 def make_example_gallery():
     """Make the example gallery."""
     d = Path(__file__).absolute().parent
-    path = Path(d, "tutorial/05_action/external_gallery.rst")
+    path = Path(d, "tutorial/05_action/external_gallery.txt")
     path.parent.mkdir(parents=True, exist_ok=True)
     path = str(path)
 
