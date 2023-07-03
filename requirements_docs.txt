@@ -1,7 +1,7 @@
 cartopy==0.21.1
 cmocean==2.0
 colorcet==3.0.1
-geovista==0.2.0
+git+https://github.com/bjlittle/geovista@main
 imageio>=2.5.0
 imageio-ffmpeg==0.4.7
 ipygany==0.5.0
