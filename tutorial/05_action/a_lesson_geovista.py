@@ -1,28 +1,46 @@
 """
 .. _action_geovista:
 
+This is provided by `@bjlittle <https://github.com/bjlittle>`_ in
+`this discussion <https://github.com/bjlittle/geovista/discussions/343>`_
+and modifined by `@tkoyama010 <https://github.com/tkoyama010>`_ .
+
 Using GeoVista
 ~~~~~~~~~~~~~~
-This is provided by `@bjlittle <https://github.com/bjlittle>`_ in
-`this discussion <https://github.com/bjlittle/geovista/discussions/343>`_ .
+
+You may think that PyVista is a little too abstract for what you do.
+Therefore, we will introduce GeoVista, which was developed as a gateway to
+earth sciences.
+
+GeoVista is a very good external example of using PyVista in a more concrete
+use case.
 """
 
 ###############################################################################
-# At the Met Office we are moving to an unstructured cube-sphere mesh...
+# At the Met Office we are moving to an unstructured cube-sphere mesh
 # which is a cube projected out onto a sphere i.e., there are six panels on the
 # sphere. Each cube-sphere is defined by the number of "cells squared" within
 # each panel e.g., the following example is a C48 cube-sphere, so there are 6 *
 # 48 * 48 cells.
+#
+# To that end, GeoVista has prepared samples for it.
 
 import geovista.samples
 import geovista.theme
 
 c48 = geovista.samples.lfric(resolution="c48")
+c48
+
+###############################################################################
+# Since the `c48` is defined as PolyDdata in PyVista, it can be drawn using
+# PyVista's plot method.
+
 c48.plot(show_edges=True)
 
 ###############################################################################
-# Here's a sample C48 cube-sphere populated with Sea Surface Temperature data
-# (on the cells):
+# Here's a sample C48 cube-sphere populated with Sea Surface Temperature data.
+# In this data, cell data from PyVista's PolyData object is used as temperature
+# data:
 
 c48_sst = geovista.samples.lfric_sst()
 c48_sst.plot(show_edges=True)
@@ -50,8 +68,9 @@ bbox.mesh.plot()
 # panel of the cube-sphere.
 
 import geovista as gv
+import pyvista as pv
 
-plotter = gv.GeoPlotter()
+plotter = pv.Plotter()
 plotter.add_mesh(c48_sst, show_edges=True)
 plotter.add_mesh(bbox.mesh)
 plotter.add_axes()
@@ -63,7 +82,7 @@ plotter.show()
 # through the manifold to the underlying cube-sphere surface, or turn on the
 # gridlines of the bbox etc
 
-plotter = gv.GeoPlotter()
+plotter = pv.Plotter()
 plotter.add_mesh(c48_sst, show_edges=True)
 plotter.add_mesh(bbox.boundary(), color="green", line_width=5)
 plotter.add_axes()
@@ -75,7 +94,7 @@ plotter.show()
 
 region = bbox.enclosed(c48_sst)
 
-plotter = gv.GeoPlotter()
+plotter = pv.Plotter()
 plotter.add_mesh(region, show_edges=True)
 plotter.add_axes()
 plotter.view_xz()
@@ -129,7 +148,7 @@ plotter.show()
 
 outside = bbox.enclosed(c48_sst, outside=True)
 
-plotter = gv.GeoPlotter()
+plotter = pv.Plotter()
 plotter.add_mesh(outside, show_edges=True)
 plotter.add_axes()
 plotter.show()
