@@ -46,8 +46,7 @@ c48_sst = geovista.samples.lfric_sst()
 c48_sst.plot(show_edges=True)
 
 ###############################################################################
-# Note that, the land masses are masked, as oceanographers, like fish,
-# typically aren't interested in land (a sweeping generalisation)
+# Note that, the land masses are masked.
 
 ###############################################################################
 # There is a convenience within `geovista.geodesic` that creates a
