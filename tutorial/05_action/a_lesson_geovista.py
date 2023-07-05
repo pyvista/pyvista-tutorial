@@ -10,7 +10,7 @@ and modifined by `@tkoyama010 <https://github.com/tkoyama010>`_ .
 """
 
 ###############################################################################
-# You may think that PyVista is a little too abstract for what you do.
+# You may think that PyVista is a little too abstract for what you want todo.
 # Therefore, we will introduce GeoVista, which was developed as a gateway to
 # earth sciences.
 #
