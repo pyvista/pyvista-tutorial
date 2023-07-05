@@ -1,23 +1,24 @@
 """
 .. _action_geovista:
 
-This is provided by `@bjlittle <https://github.com/bjlittle>`_ in
-`this discussion <https://github.com/bjlittle/geovista/discussions/343>`_
-and modifined by `@tkoyama010 <https://github.com/tkoyama010>`_ .
-
 Using GeoVista
 ~~~~~~~~~~~~~~
 
-You may think that PyVista is a little too abstract for what you do.
-Therefore, we will introduce GeoVista, which was developed as a gateway to
-earth sciences.
-
-GeoVista is a very good external example of using PyVista in a more concrete
-use case.
+This is provided by `@bjlittle <https://github.com/bjlittle>`_ in
+`this discussion <https://github.com/bjlittle/geovista/discussions/343>`_
+and modifined by `@tkoyama010 <https://github.com/tkoyama010>`_ .
 """
 
 ###############################################################################
-# At the Met Office we are moving to an unstructured cube-sphere mesh
+# You may think that PyVista is a little too abstract for what you do.
+# Therefore, we will introduce GeoVista, which was developed as a gateway to
+# earth sciences.
+#
+# GeoVista is a very good external example of using PyVista in a more concrete
+# use case.
+
+###############################################################################
+# At the Met Office, they are moving to an unstructured cube-sphere mesh
 # which is a cube projected out onto a sphere i.e., there are six panels on the
 # sphere. Each cube-sphere is defined by the number of "cells squared" within
 # each panel e.g., the following example is a C48 cube-sphere, so there are 6 *
