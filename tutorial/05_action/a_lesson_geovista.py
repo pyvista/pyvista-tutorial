@@ -20,10 +20,13 @@ import geovista.theme
 import pyvista as pv
 
 ###############################################################################
-# PyVista allows you to set global and local plotting themes to easily set
-# (learn more in `Control Global and Local Plotting Themes
-# <https://docs.pyvista.org/version/stable/examples/02-plot/themes.html>`_).
-
+# .. note:: **Plotting Theme**
+#
+#      GeoVista defines its own plotting theme in `geovista.theme`.
+#      PyVista allows you to set global and local plotting themes to easily set
+#      (learn more in `Control Global and Local Plotting Themes
+#      <https://docs.pyvista.org/version/stable/examples/02-plot/themes.html>`_
+#      ).
 
 ###############################################################################
 # At the `Met Office <https://www.metoffice.gov.uk/>`_ , they are moving to an
@@ -215,3 +218,10 @@ plotter.show()
 # `pyvista`and `vtk` the extraction operation is pretty darn fast as opposed to
 # other traditional approaches (perhaps I should garner metrics to back that
 # up!)
+
+###############################################################################
+# .. important:: **Experimental**
+#
+#      GeoVista is still in the experimental stages. They would love your
+#      feedback, but as immature packages their API, documentation, test
+#      coverage and CI are still 'under construction'.
