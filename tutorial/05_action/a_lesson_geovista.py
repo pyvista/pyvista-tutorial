@@ -1,6 +1,4 @@
 """
-.. _action_geovista:
-
 Using GeoVista
 ~~~~~~~~~~~~~~
 
@@ -10,7 +8,7 @@ and modifined by `@tkoyama010 <https://github.com/tkoyama010>`_ .
 """
 
 ###############################################################################
-# You may think that PyVista is a little too abstract for what you want todo.
+# You may think that PyVista is a little too abstract for what you want to do.
 # Therefore, we will introduce GeoVista, which was developed as a gateway to
 # earth sciences.
 #
@@ -29,8 +27,10 @@ and modifined by `@tkoyama010 <https://github.com/tkoyama010>`_ .
 import geovista.samples
 import geovista.theme
 
+help(geovista.samples.lfric)
+
+###############################################################################
 c48 = geovista.samples.lfric(resolution="c48")
-c48
 
 ###############################################################################
 # Since the `c48` is defined as PolyDdata in PyVista, it can be drawn using
@@ -192,16 +192,15 @@ plotter.show_axes()
 plotter.show()
 
 ###############################################################################
-# Food for thought perhaps?
-#
 # Also, explore the BBox class to create custom bounding box instances, and
 # there is also the geovista.geodesic.wedge, a convenience function akin to the
 # `geovista.geodesic.panel`. Plus you can easily render geodesic lines i.e.,
 # great circles, with geovista.geodesic.line.
 #
-# The point here is that this is just the first step. I'm aiming to provide a
-# richer suite of such primitives to extract regions in similar ways. But the
-# capability showcased by `geovista.geodesic` hints at the direction of where
-# I'm taking geovista. The other point to make is that thanks to `pyvista` and
-# `vtk` the extraction operation is pretty darn fast as opposed to other
-# traditional approaches (perhaps I should garner metrics to back that up!)
+# The point here is that this is just the first step. GeoVista is aiming to
+# provide a richer suite of such primitives to extract regions in similar ways.
+# But the capability showcased by `geovista.geodesic` hints at the direction of
+# where I'm taking geovista. The other point to make is that thanks to
+# `pyvista`and `vtk` the extraction operation is pretty darn fast as opposed to
+# other traditional approaches (perhaps I should garner metrics to back that
+# up!)
