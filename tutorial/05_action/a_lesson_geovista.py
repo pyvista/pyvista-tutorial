@@ -108,6 +108,13 @@ plotter.show()
 
 region = bbox.enclosed(c48_sst)
 
+###############################################################################
+# TODO explain that region is PolyData.
+
+help(region)
+
+###############################################################################
+
 plotter = pv.Plotter()
 plotter.add_mesh(region, show_edges=True)
 plotter.add_axes()
@@ -134,6 +141,7 @@ plotter.show()
 ###############################################################################
 # Also, as we're not so interested in the land mask, let's threshold that out
 # and re-spin the render:
+# TODO explain that we are using pyvista PolyData method.
 
 sea_region = region.threshold()
 
