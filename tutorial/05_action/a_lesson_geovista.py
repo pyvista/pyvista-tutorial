@@ -15,22 +15,29 @@ and modifined by `@tkoyama010 <https://github.com/tkoyama010>`_ .
 # GeoVista is a very good external example of using PyVista in a more concrete
 # use case.
 
-###############################################################################
-# At the Met Office, they are moving to an unstructured cube-sphere mesh
-# which is a cube projected out onto a sphere i.e., there are six panels on the
-# sphere. Each cube-sphere is defined by the number of "cells squared" within
-# each panel e.g., the following example is a C48 cube-sphere, so there are 6 *
-# 48 * 48 cells.
-#
-# To that end, GeoVista has prepared samples for it.
-
-import geovista.samples
+import geovista as gv
 import geovista.theme
-
-help(geovista.samples.lfric)
+import pyvista as pv
 
 ###############################################################################
-c48 = geovista.samples.lfric(resolution="c48")
+# PyVista allows you to set global and local plotting themes to easily set
+# (learn more in `Control Global and Local Plotting Themes
+# <https://docs.pyvista.org/version/stable/examples/02-plot/themes.html>`_).
+
+
+###############################################################################
+# At the `Met Office <https://www.metoffice.gov.uk/>`_ , they are moving to an
+# unstructured cube-sphere mesh which is a cube projected out onto a sphere
+# i.e., there are six panels on the sphere. Each cube-sphere is defined by the
+# number of "cells squared" within each panel e.g., the following example is a
+# C48 cube-sphere, so there are 6 * 48 * 48 cells.
+#
+# GeoVista has samples for it.
+
+help(gv.samples.lfric)
+
+###############################################################################
+c48 = gv.samples.lfric(resolution="c48")
 
 ###############################################################################
 # Since the `c48` is defined as PolyDdata in PyVista, it can be drawn using
@@ -43,7 +50,10 @@ c48.plot(show_edges=True)
 # In this data, cell data from PyVista's PolyData object is used as temperature
 # data:
 
-c48_sst = geovista.samples.lfric_sst()
+help(gv.samples.lfric_sst)
+
+###############################################################################
+c48_sst = gv.samples.lfric_sst()
 c48_sst.plot(show_edges=True)
 
 ###############################################################################
@@ -56,6 +66,10 @@ c48_sst.plot(show_edges=True)
 
 from geovista.geodesic import panel
 
+help(panel)
+
+###############################################################################
+
 bbox = panel("americas")
 bbox.mesh.plot()
 
@@ -66,9 +80,6 @@ bbox.mesh.plot()
 # the bounding box and the mesh together so that we can see their relationship
 # to one another. Note that, our bbox instance is indeed covering the correct
 # panel of the cube-sphere.
-
-import geovista as gv
-import pyvista as pv
 
 plotter = pv.Plotter()
 plotter.add_mesh(c48_sst, show_edges=True)
