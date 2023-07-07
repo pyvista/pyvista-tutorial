@@ -28,15 +28,14 @@ using the `pyvista.examples.downloads
 <https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_
 module and external files.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-20
+.. GENERATED FROM PYTHON SOURCE LINES 12-19
 
 .. code-block:: default
 
 
-    # Configure for panel
+    # Configure for trame
     import pyvista
 
-    pyvista.set_jupyter_backend('panel')
     pyvista.set_plot_theme('document')
 
 
@@ -47,7 +46,7 @@ module and external files.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-27
+.. GENERATED FROM PYTHON SOURCE LINES 20-26
 
 Using Existing Data
 ~~~~~~~~~~~~~~~~~~~
@@ -56,7 +55,7 @@ scratch or loading the dataset from any one of the `compatible file formats
 <https://docs.pyvista.org/api/readers/index.html>`_. Since we're just starting
 out, let's load a file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-39
+.. GENERATED FROM PYTHON SOURCE LINES 26-38
 
 .. code-block:: default
 
@@ -97,12 +96,12 @@ out, let's load a file.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-42
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
 Note how this is a :class:`pyvista.PolyData`, which is effectively a surface
 dataset containing points, lines, and/or faces. We can immediately plot this with:
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-45
+.. GENERATED FROM PYTHON SOURCE LINES 41-44
 
 .. code-block:: default
 
@@ -121,7 +120,7 @@ dataset containing points, lines, and/or faces. We can immediately plot this wit
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-51
+.. GENERATED FROM PYTHON SOURCE LINES 45-50
 
 This is a fairly basic plot. You can change how its plotted by adding
 parameters as ``show_edges=True`` or changing the color by setting ``color`` to
@@ -129,7 +128,7 @@ a different value. All of this is described in PyVista's API documentation in
 :func:`pyvista.plot`, but for now let's take a look at another dataset. This
 one is a volumetric dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-55
+.. GENERATED FROM PYTHON SOURCE LINES 50-54
 
 .. code-block:: default
 
@@ -169,14 +168,14 @@ one is a volumetric dataset.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-60
+.. GENERATED FROM PYTHON SOURCE LINES 55-59
 
 This is a :class:`pyvista.ImageData`, which is a dataset containing a uniform
 set of points with consistent spacing. When we plot this dataset, we have the
 option of enabling volumetric plotting, which plots individual cells based on
 the content of the data associated with those cells.
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-64
+.. GENERATED FROM PYTHON SOURCE LINES 59-63
 
 .. code-block:: default
 
@@ -196,7 +195,7 @@ the content of the data associated with those cells.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-75
+.. GENERATED FROM PYTHON SOURCE LINES 64-74
 
 Read from a file
 ~~~~~~~~~~~~~~~~
@@ -209,7 +208,7 @@ In the following example, we load VTK's iron protein dataset `ironProt.vtk
 <https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk>`_ from a
 file using :func:`pyvista.read`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-81
+.. GENERATED FROM PYTHON SOURCE LINES 74-80
 
 .. code-block:: default
 
@@ -251,12 +250,12 @@ file using :func:`pyvista.read`.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-84
+.. GENERATED FROM PYTHON SOURCE LINES 81-83
 
 This is again a :class:`pyvista.ImageData` and we can plot it volumetrically
 with:
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-86
+.. GENERATED FROM PYTHON SOURCE LINES 83-85
 
 .. code-block:: default
 
@@ -277,7 +276,7 @@ with:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.558 seconds)
+   **Total running time of the script:** ( 0 minutes  11.296 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_a_lesson_basic.py:

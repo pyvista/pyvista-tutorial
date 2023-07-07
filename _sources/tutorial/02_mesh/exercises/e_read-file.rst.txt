@@ -57,7 +57,7 @@ extensions are listed in an internal function:
 
 .. code-block:: default
 
-    help(pv.utilities.reader.get_reader)
+    help(pv.core.utilities.reader.get_reader)
 
 
 

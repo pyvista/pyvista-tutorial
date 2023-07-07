@@ -97,14 +97,14 @@ Will be rendered as:
 
 Likewise, output from PyVista that would normally be rendered within a notebook
 will be rendered in the output cell from the ``jupyter-execute`` directive. For
-example, here's a plot using the `pythreejs
-<https://github.com/jupyter-widgets/pythreejs>`_ backend::
+example, here's a plot using the `trame
+<https://github.com/Kitware/trame>`_ backend::
 
   .. jupyter-execute::
 
      from pyvista import examples
      dataset = examples.download_urn()
-     dataset.plot(color='tan', jupyter_backend='pythreejs', window_size=(700, 400))
+     dataset.plot(color='tan', jupyter_backend='trame', window_size=(700, 400))
 
 Which is rendered as:
 
@@ -112,37 +112,37 @@ Which is rendered as:
 
    from pyvista import examples
    dataset = examples.download_urn()
-   dataset.plot(color='tan', jupyter_backend='pythreejs', window_size=(700, 400))
+   dataset.plot(color='tan', jupyter_backend='trame', window_size=(700, 400))
 
 
-Using the ``Panel`` backend with PyVista
+Using the ``Trame`` backend with PyVista
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-PyVista supports the usage of the `panel <https://github.com/holoviz/panel>`_
+PyVista supports the usage of the `trame <https://github.com/Kitware/trame>`_
 library as a ``vtk.js`` jupyterlab plotting backend that can be utilized as
 either a standalone VTK viewer, or as a tightly integrated ``pyvista`` plotting
 backend.  For example, within a Jupyter notebook environment, you can pass
-``jupyter_backend='panel'`` to ``plot``, or ``Plotter.show`` to automatically
-enable plotting with Juptyer and ``panel``.
+``jupyter_backend='trame'`` to ``plot``, or ``Plotter.show`` to automatically
+enable plotting with Juptyer and ``trame``.
 
 For example, here's the ``PyVista`` logo::
 
    .. jupyter-execute::
 
       from pyvista import demos
-      demos.plot_logo(background='white', jupyter_backend='panel')
+      demos.plot_logo(background='white', jupyter_backend='trame')
 
 Which is shown within the documentation as:
 
 .. jupyter-execute::
 
    from pyvista import demos
-   demos.plot_logo(background='white', jupyter_backend='panel')
+   demos.plot_logo(background='white', jupyter_backend='trame')
 
 |
 
 Examples and Usage
 ~~~~~~~~~~~~~~~~~~
-There are two ways to use `panel <https://github.com/holoviz/panel>`_ within
+There are two ways to use `trame <https://github.com/Kitware/trame>`_ within
 Jupyter notebooks.  You can use it on a plot by plot basis by setting the
 ``jupyter_backend`` in ``mesh.plot()``::
 
@@ -156,7 +156,6 @@ Jupyter notebooks.  You can use it on a plot by plot basis by setting the
        point_cloud = pv.PolyData(dataset.points[::100])
        point_cloud['height'] = point_cloud.points[:, 2]
        point_cloud.plot(window_size=[500, 500],
-                        jupyter_backend='panel',
                         cmap='jet',
                         point_size=2,
                         background='w')
@@ -173,7 +172,6 @@ And here's the resulting output in Sphinx:
     point_cloud = pv.PolyData(dataset.points[::100])
     point_cloud['height'] = point_cloud.points[:, 2]
     point_cloud.plot(window_size=[500, 500],
-                     jupyter_backend='panel',
                      cmap='jet',
                      point_size=2,
                      background='w')
@@ -188,15 +186,13 @@ Or you can first hide code that sets up the plotting backend and global theme::
        import pyvista as pv
 
        # Set the global jupyterlab backend.  All plots from this point
-       # onward will use the ``panel`` backend and do not have to be
+       # onward will use the ``trame`` backend and do not have to be
        # specified in ``show``
-       pv.set_jupyter_backend('panel')
 
 .. jupyter-execute::
    :hide-code:
 
    import pyvista as pv
-   pv.set_jupyter_backend('panel')
 
 And now just directly execute ``plot`` on any dataset::
 
@@ -216,9 +212,9 @@ Which looks like:
 
 
 .. note::
-   You have the option of choosing `panel <https://github.com/holoviz/panel>`_
-   or `pythreejs <https://github.com/jupyter-widgets/pythreejs>`_ as a backend,
-   but you might find that `panel <https://github.com/holoviz/panel>`_ has
+   You have the option of choosing `trame <https://github.com/Kitware/trame>`_
+   or `trame <https://github.com/Kitware/trame>`_ as a backend,
+   but you might find that `trame <https://github.com/Kitware/trame>`_ has
    better support as it's being actively developed.
 
 
