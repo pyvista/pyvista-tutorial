@@ -109,7 +109,7 @@ plotter.show()
 region = bbox.enclosed(c48_sst)
 
 ###############################################################################
-# TODO explain that region is PolyData.
+# `region` is defined as PolyData of PyVista.
 
 help(region)
 
@@ -122,9 +122,13 @@ plotter.view_xz()
 plotter.show()
 
 ###############################################################################
+# Let's check what kind of array does `region` have.
+
+print(region.array_names)
+
+###############################################################################
 # You could perhaps then play with the `preference` kwarg of the
 # `bbox.enclosed` method to see the impact on the end result.
-
 
 ###############################################################################
 # However, let's `geo-locate` the region by also rendering a texture mapped
@@ -139,11 +143,24 @@ plotter.show_axes()
 plotter.show()
 
 ###############################################################################
-# Also, as we're not so interested in the land mask, let's threshold that out
-# and re-spin the render:
-# TODO explain that we are using pyvista PolyData method.
+# GeoVista has its own `Plotter` class, `GeoPlotter`. It is a customized class
+# that inherits from PyVista's `Plotter` class and provides practical methods
+# for geoscience such as `add_coastlines` and `add_base_layer`.
 
-sea_region = region.threshold()
+help(gv.GeoPlotter)
+
+###############################################################################
+# Also, as we're not so interested in the land mask, let's threshold that out
+# and re-spin the render. To threshold the region and make `sea_region` we can
+# use `threshold` method of PyVista.
+
+sea_region = region.threshold(scalars='Surface Temperature')
+
+###############################################################################
+
+help(region.threshold)
+
+###############################################################################
 
 plotter = gv.GeoPlotter()
 plotter.add_mesh(sea_region, show_edges=True)
