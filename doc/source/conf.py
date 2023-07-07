@@ -177,6 +177,7 @@ from sphinx_gallery.sorting import FileNameSortKey
 
 tutorial_dirs = [
     '../../tutorial/00_intro/',
+    '../../tutorial/00_jupyter/',
     '../../tutorial/01_basic/',
     '../../tutorial/02_mesh/',
     '../../tutorial/03_figures/',
@@ -186,6 +187,7 @@ tutorial_dirs = [
     '../../tutorial/07_sphinx/',
     '../../tutorial/08_widgets/',
     '../../tutorial/09_qt/',
+    '../../tutorial/10_trame/',
 ]
 
 sphinx_gallery_conf = {

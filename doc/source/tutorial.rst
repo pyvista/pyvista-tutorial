@@ -9,6 +9,7 @@ PyVista Tutorial
    :hidden:
 
    tutorial/00_intro/index
+   tutorial/00_jupyter/index
    tutorial/01_basic/index
    tutorial/02_mesh/index
    tutorial/03_figures/index
@@ -18,6 +19,7 @@ PyVista Tutorial
    tutorial/07_sphinx/index
    tutorial/08_widgets/index
    tutorial/09_qt/index
+   tutorial/10_trame/index
 
 Welcome to the PyVista Tutorial!
 
@@ -50,6 +52,8 @@ Tutorial Overview
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`intro`    | Introduction - Using PyVista for 3D Visualization within Python.                                                      |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`jupyter`  | Using PyVista in Jupyter.                                                                                             |
++-----------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`basic`    | Reading and plotting 3D data using the `pyvista.examples`_ module and external files.                                 |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`mesh`     | Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D.        |
@@ -60,14 +64,11 @@ Tutorial Overview
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`action`   | Show how PyVista is already being used within several projects and can be used for all things visualization.          |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+
+| :ref:`trame`    | Leverage PyVista and Trame to make awesome interactive web applications.                                              |
++-----------------+-----------------------------------------------------------------------------------------------------------------------+
 | :ref:`vtk`      | Show how PyVista uses VTK and how you can combine the best of both worlds!                                            |
 +-----------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`sphinx`   | Leverage PyVista to make some awesome interactive web documentation.                                                  |
-+-----------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`widgets`  | Use PyVista with a variety of helpful widgets.                                                                        |
-+-----------------+-----------------------------------------------------------------------------------------------------------------------+
-| :ref:`qt`       | Demonstrate how to use PyVista to create standalone applications using `pyinstaller`_ and the Qt framework.           |
-+-----------------+-----------------------------------------------------------------------------------------------------------------------+
+
 
 .. |discuss| image:: https://img.shields.io/badge/GitHub-Discussions-green?logo=github
    :target: https://github.com/pyvista/pyvista/discussions
