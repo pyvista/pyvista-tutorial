@@ -68,59 +68,31 @@ the following packages:
 
       .. code::
 
-         pip install jupyterlab pythreejs ipyvtklink panel
+         pip install jupyterlab trame ipywidgets
 
    .. tab:: conda
 
       .. code::
 
-         conda install -c conda-forge jupyterlab pythreejs ipyvtklink panel
+         conda install -c conda-forge jupyterlab trame ipywidgets
 
 
 You can then plot using Jupyterlab or Jupyter Notebook interactively with one of three backends:
 
-.. tabs::
+   .. jupyter-execute::
+      :hide-code:
 
-   .. tab:: ipyvtklink
+      import pyvista as pv
+      pv.set_plot_theme('document')
+      pv.set_jupyter_backend('static')
 
-      .. jupyter-execute::
-         :hide-code:
+   .. jupyter-execute::
 
-         import pyvista as pv
-         pv.set_plot_theme('document')
-         pv.global_theme.jupyter_backend = 'static'
+      import pyvista as pv
+      from pyvista import examples
 
-      .. jupyter-execute::
-
-         import pyvista as pv
-         from pyvista import examples
-
-         dataset = examples.download_lucy()
-         dataset.plot(smooth_shading=True, color='white')
-
-   .. tab:: panel
-
-      .. jupyter-execute::
-
-         import pyvista as pv
-         from pyvista import examples
-         pv.global_theme.jupyter_backend = 'panel'
-
-         dataset = examples.download_lidar()
-         dataset.plot(cmap="gist_earth")
-
-   .. tab:: pythreejs
-
-      .. jupyter-execute::
-
-         import pyvista as pv
-         from pyvista import examples
-         pv.global_theme.jupyter_backend = 'pythreejs'
-         pv.global_theme.window_size = (700, 300)
-         pv.global_theme.anti_aliasing = 'fxaa'
-
-         dataset = examples.download_cad_model()
-         dataset.plot(background='w', pbr=True, metallic=0.6, roughness=0.4, split_sharp_edges=True)
+      dataset = examples.download_lucy()
+      dataset.plot(smooth_shading=True, color='white')
 
 
 .. _colab:
@@ -143,7 +115,7 @@ Visit the `PyVista on Colab  <https://colab.research.google.com/drive/15REd98bzn
 
    import pyvista
 
-   pyvista.global_theme.jupyter_backend = 'static'
+   pyvista.set_jupyter_backend('static')
    pyvista.global_theme.notebook = True
    pyvista.start_xvfb()
 
