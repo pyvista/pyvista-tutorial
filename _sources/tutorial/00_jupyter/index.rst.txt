@@ -40,7 +40,7 @@ within Jupyter:
     plotter.add_mesh(sphere)
     plotter.show(jupyter_backend='trame')
 
-For convenience, you can enable ``trame`` with (this is the defualt):
+For convenience, you can enable ``trame`` with (this is the default):
 
 .. code:: python
 
