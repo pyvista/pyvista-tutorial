@@ -24,7 +24,7 @@ repos:
   hooks:
   - id: codespell
     args: [
-      "doc examples examples_flask pyvista tests",
+      "doc tutorial",
       "*.py *.rst *.md",
     ]
 

@@ -1,5 +1,4 @@
 cmocean
-flask==2.3.2
 imageio>=2.5.0
 imageio-ffmpeg
 jupyterlab
@@ -11,4 +10,7 @@ pyvistaqt
 QtPy
 sphinx
 tqdm
-trame
+trame>=2.5.0
+trame-client>=2.9.4
+trame-server>=2.11.4
+trame-vtk>=2.5.4

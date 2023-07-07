@@ -90,7 +90,7 @@ simple surface mesh:
 
    # Configure for trame
    import pyvista
-   pyvista.set_jupyter_backend('trame')
+   pyvista.set_jupyter_backend('static')
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.window_size = [600, 400]
    pyvista.global_theme.axes.show = False

@@ -6,7 +6,6 @@ SHELL ["/bin/bash", "-c"]
 COPY . $HOME
 
 RUN pip install pyvista
-RUN pip install flask==2.1.2
 RUN pip install pyinstaller==5.1
 RUN pip install sphinx
 RUN pip install jupyterlab

@@ -68,13 +68,13 @@ the following packages:
 
       .. code::
 
-         pip install jupyterlab trame
+         pip install jupyterlab trame ipywidgets
 
    .. tab:: conda
 
       .. code::
 
-         conda install -c conda-forge jupyterlab trame
+         conda install -c conda-forge jupyterlab trame ipywidgets
 
 
 You can then plot using Jupyterlab or Jupyter Notebook interactively with one of three backends:
@@ -84,7 +84,7 @@ You can then plot using Jupyterlab or Jupyter Notebook interactively with one of
 
       import pyvista as pv
       pv.set_plot_theme('document')
-      pv.global_theme.jupyter_backend = 'static'
+      pv.set_jupyter_backend('static')
 
    .. jupyter-execute::
 
@@ -115,7 +115,7 @@ Visit the `PyVista on Colab  <https://colab.research.google.com/drive/15REd98bzn
 
    import pyvista
 
-   pyvista.global_theme.jupyter_backend = 'static'
+   pyvista.set_jupyter_backend('static')
    pyvista.global_theme.notebook = True
    pyvista.start_xvfb()
 
