@@ -20,6 +20,29 @@ import geovista.theme
 import pyvista as pv
 
 ###############################################################################
+# .. note:: **Motivation of GeoVista**
+#
+#     The goal of GeoVista is simple; to complement PyVista with a convenient
+#     cartographic capability.
+#
+#     In this regard, from a design perspective we aim to keep GeoVista as pure
+#     to PyVista as possible i.e., minimise specialisation as far as
+#     practically possible in order to maximise native compatibility within the
+#     PyVista and VTK ecosystems.
+#
+#     We intend GeoVista to be a cartographic gateway into the powerful world
+#     of PyVista, and all that it offers.
+#
+#     GeoVista is intentionally agnostic to packages such as geopandas, iris,
+#     xarray et al, which specialise in preparing your spatial data for
+#     visualisation. Rather, we delegate that responsibility and choice of tool
+#     to you the user, as we want GeoVista to remain as flexible and open-ended
+#     as possible to the entire Scientific Python community.
+#
+#     Simply put, "GeoVista is to PyVista", as "Cartopy is to Matplotlib".
+#     Well, that's the aspiration.
+
+###############################################################################
 # .. note:: **Plotting Theme**
 #
 #      GeoVista defines its own plotting theme in `geovista.theme`.
@@ -253,8 +276,83 @@ plotter.show()
 # up!)
 
 ###############################################################################
+# So far we've demonstrated GeoVista's ability to cope with unstructured data.
+# Now let's plot a curvilinear mesh using Met Office Unified Model (UM) ORCA2
+# Sea Water Potential Temperature data, with 10m Natural Earth coastlines and a
+# 1:50m Natural Earth I base layer.
+
+import geovista as gv
+from geovista.pantry import um_orca2
+import geovista.theme
+
+# Load sample data.
+sample = um_orca2()
+
+# Create the mesh from the sample data.
+mesh = gv.Transform.from_2d(sample.lons, sample.lats, data=sample.data)
+
+# Remove cells from the mesh with NaN values.
+mesh = mesh.threshold()
+
+# Plot the mesh.
+plotter = gv.GeoPlotter()
+sargs = {"title": f"{sample.name} / {sample.units}"}
+plotter.add_mesh(mesh, show_edges=True, scalar_bar_args=sargs)
+plotter.add_base_layer(texture=gv.natural_earth_1())
+plotter.add_coastlines(resolution="10m")
+plotter.view_xy()
+plotter.add_axes()
+plotter.show()
+
+###############################################################################
 # .. important:: **Experimental**
 #
 #      GeoVista is still in the experimental stages. They would love your
 #      feedback, but as immature packages their API, documentation, test
 #      coverage and CI are still 'under construction'.
+
+###############################################################################
+# Whilst you're here, why not hop on over to the
+# `pyvista-xarray project <https://github.com/pyvista/pyvista-xarray>`_
+# and check it out!
+#
+# xarray DataArray accessors for PyVista to visualize datasets in 3D
+#
+# You must import `pvxarray` in order to register the DataArray accessor with
+# xarray. After which, a pyvista namespace of accessors will be available.
+
+import pvxarray  # noqa
+import xarray as xr
+
+###############################################################################
+# Load mean sea surface temperature dataset
+
+ds = xr.open_dataset("sst.mnmean.nc", engine="netcdf4")
+
+###############################################################################
+# Plot in 3D
+
+ds.sst[0].pyvista.plot(x="lon", y="lat", show_edges=True, cpos="xy")
+
+###############################################################################
+# Or grab the mesh object for use with PyVista and GeoVista.
+
+mesh = ds.sst[0].pyvista.mesh(x="lon", y="lat")
+
+plotter = gv.GeoPlotter()
+plotter.add_mesh(mesh, show_edges=True)
+plotter.add_coastlines()
+plotter.add_base_layer(texture=gv.natural_earth_hypsometric())
+plotter.view_xz()
+plotter.show_axes()
+plotter.show(cpos="xy")
+
+###############################################################################
+# .. note::
+#     This is inspired by
+#     `Xarray Fundamentals
+#     <https://tutorial.xarray.dev/workshops/online-tutorial-series/01_xarray_fundamentals.html>`_
+#     in Xarray Tutorial.
+#
+# .. image:: https://zenodo.org/badge/doi/10.5281/zenodo.598201.svg
+#    :target: https://doi.org/10.5281/zenodo.598201
