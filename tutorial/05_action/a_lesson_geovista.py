@@ -287,14 +287,21 @@ import geovista.theme
 
 # Load sample data.
 sample = um_orca2()
+sample
 
+###############################################################################
 # Create the mesh from the sample data.
+
 mesh = gv.Transform.from_2d(sample.lons, sample.lats, data=sample.data)
 
+###############################################################################
 # Remove cells from the mesh with NaN values.
+
 mesh = mesh.threshold()
 
+###############################################################################
 # Plot the mesh.
+
 plotter = gv.GeoPlotter()
 sargs = {"title": f"{sample.name} / {sample.units}"}
 plotter.add_mesh(mesh, show_edges=True, scalar_bar_args=sargs)
