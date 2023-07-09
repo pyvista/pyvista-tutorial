@@ -4,7 +4,7 @@ Using GeoVista
 
 This is provided by `@bjlittle <https://github.com/bjlittle>`_ in
 `this discussion <https://github.com/bjlittle/geovista/discussions/343>`_
-and modifined by `@tkoyama010 <https://github.com/tkoyama010>`_ .
+and modified by `@tkoyama010 <https://github.com/tkoyama010>`_ .
 """
 
 ###############################################################################
