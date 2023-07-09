@@ -91,9 +91,9 @@ Something for everyone!
 
 [Alex Kaszynski](https://github.com/akaszynski/resume), co-creator of [PyVista](https://github.com/pyvista/) and creator of the [PyAnsys](https://github.com/pyansys) organization.
 
-Advocate for all things Python with extensive experience presenting as a speaker at IGTI conferences for the past decade, and for the past almost three at Ansys pushing for automation through Python for CAE applications.
+Advocate for all things Python with extensive experience presenting as a speaker at IGTI conferences for the past decade, and for four years at Ansys developing PyAnsys to enable automation through Python for CAE applications.
 
-Regularly present Python demos within [Ansys](https://ansys.github.io/), including talks with 500+ "live" virtual attendees, and prior to COVID, in person talks of 100+. Enjoys presenting and demoing Python, especially 3D visualization but also its application to CAE and automation.
+Enjoys presenting and demoing Python, especially 3D visualization but also its application to CAE and automation.
 
 ### [Bane Sullivan](https://github.com/banesullivan)
 
