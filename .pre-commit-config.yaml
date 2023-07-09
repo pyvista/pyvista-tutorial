@@ -28,14 +28,6 @@ repos:
       "*.py *.rst *.md",
     ]
 
-- repo: https://github.com/pycqa/pydocstyle
-  rev: 6.3.0
-  hooks:
-  - id: pydocstyle
-    additional_dependencies: [toml==0.10.2]
-    files: ^(pyvista/|other/)
-    exclude: ^pyvista/ext/
-
 - repo: https://github.com/asottile/pyupgrade
   rev: v3.8.0
   hooks:
