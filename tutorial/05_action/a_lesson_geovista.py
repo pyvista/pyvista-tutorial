@@ -40,7 +40,6 @@ import pyvista as pv
 #     as possible to the entire Scientific Python community.
 #
 #     Simply put, "GeoVista is to PyVista", as "Cartopy is to Matplotlib".
-#     Well, that's the aspiration.
 
 ###############################################################################
 # .. note:: **Plotting Theme**
