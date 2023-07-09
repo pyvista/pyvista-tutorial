@@ -10,10 +10,9 @@ using the `pyvista.examples.downloads
 module and external files.
 """
 
-# Configure for panel
+# Configure for trame
 import pyvista
 
-pyvista.set_jupyter_backend('panel')
 pyvista.set_plot_theme('document')
 
 
@@ -53,7 +52,7 @@ dataset = examples.download_frog()
 dataset
 
 ###############################################################################
-# This is a :class:`pyvista.UniformGrid`, which is a dataset containing a uniform
+# This is a :class:`pyvista.ImageData`, which is a dataset containing a uniform
 # set of points with consistent spacing. When we plot this dataset, we have the
 # option of enabling volumetric plotting, which plots individual cells based on
 # the content of the data associated with those cells.
@@ -79,7 +78,7 @@ dataset = pv.read('ironProt.vtk')
 dataset
 
 ###############################################################################
-# This is again a :class:`pyvista.UniformGrid` and we can plot it volumetrically
+# This is again a :class:`pyvista.ImageData` and we can plot it volumetrically
 # with:
 
 dataset.plot(volume=True)

@@ -20,24 +20,16 @@ repos:
     ]
 
 - repo: https://github.com/codespell-project/codespell
-  rev: v2.2.4
+  rev: v2.2.5
   hooks:
   - id: codespell
     args: [
-      "doc examples examples_flask pyvista tests",
+      "doc tutorial",
       "*.py *.rst *.md",
     ]
 
-- repo: https://github.com/pycqa/pydocstyle
-  rev: 6.3.0
-  hooks:
-  - id: pydocstyle
-    additional_dependencies: [toml==0.10.2]
-    files: ^(pyvista/|other/)
-    exclude: ^pyvista/ext/
-
 - repo: https://github.com/asottile/pyupgrade
-  rev: v3.3.2
+  rev: v3.8.0
   hooks:
   - id: pyupgrade
     args: [--py37-plus, --keep-runtime-typing]
@@ -50,9 +42,10 @@ repos:
   - id: no-commit-to-branch
     args: [--branch, main]
   - id: requirements-txt-fixer
+  - id: trailing-whitespace
+    exclude: ^(|doc/source/_static/*)
 
-# this validates our github workflow files
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.22.0
+  rev: 0.23.2
   hooks:
     - id: check-github-workflows

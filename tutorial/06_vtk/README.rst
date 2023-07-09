@@ -71,7 +71,7 @@ PyVista is:
 
    Create the grid.  Note how the values must use Fortran ordering.
 
-   >>> grid = pv.UniformGrid(dimensions=(300, 300, 1))
+   >>> grid = pv.ImageData(dimensions=(300, 300, 1))
    >>> grid.point_data["values"] = values.flatten(order="F")
 
 Here, PyVista has done several things for us:
@@ -84,7 +84,7 @@ Here, PyVista has done several things for us:
    fields). Here, shape and values are stored concretely in one
    variable.
 
-#. :class:`pyvista.UniformGrid` wraps `vtk.vtkImageData`_, just with a
+#. :class:`pyvista.ImageData` wraps `vtk.vtkImageData`_, just with a
    different name; they are both containers of evenly spaced points. Your
    data does not have to be an "image" to use it with
    `vtk.vtkImageData`_; rather, like images, values in the dataset are
@@ -154,7 +154,7 @@ However, with PyVista you only need:
    xi = np.arange(300)
    x, y = np.meshgrid(xi, xi)
    values = 127.5 + (1.0 + np.sin(x/25.0)*np.cos(y/25.0))
-   grid = pv.UniformGrid(dimensions=(300, 300, 1))
+   grid = pv.ImageData(dimensions=(300, 300, 1))
    grid.point_data["values"] = values.flatten(order="F")
    grid.plot(cpos='xy', show_scalar_bar=False, cmap='coolwarm')
 
@@ -254,9 +254,8 @@ example:
 .. jupyter-execute::
    :hide-code:
 
-   # Configure for panel
+   # Configure for trame
    import pyvista
-   pyvista.set_jupyter_backend('panel')
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True

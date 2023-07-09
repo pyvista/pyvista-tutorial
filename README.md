@@ -39,11 +39,11 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 0. Getting Started (Alexander Kaszynski) - PyVista for 3D Visualization within Python. (10 min for talk, 10 min for exercise)
 
-1. Basic usage (Alexander Kaszynski) - Reading and plotting 3D data using ``examples`` module and external files.  (10 min for talk, 10 min for exercise)
+1. PyVista & Jupyter (Bane Sullivan) - Demonstrate how to use PyVista in Jupyter for state-of-the-art 3D visualization in Notebooks and make sure the class room is up and running. (5 min for talk, 15 for exercise)
 
-2. What is a Mesh? (Alexander Kaszynski) - Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (20 min for talk, 10 min for exercise)
+2. Basic usage (Alexander Kaszynski) - Reading and plotting 3D data using ``examples`` module and external files.  (10 min for talk, 10 min for exercise)
 
-3. PyVista & Jupyter (Bane Sullivan) - Demonstrate how to use PyVista in Jupyter for state-of-the-art 3D visualization in Notebooks. (15 min for talk, 10 for exercise)
+3. What is a Mesh? (Alexander Kaszynski) - Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (20 min for talk, 10 min for exercise)
 
 4. Break. Stretch fingers and grab some coffee. (15 minutes)
 
@@ -55,9 +55,9 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 8. Quick break. Prepare for the final run. (10 minutes)
 
-9. PyVista & VTK (Bane Sullivan) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 15 minutes for exercise)
+9. PyVista & Trame (Bane Sullivan) - Leverage PyVista and Trame to make awesome interactive web applications. (20 min for talk, 10 min for exercise)
 
-10. PyVista & Trame (Bane Sullivan) - Leverage PyVista and Trame to make awesome interactive web applications. (20 min for talk, 10 min for exercise)
+10. PyVista & VTK (Bane Sullivan) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 15 minutes for exercise)
 
 11. Open up to Questions. (15 minutes)
 

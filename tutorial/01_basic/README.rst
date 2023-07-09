@@ -32,9 +32,8 @@ Here's a very basic dataset you can download.
 .. jupyter-execute::
    :hide-code:
 
-   # Configure for panel
+   # Configure for trame
    import pyvista
-   pyvista.set_jupyter_backend('panel')
    pyvista.global_theme.background = 'white'
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
@@ -71,7 +70,7 @@ one is a volumetric dataset.
 
 |
 
-This is a :class:`pyvista.UniformGrid`, which is a dataset containing a uniform
+This is a :class:`pyvista.ImageData`, which is a dataset containing a uniform
 set of points with consistent spacing. When we plot this dataset, we have the
 option of enabling volumetric plotting, which plots individual cells based on
 the content of the data associated with those cells.
@@ -109,7 +108,7 @@ file using :func:`pyvista.read`.
 
 |
 
-This is again a :class:`pyvista.UniformGrid` and we can plot it volumetrically
+This is again a :class:`pyvista.ImageData` and we can plot it volumetrically
 with:
 
 .. jupyter-execute::
