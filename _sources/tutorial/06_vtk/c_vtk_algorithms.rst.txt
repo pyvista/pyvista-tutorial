@@ -884,13 +884,6 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |      input data object. The MTime of the vtkAlgorithm will not change
      |      unless the data object changed.
      |  
-     |  SetProgress(...)
-     |      SetProgress(self, __a:float) -> None
-     |      C++: void SetProgress(double)
-     |      
-     |      `SetProgress` is deprecated. Subclasses should use
-     |      `UpdateProgress` to report progress updates.
-     |  
      |  SetProgressObserver(...)
      |      SetProgressObserver(self, __a:vtkProgressObserver) -> None
      |      C++: void SetProgressObserver(vtkProgressObserver *)
@@ -1021,6 +1014,12 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |      
      |      Bring this algorithm's outputs up-to-date.
      |  
+     |  UsesGarbageCollector(...)
+     |      UsesGarbageCollector(self) -> bool
+     |      C++: bool UsesGarbageCollector() override;
+     |      
+     |      Participate in garbage collection.
+     |  
      |  ----------------------------------------------------------------------
      |  Data and other attributes inherited from vtkmodules.vtkCommonExecutionModel.vtkAlgorithm:
      |  
@@ -1081,6 +1080,17 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |      C++: virtual vtkMTimeType GetMTime()
      |      
      |      Return this object's modified time.
+     |  
+     |  GetObjectDescription(...)
+     |      GetObjectDescription(self) -> str
+     |      C++: std::string GetObjectDescription() override;
+     |      
+     |      The object description printed in messages and PrintSelf output.
+     |      To be used only for reporting purposes.
+     |  
+     |  GetObjectName(...)
+     |      GetObjectName(self) -> str
+     |      C++: virtual std::string GetObjectName()
      |  
      |  GlobalWarningDisplayOff(...)
      |      GlobalWarningDisplayOff() -> None
@@ -1155,6 +1165,16 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |      
      |      This is a global flag that controls whether any debug, warning or
      |      error messages are displayed.
+     |  
+     |  SetObjectName(...)
+     |      SetObjectName(self, objectName:str) -> None
+     |      C++: virtual void SetObjectName(const std::string &objectName)
+     |      
+     |      Set/get the name of this object for reporting purposes. The name
+     |      appears in warning and debug messages and in the Print output.
+     |      Setting the object name does not change the MTime and does not
+     |      invoke a ModifiedEvent. Derived classes implementing copying
+     |      methods are expected not to copy the ObjectName.
      |  
      |  ----------------------------------------------------------------------
      |  Methods inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
@@ -1236,6 +1256,24 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |      Decrease the reference count (release by another object). This
      |      has the same effect as invoking Delete() (i.e., it reduces the
      |      reference count by 1).
+     |  
+     |  ----------------------------------------------------------------------
+     |  Class methods inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
+     |  
+     |  override(...) from builtins.type
+     |      This method can be used to override a VTK class with a Python subclass.
+     |      The class type passed to override will afterwards be instantiated
+     |      instead of the type override is called on.
+     |      For example,
+     |      
+     |      class foo(vtk.vtkPoints):
+     |        pass
+     |      vtk.vtkPoints.override(foo)
+     |      
+     |      will lead to foo being instantied everytime vtkPoints() is called.
+     |      The main objective of this functionality is to enable developers to
+     |      extend VTK classes with more pythonic subclasses that contain
+     |      convenience functionality.
 
 
 
@@ -1361,7 +1399,7 @@ See https://kitware.github.io/vtk-examples/site/Python/
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.870 seconds)
+   **Total running time of the script:** ( 0 minutes  0.898 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_c_vtk_algorithms.py:

@@ -472,6 +472,18 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../05_action/index.html">PyVista in Action</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference external" href="https://docs.sunpy.org/projects/sunkit-pyvista/en/latest/">sunkit-pyvista</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/stla/PyHyperbolic3D/tree/main">PyHyperbolic3D</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://topogenesis.readthedocs.io/notebooks/boolean_marching_cubes/">topoGenesis</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://pyfbs.readthedocs.io/en/latest/examples/examples.html">pyFBS: Frequency Based Substructuring in Python</a></li>
+
+<li class="toctree-l2"><a class="reference external" href="https://medium.com/towards-data-science/neighborhood-analysis-kd-trees-and-octrees-for-meshes-and-point-clouds-in-python-19fa96527b77">Ivan Nikolov on Neighbourhood Analysis</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://medium.com/towards-data-science/how-to-voxelize-meshes-and-point-clouds-in-python-ca94d403f81d">Ivan Nikolov on Voxelization</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://medium.com/towards-data-science/python-libraries-for-mesh-and-point-cloud-visualization-part-1-daa2af36de30">Ivan Nikolov on Visualization Libraries</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/JacobBumgarner/grad-descent-visualizer">Gradient Descent Visualizer</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://gmshmodel.readthedocs.io/en/latest/">GmshModel</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://github.com/bjlittle/geovista">GeoVista</a></li>
+<li class="toctree-l2"><a class="reference external" href="https://geemap.org/">geemap</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://github.com/camurban/pterasoftware">PteraSoftware</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://laustep.github.io/stlahblog/posts/MyPyVistaArtworks.html">Stﾃｩphane Laurent's artwork</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://jacobbumgarner.github.io/VesselVio/">VesselVio</a></li>
@@ -489,6 +501,7 @@
 <li class="toctree-l2"><a class="reference external" href="https://pswpswpsw.github.io/posts/2018/09/blog-post-modify-vtk-openfoam/">OpenFOAM Rendering</a></li>
 <li class="toctree-l2"><a class="reference external" href="http://discretize.simpeg.xyz/en/main/examples/plot_pyvista_laguna.html">3D Rendering with Discretize</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://opengeovis.github.io/omfvista/examples/index.html">3D visualization for the Open Mining Format (omf)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../05_action/a_lesson_geovista.html">Using GeoVista</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../06_vtk/index.html">PyVista &amp; VTK</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -1051,7 +1064,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      C++: void ComputeInternalExtent(int *intExt, int *tgtExt,
  |          int *bnds)
  |
- |      Given how many pixel are required on a side for bounrary
+ |      Given how many pixel are required on a side for boundary
  |      conditions (in bnds), the target extent to traverse, compute the
  |      internal extent (the extent for this ImageData that does not
  |      suffer from any boundary conditions) and place it in intExt
@@ -1292,10 +1305,25 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      GetCellPoints(self, cellId:int, ptIds:vtkIdList) -&gt; None
  |      C++: void GetCellPoints(vtkIdType cellId, vtkIdList *ptIds)
  |          override;
+ |      GetCellPoints(self, cellId:int, npts:int, pts:(int, ...),
+ |          ptIds:vtkIdList) -&gt; None
+ |      C++: virtual void GetCellPoints(vtkIdType cellId, vtkIdType &amp;npts,
+ |           vtkIdType const *&amp;pts, vtkIdList *ptIds)
  |
  |      Topological inquiry to get points defining cell. THIS METHOD IS
  |      THREAD SAFE IF FIRST CALLED FROM A SINGLE THREAD AND THE DATASET
  |      IS NOT MODIFIED
+ |
+ |  GetCellSize(...)
+ |      GetCellSize(self, cellId:int) -&gt; int
+ |      C++: vtkIdType GetCellSize(vtkIdType cellId) override;
+ |
+ |      Get the size of cell with cellId such that: 0 &lt;= cellId &lt;
+ |      NumberOfCells. THIS METHOD IS THREAD SAFE IF FIRST CALLED FROM A
+ |      SINGLE THREAD AND THE DATASET IS NOT MODIFIED
+ |
+ |      @warning This method MUST be overridden for performance reasons.
+ |      Default implementation is very unefficient.
  |
  |  GetCellType(...)
  |      GetCellType(self, cellId:int) -&gt; int
@@ -1407,6 +1435,12 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      increments are up to date.  The first three methods compute the
  |      increments based on the active scalar field while the next three,
  |      the scalar field is passed in.
+ |
+ |      Note that all methods which do not have the increments passed in
+ |      are not thread-safe. When working on a given `vtkImageData`
+ |      instance on multiple threads, each thread should use the `inc*`
+ |      overloads to compute the increments to avoid racing with other
+ |      threads.
  |
  |  GetIndexToPhysicalMatrix(...)
  |      GetIndexToPhysicalMatrix(self) -&gt; vtkMatrix4x4
@@ -1994,6 +2028,14 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      Get the center of the bounding box. THIS METHOD IS NOT THREAD
  |      SAFE.
  |
+ |  GetGhostArray(...)
+ |      GetGhostArray(self, type:int) -&gt; vtkUnsignedCharArray
+ |      C++: vtkUnsignedCharArray *GetGhostArray(int type) override;
+ |
+ |      Returns the ghost array for the given type (point or cell). Takes
+ |      advantage of the cache with the pointer to the array to save a
+ |      string comparison.
+ |
  |  GetLength(...)
  |      GetLength(self) -&gt; float
  |      C++: double GetLength()
@@ -2001,6 +2043,14 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      Return the length of the diagonal of the bounding box. THIS
  |      METHOD IS THREAD SAFE IF FIRST CALLED FROM A SINGLE THREAD AND
  |      THE DATASET IS NOT MODIFIED
+ |
+ |  GetLength2(...)
+ |      GetLength2(self) -&gt; float
+ |      C++: double GetLength2()
+ |
+ |      Return the squared length of the diagonal of the bounding box.
+ |      THIS METHOD IS THREAD SAFE IF FIRST CALLED FROM A SINGLE THREAD
+ |      AND THE DATASET IS NOT MODIFIED
  |
  |  GetMTime(...)
  |      GetMTime(self) -&gt; int
@@ -2252,8 +2302,8 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      retrieve field data, use GetAttributesAsFieldData.
  |
  |      @warning This method NEEDS to be
- |      overriden in subclasses to work as documented. If not, it returns
- |      nullptr for any type but FIELD.
+ |      overridden in subclasses to work as documented. If not, it
+ |      returns nullptr for any type but FIELD.
  |
  |  GetDataReleased(...)
  |      GetDataReleased(self) -&gt; int
@@ -2264,16 +2314,6 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  GetFieldData(...)
  |      GetFieldData(self) -&gt; vtkFieldData
  |      C++: virtual vtkFieldData *GetFieldData()
- |
- |  GetGhostArray(...)
- |      GetGhostArray(self, type:int) -&gt; vtkDataArray
- |      C++: virtual vtkDataArray *GetGhostArray(int type)
- |
- |      Returns the ghost arrays of the data object of the specified
- |      atribute type. The type may be:  POINT    - Defined in vtkDataSet
- |      subclasses CELL   - Defined in vtkDataSet subclasses.  The other
- |      attribute types, will return nullptr since ghosts arrays are not
- |      defined for now outside of point or cell.
  |
  |  GetGlobalReleaseDataFlag(...)
  |      GetGlobalReleaseDataFlag() -&gt; int
@@ -2501,6 +2541,17 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      GetGlobalWarningDisplay() -&gt; int
  |      C++: static int GetGlobalWarningDisplay()
  |
+ |  GetObjectDescription(...)
+ |      GetObjectDescription(self) -&gt; str
+ |      C++: std::string GetObjectDescription() override;
+ |
+ |      The object description printed in messages and PrintSelf output.
+ |      To be used only for reporting purposes.
+ |
+ |  GetObjectName(...)
+ |      GetObjectName(self) -&gt; str
+ |      C++: virtual std::string GetObjectName()
+ |
  |  GlobalWarningDisplayOff(...)
  |      GlobalWarningDisplayOff() -&gt; None
  |      C++: static void GlobalWarningDisplayOff()
@@ -2574,6 +2625,16 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |
  |      This is a global flag that controls whether any debug, warning or
  |      error messages are displayed.
+ |
+ |  SetObjectName(...)
+ |      SetObjectName(self, objectName:str) -&gt; None
+ |      C++: virtual void SetObjectName(const std::string &amp;objectName)
+ |
+ |      Set/get the name of this object for reporting purposes. The name
+ |      appears in warning and debug messages and in the Print output.
+ |      Setting the object name does not change the MTime and does not
+ |      invoke a ModifiedEvent. Derived classes implementing copying
+ |      methods are expected not to copy the ObjectName.
  |
  |  ----------------------------------------------------------------------
  |  Methods inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
@@ -2655,6 +2716,38 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      Decrease the reference count (release by another object). This
  |      has the same effect as invoking Delete() (i.e., it reduces the
  |      reference count by 1).
+ |
+ |  UsesGarbageCollector(...)
+ |      UsesGarbageCollector(self) -&gt; bool
+ |      C++: virtual bool UsesGarbageCollector()
+ |
+ |      Indicate whether the class uses `vtkGarbageCollector` or not.
+ |
+ |      Most classes will not need to do this, but if the class
+ |      participates in a strongly-connected reference count cycle,
+ |      participation can resolve these cycles.
+ |
+ |      If overriding this method to return true, the `ReportReferences`
+ |      method should be overridden to report references that may be in
+ |      cycles.
+ |
+ |  ----------------------------------------------------------------------
+ |  Class methods inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
+ |
+ |  override(...) from builtins.type
+ |      This method can be used to override a VTK class with a Python subclass.
+ |      The class type passed to override will afterwards be instantiated
+ |      instead of the type override is called on.
+ |      For example,
+ |
+ |      class foo(vtk.vtkPoints):
+ |        pass
+ |      vtk.vtkPoints.override(foo)
+ |
+ |      will lead to foo being instantied everytime vtkPoints() is called.
+ |      The main objective of this functionality is to enable developers to
+ |      extend VTK classes with more pythonic subclasses that contain
+ |      convenience functionality.
  |
  |  ----------------------------------------------------------------------
  |  Data descriptors inherited from Grid:
@@ -9406,7 +9499,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.101 seconds)</p>
+<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.917 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-soultions-c-create-uniform-grid-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/soultions/c_create-uniform-grid.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" width="150px" /></a>
