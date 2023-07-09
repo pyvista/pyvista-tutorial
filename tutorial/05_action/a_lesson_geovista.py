@@ -71,7 +71,7 @@ c48 = gv.samples.lfric(resolution="c48")
 #      `LFRic - a modelling system fit for future computers <https://www.metoffice.gov.uk/research/approach/modelling-systems/lfric>`_ .
 
 ###############################################################################
-# Since the `c48` is defined as PolyDdata in PyVista, it can be drawn using
+# Since the `c48` is defined as PolyData in PyVista, it can be drawn using
 # PyVista's plot method.
 
 c48.plot(show_edges=True)
