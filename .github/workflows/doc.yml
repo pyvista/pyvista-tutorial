@@ -45,7 +45,9 @@ jobs:
         run: pip install https://github.com/pyvista/pyvista-wheels/raw/main/vtk-osmesa-9.1.0-cp39-cp39-linux_x86_64.whl
 
       - name: Install Dependencies
-        run: pip install -r requirements_docs.txt
+        run: |
+          sudo apt -y install libgeos-dev
+          pip install -r requirements_docs.txt
 
       - name: PyVista Report
         run: |
