@@ -12,17 +12,17 @@ Download and plot example datasets.
 
 PyVista contains many downloadable datasets documented at
 `pyvista.examples.downloads
-<https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_. you can download these through Python and then immediately plot them.
+<https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_. You can download these through Python and then immediately plot them.
 
 This is an easy way to immediately get started with example datasets within
-PyVista without having to manually copy and load them.
+PyVista without having to manually download and load them.
 
 """
 
 ###############################################################################
 # Import PyVista and the examples module
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import pyvista
+import pyvista as pv
 from pyvista import examples
 
 ###############################################################################
@@ -54,8 +54,10 @@ dataset
 ###############################################################################
 # Volume DataSet - Plot
 # ~~~~~~~~~~~~~~~~~~~~~
-# Here, we plot the dataset using a custom view direction.
-pl = pyvista.Plotter()
+# Here, we plot the dataset using a custom view direction using
+# :class:`pyvista.Plotter`.
+
+pl = pv.Plotter()
 _ = pl.add_volume(
     dataset,
     cmap="coolwarm",
@@ -100,5 +102,5 @@ bodies.plot(
 # Download the file ``'P_shelf_pin.stl'`` from
 # https://www.thingiverse.com/thing:5412753
 
-mesh = pyvista.read('P_shelf_pin.stl')
+mesh = pv.read('P_shelf_pin.stl')
 mesh.plot()

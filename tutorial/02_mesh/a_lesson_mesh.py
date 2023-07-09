@@ -2,7 +2,12 @@
 Lesson Overview
 ~~~~~~~~~~~~~~~
 
-This exercise overviews the code in the initial lesson for you to try out!
+This exercise provides an overview of the example in the initial lesson for you
+to try out!
+
+.. note::
+   This example does not have a corresponding solution and is kept here if
+   needed in the future.
 
 """
 # sphinx_gallery_thumbnail_number = 2
