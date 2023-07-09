@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:02.321** total execution time for **tutorial_00_jupyter** files:
+**00:01.966** total execution time for **tutorial_00_jupyter** files:
 
 +-----------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_00_jupyter_jupyter.py` (``jupyter.py``) | 00:02.321 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_00_jupyter_jupyter.py` (``jupyter.py``) | 00:01.966 | 0.0 MB |
 +-----------------------------------------------------------------+-----------+--------+
