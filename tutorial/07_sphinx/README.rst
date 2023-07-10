@@ -3,7 +3,7 @@
 PyVista and Sphinx
 ==================
 
-Leverage PyVista to make some awesome interactive web documentation.
+Leverage PyVista to make some awesome web documentation.
 
 .. tip::
 
@@ -12,9 +12,9 @@ Leverage PyVista to make some awesome interactive web documentation.
     Plot Directive <https://docs.pyvista.org/extras/plot_directive.html>`_
     chapter of the PyVista documentation.
 
-Dynamically Generating 3D Plots in your Documentation
------------------------------------------------------
-PyVista allows you to generate static or dynamic images directly within Sphinx
+Generating 3D Plots in your Documentation
+-----------------------------------------
+PyVista allows you to generate images directly within Sphinx
 much like the `Matplotlib plot_directive
 <https://matplotlib.org/stable/api/sphinxext_plot_directive_api.html>`_. Rather
 than manually creating and adding plots after code sections, you can instead
@@ -31,7 +31,6 @@ matches your project API. If you include this within a `GitHub Workflow
 This section covers the following topics.
 
 - :ref:`static_plots`
-- :ref:`dynamic_plots`
 
 .. _static_plots:
 
@@ -70,81 +69,13 @@ Which will be rendered as:
    >>> out = sphere.plot()
 
 
-.. _dynamic_plots:
-
-Dynamic Plotting Using the Jupyter Sphinx Extension
----------------------------------------------------
-PyVista also supports the `jupyter-sphinx
-<https://jupyter-sphinx.readthedocs.io/>`_ extension. With this extension you
-can execute code blocks within a sphinx ``*.rst`` file using the
-``jupyter-execute`` directive::
-
-  .. jupyter-execute::
-
-     name = 'world'
-     print('hello ' + name + '!')
-
-Will be rendered as:
-
-.. jupyter-execute::
-
-   name = 'world'
-   print('hello ' + name + '!')
-
-|
-
-Likewise, output from PyVista that would normally be rendered within a notebook
-will be rendered in the output cell from the ``jupyter-execute`` directive. For
-example, here's a plot using the `trame
-<https://github.com/Kitware/trame>`_ backend::
-
-  .. jupyter-execute::
-
-     from pyvista import examples
-     dataset = examples.download_urn()
-     dataset.plot(color='tan', jupyter_backend='trame', window_size=(700, 400))
-
-Which is rendered as:
-
-.. jupyter-execute::
-
-   from pyvista import examples
-   dataset = examples.download_urn()
-   dataset.plot(color='tan', jupyter_backend='trame', window_size=(700, 400))
-
-
-Using the ``Trame`` backend with PyVista
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-PyVista supports the usage of the `trame <https://github.com/Kitware/trame>`_
-library as a ``vtk.js`` jupyterlab plotting backend that can be utilized as
-either a standalone VTK viewer, or as a tightly integrated ``pyvista`` plotting
-backend.  For example, within a Jupyter notebook environment, you can pass
-``jupyter_backend='trame'`` to ``plot``, or ``Plotter.show`` to automatically
-enable plotting with Juptyer and ``trame``.
-
-For example, here's the ``PyVista`` logo::
-
-   .. jupyter-execute::
-
-      from pyvista import demos
-      demos.plot_logo(background='white', jupyter_backend='trame')
-
-Which is shown within the documentation as:
-
-.. jupyter-execute::
-
-   from pyvista import demos
-   demos.plot_logo(background='white', jupyter_backend='trame')
-
-|
-
 Examples and Usage
 ~~~~~~~~~~~~~~~~~~
 There are two ways to use `trame <https://github.com/Kitware/trame>`_ within
 Jupyter notebooks.  You can use it on a plot by plot basis by setting the
 ``jupyter_backend`` in ``mesh.plot()``::
 
-   .. jupyter-execute::
+   .. pyvista-plot::
 
        import pyvista as pv
        from pyvista import examples
@@ -160,7 +91,7 @@ Jupyter notebooks.  You can use it on a plot by plot basis by setting the
 
 And here's the resulting output in Sphinx:
 
-.. jupyter-execute::
+.. pyvista-plot::
 
     import pyvista as pv
     from pyvista import examples
@@ -176,25 +107,9 @@ And here's the resulting output in Sphinx:
 
 |
 
-Or you can first hide code that sets up the plotting backend and global theme::
-
-   .. jupyter-execute::
-       :hide-code:
-
-       import pyvista as pv
-
-       # Set the global jupyterlab backend.  All plots from this point
-       # onward will use the ``trame`` backend and do not have to be
-       # specified in ``show``
-
-.. jupyter-execute::
-   :hide-code:
-
-   import pyvista as pv
-
 And now just directly execute ``plot`` on any dataset::
 
-   .. jupyter-execute::
+   .. pyvista-plot::
 
       from pyvista import examples
       dataset = examples.download_dragon()
@@ -202,18 +117,11 @@ And now just directly execute ``plot`` on any dataset::
 
 Which looks like:
 
-.. jupyter-execute::
+.. pyvista-plot::
 
    from pyvista import examples
    dataset = examples.download_dragon()
    dataset.plot(cpos="xy")
-
-
-.. note::
-   You have the option of choosing `trame <https://github.com/Kitware/trame>`_
-   or `trame <https://github.com/Kitware/trame>`_ as a backend,
-   but you might find that `trame <https://github.com/Kitware/trame>`_ has
-   better support as it's being actively developed.
 
 
 Exercises

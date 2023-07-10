@@ -202,7 +202,7 @@ tutorial_dirs = [
     '../../tutorial/04_filters/',
     '../../tutorial/05_action/',
     '../../tutorial/06_vtk/',
-    '../../tutorial/07_sphinx/',
+    # '../../tutorial/07_sphinx/',
     '../../tutorial/08_widgets/',
     '../../tutorial/09_trame/',
 ]
