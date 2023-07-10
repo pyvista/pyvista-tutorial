@@ -73,8 +73,8 @@ jobs:
         run: |
           mkdir _notebooks
           find doc/source/tutorial -type f -name '*.ipynb' | cpio -p -d -v _notebooks/
-          find doc/source/tutorial/10_trame -type f -name '*.py' | cpio -p -d -v _notebooks/
-          rm _notebooks/doc/source/tutorial/10_trame/*.ipynb
+          find doc/source/tutorial/09_trame -type f -name '*.py' | cpio -p -d -v _notebooks/
+          rm _notebooks/doc/source/tutorial/09_trame/*.ipynb
       - uses: actions/upload-artifact@v3
         with:
           name: tutorial-notebooks
