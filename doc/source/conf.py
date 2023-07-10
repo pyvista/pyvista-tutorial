@@ -186,8 +186,7 @@ tutorial_dirs = [
     '../../tutorial/06_vtk/',
     '../../tutorial/07_sphinx/',
     '../../tutorial/08_widgets/',
-    '../../tutorial/09_qt/',
-    '../../tutorial/10_trame/',
+    '../../tutorial/09_trame/',
 ]
 
 sphinx_gallery_conf = {
