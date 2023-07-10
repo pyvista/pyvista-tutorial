@@ -419,11 +419,11 @@
 <li class="toctree-l3"><a class="reference internal" href="e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../soultions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../soultions/b_create-point-cloud.html">Create Point Cloud</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../soultions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../soultions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../soultions/e_read-file.html">Load and Plot from a File</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../solutions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/b_create-point-cloud.html">Create Point Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
 </ul>
@@ -525,7 +525,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../../08_widgets/h_spline-widget.html">Spline Widget</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../09_trame/index.html">PyVista and Trame</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../09_trame/index.html">PyVista and Trame</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/a_trame_simple.html">Simple Trame App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/b_trame_actor_color.html">Control the Color of an Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/c_trame_scalars.html">Control Scalar Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/d_trame_scalar_range.html">Control Scalar Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/e_trame_algorithm.html">Using VTK, PyVista, and Trame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/f_trame_open_file.html">Open Mesh File</a></li>
+</ul>
+</li>
 </ul>
 
   </div>
@@ -560,11 +568,11 @@
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="create-triangulated-surface">
-<span id="sphx-glr-tutorial-02-mesh-exercises-d-create-tri-surface-py"></span><h1>Create Triangulated Surface<a class="headerlink" href="#create-triangulated-surface" title="Permalink to this heading">#</a></h1>
+<span id="triangulated-surface-exercises"></span><span id="sphx-glr-tutorial-02-mesh-exercises-d-create-tri-surface-py"></span><h1>Create Triangulated Surface<a class="headerlink" href="#create-triangulated-surface" title="Permalink to this heading">#</a></h1>
 <p>Create a surface from a set of points through a Delaunay triangulation.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>We will use a filter from PyVista to perform our triangulation: <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html">delaunay_2d</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We will use a filter from PyVista to perform our triangulation: <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html">delaunay_2d</a>.</p>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
@@ -595,11 +603,11 @@ be encompassed in a <a class="reference external" href="https://docs.pyvista.org
 </div>
 <p>Now that we have a PyVista data structure of the points, we can perform a
 triangulation to turn those boring discrete points into a connected surface.
-See <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html">https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html</a></p>
+See <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.UnstructuredGridFilters.delaunay_2d()</span></code>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">cloud</span><span class="o">.</span><span class="n">delaunay_2d</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Apply the <cite>delaunay_2d</cite> filter</p>
+<p>Apply the <code class="docutils literal notranslate"><span class="pre">delaunay_2d</span></code> filter.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">surf</span> <span class="o">=</span> <span class="o">...</span>
 
 <span class="c1"># And plot it with edges shown</span>

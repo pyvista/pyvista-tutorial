@@ -18,15 +18,17 @@
 .. _sphx_glr_tutorial_02_mesh_exercises_d_create-tri-surface.py:
 
 
+.. _triangulated_surface_exercises:
+
 Create Triangulated Surface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a surface from a set of points through a Delaunay triangulation.
 
-.. hint::
-    We will use a filter from PyVista to perform our triangulation: `delaunay_2d <https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html>`_
+.. note::
+    We will use a filter from PyVista to perform our triangulation: `delaunay_2d <https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html>`_.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-14
+.. GENERATED FROM PYTHON SOURCE LINES 12-16
 
 .. code-block:: default
 
@@ -35,14 +37,14 @@ Create a surface from a set of points through a Delaunay triangulation.
     import pyvista as pv
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-19
+.. GENERATED FROM PYTHON SOURCE LINES 17-21
 
 Simple Triangulations
 +++++++++++++++++++++
 
 First, create some points for the surface.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-32
+.. GENERATED FROM PYTHON SOURCE LINES 21-34
 
 .. code-block:: default
 
@@ -60,12 +62,12 @@ First, create some points for the surface.
     points[0:5, :]
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-35
+.. GENERATED FROM PYTHON SOURCE LINES 35-37
 
 Now use those points to create a point cloud PyVista data object. This will
 be encompassed in a :class:`pyvista.PolyData` object.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-40
+.. GENERATED FROM PYTHON SOURCE LINES 37-42
 
 .. code-block:: default
 
@@ -75,24 +77,24 @@ be encompassed in a :class:`pyvista.PolyData` object.
     cloud.plot(point_size=15)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-44
+.. GENERATED FROM PYTHON SOURCE LINES 43-46
 
 Now that we have a PyVista data structure of the points, we can perform a
 triangulation to turn those boring discrete points into a connected surface.
-See https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html
+See :func:`pyvista.UnstructuredGridFilters.delaunay_2d`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-46
+.. GENERATED FROM PYTHON SOURCE LINES 46-48
 
 .. code-block:: default
 
     help(cloud.delaunay_2d)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-48
+.. GENERATED FROM PYTHON SOURCE LINES 49-50
 
-Apply the `delaunay_2d` filter
+Apply the ``delaunay_2d`` filter.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-55
+.. GENERATED FROM PYTHON SOURCE LINES 50-57
 
 .. code-block:: default
 
@@ -104,12 +106,12 @@ Apply the `delaunay_2d` filter
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-58
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
 
 Clean Edges & Triangulations
 ++++++++++++++++++++++++++++
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-71
+.. GENERATED FROM PYTHON SOURCE LINES 60-73
 
 .. code-block:: default
 
@@ -127,18 +129,18 @@ Clean Edges & Triangulations
     cloud
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-74
+.. GENERATED FROM PYTHON SOURCE LINES 74-76
 
 .. code-block:: default
 
     cloud.plot(cpos="xy")
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-76
+.. GENERATED FROM PYTHON SOURCE LINES 77-78
 
 Run the triangulation on these points
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-79
+.. GENERATED FROM PYTHON SOURCE LINES 78-81
 
 .. code-block:: default
 
@@ -146,12 +148,12 @@ Run the triangulation on these points
     surf.plot(cpos="xy", show_edges=True)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-82
+.. GENERATED FROM PYTHON SOURCE LINES 82-84
 
 Note that some of the outer edges are unconstrained and the triangulation
 added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-84
+.. GENERATED FROM PYTHON SOURCE LINES 84-86
 
 .. code-block:: default
 

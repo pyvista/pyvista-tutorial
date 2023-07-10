@@ -18,12 +18,14 @@
 .. _sphx_glr_tutorial_02_mesh_exercises_c_create-uniform-grid.py:
 
 
+.. _create_uniform_grid_exercise:
+
 Creating a Uniform Grid
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a simple uniform grid from a 3D NumPy array of values.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-12
+.. GENERATED FROM PYTHON SOURCE LINES 10-14
 
 .. code-block:: default
 
@@ -32,20 +34,19 @@ Create a simple uniform grid from a 3D NumPy array of values.
     import pyvista as pv
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-17
+.. GENERATED FROM PYTHON SOURCE LINES 15-19
 
 Take a 3D NumPy array of data values that holds some spatial data where each
 axis corresponds to the XYZ cartesian axes. This example will create a
-:class:`pyvista.ImageData` object that will hold the spatial reference for
-a 3D grid which a 3D NumPy array of values can be plotted against.
+:class:`pyvista.ImageData` that will hold the spatial reference for
+a 3D grid by which a 3D NumPy array of values can be plotted against.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-22
+.. GENERATED FROM PYTHON SOURCE LINES 21-23
 
-Create the 3D NumPy array of spatially referenced data.
-This is spatially referenced such that the grid is 20 by 5 by 10
-(nx by ny by nz)
+Create the 3D NumPy array of spatially referenced data. This is spatially
+referenced such that the grid is ``(20, 5, 10)``, ``(nx, ny, nz)``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-25
+.. GENERATED FROM PYTHON SOURCE LINES 23-26
 
 .. code-block:: default
 
@@ -53,34 +54,34 @@ This is spatially referenced such that the grid is 20 by 5 by 10
     values.shape
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-27
+.. GENERATED FROM PYTHON SOURCE LINES 27-28
 
-Create the PyVista object
+Create the ImageData
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-29
+.. GENERATED FROM PYTHON SOURCE LINES 28-30
 
 .. code-block:: default
 
     grid = pv.ImageData()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-32
+.. GENERATED FROM PYTHON SOURCE LINES 31-33
 
-Set the grid dimensions: shape + 1 because we want to inject our values on
-  the CELL data
+Set the grid dimensions to ``shape + 1`` because we want to inject our values
+on the CELL data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-34
+.. GENERATED FROM PYTHON SOURCE LINES 33-35
 
 .. code-block:: default
 
     grid.dimensions = np.array(values.shape) + 1
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-36
+.. GENERATED FROM PYTHON SOURCE LINES 36-37
 
-Edit the spatial reference
+Edit the spatial reference.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-39
+.. GENERATED FROM PYTHON SOURCE LINES 37-40
 
 .. code-block:: default
 
@@ -88,23 +89,24 @@ Edit the spatial reference
     grid.spacing = (1, 5, 2)  # These are the cell sizes along each axis
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-41
+.. GENERATED FROM PYTHON SOURCE LINES 41-43
 
-Add the data values to the cell data
+Assign the data to the cell data. Be sure to flatten the data for
+``ImageData`` objects using Fortran ordering.
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-44
+.. GENERATED FROM PYTHON SOURCE LINES 43-46
 
 .. code-block:: default
 
-    grid.cell_data["values"] = values.flatten(order="F")  # Flatten the array!
+    grid.cell_data["values"] = values.flatten(order="F")
     grid
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-46
+.. GENERATED FROM PYTHON SOURCE LINES 47-48
 
 Now plot the grid!
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-49
+.. GENERATED FROM PYTHON SOURCE LINES 48-51
 
 .. code-block:: default
 
@@ -112,27 +114,25 @@ Now plot the grid!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-53
+.. GENERATED FROM PYTHON SOURCE LINES 52-55
 
 Don't like cell data? You could also add the NumPy array to the point data of
 a :class:`pyvista.ImageData`. Take note of the subtle difference when
 setting the grid dimensions upon initialization.
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-60
+.. GENERATED FROM PYTHON SOURCE LINES 55-60
 
 .. code-block:: default
 
 
-    # Create the 3D NumPy array of spatially referenced data
-    # This is spatially referenced such that the grid is 20 by 5 by 10
-    #   (nx by ny by nz)
+    # Create the 3D NumPy array of spatially referenced data again.
     values = np.linspace(0, 10, 1000).reshape((20, 5, 10))
     values.shape
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 61-62
 
-Create the PyVista object and set the same attributes like above
+Create the PyVista object and set the same attributes as earlier.
 
 .. GENERATED FROM PYTHON SOURCE LINES 62-72
 
@@ -140,8 +140,8 @@ Create the PyVista object and set the same attributes like above
 
     grid = pv.ImageData()
 
-    # Set the grid dimensions: shape because we want to inject our values on the
-    #   POINT data
+    # Set the grid dimensions to ``shape`` because we want to inject our values on
+    # the POINT data
     grid.dimensions = values.shape
 
     # Edit the spatial reference
@@ -188,8 +188,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
 
 .. GENERATED FROM PYTHON SOURCE LINES 89-91
 
-Here are some example 3D data using random data. Feel free to use your own
-3D numpy array here!
+Generate example 3D data using :func:`numpy.random.random`. Feel free to use
+your own 3D numpy array here.
 
 .. GENERATED FROM PYTHON SOURCE LINES 91-94
 
@@ -199,14 +199,15 @@ Here are some example 3D data using random data. Feel free to use your own
     arr.shape
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-99
+.. GENERATED FROM PYTHON SOURCE LINES 95-100
 
-Create the :class:`pyvista.ImageData`
+Create the :class:`pyvista.ImageData`.
 
-Hint, you will likely need to ``ravel`` the array with F-ordering:
-``arr.ravel(order="F")``
+.. note::
+   You will likely need to ``ravel`` the array with Fortran-ordering:
+   ``arr.ravel(order="F")``
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-104
+.. GENERATED FROM PYTHON SOURCE LINES 100-105
 
 .. code-block:: default
 
@@ -216,7 +217,11 @@ Hint, you will likely need to ``ravel`` the array with F-ordering:
     ...
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-108
+.. GENERATED FROM PYTHON SOURCE LINES 106-107
+
+Plot the ImageData
+
+.. GENERATED FROM PYTHON SOURCE LINES 107-110
 
 .. code-block:: default
 
@@ -224,16 +229,18 @@ Hint, you will likely need to ``ravel`` the array with F-ordering:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-115
+.. GENERATED FROM PYTHON SOURCE LINES 111-119
 
 Example
-^^^^^^^^
-Here are some examples of this kind of data in PyVista!
+^^^^^^^
+PyVista has several examples that use ``ImageData``.
 
 See the PyVista documentation for further details on
 `Volume Rendering <https://docs.pyvista.org/examples/02-plot/volume.html>`_
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-123
+Here's one of these example datasets:
+
+.. GENERATED FROM PYTHON SOURCE LINES 119-127
 
 .. code-block:: default
 
@@ -246,7 +253,7 @@ See the PyVista documentation for further details on
     p.show()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 124-126
+.. GENERATED FROM PYTHON SOURCE LINES 128-130
 
 .. code-block:: default
 

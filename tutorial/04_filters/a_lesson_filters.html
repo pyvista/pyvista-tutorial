@@ -419,11 +419,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../02_mesh/exercises/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../02_mesh/soultions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/b_create-point-cloud.html">Create Point Cloud</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/e_read-file.html">Load and Plot from a File</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../02_mesh/solutions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/b_create-point-cloud.html">Create Point Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
 </ul>
@@ -525,7 +525,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../08_widgets/h_spline-widget.html">Spline Widget</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../09_trame/index.html">PyVista and Trame</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_trame/index.html">PyVista and Trame</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/a_trame_simple.html">Simple Trame App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/b_trame_actor_color.html">Control the Color of an Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/c_trame_scalars.html">Control Scalar Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/d_trame_scalar_range.html">Control Scalar Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/e_trame_algorithm.html">Using VTK, PyVista, and Trame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/f_trame_open_file.html">Open Mesh File</a></li>
+</ul>
+</li>
 </ul>
 
   </div>
@@ -570,14 +578,14 @@ to download the full example code or to run this example in your browser via Bin
 use directly on the object. These filters include the following
 (see <a class="reference external" href="https://docs.pyvista.org/api/core/filters.html#filters-ref" title="(in PyVista v0.38.5)"><span>Filters</span></a> for a complete list):</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice.html">slice()</a> creates a single slice through the input dataset on a user defined plane</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_orthogonal.html">slice_orthogonal()</a>: creates a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> dataset of three orthogonal slices</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_along_axis.html">slice_along_axis()</a>: creates a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> dataset of many slices along a specified axis</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold.html">threshold()</a>: Thresholds a dataset by a single value or range of values</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html">threshold_percent()</a>: Threshold by percentages of the scalar range</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.clip.html">clip()</a>: Clips the dataset by a user defined plane</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.outline_corners.html">outline_corners()</a>: Outlines the corners of the data extent</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.extract_geometry.html">extract_geometry()</a>: Extract surface geometry</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice.html">slice()</a> creates a single slice through the input dataset on a user defined plane</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_orthogonal.html">slice_orthogonal()</a>: creates a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> dataset of three orthogonal slices</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_along_axis.html">slice_along_axis()</a>: creates a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> dataset of many slices along a specified axis</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.threshold.html">threshold()</a>: Thresholds a dataset by a single value or range of values</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html">threshold_percent()</a>: Threshold by percentages of the scalar range</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.clip.html">clip()</a>: Clips the dataset by a user defined plane</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.outline_corners.html">outline_corners()</a>: Outlines the corners of the data extent</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.extract_geometry.html">extract_geometry()</a>: Extract surface geometry</p></li>
 </ul>
 <p>To use these filters, call the method of your choice directly on your data
 object:</p>
@@ -607,7 +615,7 @@ dataset</p>
 <img src="../../_images/sphx_glr_a_lesson_filters_001.png" srcset="../../_images/sphx_glr_a_lesson_filters_001.png" alt="a lesson filters" class = "sphx-glr-single-img"/><p>What about other filters? Let’s collect a few filter results and compare them:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">contours</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.contour.html#pyvista.DataSetFilters.contour" title="pyvista.DataSetFilters.contour" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">contour</span></a><span class="p">()</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="pyvista.MultiBlock" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">slices</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.slice_orthogonal.html#pyvista.DataSetFilters.slice_orthogonal" title="pyvista.DataSetFilters.slice_orthogonal" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">slice_orthogonal</span></a><span class="p">()</span>
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glyphs</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.glyph.html#pyvista.DataSetFilters.glyph" title="pyvista.DataSetFilters.glyph" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">glyph</span></a><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">geom</span><span class="o">=</span><a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Sphere.html#pyvista.Sphere" title="pyvista.Sphere" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span></a><span class="p">())</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">glyphs</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.glyph.html#pyvista.DataSetFilters.glyph" title="pyvista.DataSetFilters.glyph" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">dataset</span><span class="o">.</span><span class="n">glyph</span></a><span class="p">(</span><span class="n">factor</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">geom</span><span class="o">=</span><a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Sphere.html#pyvista.Sphere" title="pyvista.Sphere" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span></a><span class="p">(),</span> <span class="n">orient</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="c1"># Show the threshold</span>
@@ -634,11 +642,7 @@ dataset</p>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_filters_002.png" srcset="../../_images/sphx_glr_a_lesson_filters_002.png" alt="a lesson filters" class = "sphx-glr-single-img"/><div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/pyvista/core/filters/data_set.py:2291: UserWarning: No vector-like data to use for orient. orient will be set to False.
-  warnings.warn(&quot;No vector-like data to use for orient. orient will be set to False.&quot;)
-</pre></div>
-</div>
-<section id="filter-pipeline">
+<img src="../../_images/sphx_glr_a_lesson_filters_002.png" srcset="../../_images/sphx_glr_a_lesson_filters_002.png" alt="a lesson filters" class = "sphx-glr-single-img"/><section id="filter-pipeline">
 <h2>Filter Pipeline<a class="headerlink" href="#filter-pipeline" title="Permalink to this heading">#</a></h2>
 <p>In VTK, filters are often used in a pipeline where each algorithm passes its
 output to the next filtering algorithm. In PyVista, we can mimic the
@@ -663,7 +667,7 @@ In the following example, several filters are chained together:</p>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_filters_003.png" srcset="../../_images/sphx_glr_a_lesson_filters_003.png" alt="a lesson filters" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  9.975 seconds)</p>
+<img src="../../_images/sphx_glr_a_lesson_filters_003.png" srcset="../../_images/sphx_glr_a_lesson_filters_003.png" alt="a lesson filters" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.385 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-04-filters-a-lesson-filters-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/04_filters/a_lesson_filters.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo12.svg" width="150px" /></a>

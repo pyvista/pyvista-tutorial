@@ -8,17 +8,18 @@ Download and plot example datasets.
 
 PyVista contains many downloadable datasets documented at
 `pyvista.examples.downloads
-<https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_. you can download these through Python and then immediately plot them.
+<https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_. You can download these through Python and immediately plot them.
 
 This is an easy way to immediately get started with example datasets within
-PyVista without having to manually copy and load them.
+PyVista without having to manually download and load them.
+
 
 """
 
 ###############################################################################
 # Import PyVista and the examples module
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import pyvista
+import pyvista as pv
 from pyvista import examples
 
 ###############################################################################
@@ -50,8 +51,10 @@ dataset
 ###############################################################################
 # Volume DataSet - Plot
 # ~~~~~~~~~~~~~~~~~~~~~
-# Here, we plot the dataset using a custom view direction.
-pl = pyvista.Plotter()
+# Here, we plot the dataset using a custom view direction using
+# :class:`pyvista.Plotter`.
+
+pl = pv.Plotter()
 _ = pl.add_volume(
     dataset,
     cmap="coolwarm",
@@ -76,7 +79,7 @@ pl.show()
 # Exercise #2 - Download and View a File
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Experiment on your own by downloading a dataset and reading it in with
-# :class:`pyvista.read`. You can use one of your own files or try downloading
+# :func:`pyvista.read`. You can use one of your own files or try downloading
 # one from the following sources:
 #
 # - `Sample VTK DataSets <https://github.com/pyvista/vtk-data/tree/master/Data>`_

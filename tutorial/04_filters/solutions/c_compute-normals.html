@@ -419,11 +419,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../02_mesh/exercises/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../02_mesh/soultions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/soultions/b_create-point-cloud.html">Create Point Cloud</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/soultions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/soultions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/soultions/e_read-file.html">Load and Plot from a File</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../02_mesh/solutions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/solutions/b_create-point-cloud.html">Create Point Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/solutions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/solutions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/solutions/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
 </ul>
@@ -525,7 +525,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../../08_widgets/h_spline-widget.html">Spline Widget</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../09_trame/index.html">PyVista and Trame</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../09_trame/index.html">PyVista and Trame</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/a_trame_simple.html">Simple Trame App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/b_trame_actor_color.html">Control the Color of an Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/c_trame_scalars.html">Control Scalar Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/d_trame_scalar_range.html">Control Scalar Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/e_trame_algorithm.html">Using VTK, PyVista, and Trame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/f_trame_open_file.html">Open Mesh File</a></li>
+</ul>
+</li>
 </ul>
 
   </div>
@@ -612,7 +620,7 @@ exaggerated topographic relief.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">warp</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gist_earth&quot;</span><span class="p">,</span> <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_compute-normals_002.png" srcset="../../../_images/sphx_glr_c_compute-normals_002.png" alt="c compute normals" class = "sphx-glr-single-img"/><p>We could also use face/cell normals to extract all the faces of a mesh
+<img src="../../../_images/sphx_glr_c_compute-normals_002.png" srcset="../../../_images/sphx_glr_c_compute-normals_002.png" alt="c compute normals" class = "sphx-glr-single-img"/><p>We could also use face or cell normals to extract all the faces of a mesh
 facing a general direction. In the following snippet, we take a mesh, compute
 the normals along its cell faces, and extract the faces that face upward.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_nefertiti</span><span class="p">()</span>
@@ -634,7 +642,7 @@ the normals along its cell faces, and extract the faces that face upward.</p>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">top</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cpos</span></a><span class="o">=</span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cpos</span></a><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_compute-normals_003.png" srcset="../../../_images/sphx_glr_c_compute-normals_003.png" alt="c compute normals" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  0.089 seconds)</p>
+<img src="../../../_images/sphx_glr_c_compute-normals_003.png" srcset="../../../_images/sphx_glr_c_compute-normals_003.png" alt="c compute normals" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  49.734 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-04-filters-solutions-c-compute-normals-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/04_filters/solutions/c_compute-normals.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo14.svg" width="150px" /></a>

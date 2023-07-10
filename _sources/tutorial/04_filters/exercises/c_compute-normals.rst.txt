@@ -80,7 +80,7 @@ And let's see it!
 
 .. GENERATED FROM PYTHON SOURCE LINES 38-41
 
-We could also use face/cell normals to extract all the faces of a mesh
+We could also use face or cell normals to extract all the faces of a mesh
 facing a general direction. In the following snippet, we take a mesh, compute
 the normals along its cell faces, and extract the faces that face upward.
 
@@ -91,10 +91,10 @@ the normals along its cell faces, and extract the faces that face upward.
 
     mesh = examples.download_nefertiti()
     # Compute normals
-    mesh.compute_normals(cell_normals=True, point_normals=False, inplace=True)
+    mesh.compute_normals(...)
 
     # Get list of cell IDs that meet condition
-    ids = np.arange(mesh.n_cells)[mesh['Normals'][:, 2] > 0.0]
+    ids = np.arange(mesh.n_cells)[mesh['Normals'][...] > ...]
 
     # Extract those cells
     top = mesh.extract_cells(ids)

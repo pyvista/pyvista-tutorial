@@ -21,9 +21,10 @@
 Lesson Overview
 ~~~~~~~~~~~~~~~
 
-This exercise overviews the code in the initial lesson for you to try out!
+This exercise provides an overview of the example in the initial lesson for you
+to try out!
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-12
+.. GENERATED FROM PYTHON SOURCE LINES 9-13
 
 .. code-block:: default
 
@@ -38,7 +39,7 @@ This exercise overviews the code in the initial lesson for you to try out!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-19
+.. GENERATED FROM PYTHON SOURCE LINES 15-20
 
 What is a Point?
 ^^^^^^^^^^^^^^^^
@@ -46,7 +47,7 @@ What is a Point?
 Let’s start with a point cloud – this is a mesh type that only has vertices.
 You can create one by defining a 2D array of Cartesian coordinates like so:
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-23
+.. GENERATED FROM PYTHON SOURCE LINES 20-24
 
 .. code-block:: default
 
@@ -63,19 +64,19 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
  .. code-block:: none
 
 
-    array([[0.4046492 , 0.25066495, 0.63792928],
-           [0.45847727, 0.82159609, 0.61582743],
-           [0.86375389, 0.83102803, 0.62330113],
-           [0.65521582, 0.95662767, 0.13242214],
-           [0.11635474, 0.08189278, 0.15997786]])
+    array([[0.3349013 , 0.94868117, 0.34010266],
+           [0.9032056 , 0.84696054, 0.24986836],
+           [0.62377221, 0.66758574, 0.59560771],
+           [0.50884691, 0.75621952, 0.78908243],
+           [0.66183848, 0.87351758, 0.9015547 ]])
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-25
+.. GENERATED FROM PYTHON SOURCE LINES 25-26
 
 Pass numpy array of points (n by 3) to PolyData
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-28
+.. GENERATED FROM PYTHON SOURCE LINES 26-29
 
 .. code-block:: default
 
@@ -96,9 +97,9 @@ Pass numpy array of points (n by 3) to PolyData
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>1.889e-02, 9.890e-01</td></tr>
-    <tr><td>Y Bounds</td><td>9.792e-03, 9.623e-01</td></tr>
-    <tr><td>Z Bounds</td><td>1.297e-02, 9.937e-01</td></tr>
+    <tr><td>X Bounds</td><td>1.184e-02, 9.842e-01</td></tr>
+    <tr><td>Y Bounds</td><td>1.346e-03, 9.977e-01</td></tr>
+    <tr><td>Z Bounds</td><td>8.559e-03, 9.715e-01</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -107,7 +108,7 @@ Pass numpy array of points (n by 3) to PolyData
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-31
+.. GENERATED FROM PYTHON SOURCE LINES 30-32
 
 .. code-block:: default
 
@@ -125,12 +126,12 @@ Pass numpy array of points (n by 3) to PolyData
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-34
+.. GENERATED FROM PYTHON SOURCE LINES 33-35
 
 But it’s important to note that most meshes have some sort of connectivity
 between points such as this gridded mesh:
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-44
+.. GENERATED FROM PYTHON SOURCE LINES 35-45
 
 .. code-block:: default
 
@@ -156,7 +157,7 @@ between points such as this gridded mesh:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-53
+.. GENERATED FROM PYTHON SOURCE LINES 46-54
 
 .. code-block:: default
 
@@ -180,7 +181,7 @@ between points such as this gridded mesh:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-62
+.. GENERATED FROM PYTHON SOURCE LINES 55-63
 
 What is a Cell?
 ^^^^^^^^^^^^^^^
@@ -191,7 +192,7 @@ topology of a mesh. In the examples above, cells are defined by the lines
 cell in the beam example is a voxel defined by the region between eight
 points in that mesh:
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-75
+.. GENERATED FROM PYTHON SOURCE LINES 63-76
 
 .. code-block:: default
 
@@ -220,13 +221,13 @@ points in that mesh:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-79
+.. GENERATED FROM PYTHON SOURCE LINES 77-80
 
 Cells aren’t limited to voxels, they could be a triangle between three
 points, a line between two points, or even a single point could be its own
 cell (but that’s a special case).
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-90
+.. GENERATED FROM PYTHON SOURCE LINES 82-91
 
 What are attributes?
 ^^^^^^^^^^^^^^^^^^^^
@@ -238,7 +239,7 @@ points or on all cells of a mesh. These attributes can be accessed in a
 dictionary-like attribute attached to any PyVista mesh accessible as one
 of the following:
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-98
+.. GENERATED FROM PYTHON SOURCE LINES 93-99
 
 Point Data
 ~~~~~~~~~~
@@ -247,7 +248,7 @@ each point of the mesh. Each element in an attribute array corresponds to a
 point in the mesh. Let’s create some point data for the beam mesh. When
 plotting, the values between points are interpolated across the cells.
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-102
+.. GENERATED FROM PYTHON SOURCE LINES 99-103
 
 .. code-block:: default
 
@@ -267,7 +268,7 @@ plotting, the values between points are interpolated across the cells.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-108
+.. GENERATED FROM PYTHON SOURCE LINES 104-109
 
 Cell Data
 ~~~~~~~~~~
@@ -275,7 +276,7 @@ Cell data refers to arrays of values (scalars, vectors, etc.) that live
 throughout each cell of the mesh. That is the entire cell (2D face or 3D
 volume) is assigned the value of that attribute.
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-112
+.. GENERATED FROM PYTHON SOURCE LINES 109-113
 
 .. code-block:: default
 
@@ -295,13 +296,13 @@ volume) is assigned the value of that attribute.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-116
+.. GENERATED FROM PYTHON SOURCE LINES 114-117
 
 Here’s a comparison of point data versus cell data and how point data is
 interpolated across cells when mapping colors. This is unlike cell data
 which has a single value across the cell’s domain:
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-128
+.. GENERATED FROM PYTHON SOURCE LINES 117-130
 
 .. code-block:: default
 
@@ -315,6 +316,7 @@ which has a single value across the cell’s domain:
     pl.add_mesh(uni, scalars="Spatial Point Data", show_edges=True)
     pl.subplot(0, 1)
     pl.add_mesh(uni, scalars="Spatial Cell Data", show_edges=True)
+    pl.link_views()
     pl.show()
 
 
@@ -329,14 +331,14 @@ which has a single value across the cell’s domain:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-133
+.. GENERATED FROM PYTHON SOURCE LINES 131-135
 
 Field Data
 ~~~~~~~~~~
 Field data is not directly associated with either the points or cells but
 still should be attached to the mesh. This may be a string array storing notes.
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-137
+.. GENERATED FROM PYTHON SOURCE LINES 135-139
 
 .. code-block:: default
 
@@ -360,7 +362,7 @@ still should be attached to the mesh. This may be a string array storing notes.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-146
+.. GENERATED FROM PYTHON SOURCE LINES 140-148
 
 Assigning Scalars to a Mesh
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -371,7 +373,7 @@ generate cube containing 6 faces and assign each face an integer from
 
 Note how this varies from assigning scalars to each point
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-157
+.. GENERATED FROM PYTHON SOURCE LINES 148-159
 
 .. code-block:: default
 
@@ -401,7 +403,7 @@ Note how this varies from assigning scalars to each point
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.453 seconds)
+   **Total running time of the script:** ( 0 minutes  2.817 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_a_lesson_mesh.py:

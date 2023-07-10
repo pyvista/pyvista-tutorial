@@ -419,11 +419,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../02_mesh/exercises/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../02_mesh/soultions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/soultions/b_create-point-cloud.html">Create Point Cloud</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/soultions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/soultions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/soultions/e_read-file.html">Load and Plot from a File</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../02_mesh/solutions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/solutions/b_create-point-cloud.html">Create Point Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/solutions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/solutions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/solutions/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
 </ul>
@@ -525,7 +525,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../../08_widgets/h_spline-widget.html">Spline Widget</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../09_trame/index.html">PyVista and Trame</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../09_trame/index.html">PyVista and Trame</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/a_trame_simple.html">Simple Trame App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/b_trame_actor_color.html">Control the Color of an Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/c_trame_scalars.html">Control Scalar Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/d_trame_scalar_range.html">Control Scalar Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/e_trame_algorithm.html">Using VTK, PyVista, and Trame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../09_trame/f_trame_open_file.html">Open Mesh File</a></li>
+</ul>
+</li>
 </ul>
 
   </div>
@@ -568,13 +576,13 @@ solve it on your own, you probably should try that first.</p>
 </div>
 <p>Download and plot example datasets.</p>
 <p>PyVista contains many downloadable datasets documented at
-<a class="reference external" href="https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html">pyvista.examples.downloads</a>. you can download these through Python and then immediately plot them.</p>
+<a class="reference external" href="https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html">pyvista.examples.downloads</a>. You can download these through Python and then immediately plot them.</p>
 <p>This is an easy way to immediately get started with example datasets within
-PyVista without having to manually copy and load them.</p>
+PyVista without having to manually download and load them.</p>
 </section>
 <section id="import-pyvista-and-the-examples-module">
 <h1>Import PyVista and the examples module<a class="headerlink" href="#import-pyvista-and-the-examples-module" title="Permalink to this heading">#</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
@@ -648,8 +656,9 @@ automatically loaded right into Python.</p>
 <br /></section>
 <section id="volume-dataset-plot">
 <h1>Volume DataSet - Plot<a class="headerlink" href="#volume-dataset-plot" title="Permalink to this heading">#</a></h1>
-<p>Here, we plot the dataset using a custom view direction.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pyvista</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
+<p>Here, we plot the dataset using a custom view direction using
+<a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
 <a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">_</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_volume.html#pyvista.Plotter.add_volume" title="pyvista.Plotter.add_volume" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">add_volume</span></a><span class="p">(</span>
     <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dataset</span></a><span class="p">,</span>
     <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;coolwarm&quot;</span><span class="p">,</span>
@@ -691,11 +700,11 @@ one from the following sources:</p>
 <p><strong>Solution</strong>
 Download the file <code class="docutils literal notranslate"><span class="pre">'P_shelf_pin.stl'</span></code> from
 <a class="reference external" href="https://www.thingiverse.com/thing:5412753">https://www.thingiverse.com/thing:5412753</a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="pyvista.read" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pyvista</span><span class="o">.</span><span class="n">read</span></a><span class="p">(</span><span class="s1">&#39;P_shelf_pin.stl&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="pyvista.read" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">read</span></a><span class="p">(</span><span class="s1">&#39;P_shelf_pin.stl&#39;</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">mesh</span><span class="o">.</span><span class="n">plot</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_a_load_examples_solution_004.png" srcset="../../../_images/sphx_glr_a_load_examples_solution_004.png" alt="a load examples solution" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.959 seconds)</p>
+<img src="../../../_images/sphx_glr_a_load_examples_solution_004.png" srcset="../../../_images/sphx_glr_a_load_examples_solution_004.png" alt="a load examples solution" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.633 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-01-basic-solutions-a-load-examples-solution-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/01_basic/solutions/a_load_examples_solution.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo4.svg" width="150px" /></a>

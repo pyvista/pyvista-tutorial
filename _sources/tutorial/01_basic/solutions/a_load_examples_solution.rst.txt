@@ -31,10 +31,10 @@ Download and plot example datasets.
 
 PyVista contains many downloadable datasets documented at
 `pyvista.examples.downloads
-<https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_. you can download these through Python and then immediately plot them.
+<https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_. You can download these through Python and then immediately plot them.
 
 This is an easy way to immediately get started with example datasets within
-PyVista without having to manually copy and load them.
+PyVista without having to manually download and load them.
 
 .. GENERATED FROM PYTHON SOURCE LINES 23-25
 
@@ -45,7 +45,7 @@ Import PyVista and the examples module
 
 .. code-block:: default
 
-    import pyvista
+    import pyvista as pv
     from pyvista import examples
 
 
@@ -171,17 +171,19 @@ Download the bolt dataset. This is an excellent dataset to visualize using
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-58
+.. GENERATED FROM PYTHON SOURCE LINES 55-59
 
 Volume DataSet - Plot
 ~~~~~~~~~~~~~~~~~~~~~
-Here, we plot the dataset using a custom view direction.
+Here, we plot the dataset using a custom view direction using
+:class:`pyvista.Plotter`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-69
+.. GENERATED FROM PYTHON SOURCE LINES 59-71
 
 .. code-block:: default
 
-    pl = pyvista.Plotter()
+
+    pl = pv.Plotter()
     _ = pl.add_volume(
         dataset,
         cmap="coolwarm",
@@ -204,7 +206,7 @@ Here, we plot the dataset using a custom view direction.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-77
+.. GENERATED FROM PYTHON SOURCE LINES 72-79
 
 Exercise #1 - Use PyVista Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -214,7 +216,7 @@ If your IDE supports it, you should be able to type
 ``dataset = examples.download_`` and press tab to see all the available
 examples you can download.
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-88
+.. GENERATED FROM PYTHON SOURCE LINES 79-90
 
 .. code-block:: default
 
@@ -241,7 +243,7 @@ examples you can download.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-102
+.. GENERATED FROM PYTHON SOURCE LINES 91-104
 
 Exercise #2 - Download and View a File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -257,12 +259,12 @@ one from the following sources:
 Download the file ``'P_shelf_pin.stl'`` from
 https://www.thingiverse.com/thing:5412753
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-105
+.. GENERATED FROM PYTHON SOURCE LINES 104-107
 
 .. code-block:: default
 
 
-    mesh = pyvista.read('P_shelf_pin.stl')
+    mesh = pv.read('P_shelf_pin.stl')
     mesh.plot()
 
 
@@ -279,7 +281,7 @@ https://www.thingiverse.com/thing:5412753
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.959 seconds)
+   **Total running time of the script:** ( 0 minutes  7.633 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_solutions_a_load_examples_solution.py:

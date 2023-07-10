@@ -2,7 +2,8 @@
 Lesson Overview
 ~~~~~~~~~~~~~~~
 
-This exercise overviews the code in the initial lesson for you to try out!
+This exercise provides an overview of the example in the initial lesson for you
+to try out!
 
 """
 # sphinx_gallery_thumbnail_number = 2
@@ -123,6 +124,7 @@ pl = pv.Plotter(shape=(1, 2), border=False)
 pl.add_mesh(uni, scalars="Spatial Point Data", show_edges=True)
 pl.subplot(0, 1)
 pl.add_mesh(uni, scalars="Spatial Cell Data", show_edges=True)
+pl.link_views()
 pl.show()
 
 ###############################################################################

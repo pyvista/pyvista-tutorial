@@ -18,12 +18,14 @@
 .. _sphx_glr_tutorial_02_mesh_exercises_e_read-file.py:
 
 
+.. _read_file_exercise:
+
 Load and Plot from a File
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Read a dataset from a known file type.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-15
+.. GENERATED FROM PYTHON SOURCE LINES 11-17
 
 We try to make loading a mesh as easy as possible - if your data is in one
 of the many supported file formats, simply use :func:`pyvista.read` to
@@ -32,7 +34,7 @@ load your spatially referenced dataset into a PyVista mesh object.
 The following code block uses a built-in example file and displays an
 airplane mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-19
+.. GENERATED FROM PYTHON SOURCE LINES 17-21
 
 .. code-block:: default
 
@@ -41,19 +43,19 @@ airplane mesh.
     from pyvista import examples
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-23
+.. GENERATED FROM PYTHON SOURCE LINES 23-25
 
 .. code-block:: default
 
     help(pv.read)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-26
+.. GENERATED FROM PYTHON SOURCE LINES 26-28
 
 PyVista supports a wide variety of file formats. The supported file
 extensions are listed in an internal function:
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-29
+.. GENERATED FROM PYTHON SOURCE LINES 28-31
 
 .. code-block:: default
 
@@ -61,12 +63,12 @@ extensions are listed in an internal function:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-32
+.. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 The following code block uses a built-in example
 file, displays an airplane mesh and returns the camera's position:
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-37
+.. GENERATED FROM PYTHON SOURCE LINES 34-39
 
 .. code-block:: default
 
@@ -76,14 +78,14 @@ file, displays an airplane mesh and returns the camera's position:
     filename
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-42
+.. GENERATED FROM PYTHON SOURCE LINES 40-44
 
 Note the above filename, it's a ``.ply`` file - one of the many supported
 formats in PyVista.
 
 Use ``pv.read`` to load the file as a mesh:
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-47
+.. GENERATED FROM PYTHON SOURCE LINES 44-49
 
 .. code-block:: default
 
@@ -93,11 +95,11 @@ Use ``pv.read`` to load the file as a mesh:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-49
+.. GENERATED FROM PYTHON SOURCE LINES 50-51
 
 The points from the mesh are directly accessible as a NumPy array:
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-52
+.. GENERATED FROM PYTHON SOURCE LINES 51-54
 
 .. code-block:: default
 
@@ -105,11 +107,11 @@ The points from the mesh are directly accessible as a NumPy array:
     mesh.points
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-54
+.. GENERATED FROM PYTHON SOURCE LINES 55-56
 
 The faces from the mesh are also directly accessible as a NumPy array:
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-58
+.. GENERATED FROM PYTHON SOURCE LINES 56-60
 
 .. code-block:: default
 
@@ -118,7 +120,7 @@ The faces from the mesh are also directly accessible as a NumPy array:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-64
+.. GENERATED FROM PYTHON SOURCE LINES 61-66
 
 Loading other files types is just as easy! Simply pass your file path to the
 :func:`pyvista.read` function and that's it!
@@ -126,11 +128,11 @@ Loading other files types is just as easy! Simply pass your file path to the
 Here are a few other examples - simply replace ``examples.download_*`` in the
 examples below with ``pyvista.read('path/to/you/file.ext')``
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-67
+.. GENERATED FROM PYTHON SOURCE LINES 68-69
 
 Example STL file:
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-71
+.. GENERATED FROM PYTHON SOURCE LINES 69-73
 
 .. code-block:: default
 
@@ -139,11 +141,11 @@ Example STL file:
     mesh.plot(cpos=cpos)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-73
+.. GENERATED FROM PYTHON SOURCE LINES 74-75
 
 Example OBJ file
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-77
+.. GENERATED FROM PYTHON SOURCE LINES 75-79
 
 .. code-block:: default
 
@@ -152,11 +154,11 @@ Example OBJ file
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-79
+.. GENERATED FROM PYTHON SOURCE LINES 80-81
 
 Example BYU file
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-83
+.. GENERATED FROM PYTHON SOURCE LINES 81-85
 
 .. code-block:: default
 
@@ -165,11 +167,11 @@ Example BYU file
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-85
+.. GENERATED FROM PYTHON SOURCE LINES 86-87
 
 Example VTK file
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-90
+.. GENERATED FROM PYTHON SOURCE LINES 87-92
 
 .. code-block:: default
 
@@ -179,7 +181,7 @@ Example VTK file
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-96
+.. GENERATED FROM PYTHON SOURCE LINES 93-98
 
 Exercise
 ^^^^^^^^
@@ -187,7 +189,7 @@ Read a file yourself with :func:`pyvista.read`. If you have a supported file
 format, use that! Otherwise, download this file:
 https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-99
+.. GENERATED FROM PYTHON SOURCE LINES 98-101
 
 .. code-block:: default
 

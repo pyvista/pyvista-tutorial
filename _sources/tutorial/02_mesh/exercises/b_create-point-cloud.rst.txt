@@ -18,13 +18,15 @@
 .. _sphx_glr_tutorial_02_mesh_exercises_b_create-point-cloud.py:
 
 
+.. _create_point_cloud_exercise:
+
 Create Point Cloud
 ~~~~~~~~~~~~~~~~~~
 
 Create a :class:`pyvista.PolyData` object from a point cloud of vertices and
 scalar arrays for those points.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-14
+.. GENERATED FROM PYTHON SOURCE LINES 11-16
 
 .. code-block:: default
 
@@ -34,15 +36,16 @@ scalar arrays for those points.
     from pyvista import examples
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-20
+.. GENERATED FROM PYTHON SOURCE LINES 17-23
 
-Point clouds are generally constructed in the :class:`pyvista.PolyData` class
-and can easily have scalar/vector data arrays associated with the point
-cloud. In this example, we'll work a bit backwards using a point cloud that
-that is available from our ``examples`` module. This however is no different
-than creating a PyVista mesh with your own NumPy arrays of vertice locations.
+Point clouds are generally constructed using :class:`pyvista.PolyData` and
+can easily have scalar or vector data arrays associated with the individual
+points. In this example, we'll start by working backwards using a point cloud
+that that is available from our ``examples`` module. This however is no
+different than creating a PyVista mesh with your own NumPy arrays of vertice
+locations.
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-35
+.. GENERATED FROM PYTHON SOURCE LINES 23-38
 
 .. code-block:: default
 
@@ -50,24 +53,24 @@ than creating a PyVista mesh with your own NumPy arrays of vertice locations.
 
     # Define some helpers - ignore these and use your own data if you like!
     def generate_points(subset=0.02):
-        """A helper to make a 3D NumPy array of points (n_points by 3)"""
+        """A helper to make a 3D NumPy array of points (n_points by 3)."""
         dataset = examples.download_lidar()
         ids = np.random.randint(low=0, high=dataset.n_points - 1, size=int(dataset.n_points * subset))
         return dataset.points[ids]
 
 
     points = generate_points()
-    # Print first 5 rows to prove its a numpy array (n_points by 3)
-    # Columns are (X Y Z)
+    # Output the first 5 rows to prove it's a numpy array (n_points by 3)
+    # Columns are (X, Y, Z)
     points[0:5, :]
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-38
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
 Now that you have a NumPy array of points/vertices either from our sample
-data or your own project, creating a PyVista mesh of those points:
+data or your own project, create a PyVista mesh using those points.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-42
+.. GENERATED FROM PYTHON SOURCE LINES 41-45
 
 .. code-block:: default
 
@@ -76,11 +79,12 @@ data or your own project, creating a PyVista mesh of those points:
     point_cloud = ...
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-44
+.. GENERATED FROM PYTHON SOURCE LINES 46-48
 
-Now, perform a sanity check
+Now, perform a sanity check to show that the points have been loaded
+correctly.
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-47
+.. GENERATED FROM PYTHON SOURCE LINES 48-51
 
 .. code-block:: default
 
@@ -88,80 +92,91 @@ Now, perform a sanity check
     np.allclose(points, point_cloud.points)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-51
+.. GENERATED FROM PYTHON SOURCE LINES 52-56
 
-And now that we have a PyVista mesh, we can plot it. Note that we add an
-option to use eye dome lighting - this is a shading technique to improve
-depth perception with point clouds (learn more about `EDL <https://docs.pyvista.org/examples/02-plot/edl.html>`_).
+Now that we have a PyVista mesh, we can plot it. Note that we add an option
+to use eye dome lighting - this is a shading technique to improve depth
+perception with point clouds (learn more about `EDL
+<https://docs.pyvista.org/examples/02-plot/edl.html>`_).
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-53
+.. GENERATED FROM PYTHON SOURCE LINES 56-58
 
 .. code-block:: default
 
     point_cloud.plot(eye_dome_lighting=True)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-65
+.. GENERATED FROM PYTHON SOURCE LINES 59-71
 
-Now what if you have data attributes (scalar/vector arrays) that you'd like
-to associate with every node of your mesh? You can easily add NumPy data
-arrays that have a length equal to the number of points in the mesh along the
-first axis. For example, lets add a few arrays to this new ``point_cloud``
-mesh.
+Now what if you have data attributes (scalar or vector arrays) that you'd
+like to associate with every point of your mesh? You can easily add NumPy
+data arrays that have a length equal to the number of points in the mesh
+along the first axis. For example, lets add a few arrays to this new
+``point_cloud`` mesh.
 
 Make an array of scalar values with the same length as the points array.
 Each element in this array will correspond to points at the same index:
 
-Hint, you can use a component of the ``points`` array or use the ``n_points``
-property of the mesh object to make an array of that length.
+.. note::
+   You can use a component of the ``points`` array or use the ``n_points``
+   property of the mesh to make an array of that length.
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-69
+.. GENERATED FROM PYTHON SOURCE LINES 71-74
 
 .. code-block:: default
 
 
+    data = ...  # your code here
 
-    data = ...
+
+.. GENERATED FROM PYTHON SOURCE LINES 75-76
+
+Add that data to the mesh with the name "elevation".
+
+.. GENERATED FROM PYTHON SOURCE LINES 76-79
+
+.. code-block:: default
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-71
+    # your code here
 
-Add that data to the mesh with the name "elevation"
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-77
+.. GENERATED FROM PYTHON SOURCE LINES 80-83
 
-And now we can plot the point cloud with that elevation data. PyVista is smart
-enough to plot the scalar array you added by default. Note that this time,
-we specify to render every point as its own sphere.
+And now we can plot the point cloud with that elevation data. PyVista is
+smart enough to plot the scalar array you added by default. This time, let's
+render every point as its own sphere using ``render_points_as_spheres``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-79
+.. GENERATED FROM PYTHON SOURCE LINES 83-85
 
 .. code-block:: default
 
     point_cloud.plot(render_points_as_spheres=True)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-86
+.. GENERATED FROM PYTHON SOURCE LINES 86-93
 
-That data is kind of boring, right? You can also add data arrays with
-more than one scalar value - perhaps a vector with three elements? Let's
-make a little function that will compute vectors for every node in the point
-cloud and add those vectors to the mesh.
+That data is kind of boring, right? You can also add data arrays with more
+than one scalar value - perhaps a vector with three elements? Let's make a
+little function that will compute vectors for every point in the point cloud
+and add those vectors to the mesh.
 
-This time, we're going to create a totally new, random point cloud.
+This time, we're going to create a totally new, random point cloud containing
+100 points using :func:`numpy.random.random`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-103
+.. GENERATED FROM PYTHON SOURCE LINES 93-112
 
 .. code-block:: default
 
 
-    # Create random XYZ points
+    # Create a random point cloud with Cartesian coordinates
     points = np.random.rand(100, 3)
-    # Make PolyData
+    # Construct PolyData from those points
     point_cloud = pv.PolyData(points)
 
 
     def compute_vectors(mesh):
+        """Create normalized vectors pointing outward from the center of the cloud."""
         origin = mesh.center
         vectors = mesh.points - origin
         vectors = vectors / np.linalg.norm(vectors, axis=1)[:, None]
@@ -172,16 +187,18 @@ This time, we're going to create a totally new, random point cloud.
     vectors[0:5, :]
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-105
+
+.. GENERATED FROM PYTHON SOURCE LINES 113-114
 
 Add the vector array as point data to the new mesh:
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-109
+.. GENERATED FROM PYTHON SOURCE LINES 117-120
 
-Now we can make arrows using those vectors using the glyph filter
-(see `this example <https://docs.pyvista.org/examples/01-filter/glyphs.html>`_ for more details).
+Now we can make arrows using those vectors using the glyph filter (see the
+`Glyph Example <https://docs.pyvista.org/examples/01-filter/glyphs.html>`_
+for more details).
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-124
+.. GENERATED FROM PYTHON SOURCE LINES 120-135
 
 .. code-block:: default
 

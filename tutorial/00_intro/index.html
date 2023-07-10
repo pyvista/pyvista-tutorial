@@ -421,11 +421,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../02_mesh/exercises/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../02_mesh/soultions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/b_create-point-cloud.html">Create Point Cloud</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/e_read-file.html">Load and Plot from a File</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../02_mesh/solutions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/b_create-point-cloud.html">Create Point Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
 </ul>
@@ -527,7 +527,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../08_widgets/h_spline-widget.html">Spline Widget</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../09_trame/index.html">PyVista and Trame</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_trame/index.html">PyVista and Trame</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/a_trame_simple.html">Simple Trame App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/b_trame_actor_color.html">Control the Color of an Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/c_trame_scalars.html">Control Scalar Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/d_trame_scalar_range.html">Control Scalar Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/e_trame_algorithm.html">Using VTK, PyVista, and Trame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/f_trame_open_file.html">Open Mesh File</a></li>
+</ul>
+</li>
 </ul>
 
   </div>
@@ -584,8 +592,8 @@ PyPI in 2019.</p></li>
 plotting and mesh analysis through a streamlined interface for the
 Visualization Toolkit (VTK). Journal of Open Source Software, 4(37), 1450.
 https://doi.org/10.21105/joss.01450</a></p></li>
-<li><p>Over 100+ contributors and <a class="reference external" href="https://github.com/pyvista/pyvista/stargazers">~1.9k Stars</a> on GitHub in 2022!</p></li>
-<li><p><a class="reference external" href="https://github.com/pyvista/pyvista/stargazers">~1.8k Stars</a> and <a class="reference external" href="https://github.com/pyvista/pyvista/network/dependents">~1.8k Used by</a> on GitHub now!</p></li>
+<li><p>As of July 2023, Over 100+ contributors and <a class="reference external" href="https://github.com/pyvista/pyvista/stargazers">~1.9k Stars</a> on GitHub.</p></li>
+<li><p>Used by at least 1.8k other <a class="reference external" href="https://github.com/pyvista/pyvista/network/dependents">libraries, examples, and repositories</a> on GitHub.</p></li>
 <li><p>Greatly expanded internal presence and continuing support thanks to</p>
 <ul>
 <li><p><a class="reference external" href="https://github.com/tkoyama010">&#64;tkoyama010</a></p></li>
@@ -611,8 +619,8 @@ like to achieve in the future.</p>
 </section>
 <section id="brief-examples">
 <h2>Brief Examples<a class="headerlink" href="#brief-examples" title="Permalink to this heading">#</a></h2>
-<section id="read-a-surface-mesh-and-plot-it">
-<h3>Read a Surface Mesh and Plot it<a class="headerlink" href="#read-a-surface-mesh-and-plot-it" title="Permalink to this heading">#</a></h3>
+<section id="read-and-plot-a-surface-mesh">
+<h3>Read and Plot a Surface Mesh<a class="headerlink" href="#read-and-plot-a-surface-mesh" title="Permalink to this heading">#</a></h3>
 <p>VTK is powerful, really powerful! You can do just about anything within VTK and
 PyVista just wants to make it easier to do it using <code class="docutils literal notranslate"><span class="pre">numpy</span></code>-like and
 <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>-like syntax. For example, if you wanted to be able to plot a
@@ -780,7 +788,7 @@ build visualizations to analyze their data using qualitative and
 quantitative techniques. The data exploration can be done interactively
 in 3D or programmatically using ParaView’s batch processing capabilities.</p>
 <img alt="ParaView" src="https://www.kitware.com/main/wp-content/uploads/2018/11/ParaView-5.6.png" />
-</div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><p><a class="reference external" href="https://vedo.embl.es/">vedo</a> is a python module for scientific
+</div><div aria-labelledby="tab-1-1-2" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-2" name="1-2" role="tabpanel" tabindex="0"><p><a class="reference external" href="https://vedo.embl.es/">vedo</a> is a Python library for scientific
 analysis of 3D objects and point clouds based on VTK and numpy.</p>
 <img alt="vedo" src="https://user-images.githubusercontent.com/32848391/80292484-50757180-8757-11ea-841f-2c0c5fe2c3b4.jpg" />
 </div><div aria-labelledby="tab-1-1-3" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-3" name="1-3" role="tabpanel" tabindex="0"><p><a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/">Mayavi</a> is a general
@@ -860,8 +868,8 @@ bottom of the page and clicking on either the <code class="docutils literal notr
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#read-a-surface-mesh-and-plot-it">
-     Read a Surface Mesh and Plot it
+    <a class="reference internal nav-link" href="#read-and-plot-a-surface-mesh">
+     Read and Plot a Surface Mesh
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">

@@ -1,4 +1,6 @@
 """
+.. _read_file_exercise:
+
 Load and Plot from a File
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

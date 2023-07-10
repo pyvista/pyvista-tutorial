@@ -27,32 +27,32 @@ Download and plot example datasets.
 
 PyVista contains many downloadable datasets documented at
 `pyvista.examples.downloads
-<https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_. you can download these through Python and then immediately plot them.
+<https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_. You can download these through Python and immediately plot them.
 
 This is an easy way to immediately get started with example datasets within
-PyVista without having to manually copy and load them.
+PyVista without having to manually download and load them.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-21
+.. GENERATED FROM PYTHON SOURCE LINES 20-22
 
 Import PyVista and the examples module
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-24
+.. GENERATED FROM PYTHON SOURCE LINES 22-25
 
 .. code-block:: default
 
-    import pyvista
+    import pyvista as pv
     from pyvista import examples
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-29
+.. GENERATED FROM PYTHON SOURCE LINES 26-30
 
 Surface DataSet - Download
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 Download a surface dataset of pine roots. Note how the dataset is
 automatically loaded right into Python.
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-33
+.. GENERATED FROM PYTHON SOURCE LINES 30-34
 
 .. code-block:: default
 
@@ -61,13 +61,13 @@ automatically loaded right into Python.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-37
+.. GENERATED FROM PYTHON SOURCE LINES 35-38
 
 Surface DataSet - Plot
 ~~~~~~~~~~~~~~~~~~~~~~
 Plot the pine roots using PyVista's default plotting settings.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-40
+.. GENERATED FROM PYTHON SOURCE LINES 38-41
 
 .. code-block:: default
 
@@ -75,14 +75,14 @@ Plot the pine roots using PyVista's default plotting settings.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-45
+.. GENERATED FROM PYTHON SOURCE LINES 42-46
 
 Volume DataSet - Download
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Download the bolt dataset. This is an excellent dataset to visualize using
 "volumetric" plotting.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-50
+.. GENERATED FROM PYTHON SOURCE LINES 46-51
 
 .. code-block:: default
 
@@ -92,17 +92,19 @@ Download the bolt dataset. This is an excellent dataset to visualize using
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-54
+.. GENERATED FROM PYTHON SOURCE LINES 52-56
 
 Volume DataSet - Plot
 ~~~~~~~~~~~~~~~~~~~~~
-Here, we plot the dataset using a custom view direction.
+Here, we plot the dataset using a custom view direction using
+:class:`pyvista.Plotter`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-65
+.. GENERATED FROM PYTHON SOURCE LINES 56-68
 
 .. code-block:: default
 
-    pl = pyvista.Plotter()
+
+    pl = pv.Plotter()
     _ = pl.add_volume(
         dataset,
         cmap="coolwarm",
@@ -114,7 +116,7 @@ Here, we plot the dataset using a custom view direction.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-73
+.. GENERATED FROM PYTHON SOURCE LINES 69-76
 
 Exercise #1 - Use PyVista Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,12 +126,12 @@ If your IDE supports it, you should be able to type
 ``dataset = examples.download_`` and press tab to see all the available
 examples you can download.
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-85
+.. GENERATED FROM PYTHON SOURCE LINES 79-88
 
 Exercise #2 - Download and View a File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Experiment on your own by downloading a dataset and reading it in with
-:class:`pyvista.read`. You can use one of your own files or try downloading
+:func:`pyvista.read`. You can use one of your own files or try downloading
 one from the following sources:
 
 - `Sample VTK DataSets <https://github.com/pyvista/vtk-data/tree/master/Data>`_

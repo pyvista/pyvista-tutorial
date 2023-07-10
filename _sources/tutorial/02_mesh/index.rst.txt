@@ -204,7 +204,7 @@ Field Data
 ~~~~~~~~~~
 Field data is not directly associated with either the points or cells
 but still should be attached to the mesh.  This may be a string array
-storing notes, or even indices of a `Collision <https://docs.pyvista.org/examples/01-filter/collisions.html>`_.
+storing notes, or even indices of a `Collision <https://docs.pyvista.org/version/stable/examples/01-filter/collisions.html>`_.
 
 
 .. _assigning_scalars:
@@ -253,7 +253,7 @@ For more examples, please see the mesh creation section of the
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This exercise overviews the code in the initial lesson for you to try out!">
+    <div class="sphx-glr-thumbcontainer" tooltip="This exercise provides an overview of the example in the initial lesson for you to try out!">
 
 .. only:: html
 
@@ -376,10 +376,10 @@ Solutions
 
 .. only:: html
 
-  .. image:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_b_create-point-cloud_thumb.png
+  .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_b_create-point-cloud_thumb.png
     :alt: Create Point Cloud
 
-  :ref:`sphx_glr_tutorial_02_mesh_soultions_b_create-point-cloud.py`
+  :ref:`sphx_glr_tutorial_02_mesh_solutions_b_create-point-cloud.py`
 
 .. raw:: html
 
@@ -393,10 +393,10 @@ Solutions
 
 .. only:: html
 
-  .. image:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_c_create-uniform-grid_thumb.png
+  .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_c_create-uniform-grid_thumb.png
     :alt: Creating a Uniform Grid
 
-  :ref:`sphx_glr_tutorial_02_mesh_soultions_c_create-uniform-grid.py`
+  :ref:`sphx_glr_tutorial_02_mesh_solutions_c_create-uniform-grid.py`
 
 .. raw:: html
 
@@ -410,10 +410,10 @@ Solutions
 
 .. only:: html
 
-  .. image:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_d_create-tri-surface_thumb.png
+  .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_d_create-tri-surface_thumb.png
     :alt: Create Triangulated Surface
 
-  :ref:`sphx_glr_tutorial_02_mesh_soultions_d_create-tri-surface.py`
+  :ref:`sphx_glr_tutorial_02_mesh_solutions_d_create-tri-surface.py`
 
 .. raw:: html
 
@@ -427,10 +427,10 @@ Solutions
 
 .. only:: html
 
-  .. image:: /tutorial/02_mesh/soultions/images/thumb/sphx_glr_e_read-file_thumb.png
+  .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_e_read-file_thumb.png
     :alt: Load and Plot from a File
 
-  :ref:`sphx_glr_tutorial_02_mesh_soultions_e_read-file.py`
+  :ref:`sphx_glr_tutorial_02_mesh_solutions_e_read-file.py`
 
 .. raw:: html
 
@@ -448,7 +448,7 @@ Solutions
    :includehidden:
 
    /tutorial/02_mesh//exercises/index.rst
-   /tutorial/02_mesh//soultions/index.rst
+   /tutorial/02_mesh//solutions/index.rst
 
 
 

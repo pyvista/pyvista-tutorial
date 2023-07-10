@@ -134,7 +134,7 @@ along with this lesson.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This section demonstrates how to use PyVista to reading and plotting 3D data using the `pyvista...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This section demonstrates how to use PyVista to read and plot 3D data using the `pyvista.exampl...">
 
 .. only:: html
 

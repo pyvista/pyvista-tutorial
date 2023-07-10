@@ -419,11 +419,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../02_mesh/exercises/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../02_mesh/soultions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/b_create-point-cloud.html">Create Point Cloud</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../02_mesh/soultions/e_read-file.html">Load and Plot from a File</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../02_mesh/solutions/index.html">Solutions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/b_create-point-cloud.html">Create Point Cloud</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/c_create-uniform-grid.html">Creating a Uniform Grid</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/d_create-tri-surface.html">Create Triangulated Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/e_read-file.html">Load and Plot from a File</a></li>
 </ul>
 </li>
 </ul>
@@ -525,7 +525,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../08_widgets/h_spline-widget.html">Spline Widget</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../09_trame/index.html">PyVista and Trame</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_trame/index.html">PyVista and Trame</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/a_trame_simple.html">Simple Trame App</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/b_trame_actor_color.html">Control the Color of an Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/c_trame_scalars.html">Control Scalar Array</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/d_trame_scalar_range.html">Control Scalar Range</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/e_trame_algorithm.html">Using VTK, PyVista, and Trame</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/f_trame_open_file.html">Open Mesh File</a></li>
+</ul>
+</li>
 </ul>
 
   </div>
@@ -557,23 +565,23 @@
   <section id="filters">
 <span id="id1"></span><h1>Filters<a class="headerlink" href="#filters" title="Permalink to this heading">#</a></h1>
 <p>Demonstrate the PyVista filters API to perform mesh analysis and alteration</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>This section of the tutorial was adopted from the Filtering section
-of <a class="reference external" href="https://docs.pyvista.org/examples/index.html#filtering">PyVista’s Example Gallery</a>.</p>
+of <a class="reference external" href="https://docs.pyvista.org/version/stable/examples/01-filter/index.html">PyVista’s Example Gallery</a>.</p>
 </div>
-<p>PyVista mesh objects have a suite of common filters ready for immediate
-use directly on the object. These filters include the following
-(see <a class="reference external" href="https://docs.pyvista.org/api/core/filters.html">Filters API</a> for a complete list):</p>
+<p>PyVista mesh objects have a suite of common filters ready for immediate use
+directly on the object. These filters include the following (see <a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/filters.html">Filters API</a> for a
+complete list):</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice.html">slice()</a> creates a single slice through the input dataset on a user defined plane</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_orthogonal.html">slice_orthogonal()</a>: creates a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> dataset of three orthogonal slices</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_along_axis.html">slice_along_axis()</a>: creates a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> dataset of many slices along a specified axis</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold.html">threshold()</a>: Thresholds a dataset by a single value or range of values</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html">threshold_percent()</a>: Threshold by percentages of the scalar range</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.clip.html">clip()</a>: Clips the dataset by a user defined plane</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.outline_corners.html">outline_corners()</a>: Outlines the corners of the data extent</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.extract_geometry.html">extract_geometry()</a>: Extract surface geometry</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice.html">slice()</a> creates a single slice through the input dataset on a user defined plane</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_orthogonal.html">slice_orthogonal()</a>: creates a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> dataset of three orthogonal slices</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_along_axis.html">slice_along_axis()</a>: creates a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> dataset of many slices along a specified axis</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.threshold.html">threshold()</a>: Thresholds a dataset by a single value or range of values</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html">threshold_percent()</a>: Threshold by percentages of the scalar range</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.clip.html">clip()</a>: Clips the dataset by a user defined plane</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.outline_corners.html">outline_corners()</a>: Outlines the corners of the data extent</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.extract_geometry.html">extract_geometry()</a>: Extract surface geometry</p></li>
 </ul>
 <p>To use these filters, call the method of your choice directly on your data
 object:</p>
@@ -605,20 +613,20 @@ alter how filters are executed, print the docstring for any filter attached to
 PyVista objects with either <code class="docutils literal notranslate"><span class="pre">help(dataset.threshold)</span></code> or using <code class="docutils literal notranslate"><span class="pre">shift+tab</span></code>
 in an IPython environment.</p>
 <p>We can now plot this filtered dataset along side an outline of the original
-dataset</p>
+dataset:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">outline</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">threshed</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">outline</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">threshed</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "14704133707c40a9bc3fb8a699a8c17c"}
+{"version_major": 2, "version_minor": 0, "model_id": "464ab47565e64a88bee8b74de1515093"}
 </script></div>
 </div>
 <p>What about other filters? Let’s collect a few filter results and compare them:</p>
@@ -696,7 +704,7 @@ In the following example, several filters are chained together:</p>
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"version_major": 2, "version_minor": 0, "model_id": "ef57184afa0c4699b5b05107c2cc0db5"}
+{"version_major": 2, "version_minor": 0, "model_id": "2dc2e96a382f4a659befc44361ebadf3"}
 </script></div>
 </div>
 <section id="exercises">
@@ -745,7 +753,7 @@ In the following example, several filters are chained together:</p>
 
 
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"3b6db179c08e40a78ae7428c1166366b": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "7b5783cd475d4bfc94ca4b50e0a4cf49": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "14704133707c40a9bc3fb8a699a8c17c": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_3b6db179c08e40a78ae7428c1166366b", "placeholder": "\u200b", "style": "IPY_MODEL_7b5783cd475d4bfc94ca4b50e0a4cf49", "tabbable": null, "tooltip": null, "value": "<iframe src='http://localhost:36355/index.html?ui=P_0x7fc364c6da60_0&reconnect=auto' style='width: 99%; height: 600px;'></iframe>"}}, "7c74ca441a1e4f80929e6aa46d2b4067": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "2dfa122319b743e0b330aed17b70b4a8": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "ef57184afa0c4699b5b05107c2cc0db5": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_7c74ca441a1e4f80929e6aa46d2b4067", "placeholder": "\u200b", "style": "IPY_MODEL_2dfa122319b743e0b330aed17b70b4a8", "tabbable": null, "tooltip": null, "value": "<iframe src='http://localhost:36355/index.html?ui=P_0x7fc39482a220_1&reconnect=auto' style='width: 99%; height: 600px;'></iframe>"}}}, "version_major": 2, "version_minor": 0}
+{"state": {"36933e183dde4cd598b38ce2294d2074": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "bd1bd437d6a04a699e729a2b0d117ee8": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "464ab47565e64a88bee8b74de1515093": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_36933e183dde4cd598b38ce2294d2074", "placeholder": "\u200b", "style": "IPY_MODEL_bd1bd437d6a04a699e729a2b0d117ee8", "tabbable": null, "tooltip": null, "value": "<iframe src='http://localhost:33781/index.html?ui=P_0x7f0f4bc4ae20_0&reconnect=auto' style='width: 99%; height: 600px;'></iframe>"}}, "77e9e961e03b4228ab13b0389cd00df6": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "562390f00c9f4b64bbb7bbcae3f5eccf": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "2dc2e96a382f4a659befc44361ebadf3": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_77e9e961e03b4228ab13b0389cd00df6", "placeholder": "\u200b", "style": "IPY_MODEL_562390f00c9f4b64bbb7bbcae3f5eccf", "tabbable": null, "tooltip": null, "value": "<iframe src='http://localhost:33781/index.html?ui=P_0x7f0f7c2701f0_1&reconnect=auto' style='width: 99%; height: 600px;'></iframe>"}}}, "version_major": 2, "version_minor": 0}
 </script>
 
 
