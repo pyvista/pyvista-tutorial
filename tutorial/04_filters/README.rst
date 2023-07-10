@@ -6,15 +6,16 @@ Filters
 Demonstrate the PyVista filters API to perform mesh analysis and alteration
 
 
-.. tip::
+.. note::
 
     This section of the tutorial was adopted from the Filtering section
-    of `PyVista's Example Gallery <https://docs.pyvista.org/examples/index.html#filtering>`_.
+    of `PyVista's Example Gallery <https://docs.pyvista.org/version/stable/examples/01-filter/index.html>`_.
 
 
-PyVista mesh objects have a suite of common filters ready for immediate
-use directly on the object. These filters include the following
-(see `Filters API <https://docs.pyvista.org/api/core/filters.html>`_ for a complete list):
+PyVista mesh objects have a suite of common filters ready for immediate use
+directly on the object. These filters include the following (see `Filters API
+<https://docs.pyvista.org/version/stable/api/core/filters.html>`_ for a
+complete list):
 
 * `slice()`_ creates a single slice through the input dataset on a user defined plane
 * `slice_orthogonal()`_: creates a :class:`pyvista.MultiBlock` dataset of three orthogonal slices
@@ -25,14 +26,14 @@ use directly on the object. These filters include the following
 * `outline_corners()`_: Outlines the corners of the data extent
 * `extract_geometry()`_: Extract surface geometry
 
-.. _slice(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice.html
-.. _slice_orthogonal(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_orthogonal.html
-.. _slice_along_axis(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_along_axis.html
-.. _threshold(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold.html
-.. _threshold_percent(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html
-.. _clip(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.clip.html
-.. _outline_corners(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.outline_corners.html
-.. _extract_geometry(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.extract_geometry.html
+.. _slice(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice.html
+.. _slice_orthogonal(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_orthogonal.html
+.. _slice_along_axis(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_along_axis.html
+.. _threshold(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.threshold.html
+.. _threshold_percent(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html
+.. _clip(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.clip.html
+.. _outline_corners(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.outline_corners.html
+.. _extract_geometry(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.extract_geometry.html
 
 
 To use these filters, call the method of your choice directly on your data
@@ -70,16 +71,16 @@ PyVista objects with either ``help(dataset.threshold)`` or using ``shift+tab``
 in an IPython environment.
 
 We can now plot this filtered dataset along side an outline of the original
-dataset
+dataset:
 
 
 .. jupyter-execute::
 
-    p = pv.Plotter()
-    p.add_mesh(outline, color="k")
-    p.add_mesh(threshed)
-    p.camera_position = [-2, 5, 3]
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(outline, color="k")
+    pl.add_mesh(threshed)
+    pl.camera_position = [-2, 5, 3]
+    pl.show()
 
 
 
