@@ -7,13 +7,12 @@ An example of opening a mesh file from the browser and viewing it with PyVista.
 """
 import tempfile
 
+import pyvista as pv
+from pyvista.trame.ui import plotter_ui
 from trame.app import get_server
 from trame.app.file_upload import ClientFile
 from trame.ui.vuetify import SinglePageLayout
 from trame.widgets import vuetify
-
-import pyvista as pv
-from pyvista.trame.ui import plotter_ui
 
 pv.OFF_SCREEN = True
 
