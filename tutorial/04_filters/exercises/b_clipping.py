@@ -26,6 +26,7 @@ clipped = ...
 clipped
 
 ###############################################################################
+# Plot the result.
 p = pv.Plotter()
 p.add_mesh(dataset, style='wireframe', color='blue', label='Input')
 p.add_mesh(clipped, label='Clipped')
@@ -40,6 +41,8 @@ p.show()
 #
 # Clip any dataset by a set of XYZ bounds using the
 # :func:`pyvista.DataSetFilters.clip_box` filter.
+#
+# First, download an example dataset.
 dataset = examples.download_office()
 
 ###############################################################################
@@ -47,12 +50,13 @@ help(dataset.clip_box)
 
 ###############################################################################
 # Clip the dataset with a bounding box defined by the values in ``bounds``
-# (xmin, xmax, ymin, ymax, zmin, zmax)
+# ``(xmin, xmax, ymin, ymax, zmin, zmax)``
 bounds = [2, 4.5, 2, 4.5, 1, 3]
 clipped = ...
 clipped
 
 ###############################################################################
+# Plot the original dataset and the clipped one.
 p = pv.Plotter()
 p.add_mesh(dataset, style='wireframe', color='blue', label='Input')
 p.add_mesh(clipped, label='Clipped')
@@ -78,7 +82,7 @@ p.add_mesh(mesh, opacity=0.5)
 p.show()
 
 ###############################################################################
-# Run the box clipping algorithm with the defined box geometry
+# Run the box clipping algorithm with the defined box geometry.
 extracted = ...
 
 p = pv.Plotter(shape=(1, 2))

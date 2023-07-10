@@ -60,7 +60,7 @@ Additional Packages
 -------------------
 
 If you prefer working within a Jupyter environment, we recommend you install
-the following packages:
+pyvista with:
 
 .. tabs::
 
@@ -68,7 +68,7 @@ the following packages:
 
       .. code::
 
-         pip install jupyterlab trame ipywidgets
+         pip install 'jupyterlab>=3' ipywidgets 'pyvista[all,trame]'
 
    .. tab:: conda
 
@@ -77,7 +77,7 @@ the following packages:
          conda install -c conda-forge jupyterlab trame ipywidgets
 
 
-You can then plot using Jupyterlab or Jupyter Notebook interactively with one of three backends:
+You can then plot using Jupyterlab or Jupyter Notebook with either a static or interactive backend:
 
    .. jupyter-execute::
       :hide-code:

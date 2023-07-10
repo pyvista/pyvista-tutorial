@@ -202,7 +202,7 @@ Field Data
 ~~~~~~~~~~
 Field data is not directly associated with either the points or cells
 but still should be attached to the mesh.  This may be a string array
-storing notes, or even indices of a `Collision <https://docs.pyvista.org/examples/01-filter/collisions.html>`_.
+storing notes, or even indices of a `Collision <https://docs.pyvista.org/version/stable/examples/01-filter/collisions.html>`_.
 
 
 .. _assigning_scalars:

@@ -35,10 +35,9 @@ layer that "wraps" the lower level functionality of VTK.
   plotting and mesh analysis through a streamlined interface for the
   Visualization Toolkit (VTK). Journal of Open Source Software, 4(37), 1450.
   https://doi.org/10.21105/joss.01450 <https://joss.theoj.org/papers/10.21105/joss.01450>`_
-- Over 100+ contributors and `~1.9k Stars
-  <https://github.com/pyvista/pyvista/stargazers>`_ on GitHub in 2022!
-- `~1.8k Stars
-  <https://github.com/pyvista/pyvista/stargazers>`_ and `~1.8k Used by <https://github.com/pyvista/pyvista/network/dependents>`_ on GitHub now!
+- As of July 2023, Over 100+ contributors and `~1.9k Stars
+  <https://github.com/pyvista/pyvista/stargazers>`_ on GitHub.
+- Used by at least 1.8k other `libraries, examples, and repositories <https://github.com/pyvista/pyvista/network/dependents>`_ on GitHub.
 - Greatly expanded internal presence and continuing support thanks to
 
   - `@tkoyama010 <https://github.com/tkoyama010>`_
@@ -79,8 +78,8 @@ like to achieve in the future.
 Brief Examples
 --------------
 
-Read a Surface Mesh and Plot it
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Read and Plot a Surface Mesh
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 VTK is powerful, really powerful! You can do just about anything within VTK and
 PyVista just wants to make it easier to do it using ``numpy``-like and
 ``Matplotlib``-like syntax. For example, if you wanted to be able to plot a
@@ -260,7 +259,7 @@ Here's a few of them:
 
    .. tab:: vedo
 
-      `vedo <https://vedo.embl.es/>`_ is a python module for scientific
+      `vedo <https://vedo.embl.es/>`_ is a Python library for scientific
       analysis of 3D objects and point clouds based on VTK and numpy.
 
       .. image:: https://user-images.githubusercontent.com/32848391/80292484-50757180-8757-11ea-841f-2c0c5fe2c3b4.jpg

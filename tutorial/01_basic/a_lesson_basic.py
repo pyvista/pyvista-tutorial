@@ -4,16 +4,16 @@
 Basic Usage Lesson
 ==================
 
-This section demonstrates how to use PyVista to reading and plotting 3D data
+This section demonstrates how to use PyVista to read and plot 3D data
 using the `pyvista.examples.downloads
 <https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_
 module and external files.
 """
 
-# Configure for trame
-import pyvista
+import pyvista as pv
 
-pyvista.set_plot_theme('document')
+# Set the default plot theme to the "document" theme.
+pv.set_plot_theme('document')
 
 
 ###############################################################################
@@ -39,7 +39,7 @@ dataset
 # Note how this is a :class:`pyvista.PolyData`, which is effectively a surface
 # dataset containing points, lines, and/or faces. We can immediately plot this with:
 
-dataset.plot(color='tan')
+dataset.plot()
 
 ###############################################################################
 # This is a fairly basic plot. You can change how its plotted by adding
@@ -63,16 +63,14 @@ dataset.plot(volume=True)
 ###############################################################################
 # Read from a file
 # ~~~~~~~~~~~~~~~~
-# You can read datasets directly from a file if you have access to it locally on
-# your computer. This can be one of the many file formats that VTK supports, and
+# You can read datasets directly from a file if you have access to it on your
+# environment. This can be one of the many file formats that VTK supports, and
 # many more that it doesn't as PyVista can rely on libraries like `meshio
 # <https://github.com/nschloe/meshio>`_.
 #
 # In the following example, we load VTK's iron protein dataset `ironProt.vtk
 # <https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk>`_ from a
 # file using :func:`pyvista.read`.
-
-import pyvista as pv
 
 dataset = pv.read('ironProt.vtk')
 dataset
