@@ -3,7 +3,7 @@ Using VTK, PyVista, and Trame
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example demonstrates how to use VTK, PyVista, and Trame together
-to show how the three libraries complement eachother.
+to show how the three libraries complement each other.
 """
 
 import pyvista as pv
