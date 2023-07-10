@@ -16,7 +16,6 @@ PyVista Tutorial
    tutorial/04_filters/index
    tutorial/05_action/index
    tutorial/06_vtk/index
-   tutorial/07_sphinx/index
    tutorial/08_widgets/index
    tutorial/09_trame/index
 

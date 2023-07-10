@@ -5,14 +5,14 @@
 
 Computation times
 =================
-**01:03.620** total execution time for **tutorial_04_filters_solutions** files:
+**01:05.138** total execution time for **tutorial_04_filters_solutions** files:
 
 +-----------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_04_filters_solutions_c_compute-normals.py` (``c_compute-normals.py``) | 00:47.705 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_04_filters_solutions_c_compute-normals.py` (``c_compute-normals.py``) | 00:48.926 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_04_filters_solutions_d_contouring.py` (``d_contouring.py``)           | 00:12.210 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_04_filters_solutions_d_contouring.py` (``d_contouring.py``)           | 00:12.453 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_04_filters_solutions_b_clipping.py` (``b_clipping.py``)               | 00:02.460 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_04_filters_solutions_b_clipping.py` (``b_clipping.py``)               | 00:02.519 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_04_filters_solutions_e_glyphs.py` (``e_glyphs.py``)                   | 00:01.245 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_04_filters_solutions_e_glyphs.py` (``e_glyphs.py``)                   | 00:01.240 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------+-----------+--------+

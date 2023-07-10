@@ -414,75 +414,41 @@
 <p>The only prerequisite for installing PyVista is Python itself. If you don’t have
 Python yet and want the simplest way to get started, we recommend you use the
 <a class="reference external" href="https://www.anaconda.com/">Anaconda Distribution</a>.</p>
-<p>PyVista can be installed locally with <a class="reference internal" href="#conda"><span class="std std-ref">conda</span></a>, with <a class="reference internal" href="#pip"><span class="std std-ref">pip</span></a>. If you’d
+<p>PyVista can be installed locally with conda or pip. If you’d
 prefer it, you can also run PyVista on the cloud using <a class="reference internal" href="#colab"><span class="std std-ref">Google Colab</span></a> or
 <a class="reference internal" href="#mybinder"><span class="std std-ref">MyBinder</span></a>. For more detailed instructions, see the installation
 guide below.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
 <p>PyVista can be installed on several environments, including, but not limited to:</p>
-<ul class="simple">
-<li><p><strong>Locally</strong></p>
-<ul>
-<li><p><a class="reference internal" href="#pip"><span class="std std-ref">pip</span></a></p></li>
-<li><p><a class="reference internal" href="#conda"><span class="std std-ref">conda</span></a></p></li>
-</ul>
-</li>
-<li><p><strong>Cloud</strong></p>
-<ul>
-<li><p><a class="reference internal" href="#colab"><span class="std std-ref">Google Colab</span></a></p></li>
-<li><p><a class="reference internal" href="#mybinder"><span class="std std-ref">MyBinder</span></a></p></li>
-</ul>
-</li>
-</ul>
-<section id="pip">
-<span id="id2"></span><h3>pip<a class="headerlink" href="#pip" title="Permalink to this heading">#</a></h3>
-<p>If you’re using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, then installation is just:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyvista</span>
-</pre></div>
-</div>
-<script id="asciicast-507562"  src="https://asciinema.org/a/507562.js" async></script></section>
-<section id="conda">
-<span id="id3"></span><h3>conda<a class="headerlink" href="#conda" title="Permalink to this heading">#</a></h3>
-<p>Install PyVista using the <a class="reference external" href="https://www.anaconda.com/">Anaconda Distribution</a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">pyvista</span>
-</pre></div>
-</div>
-<script id="asciicast-507565"  src="https://asciinema.org/a/507565.js" async></script></section>
-</section>
-<section id="additional-packages">
-<h2>Additional Packages<a class="headerlink" href="#additional-packages" title="Permalink to this heading">#</a></h2>
-<p>If you prefer working within a Jupyter environment, we recommend you install
-pyvista with:</p>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">pip</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">conda</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s1">&#39;jupyterlab&gt;=3&#39;</span> <span class="n">ipywidgets</span> <span class="s1">&#39;pyvista[all,trame]&#39;</span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0">pip</button><button aria-controls="panel-0-0-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-0-0-1" name="0-1" role="tab" tabindex="-1">conda</button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="s1">&#39;pyvista[all,trame]&#39;</span> <span class="n">jupyterlab</span> <span class="s1">&#39;ipywidgets&lt;8.0.0&#39;</span>
 </pre></div>
 </div>
-</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">jupyterlab</span> <span class="n">trame</span> <span class="n">ipywidgets</span>
+</div><div aria-labelledby="tab-0-0-1" class="sphinx-tabs-panel" hidden="true" id="panel-0-0-1" name="0-1" role="tabpanel" tabindex="0"><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="n">pyvista</span> <span class="n">jupyterlab</span> <span class="n">trame</span> <span class="n">ipywidgets</span>
 </pre></div>
 </div>
 </div></div>
-<p>You can then plot using Jupyterlab or Jupyter Notebook with either a static or interactive backend:</p>
+<p>You can then plot in Jupyter with either a static or interactive backend:</p>
 <blockquote>
-<div><div class="jupyter_cell docutils container">
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_lucy</span><span class="p">()</span>
 <span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">smooth_shading</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/getting-started_1_0.png" src="_images/getting-started_1_0.png" />
-</div>
-</div>
+<figure class="align-default">
+<img alt="_images/getting-started-1_00_00.png" src="_images/getting-started-1_00_00.png" />
+</figure>
 </div></blockquote>
+</section>
+<section id="mybinder">
+<span id="id2"></span><h2>MyBinder<a class="headerlink" href="#mybinder" title="Permalink to this heading">#</a></h2>
+<p>MyBinder, similar to Google Colab, allows you to run Jupyter notebooks on the
+cloud. Click on the link below to open up a MyBinder environment to run
+PyVista.</p>
+<p><a class="reference external" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks"><img alt="Launch on Binder" src="https://static.mybinder.org/badge_logo.svg" /></a></p>
 </section>
 <section id="google-colab">
 <span id="colab"></span><h2>Google Colab<a class="headerlink" href="#google-colab" title="Permalink to this heading">#</a></h2>
@@ -502,13 +468,6 @@ available on Google Colab. However, we still have a working PyVista example for
 <span class="n">pyvista</span><span class="o">.</span><span class="n">start_xvfb</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="mybinder">
-<span id="id5"></span><h2>MyBinder<a class="headerlink" href="#mybinder" title="Permalink to this heading">#</a></h2>
-<p>MyBinder, similar to Google Colab, allows you to run Jupyter notebooks on the
-cloud. Click on the link below to open up a MyBinder environment to run
-PyVista.</p>
-<p><a class="reference external" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks"><img alt="Launch on Binder" src="https://static.mybinder.org/badge_logo.svg" /></a></p>
 </section>
 </section>
 
@@ -554,32 +513,15 @@ PyVista.</p>
   <a class="reference internal nav-link" href="#installation">
    Installation
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pip">
-     pip
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#conda">
-     conda
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#additional-packages">
-   Additional Packages
+  <a class="reference internal nav-link" href="#mybinder">
+   MyBinder
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#google-colab">
    Google Colab
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mybinder">
-   MyBinder
   </a>
  </li>
 </ul>
