@@ -173,6 +173,24 @@ panels_add_bootstrap_css = False
 
 
 # -- sphinx-gallery --------
+class ResetPyVista:
+    """Reset pyvista module to default settings."""
+
+    def __call__(self, gallery_conf, fname):
+        """Reset pyvista module to default settings
+
+        If default documentation settings are modified in any example, reset here.
+        """
+        import pyvista
+
+        pyvista._wrappers['vtkPolyData'] = pyvista.PolyData
+        pyvista.set_plot_theme('document')
+        pyvista.set_jupyter_backend('static')
+
+    def __repr__(self):
+        return 'ResetPyVista'
+
+
 from sphinx_gallery.sorting import FileNameSortKey
 
 tutorial_dirs = [
@@ -220,6 +238,7 @@ sphinx_gallery_conf = {
         'dependencies': "../../Dockerfile",
         'use_jupyter_lab': True,
     },
+    'reset_modules': (ResetPyVista(),),
 }
 
 

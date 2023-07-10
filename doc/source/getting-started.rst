@@ -3,11 +3,13 @@
 Getting Started
 ===============
 
-The only prerequisite for installing PyVista is Python itself. If you don’t have
+The only prerequisite for installing PyVista is Python itself. If you don't have
 Python yet and want the simplest way to get started, we recommend you use the
 `Anaconda Distribution`_.
 
-PyVista can be installed locally with :ref:`conda`, with :ref:`pip`. If you'd
+.. _Anaconda Distribution: https://www.anaconda.com/
+
+PyVista can be installed locally with conda or pip. If you'd
 prefer it, you can also run PyVista on the cloud using :ref:`colab` or
 :ref:`mybinder`. For more detailed instructions, see the installation
 guide below.
@@ -18,81 +20,47 @@ Installation
 
 PyVista can be installed on several environments, including, but not limited to:
 
-* **Locally**
-
-  * :ref:`pip`
-  * :ref:`conda`
-
-* **Cloud**
-
-  * :ref:`colab`
-  * :ref:`mybinder`
-
-
-.. _pip:
-
-pip
-~~~
-
-If you're using ``pip``, then installation is just::
-
-   pip install pyvista
-
-.. asciinema:: 507562
-
-
-.. _conda:
-
-conda
-~~~~~
-
-Install PyVista using the `Anaconda Distribution`_::
-
-   conda install -c conda-forge pyvista
-
-.. asciinema:: 507565
-
-
-.. _Anaconda Distribution: https://www.anaconda.com/
-
-
-Additional Packages
--------------------
-
-If you prefer working within a Jupyter environment, we recommend you install
-pyvista with:
-
 .. tabs::
 
    .. tab:: pip
 
       .. code::
 
-         pip install 'jupyterlab>=3' ipywidgets 'pyvista[all,trame]'
+         pip install 'pyvista[all,trame]' jupyterlab 'ipywidgets<8.0.0'
 
    .. tab:: conda
 
       .. code::
 
-         conda install -c conda-forge jupyterlab trame ipywidgets
+         conda install -c conda-forge pyvista jupyterlab trame ipywidgets
 
 
-You can then plot using Jupyterlab or Jupyter Notebook with either a static or interactive backend:
 
-   .. jupyter-execute::
-      :hide-code:
 
-      import pyvista as pv
-      pv.set_plot_theme('document')
-      pv.set_jupyter_backend('static')
+You can then plot in Jupyter with either a static or interactive backend:
 
-   .. jupyter-execute::
+   .. pyvista-plot::
 
       import pyvista as pv
       from pyvista import examples
 
       dataset = examples.download_lucy()
       dataset.plot(smooth_shading=True, color='white')
+
+
+.. _mybinder:
+
+MyBinder
+--------
+MyBinder, similar to Google Colab, allows you to run Jupyter notebooks on the
+cloud. Click on the link below to open up a MyBinder environment to run
+PyVista.
+
+|binder|
+
+.. |binder| image:: https://static.mybinder.org/badge_logo.svg
+   :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks
+   :alt: Launch on Binder
 
 
 .. _colab:
@@ -118,17 +86,3 @@ Visit the `PyVista on Colab  <https://colab.research.google.com/drive/15REd98bzn
    pyvista.set_jupyter_backend('static')
    pyvista.global_theme.notebook = True
    pyvista.start_xvfb()
-
-.. _mybinder:
-
-MyBinder
---------
-MyBinder, similar to Google Colab, allows you to run Jupyter notebooks on the
-cloud. Click on the link below to open up a MyBinder environment to run
-PyVista.
-
-|binder|
-
-.. |binder| image:: https://static.mybinder.org/badge_logo.svg
-   :target: https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks
-   :alt: Launch on Binder
