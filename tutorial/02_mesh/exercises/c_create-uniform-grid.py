@@ -18,8 +18,8 @@ import pyvista as pv
 # a 3D grid by which a 3D NumPy array of values can be plotted against.
 
 ###############################################################################
-# Create the 3D NumPy array of spatially referenced data.  This is spatially
-# referenced such that the grid is ``(20, 5, 10)`` ``(nx, ny, nz)``.
+# Create the 3D NumPy array of spatially referenced data. This is spatially
+# referenced such that the grid is ``(20, 5, 10)``, ``(nx, ny, nz)``.
 values = np.linspace(0, 10, 1000).reshape((20, 5, 10))
 values.shape
 
@@ -96,7 +96,7 @@ arr.shape
 #
 # .. note::
 #    You will likely need to ``ravel`` the array with Fortran-ordering:
-#   ``arr.ravel(order="F")``
+#    ``arr.ravel(order="F")``
 
 vol = pv.ImageData()
 # Set attributes and data

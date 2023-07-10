@@ -96,7 +96,7 @@ arr.shape
 #
 # .. note::
 #    You will likely need to ``ravel`` the array with Fortran-ordering:
-#   ``arr.ravel(order="F")``
+#    ``arr.ravel(order="F")``
 
 vol = pv.ImageData()
 vol.dimensions = arr.shape

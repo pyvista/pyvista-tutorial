@@ -1,11 +1,13 @@
 """
+.. _triangulated_surface_exercises:
+
 Create Triangulated Surface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create a surface from a set of points through a Delaunay triangulation.
 
-.. hint::
-    We will use a filter from PyVista to perform our triangulation: `delaunay_2d <https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html>`_
+.. note::
+    We will use a filter from PyVista to perform our triangulation: `delaunay_2d <https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html>`_.
 """
 
 import numpy as np
@@ -40,11 +42,11 @@ cloud.plot(point_size=15)
 ###############################################################################
 # Now that we have a PyVista data structure of the points, we can perform a
 # triangulation to turn those boring discrete points into a connected surface.
-# See https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.delaunay_2d.html
+# See :func:`pyvista.UnstructuredGridFilters.delaunay_2d`.
 help(cloud.delaunay_2d)
 
 ###############################################################################
-# Apply the `delaunay_2d` filter
+# Apply the ``delaunay_2d`` filter.
 
 surf = ...
 

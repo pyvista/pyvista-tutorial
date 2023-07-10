@@ -5,10 +5,6 @@ Lesson Overview
 This exercise provides an overview of the example in the initial lesson for you
 to try out!
 
-.. note::
-   This example does not have a corresponding solution and is kept here if
-   needed in the future.
-
 """
 # sphinx_gallery_thumbnail_number = 2
 import numpy as np
@@ -128,6 +124,7 @@ pl = pv.Plotter(shape=(1, 2), border=False)
 pl.add_mesh(uni, scalars="Spatial Point Data", show_edges=True)
 pl.subplot(0, 1)
 pl.add_mesh(uni, scalars="Spatial Cell Data", show_edges=True)
+pl.link_views()
 pl.show()
 
 ###############################################################################
