@@ -45,10 +45,10 @@ When plotting, users must first create a :class:`pyvista.Plotter` instance (much
 
    # Configure for trame
    import pyvista
-   pyvista.global_theme.background = 'white'
+   pyvista.set_plot_theme('document')
+   pyvista.set_jupyter_backend('static')
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
-   pyvista.global_theme.anti_aliasing = 'fxaa'
 
 
 .. jupyter-execute::
