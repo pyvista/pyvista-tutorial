@@ -3204,12 +3204,6 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &gt;&gt;&gt; mesh.point_data.keys()
  |      []
  |
- |  clear_textures(self)
- |      Clear the textures from this mesh.
- |
- |      .. deprecated:: 0.40.0
- |          Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
- |
  |  copy_from(self, mesh: &#39;_vtk.vtkDataSet&#39;, deep: &#39;bool&#39; = True)
  |      Overwrite this dataset inplace with the new dataset&#39;s geometries and data.
  |
@@ -3910,7 +3904,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |          screenshots without a window popping up.  Defaults to the
  |          global setting ``pyvista.OFF_SCREEN``.
  |
- |      full_screen : bool, default: :attr:`pyvista.themes.Theme.full_screen`
+ |      full_screen : bool, default: :attr:`pyvista.plotting.themes.Theme.full_screen`
  |          Opens window in full screen.  When enabled, ignores
  |          ``window_size``.
  |
@@ -3922,26 +3916,26 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |          When ``True``, takes screenshot and returns ``numpy`` array of
  |          image.
  |
- |      interactive : bool, default: :attr:`pyvista.themes.Theme.interactive`
+ |      interactive : bool, default: :attr:`pyvista.plotting.themes.Theme.interactive`
  |          Allows user to pan and move figure.
  |
  |      cpos : list, optional
  |          List of camera position, focal point, and view up.
  |
- |      window_size : sequence, default: :attr:`pyvista.themes.Theme.window_size`
+ |      window_size : sequence, default: :attr:`pyvista.plotting.themes.Theme.window_size`
  |          Window size in pixels.
  |
  |      show_bounds : bool, default: False
  |          Shows mesh bounds when ``True``.
  |
- |      show_axes : bool, default: :attr:`pyvista.themes._AxesConfig.show`
+ |      show_axes : bool, default: :attr:`pyvista.plotting.themes._AxesConfig.show`
  |          Shows a vtk axes widget.
  |
- |      notebook : bool, default: :attr:`pyvista.themes.Theme.notebook`
+ |      notebook : bool, default: :attr:`pyvista.plotting.themes.Theme.notebook`
  |          When ``True``, the resulting plot is placed inline a jupyter
  |          notebook.  Assumes a jupyter console is active.
  |
- |      background : ColorLike, default: :attr:`pyvista.themes.Theme.background`
+ |      background : ColorLike, default: :attr:`pyvista.plotting.themes.Theme.background`
  |          Color of the background.
  |
  |      text : str, optional
@@ -3960,7 +3954,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      parallel_projection : bool, default: False
  |          Enable parallel projection.
  |
- |      jupyter_backend : str, default: :attr:`pyvista.themes.Theme.jupyter_backend`
+ |      jupyter_backend : str, default: :attr:`pyvista.plotting.themes.Theme.jupyter_backend`
  |          Jupyter notebook plotting backend to use.  One of the
  |          following:
  |
@@ -3984,16 +3978,16 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      jupyter_kwargs : dict, optional
  |          Keyword arguments for the Jupyter notebook plotting backend.
  |
- |      theme : pyvista.themes.Theme, optional
+ |      theme : pyvista.plotting.themes.Theme, optional
  |          Plot-specific theme.
  |
- |      hidden_line_removal : bool, default: :attr:`pyvista.themes.Theme.hidden_line_removal`
+ |      hidden_line_removal : bool, default: :attr:`pyvista.plotting.themes.Theme.hidden_line_removal`
  |          Wireframe geometry will be drawn using hidden line removal if
  |          the rendering engine supports it.  See
  |          :func:`Plotter.enable_hidden_line_removal
  |          &lt;Plotter.enable_hidden_line_removal&gt;`.
  |
- |      anti_aliasing : bool, default: :attr:`pyvista.themes.Theme.anti_aliasing`
+ |      anti_aliasing : bool, default: :attr:`pyvista.plotting.themes.Theme.anti_aliasing`
  |          Enable or disable anti-aliasing.
  |
  |      zoom : float, str, optional
@@ -4989,15 +4983,6 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |
  |      &gt;&gt;&gt; mesh[&#39;my_array&#39;].shape
  |      (8,)
- |
- |  textures
- |      Return a dictionary to hold compatible ``pyvista.Texture`` objects.
- |
- |      .. deprecated:: 0.40.0
- |          Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
- |
- |      When casting back to a VTK dataset or filtering this dataset,
- |      these textures will not be passed.
  |
  |  volume
  |      Return the mesh volume.
@@ -7055,8 +7040,8 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  interpolate(self, target, sharpness=2.0, radius=1.0, strategy=&#39;null_value&#39;, null_value=0.0, n_points=None, pass_cell_data=True, pass_point_data=True, progress_bar=False)
  |      Interpolate values onto this mesh from a given dataset.
  |
- |      The input dataset is typically a point cloud. Only point data from
- |      the source mesh will be interpolated onto points of this mesh. Whether
+ |      The ``target`` dataset is typically a point cloud. Only point data from
+ |      the ``target`` mesh will be interpolated onto points of this mesh. Whether
  |      preexisting point and cell data of this mesh are preserved in the
  |      output can be customized with the ``pass_point_data`` and
  |      ``pass_cell_data`` parameters.
@@ -7064,6 +7049,10 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      This uses a Gaussian interpolation kernel. Use the ``sharpness`` and
  |      ``radius`` parameters to adjust this kernel. You can also switch this
  |      kernel to use an N closest points approach.
+ |
+ |      If the cell topology is more useful for interpolating, e.g. from a
+ |      discretized FEM or CFD simulation, use
+ |      :func:`pyvista.DataSetFilters.sample` instead.
  |
  |      Parameters
  |      ----------
@@ -7113,6 +7102,10 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      -------
  |      pyvista.DataSet
  |          Interpolated dataset.  Return type matches input.
+ |
+ |      See Also
+ |      --------
+ |      pyvista.DataSetFilters.sample
  |
  |      Examples
  |      --------
@@ -7547,7 +7540,12 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  probe(self, points, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None)
  |      Sample data values at specified point locations.
  |
- |      This uses :class:`vtk.vtkProbeFilter`.
+ |      .. deprecated:: 0.41.0
+ |        `probe` will be removed in a future version. Use
+ |        :func:`pyvista.DataSetFilters.sample` instead.
+ |        If using `mesh1.probe(mesh2)`, use `mesh2.sample(mesh1)`.
+ |
+ |      This uses :class:`vtkProbeFilter`.
  |
  |      Parameters
  |      ----------
@@ -7591,8 +7589,8 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &gt;&gt;&gt; from pyvista import examples
  |      &gt;&gt;&gt; mesh = pv.Sphere(center=(4.5, 4.5, 4.5), radius=4.5)
  |      &gt;&gt;&gt; grid = examples.load_uniform()
- |      &gt;&gt;&gt; result = grid.probe(mesh)
- |      &gt;&gt;&gt; &#39;Spatial Point Data&#39; in result.point_data
+ |      &gt;&gt;&gt; result = grid.probe(mesh)  # doctest:+SKIP
+ |      &gt;&gt;&gt; &#39;Spatial Point Data&#39; in result.point_data  # doctest:+SKIP
  |      True
  |
  |  ptc(self, pass_point_data=False, progress_bar=False, **kwargs)
@@ -7658,8 +7656,15 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |
  |      See the :ref:`ref_reflect_example` for more examples using this filter.
  |
- |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False)
+ |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None)
  |      Resample array data from a passed mesh onto this mesh.
+ |
+ |      For `mesh1.sample(mesh2)`, the arrays from `mesh2` are sampled onto
+ |      the points of `mesh1`.  This function interpolates within an
+ |      enclosing cell.  This contrasts with
+ |      :function`pyvista.DataSetFilters.interpolate` that uses a distance
+ |      weighting for nearby points.  If there is cell topology, `sample` is
+ |      usually preferred.
  |
  |      This uses :class:`vtk.vtkResampleWithDataSet`.
  |
@@ -7688,21 +7693,40 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      progress_bar : bool, default: False
  |          Display a progress bar to indicate progress.
  |
+ |      locator : vtkAbstractCellLocator, optional
+ |          Prototype cell locator to perform the ``FindCell()``
+ |          operation.  Default uses the DataSet ``FindCell`` method.
+ |
  |      Returns
  |      -------
  |      pyvista.DataSet
  |          Dataset containing resampled data.
  |
+ |      See Also
+ |      --------
+ |      pyvista.DataSetFilters.interpolate
+ |
  |      Examples
  |      --------
  |      Resample data from another dataset onto a sphere.
  |
- |      &gt;&gt;&gt; import pyvista
+ |      &gt;&gt;&gt; import pyvista as pv
  |      &gt;&gt;&gt; from pyvista import examples
- |      &gt;&gt;&gt; mesh = pyvista.Sphere(center=(4.5, 4.5, 4.5), radius=4.5)
+ |      &gt;&gt;&gt; mesh = pv.Sphere(center=(4.5, 4.5, 4.5), radius=4.5)
  |      &gt;&gt;&gt; data_to_probe = examples.load_uniform()
  |      &gt;&gt;&gt; result = mesh.sample(data_to_probe)
  |      &gt;&gt;&gt; result.plot(scalars=&quot;Spatial Point Data&quot;)
+ |
+ |      If sampling from a set of points represented by a ``(n, 3)``
+ |      shaped ``numpy.ndarray``, they need to be converted to a
+ |      PyVista DataSet, e.g. :class:`pyvista.PolyData`, first.
+ |
+ |      &gt;&gt;&gt; import numpy as np
+ |      &gt;&gt;&gt; points = np.array([[1.5, 5.0, 6.2], [6.7, 4.2, 8.0]])
+ |      &gt;&gt;&gt; mesh = pv.PolyData(points)
+ |      &gt;&gt;&gt; result = mesh.sample(data_to_probe)
+ |      &gt;&gt;&gt; result[&quot;Spatial Point Data&quot;]
+ |      pyvista_ndarray([ 46.5 , 225.12])
  |
  |      See :ref:`resampling_example` for more examples using this filter.
  |
@@ -9506,7 +9530,7 @@ your own 3D numpy array here.</p>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.992 seconds)</p>
+<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.428 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-c-create-uniform-grid-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/c_create-uniform-grid.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" width="150px" /></a>

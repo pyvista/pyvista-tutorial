@@ -100,7 +100,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             specified.
     
             Defaults to :attr:`pyvista.global_theme.color
-            <pyvista.themes.Theme.color>`.
+            <pyvista.plotting.themes.Theme.color>`.
     
         style : str, optional
             Visualization style of the mesh.  One of the following:
@@ -132,7 +132,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             Either a string, RGB list, or hex color string.
     
             Defaults to :attr:`pyvista.global_theme.edge_color
-            <pyvista.themes.Theme.edge_color>`.
+            <pyvista.plotting.themes.Theme.edge_color>`.
     
         point_size : float, optional
             Point size of any nodes in the dataset plotted. Also
@@ -172,7 +172,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             mapped colors which can result is showing colors that are
             not present in the color map.
     
-        cmap : str | list | pyvista.LookupTable, default: :attr:`pyvista.themes.Theme.cmap`
+        cmap : str | list | pyvista.LookupTable, default: :attr:`pyvista.plotting.themes.Theme.cmap`
             If a string, this is the name of the ``matplotlib`` colormap to use
             when mapping the ``scalars``.  See available Matplotlib colormaps.
             Only applicable for when displaying ``scalars``.
@@ -217,7 +217,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
             updated.  If an actor of this name already exists in the
             rendering window, it will be replaced by the new actor.
     
-        texture : vtk.vtkTexture or np.ndarray, optional
+        texture : pyvista.Texture or np.ndarray, optional
             A texture to apply if the input mesh has texture
             coordinates.  This will not work with MultiBlock
             datasets.
@@ -643,7 +643,7 @@ There you go! Those are a few of the most commonly used display options!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.741 seconds)
+   **Total running time of the script:** ( 0 minutes  3.718 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py:

@@ -3671,12 +3671,6 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; mesh.point_data.keys()
  |      []
  |
- |  clear_textures(self)
- |      Clear the textures from this mesh.
- |
- |      .. deprecated:: 0.40.0
- |          Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
- |
  |  copy_from(self, mesh: &#39;_vtk.vtkDataSet&#39;, deep: &#39;bool&#39; = True)
  |      Overwrite this dataset inplace with the new dataset&#39;s geometries and data.
  |
@@ -4377,7 +4371,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |          screenshots without a window popping up.  Defaults to the
  |          global setting ``pyvista.OFF_SCREEN``.
  |
- |      full_screen : bool, default: :attr:`pyvista.themes.Theme.full_screen`
+ |      full_screen : bool, default: :attr:`pyvista.plotting.themes.Theme.full_screen`
  |          Opens window in full screen.  When enabled, ignores
  |          ``window_size``.
  |
@@ -4389,26 +4383,26 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |          When ``True``, takes screenshot and returns ``numpy`` array of
  |          image.
  |
- |      interactive : bool, default: :attr:`pyvista.themes.Theme.interactive`
+ |      interactive : bool, default: :attr:`pyvista.plotting.themes.Theme.interactive`
  |          Allows user to pan and move figure.
  |
  |      cpos : list, optional
  |          List of camera position, focal point, and view up.
  |
- |      window_size : sequence, default: :attr:`pyvista.themes.Theme.window_size`
+ |      window_size : sequence, default: :attr:`pyvista.plotting.themes.Theme.window_size`
  |          Window size in pixels.
  |
  |      show_bounds : bool, default: False
  |          Shows mesh bounds when ``True``.
  |
- |      show_axes : bool, default: :attr:`pyvista.themes._AxesConfig.show`
+ |      show_axes : bool, default: :attr:`pyvista.plotting.themes._AxesConfig.show`
  |          Shows a vtk axes widget.
  |
- |      notebook : bool, default: :attr:`pyvista.themes.Theme.notebook`
+ |      notebook : bool, default: :attr:`pyvista.plotting.themes.Theme.notebook`
  |          When ``True``, the resulting plot is placed inline a jupyter
  |          notebook.  Assumes a jupyter console is active.
  |
- |      background : ColorLike, default: :attr:`pyvista.themes.Theme.background`
+ |      background : ColorLike, default: :attr:`pyvista.plotting.themes.Theme.background`
  |          Color of the background.
  |
  |      text : str, optional
@@ -4427,7 +4421,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      parallel_projection : bool, default: False
  |          Enable parallel projection.
  |
- |      jupyter_backend : str, default: :attr:`pyvista.themes.Theme.jupyter_backend`
+ |      jupyter_backend : str, default: :attr:`pyvista.plotting.themes.Theme.jupyter_backend`
  |          Jupyter notebook plotting backend to use.  One of the
  |          following:
  |
@@ -4451,16 +4445,16 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      jupyter_kwargs : dict, optional
  |          Keyword arguments for the Jupyter notebook plotting backend.
  |
- |      theme : pyvista.themes.Theme, optional
+ |      theme : pyvista.plotting.themes.Theme, optional
  |          Plot-specific theme.
  |
- |      hidden_line_removal : bool, default: :attr:`pyvista.themes.Theme.hidden_line_removal`
+ |      hidden_line_removal : bool, default: :attr:`pyvista.plotting.themes.Theme.hidden_line_removal`
  |          Wireframe geometry will be drawn using hidden line removal if
  |          the rendering engine supports it.  See
  |          :func:`Plotter.enable_hidden_line_removal
  |          &lt;Plotter.enable_hidden_line_removal&gt;`.
  |
- |      anti_aliasing : bool, default: :attr:`pyvista.themes.Theme.anti_aliasing`
+ |      anti_aliasing : bool, default: :attr:`pyvista.plotting.themes.Theme.anti_aliasing`
  |          Enable or disable anti-aliasing.
  |
  |      zoom : float, str, optional
@@ -5418,15 +5412,6 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |
  |      &gt;&gt;&gt; mesh[&#39;my_array&#39;].shape
  |      (8,)
- |
- |  textures
- |      Return a dictionary to hold compatible ``pyvista.Texture`` objects.
- |
- |      .. deprecated:: 0.40.0
- |          Texture tracking on datasets is deprecated and will be removed in a future version of PyVista.
- |
- |      When casting back to a VTK dataset or filtering this dataset,
- |      these textures will not be passed.
  |
  |  ----------------------------------------------------------------------
  |  Data descriptors inherited from pyvista.core.dataset.DataSet:
@@ -7294,7 +7279,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |
  |      color : ColorLike, optional
  |          Color of the arrows.  Defaults to
- |          :attr:`pyvista.themes.Theme.edge_color`.
+ |          :attr:`pyvista.plotting.themes.Theme.edge_color`.
  |
  |      **kwargs : dict, optional
  |          All additional keyword arguments will be passed to
@@ -9483,8 +9468,8 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  interpolate(self, target, sharpness=2.0, radius=1.0, strategy=&#39;null_value&#39;, null_value=0.0, n_points=None, pass_cell_data=True, pass_point_data=True, progress_bar=False)
  |      Interpolate values onto this mesh from a given dataset.
  |
- |      The input dataset is typically a point cloud. Only point data from
- |      the source mesh will be interpolated onto points of this mesh. Whether
+ |      The ``target`` dataset is typically a point cloud. Only point data from
+ |      the ``target`` mesh will be interpolated onto points of this mesh. Whether
  |      preexisting point and cell data of this mesh are preserved in the
  |      output can be customized with the ``pass_point_data`` and
  |      ``pass_cell_data`` parameters.
@@ -9492,6 +9477,10 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      This uses a Gaussian interpolation kernel. Use the ``sharpness`` and
  |      ``radius`` parameters to adjust this kernel. You can also switch this
  |      kernel to use an N closest points approach.
+ |
+ |      If the cell topology is more useful for interpolating, e.g. from a
+ |      discretized FEM or CFD simulation, use
+ |      :func:`pyvista.DataSetFilters.sample` instead.
  |
  |      Parameters
  |      ----------
@@ -9541,6 +9530,10 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      -------
  |      pyvista.DataSet
  |          Interpolated dataset.  Return type matches input.
+ |
+ |      See Also
+ |      --------
+ |      pyvista.DataSetFilters.sample
  |
  |      Examples
  |      --------
@@ -9914,7 +9907,12 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  probe(self, points, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None)
  |      Sample data values at specified point locations.
  |
- |      This uses :class:`vtk.vtkProbeFilter`.
+ |      .. deprecated:: 0.41.0
+ |        `probe` will be removed in a future version. Use
+ |        :func:`pyvista.DataSetFilters.sample` instead.
+ |        If using `mesh1.probe(mesh2)`, use `mesh2.sample(mesh1)`.
+ |
+ |      This uses :class:`vtkProbeFilter`.
  |
  |      Parameters
  |      ----------
@@ -9958,8 +9956,8 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; from pyvista import examples
  |      &gt;&gt;&gt; mesh = pv.Sphere(center=(4.5, 4.5, 4.5), radius=4.5)
  |      &gt;&gt;&gt; grid = examples.load_uniform()
- |      &gt;&gt;&gt; result = grid.probe(mesh)
- |      &gt;&gt;&gt; &#39;Spatial Point Data&#39; in result.point_data
+ |      &gt;&gt;&gt; result = grid.probe(mesh)  # doctest:+SKIP
+ |      &gt;&gt;&gt; &#39;Spatial Point Data&#39; in result.point_data  # doctest:+SKIP
  |      True
  |
  |  ptc(self, pass_point_data=False, progress_bar=False, **kwargs)
@@ -10025,8 +10023,15 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |
  |      See the :ref:`ref_reflect_example` for more examples using this filter.
  |
- |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False)
+ |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None)
  |      Resample array data from a passed mesh onto this mesh.
+ |
+ |      For `mesh1.sample(mesh2)`, the arrays from `mesh2` are sampled onto
+ |      the points of `mesh1`.  This function interpolates within an
+ |      enclosing cell.  This contrasts with
+ |      :function`pyvista.DataSetFilters.interpolate` that uses a distance
+ |      weighting for nearby points.  If there is cell topology, `sample` is
+ |      usually preferred.
  |
  |      This uses :class:`vtk.vtkResampleWithDataSet`.
  |
@@ -10055,21 +10060,40 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      progress_bar : bool, default: False
  |          Display a progress bar to indicate progress.
  |
+ |      locator : vtkAbstractCellLocator, optional
+ |          Prototype cell locator to perform the ``FindCell()``
+ |          operation.  Default uses the DataSet ``FindCell`` method.
+ |
  |      Returns
  |      -------
  |      pyvista.DataSet
  |          Dataset containing resampled data.
  |
+ |      See Also
+ |      --------
+ |      pyvista.DataSetFilters.interpolate
+ |
  |      Examples
  |      --------
  |      Resample data from another dataset onto a sphere.
  |
- |      &gt;&gt;&gt; import pyvista
+ |      &gt;&gt;&gt; import pyvista as pv
  |      &gt;&gt;&gt; from pyvista import examples
- |      &gt;&gt;&gt; mesh = pyvista.Sphere(center=(4.5, 4.5, 4.5), radius=4.5)
+ |      &gt;&gt;&gt; mesh = pv.Sphere(center=(4.5, 4.5, 4.5), radius=4.5)
  |      &gt;&gt;&gt; data_to_probe = examples.load_uniform()
  |      &gt;&gt;&gt; result = mesh.sample(data_to_probe)
  |      &gt;&gt;&gt; result.plot(scalars=&quot;Spatial Point Data&quot;)
+ |
+ |      If sampling from a set of points represented by a ``(n, 3)``
+ |      shaped ``numpy.ndarray``, they need to be converted to a
+ |      PyVista DataSet, e.g. :class:`pyvista.PolyData`, first.
+ |
+ |      &gt;&gt;&gt; import numpy as np
+ |      &gt;&gt;&gt; points = np.array([[1.5, 5.0, 6.2], [6.7, 4.2, 8.0]])
+ |      &gt;&gt;&gt; mesh = pv.PolyData(points)
+ |      &gt;&gt;&gt; result = mesh.sample(data_to_probe)
+ |      &gt;&gt;&gt; result[&quot;Spatial Point Data&quot;]
+ |      pyvista_ndarray([ 46.5 , 225.12])
  |
  |      See :ref:`resampling_example` for more examples using this filter.
  |
@@ -12263,21 +12287,21 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      ----------
  |      title : str, optional
  |          Title of plotting window.  Defaults to
- |          :attr:`pyvista.global_theme.title &lt;pyvista.themes.Theme.title&gt;`.
+ |          :attr:`pyvista.global_theme.title &lt;pyvista.plotting.themes.Theme.title&gt;`.
  |
  |      window_size : list, optional
  |          Window size in pixels.  Defaults to
- |          :attr:`pyvista.global_theme.window_size &lt;pyvista.themes.Theme.window_size&gt;`.
+ |          :attr:`pyvista.global_theme.window_size &lt;pyvista.plotting.themes.Theme.window_size&gt;`.
  |
  |      interactive : bool, optional
  |          Enabled by default.  Allows user to pan and move figure.
  |          Defaults to
- |          :attr:`pyvista.global_theme.interactive &lt;pyvista.themes.Theme.interactive&gt;`.
+ |          :attr:`pyvista.global_theme.interactive &lt;pyvista.plotting.themes.Theme.interactive&gt;`.
  |
  |      auto_close : bool, optional
  |          Exits plotting session when user closes the window when
  |          interactive is ``True``.  Defaults to
- |          :attr:`pyvista.global_theme.auto_close &lt;pyvista.themes.Theme.auto_close&gt;`.
+ |          :attr:`pyvista.global_theme.auto_close &lt;pyvista.plotting.themes.Theme.auto_close&gt;`.
  |
  |      interactive_update : bool, default: False
  |          Allows user to non-blocking draw, user should call
@@ -12286,7 +12310,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      full_screen : bool, optional
  |          Opens window in full screen.  When enabled, ignores
  |          ``window_size``.  Defaults to
- |          :attr:`pyvista.global_theme.full_screen &lt;pyvista.themes.Theme.full_screen&gt;`.
+ |          :attr:`pyvista.global_theme.full_screen &lt;pyvista.plotting.themes.Theme.full_screen&gt;`.
  |
  |      screenshot : str | pathlib.Path | io.BytesIO | bool, default: False
  |          Take a screenshot of the initial state of the plot.  If a string,
@@ -12331,7 +12355,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      return_cpos : bool, optional
  |          Return the last camera position from the render window
  |          when enabled.  Default based on theme setting.  See
- |          :attr:`pyvista.themes.Theme.return_cpos`.
+ |          :attr:`pyvista.plotting.themes.Theme.return_cpos`.
  |
  |      before_close_callback : Callable, optional
  |          Callback that is called before the plotter is closed.
@@ -12412,7 +12436,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |  ----------------------------------------------------------------------
  |  Data and other attributes inherited from pyvista.plotting.plotter.Plotter:
  |
- |  last_update_time = 1690178657.0502355
+ |  last_update_time = 1690863204.0675333
  |
  |  ----------------------------------------------------------------------
  |  Methods inherited from pyvista.plotting.plotter.BasePlotter:
@@ -12775,7 +12799,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      dataset : pyvista.MultiBlock
  |          A :class:`pyvista.MultiBlock` dataset.
  |
- |      color : ColorLike, default: :attr:`pyvista.themes.Theme.color`
+ |      color : ColorLike, default: :attr:`pyvista.plotting.themes.Theme.color`
  |          Use to make the entire mesh have a single solid color.
  |          Either a string, RGB list, or hex color string.  For example:
  |          ``color=&#39;white&#39;``, ``color=&#39;w&#39;``, ``color=[1.0, 1.0, 1.0]``, or
@@ -12800,16 +12824,16 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          maximum of scalars array.  Example: ``[-1, 2]``. ``rng`` is
  |          also an accepted alias for this.
  |
- |      show_edges : bool, default: :attr:`pyvista.global_theme.show_edges &lt;pyvista.themes.Theme.show_edges&gt;`
+ |      show_edges : bool, default: :attr:`pyvista.global_theme.show_edges &lt;pyvista.plotting.themes.Theme.show_edges&gt;`
  |          Shows the edges of a mesh.  Does not apply to a wireframe
  |          representation.
  |
- |      edge_color : ColorLike, default: :attr:`pyvista.global_theme.edge_color &lt;pyvista.themes.Theme.edge_color&gt;`
+ |      edge_color : ColorLike, default: :attr:`pyvista.global_theme.edge_color &lt;pyvista.plotting.themes.Theme.edge_color&gt;`
  |          The solid color to give the edges when ``show_edges=True``.
  |          Either a string, RGB list, or hex color string.
  |
  |          Defaults to :attr:`pyvista.global_theme.edge_color
- |          &lt;pyvista.themes.Theme.edge_color&gt;`.
+ |          &lt;pyvista.plotting.themes.Theme.edge_color&gt;`.
  |
  |      point_size : float, default: 5.0
  |          Point size of any points in the dataset plotted. Also
@@ -12840,7 +12864,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          OpenGL will interpolate the mapped colors which can result in
  |          showing colors that are not present in the color map.
  |
- |      cmap : str | list, | pyvista.LookupTable, default: :attr:`pyvista.themes.Theme.cmap`
+ |      cmap : str | list, | pyvista.LookupTable, default: :attr:`pyvista.plotting.themes.Theme.cmap`
  |          If a string, this is the name of the ``matplotlib`` colormap to use
  |          when mapping the ``scalars``.  See available Matplotlib colormaps.
  |          Only applicable for when displaying ``scalars``.
@@ -12891,7 +12915,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          Show lines as thick tubes rather than flat lines.  Control
  |          the width with ``line_width``.
  |
- |      smooth_shading : bool, default: :attr`pyvista.themes.Theme.smooth_shading`
+ |      smooth_shading : bool, default: :attr`pyvista.plotting.themes.Theme.smooth_shading`
  |          Enable smooth shading when ``True`` using the Phong shading
  |          algorithm.  When ``False``, uses flat shading.  Automatically
  |          enabled when ``pbr=True``.  See :ref:`shading_example`.
@@ -12919,7 +12943,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      specular_power : float, default: 1.0
  |          The specular power. Between 0.0 and 128.0.
  |
- |      nan_color : ColorLike, default: :attr:`pyvista.themes.Theme.nan_color`
+ |      nan_color : ColorLike, default: :attr:`pyvista.plotting.themes.Theme.nan_color`
  |          The color to use for all ``NaN`` values in the plotted
  |          scalar array.
  |
@@ -13482,7 +13506,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          Control if the orientation widget is interactive.  By
  |          default uses the value from
  |          :attr:`pyvista.global_theme.interactive
- |          &lt;pyvista.themes.Theme.interactive&gt;`.
+ |          &lt;pyvista.plotting.themes.Theme.interactive&gt;`.
  |
  |      color : ColorLike, optional
  |          The color of the actor.  This only applies if ``actor`` is
@@ -13833,15 +13857,15 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |
  |      title_font_size : float, optional
  |          Sets the size of the title font.  Defaults to ``None`` and is sized
- |          according to :attr:`pyvista.themes.Theme.font`.
+ |          according to :attr:`pyvista.plotting.themes.Theme.font`.
  |
  |      label_font_size : float, optional
  |          Sets the size of the title font.  Defaults to ``None`` and is sized
- |          according to :attr:`pyvista.themes.Theme.font`.
+ |          according to :attr:`pyvista.plotting.themes.Theme.font`.
  |
  |      color : ColorLike, optional
  |          Either a string, rgb list, or hex color string.  Default
- |          set by :attr:`pyvista.themes.Theme.font`.  Can be
+ |          set by :attr:`pyvista.plotting.themes.Theme.font`.  Can be
  |          in one of the following formats:
  |
  |          * ``color=&#39;white&#39;``
@@ -13851,7 +13875,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |
  |      font_family : {&#39;courier&#39;, &#39;times&#39;, &#39;arial&#39;}
  |          Font family.  Default is set by
- |          :attr:`pyvista.themes.Theme.font`.
+ |          :attr:`pyvista.plotting.themes.Theme.font`.
  |
  |      shadow : bool, default: False
  |          Adds a black shadow to the text.
@@ -13859,44 +13883,44 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      width : float, optional
  |          The percentage (0 to 1) width of the window for the colorbar.
  |          Default set by
- |          :attr:`pyvista.themes.Theme.colorbar_vertical` or
- |          :attr:`pyvista.themes.Theme.colorbar_horizontal`
+ |          :attr:`pyvista.plotting.themes.Theme.colorbar_vertical` or
+ |          :attr:`pyvista.plotting.themes.Theme.colorbar_horizontal`
  |          depending on the value of ``vertical``.
  |
  |      height : float, optional
  |          The percentage (0 to 1) height of the window for the
  |          colorbar.  Default set by
- |          :attr:`pyvista.themes.Theme.colorbar_vertical` or
- |          :attr:`pyvista.themes.Theme.colorbar_horizontal`
+ |          :attr:`pyvista.plotting.themes.Theme.colorbar_vertical` or
+ |          :attr:`pyvista.plotting.themes.Theme.colorbar_horizontal`
  |          depending on the value of ``vertical``.
  |
  |      position_x : float, optional
  |          The percentage (0 to 1) along the windows&#39;s horizontal
  |          direction to place the bottom left corner of the colorbar.
  |          Default set by
- |          :attr:`pyvista.themes.Theme.colorbar_vertical` or
- |          :attr:`pyvista.themes.Theme.colorbar_horizontal`
+ |          :attr:`pyvista.plotting.themes.Theme.colorbar_vertical` or
+ |          :attr:`pyvista.plotting.themes.Theme.colorbar_horizontal`
  |          depending on the value of ``vertical``.
  |
  |      position_y : float, optional
  |          The percentage (0 to 1) along the windows&#39;s vertical
  |          direction to place the bottom left corner of the colorbar.
  |          Default set by
- |          :attr:`pyvista.themes.Theme.colorbar_vertical` or
- |          :attr:`pyvista.themes.Theme.colorbar_horizontal`
+ |          :attr:`pyvista.plotting.themes.Theme.colorbar_vertical` or
+ |          :attr:`pyvista.plotting.themes.Theme.colorbar_horizontal`
  |          depending on the value of ``vertical``.
  |
  |      vertical : bool, optional
  |          Use vertical or horizontal scalar bar.  Default set by
- |          :attr:`pyvista.themes.Theme.colorbar_orientation`.
+ |          :attr:`pyvista.plotting.themes.Theme.colorbar_orientation`.
  |
  |      interactive : bool, optional
  |          Use a widget to control the size and location of the scalar bar.
- |          Default set by :attr:`pyvista.themes.Theme.interactive`.
+ |          Default set by :attr:`pyvista.plotting.themes.Theme.interactive`.
  |
  |      fmt : str, optional
  |          ``printf`` format for labels.
- |          Default set by :attr:`pyvista.themes.Theme.font`.
+ |          Default set by :attr:`pyvista.plotting.themes.Theme.font`.
  |
  |      use_opacity : bool, default: True
  |          Optionally display the opacity mapping on the scalar bar.
@@ -13927,7 +13951,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      render : bool, default: False
  |          Force a render when True.
  |
- |      theme : pyvista.themes.Theme, optional
+ |      theme : pyvista.plotting.themes.Theme, optional
  |          Plot-specific theme.  By default, calling from the
  |          ``Plotter``, will use the plotter theme.  Setting to
  |          ``None`` will use the global theme.
@@ -14049,7 +14073,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          * ``color=[1.0, 1.0, 1.0]``
  |          * ``color=&#39;#FFFFFF&#39;``
  |
- |          Defaults to :attr:`pyvista.global_theme.font.color &lt;pyvista.themes._Font.color&gt;`.
+ |          Defaults to :attr:`pyvista.global_theme.font.color &lt;pyvista.plotting.themes._Font.color&gt;`.
  |
  |      font : str, optional
  |          Font name may be ``&#39;courier&#39;``, ``&#39;times&#39;``, or ``&#39;arial&#39;``.
@@ -14175,7 +14199,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          Number of colors to use when displaying scalars. Defaults to 256.
  |          The scalar bar will also have this many colors.
  |
- |      cmap : str | list | pyvista.LookupTable, default: :attr:`pyvista.themes.Theme.cmap`
+ |      cmap : str | list | pyvista.LookupTable, default: :attr:`pyvista.plotting.themes.Theme.cmap`
  |          If a string, this is the name of the ``matplotlib`` colormap to use
  |          when mapping the ``scalars``.  See available Matplotlib colormaps.
  |          Only applicable for when displaying ``scalars``.
@@ -16187,7 +16211,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |
  |      Parameters
  |      ----------
- |      texture : vtk.vtkTexture
+ |      texture : pyvista.Texture
  |          Texture.
  |
  |      is_srgb : bool, default: False
@@ -16413,17 +16437,17 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      font_size : float, optional
  |          Sets the size of the label font. Defaults to
  |          :attr:`pyvista.global_theme.font.size
- |          &lt;pyvista.themes._Font.size&gt;`.
+ |          &lt;pyvista.plotting.themes._Font.size&gt;`.
  |
  |      font_family : str, optional
  |          Font family.  Must be either ``&#39;courier&#39;``, ``&#39;times&#39;``,
  |          or ``&#39;arial&#39;``. Defaults to :attr:`pyvista.global_theme.font.family
- |          &lt;pyvista.themes._Font.family&gt;`.
+ |          &lt;pyvista.plotting.themes._Font.family&gt;`.
  |
  |      color : ColorLike, optional
  |          Color of all labels and axis titles.  Defaults to
  |          :attr:`pyvista.global_theme.font.color
- |          &lt;pyvista.themes._Font.color&gt;`.
+ |          &lt;pyvista.plotting.themes._Font.color&gt;`.
  |
  |          Either a string, RGB list, or hex color string.  For
  |          example:
@@ -18176,7 +18200,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      color : ColorLike, optional
  |          Either a string, rgb sequence, or hex color string.
  |          Defaults to :attr:`pyvista.global_theme.font.color
- |          &lt;pyvista.themes._Font.color&gt;`.
+ |          &lt;pyvista.plotting.themes._Font.color&gt;`.
  |
  |      use_planes : bool, optional
  |          Changes the arguments passed to the callback to the planes
@@ -18965,7 +18989,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      color : ColorLike, optional
  |          Either a string, RGB list, or hex color string.  Defaults
  |          to :attr:`pyvista.global_theme.font.color
- |          &lt;pyvista.themes._Font.color&gt;`.
+ |          &lt;pyvista.plotting.themes._Font.color&gt;`.
  |
  |      pass_widget : bool, optional
  |          If ``True``, the widget will be passed as the last
@@ -19203,7 +19227,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      color : ColorLike, optional
  |          Either a string, RGB list, or hex color string.  Defaults
  |          to :attr:`pyvista.global_theme.font.color
- |          &lt;pyvista.themes._Font.color&gt;`.
+ |          &lt;pyvista.plotting.themes._Font.color&gt;`.
  |
  |      interaction_event : vtk.vtkCommand.EventIds, str, optional
  |          The VTK interaction event to use for triggering the
@@ -19746,7 +19770,7 @@ xarray. After which, a pyvista namespace of accessors will be available.</p>
 in Xarray Tutorial.</p>
 </div>
 <a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.598201"><img alt="https://zenodo.org/badge/doi/10.5281/zenodo.598201.svg" src="https://zenodo.org/badge/doi/10.5281/zenodo.598201.svg" /></a>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  32.040 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  24.080 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-05-action-a-lesson-geovista-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/05_action/a_lesson_geovista.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo15.svg" width="150px" /></a>
