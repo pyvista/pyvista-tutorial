@@ -53,17 +53,7 @@ Quick Links
 
       Jump right to the tutorial content.
 
-      .. jupyter-execute::
-         :hide-code:
-
-         # Configure for static image
-         import pyvista
-         pyvista.set_jupyter_backend('static')
-         pyvista.global_theme.background = 'white'
-         pyvista.global_theme.axes.show = False
-         pyvista.global_theme.smooth_shading = True
-
-      .. jupyter-execute::
+      .. pyvista-plot::
 
          from pyvista import examples
          dataset = examples.download_saddle_surface()

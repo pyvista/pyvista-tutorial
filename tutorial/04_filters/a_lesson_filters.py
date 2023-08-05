@@ -25,14 +25,14 @@ from pyvista import examples
 # * `outline_corners()`_: Outlines the corners of the data extent
 # * `extract_geometry()`_: Extract surface geometry
 #
-# .. _slice(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice.html
-# .. _slice_orthogonal(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_orthogonal.html
-# .. _slice_along_axis(): https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.slice_along_axis.html
-# .. _threshold(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold.html
-# .. _threshold_percent(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html
-# .. _clip(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.clip.html
-# .. _outline_corners(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.outline_corners.html
-# .. _extract_geometry(): https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.extract_geometry.html
+# .. _slice(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice.html
+# .. _slice_orthogonal(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_orthogonal.html
+# .. _slice_along_axis(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_along_axis.html
+# .. _threshold(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.threshold.html
+# .. _threshold_percent(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html
+# .. _clip(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.clip.html
+# .. _outline_corners(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.outline_corners.html
+# .. _extract_geometry(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.extract_geometry.html
 #
 # To use these filters, call the method of your choice directly on your data
 # object:
@@ -67,7 +67,7 @@ p.show()
 
 contours = dataset.contour()
 slices = dataset.slice_orthogonal()
-glyphs = dataset.glyph(factor=1e-3, geom=pv.Sphere())
+glyphs = dataset.glyph(factor=1e-3, geom=pv.Sphere(), orient=False)
 
 p = pv.Plotter(shape=(2, 2))
 # Show the threshold

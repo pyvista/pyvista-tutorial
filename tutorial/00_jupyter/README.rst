@@ -8,6 +8,10 @@ tutorial will walk you through the basics of using PyVista in Jupyter
 notebooks and will be a reference guide for you when configuring PyVista
 to work in Jupyter.
 
+.. image:: ../../images/jupyter.png
+    :alt: PyVista's Jupyter backend
+    :align: center
+
 
 Trame Jupyter Backend for PyVista
 ---------------------------------
