@@ -102,7 +102,7 @@ contains all of the boilerplate code needed to get started.
 
     PyVista's Jupyter backend is powered by Trame! If you've been using
     PyVista in Jupyter lately, you've been using Trame all along -- our
-    Jupyter backend is a micro Trame application
+    Jupyter backend is a micro Trame application.
 
 
 Exercises
