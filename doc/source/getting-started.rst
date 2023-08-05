@@ -104,7 +104,7 @@ plotting environments that make PyVista so great to work with do not seem to be
 available on Google Colab. However, we still have a working PyVista example for
 `Google Colab <https://colab.research.google.com/>`_ with static plotting.
 
-Visit the `PyVista on Colab  <https://colab.research.google.com/drive/15REd98bznqMGYVWxffpayfOOIwZ1s4Or?usp=sharing>`_ notebook to see PyVista in action. The minimum code to get PyVista running in a Colab environment is:
+Visit the `PyVista on Colab  <https://colab.research.google.com/drive/1y0yURyB-5ApO3zM0vsSK7OaobxjncI3h?usp=sharing>`_ notebook to see PyVista in action. The minimum code to get PyVista running in a Colab environment is:
 
 .. code::
 
