@@ -73,7 +73,6 @@ jobs:
         run: |
           mkdir _notebooks
           find doc/source/tutorial -type f -name '*.ipynb' | cpio -p -d -v _notebooks/
-          rm _notebooks/10_trame/*.ipynb
       - uses: actions/upload-artifact@v3
         with:
           name: tutorial-notebooks
