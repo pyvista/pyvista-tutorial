@@ -8,8 +8,6 @@ COPY . $HOME
 RUN pip install pyvista
 RUN pip install pyinstaller==5.1
 RUN pip install sphinx
-RUN pip install jupyterlab<4.0.0
-RUN pip install ipywidgets<8.0.0
 RUN pip install tqdm
 RUN pip install imageio>=2.5.0
 RUN pip install imageio-ffmpeg
