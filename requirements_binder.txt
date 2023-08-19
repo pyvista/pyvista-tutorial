@@ -1,5 +1,5 @@
-tqdm
 hypothesis
-rtree
 lxml
 pyct
+rtree
+tqdm
