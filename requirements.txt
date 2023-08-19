@@ -2,8 +2,8 @@ cmocean
 geovista
 imageio>=2.5.0
 imageio-ffmpeg
-ipywidgets
-jupyterlab
+ipywidgets<8.0.0
+jupyterlab<4.0.0
 matplotlib
 pyinstaller==5.6.2
 pyqt5
