@@ -12171,7 +12171,7 @@ for geoscience such as `add_coastlines` and `add_base_layer`.
      |  ----------------------------------------------------------------------
      |  Data and other attributes inherited from pyvista.plotting.plotter.Plotter:
      |  
-     |  last_update_time = 1692445715.2823493
+     |  last_update_time = 1692586753.0409195
      |  
      |  ----------------------------------------------------------------------
      |  Methods inherited from pyvista.plotting.plotter.BasePlotter:
@@ -19792,7 +19792,7 @@ Or grab the mesh object for use with PyVista and GeoVista.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  17.872 seconds)
+   **Total running time of the script:** ( 1 minutes  33.557 seconds)
 
 
 .. _sphx_glr_download_tutorial_05_action_a_lesson_geovista.py:
