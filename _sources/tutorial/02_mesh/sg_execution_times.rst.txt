@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:03.547** total execution time for **tutorial_02_mesh** files:
+**00:02.707** total execution time for **tutorial_02_mesh** files:
 
 +--------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_02_mesh_a_lesson_mesh.py` (``a_lesson_mesh.py``) | 00:03.547 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_02_mesh_a_lesson_mesh.py` (``a_lesson_mesh.py``) | 00:02.707 | 0.0 MB |
 +--------------------------------------------------------------------------+-----------+--------+
