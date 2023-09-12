@@ -75,7 +75,7 @@ Here is a sample mesh
     <tr><td>N Points</td><td>10000</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
     <tr><td>X Bounds</td><td>-1.000e+01, 1.000e+01</td></tr>
-    <tr><td>Y Bounds</td><td>-4.486e-07, 2.000e+01</td></tr>
+    <tr><td>Y Bounds</td><td>-2.309e-14, 2.000e+01</td></tr>
     <tr><td>Z Bounds</td><td>1.416e-01, 7.483e+00</td></tr>
     <tr><td>N Arrays</td><td>2</td></tr>
     </table>
@@ -1348,7 +1348,7 @@ Remember that you will have to wrap the output of the algorithm with :func:`pyvi
     <tr><td>N Points</td><td>8</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
     <tr><td>X Bounds</td><td>-1.000e+01, 1.000e+01</td></tr>
-    <tr><td>Y Bounds</td><td>-4.486e-07, 2.000e+01</td></tr>
+    <tr><td>Y Bounds</td><td>-2.309e-14, 2.000e+01</td></tr>
     <tr><td>Z Bounds</td><td>1.416e-01, 7.483e+00</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
@@ -1399,7 +1399,7 @@ See https://kitware.github.io/vtk-examples/site/Python/
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.777 seconds)
+   **Total running time of the script:** ( 0 minutes  1.192 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_c_vtk_algorithms.py:

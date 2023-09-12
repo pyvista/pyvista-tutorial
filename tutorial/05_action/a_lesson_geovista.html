@@ -843,6 +843,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      non-float types, though this may lead to truncation of
  |      intermediate floats when transforming datasets.
  |
+ |
+ |  See Also
+ |  --------
+ |  pyvista.PolyData.from_regular_faces
+ |
  |  Examples
  |  --------
  |  &gt;&gt;&gt; import vtk
@@ -1000,6 +1005,37 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |
  |      &gt;&gt;&gt; sphere = pyvista.Sphere()
  |      &gt;&gt;&gt; sphere.save(&#39;my_mesh.vtk&#39;)  # doctest:+SKIP
+ |
+ |  ----------------------------------------------------------------------
+ |  Class methods defined here:
+ |
+ |  from_regular_faces(points, faces: Union[numpy.ndarray, Sequence[Sequence[int]]], deep=False) from builtins.type
+ |      Alternate `pyvista.PolyData` convenience constructor from point and regular face arrays.
+ |
+ |      Parameters
+ |      ----------
+ |      points : numpy.ndarray, sequence[sequence[float]]
+ |          A (n_points, 3) array of points.
+ |
+ |      faces : numpy.ndarray or sequence[sequence[int]]
+ |          A (n_faces, face_size) array of face indices. For a triangle mesh, face_size = 3.
+ |
+ |      deep : bool, optional, default: False
+ |          Whether to deep copy the faces array into vtkCellArray connectivity data.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.PolyData
+ |          The newly constructed mesh.
+ |
+ |      Examples
+ |      --------
+ |      Construct a tetrahedron from four triangles
+ |
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; points = [[1.0, 1, 1], [-1, 1, -1], [1, -1, -1], [-1, -1, 1]]
+ |      &gt;&gt;&gt; faces = [[0, 1, 2], [1, 3, 2], [0, 2, 3], [0, 3, 1]]
+ |      &gt;&gt;&gt; tetra = pv.PolyData.from_regular_faces(points, faces)
  |
  |  ----------------------------------------------------------------------
  |  Readonly properties defined here:
@@ -1257,6 +1293,10 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      numpy.ndarray
  |          Array of face connectivity.
  |
+ |      See Also
+ |      --------
+ |      pyvista.PolyData.regular_faces
+ |
  |      Notes
  |      -----
  |      The array returned cannot be modified in place and will raise a
@@ -1302,6 +1342,36 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; spline = pyvista.Spline(points, 10)
  |      &gt;&gt;&gt; spline.lines
  |      array([10,  0,  1,  2,  3,  4,  5,  6,  7,  8,  9])
+ |
+ |  regular_faces
+ |      Return a face array of point indices when all faces have the same size.
+ |
+ |      Returns
+ |      -------
+ |      numpy.ndarray
+ |          Array of face indices with shape (n_faces, face_size).
+ |
+ |      See Also
+ |      --------
+ |      pyvista.PolyData.faces
+ |
+ |      Notes
+ |      -----
+ |      This property does not validate that the mesh&#39;s faces are all
+ |      actually the same size. If they&#39;re not, this property may either
+ |      raise a `ValueError` or silently return an incorrect array.
+ |
+ |      Examples
+ |      --------
+ |      Get the face array of a tetrahedron as a 4x3 array
+ |
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; tetra = pv.Tetrahedron()
+ |      &gt;&gt;&gt; tetra.regular_faces
+ |      array([[0, 1, 2],
+ |             [1, 3, 2],
+ |             [0, 2, 3],
+ |             [0, 3, 1]])
  |
  |  strips
  |      Return a pointer to the strips as a numpy array.
@@ -3251,7 +3321,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  __getitem__(self, index: &#39;Union[Iterable, str]&#39;) -&gt; &#39;np.ndarray&#39;
  |      Search both point, cell, and field data for an array.
  |
- |  __setitem__(self, name: &#39;str&#39;, scalars: &#39;Union[np.ndarray, collections.abc.Sequence]&#39;)
+ |  __setitem__(self, name: &#39;str&#39;, scalars: &#39;Union[np.ndarray, collections.abc.Sequence, float]&#39;)
  |      Add/set an array in the point_data, or cell_data accordingly.
  |
  |      It depends on the array&#39;s length, or specified mode.
@@ -3352,38 +3422,6 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; grid = mesh.cast_to_unstructured_grid()
  |      &gt;&gt;&gt; type(grid)
  |      &lt;class &#39;pyvista.core.pointset.UnstructuredGrid&#39;&gt;
- |
- |  cell_bounds(self, ind: &#39;int&#39;) -&gt; &#39;BoundsLike&#39;
- |      Return the bounding box of a cell.
- |
- |      ..  deprecated:: 0.38.0
- |          Use :attr:`pyvista.Cell.bounds` instead.
- |
- |      Parameters
- |      ----------
- |      ind : int
- |          Cell ID.
- |
- |      Returns
- |      -------
- |      tuple[float, float, float]
- |          The limits of the cell in the X, Y and Z directions respectively.
- |
- |  cell_n_points(self, ind: &#39;int&#39;) -&gt; &#39;int&#39;
- |      Return the number of points in a cell.
- |
- |      .. deprecated:: 0.38.0
- |          Use :attr:`pyvista.Cell.n_points` instead.
- |
- |      Parameters
- |      ----------
- |      ind : int
- |          Cell ID.
- |
- |      Returns
- |      -------
- |      int
- |          Number of points in the cell.
  |
  |  cell_neighbors(self, ind: &#39;int&#39;, connections: &#39;str&#39; = &#39;points&#39;) -&gt; &#39;List[int]&#39;
  |      Get the cell neighbors of the ind-th cell.
@@ -3586,56 +3624,6 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; pl.camera.zoom(6.0)
  |      &gt;&gt;&gt; pl.show()
  |
- |  cell_point_ids(self, ind: &#39;int&#39;) -&gt; &#39;List[int]&#39;
- |      Return the point ids in a cell.
- |
- |      .. deprecated:: 0.38.0
- |          You can use :attr:`pyvista.Cell.point_ids` instead.
- |
- |      Parameters
- |      ----------
- |      ind : int
- |          Cell ID.
- |
- |      Returns
- |      -------
- |      list[int]
- |          Point Ids that are associated with the cell.
- |
- |  cell_points(self, ind: &#39;int&#39;) -&gt; &#39;np.ndarray&#39;
- |      Return the points in a cell.
- |
- |      ..  deprecated:: 0.38.0
- |          Use :attr:`pyvista.Cell.points` instead.
- |
- |      Parameters
- |      ----------
- |      ind : int
- |          Cell ID.
- |
- |      Returns
- |      -------
- |      numpy.ndarray
- |          An array of floats with shape (number of points, 3) containing the coordinates of the
- |          cell corners.
- |
- |  cell_type(self, ind: &#39;int&#39;) -&gt; &#39;int&#39;
- |      Return the type of a cell.
- |
- |      .. deprecated:: 0.38.0
- |          You can use :attr:`pyvista.Cell.type` instead.
- |
- |      Parameters
- |      ----------
- |      ind : int
- |          Cell type ID.
- |
- |      Returns
- |      -------
- |      int
- |          VTK cell type. See `vtkCellType.h
- |          &lt;https://vtk.org/doc/nightly/html/vtkCellType_8h_source.html&gt;`_ .
- |
  |  clear_cell_data(self)
  |      Remove all cell arrays.
  |
@@ -3747,7 +3735,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; import pyvista
  |      &gt;&gt;&gt; mesh = pyvista.Sphere()
  |      &gt;&gt;&gt; mesh.find_cells_along_line([0.0, 0, 0], [1.0, 0, 0])
- |      array([842, 843, 896, 897])
+ |      array([  86,   87, 1652, 1653])
  |
  |  find_cells_intersecting_line(self, pointa: &#39;Iterable[float]&#39;, pointb: &#39;Iterable[float]&#39;, tolerance=0.0) -&gt; &#39;np.ndarray&#39;
  |      Find the index of cells that intersect a line.
@@ -3785,7 +3773,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; import pyvista
  |      &gt;&gt;&gt; mesh = pyvista.Sphere()
  |      &gt;&gt;&gt; mesh.find_cells_intersecting_line([0.0, 0, 0], [1.0, 0, 0])
- |      array([896])
+ |      array([  86, 1653])
  |
  |  find_cells_within_bounds(self, bounds: &#39;Iterable[float]&#39;) -&gt; &#39;np.ndarray&#39;
  |      Find the index of cells in this mesh within bounds.
@@ -3871,7 +3859,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; point = [0.1, 0.2, 0.3]
  |      &gt;&gt;&gt; index = mesh.find_closest_cell(point)
  |      &gt;&gt;&gt; index
- |      591
+ |      338
  |
  |      Make sure that this cell indeed is the closest to
  |      ``[0.1, 0.2, 0.3]``.
@@ -3881,7 +3869,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; relative_position = cell_centers.points - point
  |      &gt;&gt;&gt; distance = np.linalg.norm(relative_position, axis=1)
  |      &gt;&gt;&gt; np.argmin(distance)
- |      591
+ |      338
  |
  |      Find the nearest cells to several random points that
  |      are centered on the origin.
@@ -3951,7 +3939,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; mesh = pyvista.Sphere()
  |      &gt;&gt;&gt; index = mesh.find_closest_point((0, 1, 0))
  |      &gt;&gt;&gt; index
- |      212
+ |      239
  |
  |      Get the coordinate of that point.
  |
@@ -4427,8 +4415,6 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |
  |          * ``&#39;none&#39;`` : Do not display in the notebook.
  |          * ``&#39;static&#39;`` : Display a static figure.
- |          * ``&#39;ipygany&#39;`` : Show a ``ipygany`` widget
- |          * ``&#39;panel&#39;`` : Show a ``panel`` widget.
  |          * ``&#39;trame&#39;`` : Display using ``trame``.
  |
  |          This can also be set globally with
@@ -4454,8 +4440,10 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |          :func:`Plotter.enable_hidden_line_removal
  |          &lt;Plotter.enable_hidden_line_removal&gt;`.
  |
- |      anti_aliasing : bool, default: :attr:`pyvista.plotting.themes.Theme.anti_aliasing`
- |          Enable or disable anti-aliasing.
+ |      anti_aliasing : str | bool, default: :attr:`pyvista.plotting.themes.Theme.anti_aliasing`
+ |          Enable or disable anti-aliasing. If ``True``, uses ``&quot;msaa&quot;``. If False,
+ |          disables anti_aliasing. If a string, should be either ``&quot;fxaa&quot;`` or
+ |          ``&quot;ssaa&quot;``.
  |
  |      zoom : float, str, optional
  |          Camera zoom.  Either ``&#39;tight&#39;`` or a float. A value greater than 1
@@ -5076,6 +5064,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  active_scalars
  |      Return the active scalars as an array.
  |
+ |      Returns
+ |      -------
+ |      Optional[pyvista_ndarray]
+ |          Active scalars as an array.
+ |
  |  active_scalars_info
  |      Return the active scalar&#39;s association and name.
  |
@@ -5109,11 +5102,26 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  active_tensors
  |      Return the active tensors array.
  |
+ |      Returns
+ |      -------
+ |      Optional[np.ndarray]
+ |          Active tensors array.
+ |
  |  active_tensors_info
  |      Return the active tensor&#39;s field and name: [field, name].
  |
+ |      Returns
+ |      -------
+ |      ActiveArrayInfo
+ |          Active tensor&#39;s field and name: [field, name].
+ |
  |  active_vectors
  |      Return the active vectors array.
+ |
+ |      Returns
+ |      -------
+ |      Optional[pyvista_ndarray]
+ |          Active vectors array.
  |
  |      Examples
  |      --------
@@ -5203,6 +5211,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |
  |      This makes sure to put the active scalars&#39; name first in the list.
  |
+ |      Returns
+ |      -------
+ |      List[str]
+ |          List of array names for the dataset.
+ |
  |      Examples
  |      --------
  |      Return the array names for a mesh.
@@ -5240,7 +5253,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  bounds
  |      Return the bounding box of this dataset.
  |
- |      The form is: ``(xmin, xmax, ymin, ymax, zmin, zmax)``.
+ |      Returns
+ |      -------
+ |      BoundsLike
+ |          Bounding box of this dataset.
+ |          The form is: ``(xmin, xmax, ymin, ymax, zmin, zmax)``.
  |
  |      Examples
  |      --------
@@ -5280,7 +5297,12 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      ...
  |
  |  cell_data
- |      Return vtkCellData as DataSetAttributes.
+ |      Return cell data as DataSetAttributes.
+ |
+ |      Returns
+ |      -------
+ |      DataSetAttributes
+ |          Cell data as DataSetAttributes.
  |
  |      Examples
  |      --------
@@ -5316,6 +5338,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  center
  |      Return the center of the bounding box.
  |
+ |      Returns
+ |      -------
+ |      Vector :
+ |          Center of the bounding box.
+ |
  |      Examples
  |      --------
  |      Get the center of a mesh.
@@ -5327,6 +5354,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |
  |  length
  |      Return the length of the diagonal of the bounding box.
+ |
+ |      Returns
+ |      -------
+ |      float :
+ |          Length of the diagonal of the bounding box.
  |
  |      Examples
  |      --------
@@ -5342,8 +5374,18 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  n_arrays
  |      Return the number of arrays present in the dataset.
  |
+ |      Returns
+ |      -------
+ |      int
+ |         Number of arrays present in the dataset.
+ |
  |  n_cells
  |      Return the number of cells in the entire dataset.
+ |
+ |      Returns
+ |      -------
+ |      int :
+ |           Number of cells in the entire dataset.
  |
  |      Notes
  |      -----
@@ -5363,6 +5405,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  n_points
  |      Return the number of points in the entire dataset.
  |
+ |      Returns
+ |      -------
+ |      int
+ |          Number of points in the entire dataset.
+ |
  |      Examples
  |      --------
  |      Create a mesh and return the number of points in the
@@ -5376,11 +5423,26 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  number_of_cells
  |      Return the number of cells.
  |
+ |      Returns
+ |      -------
+ |      int :
+ |           Number of cells.
+ |
  |  number_of_points
  |      Return the number of points.
  |
+ |      Returns
+ |      -------
+ |      int :
+ |           Number of points.
+ |
  |  point_data
- |      Return vtkPointData as DataSetAttributes.
+ |      Return point data as DataSetAttributes.
+ |
+ |      Returns
+ |      -------
+ |      DataSetAttributes
+ |          Point data as DataSetAttributes.
  |
  |      Examples
  |      --------
@@ -5419,6 +5481,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  active_scalars_name
  |      Return the name of the active scalars.
  |
+ |      Returns
+ |      -------
+ |      str
+ |          Name of the active scalars.
+ |
  |      Examples
  |      --------
  |      Create a mesh, add scalars to the mesh, and return the name of
@@ -5431,7 +5498,12 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &#39;Z Height&#39;
  |
  |  active_t_coords
- |      Return or set the active texture coordinates on the points.
+ |      Return the active texture coordinates on the points.
+ |
+ |      Returns
+ |      -------
+ |      Optional[pyvista_ndarray]
+ |          Active texture coordinates on the points.
  |
  |      Examples
  |      --------
@@ -5451,8 +5523,18 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |  active_tensors_name
  |      Return the name of the active tensor array.
  |
+ |      Returns
+ |      -------
+ |      str
+ |          Name of the active tensor array.
+ |
  |  active_vectors_name
  |      Return the name of the active vectors array.
+ |
+ |      Returns
+ |      -------
+ |      str
+ |          Name of the active vectors array.
  |
  |      Examples
  |      --------
@@ -5468,6 +5550,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |
  |  points
  |      Return a reference to the points as a numpy object.
+ |
+ |      Returns
+ |      -------
+ |      pyvista_ndarray
+ |          Reference to the points as a numpy object.
  |
  |      Examples
  |      --------
@@ -6007,7 +6094,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; mesh_b = pyvista.Cube((0.5, 0.5, 0.5)).extract_cells([0, 2, 4])
  |      &gt;&gt;&gt; collision, ncol = mesh_a.collision(mesh_b, cell_tolerance=1)
  |      &gt;&gt;&gt; collision[&#39;ContactCells&#39;][:10]
- |      pyvista_ndarray([471, 471, 468, 468, 469, 469, 466, 466, 467, 467])
+ |      pyvista_ndarray([464,   0,   0,  29,  29,  27,  27,  28,  28,  23])
  |
  |      Plot the collisions by creating a collision mask with the
  |      ``&quot;ContactCells&quot;`` field data.  Cells with a collision are
@@ -8604,6 +8691,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      nodes of this mesh to a given surface. This distance will be
  |      added as a point array called ``&#39;implicit_distance&#39;``.
  |
+ |      Nodes of this mesh which are interior to the input surface
+ |      geometry have a negative distance, and nodes on the exterior
+ |      have a positive distance. Nodes which intersect the input
+ |      surface has a distance of zero.
+ |
  |      Parameters
  |      ----------
  |      surface : pyvista.DataSet
@@ -8627,20 +8719,40 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      plane.
  |
  |      &gt;&gt;&gt; import pyvista as pv
- |      &gt;&gt;&gt; sphere = pv.Sphere()
+ |      &gt;&gt;&gt; sphere = pv.Sphere(radius=0.35)
  |      &gt;&gt;&gt; plane = pv.Plane()
  |      &gt;&gt;&gt; _ = sphere.compute_implicit_distance(plane, inplace=True)
  |      &gt;&gt;&gt; dist = sphere[&#39;implicit_distance&#39;]
  |      &gt;&gt;&gt; type(dist)
  |      &lt;class &#39;pyvista.core.pyvista_ndarray.pyvista_ndarray&#39;&gt;
  |
- |      Plot these distances as a heatmap
+ |      Plot these distances as a heatmap. Note how distances above the
+ |      plane are positive, and distances below the plane are negative.
  |
  |      &gt;&gt;&gt; pl = pv.Plotter()
  |      &gt;&gt;&gt; _ = pl.add_mesh(
  |      ...     sphere, scalars=&#39;implicit_distance&#39;, cmap=&#39;bwr&#39;
  |      ... )
  |      &gt;&gt;&gt; _ = pl.add_mesh(plane, color=&#39;w&#39;, style=&#39;wireframe&#39;)
+ |      &gt;&gt;&gt; pl.show()
+ |
+ |      We can also compute the distance from all the points on the
+ |      plane to the sphere.
+ |
+ |      &gt;&gt;&gt; _ = plane.compute_implicit_distance(sphere, inplace=True)
+ |
+ |      Again, we can plot these distances as a heatmap. Note how
+ |      distances inside the sphere are negative and distances outside
+ |      the sphere are positive.
+ |
+ |      &gt;&gt;&gt; pl = pv.Plotter()
+ |      &gt;&gt;&gt; _ = pl.add_mesh(
+ |      ...     plane,
+ |      ...     scalars=&#39;implicit_distance&#39;,
+ |      ...     cmap=&#39;bwr&#39;,
+ |      ...     clim=[-0.35, 0.35],
+ |      ... )
+ |      &gt;&gt;&gt; _ = pl.add_mesh(sphere, color=&#39;w&#39;, style=&#39;wireframe&#39;)
  |      &gt;&gt;&gt; pl.show()
  |
  |      See :ref:`clip_with_surface_example` and
@@ -9296,7 +9408,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |          correspond to.
  |
  |      pass_cellid : bool, default: True
- |          Adds a cell array ``&quot;vtkOriginalPointIds&quot;`` that
+ |          Adds a cell array ``&quot;vtkOriginalCellIds&quot;`` that
  |          idenfities which original cells these surface cells
  |          correspond to.
  |
@@ -9333,6 +9445,26 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      &gt;&gt;&gt; surf = grid.extract_surface()
  |      &gt;&gt;&gt; type(surf)
  |      &lt;class &#39;pyvista.core.pointset.PolyData&#39;&gt;
+ |      &gt;&gt;&gt; surf[&quot;vtkOriginalPointIds&quot;]
+ |      pyvista_ndarray([ 0,  2, 36, 27,  7,  8, 81,  1, 18,  4, 54,  3,  6, 45,
+ |                       72,  5, 63,  9, 35, 44, 11, 16, 89, 17, 10, 26, 62, 13,
+ |                       12, 53, 80, 15, 14, 71, 19, 37, 55, 20, 38, 56, 21, 39,
+ |                       57, 22, 40, 58, 23, 41, 59, 24, 42, 60, 25, 43, 61, 28,
+ |                       82, 29, 83, 30, 84, 31, 85, 32, 86, 33, 87, 34, 88, 46,
+ |                       73, 47, 74, 48, 75, 49, 76, 50, 77, 51, 78, 52, 79, 64,
+ |                       65, 66, 67, 68, 69, 70])
+ |      &gt;&gt;&gt; surf[&quot;vtkOriginalCellIds&quot;]
+ |      pyvista_ndarray([ 0,  0,  0,  1,  1,  1,  3,  3,  3,  2,  2,  2, 36, 36,
+ |                       36, 37, 37, 37, 39, 39, 39, 38, 38, 38,  5,  5,  9,  9,
+ |                       13, 13, 17, 17, 21, 21, 25, 25, 29, 29, 33, 33,  4,  4,
+ |                        8,  8, 12, 12, 16, 16, 20, 20, 24, 24, 28, 28, 32, 32,
+ |                        7,  7, 11, 11, 15, 15, 19, 19, 23, 23, 27, 27, 31, 31,
+ |                       35, 35,  6,  6, 10, 10, 14, 14, 18, 18, 22, 22, 26, 26,
+ |                       30, 30, 34, 34])
+ |
+ |      Note that in the &quot;vtkOriginalCellIds&quot; array, the same original cells
+ |      appears multiple times since this array represents the original cell of
+ |      each surface cell extracted.
  |
  |      See the :ref:`extract_surface_example` for more examples using this filter.
  |
@@ -9908,9 +10040,9 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      Sample data values at specified point locations.
  |
  |      .. deprecated:: 0.41.0
- |        `probe` will be removed in a future version. Use
- |        :func:`pyvista.DataSetFilters.sample` instead.
- |        If using `mesh1.probe(mesh2)`, use `mesh2.sample(mesh1)`.
+ |         `probe` will be removed in a future version. Use
+ |         :func:`pyvista.DataSetFilters.sample` instead.
+ |         If using `mesh1.probe(mesh2)`, use `mesh2.sample(mesh1)`.
  |
  |      This uses :class:`vtkProbeFilter`.
  |
@@ -10023,7 +10155,7 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |
  |      See the :ref:`ref_reflect_example` for more examples using this filter.
  |
- |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None)
+ |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None, pass_field_data=True, mark_blank=True)
  |      Resample array data from a passed mesh onto this mesh.
  |
  |      For `mesh1.sample(mesh2)`, the arrays from `mesh2` are sampled onto
@@ -10032,6 +10164,10 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      :function`pyvista.DataSetFilters.interpolate` that uses a distance
  |      weighting for nearby points.  If there is cell topology, `sample` is
  |      usually preferred.
+ |
+ |      The point data &#39;vtkValidPointMask&#39; stores whether the point could be sampled
+ |      with a value of 1 meaning successful sampling. And a value of 0 means
+ |      unsuccessful.
  |
  |      This uses :class:`vtk.vtkResampleWithDataSet`.
  |
@@ -10060,9 +10196,21 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      progress_bar : bool, default: False
  |          Display a progress bar to indicate progress.
  |
- |      locator : vtkAbstractCellLocator, optional
+ |      locator : vtkAbstractCellLocator or str, optional
  |          Prototype cell locator to perform the ``FindCell()``
  |          operation.  Default uses the DataSet ``FindCell`` method.
+ |          Valid strings with mapping to vtk cell locators are
+ |
+ |              * &#39;cell&#39; - vtkCellLocator
+ |              * &#39;cell_tree&#39; - vtkCellTreeLocator
+ |              * &#39;obb_tree&#39; - vtkOBBTree
+ |              * &#39;static_cell&#39; - vtkStaticCellLocator
+ |
+ |      pass_field_data : bool, default: True
+ |          Preserve source mesh&#39;s original field data arrays.
+ |
+ |      mark_blank : bool, default: True
+ |          Whether to mark blank points and cells in &quot;vtkGhostType&quot;.
  |
  |      Returns
  |      -------
@@ -11748,6 +11896,11 @@ class PolyData(vtkmodules.vtkCommonDataModel.vtkPolyData, _PointSet, pyvista.cor
  |      with the dataset does not match the number of points or cells
  |      of the dataset.
  |
+ |      Returns
+ |      -------
+ |      DataSetAttributes
+ |          FieldData as DataSetAttributes.
+ |
  |      Examples
  |      --------
  |      Add field data to a PolyData dataset and then return it.
@@ -12335,10 +12488,8 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          following:
  |
  |          * ``&#39;none&#39;`` : Do not display in the notebook.
- |          * ``&#39;pythreejs&#39;`` : Show a ``pythreejs`` widget
  |          * ``&#39;static&#39;`` : Display a static figure.
- |          * ``&#39;ipygany&#39;`` : Show a ``ipygany`` widget
- |          * ``&#39;panel&#39;`` : Show a ``panel`` widget.
+ |          * ``&#39;trame&#39;`` : Display a dynamic figure with Trame.
  |
  |          This can also be set globally with
  |          :func:`pyvista.set_jupyter_backend`.
@@ -12414,16 +12565,6 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      &gt;&gt;&gt; pl.show(auto_close=False)  # doctest:+SKIP
  |      &gt;&gt;&gt; pl.show(screenshot=&#39;my_image.png&#39;)  # doctest:+SKIP
  |
- |      Display a ``pythreejs`` scene within a jupyter notebook
- |
- |      &gt;&gt;&gt; pl.show(jupyter_backend=&#39;pythreejs&#39;)  # doctest:+SKIP
- |
- |      Return a ``pythreejs`` scene.
- |
- |      &gt;&gt;&gt; pl.show(
- |      ...     jupyter_backend=&#39;pythreejs&#39;, return_viewer=True
- |      ... )  # doctest:+SKIP
- |
  |      Obtain the camera position when using ``show``.
  |
  |      &gt;&gt;&gt; pl = pv.Plotter()
@@ -12434,9 +12575,20 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      (-0.6839951597283509, -0.47207319712073137, 0.5561452310578585)]
  |
  |  ----------------------------------------------------------------------
+ |  Readonly properties inherited from pyvista.plotting.plotter.Plotter:
+ |
+ |  meshes
+ |      Return plotter meshes.
+ |
+ |      Returns
+ |      -------
+ |      List[Union[pyvista.DataSet, PyVista.MultiBlock]]
+ |          List of mesh objects such as pv.PolyData, pv.UnstructuredGrid, etc.
+ |
+ |  ----------------------------------------------------------------------
  |  Data and other attributes inherited from pyvista.plotting.plotter.Plotter:
  |
- |  last_update_time = 1693895083.651881
+ |  last_update_time = 1694494434.5089848
  |
  |  ----------------------------------------------------------------------
  |  Methods inherited from pyvista.plotting.plotter.BasePlotter:
@@ -13181,7 +13333,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          The key to trigger the event.
  |
  |      callback : callable
- |          A callable that takes no arguments.
+ |          A callable that takes no arguments (keyword arguments are allowed).
  |
  |  add_legend(self, labels=None, bcolor=(0.5, 0.5, 0.5), border=False, size=(0.2, 0.2), name=None, loc=&#39;upper right&#39;, face=&#39;triangle&#39;)
  |      Add a legend to render window.
@@ -14041,7 +14193,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      &gt;&gt;&gt; plotter.view_xy()
  |      &gt;&gt;&gt; plotter.show()
  |
- |  add_text(self, text, position=&#39;upper_left&#39;, font_size=18, color=None, font=None, shadow=False, name=None, viewport=False, orientation=0.0, *, render=True)
+ |  add_text(self, text, position=&#39;upper_left&#39;, font_size=18, color=None, font=None, shadow=False, name=None, viewport=False, orientation=0.0, font_file=None, *, render=True)
  |      Add text to plot object in the top left corner by default.
  |
  |      Parameters
@@ -14075,8 +14227,9 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |
  |          Defaults to :attr:`pyvista.global_theme.font.color &lt;pyvista.plotting.themes._Font.color&gt;`.
  |
- |      font : str, optional
+ |      font : str, default: &#39;arial&#39;
  |          Font name may be ``&#39;courier&#39;``, ``&#39;times&#39;``, or ``&#39;arial&#39;``.
+ |          This is ignored if the `font_file` is set.
  |
  |      shadow : bool, default: False
  |          Adds a black shadow to the text.
@@ -14096,8 +14249,12 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          is rotated around an anchor point that may be on the edge or
  |          corner of the text.  The default is horizontal (0.0 degrees).
  |
- |      render : bool, optional
- |          Force a render when ``True`` (default).
+ |      font_file : str, default: None
+ |          The absolute file path to a local file containing a freetype
+ |          readable font.
+ |
+ |      render : bool, default: True
+ |          Force a render when ``True``.
  |
  |      Returns
  |      -------
@@ -14106,6 +14263,8 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |
  |      Examples
  |      --------
+ |      Add blue text to the upper right of the plotter.
+ |
  |      &gt;&gt;&gt; import pyvista
  |      &gt;&gt;&gt; pl = pyvista.Plotter()
  |      &gt;&gt;&gt; actor = pl.add_text(
@@ -14116,6 +14275,14 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      ...     font_size=26,
  |      ... )
  |      &gt;&gt;&gt; pl.show()
+ |
+ |      Add text and use a custom freetype readable font file.
+ |
+ |      &gt;&gt;&gt; pl = pyvista.Plotter()
+ |      &gt;&gt;&gt; actor = pl.add_text(
+ |      ...     &#39;Text&#39;,
+ |      ...     font_file=&#39;/home/user/Mplus2-Regular.ttf&#39;,
+ |      ... )  # doctest:+SKIP
  |
  |  add_volume(self, volume, scalars=None, clim=None, resolution=None, opacity=&#39;linear&#39;, n_colors=256, cmap=None, flip_scalars=False, reset_camera=None, name=None, ambient=None, categories=False, culling=False, multi_colors=False, blending=&#39;composite&#39;, mapper=None, scalar_bar_args=None, show_scalar_bar=None, annotations=None, pickable=True, preference=&#39;point&#39;, opacity_unit_distance=None, shade=False, diffuse=0.7, specular=0.2, specular_power=10.0, render=True, log_scale=False, **kwargs)
  |      Add a volume, rendered using a smart mapper by default.
@@ -14152,13 +14319,15 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          shaped ``(N, 4)`` where ``N`` is the number of points, and of
  |          datatype ``np.uint8``.
  |
- |      clim : sequence[float], optional
+ |      clim : sequence[float] | float, optional
  |          Color bar range for scalars.  For example: ``[-1, 2]``. Defaults to
  |          minimum and maximum of scalars array if the scalars dtype is not
  |          ``np.uint8``. ``rng`` is also an accepted alias for this parameter.
  |
  |          If the scalars datatype is ``np.uint8``, this parameter defaults to
  |          ``[0, 256]``.
+ |
+ |          If a single value is given, the range ``[-clim, clim]`` is used.
  |
  |      resolution : list, optional
  |          Block resolution. For example ``[1, 1, 1]``. Resolution must be
@@ -14190,6 +14359,9 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |          * ``&#39;sigmoid_8&#39;`` - Linear map between -8.0 and 8.0
  |          * ``&#39;sigmoid_9&#39;`` - Linear map between -9.0 and 9.0
  |          * ``&#39;sigmoid_10&#39;`` - Linear map between -10.0 and 10.0
+ |          * ``&#39;foreground&#39;`` - Transparent background and opaque foreground.
+ |              Intended for use with segmentation labels. Assumes the smallest
+ |              scalar value of the array is the background value (e.g. 0).
  |
  |          If RGBA scalars are provided, this parameter is set to ``&#39;linear&#39;``
  |          to ensure the opacity transfer function has no effect on the input
@@ -14250,7 +14422,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      blending : str, optional
  |          Blending mode for visualisation of the input object(s). Can be
  |          one of &#39;additive&#39;, &#39;maximum&#39;, &#39;minimum&#39;, &#39;composite&#39;, or
- |          &#39;average&#39;. Defaults to &#39;additive&#39;.
+ |          &#39;average&#39;. Defaults to &#39;composite&#39;.
  |
  |      mapper : str, optional
  |          Volume mapper to use given by name. Options include:
@@ -15210,11 +15382,6 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |
  |  export_html(self, filename)
  |      Export this plotter as an interactive scene to a HTML file.
- |
- |      You have the option of exposing the scene using either vtk.js (using
- |      ``panel``) or three.js (using ``pythreejs``), both of which are
- |      excellent JavaScript libraries to visualize small to moderately complex
- |      scenes for scientific visualization.
  |
  |      Parameters
  |      ----------
@@ -16645,14 +16812,6 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      &gt;&gt;&gt; pl.set_background(&#39;orange&#39;, all_renderers=False)
  |      &gt;&gt;&gt; pl.show()
  |
- |  to_pythreejs(self)
- |      Convert this plotting scene to a pythreejs widget.
- |
- |      Returns
- |      -------
- |      ipywidgets.Widget
- |          Widget containing pythreejs renderer.
- |
  |  track_click_position(self, callback=None, side=&#39;right&#39;, double=False, viewport=False)
  |      Keep track of the click position.
  |
@@ -17023,6 +17182,11 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |  actors
  |      Return the actors of the active renderer.
  |
+ |      Returns
+ |      -------
+ |      dict
+ |          Dictionary of active actors.
+ |
  |  bounds
  |      Return the bounds of the active renderer.
  |
@@ -17056,13 +17220,23 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      There can only be one legend actor per renderer.  If
  |      ``legend`` is ``None``, there is no legend actor.
  |
+ |      Returns
+ |      -------
+ |      vtk.vtkLegendBoxActor
+ |          Legend actor.
+ |
  |  length
  |      Return the length of the diagonal of the bounding box of the scene.
  |
  |  render_window
- |      Access the vtkRenderWindow.
+ |      Access the vtkRenderWindow attached to this plotter.
  |
  |      If the plotter is closed, this will return ``None``.
+ |
+ |      Returns
+ |      -------
+ |      vtk.vtkRenderWindow or None
+ |          Render window if the plotter is not closed.
  |
  |      Notes
  |      -----
@@ -17070,6 +17244,11 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |
  |  renderer
  |      Return the active renderer.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.Renderer
+ |          Active render.
  |
  |      Examples
  |      --------
@@ -17081,8 +17260,18 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |  scalar_bar
  |      First scalar bar (kept for backwards compatibility).
  |
+ |      Returns
+ |      -------
+ |      vtk.vtkScalarBarActor
+ |          First scalar bar actor.
+ |
  |  scalar_bars
  |      Scalar bars.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.ScalarBars
+ |          Scalar bar object.
  |
  |      Examples
  |      --------
@@ -17101,7 +17290,12 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      &lt;vtkmodules.vtkRenderingAnnotation.vtkScalarBarActor(...) at ...&gt;
  |
  |  shape
- |      Shape of the plotter.
+ |      Return the shape of the plotter.
+ |
+ |      Returns
+ |      -------
+ |      tuple
+ |          Shape of the plotter.
  |
  |      Examples
  |      --------
@@ -17132,6 +17326,11 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |
  |  camera
  |      Return the active camera of the active renderer.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.Camera
+ |          Camera from the active renderer.
  |
  |  camera_position
  |      Return camera position of the active render window.
@@ -17173,7 +17372,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      For more examples, see :ref:`cameras_api`.
  |
  |  camera_set
- |      Return if the camera of the active renderer has been set.
+ |      Return or set if the camera of the active renderer has been set.
  |
  |  image_scale
  |      Get or set the scale factor when saving a screenshot.
@@ -17183,6 +17382,11 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |
  |      Image sizes will be the :py:attr:`window_size
  |      &lt;pyvista.Plotter.window_size&gt;` multiplied by this scale factor.
+ |
+ |      Returns
+ |      -------
+ |      int
+ |          Image scale factor.
  |
  |      Examples
  |      --------
@@ -17202,10 +17406,10 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      &gt;&gt;&gt; pl.screenshot(&#39;screenshot.png&#39;)  # doctest:+SKIP
  |
  |  parallel_projection
- |      Return parallel projection state of active render window.
+ |      Return or set parallel projection state of active render window.
  |
  |  parallel_scale
- |      Return parallel scale of active render window.
+ |      Return or set parallel scale of active render window.
  |
  |  pickable_actors
  |      Return or set the pickable actors.
@@ -17217,6 +17421,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |      Returns
  |      -------
  |      list[pyvista.Actor]
+ |          List of actors.
  |
  |      Examples
  |      --------
@@ -17257,8 +17462,18 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |  suppress_rendering
  |      Get or set whether to suppress render calls.
  |
+ |      Returns
+ |      -------
+ |      bool
+ |          ``True`` when rendering is suppressed.
+ |
  |  theme
  |      Return or set the theme used for this plotter.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.Theme
+ |          Theme of this plotter.
  |
  |      Examples
  |      --------
@@ -18168,6 +18383,72 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |
  |  ----------------------------------------------------------------------
  |  Methods inherited from pyvista.plotting.widgets.WidgetHelper:
+ |
+ |  add_affine_transform_widget(self, actor, origin=None, start=True, scale=0.15, line_radius=0.02, always_visible=True, axes_colors=None, axes=None, release_callback=None, interact_callback=None)
+ |      Add a 3D affine transform widget.
+ |
+ |      This widget allows interactive transformations including translation and
+ |      rotation using the left mouse button.
+ |
+ |      Parameters
+ |      ----------
+ |      actor : pyvista.Actor
+ |          The actor to which the widget is attached to.
+ |      origin : sequence[float], optional
+ |          Origin of the widget. Default is the origin of the main actor.
+ |      start : bool, default: True
+ |          If True, start the widget immediately.
+ |      scale : float, default: 0.15
+ |          Scale factor for the widget relative to the length of the actor.
+ |      line_radius : float, default: 0.02
+ |          Relative radius of the lines composing the widget.
+ |      always_visible : bool, default: True
+ |          Make the widget always visible. Setting this to ``False`` will cause
+ |          the widget geometry to be hidden by other actors in the plotter.
+ |      axes_colors : tuple[ColorLike], optional
+ |          Uses the theme by default. Configure the individual axis colors by
+ |          modifying either the theme with ``pv.global_theme.axes.x_color =
+ |          &lt;COLOR&gt;`` or setting this with a ``tuple`` as in ``(&#39;r&#39;, &#39;g&#39;, &#39;b&#39;)``.
+ |      axes : numpy.ndarray, optional
+ |          ``(3, 3)`` Numpy array defining the X, Y, and Z axes. By default
+ |          this matches the default coordinate system.
+ |      release_callback : callable, optional
+ |          Call this method when releasing the left mouse button. It is passed
+ |          the ``user_matrix`` of the actor.
+ |      interact_callback : callable, optional
+ |          Call this method when moving the mouse with the left mouse button
+ |          pressed down and a valid movement actor selected. It is passed the
+ |          ``user_matrix`` of the actor.
+ |
+ |      Returns
+ |      -------
+ |      pyvista.widgets.AffineWidget3D
+ |          The affine widget.
+ |
+ |      Notes
+ |      -----
+ |      After interacting with the actor, the transform will be stored within
+ |      :attr:`pyvista.Actor.user_matrix` but will not be applied to the
+ |      dataset. Use this matrix in conjunction with
+ |      :func:`pyvista.DataSetFilters.transform` to transform the dataset.
+ |
+ |      Examples
+ |      --------
+ |      Add the 3d affine widget.
+ |
+ |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; pl = pv.Plotter()
+ |      &gt;&gt;&gt; actor = pl.add_mesh(pv.Sphere())
+ |      &gt;&gt;&gt; widget = pl.add_affine_transform_widget(actor)
+ |      &gt;&gt;&gt; pl.show()
+ |
+ |      Access the transform from the actor.
+ |
+ |      &gt;&gt;&gt; actor.user_matrix
+ |      array([[1., 0., 0., 0.],
+ |             [0., 1., 0., 0.],
+ |             [0., 0., 1., 0.],
+ |             [0., 0., 0., 1.]])
  |
  |  add_box_widget(self, callback, bounds=None, factor=1.25, rotation_enabled=True, color=None, use_planes=False, outline_translation=True, pass_widget=False, interaction_event=&#39;end&#39;)
  |      Add a box widget to the scene.
@@ -19770,7 +20051,7 @@ xarray. After which, a pyvista namespace of accessors will be available.</p>
 in Xarray Tutorial.</p>
 </div>
 <a class="reference external image-reference" href="https://doi.org/10.5281/zenodo.598201"><img alt="https://zenodo.org/badge/doi/10.5281/zenodo.598201.svg" src="https://zenodo.org/badge/doi/10.5281/zenodo.598201.svg" /></a>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 2 minutes  49.370 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  21.995 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-05-action-a-lesson-geovista-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/05_action/a_lesson_geovista.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo15.svg" width="150px" /></a>

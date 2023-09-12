@@ -818,7 +818,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      pyvista.StructuredGrid
  |          This grid as a structured grid.
  |
- |  to_tetrahedra(self, tetra_per_cell: int = 5, mixed: Union[Sequence[int], bool] = False, pass_cell_ids: bool = True, pass_data: bool = True, progress_bar: bool = False, **kwargs)
+ |  to_tetrahedra(self, tetra_per_cell: int = 5, mixed: Union[Sequence[int], bool] = False, pass_cell_ids: bool = True, pass_data: bool = True, progress_bar: bool = False)
  |      Create a tetrahedral mesh structured grid.
  |
  |      Parameters
@@ -852,9 +852,6 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |
  |      progress_bar : bool, default: False
  |          Display a progress bar to indicate progress.
- |
- |      **kwargs : dict, optional
- |          Deprecated keyword argument ``pass_cell_data``.
  |
  |      Returns
  |      -------
@@ -980,6 +977,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |
  |  points
  |      Build a copy of the implicitly defined points as a numpy array.
+ |
+ |      Returns
+ |      -------
+ |      numpy.ndarray
+ |          Array of points representing the image data.
  |
  |      Notes
  |      -----
@@ -2760,6 +2762,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      These are effectively the number of points along each of the
  |      three dataset axes.
  |
+ |      Returns
+ |      -------
+ |      tuple[int]
+ |          Dimensions of the grid.
+ |
  |      Examples
  |      --------
  |      Create a uniform grid with dimensions ``(1, 2, 3)``.
@@ -2784,7 +2791,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  __getitem__(self, index: &#39;Union[Iterable, str]&#39;) -&gt; &#39;np.ndarray&#39;
  |      Search both point, cell, and field data for an array.
  |
- |  __setitem__(self, name: &#39;str&#39;, scalars: &#39;Union[np.ndarray, collections.abc.Sequence]&#39;)
+ |  __setitem__(self, name: &#39;str&#39;, scalars: &#39;Union[np.ndarray, collections.abc.Sequence, float]&#39;)
  |      Add/set an array in the point_data, or cell_data accordingly.
  |
  |      It depends on the array&#39;s length, or specified mode.
@@ -2885,38 +2892,6 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &gt;&gt;&gt; grid = mesh.cast_to_unstructured_grid()
  |      &gt;&gt;&gt; type(grid)
  |      &lt;class &#39;pyvista.core.pointset.UnstructuredGrid&#39;&gt;
- |
- |  cell_bounds(self, ind: &#39;int&#39;) -&gt; &#39;BoundsLike&#39;
- |      Return the bounding box of a cell.
- |
- |      ..  deprecated:: 0.38.0
- |          Use :attr:`pyvista.Cell.bounds` instead.
- |
- |      Parameters
- |      ----------
- |      ind : int
- |          Cell ID.
- |
- |      Returns
- |      -------
- |      tuple[float, float, float]
- |          The limits of the cell in the X, Y and Z directions respectively.
- |
- |  cell_n_points(self, ind: &#39;int&#39;) -&gt; &#39;int&#39;
- |      Return the number of points in a cell.
- |
- |      .. deprecated:: 0.38.0
- |          Use :attr:`pyvista.Cell.n_points` instead.
- |
- |      Parameters
- |      ----------
- |      ind : int
- |          Cell ID.
- |
- |      Returns
- |      -------
- |      int
- |          Number of points in the cell.
  |
  |  cell_neighbors(self, ind: &#39;int&#39;, connections: &#39;str&#39; = &#39;points&#39;) -&gt; &#39;List[int]&#39;
  |      Get the cell neighbors of the ind-th cell.
@@ -3119,56 +3094,6 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &gt;&gt;&gt; pl.camera.zoom(6.0)
  |      &gt;&gt;&gt; pl.show()
  |
- |  cell_point_ids(self, ind: &#39;int&#39;) -&gt; &#39;List[int]&#39;
- |      Return the point ids in a cell.
- |
- |      .. deprecated:: 0.38.0
- |          You can use :attr:`pyvista.Cell.point_ids` instead.
- |
- |      Parameters
- |      ----------
- |      ind : int
- |          Cell ID.
- |
- |      Returns
- |      -------
- |      list[int]
- |          Point Ids that are associated with the cell.
- |
- |  cell_points(self, ind: &#39;int&#39;) -&gt; &#39;np.ndarray&#39;
- |      Return the points in a cell.
- |
- |      ..  deprecated:: 0.38.0
- |          Use :attr:`pyvista.Cell.points` instead.
- |
- |      Parameters
- |      ----------
- |      ind : int
- |          Cell ID.
- |
- |      Returns
- |      -------
- |      numpy.ndarray
- |          An array of floats with shape (number of points, 3) containing the coordinates of the
- |          cell corners.
- |
- |  cell_type(self, ind: &#39;int&#39;) -&gt; &#39;int&#39;
- |      Return the type of a cell.
- |
- |      .. deprecated:: 0.38.0
- |          You can use :attr:`pyvista.Cell.type` instead.
- |
- |      Parameters
- |      ----------
- |      ind : int
- |          Cell type ID.
- |
- |      Returns
- |      -------
- |      int
- |          VTK cell type. See `vtkCellType.h
- |          &lt;https://vtk.org/doc/nightly/html/vtkCellType_8h_source.html&gt;`_ .
- |
  |  clear_cell_data(self)
  |      Remove all cell arrays.
  |
@@ -3280,7 +3205,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &gt;&gt;&gt; import pyvista
  |      &gt;&gt;&gt; mesh = pyvista.Sphere()
  |      &gt;&gt;&gt; mesh.find_cells_along_line([0.0, 0, 0], [1.0, 0, 0])
- |      array([842, 843, 896, 897])
+ |      array([  86,   87, 1652, 1653])
  |
  |  find_cells_intersecting_line(self, pointa: &#39;Iterable[float]&#39;, pointb: &#39;Iterable[float]&#39;, tolerance=0.0) -&gt; &#39;np.ndarray&#39;
  |      Find the index of cells that intersect a line.
@@ -3318,7 +3243,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &gt;&gt;&gt; import pyvista
  |      &gt;&gt;&gt; mesh = pyvista.Sphere()
  |      &gt;&gt;&gt; mesh.find_cells_intersecting_line([0.0, 0, 0], [1.0, 0, 0])
- |      array([896])
+ |      array([  86, 1653])
  |
  |  find_cells_within_bounds(self, bounds: &#39;Iterable[float]&#39;) -&gt; &#39;np.ndarray&#39;
  |      Find the index of cells in this mesh within bounds.
@@ -3404,7 +3329,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &gt;&gt;&gt; point = [0.1, 0.2, 0.3]
  |      &gt;&gt;&gt; index = mesh.find_closest_cell(point)
  |      &gt;&gt;&gt; index
- |      591
+ |      338
  |
  |      Make sure that this cell indeed is the closest to
  |      ``[0.1, 0.2, 0.3]``.
@@ -3414,7 +3339,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &gt;&gt;&gt; relative_position = cell_centers.points - point
  |      &gt;&gt;&gt; distance = np.linalg.norm(relative_position, axis=1)
  |      &gt;&gt;&gt; np.argmin(distance)
- |      591
+ |      338
  |
  |      Find the nearest cells to several random points that
  |      are centered on the origin.
@@ -3484,7 +3409,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &gt;&gt;&gt; mesh = pyvista.Sphere()
  |      &gt;&gt;&gt; index = mesh.find_closest_point((0, 1, 0))
  |      &gt;&gt;&gt; index
- |      212
+ |      239
  |
  |      Get the coordinate of that point.
  |
@@ -3960,8 +3885,6 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |
  |          * ``&#39;none&#39;`` : Do not display in the notebook.
  |          * ``&#39;static&#39;`` : Display a static figure.
- |          * ``&#39;ipygany&#39;`` : Show a ``ipygany`` widget
- |          * ``&#39;panel&#39;`` : Show a ``panel`` widget.
  |          * ``&#39;trame&#39;`` : Display using ``trame``.
  |
  |          This can also be set globally with
@@ -3987,8 +3910,10 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |          :func:`Plotter.enable_hidden_line_removal
  |          &lt;Plotter.enable_hidden_line_removal&gt;`.
  |
- |      anti_aliasing : bool, default: :attr:`pyvista.plotting.themes.Theme.anti_aliasing`
- |          Enable or disable anti-aliasing.
+ |      anti_aliasing : str | bool, default: :attr:`pyvista.plotting.themes.Theme.anti_aliasing`
+ |          Enable or disable anti-aliasing. If ``True``, uses ``&quot;msaa&quot;``. If False,
+ |          disables anti_aliasing. If a string, should be either ``&quot;fxaa&quot;`` or
+ |          ``&quot;ssaa&quot;``.
  |
  |      zoom : float, str, optional
  |          Camera zoom.  Either ``&#39;tight&#39;`` or a float. A value greater than 1
@@ -4647,6 +4572,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  active_scalars
  |      Return the active scalars as an array.
  |
+ |      Returns
+ |      -------
+ |      Optional[pyvista_ndarray]
+ |          Active scalars as an array.
+ |
  |  active_scalars_info
  |      Return the active scalar&#39;s association and name.
  |
@@ -4680,11 +4610,26 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  active_tensors
  |      Return the active tensors array.
  |
+ |      Returns
+ |      -------
+ |      Optional[np.ndarray]
+ |          Active tensors array.
+ |
  |  active_tensors_info
  |      Return the active tensor&#39;s field and name: [field, name].
  |
+ |      Returns
+ |      -------
+ |      ActiveArrayInfo
+ |          Active tensor&#39;s field and name: [field, name].
+ |
  |  active_vectors
  |      Return the active vectors array.
+ |
+ |      Returns
+ |      -------
+ |      Optional[pyvista_ndarray]
+ |          Active vectors array.
  |
  |      Examples
  |      --------
@@ -4774,6 +4719,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |
  |      This makes sure to put the active scalars&#39; name first in the list.
  |
+ |      Returns
+ |      -------
+ |      List[str]
+ |          List of array names for the dataset.
+ |
  |      Examples
  |      --------
  |      Return the array names for a mesh.
@@ -4811,7 +4761,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  bounds
  |      Return the bounding box of this dataset.
  |
- |      The form is: ``(xmin, xmax, ymin, ymax, zmin, zmax)``.
+ |      Returns
+ |      -------
+ |      BoundsLike
+ |          Bounding box of this dataset.
+ |          The form is: ``(xmin, xmax, ymin, ymax, zmin, zmax)``.
  |
  |      Examples
  |      --------
@@ -4851,7 +4805,12 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      ...
  |
  |  cell_data
- |      Return vtkCellData as DataSetAttributes.
+ |      Return cell data as DataSetAttributes.
+ |
+ |      Returns
+ |      -------
+ |      DataSetAttributes
+ |          Cell data as DataSetAttributes.
  |
  |      Examples
  |      --------
@@ -4887,6 +4846,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  center
  |      Return the center of the bounding box.
  |
+ |      Returns
+ |      -------
+ |      Vector :
+ |          Center of the bounding box.
+ |
  |      Examples
  |      --------
  |      Get the center of a mesh.
@@ -4898,6 +4862,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |
  |  length
  |      Return the length of the diagonal of the bounding box.
+ |
+ |      Returns
+ |      -------
+ |      float :
+ |          Length of the diagonal of the bounding box.
  |
  |      Examples
  |      --------
@@ -4913,8 +4882,18 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  n_arrays
  |      Return the number of arrays present in the dataset.
  |
+ |      Returns
+ |      -------
+ |      int
+ |         Number of arrays present in the dataset.
+ |
  |  n_cells
  |      Return the number of cells in the entire dataset.
+ |
+ |      Returns
+ |      -------
+ |      int :
+ |           Number of cells in the entire dataset.
  |
  |      Notes
  |      -----
@@ -4934,6 +4913,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  n_points
  |      Return the number of points in the entire dataset.
  |
+ |      Returns
+ |      -------
+ |      int
+ |          Number of points in the entire dataset.
+ |
  |      Examples
  |      --------
  |      Create a mesh and return the number of points in the
@@ -4947,11 +4931,26 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  number_of_cells
  |      Return the number of cells.
  |
+ |      Returns
+ |      -------
+ |      int :
+ |           Number of cells.
+ |
  |  number_of_points
  |      Return the number of points.
  |
+ |      Returns
+ |      -------
+ |      int :
+ |           Number of points.
+ |
  |  point_data
- |      Return vtkPointData as DataSetAttributes.
+ |      Return point data as DataSetAttributes.
+ |
+ |      Returns
+ |      -------
+ |      DataSetAttributes
+ |          Point data as DataSetAttributes.
  |
  |      Examples
  |      --------
@@ -5023,6 +5022,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  active_scalars_name
  |      Return the name of the active scalars.
  |
+ |      Returns
+ |      -------
+ |      str
+ |          Name of the active scalars.
+ |
  |      Examples
  |      --------
  |      Create a mesh, add scalars to the mesh, and return the name of
@@ -5035,7 +5039,12 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &#39;Z Height&#39;
  |
  |  active_t_coords
- |      Return or set the active texture coordinates on the points.
+ |      Return the active texture coordinates on the points.
+ |
+ |      Returns
+ |      -------
+ |      Optional[pyvista_ndarray]
+ |          Active texture coordinates on the points.
  |
  |      Examples
  |      --------
@@ -5055,8 +5064,18 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |  active_tensors_name
  |      Return the name of the active tensor array.
  |
+ |      Returns
+ |      -------
+ |      str
+ |          Name of the active tensor array.
+ |
  |  active_vectors_name
  |      Return the name of the active vectors array.
+ |
+ |      Returns
+ |      -------
+ |      str
+ |          Name of the active vectors array.
  |
  |      Examples
  |      --------
@@ -6176,6 +6195,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      nodes of this mesh to a given surface. This distance will be
  |      added as a point array called ``&#39;implicit_distance&#39;``.
  |
+ |      Nodes of this mesh which are interior to the input surface
+ |      geometry have a negative distance, and nodes on the exterior
+ |      have a positive distance. Nodes which intersect the input
+ |      surface has a distance of zero.
+ |
  |      Parameters
  |      ----------
  |      surface : pyvista.DataSet
@@ -6199,20 +6223,40 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      plane.
  |
  |      &gt;&gt;&gt; import pyvista as pv
- |      &gt;&gt;&gt; sphere = pv.Sphere()
+ |      &gt;&gt;&gt; sphere = pv.Sphere(radius=0.35)
  |      &gt;&gt;&gt; plane = pv.Plane()
  |      &gt;&gt;&gt; _ = sphere.compute_implicit_distance(plane, inplace=True)
  |      &gt;&gt;&gt; dist = sphere[&#39;implicit_distance&#39;]
  |      &gt;&gt;&gt; type(dist)
  |      &lt;class &#39;pyvista.core.pyvista_ndarray.pyvista_ndarray&#39;&gt;
  |
- |      Plot these distances as a heatmap
+ |      Plot these distances as a heatmap. Note how distances above the
+ |      plane are positive, and distances below the plane are negative.
  |
  |      &gt;&gt;&gt; pl = pv.Plotter()
  |      &gt;&gt;&gt; _ = pl.add_mesh(
  |      ...     sphere, scalars=&#39;implicit_distance&#39;, cmap=&#39;bwr&#39;
  |      ... )
  |      &gt;&gt;&gt; _ = pl.add_mesh(plane, color=&#39;w&#39;, style=&#39;wireframe&#39;)
+ |      &gt;&gt;&gt; pl.show()
+ |
+ |      We can also compute the distance from all the points on the
+ |      plane to the sphere.
+ |
+ |      &gt;&gt;&gt; _ = plane.compute_implicit_distance(sphere, inplace=True)
+ |
+ |      Again, we can plot these distances as a heatmap. Note how
+ |      distances inside the sphere are negative and distances outside
+ |      the sphere are positive.
+ |
+ |      &gt;&gt;&gt; pl = pv.Plotter()
+ |      &gt;&gt;&gt; _ = pl.add_mesh(
+ |      ...     plane,
+ |      ...     scalars=&#39;implicit_distance&#39;,
+ |      ...     cmap=&#39;bwr&#39;,
+ |      ...     clim=[-0.35, 0.35],
+ |      ... )
+ |      &gt;&gt;&gt; _ = pl.add_mesh(sphere, color=&#39;w&#39;, style=&#39;wireframe&#39;)
  |      &gt;&gt;&gt; pl.show()
  |
  |      See :ref:`clip_with_surface_example` and
@@ -6868,7 +6912,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |          correspond to.
  |
  |      pass_cellid : bool, default: True
- |          Adds a cell array ``&quot;vtkOriginalPointIds&quot;`` that
+ |          Adds a cell array ``&quot;vtkOriginalCellIds&quot;`` that
  |          idenfities which original cells these surface cells
  |          correspond to.
  |
@@ -6905,6 +6949,26 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      &gt;&gt;&gt; surf = grid.extract_surface()
  |      &gt;&gt;&gt; type(surf)
  |      &lt;class &#39;pyvista.core.pointset.PolyData&#39;&gt;
+ |      &gt;&gt;&gt; surf[&quot;vtkOriginalPointIds&quot;]
+ |      pyvista_ndarray([ 0,  2, 36, 27,  7,  8, 81,  1, 18,  4, 54,  3,  6, 45,
+ |                       72,  5, 63,  9, 35, 44, 11, 16, 89, 17, 10, 26, 62, 13,
+ |                       12, 53, 80, 15, 14, 71, 19, 37, 55, 20, 38, 56, 21, 39,
+ |                       57, 22, 40, 58, 23, 41, 59, 24, 42, 60, 25, 43, 61, 28,
+ |                       82, 29, 83, 30, 84, 31, 85, 32, 86, 33, 87, 34, 88, 46,
+ |                       73, 47, 74, 48, 75, 49, 76, 50, 77, 51, 78, 52, 79, 64,
+ |                       65, 66, 67, 68, 69, 70])
+ |      &gt;&gt;&gt; surf[&quot;vtkOriginalCellIds&quot;]
+ |      pyvista_ndarray([ 0,  0,  0,  1,  1,  1,  3,  3,  3,  2,  2,  2, 36, 36,
+ |                       36, 37, 37, 37, 39, 39, 39, 38, 38, 38,  5,  5,  9,  9,
+ |                       13, 13, 17, 17, 21, 21, 25, 25, 29, 29, 33, 33,  4,  4,
+ |                        8,  8, 12, 12, 16, 16, 20, 20, 24, 24, 28, 28, 32, 32,
+ |                        7,  7, 11, 11, 15, 15, 19, 19, 23, 23, 27, 27, 31, 31,
+ |                       35, 35,  6,  6, 10, 10, 14, 14, 18, 18, 22, 22, 26, 26,
+ |                       30, 30, 34, 34])
+ |
+ |      Note that in the &quot;vtkOriginalCellIds&quot; array, the same original cells
+ |      appears multiple times since this array represents the original cell of
+ |      each surface cell extracted.
  |
  |      See the :ref:`extract_surface_example` for more examples using this filter.
  |
@@ -7541,9 +7605,9 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      Sample data values at specified point locations.
  |
  |      .. deprecated:: 0.41.0
- |        `probe` will be removed in a future version. Use
- |        :func:`pyvista.DataSetFilters.sample` instead.
- |        If using `mesh1.probe(mesh2)`, use `mesh2.sample(mesh1)`.
+ |         `probe` will be removed in a future version. Use
+ |         :func:`pyvista.DataSetFilters.sample` instead.
+ |         If using `mesh1.probe(mesh2)`, use `mesh2.sample(mesh1)`.
  |
  |      This uses :class:`vtkProbeFilter`.
  |
@@ -7656,7 +7720,7 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |
  |      See the :ref:`ref_reflect_example` for more examples using this filter.
  |
- |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None)
+ |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None, pass_field_data=True, mark_blank=True)
  |      Resample array data from a passed mesh onto this mesh.
  |
  |      For `mesh1.sample(mesh2)`, the arrays from `mesh2` are sampled onto
@@ -7665,6 +7729,10 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      :function`pyvista.DataSetFilters.interpolate` that uses a distance
  |      weighting for nearby points.  If there is cell topology, `sample` is
  |      usually preferred.
+ |
+ |      The point data &#39;vtkValidPointMask&#39; stores whether the point could be sampled
+ |      with a value of 1 meaning successful sampling. And a value of 0 means
+ |      unsuccessful.
  |
  |      This uses :class:`vtk.vtkResampleWithDataSet`.
  |
@@ -7693,9 +7761,21 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      progress_bar : bool, default: False
  |          Display a progress bar to indicate progress.
  |
- |      locator : vtkAbstractCellLocator, optional
+ |      locator : vtkAbstractCellLocator or str, optional
  |          Prototype cell locator to perform the ``FindCell()``
  |          operation.  Default uses the DataSet ``FindCell`` method.
+ |          Valid strings with mapping to vtk cell locators are
+ |
+ |              * &#39;cell&#39; - vtkCellLocator
+ |              * &#39;cell_tree&#39; - vtkCellTreeLocator
+ |              * &#39;obb_tree&#39; - vtkOBBTree
+ |              * &#39;static_cell&#39; - vtkStaticCellLocator
+ |
+ |      pass_field_data : bool, default: True
+ |          Preserve source mesh&#39;s original field data arrays.
+ |
+ |      mark_blank : bool, default: True
+ |          Whether to mark blank points and cells in &quot;vtkGhostType&quot;.
  |
  |      Returns
  |      -------
@@ -9452,6 +9532,11 @@ class ImageData(vtkmodules.vtkCommonDataModel.vtkImageData, Grid, pyvista.core.f
  |      with the dataset does not match the number of points or cells
  |      of the dataset.
  |
+ |      Returns
+ |      -------
+ |      DataSetAttributes
+ |          FieldData as DataSetAttributes.
+ |
  |      Examples
  |      --------
  |      Add field data to a PolyData dataset and then return it.
@@ -9530,7 +9615,7 @@ your own 3D numpy array here.</p>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">vol</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  26.003 seconds)</p>
+<img src="../../../_images/sphx_glr_c_create-uniform-grid_005.png" srcset="../../../_images/sphx_glr_c_create-uniform-grid_005.png" alt="c create uniform grid" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  8.910 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-c-create-uniform-grid-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/c_create-uniform-grid.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" width="150px" /></a>

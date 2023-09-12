@@ -629,7 +629,7 @@ This section effectively replaces the vtkDoubleArray.</p>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.point_data.html#pyvista.DataSet.point_data" title="pyvista.DataSet.point_data" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">grid</span><span class="o">.</span><span class="n">point_data</span></a><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">values</span></a><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/pyvista/core/grid.py:514: PyVistaDeprecationWarning: `dims` argument is deprecated. Please use `dimensions`.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/pyvista/core/grid.py:549: PyVistaDeprecationWarning: `dims` argument is deprecated. Please use `dimensions`.
   warnings.warn(
 </pre></div>
 </div>
@@ -714,12 +714,12 @@ that to a  <a class="reference external" href="https://vtk.org/doc/nightly/html/
 <span class="nb">print</span><span class="p">(</span><span class="n">vtk_points</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vtkPoints (0x55d906eb74c0)
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>vtkPoints (0x55f9365f8ff0)
   Debug: Off
-  Modified Time: 26159667
+  Modified Time: 26158702
   Reference Count: 1
   Registered Events: (none)
-  Data: 0x55d90589b410
+  Data: 0x55f934225c00
   Data Array Name: Points
   Number Of Points: 3
   Bounds:
@@ -799,7 +799,7 @@ example, it is more efficient to use the <a class="reference external" href="htt
 as the OBB tree is computed once for each mesh.  In most cases, pure
 PyVista is sufficient for most data science, but there are times when
 you may want to use VTK classes directly.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.507 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.416 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-a-1-transition-vtk-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/a_1_transition_vtk.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo16.svg" width="150px" /></a>
