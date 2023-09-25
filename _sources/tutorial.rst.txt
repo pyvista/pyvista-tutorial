@@ -39,7 +39,7 @@ Questions
 ~~~~~~~~~
 
 If you have any questions about PyVista, feel free to post your questions in
-|discuss| or |slack|.
+|discuss|.
 
 
 Tutorial Overview
@@ -70,9 +70,6 @@ Tutorial Overview
 
 .. |discuss| image:: https://img.shields.io/badge/GitHub-Discussions-green?logo=github
    :target: https://github.com/pyvista/pyvista/discussions
-
-.. |slack| image:: https://img.shields.io/badge/Slack-pyvista-green.svg?logo=slack
-   :target: http://slack.pyvista.org
 
 .. _Alex Kaszynski: https://github.com/akaszynski
 .. _Bane Sullivan: https://banesullivan.com
