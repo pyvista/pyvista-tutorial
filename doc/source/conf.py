@@ -133,11 +133,6 @@ html_theme_options = {
             'icon': 'fa fa-book fa-fw',
         },
         {
-            'name': 'Slack Community',
-            'url': 'http://slack.pyvista.org',
-            'icon': 'fab fa-slack',
-        },
-        {
             'name': 'Contributing',
             'url': 'https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst',
             'icon': 'fa fa-gavel fa-fw',
