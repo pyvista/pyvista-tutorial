@@ -51,3 +51,5 @@ p.subplot(2, 2)
 p.add_mesh(disc, color="tan", show_edges=True)
 # Render all of them
 p.show()
+# Export this plotter as an interactive scene to a HTML file.
+# p.export_html("a_basic.html")
