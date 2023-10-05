@@ -112,16 +112,27 @@ jobs:
   preview:
     name: Preview Documentation
     runs-on: ubuntu-latest
-    needs: doc
+    needs: build-doc
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
       - uses: actions/download-artifact@v3
         with:
-          name: docs-build
+          name: doc-build
           path: .
+
+      - name: UnTar build
+        run: tar -xzvf doc-build.tar.gz
+
+      - name: Zip Notebooks
+        run: |
+          cp -r doc/build/html/notebooks/tutorial/ notebooks
+          zip -r notebooks.zip notebooks/
+          mv notebooks.zip doc/build/html/
+
       - uses: nwtgck/actions-netlify@v2.0
         with:
-          publish-dir: './docs-build'
+          publish-dir: doc/build/html
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
