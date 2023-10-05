@@ -121,7 +121,7 @@ jobs:
           path: .
       - uses: nwtgck/actions-netlify@v2.0
         with:
-          publish-dir: './docs-build'
+          publish-dir: doc/build/html
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
