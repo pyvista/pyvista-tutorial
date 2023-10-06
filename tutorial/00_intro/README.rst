@@ -228,7 +228,7 @@ There are a ton of excellent visualization libraries out there and if you're
 interested in data visualization, I'd encourage you for explore them all!
 
 - `Python Libraries for Mesh, Point Cloud, and Data Visualization <https://towardsdatascience.com/python-libraries-for-mesh-and-point-cloud-visualization-part-1-daa2af36de30?gi=70edd77e5fc>`_
-- `How does PyVista relate to other visualization tools? <https://github.com/pyvista/pyvista/issues/146>`_
+- `How does PyVista relate to other visualization tools? <https://github.com/pyvista/pyvista/discussions/1438>`_
 - `SciVis Libraries <https://pyviz.org/scivis/index.html>`_
 
 Here's a few of them:
