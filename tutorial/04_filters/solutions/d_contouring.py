@@ -4,6 +4,11 @@
 Contouring
 ~~~~~~~~~~
 
+.. raw:: html
+    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/04_filters/solutions/d_contouring.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
+
 Generate iso-lines or -surfaces for the scalars of a surface or volume.
 
 3D meshes can have 2D iso-surfaces of a scalar field extracted and 2D surface
