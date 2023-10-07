@@ -4,12 +4,6 @@
 Create Triangulated Surface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/d_create-tri-surface.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 Create a surface from a set of points through a Delaunay triangulation.
 
 .. note::
@@ -89,3 +83,12 @@ surf.plot(cpos="xy", show_edges=True)
 # added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
 surf = cloud.delaunay_2d(alpha=1.0)
 surf.plot(cpos="xy", show_edges=True)
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/d_create-tri-surface.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+#       </a>
+#     </center>
