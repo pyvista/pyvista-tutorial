@@ -2,12 +2,6 @@
 Lighting Properties
 ~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/b_lighting_mesh.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 Control aspects of the rendered mesh's lighting such as Ambient, Diffuse,
 and Specular. These options only work if the ``lighting`` argument to
 ``add_mesh`` is ``True`` (it's ``True`` by default).
@@ -65,3 +59,12 @@ mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 ###############################################################################
 # For detailed control over lighting conditions in general see the
 # `lighting examples <https://docs.pyvista.org/examples/index.html#lighting>`_
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/b_lighting_mesh.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
