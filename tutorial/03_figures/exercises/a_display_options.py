@@ -2,12 +2,6 @@
 Display Options
 ~~~~~~~~~~~~~~~
 
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/a_display_options.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 Take a look at the different display options offered by the ``add_mesh`` method.
 """
 import pyvista as pv
