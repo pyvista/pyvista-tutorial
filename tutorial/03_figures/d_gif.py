@@ -3,7 +3,6 @@
 
 Create a GIF Movie
 ~~~~~~~~~~~~~~~~~~
-
 Generate a moving gif from an active plotter.
 
 .. note::
