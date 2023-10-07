@@ -1,6 +1,7 @@
 """
 Geological Map on Topography
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. raw:: html
 
     <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/c_geological-map.ipynb">
