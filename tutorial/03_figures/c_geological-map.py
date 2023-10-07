@@ -2,12 +2,6 @@
 Geological Map on Topography
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/c_geological-map.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 Texture mapping for a GeoTIFF on a topography surface.
 
 To overlay an image/map from a GeoTIFF on to a topography surface, it's necessary to have texture coordinates ("texture mapping") matching the proper extends of the mesh/surface you'd like to drape the texture (GeoTIFF) on.
@@ -114,3 +108,12 @@ p.camera_position = [
     (0.10526647627366331, 0.2502863297360612, 0.962432190920575),
 ]
 p.show()
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/c_geological-map.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
