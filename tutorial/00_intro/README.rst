@@ -277,7 +277,6 @@ Here's a few of them:
 
 Exercises
 ---------
-
 Install PyVista by visiting :ref:`getting_started`.
 
 Once you've installed PyVista, open the example below and see if you can run
