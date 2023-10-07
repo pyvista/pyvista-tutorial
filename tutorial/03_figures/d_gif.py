@@ -8,7 +8,6 @@ Create a GIF Movie
     <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/d_gif.ipynb">
       <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
     </a>
-
 Generate a moving gif from an active plotter.
 
 .. note::
