@@ -3,6 +3,7 @@
 
 Download and Plot Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. raw:: HTML
 
     <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/01_basic/exercises/a_load_examples_exercise.ipynb">
