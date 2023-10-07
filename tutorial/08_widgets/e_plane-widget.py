@@ -4,6 +4,11 @@
 Plane Widget
 ~~~~~~~~~~~~
 
+.. raw:: html
+    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/08_widgets/e_plane-widget.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
+
 The plane widget can be enabled and disabled by the
 :func:`pyvista.Plotter.add_plane_widget` and
 :func:`pyvista.Plotter.clear_plane_widgets` methods respectively.
