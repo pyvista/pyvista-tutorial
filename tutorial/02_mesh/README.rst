@@ -2,11 +2,6 @@
 
 What is a Mesh?
 ===============
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/a_lesson_mesh.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
 
 Learn the basics of the PyVista data types and how to open common 3D file
 formats to visualize the data in 3D.
