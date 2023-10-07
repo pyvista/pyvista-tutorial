@@ -2,6 +2,11 @@
 Create VTK Objects
 ~~~~~~~~~~~~~~~~~~
 
+.. raw:: html
+    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/06_vtk/b_create_vtk.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
+
 This exercise walks through the creation of a few different types of VTK datasets.
 """
 import numpy as np
