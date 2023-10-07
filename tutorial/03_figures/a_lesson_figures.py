@@ -1,6 +1,7 @@
 """
 Lesson Overview
 ~~~~~~~~~~~~~~~
+
 .. raw:: html
 
     <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/a_lesson_figures.ipynb">
