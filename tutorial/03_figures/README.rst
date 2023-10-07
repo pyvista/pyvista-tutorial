@@ -271,22 +271,5 @@ And bounds similarly with :func:`pyvista.Plotter.show_bounds`
 
 Exercises
 ---------
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/a_display_options.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/b_lighting_mesh.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/c_edl.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
 
 .. leave blank after this point for Sphinx-Gallery to populate examples
