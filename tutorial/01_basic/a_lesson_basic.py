@@ -4,12 +4,6 @@
 Basic Usage Lesson
 ==================
 
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/01_basic/a_lesson_basic.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 This section demonstrates how to use PyVista to read and plot 3D data
 using the `pyvista.examples.downloads
 <https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_
@@ -86,3 +80,10 @@ dataset
 # with:
 
 dataset.plot(volume=True)
+
+###############################################################################
+# .. raw:: html
+#
+#     <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/01_basic/a_lesson_basic.ipynb">
+#       <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+#     </a>
