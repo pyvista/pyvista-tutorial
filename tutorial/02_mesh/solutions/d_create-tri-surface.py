@@ -3,6 +3,11 @@
 
 Create Triangulated Surface
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. raw:: html
+
+    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/d_create-tri-surface.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
 
 Create a surface from a set of points through a Delaunay triangulation.
 
