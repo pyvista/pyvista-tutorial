@@ -3,30 +3,6 @@
 Plotting Options and Animations
 ===============================
 
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/a_lesson_figures.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/b_shading.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/c_geological-map.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/d_gif.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations (10 min for talk, 10 min for exercise)
 
 .. tip::
