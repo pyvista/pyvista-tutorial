@@ -3,6 +3,11 @@
 
 Types of Shading
 ~~~~~~~~~~~~~~~~
+.. raw:: html
+
+    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/b_shading.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
 
 Comparison of default, flat shading vs. smooth shading.
 """
