@@ -4,12 +4,6 @@
 Creating a Uniform Grid
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: HTML
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/exercises/c_create-uniform-grid.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 Create a simple uniform grid from a 3D NumPy array of values.
 
 """
@@ -133,3 +127,12 @@ p.show()
 ###############################################################################
 vol = pv.Wavelet()
 vol.plot(volume=True)
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/exercises/c_create-uniform-grid.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+#       </a>
+#     </center>
