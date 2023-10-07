@@ -4,12 +4,6 @@
 Download and Plot Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: HTML
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/01_basic/exercises/a_load_examples_exercise.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 Download and plot example datasets.
 
 PyVista contains many downloadable datasets documented at
@@ -91,3 +85,12 @@ pl.show()
 # - `Sample VTK DataSets <https://github.com/pyvista/vtk-data/tree/master/Data>`_
 # - `Sample STL files <https://www.amtekcompany.com/teaching-resources/stl-files/>`_
 # - `Thingiverse <https://www.thingiverse.com/>`_
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/01_basic/a_load_examples_exercise.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
