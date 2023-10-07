@@ -2,6 +2,11 @@
 Open Mesh File
 ~~~~~~~~~~~~~~
 
+.. raw:: html
+    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/f_trame_open_file.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
+
 An example of opening a mesh file from the browser and viewing it with PyVista.
 
 """
