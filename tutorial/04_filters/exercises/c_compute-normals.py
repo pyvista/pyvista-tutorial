@@ -2,6 +2,10 @@
 Computing Surface Normals
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. raw:: html
+    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/exercises/c_compute-normals.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
 
 Compute normals on a surface.
 """
