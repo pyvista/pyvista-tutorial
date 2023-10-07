@@ -3,6 +3,11 @@
 
 Load and Plot from a File
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+.. raw:: html
+
+    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/e_read-file.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
 
 Read a dataset from a known file type.
 
