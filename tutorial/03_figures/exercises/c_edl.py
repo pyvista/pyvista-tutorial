@@ -1,6 +1,7 @@
 """
 Eye Dome Lighting
 ~~~~~~~~~~~~~~~~~
+
 .. raw:: html
 
     <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/c_edl.ipynb">
