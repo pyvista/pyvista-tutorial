@@ -4,12 +4,6 @@
 Download and Plot Examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: HTML
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/01_basic/solutions/a_load_examples_solution.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 .. note::
    This is the solution to :ref:`load_examples`. If you haven't already tried to
    solve it on your own, you probably should try that first.
@@ -110,3 +104,12 @@ bodies.plot(
 
 mesh = pv.read('P_shelf_pin.stl')
 mesh.plot()
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/01_basic/solutions/a_load_examples_solution.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
