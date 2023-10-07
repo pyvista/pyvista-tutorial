@@ -4,6 +4,11 @@
 Checkbox Widget
 ~~~~~~~~~~~~~~~
 
+.. raw:: html
+    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/08_widgets/b_checkbox-widget.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
+
 Use a checkbox to turn on/off the visibility of meshes in a scene.
 
 See :func:`pyvista.Plotter.add_checkbox_button_widget` for more details.
