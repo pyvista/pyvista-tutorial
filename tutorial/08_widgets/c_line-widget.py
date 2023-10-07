@@ -1,13 +1,13 @@
 """
 .. _line_widget_example:
 
+Line Widget
+~~~~~~~~~~~
+
 .. raw:: html
     <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/08_widgets/c_line-widget.ipynb">
       <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
     </a>
-
-Line Widget
-~~~~~~~~~~~
 
 The line widget can be enabled and disabled by the
 :func:`pyvista.Plotter.add_line_widget` and
