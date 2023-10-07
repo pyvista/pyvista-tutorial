@@ -3,6 +3,7 @@
 
 Create Point Cloud
 ~~~~~~~~~~~~~~~~~~
+
 .. raw:: html
 
     <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/b_create-point-cloud.ipynb">
