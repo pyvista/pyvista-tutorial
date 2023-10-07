@@ -2,6 +2,11 @@
 Simple Trame App
 ~~~~~~~~~~~~~~~~
 
+.. raw:: html
+    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/a_trame_simple.ipynb">
+      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+    </a>
+ 
 A simple example of how to create a Trame app with a PyVista Plotter.
 
 This example contains the boilerplate code to use anytime you are creating a
