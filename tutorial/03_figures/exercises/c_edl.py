@@ -2,12 +2,6 @@
 Eye Dome Lighting
 ~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/c_edl.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 Eye-Dome Lighting (EDL) is a non-photorealistic, image-based shading technique
 designed to improve depth perception in scientific visualization images.
 To learn more, please see `this blog post`_.
@@ -56,3 +50,12 @@ p.show()
 # The eye dome lighting mode can also handle plotting scalar arrays. Try the
 # above block but by specifying a ``scalars`` array instead of ``color`` in
 # the ``add_mesh`` call.
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/c_edl.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
