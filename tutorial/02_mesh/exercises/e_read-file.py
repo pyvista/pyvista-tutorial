@@ -98,3 +98,12 @@ mesh.plot(cpos=cpos, show_edges=True, color=True)
 
 # (your code here)
 # mesh = pv.read('path/to/file.vtk)
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/exercises/e_read-file.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
