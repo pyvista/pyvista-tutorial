@@ -2,6 +2,7 @@
 Computing Surface Normals
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 Compute normals on a surface.
 """
 
