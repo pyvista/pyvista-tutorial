@@ -58,7 +58,6 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx_copybutton',
     'sphinx_gallery.gen_gallery',
-    'sphinx_tabs.tabs',
     'sphinxcontrib.asciinema',
 ]
 
