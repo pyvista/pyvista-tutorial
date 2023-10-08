@@ -4,11 +4,6 @@
 Clipping with Planes & Boxes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/04_filters/solutions/b_clipping.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 Clip/cut any dataset using using planes or boxes.
 """
 # sphinx_gallery_thumbnail_number = 2
@@ -140,3 +135,12 @@ p.add_mesh(crinkled, show_edges=True)
 p.add_mesh(plane.extract_feature_edges(), color='r')
 p.link_views()
 p.show()
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/04_filters/solutions/b_clipping.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
