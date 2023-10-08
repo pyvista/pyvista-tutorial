@@ -222,9 +222,24 @@ sphinx_gallery_conf = {
     # Modules for which function level galleries are created.  In
     'doc_module': 'pyvista',
     'image_scrapers': ('pyvista', 'matplotlib'),
-    'first_notebook_cell': '%matplotlib inline\n'
-    'from pyvista import set_plot_theme\n'
-    'set_plot_theme("document")\n',
+    'first_notebook_cell': 'import subprocess\n'
+    'import sys\n'
+    '\n'
+    'if "google.colab" in sys.modules:\n'
+    '    subprocess.run("apt-get install -qq xvfb libgl1-mesa-glx", shell=True, check=True)\n'
+    '    subprocess.run("pip install pyvista[all] -qq", shell=True, check=True)\n'
+    '\n'
+    '    import pyvista as pv\n'
+    '\n'
+    '    # Seems that only static plotting is supported by colab at the moment\n'
+    '    pv.global_theme.jupyter_backend = "static"\n'
+    '    pv.global_theme.notebook = True\n'
+    '    pv.start_xvfb()\n'
+    'else:\n'
+    '    %matplotlib inline\n'
+    '    from pyvista import set_plot_theme\n'
+    '\n'
+    '    set_plot_theme("document")\n',
     'binder': {
         'org': "pyvista",
         'repo': "pyvista-tutorial",

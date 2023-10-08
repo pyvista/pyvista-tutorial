@@ -242,3 +242,12 @@ pl.show()
 # as the OBB tree is computed once for each mesh.  In most cases, pure
 # PyVista is sufficient for most data science, but there are times when
 # you may want to use VTK classes directly.
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/06_vtk/a_1_transition_vtk.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>

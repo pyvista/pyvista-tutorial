@@ -51,3 +51,14 @@ p.subplot(2, 2)
 p.add_mesh(disc, color="tan", show_edges=True)
 # Render all of them
 p.show()
+# Export this plotter as an interactive scene to a HTML file.
+# p.export_html("a_basic.html")
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/00_intro/a_basic.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
