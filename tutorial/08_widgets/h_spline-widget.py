@@ -2,6 +2,7 @@
 Spline Widget
 ~~~~~~~~~~~~~
 
+
 A spline widget can be enabled and disabled by the
 :func:`pyvista.Plotter.add_spline_widget` and
 :func:`pyvista.Plotter.clear_spline_widgets` methods respectively.
