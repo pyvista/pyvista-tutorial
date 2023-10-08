@@ -2,11 +2,6 @@
 Spline Widget
 ~~~~~~~~~~~~~
 
-.. raw:: html
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/08_widgets/h_spline-widget.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 A spline widget can be enabled and disabled by the
 :func:`pyvista.Plotter.add_spline_widget` and
 :func:`pyvista.Plotter.clear_spline_widgets` methods respectively.
@@ -46,3 +41,12 @@ p.show()
 # And here is a screen capture of a user interacting with this
 #
 # .. image:: ../../images/gifs/spline-widget.gif
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/08_widgets/h_spline-widget.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
