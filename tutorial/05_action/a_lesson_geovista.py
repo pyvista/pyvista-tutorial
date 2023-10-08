@@ -16,6 +16,7 @@ and modified by `@tkoyama010 <https://github.com/tkoyama010>`_ .
 # use case.
 
 import sys
+import subprocess
 
 if "google.colab" in sys.modules:
     subprocess.run("pip install geovista", shell=True, check=True)
