@@ -119,6 +119,16 @@ Demonstration of all diffuse, specular, and ambient in use together
 For detailed control over lighting conditions in general see the
 `lighting examples <https://docs.pyvista.org/examples/index.html#lighting>`_
 
+.. GENERATED FROM PYTHON SOURCE LINES 64-71
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/b_lighting_mesh.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
+
 
 .. rst-class:: sphx-glr-timing
 

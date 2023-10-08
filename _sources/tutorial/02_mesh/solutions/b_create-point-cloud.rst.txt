@@ -79,11 +79,11 @@ locations.
  .. code-block:: none
 
 
-    pyvista_ndarray([[4.80966675e+05, 4.40018240e+06, 1.75972998e+03],
-                     [4.80961275e+05, 4.40023860e+06, 1.75780005e+03],
-                     [4.80938275e+05, 4.40014840e+06, 1.76221997e+03],
-                     [4.80951575e+05, 4.40010210e+06, 1.76376001e+03],
-                     [4.80972875e+05, 4.40018970e+06, 1.75960999e+03]])
+    pyvista_ndarray([[4.81020475e+05, 4.40011470e+06, 1.76351001e+03],
+                     [4.80962575e+05, 4.40019010e+06, 1.76443994e+03],
+                     [4.81039775e+05, 4.40012970e+06, 1.77238000e+03],
+                     [4.81044475e+05, 4.40018480e+06, 1.75943994e+03],
+                     [4.80979675e+05, 4.40020340e+06, 1.76556995e+03]])
 
 
 
@@ -116,7 +116,7 @@ data or your own project, create a PyVista mesh using those points.
     <tr><td>N Strips</td><td>0</td></tr>
     <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
     <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-    <tr><td>Z Bounds</td><td>1.754e+03, 1.785e+03</td></tr>
+    <tr><td>Z Bounds</td><td>1.754e+03, 1.787e+03</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -289,11 +289,11 @@ This time, we're going to create a totally new, random point cloud containing
  .. code-block:: none
 
 
-    pyvista_ndarray([[-0.66581357,  0.4741999 ,  0.57604405],
-                     [ 0.43187399, -0.33015263,  0.83933551],
-                     [ 0.18242942,  0.73599721, -0.65194141],
-                     [ 0.56684369,  0.60186083,  0.56254047],
-                     [ 0.07433781,  0.43458045,  0.89755987]])
+    pyvista_ndarray([[-0.00887041,  0.94116119, -0.33784157],
+                     [-0.91408946,  0.23640136, -0.32947663],
+                     [-0.48607796, -0.73287245,  0.47605271],
+                     [ 0.73943442, -0.6068124 ,  0.29157409],
+                     [-0.97604159,  0.0960834 , -0.19521986]])
 
 
 
@@ -321,7 +321,7 @@ Now we can make arrows using those vectors using the glyph filter (see the
 `Glyph Example <https://docs.pyvista.org/examples/01-filter/glyphs.html>`_
 for more details).
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-137
+.. GENERATED FROM PYTHON SOURCE LINES 122-138
 
 .. code-block:: default
 
@@ -343,6 +343,7 @@ for more details).
 
 
 
+
 .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_b_create-point-cloud_003.png
    :alt: b create point cloud
    :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_b_create-point-cloud_003.png
@@ -352,10 +353,20 @@ for more details).
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 139-146
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/b_create-point-cloud.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.264 seconds)
+   **Total running time of the script:** ( 0 minutes  10.850 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_b_create-point-cloud.py:

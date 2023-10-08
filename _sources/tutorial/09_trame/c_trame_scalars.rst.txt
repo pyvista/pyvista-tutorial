@@ -24,7 +24,7 @@ Control Scalar Array
 Extending our simple example to have a dropdown menu to control which
 scalar array is used to color the mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-72
+.. GENERATED FROM PYTHON SOURCE LINES 8-73
 
 .. code-block:: default
 
@@ -92,6 +92,17 @@ scalar array is used to color the mesh.
                 ctrl.view_update = view.update
 
     server.start()
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 74-81
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/c_trame_scalars.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

@@ -23,7 +23,7 @@ Control Scalar Range
 
 Extending our simple example to control the color limits of the mapped scalars.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-55
+.. GENERATED FROM PYTHON SOURCE LINES 7-56
 
 .. code-block:: default
 
@@ -75,6 +75,17 @@ Extending our simple example to control the color limits of the mapped scalars.
                 ctrl.view_update = view.update
 
     server.start()
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 57-64
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/d_trame_scalar_range.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

@@ -34,10 +34,16 @@ cartographic capability.
 GeoVista is a very good external example of using PyVista in a more concrete
 use case.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-22
+.. GENERATED FROM PYTHON SOURCE LINES 17-28
 
 .. code-block:: default
 
+
+    import subprocess
+    import sys
+
+    if "google.colab" in sys.modules:
+        subprocess.run("pip install geovista", shell=True, check=True)
 
     import geovista as gv
     import geovista.theme
@@ -50,7 +56,7 @@ use case.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-43
+.. GENERATED FROM PYTHON SOURCE LINES 29-49
 
 .. note:: **Motivation of GeoVista**
 
@@ -73,7 +79,7 @@ use case.
 
     Simply put, "GeoVista is to PyVista", as "Cartopy is to Matplotlib".
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-52
+.. GENERATED FROM PYTHON SOURCE LINES 51-58
 
 .. note:: **Plotting Theme**
 
@@ -83,7 +89,7 @@ use case.
      <https://docs.pyvista.org/version/stable/examples/02-plot/themes.html>`_
      ).
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-61
+.. GENERATED FROM PYTHON SOURCE LINES 60-67
 
 At the `Met Office <https://www.metoffice.gov.uk/>`_ , they are moving to an
 unstructured cube-sphere mesh which is a cube projected out onto a sphere
@@ -93,7 +99,7 @@ C48 cube-sphere, so there are 6 * 48 * 48 cells.
 
 GeoVista has samples for it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-64
+.. GENERATED FROM PYTHON SOURCE LINES 67-70
 
 .. code-block:: default
 
@@ -135,7 +141,7 @@ GeoVista has samples for it.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-67
+.. GENERATED FROM PYTHON SOURCE LINES 71-73
 
 .. code-block:: default
 
@@ -148,19 +154,19 @@ GeoVista has samples for it.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-72
+.. GENERATED FROM PYTHON SOURCE LINES 74-78
 
 .. note:: **LFRic - a modelling system fit for future computers**
 
      If you are interested in LFRic, please refer to
      `LFRic - a modelling system fit for future computers <https://www.metoffice.gov.uk/research/approach/modelling-systems/lfric>`_ .
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-76
+.. GENERATED FROM PYTHON SOURCE LINES 80-82
 
 Since the `c48` is defined as PolyData in PyVista, it can be drawn using
 PyVista's plot method.
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-79
+.. GENERATED FROM PYTHON SOURCE LINES 82-85
 
 .. code-block:: default
 
@@ -179,13 +185,13 @@ PyVista's plot method.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-83
+.. GENERATED FROM PYTHON SOURCE LINES 86-89
 
 Here's a sample C48 cube-sphere populated with Sea Surface Temperature data.
 In this data, cell data from PyVista's PolyData object is used as temperature
 data:
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-86
+.. GENERATED FROM PYTHON SOURCE LINES 89-92
 
 .. code-block:: default
 
@@ -220,7 +226,7 @@ data:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-90
+.. GENERATED FROM PYTHON SOURCE LINES 93-96
 
 .. code-block:: default
 
@@ -239,17 +245,17 @@ data:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-92
+.. GENERATED FROM PYTHON SOURCE LINES 97-98
 
 Note that, the land masses are masked.
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-97
+.. GENERATED FROM PYTHON SOURCE LINES 100-103
 
 There is a convenience within `geovista.geodesic` that creates a
 `geovista.geodesic.BBox` instance for any 1 of the 6 cube-sphere panels i.e.,
 `geovista.geodesic.panel`
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-102
+.. GENERATED FROM PYTHON SOURCE LINES 103-108
 
 .. code-block:: default
 
@@ -297,7 +303,7 @@ There is a convenience within `geovista.geodesic` that creates a
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-107
+.. GENERATED FROM PYTHON SOURCE LINES 109-113
 
 .. code-block:: default
 
@@ -317,7 +323,7 @@ There is a convenience within `geovista.geodesic` that creates a
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-114
+.. GENERATED FROM PYTHON SOURCE LINES 114-120
 
 Note that, this bounding box (bbox) is constructed from geodesic lines i.e.,
 great circles, and is a 3D manifold. As such, we can then use it to extract
@@ -326,7 +332,7 @@ the bounding box and the mesh together so that we can see their relationship
 to one another. Note that, our bbox instance is indeed covering the correct
 panel of the cube-sphere.
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-122
+.. GENERATED FROM PYTHON SOURCE LINES 120-128
 
 .. code-block:: default
 
@@ -350,13 +356,13 @@ panel of the cube-sphere.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 123-126
+.. GENERATED FROM PYTHON SOURCE LINES 129-132
 
 As a fun exercise, you could play with opacity on the bbox.mesh to see
 through the manifold to the underlying cube-sphere surface, or turn on the
 gridlines of the bbox etc
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-134
+.. GENERATED FROM PYTHON SOURCE LINES 132-140
 
 .. code-block:: default
 
@@ -380,11 +386,11 @@ gridlines of the bbox etc
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-136
+.. GENERATED FROM PYTHON SOURCE LINES 141-142
 
 Let's now use the bounding box to extract the mesh that it encloses:
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-139
+.. GENERATED FROM PYTHON SOURCE LINES 142-145
 
 .. code-block:: default
 
@@ -398,11 +404,11 @@ Let's now use the bounding box to extract the mesh that it encloses:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-141
+.. GENERATED FROM PYTHON SOURCE LINES 146-147
 
 `region` is defined as PolyData of PyVista.
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-144
+.. GENERATED FROM PYTHON SOURCE LINES 147-150
 
 .. code-block:: default
 
@@ -11600,7 +11606,7 @@ Let's now use the bounding box to extract the mesh that it encloses:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-152
+.. GENERATED FROM PYTHON SOURCE LINES 151-158
 
 .. code-block:: default
 
@@ -11623,11 +11629,11 @@ Let's now use the bounding box to extract the mesh that it encloses:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 153-154
+.. GENERATED FROM PYTHON SOURCE LINES 159-160
 
 Let's check what kind of array does `region` have.
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-157
+.. GENERATED FROM PYTHON SOURCE LINES 160-163
 
 .. code-block:: default
 
@@ -11647,17 +11653,17 @@ Let's check what kind of array does `region` have.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-160
+.. GENERATED FROM PYTHON SOURCE LINES 164-166
 
 You could perhaps then play with the `preference` kwarg of the
 `bbox.enclosed` method to see the impact on the end result.
 
-.. GENERATED FROM PYTHON SOURCE LINES 162-164
+.. GENERATED FROM PYTHON SOURCE LINES 168-170
 
 However, let's `geo-locate` the region by also rendering a texture mapped
 base layer in addition to some coastlines:
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-173
+.. GENERATED FROM PYTHON SOURCE LINES 170-179
 
 .. code-block:: default
 
@@ -11682,13 +11688,13 @@ base layer in addition to some coastlines:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 174-177
+.. GENERATED FROM PYTHON SOURCE LINES 180-183
 
 GeoVista has its own `Plotter` class, `GeoPlotter`. It is a customized class
 that inherits from PyVista's `Plotter` class and provides practical methods
 for geoscience such as `add_coastlines` and `add_base_layer`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 177-180
+.. GENERATED FROM PYTHON SOURCE LINES 183-186
 
 .. code-block:: default
 
@@ -12323,7 +12329,7 @@ for geoscience such as `add_coastlines` and `add_base_layer`.
      |  ----------------------------------------------------------------------
      |  Data and other attributes inherited from pyvista.plotting.plotter.Plotter:
      |  
-     |  last_update_time = 1696595407.3170774
+     |  last_update_time = 1696741604.3328128
      |  
      |  ----------------------------------------------------------------------
      |  Methods inherited from pyvista.plotting.plotter.BasePlotter:
@@ -19370,13 +19376,13 @@ for geoscience such as `add_coastlines` and `add_base_layer`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-184
+.. GENERATED FROM PYTHON SOURCE LINES 187-190
 
 Also, as we're not so interested in the land mask, let's threshold that out
 and re-spin the render. To threshold the region and make `sea_region` we can
 use `threshold` method of PyVista.
 
-.. GENERATED FROM PYTHON SOURCE LINES 184-187
+.. GENERATED FROM PYTHON SOURCE LINES 190-193
 
 .. code-block:: default
 
@@ -19390,7 +19396,7 @@ use `threshold` method of PyVista.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 188-191
+.. GENERATED FROM PYTHON SOURCE LINES 194-197
 
 .. code-block:: default
 
@@ -19546,7 +19552,7 @@ use `threshold` method of PyVista.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 192-201
+.. GENERATED FROM PYTHON SOURCE LINES 198-207
 
 .. code-block:: default
 
@@ -19571,11 +19577,11 @@ use `threshold` method of PyVista.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 202-203
+.. GENERATED FROM PYTHON SOURCE LINES 208-209
 
 Since we're here... let's transform the sea_region to a Robinson projection:
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-212
+.. GENERATED FROM PYTHON SOURCE LINES 209-218
 
 .. code-block:: default
 
@@ -19600,12 +19606,12 @@ Since we're here... let's transform the sea_region to a Robinson projection:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 213-215
+.. GENERATED FROM PYTHON SOURCE LINES 219-221
 
 It's also easily possible to get the inverted result i.e., the surface of the
 mesh not enclosed by the bbox manifold:
 
-.. GENERATED FROM PYTHON SOURCE LINES 215-223
+.. GENERATED FROM PYTHON SOURCE LINES 221-229
 
 .. code-block:: default
 
@@ -19629,11 +19635,11 @@ mesh not enclosed by the bbox manifold:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 224-225
+.. GENERATED FROM PYTHON SOURCE LINES 230-231
 
 Akin to before, let's render this again, but with a base layer underneath:
 
-.. GENERATED FROM PYTHON SOURCE LINES 225-234
+.. GENERATED FROM PYTHON SOURCE LINES 231-240
 
 .. code-block:: default
 
@@ -19658,13 +19664,13 @@ Akin to before, let's render this again, but with a base layer underneath:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 235-238
+.. GENERATED FROM PYTHON SOURCE LINES 241-244
 
 It's not quite clear what's going on here, although playing with the render
 interactively helps, but let's transform the mesh to the Mollweider
 projection to help clarify matters:
 
-.. GENERATED FROM PYTHON SOURCE LINES 238-247
+.. GENERATED FROM PYTHON SOURCE LINES 244-253
 
 .. code-block:: default
 
@@ -19689,12 +19695,12 @@ projection to help clarify matters:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 248-250
+.. GENERATED FROM PYTHON SOURCE LINES 254-256
 
 And again, let's remove the land mask so that we can see more of the texture
 mapped base layer:
 
-.. GENERATED FROM PYTHON SOURCE LINES 250-261
+.. GENERATED FROM PYTHON SOURCE LINES 256-267
 
 .. code-block:: default
 
@@ -19721,7 +19727,7 @@ mapped base layer:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 262-274
+.. GENERATED FROM PYTHON SOURCE LINES 268-280
 
 Also, explore the BBox class to create custom bounding box instances, and
 there is also the geovista.geodesic.wedge, a convenience function akin to the
@@ -19736,14 +19742,14 @@ where I'm taking geovista. The other point to make is that thanks to
 other traditional approaches (perhaps I should garner metrics to back that
 up!)
 
-.. GENERATED FROM PYTHON SOURCE LINES 276-280
+.. GENERATED FROM PYTHON SOURCE LINES 282-286
 
 So far we've demonstrated GeoVista's ability to cope with unstructured data.
 Now let's plot a curvilinear mesh using Met Office Unified Model (UM) ORCA2
 Sea Water Potential Temperature data, with 10m Natural Earth coastlines and a
 1:50m Natural Earth I base layer.
 
-.. GENERATED FROM PYTHON SOURCE LINES 280-289
+.. GENERATED FROM PYTHON SOURCE LINES 286-295
 
 .. code-block:: default
 
@@ -19887,11 +19893,11 @@ Sea Water Potential Temperature data, with 10m Natural Earth coastlines and a
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 290-291
+.. GENERATED FROM PYTHON SOURCE LINES 296-297
 
 Create the mesh from the sample data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 291-294
+.. GENERATED FROM PYTHON SOURCE LINES 297-300
 
 .. code-block:: default
 
@@ -19905,11 +19911,11 @@ Create the mesh from the sample data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 295-296
+.. GENERATED FROM PYTHON SOURCE LINES 301-302
 
 Remove cells from the mesh with NaN values.
 
-.. GENERATED FROM PYTHON SOURCE LINES 296-299
+.. GENERATED FROM PYTHON SOURCE LINES 302-305
 
 .. code-block:: default
 
@@ -19923,11 +19929,11 @@ Remove cells from the mesh with NaN values.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 300-301
+.. GENERATED FROM PYTHON SOURCE LINES 306-307
 
 Plot the mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 301-311
+.. GENERATED FROM PYTHON SOURCE LINES 307-317
 
 .. code-block:: default
 
@@ -19953,7 +19959,7 @@ Plot the mesh.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 312-317
+.. GENERATED FROM PYTHON SOURCE LINES 318-323
 
 .. important:: **Experimental**
 
@@ -19961,7 +19967,7 @@ Plot the mesh.
      feedback, but as immature packages their API, documentation, test
      coverage and CI are still 'under construction'.
 
-.. GENERATED FROM PYTHON SOURCE LINES 319-327
+.. GENERATED FROM PYTHON SOURCE LINES 325-333
 
 Whilst you're here, why not hop on over to the
 `pyvista-xarray project <https://github.com/pyvista/pyvista-xarray>`_
@@ -19972,7 +19978,7 @@ xarray DataArray accessors for PyVista to visualize datasets in 3D
 You must import `pvxarray` in order to register the DataArray accessor with
 xarray. After which, a pyvista namespace of accessors will be available.
 
-.. GENERATED FROM PYTHON SOURCE LINES 327-331
+.. GENERATED FROM PYTHON SOURCE LINES 333-337
 
 .. code-block:: default
 
@@ -19987,11 +19993,11 @@ xarray. After which, a pyvista namespace of accessors will be available.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 332-333
+.. GENERATED FROM PYTHON SOURCE LINES 338-339
 
 Load mean sea surface temperature dataset
 
-.. GENERATED FROM PYTHON SOURCE LINES 333-336
+.. GENERATED FROM PYTHON SOURCE LINES 339-342
 
 .. code-block:: default
 
@@ -20005,11 +20011,11 @@ Load mean sea surface temperature dataset
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 337-338
+.. GENERATED FROM PYTHON SOURCE LINES 343-344
 
 Plot in 3D
 
-.. GENERATED FROM PYTHON SOURCE LINES 338-341
+.. GENERATED FROM PYTHON SOURCE LINES 344-347
 
 .. code-block:: default
 
@@ -20028,11 +20034,11 @@ Plot in 3D
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 342-343
+.. GENERATED FROM PYTHON SOURCE LINES 348-349
 
 Or grab the mesh object for use with PyVista and GeoVista.
 
-.. GENERATED FROM PYTHON SOURCE LINES 343-354
+.. GENERATED FROM PYTHON SOURCE LINES 349-360
 
 .. code-block:: default
 
@@ -20059,7 +20065,7 @@ Or grab the mesh object for use with PyVista and GeoVista.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 355-363
+.. GENERATED FROM PYTHON SOURCE LINES 361-369
 
 .. note::
     This is inspired by
@@ -20070,10 +20076,20 @@ Or grab the mesh object for use with PyVista and GeoVista.
 .. image:: https://zenodo.org/badge/doi/10.5281/zenodo.598201.svg
    :target: https://doi.org/10.5281/zenodo.598201
 
+.. GENERATED FROM PYTHON SOURCE LINES 371-378
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/05_action/a_lesson_geovista.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  39.838 seconds)
+   **Total running time of the script:** ( 1 minutes  39.902 seconds)
 
 
 .. _sphx_glr_download_tutorial_05_action_a_lesson_geovista.py:

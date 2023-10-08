@@ -24,7 +24,7 @@ Using VTK, PyVista, and Trame
 This example demonstrates how to use VTK, PyVista, and Trame together
 to show how the three libraries complement each other.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-62
+.. GENERATED FROM PYTHON SOURCE LINES 8-63
 
 .. code-block:: default
 
@@ -82,6 +82,17 @@ to show how the three libraries complement each other.
                 ctrl.view_update = view.update
 
     server.start()
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 64-71
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/e_trame_algorithm.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

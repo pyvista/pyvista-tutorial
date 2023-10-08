@@ -122,7 +122,7 @@ access the :attr:`pyvista.DataSet.arrows` property to produce glyphs.
 
 Plot the arrows and the sphere.
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-67
+.. GENERATED FROM PYTHON SOURCE LINES 63-68
 
 .. code-block:: default
 
@@ -130,6 +130,17 @@ Plot the arrows and the sphere.
     p.add_mesh(sphere.arrows, lighting=False, scalar_bar_args={'title': "Vector Magnitude"})
     p.add_mesh(sphere, color="grey", ambient=0.6, opacity=0.5, show_edges=False)
     p.show()
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 69-76
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/04_filters/exercises/e_glyphs.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

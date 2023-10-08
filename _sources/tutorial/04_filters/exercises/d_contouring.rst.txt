@@ -102,7 +102,7 @@ of 50 and 200
     contours = ...
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-58
+.. GENERATED FROM PYTHON SOURCE LINES 49-59
 
 .. code-block:: default
 
@@ -115,6 +115,17 @@ of 50 and 200
         (0.2780372840777734, 0.03547871361794171, 0.9599148553609699),
     ]
     p.show()
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 60-67
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/04_filters/exercises/d_contouring.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

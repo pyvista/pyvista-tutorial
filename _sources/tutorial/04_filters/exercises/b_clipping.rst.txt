@@ -242,7 +242,7 @@ Perform a crinkled clip to compare
 
 Plot comparison
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-136
+.. GENERATED FROM PYTHON SOURCE LINES 128-137
 
 .. code-block:: default
 
@@ -254,6 +254,17 @@ Plot comparison
     p.add_mesh(plane.extract_feature_edges(), color='r')
     p.link_views()
     p.show()
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 138-145
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/04_filters/exercises/b_clipping.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

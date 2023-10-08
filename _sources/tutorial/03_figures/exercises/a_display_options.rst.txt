@@ -132,6 +132,16 @@ Add some opacity
 
 There you go! Those are a few of the most commonly used display options!
 
+.. GENERATED FROM PYTHON SOURCE LINES 62-69
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/exercises/a_display_options.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
+
 
 .. rst-class:: sphx-glr-timing
 

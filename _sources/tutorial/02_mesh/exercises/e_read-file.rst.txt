@@ -189,13 +189,24 @@ Read a file yourself with :func:`pyvista.read`. If you have a supported file
 format, use that! Otherwise, download this file:
 https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-101
+.. GENERATED FROM PYTHON SOURCE LINES 98-102
 
 .. code-block:: default
 
 
     # (your code here)
     # mesh = pv.read('path/to/file.vtk)
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 103-110
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/exercises/e_read-file.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

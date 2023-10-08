@@ -26,7 +26,7 @@ A simple example of how to create a Trame app with a PyVista Plotter.
 This example contains the boilerplate code to use anytime you are creating a
 new Trame application with PyVista.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-32
+.. GENERATED FROM PYTHON SOURCE LINES 11-33
 
 .. code-block:: default
 
@@ -51,6 +51,17 @@ new Trame application with PyVista.
             view = plotter_ui(pl)
 
     server.start()
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 34-41
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/a_trame_simple.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

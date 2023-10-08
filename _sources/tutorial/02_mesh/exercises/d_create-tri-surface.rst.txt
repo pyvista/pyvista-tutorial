@@ -153,12 +153,23 @@ Run the triangulation on these points
 Note that some of the outer edges are unconstrained and the triangulation
 added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-86
+.. GENERATED FROM PYTHON SOURCE LINES 84-87
 
 .. code-block:: default
 
     surf = cloud.delaunay_2d(alpha=...)
     surf.plot(cpos="xy", show_edges=True)
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 88-95
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/exercises/d_create-tri-surface.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

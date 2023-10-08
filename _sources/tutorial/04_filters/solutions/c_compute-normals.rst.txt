@@ -146,7 +146,7 @@ We could also use face or cell normals to extract all the faces of a mesh
 facing a general direction. In the following snippet, we take a mesh, compute
 the normals along its cell faces, and extract the faces that face upward.
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-61
+.. GENERATED FROM PYTHON SOURCE LINES 43-62
 
 .. code-block:: default
 
@@ -171,6 +171,7 @@ the normals along its cell faces, and extract the faces that face upward.
 
 
 
+
 .. image-sg:: /tutorial/04_filters/solutions/images/sphx_glr_c_compute-normals_003.png
    :alt: c compute normals
    :srcset: /tutorial/04_filters/solutions/images/sphx_glr_c_compute-normals_003.png
@@ -180,10 +181,20 @@ the normals along its cell faces, and extract the faces that face upward.
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 63-70
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/04_filters/solutions/c_compute-normals.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  11.939 seconds)
+   **Total running time of the script:** ( 1 minutes  17.140 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_c_compute-normals.py:

@@ -24,7 +24,7 @@ Control the Color of an Actor
 Extending our simple example to have a dropdown menu to control the color of
 the actor.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-57
+.. GENERATED FROM PYTHON SOURCE LINES 9-58
 
 .. code-block:: default
 
@@ -76,6 +76,17 @@ the actor.
                 ctrl.view_update = view.update
 
     server.start()
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 59-66
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/b_trame_actor_color.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

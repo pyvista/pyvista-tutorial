@@ -23,7 +23,7 @@ Open Mesh File
 
 An example of opening a mesh file from the browser and viewing it with PyVista.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-67
+.. GENERATED FROM PYTHON SOURCE LINES 8-68
 
 .. code-block:: default
 
@@ -86,6 +86,17 @@ An example of opening a mesh file from the browser and viewing it with PyVista.
                 ctrl.view_update = view.update
 
     server.start()
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 69-76
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/f_trame_open_file.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing

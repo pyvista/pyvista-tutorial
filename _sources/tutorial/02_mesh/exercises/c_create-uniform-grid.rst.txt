@@ -253,12 +253,23 @@ Here's one of these example datasets:
     p.show()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-130
+.. GENERATED FROM PYTHON SOURCE LINES 128-131
 
 .. code-block:: default
 
     vol = pv.Wavelet()
     vol.plot(volume=True)
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 132-139
+
+.. raw:: html
+
+    <center>
+      <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/exercises/c_create-uniform-grid.ipynb">
+        <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+      </a>
+    </center>
 
 
 .. rst-class:: sphx-glr-timing
