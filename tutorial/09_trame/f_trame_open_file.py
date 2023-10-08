@@ -2,11 +2,6 @@
 Open Mesh File
 ~~~~~~~~~~~~~~
 
-.. raw:: html
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/f_trame_open_file.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 An example of opening a mesh file from the browser and viewing it with PyVista.
 
 """
@@ -69,3 +64,12 @@ with SinglePageLayout(server) as layout:
             ctrl.view_update = view.update
 
 server.start()
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/f_trame_open_file.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
