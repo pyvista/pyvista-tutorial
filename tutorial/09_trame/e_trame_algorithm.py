@@ -2,11 +2,6 @@
 Using VTK, PyVista, and Trame
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/e_trame_algorithm.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 This example demonstrates how to use VTK, PyVista, and Trame together
 to show how the three libraries complement each other.
 """
@@ -64,3 +59,12 @@ with SinglePageLayout(server) as layout:
             ctrl.view_update = view.update
 
 server.start()
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/09_trame/e_trame_algorithm.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
