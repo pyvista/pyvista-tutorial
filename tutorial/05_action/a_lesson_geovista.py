@@ -15,8 +15,8 @@ and modified by `@tkoyama010 <https://github.com/tkoyama010>`_ .
 # GeoVista is a very good external example of using PyVista in a more concrete
 # use case.
 
-import sys
 import subprocess
+import sys
 
 if "google.colab" in sys.modules:
     subprocess.run("pip install geovista", shell=True, check=True)
