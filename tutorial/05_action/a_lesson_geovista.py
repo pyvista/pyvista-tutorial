@@ -2,11 +2,6 @@
 Using GeoVista
 ~~~~~~~~~~~~~~
 
-.. raw:: html
-    <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/05_action/a_lesson_geovista.ipynb">
-      <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
-    </a>
-
 This is provided by `@bjlittle <https://github.com/bjlittle>`_ in
 `this discussion <https://github.com/bjlittle/geovista/discussions/343>`_
 and modified by `@tkoyama010 <https://github.com/tkoyama010>`_ .
@@ -19,6 +14,11 @@ and modified by `@tkoyama010 <https://github.com/tkoyama010>`_ .
 #
 # GeoVista is a very good external example of using PyVista in a more concrete
 # use case.
+
+import sys
+
+if "google.colab" in sys.modules:
+    subprocess.run("pip install geovista", shell=True, check=True)
 
 import geovista as gv
 import geovista.theme
@@ -365,3 +365,12 @@ plotter.show(cpos="xy")
 #
 # .. image:: https://zenodo.org/badge/doi/10.5281/zenodo.598201.svg
 #    :target: https://doi.org/10.5281/zenodo.598201
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/05_action/a_lesson_geovista.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
