@@ -13,7 +13,7 @@ module and external files.
 import pyvista as pv
 
 # Set the default plot theme to the "document" theme.
-pv.set_plot_theme('document')
+# pv.set_plot_theme('document')
 
 
 ###############################################################################
