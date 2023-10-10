@@ -20,9 +20,10 @@ import sys
 
 if "google.colab" in sys.modules:
     subprocess.run("pip install geovista", shell=True, check=True)
+else:
+    import geovista.theme
 
 import geovista as gv
-import geovista.theme
 import pyvista as pv
 
 ###############################################################################
