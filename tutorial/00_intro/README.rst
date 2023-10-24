@@ -68,8 +68,6 @@ layer that "wraps" the lower level functionality of VTK.
 
 |contrib.rocks|
 
-.. _contributors page: https://github.com/pyvista/pyvista/graphs/contributors/
-.. _list of authors: https://docs.pyvista.org/getting-started/authors.html#authors
 .. _contrib rocks: https://contrib.rocks
 
 Who is PyVista for?
