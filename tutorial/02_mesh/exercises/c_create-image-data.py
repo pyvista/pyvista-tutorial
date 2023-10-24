@@ -1,10 +1,10 @@
 """
-.. _create_uniform_grid_solution:
+.. _create_image_data_exercise:
 
 Creating a Uniform Grid
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a simple uniform grid from a 3D NumPy array of values.
+Create a simple image data from a 3D NumPy array of values.
 
 """
 
@@ -15,43 +15,43 @@ import pyvista as pv
 # Take a 3D NumPy array of data values that holds some spatial data where each
 # axis corresponds to the XYZ cartesian axes. This example will create a
 # :class:`pyvista.ImageData` that will hold the spatial reference for
-# a 3D grid by which a 3D NumPy array of values can be plotted against.
+# a 3D data by which a 3D NumPy array of values can be plotted against.
 
 ###############################################################################
-# Create the 3D NumPy array of spatially referenced data.  This is spatially
-# referenced such that the grid is ``(20, 5, 10)`` ``(nx, ny, nz)``.
+# Create the 3D NumPy array of spatially referenced data. This is spatially
+# referenced such that the data is ``(20, 5, 10)``, ``(nx, ny, nz)``.
 values = np.linspace(0, 10, 1000).reshape((20, 5, 10))
 values.shape
 
 ###############################################################################
 # Create the ImageData
-grid = pv.ImageData()
+data = pv.ImageData()
 
 ###############################################################################
-# Set the grid dimensions to ``shape + 1`` because we want to inject our values
+# Set the data dimensions to ``shape + 1`` because we want to inject our values
 # on the CELL data.
-grid.dimensions = np.array(values.shape) + 1
+data.dimensions = np.array(values.shape) + 1
 
 ###############################################################################
-# Edit the spatial reference
-grid.origin = (100, 33, 55.6)  # The bottom left corner of the data set
-grid.spacing = (1, 5, 2)  # These are the cell sizes along each axis
+# Edit the spatial reference.
+data.origin = (100, 33, 55.6)  # The bottom left corner of the data set
+data.spacing = (1, 5, 2)  # These are the cell sizes along each axis
 
 ###############################################################################
 # Assign the data to the cell data. Be sure to flatten the data for
 # ``ImageData`` objects using Fortran ordering.
-grid.cell_data["values"] = values.flatten(order="F")
-grid
+data.cell_data["values"] = values.flatten(order="F")
+data
 
 ###############################################################################
-# Now plot the grid!
-grid.plot(show_edges=True)
+# Now plot the data!
+data.plot(show_edges=True)
 
 
 ###############################################################################
 # Don't like cell data? You could also add the NumPy array to the point data of
 # a :class:`pyvista.ImageData`. Take note of the subtle difference when
-# setting the grid dimensions upon initialization.
+# setting the data dimensions upon initialization.
 
 # Create the 3D NumPy array of spatially referenced data again.
 values = np.linspace(0, 10, 1000).reshape((20, 5, 10))
@@ -59,24 +59,24 @@ values.shape
 
 ###############################################################################
 # Create the PyVista object and set the same attributes as earlier.
-grid = pv.ImageData()
+data = pv.ImageData()
 
-# Set the grid dimensions to ``shape`` because we want to inject our values on
+# Set the data dimensions to ``shape`` because we want to inject our values on
 # the POINT data
-grid.dimensions = values.shape
+data.dimensions = values.shape
 
 # Edit the spatial reference
-grid.origin = (100, 33, 55.6)  # The bottom left corner of the data set
-grid.spacing = (1, 5, 2)  # These are the cell sizes along each axis
+data.origin = (100, 33, 55.6)  # The bottom left corner of the data set
+data.spacing = (1, 5, 2)  # These are the cell sizes along each axis
 
 ###############################################################################
 # Add the data values to the cell data
-grid.point_data["values"] = values.flatten(order="F")  # Flatten the array!
-grid
+data.point_data["values"] = values.flatten(order="F")  # Flatten the array!
+data
 
 ###############################################################################
-# Now plot the grid!
-grid.plot(show_edges=True)
+# Now plot the data!
+data.plot(show_edges=True)
 
 
 ###############################################################################
@@ -99,8 +99,8 @@ arr.shape
 #    ``arr.ravel(order="F")``
 
 vol = pv.ImageData()
-vol.dimensions = arr.shape
-vol['array'] = arr.ravel(order="F")
+# Set attributes and data
+...
 
 ###############################################################################
 # Plot the ImageData
@@ -132,7 +132,7 @@ vol.plot(volume=True)
 # .. raw:: html
 #
 #     <center>
-#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/c_create-uniform-grid.ipynb">
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/exercises/c_create-image-data.ipynb">
 #         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
 #       </a>
 #     </center>
