@@ -564,9 +564,10 @@ use case.</p>
 
 <span class="k">if</span> <span class="s2">&quot;google.colab&quot;</span> <span class="ow">in</span> <a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sys</span><span class="o">.</span><span class="n">modules</span></a><span class="p">:</span>
     <a href="https://docs.python.org/dev/library/subprocess.html#subprocess.run" title="subprocess.run" class="sphx-glr-backref-module-subprocess sphx-glr-backref-type-py-function"><span class="n">subprocess</span><span class="o">.</span><span class="n">run</span></a><span class="p">(</span><span class="s2">&quot;pip install geovista&quot;</span><span class="p">,</span> <span class="n">shell</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">check</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">geovista.theme</span>
 
 <span class="kn">import</span> <span class="nn">geovista</span> <span class="k">as</span> <span class="nn">gv</span>
-<span class="kn">import</span> <span class="nn">geovista.theme</span>
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 </pre></div>
 </div>
@@ -12577,7 +12578,7 @@ class GeoPlotter(GeoPlotterBase, pyvista.plotting.plotter.Plotter)
  |  ----------------------------------------------------------------------
  |  Data and other attributes inherited from pyvista.plotting.plotter.Plotter:
  |
- |  last_update_time = 1698162313.90129
+ |  last_update_time = 1698168196.8523476
  |
  |  ----------------------------------------------------------------------
  |  Methods inherited from pyvista.plotting.plotter.BasePlotter:
@@ -20044,7 +20045,7 @@ in Xarray Tutorial.</p>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/05_action/a_lesson_geovista.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  29.519 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  35.149 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-05-action-a-lesson-geovista-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/05_action/a_lesson_geovista.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo16.svg" width="150px" /></a>

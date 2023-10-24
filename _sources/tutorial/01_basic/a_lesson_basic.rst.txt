@@ -28,15 +28,16 @@ using the `pyvista.examples.downloads
 <https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_
 module and external files.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-19
+.. GENERATED FROM PYTHON SOURCE LINES 12-20
 
 .. code-block:: default
 
 
     import pyvista as pv
+    from pyvista import examples
 
     # Set the default plot theme to the "document" theme.
-    pv.set_plot_theme('document')
+    # pv.set_plot_theme('document')
 
 
 
@@ -46,7 +47,7 @@ module and external files.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-26
+.. GENERATED FROM PYTHON SOURCE LINES 21-27
 
 Using Existing Data
 ~~~~~~~~~~~~~~~~~~~
@@ -55,7 +56,7 @@ scratch or loading the dataset from any one of the `compatible file formats
 <https://docs.pyvista.org/api/readers/index.html>`_. Since we're just starting
 out, let's load a file.
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-38
+.. GENERATED FROM PYTHON SOURCE LINES 27-38
 
 .. code-block:: default
 
@@ -66,7 +67,6 @@ out, let's load a file.
     # <https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_
     #
 
-    from pyvista import examples
 
     dataset = examples.download_saddle_surface()
     dataset
@@ -285,7 +285,7 @@ with:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  11.486 seconds)
+   **Total running time of the script:** ( 0 minutes  11.587 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_a_lesson_basic.py:

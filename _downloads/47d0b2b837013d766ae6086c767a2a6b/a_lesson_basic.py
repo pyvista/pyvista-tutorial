@@ -11,9 +11,10 @@ module and external files.
 """
 
 import pyvista as pv
+from pyvista import examples
 
 # Set the default plot theme to the "document" theme.
-pv.set_plot_theme('document')
+# pv.set_plot_theme('document')
 
 
 ###############################################################################
@@ -30,7 +31,6 @@ pv.set_plot_theme('document')
 # <https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_
 #
 
-from pyvista import examples
 
 dataset = examples.download_saddle_surface()
 dataset
