@@ -35,7 +35,7 @@ PyVista's plotting API is data-centric, where the 3D data are individually added
 in a Matplotlib-like fashion.
 
 
-Add mesh to Plotter object
+Add Mesh to Plotter Object
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When plotting, users must first create a :class:`pyvista.Plotter` instance (much like a Matplotlib figure). Then data are added to the plotter instance through the :func:`pyvista.Plotter.add_mesh` method. This workflow typically looks like:
