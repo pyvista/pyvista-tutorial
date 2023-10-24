@@ -225,6 +225,7 @@ sphinx_gallery_conf = {
     'import sys\n'
     '\n'
     'if "google.colab" in sys.modules:\n'
+    '    subprocess.run("apt-get update", shell=True, check=True)\n'
     '    subprocess.run("apt-get install -qq xvfb libgl1-mesa-glx", shell=True, check=True)\n'
     '    subprocess.run("pip install pyvista[all] -qq", shell=True, check=True)\n'
     '\n'
