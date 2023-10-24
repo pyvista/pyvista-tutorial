@@ -65,7 +65,6 @@ layer that "wraps" the lower level functionality of VTK.
 .. |contrib.rocks| image:: https://contrib.rocks/image?repo=pyvista/pyvista
    :target: https://github.com/pyvista/pyvista/graphs/contributors
    :alt: contrib.rocks
-   :width: 60%
 
 |contrib.rocks|
 
