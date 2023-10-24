@@ -125,7 +125,7 @@ The ``add_mesh`` method can be called over and over to add different data to the
     solids = [pv.PlatonicSolid(kind, radius=0.4, center=center) for kind, center in zip(kinds, centers)]
 
     p = pv.Plotter(window_size=[1000, 1000])
-    for ind, solid in enumerate(solids):
+    for solid in solids:
         p.add_mesh(
             solid, color='silver', specular=1.0, specular_power=10
         )
