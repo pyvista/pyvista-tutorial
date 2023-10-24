@@ -49,6 +49,13 @@ layer that "wraps" the lower level functionality of VTK.
 |contributors|
 |stars|
 
+Please take a look at the `contributors page`_ and the active `list of authors`_
+to learn more about the developers of PyVista.
+
+|contrib.rocks|
+
+Made with `contrib rocks`_.
+
 .. |PyPIact| image:: https://img.shields.io/pypi/dm/pyvista.svg?label=PyPI%20downloads
    :target: https://pypi.org/project/pyvista/
 
@@ -62,6 +69,14 @@ layer that "wraps" the lower level functionality of VTK.
    :target: https://github.com/pyvista/pyvista
    :alt: GitHub
 
+.. |contrib.rocks| image:: https://contrib.rocks/image?repo=pyvista/pyvista
+   :target: https://github.com/pyvista/pyvista/graphs/contributors
+   :alt: contrib.rocks
+
+.. _contrib rocks: https://contrib.rocks
+.. _contributors page: https://github.com/pyvista/pyvista/graphs/contributors/
+.. _list of authors: https://docs.pyvista.org/getting-started/authors.html#authors
+.. _contrib rocks: https://contrib.rocks
 
 Who is PyVista for?
 -------------------
