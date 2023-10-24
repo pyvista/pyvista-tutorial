@@ -1,8 +1,8 @@
 """
 .. _create_image_data_exercise:
 
-Creating a Uniform Grid
-~~~~~~~~~~~~~~~~~~~~~~~
+Creating a Image Data
+~~~~~~~~~~~~~~~~~~~~~
 
 Create a simple image data from a 3D NumPy array of values.
 
