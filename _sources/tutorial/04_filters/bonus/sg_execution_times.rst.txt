@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:01.148** total execution time for **tutorial_04_filters_bonus** files:
+**00:01.015** total execution time for **tutorial_04_filters_bonus** files:
 
 +-------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_04_filters_bonus_f_sampling_functions_3d.py` (``f_sampling_functions_3d.py``) | 00:01.148 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_04_filters_bonus_f_sampling_functions_3d.py` (``f_sampling_functions_3d.py``) | 00:01.015 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------+-----------+--------+
