@@ -7,7 +7,7 @@ jupyterlab<4.0.0
 matplotlib
 pyinstaller==5.6.2
 pyqt5
-pyvista[trame]<0.40.0
+pyvista[trame]
 pyvistaqt
 QtPy
 sphinx
@@ -16,3 +16,4 @@ trame>=2.5.0
 trame-client>=2.9.4
 trame-server>=2.11.4
 trame-vtk>=2.5.4
+vtk<9.3
