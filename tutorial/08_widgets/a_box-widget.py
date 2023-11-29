@@ -34,3 +34,12 @@ p.show(cpos=[-1, -1, 0.2])
 ###############################################################################
 # After interacting with the scene, the clipped mesh is available as:
 p.box_clipped_meshes
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/08_widgets/a_box-widget.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>

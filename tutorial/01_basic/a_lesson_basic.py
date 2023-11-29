@@ -11,9 +11,10 @@ module and external files.
 """
 
 import pyvista as pv
+from pyvista import examples
 
 # Set the default plot theme to the "document" theme.
-pv.set_plot_theme('document')
+# pv.set_plot_theme('document')
 
 
 ###############################################################################
@@ -30,7 +31,6 @@ pv.set_plot_theme('document')
 # <https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html>`_
 #
 
-from pyvista import examples
 
 dataset = examples.download_saddle_surface()
 dataset
@@ -80,3 +80,12 @@ dataset
 # with:
 
 dataset.plot(volume=True)
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/01_basic/a_lesson_basic.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>

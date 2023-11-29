@@ -27,7 +27,6 @@ sphinx-autobuild==2021.3.14
 sphinx-copybutton==0.5.0
 sphinx-gallery==0.11.1
 sphinx-notfound-page==0.8.3
-sphinx-tabs
 sphinx_design==0.3.0
 sphinxcontrib-websupport==1.2.4
 sphinxcontrib.asciinema
@@ -38,3 +37,4 @@ trame-vtk==2.5.4
 trimesh==3.15.8
 typed-ast==1.5.4
 typing_extensions==4.4.0
+vtk<9.3
