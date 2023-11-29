@@ -42,7 +42,7 @@ jobs:
           sudo apt-get install python3-tk xcb
 
       - name: Install OSMesa VTK
-        run: pip install vtk-osmesa==9.3.0 --index-url https://gitlab.kitware.com/api/v4/projects/13/packages/pypi/simple
+        run: pip install https://github.com/pyvista/pyvista-wheels/raw/main/vtk-osmesa-9.1.0-cp39-cp39-linux_x86_64.whl
 
       - name: Install Dependencies
         run: |
