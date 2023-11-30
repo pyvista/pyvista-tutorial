@@ -73,3 +73,12 @@ p.show()
 # to apply to your mesh. The instructors will be around to help you implement.
 #
 # See https://kitware.github.io/vtk-examples/site/Python/
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/06_vtk/c_vtk_algorithms.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>
