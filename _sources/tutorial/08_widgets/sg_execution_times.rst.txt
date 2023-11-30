@@ -5,22 +5,22 @@
 
 Computation times
 =================
-**00:34.664** total execution time for **tutorial_08_widgets** files:
+**00:34.445** total execution time for **tutorial_08_widgets** files:
 
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_08_widgets_a_box-widget.py` (``a_box-widget.py``)                   | 00:13.946 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_08_widgets_a_box-widget.py` (``a_box-widget.py``)                   | 00:14.005 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_08_widgets_e_plane-widget.py` (``e_plane-widget.py``)               | 00:12.825 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_08_widgets_e_plane-widget.py` (``e_plane-widget.py``)               | 00:12.546 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_08_widgets_f_slider-bar-widget.py` (``f_slider-bar-widget.py``)     | 00:03.485 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_08_widgets_f_slider-bar-widget.py` (``f_slider-bar-widget.py``)     | 00:03.464 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_08_widgets_c_line-widget.py` (``c_line-widget.py``)                 | 00:01.780 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_08_widgets_c_line-widget.py` (``c_line-widget.py``)                 | 00:01.795 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_08_widgets_g_sphere-widget.py` (``g_sphere-widget.py``)             | 00:01.180 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_08_widgets_g_sphere-widget.py` (``g_sphere-widget.py``)             | 00:01.184 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_08_widgets_b_checkbox-widget.py` (``b_checkbox-widget.py``)         | 00:00.797 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_08_widgets_b_checkbox-widget.py` (``b_checkbox-widget.py``)         | 00:00.792 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_08_widgets_h_spline-widget.py` (``h_spline-widget.py``)             | 00:00.393 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_08_widgets_h_spline-widget.py` (``h_spline-widget.py``)             | 00:00.400 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_08_widgets_d_multi-slider-widget.py` (``d_multi-slider-widget.py``) | 00:00.258 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_08_widgets_d_multi-slider-widget.py` (``d_multi-slider-widget.py``) | 00:00.259 | 0.0 MB |
 +---------------------------------------------------------------------------------------------+-----------+--------+
