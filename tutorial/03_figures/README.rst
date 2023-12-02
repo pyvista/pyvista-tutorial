@@ -35,8 +35,8 @@ PyVista's plotting API is data-centric, where the 3D data are individually added
 in a Matplotlib-like fashion.
 
 
-``add_mesh``
-~~~~~~~~~~~~
+Add Mesh to Plotter Object
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When plotting, users must first create a :class:`pyvista.Plotter` instance (much like a Matplotlib figure). Then data are added to the plotter instance through the :func:`pyvista.Plotter.add_mesh` method. This workflow typically looks like:
 
@@ -125,7 +125,7 @@ The ``add_mesh`` method can be called over and over to add different data to the
     solids = [pv.PlatonicSolid(kind, radius=0.4, center=center) for kind, center in zip(kinds, centers)]
 
     p = pv.Plotter(window_size=[1000, 1000])
-    for ind, solid in enumerate(solids):
+    for solid in solids:
         p.add_mesh(
             solid, color='silver', specular=1.0, specular_power=10
         )

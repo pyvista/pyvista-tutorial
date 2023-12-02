@@ -66,3 +66,12 @@ path = p.generate_orbital_path(factor=2.0, n_points=36, viewup=viewup, shift=0.2
 p.open_gif("orbit.gif")
 p.orbit_on_path(path, write_frames=True, viewup=viewup, step=0.05)
 p.close()
+
+###############################################################################
+# .. raw:: html
+#
+#     <center>
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/bonus/g_orbit.ipynb">
+#         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+#       </a>
+#     </center>

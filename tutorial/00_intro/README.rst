@@ -35,9 +35,9 @@ layer that "wraps" the lower level functionality of VTK.
   plotting and mesh analysis through a streamlined interface for the
   Visualization Toolkit (VTK). Journal of Open Source Software, 4(37), 1450.
   https://doi.org/10.21105/joss.01450 <https://joss.theoj.org/papers/10.21105/joss.01450>`_
-- As of July 2023, Over 100+ contributors and `~1.9k Stars
+- As of October 2023, Over 150+ contributors and `~2.0k Stars
   <https://github.com/pyvista/pyvista/stargazers>`_ on GitHub.
-- Used by at least 1.8k other `libraries, examples, and repositories <https://github.com/pyvista/pyvista/network/dependents>`_ on GitHub.
+- Used by at least 2.0k other `libraries, examples, and repositories <https://github.com/pyvista/pyvista/network/dependents>`_ on GitHub.
 - Greatly expanded internal presence and continuing support thanks to
 
   - `@tkoyama010 <https://github.com/tkoyama010>`_
@@ -48,6 +48,13 @@ layer that "wraps" the lower level functionality of VTK.
 |condaact|
 |contributors|
 |stars|
+
+Please take a look at the `contributors page`_ and the active `list of authors`_
+to learn more about the developers of PyVista.
+
+|contrib.rocks|
+
+Made with `contrib rocks`_.
 
 .. |PyPIact| image:: https://img.shields.io/pypi/dm/pyvista.svg?label=PyPI%20downloads
    :target: https://pypi.org/project/pyvista/
@@ -62,6 +69,14 @@ layer that "wraps" the lower level functionality of VTK.
    :target: https://github.com/pyvista/pyvista
    :alt: GitHub
 
+.. |contrib.rocks| image:: https://contrib.rocks/image?repo=pyvista/pyvista
+   :target: https://github.com/pyvista/pyvista/graphs/contributors
+   :alt: contrib.rocks
+
+.. _contrib rocks: https://contrib.rocks
+.. _contributors page: https://github.com/pyvista/pyvista/graphs/contributors/
+.. _list of authors: https://docs.pyvista.org/getting-started/authors.html#authors
+.. _contrib rocks: https://contrib.rocks
 
 Who is PyVista for?
 -------------------
@@ -133,9 +148,9 @@ These examples demonstrate how you can use both PyVista and VTK to construct
 and visualize a point cloud using ``numpy``. Here, we demonstrate how easy it
 is to work directly with NumPy arrays.
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: VTK
+   .. tab-item:: VTK
 
       This example was taken from this `SO Answer
       <https://stackoverflow.com/a/7604478/3369879>`_.
@@ -209,7 +224,7 @@ is to work directly with NumPy arrays.
           renderWindow.Render()
           renderWindowInteractor.Start()
 
-   .. tab:: PyVista
+   .. tab-item:: PyVista
 
       .. jupyter-execute::
 
@@ -228,14 +243,14 @@ There are a ton of excellent visualization libraries out there and if you're
 interested in data visualization, I'd encourage you for explore them all!
 
 - `Python Libraries for Mesh, Point Cloud, and Data Visualization <https://towardsdatascience.com/python-libraries-for-mesh-and-point-cloud-visualization-part-1-daa2af36de30?gi=70edd77e5fc>`_
-- `How does PyVista relate to other visualization tools? <https://github.com/pyvista/pyvista/issues/146>`_
+- `How does PyVista relate to other visualization tools? <https://github.com/pyvista/pyvista/discussions/1438>`_
 - `SciVis Libraries <https://pyviz.org/scivis/index.html>`_
 
 Here's a few of them:
 
-.. tabs::
+.. tab-set::
 
-   .. tab:: vtk
+   .. tab-item:: vtk
 
       The Visualization Toolkit (`VTK <https://vtk.org/>`_) is open source
       software for manipulating and displaying scientific data. It comes with
@@ -245,7 +260,7 @@ Here's a few of them:
       .. image:: https://miro.medium.com/max/1400/1*B3aEPDxSvgR6Giyh4I4a2w.jpeg
          :alt: VTK
 
-   .. tab:: ParaView
+   .. tab-item:: ParaView
 
       `ParaView <https://www.paraview.org/>`_ is an open-source, multi-platform
       data analysis and visualization application. ParaView users can quickly
@@ -256,7 +271,7 @@ Here's a few of them:
       .. image:: https://www.kitware.com/main/wp-content/uploads/2018/11/ParaView-5.6.png
          :alt: ParaView
 
-   .. tab:: vedo
+   .. tab-item:: vedo
 
       `vedo <https://vedo.embl.es/>`_ is a Python library for scientific
       analysis of 3D objects and point clouds based on VTK and numpy.
@@ -264,7 +279,7 @@ Here's a few of them:
       .. image:: https://user-images.githubusercontent.com/32848391/80292484-50757180-8757-11ea-841f-2c0c5fe2c3b4.jpg
          :alt: vedo
 
-   .. tab:: Mayavi
+   .. tab-item:: Mayavi
 
       `Mayavi <https://docs.enthought.com/mayavi/mayavi/>`_ is a general
       purpose, cross-platform tool for 2-D and 3-D scientific data

@@ -1,6 +1,6 @@
 repos:
 - repo: https://github.com/psf/black
-  rev: 23.9.1
+  rev: 23.11.0
   hooks:
   - id: black
 
@@ -29,13 +29,13 @@ repos:
     ]
 
 - repo: https://github.com/asottile/pyupgrade
-  rev: v3.14.0
+  rev: v3.15.0
   hooks:
   - id: pyupgrade
     args: [--py37-plus, --keep-runtime-typing]
 
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.4.0
+  rev: v4.5.0
   hooks:
   - id: check-merge-conflict
   - id: debug-statements
@@ -45,8 +45,9 @@ repos:
   - id: trailing-whitespace
     exclude: ^(|doc/source/_static/*)
   - id: mixed-line-ending
+  - id: end-of-file-fixer
 
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.27.0
+  rev: 0.27.2
   hooks:
     - id: check-github-workflows
