@@ -1,14 +1,8 @@
-name: Build Documentation
+name: Deploy to Pull Request
 on:
-  pull_request:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  issue_comment:
+    types:
+      - created
 
 env:
   PYVISTA_OFF_SCREEN: 'True'
@@ -17,11 +11,30 @@ env:
   DISPLAY: ':99.0'
 
 jobs:
+  permission:
+    if: |
+      github.event_name == 'issue_comment'
+      && github.event.action == 'created'
+      && github.event.issue.pull_request != null
+      && startsWith(github.event.comment.body, 'github-actions deploy to pull request')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: sushichop/action-repository-permission@v1
+        with:
+          required-permission: write
+          reaction-permitted: rocket
+          comment-not-permitted: You don't have permission to deploy. Please ask @pyvista/developers to deploy.
   build-doc:
+    if: |
+      github.event_name == 'issue_comment'
+      && github.event.action == 'created'
+      && github.event.issue.pull_request != null
+      && startsWith(github.event.comment.body, 'github-actions deploy to pull request')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: refs/pull/${{ github.event.issue.number }}/head
           fetch-depth: 0
 
       - uses: actions/setup-python@v4
@@ -63,51 +76,12 @@ jobs:
           name: doc-build
           path: doc-build.tar.gz
 
-      - uses: actions/upload-artifact@v3
-        with:
-          name: tutorial
-          path: doc/source/tutorial
-      - name: Get Notebooks
-        run: |
-          mkdir _notebooks
-          find doc/source/tutorial -type f -name '*.ipynb' | cpio -p -d -v _notebooks/
-          find doc/source/tutorial/09_trame -type f -name '*.py' | cpio -p -d -v _notebooks/
-          rm _notebooks/doc/source/tutorial/09_trame/*.ipynb
-      - uses: actions/upload-artifact@v3
-        with:
-          name: tutorial-notebooks
-          path: _notebooks
-
-  deploy:
-    name: Publish Documentation
-    runs-on: ubuntu-latest
-    needs: build-doc
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/download-artifact@v3
-        with:
-          name: doc-build
-          path: .
-
-      - name: UnTar build
-        run: tar -xzvf doc-build.tar.gz
-
-      - name: Zip Notebooks
-        run: |
-          cp -r doc/build/html/notebooks/tutorial/ notebooks
-          zip -r notebooks.zip notebooks/
-          mv notebooks.zip doc/build/html/
-
-      - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: doc/build/html
-          cname: tutorial.pyvista.org
-
   preview:
+    if: |
+      github.event_name == 'issue_comment'
+      && github.event.action == 'created'
+      && github.event.issue.pull_request != null
+      && startsWith(github.event.comment.body, 'github-actions deploy to pull request')
     name: Preview Documentation
     runs-on: ubuntu-latest
     needs: build-doc
@@ -131,7 +105,7 @@ jobs:
       - uses: nwtgck/actions-netlify@v2.1
         with:
           publish-dir: doc/build/html
-          production-branch: main
+          production-deploy: false
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: true
