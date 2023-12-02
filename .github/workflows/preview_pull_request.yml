@@ -1,4 +1,4 @@
-name: Deploy to Pull Request
+name: Preview Pull Request
 on:
   issue_comment:
     types:
