@@ -11,12 +11,12 @@ env:
   DISPLAY: ':99.0'
 
 jobs:
-  permission:
+  build-doc:
     if: |
       github.event_name == 'issue_comment'
       && github.event.action == 'created'
       && github.event.issue.pull_request != null
-      && startsWith(github.event.comment.body, 'github-actions deploy to pull request')
+      && startsWith(github.event.comment.body, 'github-actions preview')
     runs-on: ubuntu-latest
     steps:
       - uses: sushichop/action-repository-permission@v1
@@ -24,14 +24,6 @@ jobs:
           required-permission: write
           reaction-permitted: rocket
           comment-not-permitted: You don't have permission to deploy. Please ask @pyvista/developers to deploy.
-  build-doc:
-    if: |
-      github.event_name == 'issue_comment'
-      && github.event.action == 'created'
-      && github.event.issue.pull_request != null
-      && startsWith(github.event.comment.body, 'github-actions deploy to pull request')
-    runs-on: ubuntu-latest
-    steps:
       - uses: actions/checkout@v4
         with:
           ref: refs/pull/${{ github.event.issue.number }}/head
@@ -81,11 +73,17 @@ jobs:
       github.event_name == 'issue_comment'
       && github.event.action == 'created'
       && github.event.issue.pull_request != null
-      && startsWith(github.event.comment.body, 'github-actions deploy to pull request')
+      && startsWith(github.event.comment.body, 'github-actions preview')
     name: Preview Documentation
     runs-on: ubuntu-latest
     needs: build-doc
     steps:
+      - uses: sushichop/action-repository-permission@v1
+        with:
+          required-permission: write
+          reaction-permitted: rocket
+          comment-not-permitted: You don't have permission to deploy. Please ask @pyvista/developers to deploy.
+
       - uses: actions/checkout@v4
 
       - uses: actions/download-artifact@v3
@@ -110,7 +108,7 @@ jobs:
           deploy-message: "Deploy from GitHub Actions"
           enable-pull-request-comment: true
           enable-commit-comment: true
-          overwrites-pull-request-comment: true
+          overwrites-pull-request-comment: false
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
