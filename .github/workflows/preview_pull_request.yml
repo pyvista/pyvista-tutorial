@@ -19,7 +19,7 @@ jobs:
       && startsWith(github.event.comment.body, 'github-actions preview')
     runs-on: ubuntu-latest
     steps:
-      - uses: sushichop/action-repository-permission@v1
+      - uses: sushichop/action-repository-permission@v2
         with:
           required-permission: write
           reaction-permitted: rocket
@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-doc
     steps:
-      - uses: sushichop/action-repository-permission@v1
+      - uses: sushichop/action-repository-permission@v2
         with:
           required-permission: write
           reaction-permitted: rocket
