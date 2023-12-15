@@ -63,7 +63,7 @@ jobs:
       - name: Tar build
         run: tar -zcvf doc-build.tar.gz doc/build/
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: doc-build
           path: doc-build.tar.gz
