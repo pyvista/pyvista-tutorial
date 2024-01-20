@@ -14,7 +14,7 @@ from pyvista import examples
 ###############################################################################
 # PyVista wrapped data objects have a suite of common filters ready for immediate
 # use directly on the object. These filters include the following
-# (see :ref:`filters_ref` for a complete list):
+# (see `Filters`_ for a complete list):
 #
 # * `slice()`_ creates a single slice through the input dataset on a user defined plane
 # * `slice_orthogonal()`_: creates a :class:`pyvista.MultiBlock` dataset of three orthogonal slices
@@ -25,6 +25,7 @@ from pyvista import examples
 # * `outline_corners()`_: Outlines the corners of the data extent
 # * `extract_geometry()`_: Extract surface geometry
 #
+# .. Filters: https://docs.pyvista.org/version/stable/api/core/filters#filters
 # .. _slice(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice.html
 # .. _slice_orthogonal(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_orthogonal.html
 # .. _slice_along_axis(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_along_axis.html
