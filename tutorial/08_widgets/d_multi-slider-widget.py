@@ -10,6 +10,7 @@ In this example we simply change a few parameters for the
 mesh-generating/altering code.
 
 """
+
 import pyvista as pv
 
 

@@ -4,6 +4,7 @@ Label Points
 
 Use string arrays in a point set to label points
 """
+
 # sphinx_gallery_thumbnail_number = 3
 import numpy as np
 import pyvista as pv
