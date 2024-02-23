@@ -24,7 +24,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.9'
 
@@ -58,12 +58,12 @@ jobs:
       - name: Tar build
         run: tar -zcvf doc-build.tar.gz doc/build/
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: doc-build
           path: doc-build.tar.gz
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: tutorial
           path: doc/source/tutorial
@@ -73,7 +73,7 @@ jobs:
           find doc/source/tutorial -type f -name '*.ipynb' | cpio -p -d -v _notebooks/
           find doc/source/tutorial/09_trame -type f -name '*.py' | cpio -p -d -v _notebooks/
           rm _notebooks/doc/source/tutorial/09_trame/*.ipynb
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: tutorial-notebooks
           path: _notebooks
@@ -86,7 +86,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: doc-build
           path: .
@@ -114,7 +114,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: doc-build
           path: .
