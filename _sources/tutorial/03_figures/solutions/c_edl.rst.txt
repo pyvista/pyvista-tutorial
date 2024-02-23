@@ -29,7 +29,7 @@ To learn more, please see `this blog post`_.
 
 .. _this blog post: https://blog.kitware.com/eye-dome-lighting-a-non-photorealistic-shading-technique/
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-19
+.. GENERATED FROM PYTHON SOURCE LINES 16-20
 
 .. code-block:: default
 
@@ -44,7 +44,7 @@ To learn more, please see `this blog post`_.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-26
+.. GENERATED FROM PYTHON SOURCE LINES 22-27
 
 Point Cloud
 +++++++++++
@@ -52,7 +52,7 @@ Point Cloud
 When plotting a simple point cloud, it can be difficult to perceive depth.
 Take this Lidar point cloud for example:
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-30
+.. GENERATED FROM PYTHON SOURCE LINES 27-31
 
 .. code-block:: default
 
@@ -91,11 +91,11 @@ Take this Lidar point cloud for example:
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-32
+.. GENERATED FROM PYTHON SOURCE LINES 32-33
 
 And now plot this point cloud as-is:
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-39
+.. GENERATED FROM PYTHON SOURCE LINES 33-40
 
 .. code-block:: default
 
@@ -118,14 +118,14 @@ And now plot this point cloud as-is:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-44
+.. GENERATED FROM PYTHON SOURCE LINES 41-45
 
 We can improve the depth mapping by enabling eye dome lighting on the
 renderer with :func:`pyvista.Renderer.enable_eye_dome_lighting`.
 
 Try plotting that point cloud with Eye-Dome-Lighting yourself below:
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-51
+.. GENERATED FROM PYTHON SOURCE LINES 45-52
 
 .. code-block:: default
 
@@ -148,13 +148,13 @@ Try plotting that point cloud with Eye-Dome-Lighting yourself below:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-55
+.. GENERATED FROM PYTHON SOURCE LINES 53-56
 
 The eye dome lighting mode can also handle plotting scalar arrays. Try the
 above block but by specifying a ``scalars`` array instead of ``color`` in
 the ``add_mesh`` call.
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-61
+.. GENERATED FROM PYTHON SOURCE LINES 56-62
 
 .. code-block:: default
 
@@ -176,7 +176,7 @@ the ``add_mesh`` call.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-69
+.. GENERATED FROM PYTHON SOURCE LINES 63-70
 
 .. raw:: html
 
@@ -189,7 +189,7 @@ the ``add_mesh`` call.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  32.948 seconds)
+   **Total running time of the script:** ( 0 minutes  32.815 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_c_edl.py:

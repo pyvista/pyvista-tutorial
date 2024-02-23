@@ -27,9 +27,10 @@ Use a checkbox to turn on/off the visibility of meshes in a scene.
 
 See :func:`pyvista.Plotter.add_checkbox_button_widget` for more details.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-14
+.. GENERATED FROM PYTHON SOURCE LINES 12-15
 
 .. code-block:: default
+
 
     import pyvista as pv
 
@@ -40,12 +41,12 @@ See :func:`pyvista.Plotter.add_checkbox_button_widget` for more details.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-18
+.. GENERATED FROM PYTHON SOURCE LINES 17-19
 
 Single Checkbox
 +++++++++++++++
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-32
+.. GENERATED FROM PYTHON SOURCE LINES 19-33
 
 .. code-block:: default
 
@@ -75,13 +76,13 @@ Single Checkbox
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-36
+.. GENERATED FROM PYTHON SOURCE LINES 34-37
 
 And here is a screen capture of a user interacting with this
 
 .. image:: ../../images/gifs/single-checkbox-widget.gif
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-44
+.. GENERATED FROM PYTHON SOURCE LINES 39-45
 
 Multiple Checkboxes
 +++++++++++++++++++
@@ -90,7 +91,7 @@ In this example, we will add many meshes to a scene with unique colors and
 create corresponding checkboxes for those meshes of the same color to toggle
 their visibility in the scene.
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-64
+.. GENERATED FROM PYTHON SOURCE LINES 45-65
 
 .. code-block:: default
 
@@ -121,7 +122,7 @@ their visibility in the scene.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-91
+.. GENERATED FROM PYTHON SOURCE LINES 66-92
 
 .. code-block:: default
 
@@ -163,13 +164,13 @@ their visibility in the scene.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-95
+.. GENERATED FROM PYTHON SOURCE LINES 93-96
 
 And here is a screen capture of a user interacting with this
 
 .. image:: ../../images/gifs/multiple-checkbox-widget.gif
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-104
+.. GENERATED FROM PYTHON SOURCE LINES 98-105
 
 .. raw:: html
 
@@ -182,7 +183,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.740 seconds)
+   **Total running time of the script:** ( 0 minutes  0.741 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_b_checkbox-widget.py:

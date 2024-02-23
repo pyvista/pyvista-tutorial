@@ -25,9 +25,10 @@ Clipping with Planes & Boxes
 
 Clip/cut any dataset using using planes or boxes.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-12
+.. GENERATED FROM PYTHON SOURCE LINES 9-13
 
 .. code-block:: default
+
 
     import pyvista as pv
     from pyvista import examples
@@ -39,7 +40,7 @@ Clip/cut any dataset using using planes or boxes.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-19
+.. GENERATED FROM PYTHON SOURCE LINES 15-20
 
 Clip with Plane
 +++++++++++++++
@@ -47,7 +48,7 @@ Clip with Plane
 Clip any dataset by a user defined plane using the
 :func:`pyvista.DataSetFilters.clip` filter
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-22
+.. GENERATED FROM PYTHON SOURCE LINES 20-23
 
 .. code-block:: default
 
@@ -85,7 +86,7 @@ Clip any dataset by a user defined plane using the
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-25
+.. GENERATED FROM PYTHON SOURCE LINES 24-26
 
 .. code-block:: default
 
@@ -170,11 +171,11 @@ Clip any dataset by a user defined plane using the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-27
+.. GENERATED FROM PYTHON SOURCE LINES 27-28
 
 Perform a clip with a Y axis normal
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-30
+.. GENERATED FROM PYTHON SOURCE LINES 28-31
 
 .. code-block:: default
 
@@ -212,11 +213,11 @@ Perform a clip with a Y axis normal
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-32
+.. GENERATED FROM PYTHON SOURCE LINES 32-33
 
 Plot the result.
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-40
+.. GENERATED FROM PYTHON SOURCE LINES 33-41
 
 .. code-block:: default
 
@@ -240,7 +241,7 @@ Plot the result.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-48
+.. GENERATED FROM PYTHON SOURCE LINES 42-49
 
 Clip with Bounds
 ++++++++++++++++
@@ -250,7 +251,7 @@ Clip any dataset by a set of XYZ bounds using the
 
 First, download an example dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-50
+.. GENERATED FROM PYTHON SOURCE LINES 49-51
 
 .. code-block:: default
 
@@ -263,7 +264,7 @@ First, download an example dataset.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-53
+.. GENERATED FROM PYTHON SOURCE LINES 52-54
 
 .. code-block:: default
 
@@ -338,12 +339,12 @@ First, download an example dataset.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-56
+.. GENERATED FROM PYTHON SOURCE LINES 55-57
 
 Clip the dataset with a bounding box defined by the values in ``bounds``
 ``(xmin, xmax, ymin, ymax, zmin, zmax)``
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-60
+.. GENERATED FROM PYTHON SOURCE LINES 57-61
 
 .. code-block:: default
 
@@ -382,11 +383,11 @@ Clip the dataset with a bounding box defined by the values in ``bounds``
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-62
+.. GENERATED FROM PYTHON SOURCE LINES 62-63
 
 Plot the original dataset and the clipped one.
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-69
+.. GENERATED FROM PYTHON SOURCE LINES 63-70
 
 .. code-block:: default
 
@@ -409,7 +410,7 @@ Plot the original dataset and the clipped one.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-75
+.. GENERATED FROM PYTHON SOURCE LINES 71-76
 
 Clip with Rotated Box
 +++++++++++++++++++++
@@ -417,7 +418,7 @@ Clip with Rotated Box
 Clip any dataset by an arbitrarily rotated solid box using the
 :func:`pyvista.DataSetFilters.clip_box` filter.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-86
+.. GENERATED FROM PYTHON SOURCE LINES 76-87
 
 .. code-block:: default
 
@@ -444,11 +445,11 @@ Clip any dataset by an arbitrarily rotated solid box using the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-88
+.. GENERATED FROM PYTHON SOURCE LINES 88-89
 
 Run the box clipping algorithm with the defined box geometry.
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-100
+.. GENERATED FROM PYTHON SOURCE LINES 89-101
 
 .. code-block:: default
 
@@ -476,7 +477,7 @@ Run the box clipping algorithm with the defined box geometry.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-111
+.. GENERATED FROM PYTHON SOURCE LINES 102-112
 
 Crinkled Clipping
 +++++++++++++++++
@@ -489,7 +490,7 @@ This option is available for :func:`pyvista.DataSetFilters.clip`,
 :func:`pyvista.DataSetFilters.clip_sruface`, but not available when clipping
 by scalar in :func:`pyvista.DataSetFilters.clip_scalar`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-115
+.. GENERATED FROM PYTHON SOURCE LINES 112-116
 
 .. code-block:: default
 
@@ -504,11 +505,11 @@ by scalar in :func:`pyvista.DataSetFilters.clip_scalar`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-117
+.. GENERATED FROM PYTHON SOURCE LINES 117-118
 
 Define clipping plane
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-120
+.. GENERATED FROM PYTHON SOURCE LINES 118-121
 
 .. code-block:: default
 
@@ -522,11 +523,11 @@ Define clipping plane
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-122
+.. GENERATED FROM PYTHON SOURCE LINES 122-123
 
 Perform a standard clip
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-124
+.. GENERATED FROM PYTHON SOURCE LINES 123-125
 
 .. code-block:: default
 
@@ -539,11 +540,11 @@ Perform a standard clip
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-126
+.. GENERATED FROM PYTHON SOURCE LINES 126-127
 
 Perform a crinkled clip to compare
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-128
+.. GENERATED FROM PYTHON SOURCE LINES 127-129
 
 .. code-block:: default
 
@@ -556,11 +557,11 @@ Perform a crinkled clip to compare
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-130
+.. GENERATED FROM PYTHON SOURCE LINES 130-131
 
 Plot comparison
 
-.. GENERATED FROM PYTHON SOURCE LINES 130-139
+.. GENERATED FROM PYTHON SOURCE LINES 131-140
 
 .. code-block:: default
 
@@ -585,7 +586,7 @@ Plot comparison
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 140-147
+.. GENERATED FROM PYTHON SOURCE LINES 141-148
 
 .. raw:: html
 
@@ -598,7 +599,7 @@ Plot comparison
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.114 seconds)
+   **Total running time of the script:** ( 0 minutes  2.125 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_b_clipping.py:

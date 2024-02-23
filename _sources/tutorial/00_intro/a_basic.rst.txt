@@ -25,9 +25,10 @@ Create Basic Geometric Objects
 
 This is the "Hello, world!" of PyVista.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-11
+.. GENERATED FROM PYTHON SOURCE LINES 9-12
 
 .. code-block:: default
+
 
     import pyvista as pv
 
@@ -38,14 +39,14 @@ This is the "Hello, world!" of PyVista.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-16
+.. GENERATED FROM PYTHON SOURCE LINES 13-17
 
 This runs through several of the available geometric objects available in
 VTK which PyVista provides simple convenience methods for generating.
 
 Let's run through creating a few geometric objects!
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-27
+.. GENERATED FROM PYTHON SOURCE LINES 17-28
 
 .. code-block:: default
 
@@ -67,11 +68,11 @@ Let's run through creating a few geometric objects!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-29
+.. GENERATED FROM PYTHON SOURCE LINES 29-30
 
 Now let's plot them all in one window
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-57
+.. GENERATED FROM PYTHON SOURCE LINES 30-58
 
 .. code-block:: default
 
@@ -115,7 +116,7 @@ Now let's plot them all in one window
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-65
+.. GENERATED FROM PYTHON SOURCE LINES 59-66
 
 .. raw:: html
 
@@ -128,7 +129,7 @@ Now let's plot them all in one window
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.973 seconds)
+   **Total running time of the script:** ( 0 minutes  0.963 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_intro_a_basic.py:

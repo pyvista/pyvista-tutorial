@@ -25,9 +25,10 @@ Types of Shading
 
 Comparison of default, flat shading vs. smooth shading.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-12
+.. GENERATED FROM PYTHON SOURCE LINES 9-13
 
 .. code-block:: default
+
 
     import pyvista as pv
     from pyvista import examples
@@ -39,14 +40,14 @@ Comparison of default, flat shading vs. smooth shading.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-18
+.. GENERATED FROM PYTHON SOURCE LINES 15-19
 
 PyVista supports two types of shading: flat and smooth shading that uses
 VTK's Phong shading algorithm.
 
 This is a plot with the default flat shading.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-22
+.. GENERATED FROM PYTHON SOURCE LINES 19-23
 
 .. code-block:: default
 
@@ -66,11 +67,11 @@ This is a plot with the default flat shading.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-24
+.. GENERATED FROM PYTHON SOURCE LINES 24-25
 
 Here's the same sphere with smooth shading.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-27
+.. GENERATED FROM PYTHON SOURCE LINES 25-28
 
 .. code-block:: default
 
@@ -89,7 +90,7 @@ Here's the same sphere with smooth shading.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-36
+.. GENERATED FROM PYTHON SOURCE LINES 29-37
 
 Note how smooth shading makes edges that should be sharp look odd,
 it's because the points of these normals are averaged between two
@@ -100,7 +101,7 @@ enabling ``split_sharp_edges``.
    You can configure the splitting angle with the optional
    ``feature_angle`` keyword argument.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-39
+.. GENERATED FROM PYTHON SOURCE LINES 37-40
 
 .. code-block:: default
 
@@ -119,12 +120,12 @@ enabling ``split_sharp_edges``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-42
+.. GENERATED FROM PYTHON SOURCE LINES 41-43
 
 We can even plot the edges that will be split using
 :func:`extract_feature_edges <pyvista.PolyDataFilters.extract_feature_edges>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-56
+.. GENERATED FROM PYTHON SOURCE LINES 43-57
 
 .. code-block:: default
 
@@ -154,12 +155,12 @@ We can even plot the edges that will be split using
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-59
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
 
 The ``split_sharp_edges`` keyword argument is compatible with
 physically based rendering as well.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-66
+.. GENERATED FROM PYTHON SOURCE LINES 60-67
 
 .. code-block:: default
 
@@ -182,7 +183,7 @@ physically based rendering as well.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-74
+.. GENERATED FROM PYTHON SOURCE LINES 68-75
 
 .. raw:: html
 
@@ -195,7 +196,7 @@ physically based rendering as well.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.347 seconds)
+   **Total running time of the script:** ( 0 minutes  1.344 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_b_shading.py:

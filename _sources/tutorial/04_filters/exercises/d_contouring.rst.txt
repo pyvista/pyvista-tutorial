@@ -26,43 +26,44 @@ Generate iso-lines or -surfaces for the scalars of a surface or volume.
 3D meshes can have 2D iso-surfaces of a scalar field extracted and 2D surface
 meshes can have 1D iso-lines of a scalar field extracted.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-13
+.. GENERATED FROM PYTHON SOURCE LINES 10-14
 
 .. code-block:: default
+
 
     import pyvista as pv
     from pyvista import examples
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-18
+.. GENERATED FROM PYTHON SOURCE LINES 15-19
 
 Iso-Lines
 +++++++++
 
 Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-20
+.. GENERATED FROM PYTHON SOURCE LINES 19-21
 
 .. code-block:: default
 
     mesh = examples.load_random_hills()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-23
+.. GENERATED FROM PYTHON SOURCE LINES 22-24
 
 .. code-block:: default
 
     help(mesh.contour)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-26
+.. GENERATED FROM PYTHON SOURCE LINES 25-27
 
 .. code-block:: default
 
     contours = ...
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-33
+.. GENERATED FROM PYTHON SOURCE LINES 28-34
 
 .. code-block:: default
 
@@ -73,14 +74,14 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-38
+.. GENERATED FROM PYTHON SOURCE LINES 35-39
 
 Iso-Surfaces
 ++++++++++++
 
 Let's extract 2D iso-surfaces of a scalar field from a 3D mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-42
+.. GENERATED FROM PYTHON SOURCE LINES 39-43
 
 .. code-block:: default
 
@@ -89,12 +90,12 @@ Let's extract 2D iso-surfaces of a scalar field from a 3D mesh.
     mesh
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-45
+.. GENERATED FROM PYTHON SOURCE LINES 44-46
 
 For this example dataset, let's create 5 contour levels between the values
 of 50 and 200
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-48
+.. GENERATED FROM PYTHON SOURCE LINES 46-49
 
 .. code-block:: default
 
@@ -102,7 +103,7 @@ of 50 and 200
     contours = ...
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-59
+.. GENERATED FROM PYTHON SOURCE LINES 50-60
 
 .. code-block:: default
 
@@ -117,7 +118,7 @@ of 50 and 200
     p.show()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-67
+.. GENERATED FROM PYTHON SOURCE LINES 61-68
 
 .. raw:: html
 

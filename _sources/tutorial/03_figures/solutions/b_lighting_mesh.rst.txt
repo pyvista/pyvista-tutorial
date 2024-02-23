@@ -33,9 +33,10 @@ to ``add_mesh``.
 See the ``add_mesh`` docs for lighting options:
 https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-24
+.. GENERATED FROM PYTHON SOURCE LINES 17-25
 
 .. code-block:: default
+
 
     import pyvista as pv
     from pyvista import examples
@@ -51,11 +52,11 @@ https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-27
+.. GENERATED FROM PYTHON SOURCE LINES 27-28
 
 First, lets take a look at the mesh with default lighting conditions
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-29
+.. GENERATED FROM PYTHON SOURCE LINES 28-30
 
 .. code-block:: default
 
@@ -73,11 +74,11 @@ First, lets take a look at the mesh with default lighting conditions
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-31
+.. GENERATED FROM PYTHON SOURCE LINES 31-32
 
 What about with no lighting?
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-33
+.. GENERATED FROM PYTHON SOURCE LINES 32-34
 
 .. code-block:: default
 
@@ -95,13 +96,13 @@ What about with no lighting?
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-37
+.. GENERATED FROM PYTHON SOURCE LINES 35-38
 
 Demonstration of the specular property
 
 Feel free to adjust the specular value in the ``s`` variable.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-52
+.. GENERATED FROM PYTHON SOURCE LINES 38-53
 
 .. code-block:: default
 
@@ -132,11 +133,11 @@ Feel free to adjust the specular value in the ``s`` variable.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-54
+.. GENERATED FROM PYTHON SOURCE LINES 54-55
 
 Specular power (feel free to adjust)
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-56
+.. GENERATED FROM PYTHON SOURCE LINES 55-57
 
 .. code-block:: default
 
@@ -154,12 +155,12 @@ Specular power (feel free to adjust)
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-59
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
 
 Demonstration of all diffuse, specular, and ambient in use together
 (feel free to adjust)
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
+.. GENERATED FROM PYTHON SOURCE LINES 60-62
 
 .. code-block:: default
 
@@ -177,12 +178,12 @@ Demonstration of all diffuse, specular, and ambient in use together
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-64
+.. GENERATED FROM PYTHON SOURCE LINES 63-65
 
 For detailed control over lighting conditions in general see the
 `lighting examples <https://docs.pyvista.org/examples/index.html#lighting>`_
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-73
+.. GENERATED FROM PYTHON SOURCE LINES 67-74
 
 .. raw:: html
 
@@ -195,7 +196,7 @@ For detailed control over lighting conditions in general see the
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.671 seconds)
+   **Total running time of the script:** ( 0 minutes  8.570 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_b_lighting_mesh.py:

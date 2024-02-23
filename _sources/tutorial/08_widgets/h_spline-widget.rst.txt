@@ -33,9 +33,10 @@ path. To do this, we have added a convenient helper method which leverages the
 :func:`pyvista.DataSetFilters.slice_along_line` filter named
 :func:`pyvista.Plotter.add_mesh_slice_spline`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-20
+.. GENERATED FROM PYTHON SOURCE LINES 17-21
 
 .. code-block:: default
+
 
     import numpy as np
     import pyvista as pv
@@ -47,7 +48,7 @@ path. To do this, we have added a convenient helper method which leverages the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-41
+.. GENERATED FROM PYTHON SOURCE LINES 22-42
 
 .. code-block:: default
 
@@ -83,13 +84,13 @@ path. To do this, we have added a convenient helper method which leverages the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 42-45
+.. GENERATED FROM PYTHON SOURCE LINES 43-46
 
 And here is a screen capture of a user interacting with this
 
 .. image:: ../../images/gifs/spline-widget.gif
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-54
+.. GENERATED FROM PYTHON SOURCE LINES 48-55
 
 .. raw:: html
 
@@ -102,7 +103,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.378 seconds)
+   **Total running time of the script:** ( 0 minutes  0.368 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_h_spline-widget.py:

@@ -28,9 +28,10 @@ Generate iso-lines or -surfaces for the scalars of a surface or volume.
 3D meshes can have 2D iso-surfaces of a scalar field extracted and 2D surface
 meshes can have 1D iso-lines of a scalar field extracted.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-16
+.. GENERATED FROM PYTHON SOURCE LINES 12-17
 
 .. code-block:: default
+
 
     import numpy as np
     import pyvista as pv
@@ -43,14 +44,14 @@ meshes can have 1D iso-lines of a scalar field extracted.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-21
+.. GENERATED FROM PYTHON SOURCE LINES 18-22
 
 Iso-Lines
 +++++++++
 
 Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-23
+.. GENERATED FROM PYTHON SOURCE LINES 22-24
 
 .. code-block:: default
 
@@ -63,7 +64,7 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-26
+.. GENERATED FROM PYTHON SOURCE LINES 25-27
 
 .. code-block:: default
 
@@ -187,7 +188,7 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-29
+.. GENERATED FROM PYTHON SOURCE LINES 28-30
 
 .. code-block:: default
 
@@ -200,7 +201,7 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-36
+.. GENERATED FROM PYTHON SOURCE LINES 31-37
 
 .. code-block:: default
 
@@ -222,14 +223,14 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-41
+.. GENERATED FROM PYTHON SOURCE LINES 38-42
 
 Iso-Surfaces
 ++++++++++++
 
 Let's extract 2D iso-surfaces of a scalar field from a 3D mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-45
+.. GENERATED FROM PYTHON SOURCE LINES 42-46
 
 .. code-block:: default
 
@@ -269,12 +270,12 @@ Let's extract 2D iso-surfaces of a scalar field from a 3D mesh.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-48
+.. GENERATED FROM PYTHON SOURCE LINES 47-49
 
 For this example dataset, let's create 5 contour levels between the values
 of 50 and 200
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-51
+.. GENERATED FROM PYTHON SOURCE LINES 49-52
 
 .. code-block:: default
 
@@ -288,7 +289,7 @@ of 50 and 200
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-62
+.. GENERATED FROM PYTHON SOURCE LINES 53-63
 
 .. code-block:: default
 
@@ -314,7 +315,7 @@ of 50 and 200
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-70
+.. GENERATED FROM PYTHON SOURCE LINES 64-71
 
 .. raw:: html
 
@@ -327,7 +328,7 @@ of 50 and 200
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.712 seconds)
+   **Total running time of the script:** ( 0 minutes  9.098 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_d_contouring.py:

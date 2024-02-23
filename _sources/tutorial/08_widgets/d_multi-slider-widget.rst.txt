@@ -28,9 +28,10 @@ In this example we simply change a few parameters for the
 :func:`pyvista.Sphere` method, but this could easily be applied to any
 mesh-generating/altering code.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-37
+.. GENERATED FROM PYTHON SOURCE LINES 13-38
 
 .. code-block:: default
+
 
     import pyvista as pv
 
@@ -63,7 +64,7 @@ mesh-generating/altering code.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-42
+.. GENERATED FROM PYTHON SOURCE LINES 39-43
 
 .. code-block:: default
 
@@ -78,7 +79,7 @@ mesh-generating/altering code.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-75
+.. GENERATED FROM PYTHON SOURCE LINES 44-76
 
 .. code-block:: default
 
@@ -133,13 +134,13 @@ mesh-generating/altering code.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-79
+.. GENERATED FROM PYTHON SOURCE LINES 77-80
 
 And here is a screen capture of a user interacting with this
 
 .. image:: ../../images/gifs/multiple-slider-widget.gif
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-88
+.. GENERATED FROM PYTHON SOURCE LINES 82-89
 
 .. raw:: html
 
@@ -152,7 +153,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.245 seconds)
+   **Total running time of the script:** ( 0 minutes  0.244 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_d_multi-slider-widget.py:

@@ -24,9 +24,10 @@ Control the Color of an Actor
 Extending our simple example to have a dropdown menu to control the color of
 the actor.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-58
+.. GENERATED FROM PYTHON SOURCE LINES 9-59
 
 .. code-block:: default
+
 
     import pyvista as pv
     from pyvista.plotting.colors import hexcolors
@@ -78,7 +79,7 @@ the actor.
     server.start()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-66
+.. GENERATED FROM PYTHON SOURCE LINES 60-67
 
 .. raw:: html
 

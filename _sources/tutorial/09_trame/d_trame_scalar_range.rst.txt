@@ -23,9 +23,10 @@ Control Scalar Range
 
 Extending our simple example to control the color limits of the mapped scalars.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-56
+.. GENERATED FROM PYTHON SOURCE LINES 7-57
 
 .. code-block:: default
+
 
     import pyvista as pv
     from pyvista.trame.ui import plotter_ui
@@ -77,7 +78,7 @@ Extending our simple example to control the color limits of the mapped scalars.
     server.start()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-64
+.. GENERATED FROM PYTHON SOURCE LINES 58-65
 
 .. raw:: html
 

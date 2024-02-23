@@ -25,9 +25,10 @@ Plotting Glyphs (Vectors or PolyData)
 
 Use vectors in a dataset to plot and orient glyphs/geometric objects.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-13
+.. GENERATED FROM PYTHON SOURCE LINES 9-14
 
 .. code-block:: default
+
 
     import numpy as np
     import pyvista as pv
@@ -40,11 +41,11 @@ Use vectors in a dataset to plot and orient glyphs/geometric objects.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-15
+.. GENERATED FROM PYTHON SOURCE LINES 15-16
 
 Example dataset with normals
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-17
+.. GENERATED FROM PYTHON SOURCE LINES 16-18
 
 .. code-block:: default
 
@@ -57,11 +58,11 @@ Example dataset with normals
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-19
+.. GENERATED FROM PYTHON SOURCE LINES 19-20
 
 Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-21
+.. GENERATED FROM PYTHON SOURCE LINES 20-22
 
 .. code-block:: default
 
@@ -169,7 +170,7 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-28
+.. GENERATED FROM PYTHON SOURCE LINES 23-29
 
 Sometimes you might not want glyphs for every node in the input dataset. In
 this case, you can choose to build glyphs for a subset of the input dataset
@@ -178,7 +179,7 @@ percent which equates to five percent of the bounding box's length.
 
 create a subset of arrows using the glyph filter
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-31
+.. GENERATED FROM PYTHON SOURCE LINES 29-32
 
 .. code-block:: default
 
@@ -192,7 +193,7 @@ create a subset of arrows using the glyph filter
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 32-37
+.. GENERATED FROM PYTHON SOURCE LINES 33-38
 
 .. code-block:: default
 
@@ -213,12 +214,12 @@ create a subset of arrows using the glyph filter
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-40
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
 A common approach is to load vectors directly to the mesh object and then
 access the :attr:`pyvista.DataSet.arrows` property to produce glyphs.
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-54
+.. GENERATED FROM PYTHON SOURCE LINES 41-55
 
 .. code-block:: default
 
@@ -255,7 +256,7 @@ access the :attr:`pyvista.DataSet.arrows` property to produce glyphs.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-63
+.. GENERATED FROM PYTHON SOURCE LINES 56-64
 
 .. code-block:: default
 
@@ -279,11 +280,11 @@ access the :attr:`pyvista.DataSet.arrows` property to produce glyphs.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-65
+.. GENERATED FROM PYTHON SOURCE LINES 65-66
 
 Plot the arrows and the sphere.
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-70
+.. GENERATED FROM PYTHON SOURCE LINES 66-71
 
 .. code-block:: default
 
@@ -304,7 +305,7 @@ Plot the arrows and the sphere.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-78
+.. GENERATED FROM PYTHON SOURCE LINES 72-79
 
 .. raw:: html
 
@@ -317,7 +318,7 @@ Plot the arrows and the sphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.294 seconds)
+   **Total running time of the script:** ( 0 minutes  1.271 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py:

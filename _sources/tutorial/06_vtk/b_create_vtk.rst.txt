@@ -23,9 +23,10 @@ Create VTK Objects
 
 This exercise walks through the creation of a few different types of VTK datasets.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-16
+.. GENERATED FROM PYTHON SOURCE LINES 7-17
 
 .. code-block:: default
+
 
     import numpy as np
     import pyvista as pv
@@ -43,12 +44,12 @@ This exercise walks through the creation of a few different types of VTK dataset
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-19
+.. GENERATED FROM PYTHON SOURCE LINES 18-20
 
 Create ``vtkImageData``
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-24
+.. GENERATED FROM PYTHON SOURCE LINES 20-25
 
 .. code-block:: default
 
@@ -64,11 +65,11 @@ Create ``vtkImageData``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-26
+.. GENERATED FROM PYTHON SOURCE LINES 26-27
 
 Add point data
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-33
+.. GENERATED FROM PYTHON SOURCE LINES 27-34
 
 .. code-block:: default
 
@@ -88,15 +89,15 @@ Add point data
  .. code-block:: none
 
 
-    <vtkmodules.vtkCommonDataModel.vtkImageData(0x55dca04fe310) at 0x7fd42b058460>
+    <vtkmodules.vtkCommonDataModel.vtkImageData(0x558afdcf91c0) at 0x7ff8fd106ac0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-35
+.. GENERATED FROM PYTHON SOURCE LINES 35-36
 
 Plot with PyVista for simplicity
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-37
+.. GENERATED FROM PYTHON SOURCE LINES 36-38
 
 .. code-block:: default
 
@@ -114,12 +115,12 @@ Plot with PyVista for simplicity
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-40
+.. GENERATED FROM PYTHON SOURCE LINES 39-41
 
 Create ``vtkStructuredGrid``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-61
+.. GENERATED FROM PYTHON SOURCE LINES 41-62
 
 .. code-block:: default
 
@@ -153,15 +154,15 @@ Create ``vtkStructuredGrid``
  .. code-block:: none
 
 
-    <vtkmodules.vtkCommonDataModel.vtkStructuredGrid(0x55dca4bb1b50) at 0x7fd44bef7e20>
+    <vtkmodules.vtkCommonDataModel.vtkStructuredGrid(0x558afdd8a730) at 0x7ff8dc790be0>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-63
+.. GENERATED FROM PYTHON SOURCE LINES 63-64
 
 Add point data
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-68
+.. GENERATED FROM PYTHON SOURCE LINES 64-69
 
 .. code-block:: default
 
@@ -183,11 +184,11 @@ Add point data
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-70
+.. GENERATED FROM PYTHON SOURCE LINES 70-71
 
 Plot with PyVista for simplicity
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-72
+.. GENERATED FROM PYTHON SOURCE LINES 71-73
 
 .. code-block:: default
 
@@ -205,7 +206,7 @@ Plot with PyVista for simplicity
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-80
+.. GENERATED FROM PYTHON SOURCE LINES 74-81
 
 .. raw:: html
 
@@ -218,7 +219,7 @@ Plot with PyVista for simplicity
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.583 seconds)
+   **Total running time of the script:** ( 0 minutes  0.570 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_b_create_vtk.py:
