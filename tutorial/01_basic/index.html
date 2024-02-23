@@ -30,8 +30,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_2.6.1.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css" />
@@ -55,7 +54,6 @@
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/asciinema-player_2.6.1.js"></script>
     <script src="../../_static/design-tabs.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
@@ -593,7 +591,7 @@ module.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Note how this is a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.38.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a>, which is effectively a surface
+<p>Note how this is a <a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.43.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a>, which is effectively a surface
 dataset containing points, lines, and/or faces. We can immediately plot this with:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -611,7 +609,7 @@ dataset containing points, lines, and/or faces. We can immediately plot this wit
 <p>This is a fairly basic plot. You can change how its plotted by adding
 parameters as <code class="docutils literal notranslate"><span class="pre">show_edges=True</span></code> or changing the color by setting <code class="docutils literal notranslate"><span class="pre">color</span></code> to
 a different value. All of this is described in PyVista’s API documentation in
-<a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.plot.html#pyvista.plot" title="(in PyVista v0.38.5)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.plot()</span></code></a>, but for now let’s take a look at another dataset. This
+<a class="reference external" href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.plot.html#pyvista.plot" title="(in PyVista v0.43.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.plot()</span></code></a>, but for now let’s take a look at another dataset. This
 one is a volumetric dataset.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
@@ -645,7 +643,7 @@ one is a volumetric dataset.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>This is a <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code>, which is a dataset containing a uniform
+<p>This is a <a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.43.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a>, which is a dataset containing a uniform
 set of points with consistent spacing. When we plot this dataset, we have the
 option of enabling volumetric plotting, which plots individual cells based on
 the content of the data associated with those cells.</p>
@@ -676,7 +674,7 @@ your notebook (if applicable).</p>
 your computer. This can be one of the many file formats that VTK supports, and
 many more that it doesn’t as PyVista can rely on libraries like <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a>.</p>
 <p>In the following example, we load VTK’s iron protein dataset <a class="reference external" href="https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk">ironProt.vtk</a> from a
-file using <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.38.5)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a>.</p>
+file using <a class="reference external" href="https://docs.pyvista.org/version/stable/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.43.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a>.</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
@@ -710,7 +708,7 @@ file using <a class="reference external" href="https://docs.pyvista.org/api/util
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>This is again a <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code> and we can plot it volumetrically
+<p>This is again a <a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.43.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> and we can plot it volumetrically
 with:</p>
 <div class="jupyter_cell jupyter_container docutils container">
 <div class="cell_input code_cell docutils container">
