@@ -19,7 +19,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_a_display_options_thumb.png
-    :alt: Display Options
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_solutions_a_display_options.py`
 
@@ -36,7 +36,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_b_lighting_mesh_thumb.png
-    :alt: Lighting Properties
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_solutions_b_lighting_mesh.py`
 
@@ -53,7 +53,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_c_edl_thumb.png
-    :alt: Eye Dome Lighting
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_solutions_c_edl.py`
 

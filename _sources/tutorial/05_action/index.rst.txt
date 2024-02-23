@@ -14,12 +14,12 @@ Exercises
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is provided by `@bjlittle &lt;https://github.com/bjlittle&gt;`_ in `this discussion &lt;https://git...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is provided by @bjlittle in this discussion and modified by @tkoyama010 .">
 
 .. only:: html
 
   .. image:: /tutorial/05_action/images/thumb/sphx_glr_a_lesson_geovista_thumb.png
-    :alt: Using GeoVista
+    :alt:
 
   :ref:`sphx_glr_tutorial_05_action_a_lesson_geovista.py`
 

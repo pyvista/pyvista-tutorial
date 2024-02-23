@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_03_figures_solutions_b_lighting_mesh.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_solutions_b_lighting_mesh.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -35,7 +35,7 @@ https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html
 
 .. GENERATED FROM PYTHON SOURCE LINES 17-25
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -58,7 +58,7 @@ First, lets take a look at the mesh with default lighting conditions
 
 .. GENERATED FROM PYTHON SOURCE LINES 28-30
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(cpos=cpos, show_scalar_bar=False)
 
@@ -80,7 +80,7 @@ What about with no lighting?
 
 .. GENERATED FROM PYTHON SOURCE LINES 32-34
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(lighting=False, cpos=cpos, show_scalar_bar=False)
 
@@ -104,7 +104,7 @@ Feel free to adjust the specular value in the ``s`` variable.
 
 .. GENERATED FROM PYTHON SOURCE LINES 38-53
 
-.. code-block:: default
+.. code-block:: Python
 
     p = pv.Plotter(shape=(1, 2), window_size=[1500, 500])
 
@@ -139,7 +139,7 @@ Specular power (feel free to adjust)
 
 .. GENERATED FROM PYTHON SOURCE LINES 55-57
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(specular=0.5, specular_power=15, cpos=cpos, show_scalar_bar=False)
 
@@ -162,7 +162,7 @@ Demonstration of all diffuse, specular, and ambient in use together
 
 .. GENERATED FROM PYTHON SOURCE LINES 60-62
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(diffuse=0.5, specular=0.5, ambient=0.5, cpos=cpos, show_scalar_bar=False)
 
@@ -196,7 +196,7 @@ For detailed control over lighting conditions in general see the
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.601 seconds)
+   **Total running time of the script:** (0 minutes 8.576 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_b_lighting_mesh.py:
@@ -205,7 +205,6 @@ For detailed control over lighting conditions in general see the
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -213,13 +212,13 @@ For detailed control over lighting conditions in general see the
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: b_lighting_mesh.py <b_lighting_mesh.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: b_lighting_mesh.ipynb <b_lighting_mesh.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: b_lighting_mesh.py <b_lighting_mesh.py>`
 
 
 .. only:: html

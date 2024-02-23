@@ -315,7 +315,7 @@ bottom of the page and clicking on either the ``*.py`` (script) or ``*.ipynb``
 .. only:: html
 
   .. image:: /tutorial/00_intro/images/thumb/sphx_glr_a_basic_thumb.png
-    :alt: Create Basic Geometric Objects
+    :alt:
 
   :ref:`sphx_glr_tutorial_00_intro_a_basic.py`
 

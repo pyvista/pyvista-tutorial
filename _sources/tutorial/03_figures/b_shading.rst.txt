@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_03_figures_b_shading.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_b_shading.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -27,7 +27,7 @@ Comparison of default, flat shading vs. smooth shading.
 
 .. GENERATED FROM PYTHON SOURCE LINES 9-13
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -49,7 +49,7 @@ This is a plot with the default flat shading.
 
 .. GENERATED FROM PYTHON SOURCE LINES 19-23
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh = examples.load_nut()
     mesh.plot()
@@ -73,7 +73,7 @@ Here's the same sphere with smooth shading.
 
 .. GENERATED FROM PYTHON SOURCE LINES 25-28
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(smooth_shading=True)
 
@@ -103,7 +103,7 @@ enabling ``split_sharp_edges``.
 
 .. GENERATED FROM PYTHON SOURCE LINES 37-40
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(smooth_shading=True, split_sharp_edges=True)
 
@@ -127,7 +127,7 @@ We can even plot the edges that will be split using
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-57
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # extract the feature edges exceeding 30 degrees
@@ -162,7 +162,7 @@ physically based rendering as well.
 
 .. GENERATED FROM PYTHON SOURCE LINES 60-67
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # plot both the edges and the smoothed mesh
@@ -196,7 +196,7 @@ physically based rendering as well.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.362 seconds)
+   **Total running time of the script:** (0 minutes 1.335 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_b_shading.py:
@@ -205,7 +205,6 @@ physically based rendering as well.
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -213,13 +212,13 @@ physically based rendering as well.
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: b_shading.py <b_shading.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: b_shading.ipynb <b_shading.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: b_shading.py <b_shading.py>`
 
 
 .. only:: html

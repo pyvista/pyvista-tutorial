@@ -150,7 +150,7 @@ prepend it to the ``server_proxy_prefix``.
 .. only:: html
 
   .. image:: /tutorial/00_jupyter/images/thumb/sphx_glr_jupyter_thumb.png
-    :alt: Test out PyVista's Jupyter Backend
+    :alt:
 
   :ref:`sphx_glr_tutorial_00_jupyter_jupyter.py`
 

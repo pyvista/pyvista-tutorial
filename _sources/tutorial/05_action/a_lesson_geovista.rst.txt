@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_05_action_a_lesson_geovista.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_05_action_a_lesson_geovista.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -36,7 +36,7 @@ use case.
 
 .. GENERATED FROM PYTHON SOURCE LINES 17-29
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import subprocess
@@ -102,7 +102,7 @@ GeoVista has samples for it.
 
 .. GENERATED FROM PYTHON SOURCE LINES 68-71
 
-.. code-block:: default
+.. code-block:: Python
 
 
     help(gv.samples.lfric)
@@ -144,7 +144,7 @@ GeoVista has samples for it.
 
 .. GENERATED FROM PYTHON SOURCE LINES 72-74
 
-.. code-block:: default
+.. code-block:: Python
 
     c48 = gv.samples.lfric(resolution="c48")
 
@@ -169,7 +169,7 @@ PyVista's plot method.
 
 .. GENERATED FROM PYTHON SOURCE LINES 83-86
 
-.. code-block:: default
+.. code-block:: Python
 
 
     c48.plot(show_edges=True)
@@ -194,7 +194,7 @@ data:
 
 .. GENERATED FROM PYTHON SOURCE LINES 90-93
 
-.. code-block:: default
+.. code-block:: Python
 
 
     help(gv.samples.lfric_sst)
@@ -229,7 +229,7 @@ data:
 
 .. GENERATED FROM PYTHON SOURCE LINES 94-97
 
-.. code-block:: default
+.. code-block:: Python
 
     c48_sst = gv.samples.lfric_sst()
     c48_sst.plot(show_edges=True)
@@ -258,7 +258,7 @@ There is a convenience within `geovista.geodesic` that creates a
 
 .. GENERATED FROM PYTHON SOURCE LINES 104-109
 
-.. code-block:: default
+.. code-block:: Python
 
 
     from geovista.geodesic import panel
@@ -306,7 +306,7 @@ There is a convenience within `geovista.geodesic` that creates a
 
 .. GENERATED FROM PYTHON SOURCE LINES 110-114
 
-.. code-block:: default
+.. code-block:: Python
 
 
     bbox = panel("americas")
@@ -335,7 +335,7 @@ panel of the cube-sphere.
 
 .. GENERATED FROM PYTHON SOURCE LINES 121-129
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plotter = pv.Plotter()
@@ -365,7 +365,7 @@ gridlines of the bbox etc
 
 .. GENERATED FROM PYTHON SOURCE LINES 133-141
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plotter = pv.Plotter()
@@ -393,7 +393,7 @@ Let's now use the bounding box to extract the mesh that it encloses:
 
 .. GENERATED FROM PYTHON SOURCE LINES 143-146
 
-.. code-block:: default
+.. code-block:: Python
 
 
     region = bbox.enclosed(c48_sst)
@@ -411,7 +411,7 @@ Let's now use the bounding box to extract the mesh that it encloses:
 
 .. GENERATED FROM PYTHON SOURCE LINES 148-151
 
-.. code-block:: default
+.. code-block:: Python
 
 
     help(region)
@@ -11612,7 +11612,7 @@ Let's now use the bounding box to extract the mesh that it encloses:
 
 .. GENERATED FROM PYTHON SOURCE LINES 152-159
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plotter = pv.Plotter()
@@ -11639,7 +11639,7 @@ Let's check what kind of array does `region` have.
 
 .. GENERATED FROM PYTHON SOURCE LINES 161-164
 
-.. code-block:: default
+.. code-block:: Python
 
 
     print(region.array_names)
@@ -11669,7 +11669,7 @@ base layer in addition to some coastlines:
 
 .. GENERATED FROM PYTHON SOURCE LINES 171-180
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plotter = gv.GeoPlotter()
@@ -11700,7 +11700,7 @@ for geoscience such as `add_coastlines` and `add_base_layer`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 184-187
 
-.. code-block:: default
+.. code-block:: Python
 
 
     help(gv.GeoPlotter)
@@ -12333,7 +12333,7 @@ for geoscience such as `add_coastlines` and `add_base_layer`.
      |  ----------------------------------------------------------------------
      |  Data and other attributes inherited from pyvista.plotting.plotter.Plotter:
      |  
-     |  last_update_time = 1708694601.7075977
+     |  last_update_time = 1708696894.6187227
      |  
      |  ----------------------------------------------------------------------
      |  Methods inherited from pyvista.plotting.plotter.BasePlotter:
@@ -19388,7 +19388,7 @@ use `threshold` method of PyVista.
 
 .. GENERATED FROM PYTHON SOURCE LINES 191-194
 
-.. code-block:: default
+.. code-block:: Python
 
 
     sea_region = region.threshold(scalars='Surface Temperature')
@@ -19402,7 +19402,7 @@ use `threshold` method of PyVista.
 
 .. GENERATED FROM PYTHON SOURCE LINES 195-198
 
-.. code-block:: default
+.. code-block:: Python
 
 
     help(region.threshold)
@@ -19558,7 +19558,7 @@ use `threshold` method of PyVista.
 
 .. GENERATED FROM PYTHON SOURCE LINES 199-208
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plotter = gv.GeoPlotter()
@@ -19587,7 +19587,7 @@ Since we're here... let's transform the sea_region to a Robinson projection:
 
 .. GENERATED FROM PYTHON SOURCE LINES 210-219
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plotter = gv.GeoPlotter(crs="+proj=robin lon_0=-90")
@@ -19617,7 +19617,7 @@ mesh not enclosed by the bbox manifold:
 
 .. GENERATED FROM PYTHON SOURCE LINES 222-230
 
-.. code-block:: default
+.. code-block:: Python
 
 
     outside = bbox.enclosed(c48_sst, outside=True)
@@ -19645,7 +19645,7 @@ Akin to before, let's render this again, but with a base layer underneath:
 
 .. GENERATED FROM PYTHON SOURCE LINES 232-241
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plotter = gv.GeoPlotter()
@@ -19676,7 +19676,7 @@ projection to help clarify matters:
 
 .. GENERATED FROM PYTHON SOURCE LINES 245-254
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plotter = gv.GeoPlotter(crs="+proj=moll lon_0=-90")
@@ -19706,7 +19706,7 @@ mapped base layer:
 
 .. GENERATED FROM PYTHON SOURCE LINES 257-268
 
-.. code-block:: default
+.. code-block:: Python
 
 
     sea_outside = outside.threshold()
@@ -19755,7 +19755,7 @@ Sea Water Potential Temperature data, with 10m Natural Earth coastlines and a
 
 .. GENERATED FROM PYTHON SOURCE LINES 287-296
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import geovista as gv
@@ -19903,7 +19903,7 @@ Create the mesh from the sample data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 298-301
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh = gv.Transform.from_2d(sample.lons, sample.lats, data=sample.data)
@@ -19921,7 +19921,7 @@ Remove cells from the mesh with NaN values.
 
 .. GENERATED FROM PYTHON SOURCE LINES 303-306
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh = mesh.threshold()
@@ -19939,7 +19939,7 @@ Plot the mesh.
 
 .. GENERATED FROM PYTHON SOURCE LINES 308-318
 
-.. code-block:: default
+.. code-block:: Python
 
 
     plotter = gv.GeoPlotter()
@@ -19984,7 +19984,7 @@ xarray. After which, a pyvista namespace of accessors will be available.
 
 .. GENERATED FROM PYTHON SOURCE LINES 334-338
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pvxarray  # noqa
@@ -20003,7 +20003,7 @@ Load mean sea surface temperature dataset
 
 .. GENERATED FROM PYTHON SOURCE LINES 340-343
 
-.. code-block:: default
+.. code-block:: Python
 
 
     ds = xr.open_dataset("sst.mnmean.nc", engine="netcdf4")
@@ -20021,7 +20021,7 @@ Plot in 3D
 
 .. GENERATED FROM PYTHON SOURCE LINES 345-348
 
-.. code-block:: default
+.. code-block:: Python
 
 
     ds.sst[0].pyvista.plot(x="lon", y="lat", show_edges=True, cpos="xy")
@@ -20044,7 +20044,7 @@ Or grab the mesh object for use with PyVista and GeoVista.
 
 .. GENERATED FROM PYTHON SOURCE LINES 350-361
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh = ds.sst[0].pyvista.mesh(x="lon", y="lat")
@@ -20093,7 +20093,7 @@ Or grab the mesh object for use with PyVista and GeoVista.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  0.017 seconds)
+   **Total running time of the script:** (0 minutes 59.224 seconds)
 
 
 .. _sphx_glr_download_tutorial_05_action_a_lesson_geovista.py:
@@ -20102,7 +20102,6 @@ Or grab the mesh object for use with PyVista and GeoVista.
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -20110,13 +20109,13 @@ Or grab the mesh object for use with PyVista and GeoVista.
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: a_lesson_geovista.py <a_lesson_geovista.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: a_lesson_geovista.ipynb <a_lesson_geovista.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: a_lesson_geovista.py <a_lesson_geovista.py>`
 
 
 .. only:: html

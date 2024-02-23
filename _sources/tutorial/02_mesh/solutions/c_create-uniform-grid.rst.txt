@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -27,7 +27,7 @@ Create a simple uniform grid from a 3D NumPy array of values.
 
 .. GENERATED FROM PYTHON SOURCE LINES 10-14
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import numpy as np
@@ -54,7 +54,7 @@ referenced such that the grid is ``(20, 5, 10)`` ``(nx, ny, nz)``.
 
 .. GENERATED FROM PYTHON SOURCE LINES 23-26
 
-.. code-block:: default
+.. code-block:: Python
 
     values = np.linspace(0, 10, 1000).reshape((20, 5, 10))
     values.shape
@@ -78,7 +78,7 @@ Create the ImageData
 
 .. GENERATED FROM PYTHON SOURCE LINES 28-30
 
-.. code-block:: default
+.. code-block:: Python
 
     grid = pv.ImageData()
 
@@ -96,7 +96,7 @@ on the CELL data.
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-35
 
-.. code-block:: default
+.. code-block:: Python
 
     grid.dimensions = np.array(values.shape) + 1
 
@@ -113,7 +113,7 @@ Edit the spatial reference
 
 .. GENERATED FROM PYTHON SOURCE LINES 37-40
 
-.. code-block:: default
+.. code-block:: Python
 
     grid.origin = (100, 33, 55.6)  # The bottom left corner of the data set
     grid.spacing = (1, 5, 2)  # These are the cell sizes along each axis
@@ -132,7 +132,7 @@ Assign the data to the cell data. Be sure to flatten the data for
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-46
 
-.. code-block:: default
+.. code-block:: Python
 
     grid.cell_data["values"] = values.flatten(order="F")
     grid
@@ -175,7 +175,7 @@ Now plot the grid!
 
 .. GENERATED FROM PYTHON SOURCE LINES 48-51
 
-.. code-block:: default
+.. code-block:: Python
 
     grid.plot(show_edges=True)
 
@@ -200,7 +200,7 @@ setting the grid dimensions upon initialization.
 
 .. GENERATED FROM PYTHON SOURCE LINES 55-60
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Create the 3D NumPy array of spatially referenced data again.
@@ -226,7 +226,7 @@ Create the PyVista object and set the same attributes as earlier.
 
 .. GENERATED FROM PYTHON SOURCE LINES 62-72
 
-.. code-block:: default
+.. code-block:: Python
 
     grid = pv.ImageData()
 
@@ -251,7 +251,7 @@ Add the data values to the cell data
 
 .. GENERATED FROM PYTHON SOURCE LINES 74-77
 
-.. code-block:: default
+.. code-block:: Python
 
     grid.point_data["values"] = values.flatten(order="F")  # Flatten the array!
     grid
@@ -294,7 +294,7 @@ Now plot the grid!
 
 .. GENERATED FROM PYTHON SOURCE LINES 79-82
 
-.. code-block:: default
+.. code-block:: Python
 
     grid.plot(show_edges=True)
 
@@ -319,7 +319,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
 
 .. GENERATED FROM PYTHON SOURCE LINES 86-88
 
-.. code-block:: default
+.. code-block:: Python
 
     help(pv.ImageData)
 
@@ -9221,7 +9221,7 @@ your own 3D numpy array here.
 
 .. GENERATED FROM PYTHON SOURCE LINES 91-94
 
-.. code-block:: default
+.. code-block:: Python
 
     arr = np.random.random((100, 100, 100))
     arr.shape
@@ -9249,7 +9249,7 @@ Create the :class:`pyvista.ImageData`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 100-105
 
-.. code-block:: default
+.. code-block:: Python
 
 
     vol = pv.ImageData()
@@ -9269,7 +9269,7 @@ Plot the ImageData
 
 .. GENERATED FROM PYTHON SOURCE LINES 107-110
 
-.. code-block:: default
+.. code-block:: Python
 
     vol.plot()
 
@@ -9299,7 +9299,7 @@ Here's one of these example datasets:
 
 .. GENERATED FROM PYTHON SOURCE LINES 119-127
 
-.. code-block:: default
+.. code-block:: Python
 
     from pyvista import examples
 
@@ -9323,7 +9323,7 @@ Here's one of these example datasets:
 
 .. GENERATED FROM PYTHON SOURCE LINES 128-131
 
-.. code-block:: default
+.. code-block:: Python
 
     vol = pv.Wavelet()
     vol.plot(volume=True)
@@ -9353,7 +9353,7 @@ Here's one of these example datasets:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.218 seconds)
+   **Total running time of the script:** (0 minutes 5.002 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py:
@@ -9362,7 +9362,6 @@ Here's one of these example datasets:
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -9370,13 +9369,13 @@ Here's one of these example datasets:
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: c_create-uniform-grid.py <c_create-uniform-grid.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: c_create-uniform-grid.ipynb <c_create-uniform-grid.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: c_create-uniform-grid.py <c_create-uniform-grid.py>`
 
 
 .. only:: html

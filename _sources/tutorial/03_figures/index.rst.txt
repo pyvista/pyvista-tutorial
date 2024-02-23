@@ -290,7 +290,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/03_figures/images/thumb/sphx_glr_a_lesson_figures_thumb.png
-    :alt: Lesson Overview
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_a_lesson_figures.py`
 
@@ -307,7 +307,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/03_figures/images/thumb/sphx_glr_b_shading_thumb.png
-    :alt: Types of Shading
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_b_shading.py`
 
@@ -324,7 +324,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/03_figures/images/thumb/sphx_glr_c_geological-map_thumb.png
-    :alt: Geological Map on Topography
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_c_geological-map.py`
 
@@ -341,7 +341,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/03_figures/images/thumb/sphx_glr_d_gif_thumb.gif
-    :alt: Create a GIF Movie
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_d_gif.py`
 
@@ -381,7 +381,7 @@ Bonus Content
 .. only:: html
 
   .. image:: /tutorial/03_figures/bonus/images/thumb/sphx_glr_d_pbr_thumb.png
-    :alt: Physically Based Rendering
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_bonus_d_pbr.py`
 
@@ -398,7 +398,7 @@ Bonus Content
 .. only:: html
 
   .. image:: /tutorial/03_figures/bonus/images/thumb/sphx_glr_e_labels_thumb.png
-    :alt: Label Points
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_bonus_e_labels.py`
 
@@ -415,7 +415,7 @@ Bonus Content
 .. only:: html
 
   .. image:: /tutorial/03_figures/bonus/images/thumb/sphx_glr_g_orbit_thumb.gif
-    :alt: Orbiting
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_bonus_g_orbit.py`
 
@@ -446,7 +446,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/03_figures/exercises/images/thumb/sphx_glr_a_display_options_thumb.png
-    :alt: Display Options
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_exercises_a_display_options.py`
 
@@ -463,7 +463,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/03_figures/exercises/images/thumb/sphx_glr_b_lighting_mesh_thumb.png
-    :alt: Lighting Properties
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_exercises_b_lighting_mesh.py`
 
@@ -480,7 +480,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/03_figures/exercises/images/thumb/sphx_glr_c_edl_thumb.png
-    :alt: Eye Dome Lighting
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_exercises_c_edl.py`
 
@@ -511,7 +511,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_a_display_options_thumb.png
-    :alt: Display Options
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_solutions_a_display_options.py`
 
@@ -528,7 +528,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_b_lighting_mesh_thumb.png
-    :alt: Lighting Properties
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_solutions_b_lighting_mesh.py`
 
@@ -545,7 +545,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/03_figures/solutions/images/thumb/sphx_glr_c_edl_thumb.png
-    :alt: Eye Dome Lighting
+    :alt:
 
   :ref:`sphx_glr_tutorial_03_figures_solutions_c_edl.py`
 
@@ -563,6 +563,7 @@ Solutions
 .. toctree::
    :hidden:
    :includehidden:
+
 
    /tutorial/03_figures//bonus/index.rst
    /tutorial/03_figures//exercises/index.rst

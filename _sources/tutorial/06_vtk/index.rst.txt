@@ -397,7 +397,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/06_vtk/images/thumb/sphx_glr_a_1_transition_vtk_thumb.png
-    :alt: Transitioning from VTK to PyVista
+    :alt:
 
   :ref:`sphx_glr_tutorial_06_vtk_a_1_transition_vtk.py`
 
@@ -414,7 +414,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/06_vtk/images/thumb/sphx_glr_a_2_pyvista_vtk_thumb.png
-    :alt: PyVista and VTK Together
+    :alt:
 
   :ref:`sphx_glr_tutorial_06_vtk_a_2_pyvista_vtk.py`
 
@@ -431,7 +431,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/06_vtk/images/thumb/sphx_glr_b_create_vtk_thumb.png
-    :alt: Create VTK Objects
+    :alt:
 
   :ref:`sphx_glr_tutorial_06_vtk_b_create_vtk.py`
 
@@ -448,7 +448,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/06_vtk/images/thumb/sphx_glr_c_vtk_algorithms_thumb.png
-    :alt: Using VTK Algorithms
+    :alt:
 
   :ref:`sphx_glr_tutorial_06_vtk_c_vtk_algorithms.py`
 

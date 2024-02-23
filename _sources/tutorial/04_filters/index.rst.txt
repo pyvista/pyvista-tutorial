@@ -173,7 +173,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/04_filters/images/thumb/sphx_glr_a_lesson_filters_thumb.png
-    :alt: Using Common Filters
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_a_lesson_filters.py`
 
@@ -210,7 +210,7 @@ Bonus Content
 .. only:: html
 
   .. image:: /tutorial/04_filters/bonus/images/thumb/sphx_glr_f_sampling_functions_3d_thumb.png
-    :alt: Sample Function: Perlin Noise in 3D
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_bonus_f_sampling_functions_3d.py`
 
@@ -241,7 +241,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_b_clipping_thumb.png
-    :alt: Clipping with Planes & Boxes
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_exercises_b_clipping.py`
 
@@ -258,7 +258,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_c_compute-normals_thumb.png
-    :alt: Computing Surface Normals
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_exercises_c_compute-normals.py`
 
@@ -275,7 +275,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_d_contouring_thumb.png
-    :alt: Contouring
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_exercises_d_contouring.py`
 
@@ -292,7 +292,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/04_filters/exercises/images/thumb/sphx_glr_e_glyphs_thumb.png
-    :alt: Plotting Glyphs (Vectors or PolyData)
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_exercises_e_glyphs.py`
 
@@ -323,7 +323,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_b_clipping_thumb.png
-    :alt: Clipping with Planes & Boxes
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_solutions_b_clipping.py`
 
@@ -340,7 +340,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_c_compute-normals_thumb.png
-    :alt: Computing Surface Normals
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_solutions_c_compute-normals.py`
 
@@ -357,7 +357,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_d_contouring_thumb.png
-    :alt: Contouring
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_solutions_d_contouring.py`
 
@@ -374,7 +374,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/04_filters/solutions/images/thumb/sphx_glr_e_glyphs_thumb.png
-    :alt: Plotting Glyphs (Vectors or PolyData)
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_solutions_e_glyphs.py`
 
@@ -392,6 +392,7 @@ Solutions
 .. toctree::
    :hidden:
    :includehidden:
+
 
    /tutorial/04_filters//bonus/index.rst
    /tutorial/04_filters//exercises/index.rst

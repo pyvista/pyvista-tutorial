@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_03_figures_exercises_c_edl.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_exercises_c_edl.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -29,7 +29,7 @@ To learn more, please see `this blog post`_.
 
 .. GENERATED FROM PYTHON SOURCE LINES 14-18
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -46,7 +46,7 @@ Take this Lidar point cloud for example:
 
 .. GENERATED FROM PYTHON SOURCE LINES 25-29
 
-.. code-block:: default
+.. code-block:: Python
 
 
     point_cloud = examples.download_lidar()
@@ -59,7 +59,7 @@ And now plot this point cloud as-is:
 
 .. GENERATED FROM PYTHON SOURCE LINES 31-38
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Plot a typical point cloud with no EDL
@@ -78,7 +78,7 @@ Try plotting that point cloud with Eye-Dome-Lighting yourself below:
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-50
 
-.. code-block:: default
+.. code-block:: Python
 
 
     p = pv.Plotter()
@@ -105,17 +105,11 @@ the ``add_mesh`` call.
     </center>
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-
 .. _sphx_glr_download_tutorial_03_figures_exercises_c_edl.py:
 
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
-
 
     .. container:: binder-badge
 
@@ -124,13 +118,13 @@ the ``add_mesh`` call.
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: c_edl.py <c_edl.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: c_edl.ipynb <c_edl.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: c_edl.py <c_edl.py>`
 
 
 .. only:: html

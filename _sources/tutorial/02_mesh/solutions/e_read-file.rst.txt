@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_02_mesh_solutions_e_read-file.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_solutions_e_read-file.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -36,7 +36,7 @@ airplane mesh.
 
 .. GENERATED FROM PYTHON SOURCE LINES 18-22
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -51,7 +51,7 @@ airplane mesh.
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-26
 
-.. code-block:: default
+.. code-block:: Python
 
     help(pv.read)
 
@@ -141,7 +141,7 @@ extensions are listed in an internal function:
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-32
 
-.. code-block:: default
+.. code-block:: Python
 
     help(pv.core.utilities.reader.get_reader)
 
@@ -310,7 +310,7 @@ file, displays an airplane mesh and returns the camera's position:
 
 .. GENERATED FROM PYTHON SOURCE LINES 35-40
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Get a sample file
@@ -339,7 +339,7 @@ Use ``pv.read`` to load the file as a mesh:
 
 .. GENERATED FROM PYTHON SOURCE LINES 45-50
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh = pv.read(filename)
@@ -364,7 +364,7 @@ The points from the mesh are directly accessible as a NumPy array:
 
 .. GENERATED FROM PYTHON SOURCE LINES 52-55
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh.points
@@ -394,7 +394,7 @@ The faces from the mesh are also directly accessible as a NumPy array:
 
 .. GENERATED FROM PYTHON SOURCE LINES 57-61
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh.faces.reshape(-1, 4)[:, 1:]  # triangular faces
@@ -433,7 +433,7 @@ Example STL file:
 
 .. GENERATED FROM PYTHON SOURCE LINES 70-74
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh = examples.download_cad_model()
     cpos = [(107.0, 68.5, 204.0), (128.0, 86.5, 223.5), (0.45, 0.36, -0.8)]
@@ -457,7 +457,7 @@ Example OBJ file
 
 .. GENERATED FROM PYTHON SOURCE LINES 76-80
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh = examples.download_doorman()
     mesh.plot(cpos="xy")
@@ -481,7 +481,7 @@ Example BYU file
 
 .. GENERATED FROM PYTHON SOURCE LINES 82-86
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh = examples.download_teapot()
     mesh.plot(cpos=[-1, 2, -5], show_edges=True)
@@ -505,7 +505,7 @@ Example VTK file
 
 .. GENERATED FROM PYTHON SOURCE LINES 88-93
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh = examples.download_bunny_coarse()
     cpos = [(0.2, 0.3, 0.9), (0, 0, 0), (0, 1, 0)]
@@ -534,7 +534,7 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
 .. GENERATED FROM PYTHON SOURCE LINES 99-103
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # (your code here)
@@ -560,7 +560,7 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.868 seconds)
+   **Total running time of the script:** (0 minutes 1.763 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_e_read-file.py:
@@ -569,7 +569,6 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -577,13 +576,13 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: e_read-file.py <e_read-file.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: e_read-file.ipynb <e_read-file.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: e_read-file.py <e_read-file.py>`
 
 
 .. only:: html

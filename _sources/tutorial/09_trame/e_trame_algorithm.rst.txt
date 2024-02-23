@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_09_trame_e_trame_algorithm.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_09_trame_e_trame_algorithm.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -26,7 +26,7 @@ to show how the three libraries complement each other.
 
 .. GENERATED FROM PYTHON SOURCE LINES 8-63
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -95,17 +95,11 @@ to show how the three libraries complement each other.
     </center>
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-
 .. _sphx_glr_download_tutorial_09_trame_e_trame_algorithm.py:
 
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
-
 
     .. container:: binder-badge
 
@@ -114,13 +108,13 @@ to show how the three libraries complement each other.
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: e_trame_algorithm.py <e_trame_algorithm.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: e_trame_algorithm.ipynb <e_trame_algorithm.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: e_trame_algorithm.py <e_trame_algorithm.py>`
 
 
 .. only:: html

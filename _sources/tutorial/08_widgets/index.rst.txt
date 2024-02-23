@@ -41,7 +41,7 @@ Widget Examples
 .. only:: html
 
   .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_a_box-widget_thumb.png
-    :alt: Box Widget
+    :alt:
 
   :ref:`sphx_glr_tutorial_08_widgets_a_box-widget.py`
 
@@ -58,7 +58,7 @@ Widget Examples
 .. only:: html
 
   .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_b_checkbox-widget_thumb.png
-    :alt: Checkbox Widget
+    :alt:
 
   :ref:`sphx_glr_tutorial_08_widgets_b_checkbox-widget.py`
 
@@ -75,7 +75,7 @@ Widget Examples
 .. only:: html
 
   .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_c_line-widget_thumb.png
-    :alt: Line Widget
+    :alt:
 
   :ref:`sphx_glr_tutorial_08_widgets_c_line-widget.py`
 
@@ -92,7 +92,7 @@ Widget Examples
 .. only:: html
 
   .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_d_multi-slider-widget_thumb.png
-    :alt: Multiple Slider Widgets
+    :alt:
 
   :ref:`sphx_glr_tutorial_08_widgets_d_multi-slider-widget.py`
 
@@ -109,7 +109,7 @@ Widget Examples
 .. only:: html
 
   .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_e_plane-widget_thumb.png
-    :alt: Plane Widget
+    :alt:
 
   :ref:`sphx_glr_tutorial_08_widgets_e_plane-widget.py`
 
@@ -126,7 +126,7 @@ Widget Examples
 .. only:: html
 
   .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_f_slider-bar-widget_thumb.png
-    :alt: Slider Bar Widget
+    :alt:
 
   :ref:`sphx_glr_tutorial_08_widgets_f_slider-bar-widget.py`
 
@@ -143,7 +143,7 @@ Widget Examples
 .. only:: html
 
   .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_g_sphere-widget_thumb.png
-    :alt: Sphere Widget
+    :alt:
 
   :ref:`sphx_glr_tutorial_08_widgets_g_sphere-widget.py`
 
@@ -160,7 +160,7 @@ Widget Examples
 .. only:: html
 
   .. image:: /tutorial/08_widgets/images/thumb/sphx_glr_h_spline-widget_thumb.png
-    :alt: Spline Widget
+    :alt:
 
   :ref:`sphx_glr_tutorial_08_widgets_h_spline-widget.py`
 

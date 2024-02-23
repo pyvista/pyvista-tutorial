@@ -134,12 +134,12 @@ along with this lesson.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This section demonstrates how to use PyVista to read and plot 3D data using the `pyvista.exampl...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This section demonstrates how to use PyVista to read and plot 3D data using the pyvista.example...">
 
 .. only:: html
 
   .. image:: /tutorial/01_basic/images/thumb/sphx_glr_a_lesson_basic_thumb.png
-    :alt: Basic Usage Lesson
+    :alt:
 
   :ref:`sphx_glr_tutorial_01_basic_a_lesson_basic.py`
 
@@ -176,7 +176,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/01_basic/exercises/images/thumb/sphx_glr_a_load_examples_exercise_thumb.png
-    :alt: Download and Plot Examples
+    :alt:
 
   :ref:`sphx_glr_tutorial_01_basic_exercises_a_load_examples_exercise.py`
 
@@ -209,7 +209,7 @@ These are the solutions to the above examples.
 .. only:: html
 
   .. image:: /tutorial/01_basic/solutions/images/thumb/sphx_glr_a_load_examples_solution_thumb.png
-    :alt: Download and Plot Examples
+    :alt:
 
   :ref:`sphx_glr_tutorial_01_basic_solutions_a_load_examples_solution.py`
 
@@ -227,6 +227,7 @@ These are the solutions to the above examples.
 .. toctree::
    :hidden:
    :includehidden:
+
 
    /tutorial/01_basic//exercises/index.rst
    /tutorial/01_basic//solutions/index.rst

@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_09_trame_c_trame_scalars.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_09_trame_c_trame_scalars.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -26,7 +26,7 @@ scalar array is used to color the mesh.
 
 .. GENERATED FROM PYTHON SOURCE LINES 8-73
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -105,17 +105,11 @@ scalar array is used to color the mesh.
     </center>
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-
 .. _sphx_glr_download_tutorial_09_trame_c_trame_scalars.py:
 
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
-
 
     .. container:: binder-badge
 
@@ -124,13 +118,13 @@ scalar array is used to color the mesh.
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: c_trame_scalars.py <c_trame_scalars.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: c_trame_scalars.ipynb <c_trame_scalars.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: c_trame_scalars.py <c_trame_scalars.py>`
 
 
 .. only:: html

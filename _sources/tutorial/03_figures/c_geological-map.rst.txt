@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_03_figures_c_geological-map.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_c_geological-map.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -31,7 +31,7 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
 .. GENERATED FROM PYTHON SOURCE LINES 13-22
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import os
@@ -51,7 +51,7 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-28
 
-.. code-block:: default
+.. code-block:: Python
 
     path = examples.download_file("topo_clean.vtk")
     topo = pv.read(path)
@@ -88,7 +88,7 @@ https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.t
 
 .. GENERATED FROM PYTHON SOURCE LINES 31-38
 
-.. code-block:: default
+.. code-block:: Python
 
     url = "https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0"
 
@@ -119,7 +119,7 @@ GDAL.
 
 .. GENERATED FROM PYTHON SOURCE LINES 43-64
 
-.. code-block:: default
+.. code-block:: Python
 
 
 
@@ -151,7 +151,7 @@ GDAL.
 
 .. GENERATED FROM PYTHON SOURCE LINES 65-74
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Fetch the GCPs
@@ -171,7 +171,7 @@ GDAL.
 
 .. GENERATED FROM PYTHON SOURCE LINES 75-79
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Use the GCPs to map the texture coordinates onto the topography surface
@@ -213,7 +213,7 @@ Show GCPs in relation to topo surface with texture coordinates displayed
 
 .. GENERATED FROM PYTHON SOURCE LINES 81-98
 
-.. code-block:: default
+.. code-block:: Python
 
     p = pv.Plotter()
     p.add_point_labels(
@@ -250,7 +250,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. GENERATED FROM PYTHON SOURCE LINES 100-113
 
-.. code-block:: default
+.. code-block:: Python
 
     texture = pv.read_texture(filename)
 
@@ -290,7 +290,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.399 seconds)
+   **Total running time of the script:** (0 minutes 14.494 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_c_geological-map.py:
@@ -299,7 +299,6 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -307,13 +306,13 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: c_geological-map.py <c_geological-map.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: c_geological-map.ipynb <c_geological-map.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: c_geological-map.py <c_geological-map.py>`
 
 
 .. only:: html

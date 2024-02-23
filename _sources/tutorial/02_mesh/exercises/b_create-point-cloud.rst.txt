@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_02_mesh_exercises_b_create-point-cloud.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_exercises_b_create-point-cloud.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -28,7 +28,7 @@ scalar arrays for those points.
 
 .. GENERATED FROM PYTHON SOURCE LINES 11-16
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import numpy as np
@@ -47,7 +47,7 @@ locations.
 
 .. GENERATED FROM PYTHON SOURCE LINES 23-38
 
-.. code-block:: default
+.. code-block:: Python
 
 
 
@@ -72,7 +72,7 @@ data or your own project, create a PyVista mesh using those points.
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-45
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # insert your code here
@@ -86,7 +86,7 @@ correctly.
 
 .. GENERATED FROM PYTHON SOURCE LINES 48-51
 
-.. code-block:: default
+.. code-block:: Python
 
 
     np.allclose(points, point_cloud.points)
@@ -101,7 +101,7 @@ perception with point clouds (learn more about `EDL
 
 .. GENERATED FROM PYTHON SOURCE LINES 56-58
 
-.. code-block:: default
+.. code-block:: Python
 
     point_cloud.plot(eye_dome_lighting=True)
 
@@ -123,7 +123,7 @@ Each element in this array will correspond to points at the same index:
 
 .. GENERATED FROM PYTHON SOURCE LINES 71-74
 
-.. code-block:: default
+.. code-block:: Python
 
 
     data = ...  # your code here
@@ -135,7 +135,7 @@ Add that data to the mesh with the name "elevation".
 
 .. GENERATED FROM PYTHON SOURCE LINES 76-79
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # your code here
@@ -149,7 +149,7 @@ render every point as its own sphere using ``render_points_as_spheres``.
 
 .. GENERATED FROM PYTHON SOURCE LINES 83-85
 
-.. code-block:: default
+.. code-block:: Python
 
     point_cloud.plot(render_points_as_spheres=True)
 
@@ -166,7 +166,7 @@ This time, we're going to create a totally new, random point cloud containing
 
 .. GENERATED FROM PYTHON SOURCE LINES 93-112
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Create a random point cloud with Cartesian coordinates
@@ -200,7 +200,7 @@ for more details).
 
 .. GENERATED FROM PYTHON SOURCE LINES 120-136
 
-.. code-block:: default
+.. code-block:: Python
 
 
     arrows = point_cloud.glyph(
@@ -230,17 +230,11 @@ for more details).
     </center>
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-
 .. _sphx_glr_download_tutorial_02_mesh_exercises_b_create-point-cloud.py:
 
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
-
 
     .. container:: binder-badge
 
@@ -249,13 +243,13 @@ for more details).
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: b_create-point-cloud.py <b_create-point-cloud.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: b_create-point-cloud.ipynb <b_create-point-cloud.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: b_create-point-cloud.py <b_create-point-cloud.py>`
 
 
 .. only:: html

@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_02_mesh_solutions_d_create-tri-surface.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_solutions_d_create-tri-surface.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -30,7 +30,7 @@ Create a surface from a set of points through a Delaunay triangulation.
 
 .. GENERATED FROM PYTHON SOURCE LINES 12-16
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import numpy as np
@@ -52,7 +52,7 @@ First, create some points for the surface.
 
 .. GENERATED FROM PYTHON SOURCE LINES 21-34
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Define a simple Gaussian surface
@@ -76,11 +76,11 @@ First, create some points for the surface.
  .. code-block:: none
 
 
-    array([[-198.79404298, -199.0325402 ,    1.91270603],
-           [-175.96300288, -199.0325402 ,    2.93387379],
-           [-156.17855805, -199.0325402 ,    4.07506005],
-           [-133.0167397 , -199.0325402 ,    5.69620367],
-           [-120.34170876, -199.0325402 ,    6.68834353]])
+    array([[-197.71576661, -203.45341607,    1.78769904],
+           [-181.25590539, -203.45341607,    2.44200738],
+           [-162.8262982 , -203.45341607,    3.35310034],
+           [-135.34584918, -203.45341607,    5.05097158],
+           [-113.83305647, -203.45341607,    6.6035496 ]])
 
 
 
@@ -91,7 +91,7 @@ be encompassed in a :class:`pyvista.PolyData` object.
 
 .. GENERATED FROM PYTHON SOURCE LINES 37-42
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # simply pass the numpy points to the PolyData constructor
@@ -118,7 +118,7 @@ See :func:`pyvista.UnstructuredGridFilters.delaunay_2d`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 46-48
 
-.. code-block:: default
+.. code-block:: Python
 
     help(cloud.delaunay_2d)
 
@@ -221,7 +221,7 @@ Apply the ``delaunay_2d`` filter.
 
 .. GENERATED FROM PYTHON SOURCE LINES 50-57
 
-.. code-block:: default
+.. code-block:: Python
 
 
     surf = cloud.delaunay_2d()
@@ -249,7 +249,7 @@ Clean Edges & Triangulations
 
 .. GENERATED FROM PYTHON SOURCE LINES 60-73
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Create the points to triangulate
@@ -278,8 +278,8 @@ Clean Edges & Triangulations
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>2.362e-02, 9.243e+00</td></tr>
-    <tr><td>Y Bounds</td><td>2.266e-02, 9.257e+00</td></tr>
+    <tr><td>X Bounds</td><td>5.877e-03, 9.288e+00</td></tr>
+    <tr><td>Y Bounds</td><td>1.913e-02, 9.284e+00</td></tr>
     <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
@@ -291,7 +291,7 @@ Clean Edges & Triangulations
 
 .. GENERATED FROM PYTHON SOURCE LINES 74-76
 
-.. code-block:: default
+.. code-block:: Python
 
     cloud.plot(cpos="xy")
 
@@ -313,7 +313,7 @@ Run the triangulation on these points
 
 .. GENERATED FROM PYTHON SOURCE LINES 78-81
 
-.. code-block:: default
+.. code-block:: Python
 
     surf = cloud.delaunay_2d()
     surf.plot(cpos="xy", show_edges=True)
@@ -337,7 +337,7 @@ added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
 
 .. GENERATED FROM PYTHON SOURCE LINES 84-87
 
-.. code-block:: default
+.. code-block:: Python
 
     surf = cloud.delaunay_2d(alpha=1.0)
     surf.plot(cpos="xy", show_edges=True)
@@ -367,7 +367,7 @@ added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.983 seconds)
+   **Total running time of the script:** (0 minutes 0.977 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_d_create-tri-surface.py:
@@ -376,7 +376,6 @@ added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -384,13 +383,13 @@ added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: d_create-tri-surface.py <d_create-tri-surface.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: d_create-tri-surface.ipynb <d_create-tri-surface.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: d_create-tri-surface.py <d_create-tri-surface.py>`
 
 
 .. only:: html

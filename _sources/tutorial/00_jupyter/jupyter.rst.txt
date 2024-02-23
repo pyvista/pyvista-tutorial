@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_00_jupyter_jupyter.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_00_jupyter_jupyter.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -25,7 +25,7 @@ Become familiar with PyVista Jupyter backend.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-13
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -42,7 +42,7 @@ Become familiar with PyVista Jupyter backend.
 
 .. GENERATED FROM PYTHON SOURCE LINES 14-20
 
-.. code-block:: default
+.. code-block:: Python
 
 
     pl = pv.Plotter()
@@ -68,7 +68,7 @@ Client-side rendering only (in browser)
 
 .. GENERATED FROM PYTHON SOURCE LINES 22-28
 
-.. code-block:: default
+.. code-block:: Python
 
 
     pl = pv.Plotter()
@@ -102,7 +102,7 @@ Server-side rendering only
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-35
 
-.. code-block:: default
+.. code-block:: Python
 
 
     pl = pv.Plotter()
@@ -142,7 +142,7 @@ Server-side rendering only
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.781 seconds)
+   **Total running time of the script:** (0 minutes 1.765 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_jupyter_jupyter.py:
@@ -151,7 +151,6 @@ Server-side rendering only
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -159,13 +158,13 @@ Server-side rendering only
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: jupyter.py <jupyter.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: jupyter.ipynb <jupyter.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: jupyter.py <jupyter.py>`
 
 
 .. only:: html

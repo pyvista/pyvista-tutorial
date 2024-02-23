@@ -19,7 +19,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_b_create-point-cloud_thumb.png
-    :alt: Create Point Cloud
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_solutions_b_create-point-cloud.py`
 
@@ -36,7 +36,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_c_create-uniform-grid_thumb.png
-    :alt: Creating a Uniform Grid
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_solutions_c_create-uniform-grid.py`
 
@@ -53,7 +53,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_d_create-tri-surface_thumb.png
-    :alt: Create Triangulated Surface
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_solutions_d_create-tri-surface.py`
 
@@ -70,7 +70,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_e_read-file_thumb.png
-    :alt: Load and Plot from a File
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_solutions_e_read-file.py`
 

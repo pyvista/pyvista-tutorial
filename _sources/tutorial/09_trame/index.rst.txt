@@ -126,7 +126,7 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 .. only:: html
 
   .. image:: /tutorial/09_trame/images/thumb/sphx_glr_a_trame_simple_thumb.png
-    :alt: Simple Trame App
+    :alt:
 
   :ref:`sphx_glr_tutorial_09_trame_a_trame_simple.py`
 
@@ -143,7 +143,7 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 .. only:: html
 
   .. image:: /tutorial/09_trame/images/thumb/sphx_glr_b_trame_actor_color_thumb.png
-    :alt: Control the Color of an Actor
+    :alt:
 
   :ref:`sphx_glr_tutorial_09_trame_b_trame_actor_color.py`
 
@@ -160,7 +160,7 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 .. only:: html
 
   .. image:: /tutorial/09_trame/images/thumb/sphx_glr_c_trame_scalars_thumb.png
-    :alt: Control Scalar Array
+    :alt:
 
   :ref:`sphx_glr_tutorial_09_trame_c_trame_scalars.py`
 
@@ -177,7 +177,7 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 .. only:: html
 
   .. image:: /tutorial/09_trame/images/thumb/sphx_glr_d_trame_scalar_range_thumb.png
-    :alt: Control Scalar Range
+    :alt:
 
   :ref:`sphx_glr_tutorial_09_trame_d_trame_scalar_range.py`
 
@@ -194,7 +194,7 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 .. only:: html
 
   .. image:: /tutorial/09_trame/images/thumb/sphx_glr_e_trame_algorithm_thumb.png
-    :alt: Using VTK, PyVista, and Trame
+    :alt:
 
   :ref:`sphx_glr_tutorial_09_trame_e_trame_algorithm.py`
 
@@ -211,7 +211,7 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 .. only:: html
 
   .. image:: /tutorial/09_trame/images/thumb/sphx_glr_f_trame_open_file_thumb.png
-    :alt: Open Mesh File
+    :alt:
 
   :ref:`sphx_glr_tutorial_09_trame_f_trame_open_file.py`
 

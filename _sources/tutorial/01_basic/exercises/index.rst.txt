@@ -19,7 +19,7 @@ Exercises
 .. only:: html
 
   .. image:: /tutorial/01_basic/exercises/images/thumb/sphx_glr_a_load_examples_exercise_thumb.png
-    :alt: Download and Plot Examples
+    :alt:
 
   :ref:`sphx_glr_tutorial_01_basic_exercises_a_load_examples_exercise.py`
 

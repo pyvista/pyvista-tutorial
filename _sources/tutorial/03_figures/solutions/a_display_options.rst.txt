@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -25,7 +25,7 @@ Take a look at the different display options offered by the ``add_mesh`` method.
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-17
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -58,7 +58,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
 
 .. GENERATED FROM PYTHON SOURCE LINES 22-24
 
-.. code-block:: default
+.. code-block:: Python
 
     help(p.add_mesh)
 
@@ -498,7 +498,7 @@ Plot that mesh with the edges of cells displayed
 
 .. GENERATED FROM PYTHON SOURCE LINES 26-30
 
-.. code-block:: default
+.. code-block:: Python
 
     p = pv.Plotter()
     p.add_mesh(mesh, show_edges=True)
@@ -523,7 +523,7 @@ color (use a named color!)
 
 .. GENERATED FROM PYTHON SOURCE LINES 33-37
 
-.. code-block:: default
+.. code-block:: Python
 
     p = pv.Plotter()
     p.add_mesh(mesh, color="magenta", show_edges=True, edge_color="blue")
@@ -547,7 +547,7 @@ Display with a points representation style
 
 .. GENERATED FROM PYTHON SOURCE LINES 39-43
 
-.. code-block:: default
+.. code-block:: Python
 
     p = pv.Plotter()
     p.add_mesh(mesh, style="points")
@@ -571,7 +571,7 @@ And adjust the points display size
 
 .. GENERATED FROM PYTHON SOURCE LINES 45-49
 
-.. code-block:: default
+.. code-block:: Python
 
     p = pv.Plotter()
     p.add_mesh(mesh, style="points", point_size=10, render_points_as_spheres=True)
@@ -595,7 +595,7 @@ Change the color map and the color limits
 
 .. GENERATED FROM PYTHON SOURCE LINES 51-55
 
-.. code-block:: default
+.. code-block:: Python
 
     p = pv.Plotter()
     p.add_mesh(mesh, cmap="terrain", clim=[2, 5])
@@ -619,7 +619,7 @@ Add some opacity
 
 .. GENERATED FROM PYTHON SOURCE LINES 57-61
 
-.. code-block:: default
+.. code-block:: Python
 
     p = pv.Plotter()
     p.add_mesh(mesh, cmap="terrain", clim=[2, 5], opacity="linear")
@@ -654,7 +654,7 @@ There you go! Those are a few of the most commonly used display options!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.972 seconds)
+   **Total running time of the script:** (0 minutes 2.961 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py:
@@ -663,7 +663,6 @@ There you go! Those are a few of the most commonly used display options!
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -671,13 +670,13 @@ There you go! Those are a few of the most commonly used display options!
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: a_display_options.py <a_display_options.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: a_display_options.ipynb <a_display_options.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: a_display_options.py <a_display_options.py>`
 
 
 .. only:: html

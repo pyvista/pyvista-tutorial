@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_03_figures_bonus_e_labels.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_bonus_e_labels.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -25,7 +25,7 @@ Use string arrays in a point set to label points
 
 .. GENERATED FROM PYTHON SOURCE LINES 7-12
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import numpy as np
@@ -46,7 +46,7 @@ point labels to a scene.
 
 .. GENERATED FROM PYTHON SOURCE LINES 16-18
 
-.. code-block:: default
+.. code-block:: Python
 
     help(pv.Plotter.add_point_labels)
 
@@ -197,7 +197,7 @@ Let's make a random point cloud and label each point in 3D space
 
 .. GENERATED FROM PYTHON SOURCE LINES 23-27
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Make some random points
@@ -217,7 +217,7 @@ node:
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-34
 
-.. code-block:: default
+.. code-block:: Python
 
 
     poly["My Labels"] = [f"Label {i}" for i in range(poly.n_points)]
@@ -237,9 +237,9 @@ node:
     <tr><td>N Cells</td><td>10</td></tr>
     <tr><td>N Points</td><td>10</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>6.156e-02, 9.477e-01</td></tr>
-    <tr><td>Y Bounds</td><td>2.964e-04, 6.565e-01</td></tr>
-    <tr><td>Z Bounds</td><td>6.319e-03, 8.475e-01</td></tr>
+    <tr><td>X Bounds</td><td>2.361e-03, 8.353e-01</td></tr>
+    <tr><td>Y Bounds</td><td>2.104e-01, 9.412e-01</td></tr>
+    <tr><td>Z Bounds</td><td>1.566e-01, 8.571e-01</td></tr>
     <tr><td>N Arrays</td><td>1</td></tr>
     </table>
 
@@ -260,7 +260,7 @@ Now plot the points with labels using :func:`pyvista.Plotter.add_point_labels`
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-40
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # (your code here, answer below)
@@ -275,7 +275,7 @@ Now plot the points with labels using :func:`pyvista.Plotter.add_point_labels`
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-46
 
-.. code-block:: default
+.. code-block:: Python
 
     plotter = pv.Plotter()
     plotter.add_point_labels(poly, "My Labels", point_size=20, font_size=36)
@@ -303,7 +303,7 @@ This example will label the nodes of a mesh with their coordinate locations
 
 .. GENERATED FROM PYTHON SOURCE LINES 51-56
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Load example beam file
@@ -323,7 +323,7 @@ Create plotting class and add the unstructured grid
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-71
 
-.. code-block:: default
+.. code-block:: Python
 
     plotter = pv.Plotter()
     plotter.add_mesh(grid, show_edges=True, color="tan")
@@ -359,7 +359,7 @@ This example will label each point with their scalar values
 
 .. GENERATED FROM PYTHON SOURCE LINES 76-79
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh = examples.load_uniform().slice()
@@ -373,7 +373,7 @@ This example will label each point with their scalar values
 
 .. GENERATED FROM PYTHON SOURCE LINES 80-92
 
-.. code-block:: default
+.. code-block:: Python
 
     p = pv.Plotter()
 
@@ -412,7 +412,7 @@ This example will label each point with their scalar values
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.802 seconds)
+   **Total running time of the script:** (0 minutes 0.785 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_e_labels.py:
@@ -421,7 +421,6 @@ This example will label each point with their scalar values
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -429,13 +428,13 @@ This example will label each point with their scalar values
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: e_labels.py <e_labels.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: e_labels.ipynb <e_labels.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: e_labels.py <e_labels.py>`
 
 
 .. only:: html

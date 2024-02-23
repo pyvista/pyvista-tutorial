@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_08_widgets_g_sphere-widget.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_08_widgets_g_sphere-widget.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -35,7 +35,8 @@ Let's look at a few use cases that all update a surface mesh.
 
 .. GENERATED FROM PYTHON SOURCE LINES 17-19
 
-.. code-block:: default
+.. code-block:: Python
+   :dedent: 1
 
 
 
@@ -55,7 +56,7 @@ Use a single sphere widget
 
 .. GENERATED FROM PYTHON SOURCE LINES 25-53
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import numpy as np
@@ -112,7 +113,7 @@ Use several sphere widgets at once
 
 .. GENERATED FROM PYTHON SOURCE LINES 64-93
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import numpy as np
@@ -171,7 +172,7 @@ a surface and interpolate between them with some boundary conditions
 
 .. GENERATED FROM PYTHON SOURCE LINES 104-151
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import numpy as np
@@ -229,7 +230,7 @@ a surface and interpolate between them with some boundary conditions
 
 .. GENERATED FROM PYTHON SOURCE LINES 152-167
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Begin the plotting routine
@@ -277,7 +278,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.079 seconds)
+   **Total running time of the script:** (0 minutes 1.037 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_g_sphere-widget.py:
@@ -286,7 +287,6 @@ And here is a screen capture of a user interacting with this
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -294,13 +294,13 @@ And here is a screen capture of a user interacting with this
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: g_sphere-widget.py <g_sphere-widget.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: g_sphere-widget.ipynb <g_sphere-widget.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: g_sphere-widget.py <g_sphere-widget.py>`
 
 
 .. only:: html

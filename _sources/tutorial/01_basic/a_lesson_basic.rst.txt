@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_01_basic_a_lesson_basic.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_01_basic_a_lesson_basic.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -30,7 +30,7 @@ module and external files.
 
 .. GENERATED FROM PYTHON SOURCE LINES 12-20
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -58,7 +58,7 @@ out, let's load a file.
 
 .. GENERATED FROM PYTHON SOURCE LINES 27-38
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # If you have a dataset handy, like a surface model, point cloud, or VTK file,
@@ -103,7 +103,7 @@ dataset containing points, lines, and/or faces. We can immediately plot this wit
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-44
 
-.. code-block:: default
+.. code-block:: Python
 
 
     dataset.plot()
@@ -130,7 +130,7 @@ one is a volumetric dataset.
 
 .. GENERATED FROM PYTHON SOURCE LINES 50-54
 
-.. code-block:: default
+.. code-block:: Python
 
 
     dataset = examples.download_frog()
@@ -177,7 +177,7 @@ the content of the data associated with those cells.
 
 .. GENERATED FROM PYTHON SOURCE LINES 59-63
 
-.. code-block:: default
+.. code-block:: Python
 
 
     dataset.plot(volume=True)
@@ -210,7 +210,7 @@ file using :func:`pyvista.read`.
 
 .. GENERATED FROM PYTHON SOURCE LINES 74-78
 
-.. code-block:: default
+.. code-block:: Python
 
 
     dataset = pv.read('ironProt.vtk')
@@ -255,7 +255,7 @@ with:
 
 .. GENERATED FROM PYTHON SOURCE LINES 81-84
 
-.. code-block:: default
+.. code-block:: Python
 
 
     dataset.plot(volume=True)
@@ -285,7 +285,7 @@ with:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.145 seconds)
+   **Total running time of the script:** (0 minutes 4.864 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_a_lesson_basic.py:
@@ -294,7 +294,6 @@ with:
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -302,13 +301,13 @@ with:
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: a_lesson_basic.py <a_lesson_basic.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: a_lesson_basic.ipynb <a_lesson_basic.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: a_lesson_basic.py <a_lesson_basic.py>`
 
 
 .. only:: html

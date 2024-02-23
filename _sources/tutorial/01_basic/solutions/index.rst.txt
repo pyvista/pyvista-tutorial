@@ -21,7 +21,7 @@ These are the solutions to the above examples.
 .. only:: html
 
   .. image:: /tutorial/01_basic/solutions/images/thumb/sphx_glr_a_load_examples_solution_thumb.png
-    :alt: Download and Plot Examples
+    :alt:
 
   :ref:`sphx_glr_tutorial_01_basic_solutions_a_load_examples_solution.py`
 

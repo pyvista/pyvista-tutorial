@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_01_basic_exercises_a_load_examples_exercise.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_01_basic_exercises_a_load_examples_exercise.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -39,7 +39,7 @@ Import PyVista and the examples module
 
 .. GENERATED FROM PYTHON SOURCE LINES 22-25
 
-.. code-block:: default
+.. code-block:: Python
 
     import pyvista as pv
     from pyvista import examples
@@ -54,7 +54,7 @@ automatically loaded right into Python.
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-34
 
-.. code-block:: default
+.. code-block:: Python
 
     dataset = examples.download_pine_roots()
     dataset
@@ -69,7 +69,7 @@ Plot the pine roots using PyVista's default plotting settings.
 
 .. GENERATED FROM PYTHON SOURCE LINES 38-41
 
-.. code-block:: default
+.. code-block:: Python
 
     dataset.plot()
 
@@ -84,7 +84,7 @@ Download the bolt dataset. This is an excellent dataset to visualize using
 
 .. GENERATED FROM PYTHON SOURCE LINES 46-51
 
-.. code-block:: default
+.. code-block:: Python
 
 
     dataset = examples.download_bolt_nut()
@@ -101,7 +101,7 @@ Here, we plot the dataset using a custom view direction using
 
 .. GENERATED FROM PYTHON SOURCE LINES 56-68
 
-.. code-block:: default
+.. code-block:: Python
 
 
     pl = pv.Plotter()
@@ -149,17 +149,11 @@ one from the following sources:
     </center>
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-
 .. _sphx_glr_download_tutorial_01_basic_exercises_a_load_examples_exercise.py:
 
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
-
 
     .. container:: binder-badge
 
@@ -168,13 +162,13 @@ one from the following sources:
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: a_load_examples_exercise.py <a_load_examples_exercise.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: a_load_examples_exercise.ipynb <a_load_examples_exercise.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: a_load_examples_exercise.py <a_load_examples_exercise.py>`
 
 
 .. only:: html

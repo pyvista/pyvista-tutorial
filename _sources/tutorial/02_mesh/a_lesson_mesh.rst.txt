@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_02_mesh_a_lesson_mesh.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_a_lesson_mesh.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -26,7 +26,7 @@ to try out!
 
 .. GENERATED FROM PYTHON SOURCE LINES 9-14
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import numpy as np
@@ -50,7 +50,7 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
 
 .. GENERATED FROM PYTHON SOURCE LINES 21-25
 
-.. code-block:: default
+.. code-block:: Python
 
 
     points = np.random.rand(100, 3)
@@ -65,11 +65,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
  .. code-block:: none
 
 
-    array([[0.6532756 , 0.71694887, 0.41574241],
-           [0.0780979 , 0.03941609, 0.26943273],
-           [0.81792842, 0.09435327, 0.75249541],
-           [0.75554958, 0.08163221, 0.14186103],
-           [0.15715043, 0.04163084, 0.6569358 ]])
+    array([[0.77175774, 0.65734568, 0.63508625],
+           [0.65762756, 0.91172077, 0.84390215],
+           [0.83030897, 0.3965691 , 0.99585957],
+           [0.99001899, 0.23675527, 0.95099276],
+           [0.14388953, 0.61757944, 0.26232243]])
 
 
 
@@ -79,7 +79,7 @@ Pass numpy array of points (n by 3) to PolyData
 
 .. GENERATED FROM PYTHON SOURCE LINES 27-30
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh = pv.PolyData(points)
     mesh
@@ -98,9 +98,9 @@ Pass numpy array of points (n by 3) to PolyData
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>2.256e-02, 9.967e-01</td></tr>
-    <tr><td>Y Bounds</td><td>3.942e-02, 9.982e-01</td></tr>
-    <tr><td>Z Bounds</td><td>2.509e-03, 9.852e-01</td></tr>
+    <tr><td>X Bounds</td><td>2.442e-02, 9.900e-01</td></tr>
+    <tr><td>Y Bounds</td><td>2.246e-02, 9.950e-01</td></tr>
+    <tr><td>Z Bounds</td><td>3.485e-03, 9.993e-01</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -111,7 +111,7 @@ Pass numpy array of points (n by 3) to PolyData
 
 .. GENERATED FROM PYTHON SOURCE LINES 31-33
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(point_size=10, style="points")
 
@@ -134,7 +134,7 @@ between points such as this gridded mesh:
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-46
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh = examples.load_hexbeam()
@@ -160,7 +160,7 @@ between points such as this gridded mesh:
 
 .. GENERATED FROM PYTHON SOURCE LINES 47-55
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh = examples.download_bunny_coarse()
 
@@ -195,7 +195,7 @@ points in that mesh:
 
 .. GENERATED FROM PYTHON SOURCE LINES 64-77
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh = examples.load_hexbeam()
@@ -251,7 +251,7 @@ plotting, the values between points are interpolated across the cells.
 
 .. GENERATED FROM PYTHON SOURCE LINES 100-104
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh.point_data["my point values"] = np.arange(mesh.n_points)
@@ -279,7 +279,7 @@ volume) is assigned the value of that attribute.
 
 .. GENERATED FROM PYTHON SOURCE LINES 110-114
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh.cell_data["my cell values"] = np.arange(mesh.n_cells)
@@ -305,7 +305,7 @@ which has a single value across the cell’s domain:
 
 .. GENERATED FROM PYTHON SOURCE LINES 118-131
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -341,7 +341,7 @@ still should be attached to the mesh. This may be a string array storing notes.
 
 .. GENERATED FROM PYTHON SOURCE LINES 136-140
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh = pv.Cube()
     mesh.field_data['metadata'] = ['Foo', 'bar']
@@ -376,7 +376,7 @@ Note how this varies from assigning scalars to each point
 
 .. GENERATED FROM PYTHON SOURCE LINES 149-161
 
-.. code-block:: default
+.. code-block:: Python
 
     cube = pv.Cube()
     cube.cell_data["myscalars"] = range(6)
@@ -415,7 +415,7 @@ Note how this varies from assigning scalars to each point
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.936 seconds)
+   **Total running time of the script:** (0 minutes 2.880 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_a_lesson_mesh.py:
@@ -424,7 +424,6 @@ Note how this varies from assigning scalars to each point
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -432,13 +431,13 @@ Note how this varies from assigning scalars to each point
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: a_lesson_mesh.py <a_lesson_mesh.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: a_lesson_mesh.ipynb <a_lesson_mesh.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: a_lesson_mesh.py <a_lesson_mesh.py>`
 
 
 .. only:: html

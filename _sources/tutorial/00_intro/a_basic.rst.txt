@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_00_intro_a_basic.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_00_intro_a_basic.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -27,7 +27,7 @@ This is the "Hello, world!" of PyVista.
 
 .. GENERATED FROM PYTHON SOURCE LINES 9-12
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -48,7 +48,7 @@ Let's run through creating a few geometric objects!
 
 .. GENERATED FROM PYTHON SOURCE LINES 17-28
 
-.. code-block:: default
+.. code-block:: Python
 
 
     cyl = pv.Cylinder()
@@ -74,7 +74,7 @@ Now let's plot them all in one window
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-58
 
-.. code-block:: default
+.. code-block:: Python
 
 
     p = pv.Plotter(shape=(3, 3))
@@ -129,7 +129,7 @@ Now let's plot them all in one window
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.955 seconds)
+   **Total running time of the script:** (0 minutes 0.990 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_intro_a_basic.py:
@@ -138,7 +138,6 @@ Now let's plot them all in one window
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
 
-
     .. container:: binder-badge
 
       .. image:: images/binder_badge_logo.svg
@@ -146,13 +145,13 @@ Now let's plot them all in one window
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: a_basic.py <a_basic.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: a_basic.ipynb <a_basic.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: a_basic.py <a_basic.py>`
 
 
 .. only:: html

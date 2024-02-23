@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_04_filters_exercises_c_compute-normals.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_04_filters_exercises_c_compute-normals.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -26,7 +26,7 @@ Compute normals on a surface.
 
 .. GENERATED FROM PYTHON SOURCE LINES 8-16
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import numpy as np
@@ -48,7 +48,7 @@ exaggerated topographic relief.
 
 .. GENERATED FROM PYTHON SOURCE LINES 24-28
 
-.. code-block:: default
+.. code-block:: Python
 
 
     # Compute the normals in-place and use them to warp the globe
@@ -61,7 +61,7 @@ Now use those normals to warp the surface
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-32
 
-.. code-block:: default
+.. code-block:: Python
 
     warp = mesh.warp_by_scalar(factor=0.5e-5)
 
@@ -72,7 +72,7 @@ And let's see it!
 
 .. GENERATED FROM PYTHON SOURCE LINES 34-37
 
-.. code-block:: default
+.. code-block:: Python
 
     warp.plot(cmap="gist_earth", show_scalar_bar=False)
 
@@ -86,7 +86,7 @@ the normals along its cell faces, and extract the faces that face upward.
 
 .. GENERATED FROM PYTHON SOURCE LINES 41-60
 
-.. code-block:: default
+.. code-block:: Python
 
 
     mesh = examples.download_nefertiti()
@@ -119,17 +119,11 @@ the normals along its cell faces, and extract the faces that face upward.
     </center>
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-
 .. _sphx_glr_download_tutorial_04_filters_exercises_c_compute-normals.py:
 
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
-
 
     .. container:: binder-badge
 
@@ -138,13 +132,13 @@ the normals along its cell faces, and extract the faces that face upward.
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: c_compute-normals.py <c_compute-normals.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: c_compute-normals.ipynb <c_compute-normals.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: c_compute-normals.py <c_compute-normals.py>`
 
 
 .. only:: html

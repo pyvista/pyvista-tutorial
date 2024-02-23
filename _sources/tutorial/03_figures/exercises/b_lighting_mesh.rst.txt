@@ -10,7 +10,7 @@
     .. note::
         :class: sphx-glr-download-link-note
 
-        Click :ref:`here <sphx_glr_download_tutorial_03_figures_exercises_b_lighting_mesh.py>`
+        :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_exercises_b_lighting_mesh.py>`
         to download the full example code or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
@@ -33,7 +33,7 @@ https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html
 
 .. GENERATED FROM PYTHON SOURCE LINES 15-23
 
-.. code-block:: default
+.. code-block:: Python
 
 
     import pyvista as pv
@@ -50,7 +50,7 @@ First, let's take a look at the mesh with default lighting conditions
 
 .. GENERATED FROM PYTHON SOURCE LINES 26-28
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(cpos=cpos, show_scalar_bar=False)
 
@@ -61,7 +61,7 @@ What about with no lighting?
 
 .. GENERATED FROM PYTHON SOURCE LINES 30-32
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 
@@ -74,7 +74,7 @@ Feel free to adjust the specular value in the ``s`` variable.
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-51
 
-.. code-block:: default
+.. code-block:: Python
 
     p = pv.Plotter(shape=(1, 2), window_size=[1500, 500])
 
@@ -98,7 +98,7 @@ Specular power (feel free to adjust)
 
 .. GENERATED FROM PYTHON SOURCE LINES 53-55
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 
@@ -110,7 +110,7 @@ Demonstration of all diffuse, specular, and ambient in use together
 
 .. GENERATED FROM PYTHON SOURCE LINES 58-60
 
-.. code-block:: default
+.. code-block:: Python
 
     mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 
@@ -131,17 +131,11 @@ For detailed control over lighting conditions in general see the
     </center>
 
 
-.. rst-class:: sphx-glr-timing
-
-   **Total running time of the script:** ( 0 minutes  0.000 seconds)
-
-
 .. _sphx_glr_download_tutorial_03_figures_exercises_b_lighting_mesh.py:
 
 .. only:: html
 
   .. container:: sphx-glr-footer sphx-glr-footer-example
-
 
     .. container:: binder-badge
 
@@ -150,13 +144,13 @@ For detailed control over lighting conditions in general see the
         :alt: Launch binder
         :width: 150 px
 
-    .. container:: sphx-glr-download sphx-glr-download-python
-
-      :download:`Download Python source code: b_lighting_mesh.py <b_lighting_mesh.py>`
-
     .. container:: sphx-glr-download sphx-glr-download-jupyter
 
       :download:`Download Jupyter notebook: b_lighting_mesh.ipynb <b_lighting_mesh.ipynb>`
+
+    .. container:: sphx-glr-download sphx-glr-download-python
+
+      :download:`Download Python source code: b_lighting_mesh.py <b_lighting_mesh.py>`
 
 
 .. only:: html

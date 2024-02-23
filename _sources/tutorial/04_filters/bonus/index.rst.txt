@@ -19,7 +19,7 @@ Bonus Content
 .. only:: html
 
   .. image:: /tutorial/04_filters/bonus/images/thumb/sphx_glr_f_sampling_functions_3d_thumb.png
-    :alt: Sample Function: Perlin Noise in 3D
+    :alt:
 
   :ref:`sphx_glr_tutorial_04_filters_bonus_f_sampling_functions_3d.py`
 

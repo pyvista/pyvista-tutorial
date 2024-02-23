@@ -258,7 +258,7 @@ For more examples, please see the mesh creation section of the
 .. only:: html
 
   .. image:: /tutorial/02_mesh/images/thumb/sphx_glr_a_lesson_mesh_thumb.png
-    :alt: Lesson Overview
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_a_lesson_mesh.py`
 
@@ -295,7 +295,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_b_create-point-cloud_thumb.png
-    :alt: Create Point Cloud
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_exercises_b_create-point-cloud.py`
 
@@ -312,7 +312,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_c_create-uniform-grid_thumb.png
-    :alt: Creating a Uniform Grid
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_exercises_c_create-uniform-grid.py`
 
@@ -329,7 +329,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_d_create-tri-surface_thumb.png
-    :alt: Create Triangulated Surface
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_exercises_d_create-tri-surface.py`
 
@@ -346,7 +346,7 @@ Do it yourself
 .. only:: html
 
   .. image:: /tutorial/02_mesh/exercises/images/thumb/sphx_glr_e_read-file_thumb.png
-    :alt: Load and Plot from a File
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_exercises_e_read-file.py`
 
@@ -377,7 +377,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_b_create-point-cloud_thumb.png
-    :alt: Create Point Cloud
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_solutions_b_create-point-cloud.py`
 
@@ -394,7 +394,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_c_create-uniform-grid_thumb.png
-    :alt: Creating a Uniform Grid
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_solutions_c_create-uniform-grid.py`
 
@@ -411,7 +411,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_d_create-tri-surface_thumb.png
-    :alt: Create Triangulated Surface
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_solutions_d_create-tri-surface.py`
 
@@ -428,7 +428,7 @@ Solutions
 .. only:: html
 
   .. image:: /tutorial/02_mesh/solutions/images/thumb/sphx_glr_e_read-file_thumb.png
-    :alt: Load and Plot from a File
+    :alt:
 
   :ref:`sphx_glr_tutorial_02_mesh_solutions_e_read-file.py`
 
@@ -446,6 +446,7 @@ Solutions
 .. toctree::
    :hidden:
    :includehidden:
+
 
    /tutorial/02_mesh//exercises/index.rst
    /tutorial/02_mesh//solutions/index.rst
