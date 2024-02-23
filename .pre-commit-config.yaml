@@ -1,16 +1,16 @@
 repos:
 - repo: https://github.com/psf/black
-  rev: 23.11.0
+  rev: 24.2.0
   hooks:
   - id: black
 
 - repo: https://github.com/pycqa/isort
-  rev: 5.13.0
+  rev: 5.13.2
   hooks:
   - id: isort
 
 - repo: https://github.com/PyCQA/flake8
-  rev: 6.1.0
+  rev: 7.0.0
   hooks:
   - id: flake8
     additional_dependencies: [
@@ -29,7 +29,7 @@ repos:
     ]
 
 - repo: https://github.com/asottile/pyupgrade
-  rev: v3.15.0
+  rev: v3.15.1
   hooks:
   - id: pyupgrade
     args: [--py37-plus, --keep-runtime-typing]
@@ -48,6 +48,6 @@ repos:
   - id: end-of-file-fixer
 
 - repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.27.3
+  rev: 0.28.0
   hooks:
     - id: check-github-workflows

@@ -4,6 +4,7 @@ Display Options
 
 Take a look at the different display options offered by the ``add_mesh`` method.
 """
+
 import pyvista as pv
 from pyvista import examples
 
