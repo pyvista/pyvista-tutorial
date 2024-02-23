@@ -4,6 +4,7 @@ Control Scalar Range
 
 Extending our simple example to control the color limits of the mapped scalars.
 """
+
 import pyvista as pv
 from pyvista.trame.ui import plotter_ui
 from trame.app import get_server

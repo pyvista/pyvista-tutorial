@@ -1,6 +1,8 @@
 [flake8]
 exclude = .git,__pycache__,build,dist,doc/examples,doc/_build,pyvista/**/__init__.py,pyvista/__init__.py
 ignore =
+    # Black is already checked
+    BLK100,
     # whitespace before ':'
     E203,
     # line break before binary operator
