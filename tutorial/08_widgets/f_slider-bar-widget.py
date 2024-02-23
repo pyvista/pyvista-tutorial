@@ -10,6 +10,7 @@ The slider widget can be enabled and disabled by the
 This is one of the most versatile widgets as it can control a value that can
 be used for just about anything.
 """
+
 # sphinx_gallery_thumbnail_number = 1
 
 ##############################################################################

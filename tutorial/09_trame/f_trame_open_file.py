@@ -5,6 +5,7 @@ Open Mesh File
 An example of opening a mesh file from the browser and viewing it with PyVista.
 
 """
+
 import tempfile
 
 import pyvista as pv

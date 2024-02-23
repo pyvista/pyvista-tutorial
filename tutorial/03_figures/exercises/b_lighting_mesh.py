@@ -12,6 +12,7 @@ to ``add_mesh``.
 See the ``add_mesh`` docs for lighting options:
 https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html
 """
+
 # sphinx_gallery_thumbnail_number = 4
 import pyvista as pv
 from pyvista import examples

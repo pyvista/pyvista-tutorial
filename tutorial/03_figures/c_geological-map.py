@@ -10,6 +10,7 @@ We can do this by using the spatial reference of the GeoTIFF itself, as this all
 
 Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 """
+
 # sphinx_gallery_thumbnail_number = 2
 import os
 import tempfile

@@ -4,6 +4,7 @@ Create VTK Objects
 
 This exercise walks through the creation of a few different types of VTK datasets.
 """
+
 import numpy as np
 import pyvista as pv
 import vtk
