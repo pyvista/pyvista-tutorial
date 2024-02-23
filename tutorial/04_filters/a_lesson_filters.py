@@ -34,6 +34,7 @@ from pyvista import examples
 # .. _clip(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.clip.html
 # .. _outline_corners(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.outline_corners.html
 # .. _extract_geometry(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.extract_geometry.html
+# .. _filters_ref: https://docs.pyvista.org/version/stable/api/core/filters
 #
 # To use these filters, call the method of your choice directly on your data
 # object:
