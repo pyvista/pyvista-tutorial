@@ -6,6 +6,7 @@ Create Basic Geometric Objects
 
 This is the "Hello, world!" of PyVista.
 """
+
 import pyvista as pv
 
 ###############################################################################
