@@ -8,6 +8,7 @@ This example contains the boilerplate code to use anytime you are creating a
 new Trame application with PyVista.
 
 """
+
 import pyvista as pv
 from pyvista import examples
 from pyvista.trame.ui import plotter_ui

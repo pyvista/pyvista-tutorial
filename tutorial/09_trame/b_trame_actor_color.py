@@ -6,6 +6,7 @@ Extending our simple example to have a dropdown menu to control the color of
 the actor.
 
 """
+
 import pyvista as pv
 from pyvista.plotting.colors import hexcolors
 from pyvista.trame.ui import plotter_ui
