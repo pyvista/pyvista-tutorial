@@ -43,7 +43,7 @@ repos:
     args: [--branch, main]
   - id: requirements-txt-fixer
   - id: trailing-whitespace
-    exclude: ^(doc/source/_static/*)
+    exclude: ^(doc/source/_static/.*)
   - id: end-of-file-fixer
 
 - repo: https://github.com/python-jsonschema/check-jsonschema
