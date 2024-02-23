@@ -5,8 +5,8 @@
 
 Computation times
 =================
-**00:59.898** total execution time for **tutorial_05_action** files:
+**01:00.017** total execution time for **tutorial_05_action** files:
 
 +------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_tutorial_05_action_a_lesson_geovista.py` (``a_lesson_geovista.py``) | 00:59.898 | 0.0 MB |
+| :ref:`sphx_glr_tutorial_05_action_a_lesson_geovista.py` (``a_lesson_geovista.py``) | 01:00.017 | 0.0 MB |
 +------------------------------------------------------------------------------------+-----------+--------+

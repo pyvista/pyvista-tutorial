@@ -1094,6 +1094,11 @@ Let's now use the bounding box to extract the mesh that it encloses:
      |      ... )
      |  
      |  ----------------------------------------------------------------------
+     |  Data and other attributes defined here:
+     |  
+     |  __annotations__ = {}
+     |  
+     |  ----------------------------------------------------------------------
      |  Methods inherited from vtkmodules.vtkCommonDataModel.vtkPolyData:
      |  
      |  AddCellReference(...)
@@ -11599,8 +11604,6 @@ Let's now use the bounding box to extract the mesh that it encloses:
      |  ----------------------------------------------------------------------
      |  Data and other attributes inherited from pyvista.core.dataobject.DataObject:
      |  
-     |  __annotations__ = {'_WRITERS': typing.Dict[str, typing.Union[typing.Ty...
-     |  
      |  __hash__ = None
 
 
@@ -12330,7 +12333,7 @@ for geoscience such as `add_coastlines` and `add_base_layer`.
      |  ----------------------------------------------------------------------
      |  Data and other attributes inherited from pyvista.plotting.plotter.Plotter:
      |  
-     |  last_update_time = 1708691162.3509448
+     |  last_update_time = 1708694601.7075977
      |  
      |  ----------------------------------------------------------------------
      |  Methods inherited from pyvista.plotting.plotter.BasePlotter:
@@ -20090,7 +20093,7 @@ Or grab the mesh object for use with PyVista and GeoVista.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  59.898 seconds)
+   **Total running time of the script:** ( 1 minutes  0.017 seconds)
 
 
 .. _sphx_glr_download_tutorial_05_action_a_lesson_geovista.py:

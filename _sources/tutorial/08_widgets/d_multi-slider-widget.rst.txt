@@ -128,7 +128,7 @@ mesh-generating/altering code.
 
  .. code-block:: none
 
-    /home/runner/.virtualenvs/.venv/lib/python3.9/site-packages/pyvista/core/dataset.py:2123: PyVistaDeprecationWarning: Use of `DataSet.overwrite` is deprecated. Use `DataSet.copy_from` instead.
+    /home/runner/.virtualenvs/.venv/lib/python3.10/site-packages/pyvista/core/dataset.py:2123: PyVistaDeprecationWarning: Use of `DataSet.overwrite` is deprecated. Use `DataSet.copy_from` instead.
       warnings.warn(
 
 
@@ -153,7 +153,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.251 seconds)
+   **Total running time of the script:** ( 0 minutes  0.233 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_d_multi-slider-widget.py:
