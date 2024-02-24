@@ -76,11 +76,11 @@ First, create some points for the surface.
  .. code-block:: none
 
 
-    array([[-200.2777122 , -198.38610513,    1.88091761],
-           [-181.944403  , -198.38610513,    2.67013641],
-           [-160.63861158, -198.38610513,    3.84617702],
-           [-138.99735428, -198.38610513,    5.31910271],
-           [-117.26619407, -198.38610513,    7.02692948]])
+    array([[-202.45855358, -199.89585877,    1.74678887],
+           [-174.94658644, -199.89585877,    2.93567398],
+           [-159.78593123, -199.89585877,    3.7835975 ],
+           [-137.80575548, -199.89585877,    5.24739182],
+           [-114.08360334, -199.89585877,    7.07451607]])
 
 
 
@@ -278,8 +278,8 @@ Clean Edges & Triangulations
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>1.144e-02, 9.280e+00</td></tr>
-    <tr><td>Y Bounds</td><td>5.142e-03, 9.287e+00</td></tr>
+    <tr><td>X Bounds</td><td>8.047e-02, 9.293e+00</td></tr>
+    <tr><td>Y Bounds</td><td>3.492e-02, 9.293e+00</td></tr>
     <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
@@ -367,7 +367,7 @@ added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.994 seconds)
+   **Total running time of the script:** (0 minutes 0.970 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_d_create-tri-surface.py:
