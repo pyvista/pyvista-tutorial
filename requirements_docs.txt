@@ -13,7 +13,7 @@ meshio==5.3.4
 mypy==0.982
 mypy-extensions==1.0.0
 numpydoc==1.5.0
-osmnx==1.2.2
+osmnx==1.9.1
 pydata-sphinx-theme==0.15.2
 pypandoc==1.10
 pytest-sphinx==0.5.0
