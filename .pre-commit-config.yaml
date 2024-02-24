@@ -1,49 +1,53 @@
 repos:
-- repo: https://github.com/psf/black
-  rev: 24.2.0
-  hooks:
-  - id: black
+  - repo: https://github.com/psf/black
+    rev: 24.2.0
+    hooks:
+      - id: black
 
-- repo: https://github.com/pycqa/isort
-  rev: 5.13.2
-  hooks:
-  - id: isort
+  - repo: https://github.com/pycqa/isort
+    rev: 5.13.2
+    hooks:
+      - id: isort
 
-- repo: https://github.com/PyCQA/flake8
-  rev: 7.0.0
-  hooks:
-  - id: flake8
-    additional_dependencies: ["flake8-black==0.3.6", "flake8-isort==6.1.1", "flake8-quotes==3.3.2"]
+  - repo: https://github.com/PyCQA/flake8
+    rev: 7.0.0
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          ["flake8-black==0.3.6", "flake8-isort==6.1.1", "flake8-quotes==3.3.2"]
 
-- repo: https://github.com/codespell-project/codespell
-  rev: v2.2.6
-  hooks:
-  - id: codespell
-    args: [
-      "doc tutorial",
-      "*.py *.rst *.md",
-    ]
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.6
+    hooks:
+      - id: codespell
+        args: ["doc tutorial", "*.py *.rst *.md"]
 
-- repo: https://github.com/asottile/pyupgrade
-  rev: v3.15.1
-  hooks:
-  - id: pyupgrade
-    args: [--py37-plus, --keep-runtime-typing]
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.1
+    hooks:
+      - id: pyupgrade
+        args: [--py37-plus, --keep-runtime-typing]
 
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.5.0
-  hooks:
-  - id: check-merge-conflict
-  - id: debug-statements
-  - id: no-commit-to-branch
-    args: [--branch, main]
-  - id: requirements-txt-fixer
-  - id: trailing-whitespace
-    exclude: ^(doc/source/_static/.*)
-  - id: mixed-line-ending
-  - id: end-of-file-fixer
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-merge-conflict
+      - id: debug-statements
+      - id: no-commit-to-branch
+        args: [--branch, main]
+      - id: requirements-txt-fixer
+      - id: trailing-whitespace
+        exclude: ^(doc/source/_static/.*)
+      - id: mixed-line-ending
+      - id: end-of-file-fixer
 
-- repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.28.0
-  hooks:
-    - id: check-github-workflows
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.28.0
+    hooks:
+      - id: check-github-workflows
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "v3.1.0"
+    hooks:
+      - id: prettier
+        types_or: [yaml, markdown, html, css, scss, javascript, json]

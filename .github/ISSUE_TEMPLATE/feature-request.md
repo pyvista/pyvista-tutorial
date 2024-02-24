@@ -1,10 +1,9 @@
 ---
 name: Feature Request
 about: Request that a feature be added to pyvista-tutorial
-title: ''
+title: ""
 labels: enhancement
-assignees: ''
-
+assignees: ""
 ---
 
 **Describe what feature you would like added.**
@@ -15,4 +14,4 @@ If you are requesting a feature from PyVista document, please include links to t
 
 Feel free to include pseudocode or screenshots of the requested outcome.
 
------
+---
