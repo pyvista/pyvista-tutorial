@@ -19,7 +19,7 @@ pypandoc==1.10
 pytest-sphinx==0.6.0
 pyvista==0.42.3
 pyvista-xarray==0.1.5
-scipy==1.10.0
+scipy==1.12.0
 Sphinx==7.2.6
 sphinx-autobuild==2024.2.4
 sphinx-copybutton==0.5.2
