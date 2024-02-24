@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>PyVista and Trame &#8212; PyVista Tutorial</title>
   
@@ -29,37 +28,33 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/table.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/cards.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=0f58e32f" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=efc38b36" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=fb00c410" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cards.css?v=d8ea150e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/thebelab-helper.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/09_trame/index';</script>
@@ -629,10 +624,10 @@ document.write(`
                 <article class="bd-article">
                   
   <section id="pyvista-and-trame">
-<span id="trame"></span><h1>PyVista and Trame<a class="headerlink" href="#pyvista-and-trame" title="Permalink to this heading">#</a></h1>
+<span id="trame"></span><h1>PyVista and Trame<a class="headerlink" href="#pyvista-and-trame" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://kitware.github.io/trame/index.html">Kitware’s Trame</a> is an open-source platform for creating interactive and powerful visual analytics applications. Based on Python, and leveraging platforms such as VTK, ParaView, and Vega, it is possible to create web-based applications in minutes.</p>
 <iframe src="https://player.vimeo.com/video/764741737?muted=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe><section id="what-is-trame">
-<h2>What is Trame?<a class="headerlink" href="#what-is-trame" title="Permalink to this heading">#</a></h2>
+<h2>What is Trame?<a class="headerlink" href="#what-is-trame" title="Link to this heading">#</a></h2>
 <p>Trame is a Python framework for building reactive web applications.</p>
 <ul class="simple">
 <li><p>All the logic and UI definition can be done in plain Python</p></li>
@@ -654,7 +649,7 @@ Tutorial</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="d-visualization-in-web-applications">
-<h2>3D visualization in web applications<a class="headerlink" href="#d-visualization-in-web-applications" title="Permalink to this heading">#</a></h2>
+<h2>3D visualization in web applications<a class="headerlink" href="#d-visualization-in-web-applications" title="Link to this heading">#</a></h2>
 <p>PyVista and Trame work excellently together to provide a cutting-edge capabilities for 3D
 visualization in reactive web applications.</p>
 <ol class="arabic simple">
@@ -709,7 +704,7 @@ PyVista in Jupyter lately, you’ve been using Trame all along – our
 Jupyter backend is a micro Trame application.</p>
 </div>
 <section id="exercises">
-<h3>Exercises<a class="headerlink" href="#exercises" title="Permalink to this heading">#</a></h3>
+<h3>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h3>
 <p>Do not run these examples in Jupyter but rather as standalone scripts.</p>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="A simple example of how to create a Trame app with a PyVista Plotter."><img alt="" src="../../_images/sphx_glr_a_trame_simple_thumb.png" />
 <p><a class="reference internal" href="a_trame_simple.html#sphx-glr-tutorial-09-trame-a-trame-simple-py"><span class="std std-ref">Simple Trame App</span></a></p>
@@ -833,7 +828,7 @@ Jupyter backend is a micro Trame application.</p>
         <div class="footer-item">
 
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     <br/>
   </p>
 </div>
