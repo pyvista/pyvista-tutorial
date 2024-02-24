@@ -15,7 +15,7 @@ mypy-extensions==1.0.0
 numpydoc==1.5.0
 osmnx==1.9.1
 pydata-sphinx-theme==0.15.2
-pypandoc==1.10
+pypandoc==1.13
 pytest-sphinx==0.6.0
 pyvista==0.42.3
 pyvista-xarray==0.1.5
