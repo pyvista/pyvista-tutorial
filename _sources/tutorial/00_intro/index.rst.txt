@@ -45,6 +45,9 @@ layer that "wraps" the lower level functionality of VTK.
   - `@tkoyama010 <https://github.com/tkoyama010>`_
   - `@adeak <https://github.com/adeak>`_
   - `@MatthewFlamm <https://github.com/MatthewFlamm>`_
+- Greatly expanded PyVista ecosystem thanks to
+
+  - `@bjlittle <https://github.com/bjlittle>`_ creator of `GeoVista <https://github.com/bjlittle/geovista>`_
 
 |PyPIact|
 |condaact|
