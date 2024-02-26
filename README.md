@@ -114,7 +114,7 @@ Past experience as a speaker:
 
 ### [Bill Little](https://github.com/bjlittle)
 
-[Bill Litte](https://github.com/bjlittle), creator of [GeoVista](https://github.com/bjlittle/geovista), is a software engineer working at the [UK Met Office](https://www.metoffice.gov.uk) and a core developer on [SciTools](https://github.com/orgs/SciTools/repositories), which includes [Cartopy](https://github.com/SciTools/cartopy) and [Iris](https://github.com/SciTools/iris).
+[Bill Little](https://github.com/bjlittle), creator of [GeoVista](https://github.com/bjlittle/geovista), is a software engineer working at the [UK Met Office](https://www.metoffice.gov.uk) and a core developer on [SciTools](https://github.com/orgs/SciTools/repositories), which includes [Cartopy](https://github.com/SciTools/cartopy) and [Iris](https://github.com/SciTools/iris).
 
 ## Paper
 
