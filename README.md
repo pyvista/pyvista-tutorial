@@ -112,6 +112,10 @@ Past experience as a speaker:
 - [SciPy Japan 2020 speaker "Translation Project of Mayavi2 documents"](https://youtu.be/epxm9SjLMS0)
 - [PyConJP 2021 speaker "Visualize 3D scientific data in a Pythonic way like Matplotlib"](https://youtu.be/ru-nENLgleo)
 
+### [Bill Little](https://github.com/bjlittle)
+
+[Bill Little](https://github.com/bjlittle), creator of [GeoVista](https://github.com/bjlittle/geovista), is a software engineer working at the [UK Met Office](https://www.metoffice.gov.uk) and a core developer on [SciTools](https://github.com/orgs/SciTools/repositories), which includes [Cartopy](https://github.com/SciTools/cartopy) and [Iris](https://github.com/SciTools/iris).
+
 ## Paper
 
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.01450/status.svg)](https://doi.org/10.21105/joss.01450)
