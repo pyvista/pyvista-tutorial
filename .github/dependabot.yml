@@ -1,5 +1,19 @@
 version: 2
 updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    insecure-external-code-execution: allow
+    schedule:
+      interval: "monthly"
+    groups:
+      trame:
+        patterns:
+          - "trame"
+          - "trame-*"
+      sphinx:
+        patterns:
+          - "sphinx"
+          - "sphinx-*"
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
