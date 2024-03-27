@@ -2,14 +2,10 @@ cmocean
 geovista
 imageio>=2.5.0
 imageio-ffmpeg
-ipywidgets<8.0.0
-jupyterlab<4.0.0
+ipywidgets<9.0.0
+jupyterlab<5.0.0
 matplotlib
-pyinstaller==5.13.1
-pyqt5
 pyvista[trame]
-pyvistaqt
-QtPy
 sphinx
 tqdm
 trame>=2.5.0

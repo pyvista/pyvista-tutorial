@@ -41,7 +41,7 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 1. PyVista & Jupyter (Bane Sullivan) - Demonstrate how to use PyVista in Jupyter for state-of-the-art 3D visualization in Notebooks and make sure the class room is up and running. (5 min for talk, 15 for exercise)
 
-2. Basic usage (Alexander Kaszynski) - Reading and plotting 3D data using ``examples`` module and external files.  (10 min for talk, 10 min for exercise)
+2. Basic usage (Alexander Kaszynski) - Reading and plotting 3D data using `examples` module and external files. (10 min for talk, 10 min for exercise)
 
 3. What is a Mesh? (Alexander Kaszynski) - Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (20 min for talk, 10 min for exercise)
 
@@ -106,12 +106,15 @@ Bane is a geophysicist/hydrologist by training and has been working to grow PyVi
 Interested in scientific computing and visualization with computer graphics.
 Developer team member of PyVista.
 Past experience as a speaker:
+
 - [PyConJP 2019 speaker "Introduction to FEM Analysis with Python"](https://youtu.be/6JuB1GiDLQQ)
 - [PyConJP 2020 speaker "How to plot unstructured mesh file on Jupyter Notebook"](https://youtu.be/X3Z54Kw4I6Y)
 - [SciPy Japan 2020 speaker "Translation Project of Mayavi2 documents"](https://youtu.be/epxm9SjLMS0)
 - [PyConJP 2021 speaker "Visualize 3D scientific data in a Pythonic way like Matplotlib"](https://youtu.be/ru-nENLgleo)
 
+### [Bill Little](https://github.com/bjlittle)
 
+[Bill Little](https://github.com/bjlittle), creator of [GeoVista](https://github.com/bjlittle/geovista), is a software engineer working at the [UK Met Office](https://www.metoffice.gov.uk) and a core developer on [SciTools](https://github.com/orgs/SciTools/repositories), which includes [Cartopy](https://github.com/SciTools/cartopy) and [Iris](https://github.com/SciTools/iris).
 
 ## Paper
 
