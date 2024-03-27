@@ -13,7 +13,7 @@ import pyvista as pv
 from pyvista import examples
 from pyvista.trame.ui import plotter_ui
 from trame.app import get_server
-from trame.ui.vuetify import SinglePageLayout
+from trame.ui.vuetify3 import SinglePageLayout
 
 pv.OFF_SCREEN = True
 

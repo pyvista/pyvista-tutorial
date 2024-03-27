@@ -34,8 +34,8 @@ An example of opening a mesh file from the browser and viewing it with PyVista.
     from pyvista.trame.ui import plotter_ui
     from trame.app import get_server
     from trame.app.file_upload import ClientFile
-    from trame.ui.vuetify import SinglePageLayout
-    from trame.widgets import vuetify
+    from trame.ui.vuetify3 import SinglePageLayout
+    from trame.widgets import vuetify3
 
     pv.OFF_SCREEN = True
 
@@ -65,22 +65,22 @@ An example of opening a mesh file from the browser and viewing it with PyVista.
 
     with SinglePageLayout(server) as layout:
         with layout.toolbar:
-            vuetify.VSpacer()
-            vuetify.VFileInput(
+            vuetify3.VSpacer()
+            vuetify3.VFileInput(
                 show_size=True,
                 small_chips=True,
                 truncate_length=25,
                 v_model=("file_exchange", None),
-                dense=True,
+                density="compact",
                 hide_details=True,
                 style="max-width: 300px;",
             )
-            vuetify.VProgressLinear(
+            vuetify3.VProgressLinear(
                 indeterminate=True, absolute=True, bottom=True, active=("trame__busy",)
             )
 
         with layout.content:
-            with vuetify.VContainer(
+            with vuetify3.VContainer(
                 fluid=True, classes="pa-0 fill-height", style="position: relative;"
             ):
                 view = plotter_ui(pl)

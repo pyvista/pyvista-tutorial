@@ -640,8 +640,8 @@ to download the full example code or to run this example in your browser via Bin
 <span class="kn">from</span> <span class="nn">pyvista.trame.ui</span> <span class="kn">import</span> <span class="n">plotter_ui</span>
 <span class="kn">from</span> <span class="nn">trame.app</span> <span class="kn">import</span> <span class="n">get_server</span>
 <span class="kn">from</span> <span class="nn">trame.app.file_upload</span> <span class="kn">import</span> <span class="n">ClientFile</span>
-<span class="kn">from</span> <span class="nn">trame.ui.vuetify</span> <span class="kn">import</span> <span class="n">SinglePageLayout</span>
-<span class="kn">from</span> <span class="nn">trame.widgets</span> <span class="kn">import</span> <span class="n">vuetify</span>
+<span class="kn">from</span> <span class="nn">trame.ui.vuetify3</span> <span class="kn">import</span> <span class="n">SinglePageLayout</span>
+<span class="kn">from</span> <span class="nn">trame.widgets</span> <span class="kn">import</span> <span class="n">vuetify3</span>
 
 <span class="n">pv</span><span class="o">.</span><span class="n">OFF_SCREEN</span> <span class="o">=</span> <span class="kc">True</span>
 
@@ -671,22 +671,22 @@ to download the full example code or to run this example in your browser via Bin
 
 <span class="k">with</span> <span class="n">SinglePageLayout</span><span class="p">(</span><span class="n">server</span><span class="p">)</span> <span class="k">as</span> <span class="n">layout</span><span class="p">:</span>
     <span class="k">with</span> <span class="n">layout</span><span class="o">.</span><span class="n">toolbar</span><span class="p">:</span>
-        <span class="n">vuetify</span><span class="o">.</span><span class="n">VSpacer</span><span class="p">()</span>
-        <span class="n">vuetify</span><span class="o">.</span><span class="n">VFileInput</span><span class="p">(</span>
+        <span class="n">vuetify3</span><span class="o">.</span><span class="n">VSpacer</span><span class="p">()</span>
+        <span class="n">vuetify3</span><span class="o">.</span><span class="n">VFileInput</span><span class="p">(</span>
             <span class="n">show_size</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">small_chips</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">truncate_length</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
             <span class="n">v_model</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;file_exchange&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-            <span class="n">dense</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">density</span><span class="o">=</span><span class="s2">&quot;compact&quot;</span><span class="p">,</span>
             <span class="n">hide_details</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">style</span><span class="o">=</span><span class="s2">&quot;max-width: 300px;&quot;</span><span class="p">,</span>
         <span class="p">)</span>
-        <span class="n">vuetify</span><span class="o">.</span><span class="n">VProgressLinear</span><span class="p">(</span>
+        <span class="n">vuetify3</span><span class="o">.</span><span class="n">VProgressLinear</span><span class="p">(</span>
             <span class="n">indeterminate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">active</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;trame__busy&quot;</span><span class="p">,)</span>
         <span class="p">)</span>
 
     <span class="k">with</span> <span class="n">layout</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
-        <span class="k">with</span> <span class="n">vuetify</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
+        <span class="k">with</span> <span class="n">vuetify3</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
             <span class="n">fluid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;pa-0 fill-height&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;position: relative;&quot;</span>
         <span class="p">):</span>
             <span class="n">view</span> <span class="o">=</span> <span class="n">plotter_ui</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>

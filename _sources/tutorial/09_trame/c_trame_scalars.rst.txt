@@ -33,8 +33,8 @@ scalar array is used to color the mesh.
     from pyvista import examples
     from pyvista.trame.ui import plotter_ui
     from trame.app import get_server
-    from trame.ui.vuetify import SinglePageLayout
-    from trame.widgets import vuetify
+    from trame.ui.vuetify3 import SinglePageLayout
+    from trame.widgets import vuetify3
 
     pv.OFF_SCREEN = True
 
@@ -63,27 +63,27 @@ scalar array is used to color the mesh.
 
     with SinglePageLayout(server) as layout:
         with layout.toolbar:
-            vuetify.VSpacer()
-            vuetify.VCheckbox(
+            vuetify3.VSpacer()
+            vuetify3.VCheckbox(
                 label="Log Scale",
                 v_model=("log_scale", False),
                 hide_details=True,
-                dense=True,
+                density="compact",
                 outlined=True,
             )
-            vuetify.VSelect(
+            vuetify3.VSelect(
                 label="Scalars",
                 v_model=("scalars", mesh.active_scalars_name),
                 items=("array_list", list(mesh.point_data.keys())),
                 hide_details=True,
-                dense=True,
+                density="compact",
                 outlined=True,
                 classes="pt-1 ml-2",
                 style="max-width: 250px",
             )
 
         with layout.content:
-            with vuetify.VContainer(
+            with vuetify3.VContainer(
                 fluid=True,
                 classes="pa-0 fill-height",
             ):

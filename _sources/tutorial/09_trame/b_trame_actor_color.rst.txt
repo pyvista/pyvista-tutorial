@@ -33,8 +33,8 @@ the actor.
     from pyvista.plotting.colors import hexcolors
     from pyvista.trame.ui import plotter_ui
     from trame.app import get_server
-    from trame.ui.vuetify import SinglePageLayout
-    from trame.widgets import vuetify
+    from trame.ui.vuetify3 import SinglePageLayout
+    from trame.widgets import vuetify3
 
     pv.OFF_SCREEN = True
 
@@ -55,20 +55,20 @@ the actor.
 
     with SinglePageLayout(server) as layout:
         with layout.toolbar:
-            vuetify.VSpacer()
-            vuetify.VSelect(
+            vuetify3.VSpacer()
+            vuetify3.VSelect(
                 label="Color",
                 v_model=("color", "seagreen"),
                 items=("array_list", list(hexcolors.keys())),
                 hide_details=True,
-                dense=True,
+                density="compact",
                 outlined=True,
                 classes="pt-1 ml-2",
                 style="max-width: 250px",
             )
 
         with layout.content:
-            with vuetify.VContainer(
+            with vuetify3.VContainer(
                 fluid=True,
                 classes="pa-0 fill-height",
             ):
