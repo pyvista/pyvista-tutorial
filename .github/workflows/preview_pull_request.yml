@@ -100,7 +100,7 @@ jobs:
           zip -r notebooks.zip notebooks/
           mv notebooks.zip doc/build/html/
 
-      - uses: nwtgck/actions-netlify@v2.1
+      - uses: nwtgck/actions-netlify@v3.0
         with:
           publish-dir: doc/build/html
           production-deploy: false
