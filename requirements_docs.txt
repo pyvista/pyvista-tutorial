@@ -32,6 +32,7 @@ trame==3.5.4
 trame-client==2.16.5
 trame-server==2.17.2
 trame-vtk==2.8.5
+ipywidgets==8.1.2
 trimesh==4.1.7
 typed-ast==1.5.5
 typing_extensions==4.10.0
