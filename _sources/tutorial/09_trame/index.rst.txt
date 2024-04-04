@@ -69,7 +69,7 @@ contains all of the boilerplate code needed to get started.
       .. code:: python
 
         from trame.app import get_server
-        from trame.ui.vuetify import SinglePageLayout
+        from trame.ui.vuetify3 import SinglePageLayout
 
         import pyvista as pv
         from pyvista.trame.ui import plotter_ui
