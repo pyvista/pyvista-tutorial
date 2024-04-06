@@ -8,8 +8,8 @@ Extending our simple example to control the color limits of the mapped scalars.
 import pyvista as pv
 from pyvista.trame.ui import plotter_ui
 from trame.app import get_server
-from trame.ui.vuetify import SinglePageLayout
-from trame.widgets import vuetify
+from trame.ui.vuetify3 import SinglePageLayout
+from trame.widgets import vuetify3
 
 pv.OFF_SCREEN = True
 
@@ -30,21 +30,21 @@ def set_scalar_range(scalar_range=mesh.get_data_range(), **kwargs):
 
 with SinglePageLayout(server) as layout:
     with layout.toolbar:
-        vuetify.VSpacer()
-        vuetify.VRangeSlider(
+        vuetify3.VSpacer()
+        vuetify3.VRangeSlider(
             thumb_size=16,
             thumb_label=True,
             label="Range",
             v_model=("scalar_range", [0, 300]),
             min=('0',),
             max=('500',),
-            dense=True,
+            density="compact",
             hide_details=True,
             style="max-width: 400px",
         )
 
     with layout.content:
-        with vuetify.VContainer(
+        with vuetify3.VContainer(
             fluid=True,
             classes="pa-0 fill-height",
         ):
