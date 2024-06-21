@@ -40,7 +40,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../_static/cards.css?v=90395a4f" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -55,7 +55,7 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=49e1bf35"></script>
     <script src="../../_static/asciinema-player_3.6.3.js"></script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/02_mesh/a_lesson_mesh';</script>
@@ -649,11 +649,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># output first 5 rows</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.80739608, 0.07065594, 0.67212358],
-       [0.83429086, 0.1082782 , 0.67740052],
-       [0.99336242, 0.51832461, 0.89492501],
-       [0.71392287, 0.34439139, 0.64192076],
-       [0.91955411, 0.59183426, 0.77983143]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.31144179, 0.82565036, 0.66746844],
+       [0.73177998, 0.22277391, 0.7996544 ],
+       [0.43045821, 0.79510685, 0.66251052],
+       [0.28442091, 0.04607865, 0.95975136],
+       [0.27102678, 0.6521361 , 0.85058315]])
 </pre></div>
 </div>
 <p>Pass numpy array of points (n by 3) to PolyData</p>
@@ -668,9 +668,9 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
 <tr><td>N Strips</td><td>0</td></tr>
-<tr><td>X Bounds</td><td>4.210e-02, 9.934e-01</td></tr>
-<tr><td>Y Bounds</td><td>1.180e-02, 9.633e-01</td></tr>
-<tr><td>Z Bounds</td><td>6.998e-04, 9.973e-01</td></tr>
+<tr><td>X Bounds</td><td>1.387e-02, 9.946e-01</td></tr>
+<tr><td>Y Bounds</td><td>1.495e-02, 9.963e-01</td></tr>
+<tr><td>Z Bounds</td><td>1.666e-03, 9.979e-01</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -812,7 +812,7 @@ generate cube containing 6 faces and assign each face an integer from
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/a_lesson_mesh.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.926 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.897 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-a-lesson-mesh-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/a_lesson_mesh.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo5.svg" width="150px" /></a>

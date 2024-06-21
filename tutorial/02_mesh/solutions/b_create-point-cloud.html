@@ -40,7 +40,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/cards.css?v=90395a4f" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -55,7 +55,7 @@
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=49e1bf35"></script>
     <script src="../../../_static/asciinema-player_3.6.3.js"></script>
-    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/02_mesh/solutions/b_create-point-cloud';</script>
@@ -666,11 +666,11 @@ locations.</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.80945675e+05, 4.40024620e+06, 1.76219995e+03],
-                 [4.81075775e+05, 4.40015130e+06, 1.77235999e+03],
-                 [4.81051675e+05, 4.40015250e+06, 1.76156995e+03],
-                 [4.81059475e+05, 4.40009440e+06, 1.76598999e+03],
-                 [4.80960075e+05, 4.40010520e+06, 1.76352002e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81086975e+05, 4.40013820e+06, 1.75971997e+03],
+                 [4.80961475e+05, 4.40019800e+06, 1.75922998e+03],
+                 [4.81037975e+05, 4.40023340e+06, 1.75739001e+03],
+                 [4.81068875e+05, 4.40016960e+06, 1.76647998e+03],
+                 [4.80965575e+05, 4.40015580e+06, 1.76065002e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -688,7 +688,7 @@ data or your own project, create a PyVista mesh using those points.</p>
 <tr><td>N Strips</td><td>0</td></tr>
 <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
 <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-<tr><td>Z Bounds</td><td>1.754e+03, 1.784e+03</td></tr>
+<tr><td>Z Bounds</td><td>1.754e+03, 1.785e+03</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -759,11 +759,11 @@ and add those vectors to the mesh.</p>
 <a href="https://docs.pyvista.org/version/stable/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vectors</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.37381982,  0.66528389, -0.64626317],
-                 [ 0.08535381, -0.44779984,  0.89005058],
-                 [-0.16524759, -0.77416403, -0.61103461],
-                 [-0.62287255, -0.58453379,  0.51995194],
-                 [-0.117652  ,  0.43189767,  0.89421609]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[-0.65137307, -0.29740762,  0.69804143],
+                 [-0.09904304, -0.6104471 ,  0.7858402 ],
+                 [-0.46983824,  0.27574295,  0.83858085],
+                 [ 0.93350274, -0.30818852,  0.18328251],
+                 [ 0.37628199, -0.81987174, -0.43153469]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the new mesh:</p>
@@ -793,7 +793,7 @@ for more details).</p>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/b_create-point-cloud.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.514 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.752 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-b-create-point-cloud-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/b_create-point-cloud.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" width="150px" /></a>

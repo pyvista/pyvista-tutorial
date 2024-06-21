@@ -40,7 +40,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=87e54e7c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/cards.css?v=90395a4f" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -55,7 +55,7 @@
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=49e1bf35"></script>
     <script src="../../../_static/asciinema-player_3.6.3.js"></script>
-    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/02_mesh/solutions/d_create-tri-surface';</script>
@@ -664,11 +664,11 @@ to download the full example code or to run this example in your browser via Bin
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-201.40049405, -197.77739662,    1.86128536],
-       [-175.51077508, -197.77739662,    3.03185198],
-       [-157.52968978, -197.77739662,    4.09020502],
-       [-141.07249479, -197.77739662,    5.22943277],
-       [-113.98751313, -197.77739662,    7.38696971]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-199.41420271, -202.26524377,    1.77058063],
+       [-183.76426283, -202.26524377,    2.38964192],
+       [-155.05623147, -202.26524377,    3.88641445],
+       [-135.41352018, -202.26524377,    5.16945709],
+       [-113.35882955, -202.26524377,    6.80118956]])
 </pre></div>
 </div>
 <p>Now use those points to create a point cloud PyVista data object. This will
@@ -796,8 +796,8 @@ delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound=False, inplace=False, edge_s
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
 <tr><td>N Strips</td><td>0</td></tr>
-<tr><td>X Bounds</td><td>4.232e-02, 9.293e+00</td></tr>
-<tr><td>Y Bounds</td><td>1.990e-03, 9.295e+00</td></tr>
+<tr><td>X Bounds</td><td>5.557e-03, 9.298e+00</td></tr>
+<tr><td>Y Bounds</td><td>4.098e-02, 9.247e+00</td></tr>
 <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
@@ -823,7 +823,7 @@ added unwanted triangles. We can mitigate that with the <code class="docutils li
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/d_create-tri-surface.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.987 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.966 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-d-create-tri-surface-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/d_create-tri-surface.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" width="150px" /></a>
