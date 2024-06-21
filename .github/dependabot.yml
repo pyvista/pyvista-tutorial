@@ -10,10 +10,6 @@ updates:
         patterns:
           - "trame"
           - "trame-*"
-      sphinx:
-        patterns:
-          - "sphinx"
-          - "sphinx-*"
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
