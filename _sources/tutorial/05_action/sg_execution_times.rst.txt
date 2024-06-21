@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:58.971** total execution time for 1 file **from tutorial/05_action**:
+**00:58.975** total execution time for 1 file **from tutorial/05_action**:
 
 .. container::
 
@@ -33,5 +33,5 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_tutorial_05_action_a_lesson_geovista.py` (``a_lesson_geovista.py``)
-     - 00:58.971
+     - 00:58.975
      - 0.0
