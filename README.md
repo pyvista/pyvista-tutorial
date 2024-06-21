@@ -51,7 +51,7 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 6. Filters (Alexander Kaszynski) - Demonstrate the PyVista filters API to perform mesh analysis and alteration (15 minutes)
 
-7. PyVista in Action (Tetsuo Koyama) - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
+7. PyVista in Action (Bill Little) - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
 
 8. Quick break. Prepare for the final run. (10 minutes)
 
