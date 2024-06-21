@@ -17,7 +17,7 @@ osmnx==1.9.1
 pydata-sphinx-theme==0.15.2
 pypandoc==1.13
 pytest-sphinx==0.6.0
-pyvista==0.42.3
+pyvista[all]==0.42.3
 pyvista-xarray==0.1.5
 scipy==1.12.0
 Sphinx==7.2.6
