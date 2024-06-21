@@ -35,5 +35,5 @@ trame-server==3.0.2
 trame-vtk==2.8.9
 trimesh==4.1.7
 typed-ast==1.5.5
-typing_extensions==4.10.0
+typing_extensions==4.12.2
 vtk<9.3
