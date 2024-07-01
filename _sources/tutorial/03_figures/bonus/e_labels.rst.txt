@@ -237,9 +237,9 @@ node:
     <tr><td>N Cells</td><td>10</td></tr>
     <tr><td>N Points</td><td>10</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>1.327e-02, 8.858e-01</td></tr>
-    <tr><td>Y Bounds</td><td>6.776e-03, 9.049e-01</td></tr>
-    <tr><td>Z Bounds</td><td>1.264e-02, 8.321e-01</td></tr>
+    <tr><td>X Bounds</td><td>1.573e-01, 8.887e-01</td></tr>
+    <tr><td>Y Bounds</td><td>3.473e-02, 8.659e-01</td></tr>
+    <tr><td>Z Bounds</td><td>1.285e-01, 6.834e-01</td></tr>
     <tr><td>N Arrays</td><td>1</td></tr>
     </table>
 
