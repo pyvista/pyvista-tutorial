@@ -21,7 +21,7 @@ pyvista==0.42.3
 pyvista-xarray==0.1.7
 pyvista[all]==0.42.3
 scipy==1.12.0
-Sphinx==7.2.6
+Sphinx==7.3.7
 sphinx-autobuild==2024.4.16
 sphinx-copybutton==0.5.2
 sphinx-gallery==0.15.0
