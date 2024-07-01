@@ -142,6 +142,7 @@ html_theme_options = {
             'icon': 'fa fa-file-text fa-fw',
         },
     ],
+    'navigation_with_keys': False,
 }
 
 html_sidebars = {
