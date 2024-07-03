@@ -87,9 +87,9 @@ Something for everyone!
 
 ## Instructor Bio(s)
 
-### [Alex Kaszynski](https://github.com/akaszynski)
+### [Alexander Kaszynski](https://github.com/akaszynski)
 
-[Alex Kaszynski](https://github.com/akaszynski/resume), co-creator of [PyVista](https://github.com/pyvista/) and creator of the [PyAnsys](https://github.com/pyansys) organization.
+[Alexander Kaszynski](https://github.com/akaszynski/resume), co-creator of [PyVista](https://github.com/pyvista/) and creator of the [PyAnsys](https://github.com/pyansys) organization.
 
 Advocate for all things Python with extensive experience presenting as a speaker at IGTI conferences for the past decade, and for four years at Ansys developing PyAnsys to enable automation through Python for CAE applications.
 
