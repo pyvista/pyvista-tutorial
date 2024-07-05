@@ -39,8 +39,9 @@ complete list):
 To use these filters, call the method of your choice directly on your data
 object:
 
-.. jupyter-execute::
-   :hide-code:
+.. pyvista-plot::
+   :context:
+   :include-source: False
 
    import pyvista
    pyvista.set_plot_theme('document')
@@ -49,7 +50,8 @@ object:
    pyvista.global_theme.smooth_shading = True
 
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     import pyvista as pv
     from pyvista import examples
@@ -73,7 +75,8 @@ We can now plot this filtered dataset along side an outline of the original
 dataset:
 
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     pl = pv.Plotter()
     pl.add_mesh(outline, color="k")
@@ -138,14 +141,16 @@ In the following example, several filters are chained together:
 
 Apply a filtering chain
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     result = dataset.threshold().elevation().clip(normal="z").slice_orthogonal()
 
 And to view this filtered data, simply call the ``plot`` method
 (``result.plot()``) or create a rendering scene:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     p = pv.Plotter()
     p.add_mesh(outline, color="k")

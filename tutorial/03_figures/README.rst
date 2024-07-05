@@ -40,8 +40,9 @@ Add Mesh to Plotter Object
 
 When plotting, users must first create a :class:`pyvista.Plotter` instance (much like a Matplotlib figure). Then data are added to the plotter instance through the :func:`pyvista.Plotter.add_mesh` method. This workflow typically looks like:
 
-.. jupyter-execute::
-   :hide-code:
+.. pyvista-plot::
+   :context:
+   :include-source: False
 
    # Configure for trame
    import pyvista
@@ -51,7 +52,8 @@ When plotting, users must first create a :class:`pyvista.Plotter` instance (much
    pyvista.global_theme.smooth_shading = True
 
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     import pyvista as pv
     from pyvista import examples
@@ -67,7 +69,8 @@ You can customize how that mesh is displayed through the parameters of the :func
 
 
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     p = pv.Plotter()
     p.add_mesh(mesh, cmap='coolwarm')
@@ -76,7 +79,8 @@ You can customize how that mesh is displayed through the parameters of the :func
 
 Or show the edges of the mesh with ``show_edges``:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     p = pv.Plotter()
     p.add_mesh(mesh, show_edges=True)
