@@ -14,6 +14,7 @@ make_external_gallery.make_example_gallery()
 
 # -- PyVista configuration ---------------------------------------------------
 import pyvista
+from pyvista.plotting.utilities.sphinx_gallery import DynamicScraper
 
 # Manage errors
 pyvista.set_error_output_file('errors.txt')
@@ -53,6 +54,7 @@ extensions = [
     "sphinx_design",
     'jupyter_sphinx',
     'pyvista.ext.plot_directive',
+    'pyvista.ext.viewer_directive',
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
@@ -222,7 +224,7 @@ sphinx_gallery_conf = {
     'backreferences_dir': None,
     # Modules for which function level galleries are created.  In
     'doc_module': 'pyvista',
-    'image_scrapers': ('pyvista', 'matplotlib'),
+    'image_scrapers': (DynamicScraper(), 'matplotlib'),
     'first_notebook_cell': 'import subprocess\n'
     'import sys\n'
     '\n'

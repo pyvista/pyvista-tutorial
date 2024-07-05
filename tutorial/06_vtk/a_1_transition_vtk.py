@@ -70,7 +70,7 @@ values = 127.5 + (1.0 + np.sin(x / 25.0) * np.cos(y / 25.0))
 ###############################################################################
 # Create the grid.  Note how the values must use Fortran ordering.
 
-grid = pv.ImageData(dims=(300, 300, 1))
+grid = pv.ImageData(dimensions=(300, 300, 1))
 grid.point_data["values"] = values.flatten(order="F")
 
 ###############################################################################

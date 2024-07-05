@@ -24,3 +24,8 @@ clean:
 	rm -rf $(BUILDDIR)/*
 	rm -rf source/tutorial/
 	rm -rf source/images/auto-generated
+
+# Spin up a local http server to view the rendered documentation.
+# This is required for interactive examples to work.
+serve-html:
+	python -m http.server 11000 --directory "$(BUILDDIR)"/html

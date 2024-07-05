@@ -24,32 +24,42 @@ the two approaches in a series of examples.
 For example, to hard-code values for a `vtk.vtkImageData`_ data
 structure using VTK Python's bindings, one would write the following:
 
-.. code:: python
+.. pyvista-plot::
+   :context:
 
-   >>> import vtk
-   >>> from math import cos, sin
+   import vtk
+   from math import cos, sin
 
-   Create values for a 300x300 image dataset
+Create values for a 300x300 image dataset
 
-   >>> values = vtk.vtkDoubleArray()
-   >>> values.SetName("values")
-   >>> values.SetNumberOfComponents(1)
-   >>> values.SetNumberOfTuples(300*300)
+.. pyvista-plot::
+   :context:
 
-   >>> for x in range(300):
-   ...     for y in range(300):
-   ...         values.SetValue(x*300 + y, 127.5 + (1.0 + sin(x/25.0)*cos(y/25.0)))
+   values = vtk.vtkDoubleArray()
+   values.SetName("values")
+   values.SetNumberOfComponents(1)
+   values.SetNumberOfTuples(300*300)
 
-   Create the image structure
+   for x in range(300):
+      for y in range(300):
+         values.SetValue(x*300 + y, 127.5 + (1.0 + sin(x/25.0)*cos(y/25.0)))
 
-   >>> image_data = vtk.vtkImageData()
-   >>> image_data.SetOrigin(0, 0, 0)
-   >>> image_data.SetSpacing(1, 1, 1)
-   >>> image_data.SetDimensions(300, 300, 1)
+Create the image structure
 
-   Assign the values to the image
+.. pyvista-plot::
+   :context:
 
-   >>> image_data.GetPointData().SetScalars(values)
+   image_data = vtk.vtkImageData()
+   image_data.SetOrigin(0, 0, 0)
+   image_data.SetSpacing(1, 1, 1)
+   image_data.SetDimensions(300, 300, 1)
+
+Assign the values to the image
+
+.. pyvista-plot::
+   :context:
+
+   image_data.GetPointData().SetScalars(values)
 
 As you can see, there is quite a bit of boilerplate that goes into
 the creation of a simple `vtk.vtkImageData`_ dataset. PyVista provides
@@ -57,22 +67,29 @@ much more concise syntax that is more "Pythonic". The equivalent code in
 PyVista is:
 
 
-.. code:: python
+.. pyvista-plot::
+   :context:
 
-   >>> import pyvista as pv
-   >>> import numpy as np
+   import pyvista as pv
+   import numpy as np
 
-   Use the meshgrid function to create 2D "grids" of the x and y values.
-   This section effectively replaces the vtkDoubleArray.
+Use the meshgrid function to create 2D "grids" of the x and y values.
+This section effectively replaces the vtkDoubleArray.
 
-   >>> xi = np.arange(300)
-   >>> x, y = np.meshgrid(xi, xi)
-   >>> values = 127.5 + (1.0 + np.sin(x/25.0)*np.cos(y/25.0))
+.. pyvista-plot::
+   :context:
 
-   Create the grid.  Note how the values must use Fortran ordering.
+   xi = np.arange(300)
+   x, y = np.meshgrid(xi, xi)
+   values = 127.5 + (1.0 + np.sin(x/25.0)*np.cos(y/25.0))
 
-   >>> grid = pv.ImageData(dimensions=(300, 300, 1))
-   >>> grid.point_data["values"] = values.flatten(order="F")
+Create the grid.  Note how the values must use Fortran ordering.
+
+.. pyvista-plot::
+   :context:
+
+   grid = pv.ImageData(dimensions=(300, 300, 1))
+   grid.point_data["values"] = values.flatten(order="F")
 
 Here, PyVista has done several things for us:
 
@@ -98,10 +115,11 @@ Here, PyVista has done several things for us:
    and need to do something more complex, you can dive deeper. For
    example, changing the origin and spacing is as simple as:
 
-   .. code:: python
+   .. pyvista-plot::
+      :context:
 
-      >>> grid.origin = (10, 20, 10)
-      >>> grid.spacing = (2, 3, 5)
+      grid.origin = (10, 20, 10)
+      grid.spacing = (2, 3, 5)
 
 #. The name for the :attr:`point_array <pyvista.point_array>` is given
    directly in dictionary-style fashion. Also, since VTK stores data
@@ -120,42 +138,24 @@ For example, in VTK you would have to do:
 
 .. code:: python
 
-   >>> actor = vtk.vtkImageActor()
-   >>> actor.GetMapper().SetInputData(image_data)
-   >>> ren = vtk.vtkRenderer()
-   >>> renWin = vtk.vtkRenderWindow()
-   >>> renWin.AddRenderer(ren)
-   >>> renWin.SetWindowName('ReadSTL')
-   >>> iren = vtk.vtkRenderWindowInteractor()
-   >>> iren.SetRenderWindow(renWin)
-   >>> ren.AddActor(actor)
-   >>> iren.Initialize()
-   >>> renWin.Render()
-   >>> iren.Start()
+   actor = vtk.vtkImageActor()
+   actor.GetMapper().SetInputData(image_data)
+   ren = vtk.vtkRenderer()
+   renWin = vtk.vtkRenderWindow()
+   renWin.AddRenderer(ren)
+   renWin.SetWindowName('ReadSTL')
+   iren = vtk.vtkRenderWindowInteractor()
+   iren.SetRenderWindow(renWin)
+   ren.AddActor(actor)
+   iren.Initialize()
+   renWin.Render()
+   iren.Start()
 
 However, with PyVista you only need:
 
-.. code:: python
+.. pyvista-plot::
+   :context:
 
-   grid.plot(cpos='xy', show_scalar_bar=False, cmap='coolwarm')
-
-..
-   This is here so we can generate a plot.  We have to repeat
-   everything since jupyter-execute doesn't allow for
-   plain text between command blocks.
-
-.. jupyter-execute::
-   :hide-code:
-
-   import pyvista as pv
-   pv.set_plot_theme('document')
-   pv.set_jupyter_backend('static')
-   import numpy as np
-   xi = np.arange(300)
-   x, y = np.meshgrid(xi, xi)
-   values = 127.5 + (1.0 + np.sin(x/25.0)*np.cos(y/25.0))
-   grid = pv.ImageData(dimensions=(300, 300, 1))
-   grid.point_data["values"] = values.flatten(order="F")
    grid.plot(cpos='xy', show_scalar_bar=False, cmap='coolwarm')
 
 
@@ -169,33 +169,33 @@ VTK's C arrays.  For example, to create an array of points within VTK
 one would normally loop through all the points of a list and supply
 that to a  `vtkPoints`_ class.  For example:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
-   >>> import vtk
-   >>> vtk_array = vtk.vtkDoubleArray()
-   >>> vtk_array.SetNumberOfComponents(3)
-   >>> vtk_array.SetNumberOfValues(9)
-   >>> vtk_array.SetValue(0, 0)
-   >>> vtk_array.SetValue(1, 0)
-   >>> vtk_array.SetValue(2, 0)
-   >>> vtk_array.SetValue(3, 1)
-   >>> vtk_array.SetValue(4, 0)
-   >>> vtk_array.SetValue(5, 0)
-   >>> vtk_array.SetValue(6, 0.5)
-   >>> vtk_array.SetValue(7, 0.667)
-   >>> vtk_array.SetValue(8, 0)
-   >>> vtk_points = vtk.vtkPoints()
-   >>> vtk_points.SetData(vtk_array)
-   >>> print(vtk_points)
+   import vtk
+   vtk_array = vtk.vtkDoubleArray()
+   vtk_array.SetNumberOfComponents(3)
+   vtk_array.SetNumberOfValues(9)
+   vtk_array.SetValue(0, 0)
+   vtk_array.SetValue(1, 0)
+   vtk_array.SetValue(2, 0)
+   vtk_array.SetValue(3, 1)
+   vtk_array.SetValue(4, 0)
+   vtk_array.SetValue(5, 0)
+   vtk_array.SetValue(6, 0.5)
+   vtk_array.SetValue(7, 0.667)
+   vtk_array.SetValue(8, 0)
+   vtk_points = vtk.vtkPoints()
+   vtk_points.SetData(vtk_array)
+   vtk_points
 
 To do the same within PyVista, you simply need to create a NumPy array:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
-   >>> import numpy as np
-   >>> np_points = np.array([[0, 0, 0],
-   ...                       [1, 0, 0],
-   ...                       [0.5, 0.667, 0]])
+   import numpy as np
+   np_points = np.array([[0, 0, 0], [1, 0, 0], [0.5, 0.667, 0]])
 
 .. note::
    You can use :func:`pyvista.vtk_points` to construct a `vtkPoints`_
@@ -205,41 +205,45 @@ Since the end goal is to construct a :class:`pyvista.DataSet
 <pyvista.core.dataset.DataSet>`, you would simply pass the
 ``np_points`` array to the :class:`pyvista.PolyData` constructor:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
-   >>> import pyvista as pv
-   >>> poly_data = pv.PolyData(np_points)
+   import pyvista as pv
+   poly_data = pv.PolyData(np_points)
 
 Whereas in VTK you would have to do:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
-   >>> vtk_poly_data = vtk.vtkPolyData()
-   >>> vtk_poly_data.SetPoints(vtk_points)
+   vtk_poly_data = vtk.vtkPolyData()
+   vtk_poly_data.SetPoints(vtk_points)
 
 The same goes with assigning face or cell connectivity/topology.  With
 VTK you would normally have to loop using :func:`InsertNextCell` and
 :func:`InsertCellPoint`.  For example, to create a single cell
 (triangle) and then assign it to `vtkPolyData`_:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
-   >>> cell_arr = vtk.vtkCellArray()
-   >>> cell_arr.InsertNextCell(3)
-   >>> cell_arr.InsertCellPoint(0)
-   >>> cell_arr.InsertCellPoint(1)
-   >>> cell_arr.InsertCellPoint(2)
-   >>> vtk_poly_data.SetPolys(cell_arr)
+   cell_arr = vtk.vtkCellArray()
+   cell_arr.InsertNextCell(3)
+   cell_arr.InsertCellPoint(0)
+   cell_arr.InsertCellPoint(1)
+   cell_arr.InsertCellPoint(2)
+   vtk_poly_data.SetPolys(cell_arr)
 
 In PyVista, we can assign this directly in the constructor and then
 access it (or change it) from the :attr:`faces
 <pyvista.PolyData.faces>` attribute.
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
-   >>> faces = np.array([3, 0, 1, 2])
-   >>> poly_data = pv.PolyData(np_points, faces)
-   >>> poly_data.faces
+   faces = np.array([3, 0, 1, 2])
+   poly_data = pv.PolyData(np_points, faces)
+   poly_data.faces
 
 
 PyVista Tradeoffs
@@ -251,18 +255,20 @@ In the :class:`collision <pyvista.PolyDataFilters.collision>` filter,
 we demonstrate how to calculate the collision between two meshes.  For
 example:
 
-.. jupyter-execute::
-   :hide-code:
+.. pyvista-plot::
+   :context:
+   :include-source: False
 
    # Configure for trame
    import pyvista
    pyvista.set_plot_theme('document')
-   pyvista.set_jupyter_backend('static')
+   pyvista.set_jupyter_backend('trame')
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
 
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
    import pyvista as pv
 
@@ -300,7 +306,8 @@ PyVista is best known for is easy to use plotting API -- being familiar to most 
 Nothing stops you from using VTK classes and then wrapping
 the output with PyVista for streamlined plotting. For example:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
    import vtk
    import pyvista as pv
@@ -330,7 +337,8 @@ VTK Algorithms
 Perhaps there is a VTK algorithm that is not (yet) exposed in PyVista that you'd like to use. This is easy enough to work with since PyVista objects are VTK objects. We can pass our PyVista meshes to the VTK algorithm, then wrap the output for plotting, further filtering, or anything.
 
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     import pyvista as pv
     from pyvista import examples
