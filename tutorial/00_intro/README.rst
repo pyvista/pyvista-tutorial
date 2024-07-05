@@ -229,7 +229,8 @@ is to work directly with NumPy arrays.
 
    .. tab-item:: PyVista
 
-      .. jupyter-execute::
+      .. pyvista-plot::
+         :context:
 
          import pyvista as pv
          import numpy as np
