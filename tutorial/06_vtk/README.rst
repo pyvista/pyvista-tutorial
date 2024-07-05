@@ -136,8 +136,7 @@ Finally, with PyVista, each geometry class contains methods that allow
 you to immediately plot the mesh without also setting up the plot.
 For example, in VTK you would have to do:
 
-.. pyvista-plot::
-   :context:
+.. code:: python
 
    actor = vtk.vtkImageActor()
    actor.GetMapper().SetInputData(image_data)
