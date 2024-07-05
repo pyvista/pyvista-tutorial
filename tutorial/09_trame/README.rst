@@ -1,7 +1,7 @@
 .. _trame:
 
-PyVista and Trame
-=================
+Trame
+=====
 
 `Kitware's Trame <https://kitware.github.io/trame/index.html>`_ is an open-source platform for creating interactive and powerful visual analytics applications. Based on Python, and leveraging platforms such as VTK, ParaView, and Vega, it is possible to create web-based applications in minutes.
 
@@ -66,11 +66,11 @@ contains all of the boilerplate code needed to get started.
 
       .. code:: python
 
+        import pyvista as pv
+        from pyvista import examples
+        from pyvista.trame.ui import plotter_ui
         from trame.app import get_server
         from trame.ui.vuetify3 import SinglePageLayout
-
-        import pyvista as pv
-        from pyvista.trame.ui import plotter_ui
 
         # Always set PyVista to plot off screen with Trame
         pv.OFF_SCREEN = True
@@ -78,7 +78,7 @@ contains all of the boilerplate code needed to get started.
         server = get_server()
         state, ctrl = server.state, server.controller
 
-        mesh = pv.Wavelet()
+        mesh = examples.load_random_hills()
 
         pl = pv.Plotter()
         pl.add_mesh(mesh)
@@ -103,6 +103,35 @@ contains all of the boilerplate code needed to get started.
     PyVista's Jupyter backend is powered by Trame! If you've been using
     PyVista in Jupyter lately, you've been using Trame all along -- our
     Jupyter backend is a micro Trame application.
+
+
+Trame applications
+~~~~~~~~~~~~~~~~~~
+
+Using an existing app
+
+.. code:: python
+
+    from trame.app.demo import Cone
+
+    app = Cone("demo")
+    await app.ui.ready
+    app.ui
+
+
+Try Pan3D: ``pip install pan3d``
+
+.. code:: python
+
+    from pan3d import DatasetBuilder
+
+    builder = DatasetBuilder(viewer=True)
+
+    builder.import_config('example_sst_xarray.json')
+
+    # Show viewer in cell output
+    await builder.viewer.ready
+    builder.viewer.ui
 
 
 Exercises
