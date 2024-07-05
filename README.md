@@ -37,27 +37,27 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 ### Tutorial Outline
 
-0. Getting Started (Tetsuo Koyama) - PyVista for 3D Visualization within Python. (10 min for talk, 10 min for exercise)
+0. Getting Started (Bane Sullivan) - PyVista for 3D Visualization within Python. (10 min for talk, 10 min for exercise)
 
-1. PyVista & Jupyter (Bane Sullivan) - Demonstrate how to use PyVista in Jupyter for state-of-the-art 3D visualization in Notebooks and make sure the class room is up and running. (5 min for talk, 15 for exercise)
+1. PyVista & Jupyter (Tetsuo Koyama) - Demonstrate how to use PyVista in Jupyter for state-of-the-art 3D visualization in Notebooks and make sure the class room is up and running. (5 min for talk, 15 for exercise)
 
-2. Basic usage (Tetsuo Koyama) - Reading and plotting 3D data using `examples` module and external files. (10 min for talk, 10 min for exercise)
+2. Basic usage (Bane Sullivan) - Reading and plotting 3D data using `examples` module and external files. (10 min for talk, 10 min for exercise)
 
-3. What is a Mesh? (Tetsuo Koyama) - Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (20 min for talk, 10 min for exercise)
+3. What is a Mesh? (Bane Sullivan) - Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (20 min for talk, 10 min for exercise)
 
 4. Break. Stretch fingers and grab some coffee. (15 minutes)
 
 5. Plotting Options and Animations (Bane Sullivan) - Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations (15 min for talk, 20 min for exercise)
 
-6. Filters (Tetsuo Koyama) - Demonstrate the PyVista filters API to perform mesh analysis and alteration (15 minutes)
+6. Filters (Tetsuo Koyama & Bane Sullivan) - Demonstrate the PyVista filters API to perform mesh analysis and alteration (15 minutes)
 
-7. PyVista in Action (Bill Little) - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
+7. PyVista in Action (Tetsuo Koyama & Bill Little) - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
 
 8. Quick break. Prepare for the final run. (10 minutes)
 
-9. PyVista & Trame (Bane Sullivan) - Leverage PyVista and Trame to make awesome interactive web applications. (20 min for talk, 10 min for exercise)
+9. Trame (Jaswant Panchumarti) - Leverage PyVista and Trame to make awesome interactive web applications. (20 min for talk, 10 min for exercise)
 
-10. PyVista & VTK (Bane Sullivan) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 15 minutes for exercise)
+10. VTK (Jaswant Panchumarti) - Show how PyVista uses VTK and how you can combine the best of both worlds! (10 minutes for talk, 15 minutes for exercise)
 
 11. Open up to Questions. (15 minutes)
 
@@ -115,6 +115,10 @@ Past experience as a speaker:
 ### [Bill Little](https://github.com/bjlittle)
 
 [Bill Little](https://github.com/bjlittle), creator of [GeoVista](https://github.com/bjlittle/geovista), is a software engineer working at the [UK Met Office](https://www.metoffice.gov.uk) and a core developer on [SciTools](https://github.com/orgs/SciTools/repositories), which includes [Cartopy](https://github.com/SciTools/cartopy) and [Iris](https://github.com/SciTools/iris).
+
+### [Jaswant Panchumarti](https://github.com/jspanchu)
+
+[Jaswant Panchumarti](https://github.com/jspanchu) is an R&D engineer on Kitware’s Scientific Computing Team working at the forefront of 3D visualization with VTK and WASM. Jaswant focuses on expanding the solid modeling capabilities of VTK by improving the precision, resource efficiency, and stability of computational geometry strategies.
 
 ## Paper
 
