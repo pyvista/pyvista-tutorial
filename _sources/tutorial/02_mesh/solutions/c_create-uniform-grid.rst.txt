@@ -183,10 +183,32 @@ Now plot the grid!
 
 
 
-.. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_001.png
-   :alt: c create uniform grid
-   :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_001.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_001.png
+        :alt: c create uniform grid
+        :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_001.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_001.vtksz
+
 
 
 
@@ -302,10 +324,32 @@ Now plot the grid!
 
 
 
-.. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_002.png
-   :alt: c create uniform grid
-   :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_002.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_002.png
+        :alt: c create uniform grid
+        :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_002.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_002.vtksz
+
 
 
 
@@ -374,30 +418,30 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  --------
      |  Create an empty ImageData.
      |  
-     |  >>> import pyvista
-     |  >>> grid = pyvista.ImageData()
+     |  >>> import pyvista as pv
+     |  >>> grid = pv.ImageData()
      |  
      |  Initialize from a ``vtk.vtkImageData`` object.
      |  
      |  >>> import vtk
      |  >>> vtkgrid = vtk.vtkImageData()
-     |  >>> grid = pyvista.ImageData(vtkgrid)
+     |  >>> grid = pv.ImageData(vtkgrid)
      |  
      |  Initialize using just the grid dimensions and default
      |  spacing and origin. These must be keyword arguments.
      |  
-     |  >>> grid = pyvista.ImageData(dimensions=(10, 10, 10))
+     |  >>> grid = pv.ImageData(dimensions=(10, 10, 10))
      |  
      |  Initialize using dimensions and spacing.
      |  
-     |  >>> grid = pyvista.ImageData(
+     |  >>> grid = pv.ImageData(
      |  ...     dimensions=(10, 10, 10),
      |  ...     spacing=(2, 1, 5),
      |  ... )
      |  
      |  Initialize using dimensions, spacing, and an origin.
      |  
-     |  >>> grid = pyvista.ImageData(
+     |  >>> grid = pv.ImageData(
      |  ...     dimensions=(10, 10, 10),
      |  ...     spacing=(2, 1, 5),
      |  ...     origin=(10, 35, 50),
@@ -405,12 +449,12 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  
      |  Initialize from another ImageData.
      |  
-     |  >>> grid = pyvista.ImageData(
+     |  >>> grid = pv.ImageData(
      |  ...     dimensions=(10, 10, 10),
      |  ...     spacing=(2, 1, 5),
      |  ...     origin=(10, 35, 50),
      |  ... )
-     |  >>> grid_from_grid = pyvista.ImageData(grid)
+     |  >>> grid_from_grid = pv.ImageData(grid)
      |  >>> grid_from_grid == grid
      |  True
      |  
@@ -529,8 +573,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> grid = pyvista.ImageData(dimensions=(2, 2, 2))
+     |      >>> import pyvista as pv
+     |      >>> grid = pv.ImageData(dimensions=(2, 2, 2))
      |      >>> grid.x
      |      array([0., 1., 0., 1., 0., 1., 0., 1.])
      |  
@@ -539,8 +583,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> grid = pyvista.ImageData(dimensions=(2, 2, 2))
+     |      >>> import pyvista as pv
+     |      >>> grid = pv.ImageData(dimensions=(2, 2, 2))
      |      >>> grid.y
      |      array([0., 0., 1., 1., 0., 0., 1., 1.])
      |  
@@ -549,8 +593,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> grid = pyvista.ImageData(dimensions=(2, 2, 2))
+     |      >>> import pyvista as pv
+     |      >>> grid = pv.ImageData(dimensions=(2, 2, 2))
      |      >>> grid.z
      |      array([0., 0., 0., 0., 1., 1., 1., 1.])
      |  
@@ -566,8 +610,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Create a ``ImageData`` and show its extent.
      |      
-     |      >>> import pyvista
-     |      >>> grid = pyvista.ImageData(dimensions=(10, 10, 10))
+     |      >>> import pyvista as pv
+     |      >>> grid = pv.ImageData(dimensions=(10, 10, 10))
      |      >>> grid.extent
      |      (0, 9, 0, 9, 0, 9)
      |      
@@ -588,15 +632,15 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> grid = pyvista.ImageData(dimensions=(5, 5, 5))
+     |      >>> import pyvista as pv
+     |      >>> grid = pv.ImageData(dimensions=(5, 5, 5))
      |      >>> grid.origin
      |      (0.0, 0.0, 0.0)
      |      
      |      Show how the origin is in the bottom "southwest" corner of the
      |      ImageData.
      |      
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(grid, show_edges=True)
      |      >>> _ = pl.add_axes_at_origin(ylabel=None)
      |      >>> pl.camera_position = 'xz'
@@ -606,7 +650,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      ImageData.
      |      
      |      >>> grid.origin = (1, 1, 1)
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(grid, show_edges=True)
      |      >>> _ = pl.add_axes_at_origin(ylabel=None)
      |      >>> pl.camera_position = 'xz'
@@ -626,8 +670,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> grid = pyvista.ImageData(dimensions=(2, 2, 2))
+     |      >>> import pyvista as pv
+     |      >>> grid = pv.ImageData(dimensions=(2, 2, 2))
      |      >>> grid.points
      |      array([[0., 0., 0.],
      |             [1., 0., 0.],
@@ -651,8 +695,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Create a 5 x 5 x 5 uniform grid.
      |      
-     |      >>> import pyvista
-     |      >>> grid = pyvista.ImageData(dimensions=(5, 5, 5))
+     |      >>> import pyvista as pv
+     |      >>> grid = pv.ImageData(dimensions=(5, 5, 5))
      |      >>> grid.spacing
      |      (1.0, 1.0, 1.0)
      |      >>> grid.plot(show_edges=True)
@@ -2413,8 +2457,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Create a uniform grid with dimensions ``(1, 2, 3)``.
      |      
-     |      >>> import pyvista
-     |      >>> grid = pyvista.ImageData(dimensions=(2, 3, 4))
+     |      >>> import pyvista as pv
+     |      >>> grid = pv.ImageData(dimensions=(2, 3, 4))
      |      >>> grid.dimensions
      |      (2, 3, 4)
      |      >>> grid.plot(show_edges=True)
@@ -2460,8 +2504,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Wavelet()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Wavelet()
      |      >>> pointset = mesh.cast_to_pointset()
      |      >>> type(pointset)
      |      <class 'pyvista.core.pointset.PointSet'>
@@ -2527,8 +2571,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Cast a :class:`pyvista.PolyData` to a
      |      :class:`pyvista.UnstructuredGrid`.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> type(mesh)
      |      <class 'pyvista.core.pointset.PolyData'>
      |      >>> grid = mesh.cast_to_unstructured_grid()
@@ -2591,10 +2635,10 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Show a visual example.
      |      
      |      >>> from functools import partial
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere(theta_resolution=10)
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere(theta_resolution=10)
      |      >>>
-     |      >>> pl = pyvista.Plotter(shape=(1, 2))
+     |      >>> pl = pv.Plotter(shape=(1, 2))
      |      >>> pl.link_views()
      |      >>> add_point_labels = partial(
      |      ...     pl.add_point_labels,
@@ -2606,7 +2650,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>>
      |      >>> for i, connection in enumerate(["points", "edges"]):
      |      ...     pl.subplot(0, i)
-     |      ...     pl.view_yx()
+     |      ...     pl.view_xy()
      |      ...     _ = pl.add_title(
      |      ...         f"{connection.capitalize()} neighbors",
      |      ...         color="red",
@@ -2656,7 +2700,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      n_levels : int, default: 1
      |          Number of levels to search for cell neighbors.
-     |          When equal to 1, it is equivalent to :func:`pyvista.DataSet.point_neighbors`.
+     |          When equal to 1, it is equivalent to :func:`pyvista.DataSet.cell_neighbors`.
      |      
      |      Returns
      |      -------
@@ -2732,46 +2776,46 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> cells = mesh.extract_cells(other_ids, invert=True)
      |      >>> _ = pl.add_mesh(cells, color="white", show_edges=True)
      |      >>>
-     |      >>> pl.view_yx()
+     |      >>> pl.view_xy()
      |      >>> pl.camera.zoom(6.0)
      |      >>> pl.show()
      |  
-     |  clear_cell_data(self)
+     |  clear_cell_data(self) -> 'None'
      |      Remove all cell arrays.
      |  
-     |  clear_data(self)
+     |  clear_data(self) -> 'None'
      |      Remove all arrays from point/cell/field data.
      |      
      |      Examples
      |      --------
      |      Clear all arrays from a mesh.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.point_data.keys()
      |      ['Normals']
      |      >>> mesh.clear_data()
      |      >>> mesh.point_data.keys()
      |      []
      |  
-     |  clear_point_data(self)
+     |  clear_point_data(self) -> 'None'
      |      Remove all point arrays.
      |      
      |      Examples
      |      --------
      |      Clear all point arrays from a mesh.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.point_data.keys()
      |      ['Normals']
      |      >>> mesh.clear_point_data()
      |      >>> mesh.point_data.keys()
      |      []
      |  
-     |  copy_from(self, mesh: '_vtk.vtkDataSet', deep: 'bool' = True)
+     |  copy_from(self, mesh: '_vtk.vtkDataSet', deep: 'bool' = True) -> 'None'
      |      Overwrite this dataset inplace with the new dataset's geometries and data.
      |      
      |      Parameters
@@ -2787,14 +2831,14 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Create two meshes and overwrite ``mesh_a`` with ``mesh_b``.
      |      Show that ``mesh_a`` is equal to ``mesh_b``.
      |      
-     |      >>> import pyvista
-     |      >>> mesh_a = pyvista.Sphere()
-     |      >>> mesh_b = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh_a = pv.Sphere()
+     |      >>> mesh_b = pv.Cube()
      |      >>> mesh_a.copy_from(mesh_b)
      |      >>> mesh_a == mesh_b
      |      True
      |  
-     |  copy_meta_from(self, ido: 'DataSet', deep: 'bool' = True)
+     |  copy_meta_from(self, ido: 'DataSet', deep: 'bool' = True) -> 'None'
      |      Copy pyvista meta data onto this object from another object.
      |      
      |      Parameters
@@ -2805,17 +2849,17 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      deep : bool, default: True
      |          Deep or shallow copy.
      |  
-     |  find_cells_along_line(self, pointa: 'Iterable[float]', pointb: 'Iterable[float]', tolerance=0.0) -> 'np.ndarray'
+     |  find_cells_along_line(self, pointa: 'Vector', pointb: 'Vector', tolerance: 'float' = 0.0) -> 'np.ndarray'
      |      Find the index of cells whose bounds intersect a line.
      |      
      |      Line is defined from ``pointa`` to ``pointb``.
      |      
      |      Parameters
      |      ----------
-     |      pointa : sequence[float]
+     |      pointa : Vector
      |          Length 3 coordinate of the start of the line.
      |      
-     |      pointb : sequence[float]
+     |      pointb : Vector
      |          Length 3 coordinate of the end of the line.
      |      
      |      tolerance : float, default: 0.0
@@ -2844,12 +2888,12 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.find_cells_along_line([0.0, 0, 0], [1.0, 0, 0])
      |      array([  86,   87, 1652, 1653])
      |  
-     |  find_cells_intersecting_line(self, pointa: 'Iterable[float]', pointb: 'Iterable[float]', tolerance=0.0) -> 'np.ndarray'
+     |  find_cells_intersecting_line(self, pointa: 'Vector', pointb: 'Vector', tolerance: 'float' = 0.0) -> 'np.ndarray'
      |      Find the index of cells that intersect a line.
      |      
      |      Line is defined from ``pointa`` to ``pointb``.  This
@@ -2882,12 +2926,12 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.find_cells_intersecting_line([0.0, 0, 0], [1.0, 0, 0])
      |      array([  86, 1653])
      |  
-     |  find_cells_within_bounds(self, bounds: 'Iterable[float]') -> 'np.ndarray'
+     |  find_cells_within_bounds(self, bounds: 'BoundsLike') -> 'np.ndarray'
      |      Find the index of cells in this mesh within bounds.
      |      
      |      Parameters
@@ -2910,18 +2954,18 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Cube()
      |      >>> index = mesh.find_cells_within_bounds(
      |      ...     [-2.0, 2.0, -2.0, 2.0, -2.0, 2.0]
      |      ... )
      |  
-     |  find_closest_cell(self, point: 'Union[VectorArray, NumericArray]', return_closest_point: 'bool' = False) -> 'Union[int, np.ndarray, Tuple[Union[int, np.ndarray], np.ndarray]]'
+     |  find_closest_cell(self, point: 'Union[Vector, Matrix]', return_closest_point: 'bool' = False) -> 'Union[int, np.ndarray, Tuple[Union[int, np.ndarray], np.ndarray]]'
      |      Find index of closest cell in this mesh to the given point.
      |      
      |      Parameters
      |      ----------
-     |      point : array_like[float]
+     |      point : Vector | Matrix
      |          Coordinates of point to query (length 3) or a
      |          :class:`numpy.ndarray` of ``n`` points with shape ``(n, 3)``.
      |      
@@ -2966,8 +3010,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Find nearest cell on a sphere centered on the
      |      origin to the point ``[0.1, 0.2, 0.3]``.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> point = [0.1, 0.2, 0.3]
      |      >>> index = mesh.find_closest_cell(point)
      |      >>> index
@@ -2997,7 +3041,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      ``z`` normal and ``z=0``.  The closest point inside the cell is
      |      not usually at a nodal point.
      |      
-     |      >>> unit_square = pyvista.Rectangle()
+     |      >>> unit_square = pv.Rectangle()
      |      >>> index, closest_point = unit_square.find_closest_cell(
      |      ...     [0.25, 0.25, 0.5], return_closest_point=True
      |      ... )
@@ -3047,8 +3091,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Find the index of the closest point to ``(0, 1, 0)``.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> index = mesh.find_closest_point((0, 1, 0))
      |      >>> index
      |      239
@@ -3058,12 +3102,12 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> mesh.points[index]
      |      pyvista_ndarray([-0.05218758,  0.49653167,  0.02706946], dtype=float32)
      |  
-     |  find_containing_cell(self, point: 'Union[VectorArray, NumericArray]') -> 'Union[int, np.ndarray]'
+     |  find_containing_cell(self, point: 'Union[Vector, Matrix]') -> 'Union[int, np.ndarray]'
      |      Find index of a cell that contains the given point.
      |      
      |      Parameters
      |      ----------
-     |      point : array_like[float]
+     |      point : Vector, Matrix
      |          Coordinates of point to query (length 3) or a
      |          :class:`numpy.ndarray` of ``n`` points with shape ``(n, 3)``.
      |      
@@ -3089,8 +3133,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      A unit square with 16 equal sized cells is created and a cell
      |      containing the point ``[0.3, 0.3, 0.0]`` is found.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.ImageData(
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.ImageData(
      |      ...     dimensions=[5, 5, 1], spacing=[1 / 4, 1 / 4, 0]
      |      ... )
      |      >>> mesh
@@ -3111,7 +3155,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> indices.shape
      |      (1000,)
      |  
-     |  flip_normal(self, normal: 'List[float]', point=None, transform_all_input_vectors=False, inplace=False)
+     |  flip_normal(self, normal: 'Vector', point: 'Optional[Vector]' = None, transform_all_input_vectors: 'bool' = False, inplace: 'bool' = False)
      |      Flip mesh about the normal.
      |      
      |      .. note::
@@ -3121,7 +3165,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Parameters
      |      ----------
-     |      normal : tuple
+     |      normal : sequence[float]
      |         Normal vector to flip about.
      |      
      |      point : sequence[float]
@@ -3143,9 +3187,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
-     |      >>> pl = pyvista.Plotter(shape=(1, 2))
+     |      >>> pl = pv.Plotter(shape=(1, 2))
      |      >>> pl.subplot(0, 0)
      |      >>> pl.show_axes()
      |      >>> mesh1 = examples.download_teapot()
@@ -3156,7 +3200,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> _ = pl.add_mesh(mesh2)
      |      >>> pl.show(cpos="xy")
      |  
-     |  flip_x(self, point=None, transform_all_input_vectors=False, inplace=False)
+     |  flip_x(self, point: 'Optional[Vector]' = None, transform_all_input_vectors: 'bool' = False, inplace: 'bool' = False)
      |      Flip mesh about the x-axis.
      |      
      |      .. note::
@@ -3185,9 +3229,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
-     |      >>> pl = pyvista.Plotter(shape=(1, 2))
+     |      >>> pl = pv.Plotter(shape=(1, 2))
      |      >>> pl.subplot(0, 0)
      |      >>> pl.show_axes()
      |      >>> mesh1 = examples.download_teapot()
@@ -3198,7 +3242,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> _ = pl.add_mesh(mesh2)
      |      >>> pl.show(cpos="xy")
      |  
-     |  flip_y(self, point=None, transform_all_input_vectors=False, inplace=False)
+     |  flip_y(self, point: 'Optional[Vector]' = None, transform_all_input_vectors: 'bool' = False, inplace: 'bool' = False)
      |      Flip mesh about the y-axis.
      |      
      |      .. note::
@@ -3227,9 +3271,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
-     |      >>> pl = pyvista.Plotter(shape=(1, 2))
+     |      >>> pl = pv.Plotter(shape=(1, 2))
      |      >>> pl.subplot(0, 0)
      |      >>> pl.show_axes()
      |      >>> mesh1 = examples.download_teapot()
@@ -3240,7 +3284,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> _ = pl.add_mesh(mesh2)
      |      >>> pl.show(cpos="xy")
      |  
-     |  flip_z(self, point=None, transform_all_input_vectors=False, inplace=False)
+     |  flip_z(self, point: 'Optional[Vector]' = None, transform_all_input_vectors: 'bool' = False, inplace: 'bool' = False)
      |      Flip mesh about the z-axis.
      |      
      |      .. note::
@@ -3250,16 +3294,16 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Parameters
      |      ----------
-     |      point : list, optional
+     |      point : Vector, optional
      |          Point to rotate about.  Defaults to center of mesh at
      |          :attr:`center <pyvista.DataSet.center>`.
      |      
-     |      transform_all_input_vectors : bool, optional
+     |      transform_all_input_vectors : bool, default: False
      |          When ``True``, all input vectors are
      |          transformed. Otherwise, only the points, normals and
      |          active vectors are transformed.
      |      
-     |      inplace : bool, optional
+     |      inplace : bool, default: False
      |          Updates mesh in-place.
      |      
      |      Returns
@@ -3269,9 +3313,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
-     |      >>> pl = pyvista.Plotter(shape=(1, 2))
+     |      >>> pl = pv.Plotter(shape=(1, 2))
      |      >>> pl.subplot(0, 0)
      |      >>> pl.show_axes()
      |      >>> mesh1 = examples.download_teapot().rotate_x(90, inplace=False)
@@ -3304,8 +3348,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Create a DataSet with a variety of arrays.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Cube()
      |      >>> mesh.clear_data()
      |      >>> mesh.point_data['point-data'] = range(mesh.n_points)
      |      >>> mesh.cell_data['cell-data'] = range(mesh.n_cells)
@@ -3350,8 +3394,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Create a DataSet with a variety of arrays.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Cube()
      |      >>> mesh.clear_data()
      |      >>> mesh.point_data['point-data'] = range(mesh.n_points)
      |      >>> mesh.cell_data['cell-data'] = range(mesh.n_cells)
@@ -3427,8 +3471,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> cell.faces[-1].point_ids
      |      [0, 2, 1]
      |  
-     |  get_data_range(self, arr_var: 'Optional[Union[str, np.ndarray]]' = None, preference='cell') -> 'Tuple[Union[float, np.ndarray], Union[float, np.ndarray]]'
-     |      Get the non-NaN min and max of a named array.
+     |  get_data_range(self, arr_var: 'Optional[Union[str, np.ndarray]]' = None, preference='cell') -> 'Tuple[float, float]'
+     |      Get the min and max of a named array.
      |      
      |      Parameters
      |      ----------
@@ -3446,18 +3490,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      tuple
      |          ``(min, max)`` of the named array.
      |  
-     |  overwrite(self, mesh: '_vtk.vtkDataSet')
-     |      Overwrite this dataset inplace with the new dataset's geometries and data.
-     |      
-     |      .. deprecated:: 0.37.0
-     |          Use :func:`DataSet.copy_from` instead.
-     |      
-     |      Parameters
-     |      ----------
-     |      mesh : vtk.vtkDataSet
-     |          The overwriting mesh.
-     |  
-     |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text='', return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, hidden_line_removal=None, anti_aliasing=None, zoom=None, border=False, border_color='k', border_width=2.0, ssao=False, **kwargs)
+     |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text='', return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, anti_aliasing=None, zoom=None, border=False, border_color='k', border_width=2.0, ssao=False, **kwargs)
      |      Plot a PyVista, numpy, or vtk object.
      |      
      |      Parameters
@@ -3545,12 +3578,6 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      theme : pyvista.plotting.themes.Theme, optional
      |          Plot-specific theme.
-     |      
-     |      hidden_line_removal : bool, default: :attr:`pyvista.plotting.themes.Theme.hidden_line_removal`
-     |          Wireframe geometry will be drawn using hidden line removal if
-     |          the rendering engine supports it.  See
-     |          :func:`Plotter.enable_hidden_line_removal
-     |          <Plotter.enable_hidden_line_removal>`.
      |      
      |      anti_aliasing : str | bool, default: :attr:`pyvista.plotting.themes.Theme.anti_aliasing`
      |          Enable or disable anti-aliasing. If ``True``, uses ``"msaa"``. If False,
@@ -3682,7 +3709,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> pl.camera.zoom(7.0)
      |      >>> pl.show()
      |  
-     |  point_is_inside_cell(self, ind: 'int', point: 'Union[VectorArray, NumericArray]') -> 'Union[int, np.ndarray]'
+     |  point_is_inside_cell(self, ind: 'int', point: 'Vector | Matrix') -> 'Union[int, np.ndarray]'
      |      Return whether one or more points are inside a cell.
      |      
      |      .. versionadded:: 0.35.0
@@ -3692,14 +3719,13 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      ind : int
      |          Cell ID.
      |      
-     |      point : array_like[float]
-     |          Coordinates of point to query (length 3) or a
-     |          :class:`numpy.ndarray` of ``n`` points with shape ``(n, 3)``.
+     |      point : Matrix
+     |          Point or points to query if are inside a cell.
      |      
      |      Returns
      |      -------
      |      bool or numpy.ndarray
-     |          Whether point(s) is/are inside cell. A scalar bool is only returned if
+     |          Whether point(s) is/are inside cell. A single bool is only returned if
      |          the input point has shape ``(3,)``.
      |      
      |      Examples
@@ -3755,7 +3781,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      ...     text_color="red",
      |      ...     font_size=40,
      |      ... )
-     |      >>> pl.camera_position = "yx"
+     |      >>> pl.camera_position = "xy"
      |      >>> pl.camera.zoom(7.0)
      |      >>> pl.show()
      |  
@@ -3825,11 +3851,11 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      ...     )
      |      ...
      |      >>>
-     |      >>> pl.view_yx()
+     |      >>> pl.view_xy()
      |      >>> pl.camera.zoom(4.0)
      |      >>> pl.show()
      |  
-     |  rename_array(self, old_name: 'str', new_name: 'str', preference='cell')
+     |  rename_array(self, old_name: 'str', new_name: 'str', preference='cell') -> 'None'
      |      Change array name by searching for the array then renaming it.
      |      
      |      Parameters
@@ -3851,15 +3877,15 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Create a cube, assign a point array to the mesh named
      |      ``'my_array'``, and rename it to ``'my_renamed_array'``.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
-     |      >>> cube = pyvista.Cube()
+     |      >>> cube = pv.Cube()
      |      >>> cube['my_array'] = range(cube.n_points)
      |      >>> cube.rename_array('my_array', 'my_renamed_array')
      |      >>> cube['my_renamed_array']
      |      pyvista_ndarray([0, 1, 2, 3, 4, 5, 6, 7])
      |  
-     |  rotate_vector(self, vector: 'Iterable[float]', angle: 'float', point=(0.0, 0.0, 0.0), transform_all_input_vectors=False, inplace=False)
+     |  rotate_vector(self, vector: 'Vector', angle: 'float', point: 'Vector' = (0.0, 0.0, 0.0), transform_all_input_vectors: 'bool' = False, inplace: 'bool' = False)
      |      Rotate mesh about a vector.
      |      
      |      .. note::
@@ -3869,14 +3895,14 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Parameters
      |      ----------
-     |      vector : sequence[float]
-     |          Axis to rotate about.
+     |      vector : Vector
+     |          Vector to rotate about.
      |      
      |      angle : float
-     |          Angle in degrees to rotate about the vector.
+     |          Angle to rotate.
      |      
-     |      point : sequence[float], default: (0.0, 0.0, 0.0)
-     |          Point to rotate about.  Defaults to origin.
+     |      point : Vector, default: (0.0, 0.0, 0.0)
+     |          Point to rotate about. Defaults to origin.
      |      
      |      transform_all_input_vectors : bool, default: False
      |          When ``True``, all input vectors are
@@ -3895,19 +3921,19 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Rotate a mesh 30 degrees about the ``(1, 1, 1)`` axis.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Cube()
      |      >>> rot = mesh.rotate_vector((1, 1, 1), 30, inplace=False)
      |      
      |      Plot the rotated mesh.
      |      
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(rot)
      |      >>> _ = pl.add_mesh(mesh, style='wireframe', line_width=3)
      |      >>> _ = pl.add_axes_at_origin()
      |      >>> pl.show()
      |  
-     |  rotate_x(self, angle: 'float', point=(0.0, 0.0, 0.0), transform_all_input_vectors=False, inplace=False)
+     |  rotate_x(self, angle: 'float', point: 'Vector' = (0.0, 0.0, 0.0), transform_all_input_vectors: 'bool' = False, inplace: 'bool' = False)
      |      Rotate mesh about the x-axis.
      |      
      |      .. note::
@@ -3920,7 +3946,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      angle : float
      |          Angle in degrees to rotate about the x-axis.
      |      
-     |      point : sequence[float], default: (0.0, 0.0, 0.0)
+     |      point : Vector, default: (0.0, 0.0, 0.0)
      |          Point to rotate about. Defaults to origin.
      |      
      |      transform_all_input_vectors : bool, default: False
@@ -3940,19 +3966,19 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Rotate a mesh 30 degrees about the x-axis.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Cube()
      |      >>> rot = mesh.rotate_x(30, inplace=False)
      |      
      |      Plot the rotated mesh.
      |      
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(rot)
      |      >>> _ = pl.add_mesh(mesh, style='wireframe', line_width=3)
      |      >>> _ = pl.add_axes_at_origin()
      |      >>> pl.show()
      |  
-     |  rotate_y(self, angle: 'float', point=(0.0, 0.0, 0.0), transform_all_input_vectors=False, inplace=False)
+     |  rotate_y(self, angle: 'float', point: 'Vector' = (0.0, 0.0, 0.0), transform_all_input_vectors: 'bool' = False, inplace: 'bool' = False)
      |      Rotate mesh about the y-axis.
      |      
      |      .. note::
@@ -3965,7 +3991,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      angle : float
      |          Angle in degrees to rotate about the y-axis.
      |      
-     |      point : sequence[float], default: (0.0, 0.0, 0.0)
+     |      point : Vector, default: (0.0, 0.0, 0.0)
      |          Point to rotate about.
      |      
      |      transform_all_input_vectors : bool, default: False
@@ -3984,19 +4010,19 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Rotate a cube 30 degrees about the y-axis.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Cube()
      |      >>> rot = mesh.rotate_y(30, inplace=False)
      |      
      |      Plot the rotated mesh.
      |      
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(rot)
      |      >>> _ = pl.add_mesh(mesh, style='wireframe', line_width=3)
      |      >>> _ = pl.add_axes_at_origin()
      |      >>> pl.show()
      |  
-     |  rotate_z(self, angle: 'float', point=(0.0, 0.0, 0.0), transform_all_input_vectors=False, inplace=False)
+     |  rotate_z(self, angle: 'float', point: 'Vector' = (0.0, 0.0, 0.0), transform_all_input_vectors: 'bool' = False, inplace: 'bool' = False)
      |      Rotate mesh about the z-axis.
      |      
      |      .. note::
@@ -4009,7 +4035,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      angle : float
      |          Angle in degrees to rotate about the z-axis.
      |      
-     |      point : sequence[float], default: (0.0, 0.0, 0.0)
+     |      point : Vector, default: (0.0, 0.0, 0.0)
      |          Point to rotate about.  Defaults to origin.
      |      
      |      transform_all_input_vectors : bool, default: False
@@ -4029,19 +4055,19 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Rotate a mesh 30 degrees about the z-axis.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Cube()
      |      >>> rot = mesh.rotate_z(30, inplace=False)
      |      
      |      Plot the rotated mesh.
      |      
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(rot)
      |      >>> _ = pl.add_mesh(mesh, style='wireframe', line_width=3)
      |      >>> _ = pl.add_axes_at_origin()
      |      >>> pl.show()
      |  
-     |  scale(self, xyz: 'Union[Number, list, tuple, np.ndarray]', transform_all_input_vectors=False, inplace=False)
+     |  scale(self, xyz: 'Union[Number, Vector]', transform_all_input_vectors: 'bool' = False, inplace: 'bool' = False)
      |      Scale the mesh.
      |      
      |      .. note::
@@ -4051,10 +4077,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Parameters
      |      ----------
-     |      xyz : float | sequence[float]
-     |          A scalar or length 3 sequence defining the scale factors along x,
-     |          y, and z. If a scalar, the same uniform scale is used along all
-     |          three axes.
+     |      xyz : Number | Vector
+     |          A vector sequence defining the scale factors along x, y, and z. If
+     |          a scalar, the same uniform scale is used along all three axes.
      |      
      |      transform_all_input_vectors : bool, default: False
      |          When ``True``, all input vectors are transformed. Otherwise, only
@@ -4070,9 +4095,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
-     |      >>> pl = pyvista.Plotter(shape=(1, 2))
+     |      >>> pl = pv.Plotter(shape=(1, 2))
      |      >>> pl.subplot(0, 0)
      |      >>> pl.show_axes()
      |      >>> _ = pl.show_grid()
@@ -4085,7 +4110,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> _ = pl.add_mesh(mesh2)
      |      >>> pl.show(cpos="xy")
      |  
-     |  set_active_scalars(self, name: 'Optional[str]', preference='cell')
+     |  set_active_scalars(self, name: 'Optional[str]', preference='cell') -> 'Tuple[FieldAssociation, Optional[np.ndarray]]'
      |      Find the scalars by name and appropriately sets it as active.
      |      
      |      To deactivate any active scalars, pass ``None`` as the ``name``.
@@ -4107,10 +4132,10 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      pyvista.core.utilities.arrays.FieldAssociation
      |          Association of the scalars matching ``name``.
      |      
-     |      numpy.ndarray
+     |      pyvista_ndarray
      |          An array from the dataset matching ``name``.
      |  
-     |  set_active_tensors(self, name: 'Optional[str]', preference='point')
+     |  set_active_tensors(self, name: 'Optional[str]', preference: 'str' = 'point') -> 'None'
      |      Find the tensors by name and appropriately sets it as active.
      |      
      |      To deactivate any active tensors, pass ``None`` as the ``name``.
@@ -4126,7 +4151,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |          matching this type.  Can be either ``'cell'``,
      |          ``'field'``, or ``'point'``.
      |  
-     |  set_active_vectors(self, name: 'Optional[str]', preference='point')
+     |  set_active_vectors(self, name: 'Optional[str]', preference: 'str' = 'point') -> 'None'
      |      Find the vectors by name and appropriately sets it as active.
      |      
      |      To deactivate any active vectors, pass ``None`` as the ``name``.
@@ -4142,7 +4167,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |          matching this type.  Can be either ``'cell'``,
      |          ``'field'``, or ``'point'``.
      |  
-     |  translate(self, xyz: 'Union[list, tuple, np.ndarray]', transform_all_input_vectors=False, inplace=False)
+     |  translate(self, xyz: 'Vector', transform_all_input_vectors: 'bool' = False, inplace: 'bool' = False)
      |      Translate the mesh.
      |      
      |      .. note::
@@ -4152,8 +4177,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Parameters
      |      ----------
-     |      xyz : sequence[float]
-     |          Length 3 sequence of floats.
+     |      xyz : Vector
+     |          A vector of three floats.
      |      
      |      transform_all_input_vectors : bool, default: False
      |          When ``True``, all input vectors are
@@ -4172,8 +4197,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Create a sphere and translate it by ``(2, 1, 2)``.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.center
      |      [0.0, 0.0, 0.0]
      |      >>> trans = mesh.translate((2, 1, 2), inplace=False)
@@ -4202,8 +4227,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      active normals for the dataset.  Show that this is the same size
      |      as the number of points.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh = mesh.compute_normals()
      |      >>> normals = mesh.active_normals
      |      >>> normals.shape
@@ -4243,8 +4268,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      scalars info.  Note how when the scalars are added, they
      |      automatically become the active scalars.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh['Z Height'] = mesh.points[:, 2]
      |      >>> mesh.active_scalars_info
      |      ActiveArrayInfoTuple(association=<FieldAssociation.POINT: 0>, name='Z Height')
@@ -4278,8 +4303,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Create a mesh, compute the normals inplace, and return the
      |      normals vector array.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> _ = mesh.compute_normals(inplace=True)
      |      >>> mesh.active_vectors  # doctest:+SKIP
      |      pyvista_ndarray([[-2.48721432e-10, -1.08815623e-09, -1.00000000e+00],
@@ -4315,8 +4340,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      vectors to the normals, and show that the active vectors are
      |      the ``'Normals'`` array associated with points.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> _ = mesh.compute_normals(inplace=True)
      |      >>> mesh.active_vectors_name = 'Normals'
      |      >>> mesh.active_vectors_info
@@ -4370,8 +4395,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Return the array names for a mesh.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.point_data['my_array'] = range(mesh.n_points)
      |      >>> mesh.array_names
      |      ['my_array', 'Normals']
@@ -4393,8 +4418,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Create a mesh, compute the normals and set them active, and
      |      plot the active vectors.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Cube()
      |      >>> mesh_w_normals = mesh.compute_normals()
      |      >>> mesh_w_normals.active_vectors_name = 'Normals'
      |      >>> arrows = mesh_w_normals.arrows
@@ -4413,8 +4438,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Create a cube and return the bounds of the mesh.
      |      
-     |      >>> import pyvista
-     |      >>> cube = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> cube = pv.Cube()
      |      >>> cube.bounds
      |      (-0.5, 0.5, -0.5, 0.5, -0.5, 0.5)
      |  
@@ -4458,9 +4483,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Add cell arrays to a mesh and list the available ``cell_data``.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
-     |      >>> mesh = pyvista.Cube()
+     |      >>> mesh = pv.Cube()
      |      >>> mesh.clear_data()
      |      >>> mesh.cell_data['my_array'] = np.random.random(mesh.n_cells)
      |      >>> mesh.cell_data['my_other_array'] = np.arange(mesh.n_cells)
@@ -4490,15 +4515,15 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Returns
      |      -------
-     |      Vector :
+     |      Vector
      |          Center of the bounding box.
      |      
      |      Examples
      |      --------
      |      Get the center of a mesh.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere(center=(1, 2, 0))
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere(center=(1, 2, 0))
      |      >>> mesh.center
      |      [1.0, 2.0, 0.0]
      |  
@@ -4507,7 +4532,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Returns
      |      -------
-     |      float :
+     |      float
      |          Length of the diagonal of the bounding box.
      |      
      |      Examples
@@ -4516,8 +4541,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      match ``3**(1/2)`` since it is the diagonal of a cube that is
      |      ``1 x 1 x 1``.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Cube()
      |      >>> mesh.length
      |      1.7320508075688772
      |  
@@ -4539,16 +4564,16 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Notes
      |      -----
-     |      This is identical to :attr:`n_faces <pyvista.PolyData.n_faces>`
-     |      in :class:`pyvista.PolyData`.
+     |      This returns the total number of cells -- for :class:`pyvista.PolyData`
+     |      this includes vertices, lines, triangle strips and polygonal faces.
      |      
      |      Examples
      |      --------
      |      Create a mesh and return the number of cells in the
      |      mesh.
      |      
-     |      >>> import pyvista
-     |      >>> cube = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> cube = pv.Cube()
      |      >>> cube.n_cells
      |      6
      |  
@@ -4565,8 +4590,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Create a mesh and return the number of points in the
      |      mesh.
      |      
-     |      >>> import pyvista
-     |      >>> cube = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> cube = pv.Cube()
      |      >>> cube.n_points
      |      8
      |  
@@ -4598,9 +4623,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Add point arrays to a mesh and list the available ``point_data``.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
-     |      >>> mesh = pyvista.Cube()
+     |      >>> mesh = pv.Cube()
      |      >>> mesh.clear_data()
      |      >>> mesh.point_data['my_array'] = np.random.random(mesh.n_points)
      |      >>> mesh.point_data['my_other_array'] = np.arange(mesh.n_points)
@@ -4674,13 +4699,29 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Create a mesh, add scalars to the mesh, and return the name of
      |      the active scalars.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh['Z Height'] = mesh.points[:, 2]
      |      >>> mesh.active_scalars_name
      |      'Z Height'
      |  
      |  active_t_coords
+     |      Return the active texture coordinates on the points.
+     |      
+     |      Returns
+     |      -------
+     |      Optional[pyvista_ndarray]
+     |          Active texture coordinates on the points.
+     |  
+     |  active_tensors_name
+     |      Return the name of the active tensor array.
+     |      
+     |      Returns
+     |      -------
+     |      str
+     |          Name of the active tensor array.
+     |  
+     |  active_texture_coordinates
      |      Return the active texture coordinates on the points.
      |      
      |      Returns
@@ -4694,7 +4735,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      >>> from pyvista import examples
      |      >>> globe = examples.load_globe()
-     |      >>> globe.active_t_coords
+     |      >>> globe.active_texture_coordinates
      |      pyvista_ndarray([[0.        , 0.        ],
      |                       [0.        , 0.07142857],
      |                       [0.        , 0.14285714],
@@ -4702,14 +4743,6 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |                       [1.        , 0.85714286],
      |                       [1.        , 0.92857143],
      |                       [1.        , 1.        ]])
-     |  
-     |  active_tensors_name
-     |      Return the name of the active tensor array.
-     |      
-     |      Returns
-     |      -------
-     |      str
-     |          Name of the active tensor array.
      |  
      |  active_vectors_name
      |      Return the name of the active vectors array.
@@ -4724,8 +4757,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Create a mesh, compute the normals, set them as active, and
      |      return the name of the active vectors.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh_w_normals = mesh.compute_normals()
      |      >>> mesh_w_normals.active_vectors_name = 'Normals'
      |      >>> mesh_w_normals.active_vectors_name
@@ -4733,6 +4766,78 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  
      |  ----------------------------------------------------------------------
      |  Methods inherited from pyvista.core.filters.image_data.ImageDataFilters:
+     |  
+     |  contour_labeled(self, n_labels: Optional[int] = None, smoothing: bool = False, smoothing_num_iterations: int = 50, smoothing_relaxation_factor: float = 0.5, smoothing_constraint_distance: float = 1, output_mesh_type: Literal['quads', 'triangles'] = 'quads', output_style: Literal['default', 'boundary'] = 'default', scalars: Optional[str] = None, progress_bar: bool = False) -> 'pyvista.PolyData'
+     |      Generate labeled contours from 3D label maps.
+     |      
+     |      SurfaceNets algorithm is used to extract contours preserving sharp
+     |      boundaries for the selected labels from the label maps.
+     |      Optionally, the boundaries can be smoothened to reduce the staircase
+     |      appearance in case of low resolution input label maps.
+     |      
+     |      This filter requires that the :class:`ImageData` has integer point
+     |      scalars, such as multi-label maps generated from image segmentation.
+     |      
+     |      .. note::
+     |         Requires ``vtk>=9.3.0``.
+     |      
+     |      Parameters
+     |      ----------
+     |      n_labels : int, optional
+     |          Number of labels to be extracted (all are extracted if None is given).
+     |      
+     |      smoothing : bool, default: False
+     |          Apply smoothing to the meshes.
+     |      
+     |      smoothing_num_iterations : int, default: 50
+     |          Number of smoothing iterations.
+     |      
+     |      smoothing_relaxation_factor : float, default: 0.5
+     |          Relaxation factor of the smoothing.
+     |      
+     |      smoothing_constraint_distance : float, default: 1
+     |          Constraint distance of the smoothing.
+     |      
+     |      output_mesh_type : str, default: 'quads'
+     |          Type of the output mesh. Must be either ``'quads'``, or ``'triangles'``.
+     |      
+     |      output_style : str, default: 'default'
+     |          Style of the output mesh. Must be either ``'default'`` or ``'boundary'``.
+     |          When ``'default'`` is specified, the filter produces a mesh with both
+     |          interior and exterior polygons. When ``'boundary'`` is selected, only
+     |          polygons on the border with the background are produced (without interior
+     |          polygons). Note that style ``'selected'`` is currently not implemented.
+     |      
+     |      scalars : str, optional
+     |          Name of scalars to process. Defaults to currently active scalars.
+     |      
+     |      progress_bar : bool, default: False
+     |          Display a progress bar to indicate progress.
+     |      
+     |      Returns
+     |      -------
+     |      pyvista.PolyData
+     |          :class:`pyvista.PolyData` Labeled mesh with the segments labeled.
+     |      
+     |      References
+     |      ----------
+     |      Sarah F. Frisken, SurfaceNets for Multi-Label Segmentations with Preservation
+     |      of Sharp Boundaries, Journal of Computer Graphics Techniques (JCGT), vol. 11,
+     |      no. 1, 34-54, 2022. Available online http://jcgt.org/published/0011/01/03/
+     |      
+     |      https://www.kitware.com/really-fast-isocontouring/
+     |      
+     |      Examples
+     |      --------
+     |      See :ref:`contouring_example` for a full example using this filter.
+     |      
+     |      See Also
+     |      --------
+     |      pyvista.DataSetFilters.contour
+     |          Generalized contouring method which uses MarchingCubes or FlyingEdges.
+     |      
+     |      pyvista.DataSetFilters.pack_labels
+     |          Function used internally by SurfaceNets to generate contiguous label data.
      |  
      |  extract_subset(self, voi, rate=(1, 1, 1), boundary=False, progress_bar=False)
      |      Select piece (e.g., volume of interest).
@@ -4867,9 +4972,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      to create meaningful data.
      |      
      |      >>> import numpy as np
-     |      >>> import pyvista
-     |      >>> noise = pyvista.perlin_noise(0.1, (2, 5, 8), (0, 0, 0))
-     |      >>> grid = pyvista.sample_function(
+     |      >>> import pyvista as pv
+     |      >>> noise = pv.perlin_noise(0.1, (2, 5, 8), (0, 0, 0))
+     |      >>> grid = pv.sample_function(
      |      ...     noise, [0, 1, 0, 1, 0, 1], dim=(20, 20, 20)
      |      ... )
      |      >>> grid.plot(show_scalar_bar=False)
@@ -5162,9 +5267,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      to create meaningful data.
      |      
      |      >>> import numpy as np
-     |      >>> import pyvista
-     |      >>> noise = pyvista.perlin_noise(0.1, (2, 5, 8), (0, 0, 0))
-     |      >>> grid = pyvista.sample_function(
+     |      >>> import pyvista as pv
+     |      >>> noise = pv.perlin_noise(0.1, (2, 5, 8), (0, 0, 0))
+     |      >>> grid = pv.sample_function(
      |      ...     noise, [0, 1, 0, 1, 0, 1], dim=(20, 20, 20)
      |      ... )
      |      >>> grid.plot(show_scalar_bar=False)
@@ -5349,11 +5454,11 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Plane()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Plane()
      |      >>> mesh.point_data.clear()
      |      >>> centers = mesh.cell_centers()
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> actor = pl.add_mesh(mesh, show_edges=True)
      |      >>> actor = pl.add_points(
      |      ...     centers,
@@ -5451,7 +5556,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Returns
      |      -------
-     |      pyvista.PolyData or tuple(pyvista.PolyData)
+     |      pyvista.PolyData or tuple[pyvista.PolyData]
      |          Clipped mesh when ``return_clipped=False``,
      |          otherwise a tuple containing the unclipped and clipped datasets.
      |      
@@ -5638,9 +5743,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Clip a cube with a sphere.
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere(center=(-0.4, -0.4, -0.4))
-     |      >>> cube = pyvista.Cube().triangulate().subdivide(3)
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere(center=(-0.4, -0.4, -0.4))
+     |      >>> cube = pv.Cube().triangulate().subdivide(3)
      |      >>> clipped = cube.clip_surface(sphere)
      |      >>> clipped.plot(show_edges=True, cpos='xy', line_width=3)
      |      
@@ -5714,8 +5819,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Compute and plot the minimum angle of a sample sphere mesh.
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere(theta_resolution=20, phi_resolution=20)
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere(theta_resolution=20, phi_resolution=20)
      |      >>> cqual = sphere.compute_cell_quality('min_angle')
      |      >>> cqual.plot(show_edges=True)
      |      
@@ -5905,41 +6010,173 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      :ref:`voxelize_surface_mesh_example` for more examples using
      |      this filter.
      |  
-     |  connectivity(self, largest=False, progress_bar=False)
-     |      Find and label connected bodies/volumes.
+     |  connectivity(self, extraction_mode: Literal['all', 'largest', 'specified', 'cell_seed', 'point_seed', 'closest'] = 'all', variable_input=None, scalar_range=None, scalars=None, label_regions=True, region_ids=None, point_ids=None, cell_ids=None, closest_point=None, inplace=False, progress_bar=False, **kwargs)
+     |      Find and label connected regions.
      |      
-     |      This adds an ID array to the point and cell data to
-     |      distinguish separate connected bodies. This applies a
-     |      ``vtkConnectivityFilter`` filter which extracts cells that
-     |      share common points and/or meet other connectivity criterion.
+     |      This filter extracts cell regions based on a specified connectivity
+     |      criterion. The extraction criterion can be controlled with
+     |      ``extraction_mode`` to extract the largest region or the closest
+     |      region to a seed point, for example.
      |      
-     |      Cells that share vertices and meet other connectivity
-     |      criterion such as scalar range are known as a region.
+     |      In general, cells are considered to be connected if they
+     |      share a point. However, if a ``scalar_range`` is provided, cells
+     |      must also have at least one point with scalar values in the
+     |      specified range to be considered connected.
+     |      
+     |      See :ref:`connectivity_example` and :ref:`volumetric_example` for
+     |      more examples using this filter.
+     |      
+     |      .. versionadded:: 0.43.0
+     |      
+     |         * New extraction modes: ``'specified'``, ``'cell_seed'``, ``'point_seed'``,
+     |           and ``'closest'``.
+     |         * Extracted regions are now sorted in descending order by
+     |           cell count.
+     |         * Region connectivity can be controlled using ``scalar_range``.
+     |      
+     |      .. deprecated:: 0.43.0
+     |         Parameter ``largest`` is deprecated. Use ``'largest'`` or
+     |         ``extraction_mode='largest'`` instead.
      |      
      |      Parameters
      |      ----------
-     |      largest : bool, default: False
-     |          Extract the largest connected part of the mesh.
+     |      extraction_mode : str, default: "all"
+     |          * ``'all'``: Extract all connected regions.
+     |          * ``'largest'`` : Extract the largest connected region (by cell
+     |            count).
+     |          * ``'specified'``: Extract specific region IDs. Use ``region_ids``
+     |            to specify the region IDs to extract.
+     |          * ``'cell_seed'``: Extract all regions sharing the specified cell
+     |            ids. Use ``cell_ids`` to specify the cell ids.
+     |          * ``'point_seed'`` : Extract all regions sharing the specified
+     |            point ids. Use ``point_ids`` to specify the point ids.
+     |          * ``'closest'`` : Extract the region closest to the specified
+     |            point. Use ``closest_point`` to specify the point.
+     |      
+     |      variable_input : float | sequence[float], optional
+     |          The convenience parameter used for specifying any required input
+     |          values for some values of ``extraction_mode``. Setting
+     |          ``variable_input`` is equivalent to setting:
+     |      
+     |          * ``'region_ids'`` if mode is ``'specified'``.
+     |          * ``'cell_ids'`` if mode is ``'cell_seed'``.
+     |          * ``'point_ids'`` if mode is ``'point_seed'``.
+     |          * ``'closest_point'`` if mode is ``'closest'``.
+     |      
+     |          It has no effect if the mode is ``'all'`` or ``'largest'``.
+     |      
+     |      scalar_range : sequence[float], optional
+     |          Scalar range in the form ``[min, max]``. If set, the connectivity is
+     |          restricted to cells with at least one point with scalar values in
+     |          the specified range.
+     |      
+     |      scalars : str, optional
+     |          Name of scalars to use if ``scalar_range`` is specified. Defaults
+     |          to currently active scalars.
+     |      
+     |          .. note::
+     |             This filter requires point scalars to determine region
+     |             connectivity. If cell scalars are provided, they are first
+     |             converted to point scalars with :func:`cell_data_to_point_data`
+     |             before applying the filter. The converted point scalars are
+     |             removed from the output after applying the filter.
+     |      
+     |      label_regions : bool, default: True
+     |          If ``True``, ``'RegionId'`` point and cell scalar arrays are stored.
+     |          Each region is assigned a unique ID. IDs are zero-indexed and are
+     |          assigned by region cell count in descending order (i.e. the largest
+     |          region has ID ``0``).
+     |      
+     |      region_ids : sequence[int], optional
+     |          Region ids to extract. Only used if ``extraction_mode`` is
+     |          ``specified``.
+     |      
+     |      point_ids : sequence[int], optional
+     |          Point ids to use as seeds. Only used if ``extraction_mode`` is
+     |          ``point_seed``.
+     |      
+     |      cell_ids : sequence[int], optional
+     |          Cell ids to use as seeds. Only used if ``extraction_mode`` is
+     |          ``cell_seed``.
+     |      
+     |      closest_point : sequence[int], optional
+     |          Point coordinates in ``(x, y, z)``. Only used if
+     |          ``extraction_mode`` is ``closest``.
+     |      
+     |      inplace : bool, default: False
+     |          If ``True`` the mesh is updated in-place, otherwise a copy
+     |          is returned. A copy is always returned if the input type is
+     |          not ``pyvista.PolyData`` or ``pyvista.UnstructuredGrid``.
      |      
      |      progress_bar : bool, default: False
-     |          Display a progress bar to indicate progress.
+     |          Display a progress bar.
+     |      
+     |      **kwargs : dict, optional
+     |          Used for handling deprecated parameters.
      |      
      |      Returns
      |      -------
      |      pyvista.DataSet
-     |          Dataset with labeled connected bodies.  Return type
-     |          matches input.
+     |          Dataset with labeled connected bodies. Return type is
+     |          ``pyvista.PolyData`` if input type is ``pyvista.PolyData`` and
+     |          ``pyvista.UnstructuredGrid`` otherwise.
+     |      
+     |      See Also
+     |      --------
+     |          :meth:`extract_largest`, :meth:`split_bodies`
      |      
      |      Examples
      |      --------
-     |      Join two meshes together and plot their connectivity.
+     |      Create a single mesh with three disconnected regions where each
+     |      region has a different cell count.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere() + pyvista.Sphere(center=(2, 0, 0))
-     |      >>> conn = mesh.connectivity(largest=False)
-     |      >>> conn.plot(cmap=['red', 'blue'])
+     |      >>> import pyvista as pv
+     |      >>> large = pv.Sphere(
+     |      ...     center=(-4, 0, 0), phi_resolution=40, theta_resolution=40
+     |      ... )
+     |      >>> medium = pv.Sphere(
+     |      ...     center=(-2, 0, 0), phi_resolution=15, theta_resolution=15
+     |      ... )
+     |      >>> small = pv.Sphere(
+     |      ...     center=(0, 0, 0), phi_resolution=7, theta_resolution=7
+     |      ... )
+     |      >>> mesh = large + medium + small
      |      
-     |      See :ref:`volumetric_example` for more examples using this filter.
+     |      Plot their connectivity.
+     |      
+     |      >>> conn = mesh.connectivity('all')
+     |      >>> conn.plot(cmap=['red', 'green', 'blue'], show_edges=True)
+     |      
+     |      Restrict connectivity to a scalar range.
+     |      
+     |      >>> mesh['y_coordinates'] = mesh.points[:, 1]
+     |      >>> conn = mesh.connectivity('all', scalar_range=[-1, 0])
+     |      >>> conn.plot(cmap=['red', 'green', 'blue'], show_edges=True)
+     |      
+     |      Extract the region closest to the origin.
+     |      
+     |      >>> conn = mesh.connectivity('closest', (0, 0, 0))
+     |      >>> conn.plot(color='blue', show_edges=True)
+     |      
+     |      Extract a region using a cell ID ``100`` as a seed.
+     |      
+     |      >>> conn = mesh.connectivity('cell_seed', 100)
+     |      >>> conn.plot(color='green', show_edges=True)
+     |      
+     |      Extract the largest region.
+     |      
+     |      >>> conn = mesh.connectivity('largest')
+     |      >>> conn.plot(color='red', show_edges=True)
+     |      
+     |      Extract the largest and smallest regions by specifying their
+     |      region IDs. Note that the region IDs of the output differ from
+     |      the specified IDs since the input has three regions but the output
+     |      only has two.
+     |      
+     |      >>> large_id = 0  # largest always has ID '0'
+     |      >>> small_id = 2  # smallest has ID 'N-1' with N=3 regions
+     |      >>> conn = mesh.connectivity('specified', (small_id, large_id))
+     |      >>> conn.plot(cmap=['red', 'blue'], show_edges=True)
      |  
      |  contour(self, isosurfaces=10, scalars=None, compute_normals=False, compute_gradients=False, compute_scalars=True, rng=None, preference='point', method='contour', progress_bar=False)
      |      Contour an input self by an array.
@@ -6136,8 +6373,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Generate a 3D Delaunay triangulation of a surface mesh of a
      |      sphere and plot the interior edges generated.
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere(theta_resolution=5, phi_resolution=5)
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere(theta_resolution=5, phi_resolution=5)
      |      >>> grid = sphere.delaunay_3d()
      |      >>> edges = grid.extract_all_edges()
      |      >>> edges.plot(line_width=5, color='k')
@@ -6198,8 +6435,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Generate the "elevation" scalars for a sphere mesh.  This is
      |      simply the height in Z from the XY plane.
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere()
      |      >>> sphere_elv = sphere.elevation()
      |      >>> sphere_elv.plot(smooth_shading=True)
      |      
@@ -6277,9 +6514,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Extract the edges of a sample unstructured grid and plot the edges.
      |      Note how it plots interior edges.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
-     |      >>> hex_beam = pyvista.read(examples.hexbeamfile)
+     |      >>> hex_beam = pv.read(examples.hexbeamfile)
      |      >>> edges = hex_beam.extract_all_edges()
      |      >>> edges.plot(line_width=5, color='k')
      |      
@@ -6306,13 +6543,13 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
-     |      >>> grid = pyvista.read(examples.hexbeamfile)
+     |      >>> grid = pv.read(examples.hexbeamfile)
      |      >>> subset = grid.extract_cells(range(20))
      |      >>> subset.n_cells
      |      20
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> actor = pl.add_mesh(
      |      ...     grid, style='wireframe', line_width=5, color='black'
      |      ... )
@@ -6425,9 +6662,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Extract the edges from an unstructured grid.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
-     |      >>> hex_beam = pyvista.read(examples.hexbeamfile)
+     |      >>> hex_beam = pv.read(examples.hexbeamfile)
      |      >>> feat_edges = hex_beam.extract_feature_edges()
      |      >>> feat_edges.clear_data()  # clear array data for plotting
      |      >>> feat_edges.plot(line_width=10)
@@ -6461,9 +6698,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Extract the surface of a sample unstructured grid.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
-     |      >>> hex_beam = pyvista.read(examples.hexbeamfile)
+     |      >>> hex_beam = pv.read(examples.hexbeamfile)
      |      >>> hex_beam.extract_geometry()
      |      PolyData (...)
      |        N Cells:    88
@@ -6500,14 +6737,16 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Join two meshes together, extract the largest, and plot it.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere() + pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere() + pv.Cube()
      |      >>> largest = mesh.extract_largest()
-     |      >>> largest.point_data.clear()
-     |      >>> largest.cell_data.clear()
      |      >>> largest.plot()
      |      
-     |      See :ref:`volumetric_example` for more examples using this filter.
+     |      See :ref:`connectivity_example` and :ref:`volumetric_example` for
+     |      more examples using this filter.
+     |      
+     |      .. seealso::
+     |          :func:`pyvista.DataSetFilters.connectivity`
      |  
      |  extract_points(self, ind, adjacent_cells=True, include_cells=True, progress_bar=False)
      |      Return a subset of the grid (with cells) that contains any of the given point indices.
@@ -6537,9 +6776,11 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Extract all the points of a sphere with a Z coordinate greater than 0
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere()
-     |      >>> extracted = sphere.extract_points(sphere.points[:, 2] > 0)
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere()
+     |      >>> extracted = sphere.extract_points(
+     |      ...     sphere.points[:, 2] > 0, include_cells=False
+     |      ... )
      |      >>> extracted.clear_data()  # clear for plotting
      |      >>> extracted.plot()
      |  
@@ -6550,12 +6791,12 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      ----------
      |      pass_pointid : bool, default: True
      |          Adds a point array ``"vtkOriginalPointIds"`` that
-     |          idenfities which original points these surface points
+     |          identifies which original points these surface points
      |          correspond to.
      |      
      |      pass_cellid : bool, default: True
      |          Adds a cell array ``"vtkOriginalCellIds"`` that
-     |          idenfities which original cells these surface cells
+     |          identifies which original cells these surface cells
      |          correspond to.
      |      
      |      nonlinear_subdivision : int, default: 1
@@ -6585,7 +6826,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Extract the surface of an UnstructuredGrid.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
      |      >>> grid = examples.load_hexbeam()
      |      >>> surf = grid.extract_surface()
@@ -6683,13 +6924,13 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Create arrow glyphs oriented by vectors and scaled by scalars.
      |      Factor parameter is used to reduce the size of the arrows.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
      |      >>> mesh = examples.load_random_hills()
      |      >>> arrows = mesh.glyph(
      |      ...     scale="Normals", orient="Normals", tolerance=0.05
      |      ... )
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> actor = pl.add_mesh(arrows, color="black")
      |      >>> actor = pl.add_mesh(
      |      ...     mesh,
@@ -6726,11 +6967,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Integrate data on a sphere mesh.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
-     |      >>> sphere = pyvista.Sphere(
-     |      ...     theta_resolution=100, phi_resolution=100
-     |      ... )
+     |      >>> sphere = pv.Sphere(theta_resolution=100, phi_resolution=100)
      |      >>> sphere.point_data["data"] = 2 * np.ones(sphere.n_points)
      |      >>> integrated = sphere.integrate_data()
      |      
@@ -6817,18 +7056,18 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Interpolate the values of 5 points onto a sample plane.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
      |      >>> np.random.seed(7)
      |      >>> point_cloud = np.random.random((5, 3))
      |      >>> point_cloud[:, 2] = 0
      |      >>> point_cloud -= point_cloud.mean(0)
-     |      >>> pdata = pyvista.PolyData(point_cloud)
+     |      >>> pdata = pv.PolyData(point_cloud)
      |      >>> pdata['values'] = np.random.random(5)
-     |      >>> plane = pyvista.Plane()
+     |      >>> plane = pv.Plane()
      |      >>> plane.clear_data()
      |      >>> plane = plane.interpolate(pdata, sharpness=3)
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(
      |      ...     pdata, render_points_as_spheres=True, point_size=50
      |      ... )
@@ -6891,10 +7130,10 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Merge three separate spheres into a single mesh.
      |      
-     |      >>> import pyvista
-     |      >>> sphere_a = pyvista.Sphere(center=(1, 0, 0))
-     |      >>> sphere_b = pyvista.Sphere(center=(0, 1, 0))
-     |      >>> sphere_c = pyvista.Sphere(center=(0, 0, 1))
+     |      >>> import pyvista as pv
+     |      >>> sphere_a = pv.Sphere(center=(1, 0, 0))
+     |      >>> sphere_b = pv.Sphere(center=(0, 1, 0))
+     |      >>> sphere_c = pv.Sphere(center=(0, 0, 1))
      |      >>> merged = sphere_a.merge([sphere_b, sphere_c])
      |      >>> merged.plot()
      |  
@@ -6919,10 +7158,10 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Generate and plot the outline of a sphere.  This is
      |      effectively the ``(x, y, z)`` bounds of the mesh.
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere()
      |      >>> outline = sphere.outline()
-     |      >>> pyvista.plot([sphere, outline], line_width=5)
+     |      >>> pv.plot([sphere, outline], line_width=5)
      |      
      |      See :ref:`common_filter_example` for more examples using this filter.
      |  
@@ -6948,10 +7187,96 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Generate and plot the corners of a sphere.  This is
      |      effectively the ``(x, y, z)`` bounds of the mesh.
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere()
      |      >>> corners = sphere.outline_corners(factor=0.1)
-     |      >>> pyvista.plot([sphere, corners], line_width=5)
+     |      >>> pv.plot([sphere, corners], line_width=5)
+     |  
+     |  pack_labels(self, sort=False, scalars=None, preference='point', output_scalars=None, progress_bar=False, inplace=False)
+     |      Renumber labeled data such that labels are contiguous.
+     |      
+     |      This filter renumbers scalar label data of any type with ``N`` labels
+     |      such that the output labels are contiguous from ``[0, N)``. The
+     |      output may optionally be sorted by label count.
+     |      
+     |      The output array ``'packed_labels'`` is added to the output by default,
+     |      and is automatically set as the active scalars.
+     |      
+     |      See Also
+     |      --------
+     |      sort_labels
+     |          Similar function with ``sort=True`` by default.
+     |      
+     |      Notes
+     |      -----
+     |      This filter uses ``vtkPackLabels`` as the underlying method which
+     |      requires VTK version 9.3 or higher. If ``vtkPackLabels`` is not
+     |      available, packing is done with ``NumPy`` instead which may be
+     |      slower. For best performance, consider upgrading VTK.
+     |      
+     |      .. versionadded:: 0.43
+     |      
+     |      Parameters
+     |      ----------
+     |      sort : bool, default: False
+     |          Whether to sort the output by label count in descending order
+     |          (i.e. from largest to smallest).
+     |      
+     |      scalars : str, optional
+     |          Name of scalars to pack. Defaults to currently active scalars.
+     |      
+     |      preference : str, default: "point"
+     |          When ``scalars`` is specified, this is the preferred array
+     |          type to search for in the dataset.  Must be either
+     |          ``'point'`` or ``'cell'``.
+     |      
+     |      output_scalars : str, None
+     |          Name of the packed output scalars. By default, the output is
+     |          saved to ``'packed_labels'``.
+     |      
+     |      progress_bar : bool, default: False
+     |          If ``True``, display a progress bar. Has no effect if VTK
+     |          version is lower than 9.3.
+     |      
+     |      inplace : bool, default: False
+     |          If ``True``, the mesh is updated in-place.
+     |      
+     |      Returns
+     |      -------
+     |      pyvista.Dataset
+     |          Dataset with packed labels.
+     |      
+     |      Examples
+     |      --------
+     |      Pack segmented image labels.
+     |      
+     |      Load non-contiguous image labels
+     |      
+     |      >>> from pyvista import examples
+     |      >>> import numpy as np
+     |      >>> image_labels = examples.download_frog_tissue()
+     |      
+     |      Show range of labels
+     |      
+     |      >>> image_labels.get_data_range()
+     |      (0, 29)
+     |      
+     |      Find 'gaps' in the labels
+     |      
+     |      >>> label_numbers = np.unique(image_labels.active_scalars)
+     |      >>> label_max = np.max(label_numbers)
+     |      >>> missing_labels = set(range(label_max)) - set(label_numbers)
+     |      >>> len(missing_labels)
+     |      4
+     |      
+     |      Pack labels to remove gaps
+     |      
+     |      >>> packed_labels = image_labels.pack_labels()
+     |      
+     |      Show range of packed labels
+     |      
+     |      >>> packed_labels.get_data_range()
+     |      (0, 25)
      |  
      |  partition(self, n_partitions, generate_global_id=False, as_composite=True)
      |      Break down input dataset into a requested number of partitions.
@@ -7230,15 +7555,15 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      First, plot these values as point values to show the
      |      difference between point and cell data.
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere(theta_resolution=10, phi_resolution=10)
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere(theta_resolution=10, phi_resolution=10)
      |      >>> sphere['Z Coordinates'] = sphere.points[:, 2]
      |      >>> sphere.plot()
      |      
      |      Now, convert these values to cell data and then plot it.
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere(theta_resolution=10, phi_resolution=10)
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere(theta_resolution=10, phi_resolution=10)
      |      >>> sphere['Z Coordinates'] = sphere.points[:, 2]
      |      >>> sphere = sphere.point_data_to_cell_data()
      |      >>> sphere.plot()
@@ -7360,9 +7685,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> mesh = mesh.reflect((0, 0, 1), point=(0, 0, -100))
      |      >>> mesh.plot(show_edges=True)
      |      
-     |      See the :ref:`ref_reflect_example` for more examples using this filter.
+     |      See the :ref:`reflect_example` for more examples using this filter.
      |  
-     |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None, pass_field_data=True, mark_blank=True)
+     |  sample(self, target, tolerance=None, pass_cell_data=True, pass_point_data=True, categorical=False, progress_bar=False, locator=None, pass_field_data=True, mark_blank=True, snap_to_closest_point=False)
      |      Resample array data from a passed mesh onto this mesh.
      |      
      |      For `mesh1.sample(mesh2)`, the arrays from `mesh2` are sampled onto
@@ -7418,6 +7743,12 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      mark_blank : bool, default: True
      |          Whether to mark blank points and cells in "vtkGhostType".
+     |      
+     |      snap_to_closest_point : bool, default: False
+     |          Whether to snap to cell with closest point if no cell is found. Useful
+     |          when sampling from data with vertex cells. Requires vtk >=9.3.0.
+     |      
+     |          .. versionadded:: 0.43
      |      
      |      Returns
      |      -------
@@ -7488,7 +7819,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Sample a dataset over a circular arc and plot it.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
      |      >>> uniform = examples.load_uniform()
      |      >>> uniform["height"] = uniform.points[:, 2]
@@ -7510,7 +7841,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> sampled_arc = uniform.sample_over_circular_arc(
      |      ...     pointa, pointb, center
      |      ... )
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(uniform, style='wireframe')
      |      >>> _ = pl.add_mesh(sampled_arc, line_width=10)
      |      >>> pl.show_axes()
@@ -7561,7 +7892,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Sample a dataset over a circular arc.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
      |      >>> uniform = examples.load_uniform()
      |      >>> uniform["height"] = uniform.points[:, 2]
@@ -7575,7 +7906,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> arc = uniform.sample_over_circular_arc_normal(
      |      ...     center, normal=normal, polar=polar
      |      ... )
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(uniform, style='wireframe')
      |      >>> _ = pl.add_mesh(arc, line_width=10)
      |      >>> pl.show_axes()
@@ -7612,19 +7943,19 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Sample over a plane that is interpolating a point cloud.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
      |      >>> np.random.seed(12)
      |      >>> point_cloud = np.random.random((5, 3))
      |      >>> point_cloud[:, 2] = 0
      |      >>> point_cloud -= point_cloud.mean(0)
-     |      >>> pdata = pyvista.PolyData(point_cloud)
+     |      >>> pdata = pv.PolyData(point_cloud)
      |      >>> pdata['values'] = np.random.random(5)
-     |      >>> plane = pyvista.Plane()
+     |      >>> plane = pv.Plane()
      |      >>> plane.clear_data()
      |      >>> plane = plane.interpolate(pdata, sharpness=3.5)
      |      >>> sample = plane.sample_over_line((-0.5, -0.5, 0), (0.5, 0.5, 0))
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(
      |      ...     pdata, render_points_as_spheres=True, point_size=50
      |      ... )
@@ -7656,21 +7987,21 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Sample over a plane that is interpolating a point cloud.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
      |      >>> np.random.seed(12)
      |      >>> point_cloud = np.random.random((5, 3))
      |      >>> point_cloud[:, 2] = 0
      |      >>> point_cloud -= point_cloud.mean(0)
-     |      >>> pdata = pyvista.PolyData(point_cloud)
+     |      >>> pdata = pv.PolyData(point_cloud)
      |      >>> pdata['values'] = np.random.random(5)
-     |      >>> plane = pyvista.Plane()
+     |      >>> plane = pv.Plane()
      |      >>> plane.clear_data()
      |      >>> plane = plane.interpolate(pdata, sharpness=3.5)
      |      >>> sample = plane.sample_over_multiple_lines(
      |      ...     [[-0.5, -0.5, 0], [0.5, -0.5, 0], [0.5, 0.5, 0]]
      |      ... )
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(
      |      ...     pdata, render_points_as_spheres=True, point_size=50
      |      ... )
@@ -7732,15 +8063,15 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      surface mesh.  Extract these points using the
      |      :func:`DataSetFilters.extract_points` filter and then plot them.
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere()
-     |      >>> plane = pyvista.Plane()
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere()
+     |      >>> plane = pv.Plane()
      |      >>> selected = plane.select_enclosed_points(sphere)
      |      >>> pts = plane.extract_points(
      |      ...     selected['SelectedPoints'].view(bool),
      |      ...     adjacent_cells=False,
      |      ... )
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(sphere, style='wireframe')
      |      >>> _ = pl.add_points(pts, color='r')
      |      >>> pl.show()
@@ -7798,8 +8129,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      First, plot the original cube.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Cube()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Cube()
      |      >>> mesh.plot(show_edges=True, line_width=5)
      |      
      |      Now, plot the mesh with shrunk faces.
@@ -7844,8 +8175,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Slice the surface of a sphere.
      |      
-     |      >>> import pyvista
-     |      >>> sphere = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> sphere = pv.Sphere()
      |      >>> slice_x = sphere.slice(normal='x')
      |      >>> slice_y = sphere.slice(normal='y')
      |      >>> slice_z = sphere.slice(normal='z')
@@ -7947,20 +8278,18 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Slice the random hills dataset along a circular arc.
      |      
      |      >>> import numpy as np
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
      |      >>> hills = examples.load_random_hills()
      |      >>> center = np.array(hills.center)
      |      >>> point_a = center + np.array([5, 0, 0])
      |      >>> point_b = center + np.array([-5, 0, 0])
-     |      >>> arc = pyvista.CircularArc(
-     |      ...     point_a, point_b, center, resolution=100
-     |      ... )
+     |      >>> arc = pv.CircularArc(point_a, point_b, center, resolution=100)
      |      >>> line_slice = hills.slice_along_line(arc)
      |      
      |      Plot the circular arc and the hills mesh.
      |      
-     |      >>> pl = pyvista.Plotter()
+     |      >>> pl = pv.Plotter()
      |      >>> _ = pl.add_mesh(hills, smooth_shading=True, style='wireframe')
      |      >>> _ = pl.add_mesh(
      |      ...     line_slice,
@@ -8059,6 +8388,79 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      See :ref:`slice_example` for more examples using this filter.
      |  
+     |  sort_labels(self, scalars=None, preference='point', output_scalars=None, progress_bar=False, inplace=False)
+     |      Sort labeled data by number of points or cells.
+     |      
+     |      This filter renumbers scalar label data of any type with ``N`` labels
+     |      such that the output labels are contiguous from ``[0, N)`` and
+     |      sorted in descending order from largest to smallest (by label count).
+     |      I.e., the largest label will have a value of ``0`` and the smallest
+     |      label will have a value of ``N-1``.
+     |      
+     |      The filter is a convenience method for :func:`pyvista.DataSetFilters.pack_labels`
+     |      with ``sort=True``.
+     |      
+     |      Parameters
+     |      ----------
+     |      scalars : str, optional
+     |          Name of scalars to sort. Defaults to currently active scalars.
+     |      
+     |      preference : str, default: "point"
+     |          When ``scalars`` is specified, this is the preferred array
+     |          type to search for in the dataset.  Must be either
+     |          ``'point'`` or ``'cell'``.
+     |      
+     |      output_scalars : str, None
+     |          Name of the sorted output scalars. By default, the output is
+     |          saved to ``'packed_labels'``.
+     |      
+     |      progress_bar : bool, default: False
+     |          If ``True``, display a progress bar. Has no effect if VTK
+     |          version is lower than 9.3.
+     |      
+     |      inplace : bool, default: False
+     |          If ``True``, the mesh is updated in-place.
+     |      
+     |      Returns
+     |      -------
+     |      pyvista.Dataset
+     |          Dataset with sorted labels.
+     |      
+     |      Examples
+     |      --------
+     |      Sort segmented image labels.
+     |      
+     |      Load image labels
+     |      
+     |      >>> from pyvista import examples
+     |      >>> import numpy as np
+     |      >>> image_labels = examples.download_frog_tissue()
+     |      
+     |      Show label info for first four labels
+     |      
+     |      >>> label_number, label_size = np.unique(
+     |      ...     image_labels['MetaImage'], return_counts=True
+     |      ... )
+     |      >>> label_number[:4]
+     |      pyvista_ndarray([0, 1, 2, 3], dtype=uint8)
+     |      >>> label_size[:4]
+     |      array([30805713,    35279,    19172,    38129])
+     |      
+     |      Sort labels
+     |      
+     |      >>> sorted_labels = image_labels.sort_labels()
+     |      
+     |      Show sorted label info for the four largest labels. Note
+     |      the difference in label size after sorting.
+     |      
+     |      >>> sorted_label_number, sorted_label_size = np.unique(
+     |      ...     sorted_labels["packed_labels"], return_counts=True
+     |      ... )
+     |      >>> sorted_label_number[:4]
+     |      pyvista_ndarray([0, 1, 2, 3], dtype=uint8)
+     |      >>> sorted_label_size[:4]
+     |      array([30805713,   438052,   204672,   133880])
+     |  
      |  split_bodies(self, label=False, progress_bar=False)
      |      Find, label, and split connected bodies/volumes.
      |      
@@ -8091,7 +8493,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> len(bodies)
      |      2
      |      
-     |      See :ref:`split_vol_ref` for more examples using this filter.
+     |      See :ref:`split_vol` for more examples using this filter.
      |  
      |  streamlines(self, vectors=None, source_center=None, source_radius=None, n_points=100, start_position=None, return_source=False, pointa=None, pointb=None, progress_bar=False, **kwargs)
      |      Integrate a vector field to generate streamlines.
@@ -8244,7 +8646,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      This dataset is a multiblock dataset, and the fluid velocity is in the
      |      first block.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> from pyvista import examples
      |      >>> mesh = examples.download_cylinder_crossflow()
      |      >>> streams = mesh[0].streamlines_evenly_spaced_2D(
@@ -8252,7 +8654,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      ...     separating_distance=3,
      |      ...     separating_distance_ratio=0.2,
      |      ... )
-     |      >>> plotter = pyvista.Plotter()
+     |      >>> plotter = pv.Plotter()
      |      >>> _ = plotter.add_mesh(
      |      ...     streams.tube(radius=0.02), scalars="vorticity_mag"
      |      ... )
@@ -8409,7 +8811,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      First, plot the high order FEM-like elements.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
      |      >>> points = np.array(
      |      ...     [
@@ -8423,7 +8825,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      ... )
      |      >>> cells = np.array([6, 0, 1, 2, 3, 4, 5])
      |      >>> cell_types = np.array([69])
-     |      >>> mesh = pyvista.UnstructuredGrid(cells, cell_types, points)
+     |      >>> mesh = pv.UnstructuredGrid(cells, cell_types, points)
      |      >>> mesh.plot(show_edges=True, line_width=5)
      |      
      |      Now, plot the tessellated mesh.
@@ -8477,7 +8879,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      See :ref:`ref_topo_map_example`
+     |      See :ref:`topo_map_example`
      |  
      |  texture_map_to_sphere(self, center=None, prevent_seam=True, inplace=False, name='Texture Coordinates', progress_bar=False)
      |      Texture map this dataset to a user defined sphere.
@@ -8520,7 +8922,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      See :ref:`ref_texture_example`.
+     |      See :ref:`texture_example`.
      |  
      |  threshold(self, value=None, scalars=None, invert=False, continuous=False, preference='cell', all_scalars=False, component_mode='all', component=0, method='upper', progress_bar=False)
      |      Apply a ``vtkThreshold`` filter to the input dataset.
@@ -8715,9 +9117,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Apply a 50% threshold filter.
      |      
-     |      >>> import pyvista
-     |      >>> noise = pyvista.perlin_noise(0.1, (2, 2, 2), (0, 0, 0))
-     |      >>> grid = pyvista.sample_function(
+     |      >>> import pyvista as pv
+     |      >>> noise = pv.perlin_noise(0.1, (2, 2, 2), (0, 0, 0))
+     |      >>> grid = pv.sample_function(
      |      ...     noise, [0, 1.0, -0, 1.0, 0, 1.0], dim=(30, 30, 30)
      |      ... )
      |      >>> threshed = grid.threshold_percent(0.5)
@@ -8829,8 +9231,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Generate a mesh with quadrilateral faces.
      |      
-     |      >>> import pyvista
-     |      >>> plane = pyvista.Plane()
+     |      >>> import pyvista as pv
+     |      >>> plane = pv.Plane()
      |      >>> plane.point_data.clear()
      |      >>> plane.plot(show_edges=True, line_width=5)
      |      
@@ -8946,7 +9348,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  ----------------------------------------------------------------------
      |  Methods inherited from pyvista.core.dataobject.DataObject:
      |  
-     |  __eq__(self, other)
+     |  __eq__(self, other: Any) -> bool
      |      Test equivalency between data objects.
      |  
      |  __getstate__(self)
@@ -8959,7 +9361,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  __setstate__(self, state)
      |      Support unpickle.
      |  
-     |  add_field_data(self, array: numpy.ndarray, name: str, deep=True)
+     |  add_field_data(self, array: numpy.ndarray, name: str, deep: bool = True)
      |      Add field data.
      |      
      |      Use field data when size of the data you wish to associate
@@ -8982,16 +9384,16 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Add field data to a PolyData dataset.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.add_field_data(np.arange(10), 'my-field-data')
      |      >>> mesh['my-field-data']
      |      pyvista_ndarray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
      |      
      |      Add field data to a ImageData dataset.
      |      
-     |      >>> mesh = pyvista.ImageData(dimensions=(2, 2, 1))
+     |      >>> mesh = pv.ImageData(dimensions=(2, 2, 1))
      |      >>> mesh.add_field_data(
      |      ...     ['I could', 'write', 'notes', 'here'], 'my-field-data'
      |      ... )
@@ -9000,22 +9402,22 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Add field data to a MultiBlock dataset.
      |      
-     |      >>> blocks = pyvista.MultiBlock()
-     |      >>> blocks.append(pyvista.Sphere())
-     |      >>> blocks["cube"] = pyvista.Cube(center=(0, 0, -1))
+     |      >>> blocks = pv.MultiBlock()
+     |      >>> blocks.append(pv.Sphere())
+     |      >>> blocks["cube"] = pv.Cube(center=(0, 0, -1))
      |      >>> blocks.add_field_data([1, 2, 3], 'my-field-data')
      |      >>> blocks.field_data['my-field-data']
      |      pyvista_ndarray([1, 2, 3])
      |  
-     |  clear_field_data(self)
+     |  clear_field_data(self) -> None
      |      Remove all field data.
      |      
      |      Examples
      |      --------
      |      Add field data to a PolyData dataset and then remove it.
      |      
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.field_data['my-field-data'] = range(10)
      |      >>> len(mesh.field_data)
      |      1
@@ -9043,13 +9445,13 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Create and make a deep copy of a PolyData object.
      |      
-     |      >>> import pyvista
-     |      >>> mesh_a = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh_a = pv.Sphere()
      |      >>> mesh_b = mesh_a.copy()
      |      >>> mesh_a == mesh_b
      |      True
      |  
-     |  copy_attributes(self, dataset: vtkmodules.vtkCommonDataModel.vtkDataSet)
+     |  copy_attributes(self, dataset: vtkmodules.vtkCommonDataModel.vtkDataSet) -> None
      |      Copy the data attributes of the input dataset object.
      |      
      |      Parameters
@@ -9066,7 +9468,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> target.copy_attributes(source)
      |      >>> target.plot(scalars='Volume', show_edges=True)
      |  
-     |  copy_structure(self, dataset: vtkmodules.vtkCommonDataModel.vtkDataSet)
+     |  copy_structure(self, dataset: vtkmodules.vtkCommonDataModel.vtkDataSet) -> None
      |      Copy the structure (geometry and topology) of the input dataset object.
      |      
      |      Parameters
@@ -9082,7 +9484,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> target.copy_structure(source)
      |      >>> target.plot(show_edges=True)
      |  
-     |  deep_copy(self, to_copy: vtkmodules.vtkCommonDataModel.vtkDataObject) -> vtkmodules.vtkCommonDataModel.vtkDataObject
+     |  deep_copy(self, to_copy: vtkmodules.vtkCommonDataModel.vtkDataObject) -> None
      |      Overwrite this data object with another data object as a deep copy.
      |      
      |      Parameters
@@ -9109,7 +9511,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      str
      |          Header statistics.
      |  
-     |  save(self, filename: str, binary=True, texture=None)
+     |  save(self, filename: Union[pathlib.Path, str], binary: bool = True, texture: Union[numpy.ndarray[Any, numpy.dtype[numpy.uint8]], str, NoneType] = None) -> None
      |      Save this vtk object to file.
      |      
      |      Parameters
@@ -9140,7 +9542,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Binary files write much faster than ASCII and have a smaller
      |      file size.
      |  
-     |  shallow_copy(self, to_copy: vtkmodules.vtkCommonDataModel.vtkDataObject) -> vtkmodules.vtkCommonDataModel.vtkDataObject
+     |  shallow_copy(self, to_copy: vtkmodules.vtkCommonDataModel.vtkDataObject) -> None
      |      Shallow copy the given mesh to this mesh.
      |      
      |      Parameters
@@ -9183,9 +9585,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      --------
      |      Add field data to a PolyData dataset and then return it.
      |      
-     |      >>> import pyvista
+     |      >>> import pyvista as pv
      |      >>> import numpy as np
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.field_data['my-field-data'] = np.arange(10)
      |      >>> mesh.field_data['my-field-data']
      |      pyvista_ndarray([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
@@ -9200,8 +9602,8 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      
      |      Examples
      |      --------
-     |      >>> import pyvista
-     |      >>> mesh = pyvista.Sphere()
+     |      >>> import pyvista as pv
+     |      >>> mesh = pv.Sphere()
      |      >>> mesh.memory_address
      |      'Addr=...'
      |  
@@ -9277,10 +9679,32 @@ Plot the ImageData
 
 
 
-.. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_003.png
-   :alt: c create uniform grid
-   :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_003.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_003.png
+        :alt: c create uniform grid
+        :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_003.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_003.vtksz
+
 
 
 
@@ -9312,10 +9736,32 @@ Here's one of these example datasets:
 
 
 
-.. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_004.png
-   :alt: c create uniform grid
-   :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_004.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_004.png
+        :alt: c create uniform grid
+        :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_004.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_004.vtksz
+
 
 
 
@@ -9331,10 +9777,32 @@ Here's one of these example datasets:
 
 
 
-.. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_005.png
-   :alt: c create uniform grid
-   :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_005.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_005.png
+        :alt: c create uniform grid
+        :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_005.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/solutions/images/sphx_glr_c_create-uniform-grid_005.vtksz
+
 
 
 
@@ -9353,7 +9821,7 @@ Here's one of these example datasets:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.201 seconds)
+   **Total running time of the script:** (0 minutes 5.284 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py:

@@ -65,12 +65,8 @@ airplane mesh.
 
     Help on function read in module pyvista.core.utilities.fileio:
 
-    read(filename, attrs=None, force_ext=None, file_format=None, progress_bar=False)
+    read(filename, force_ext=None, file_format=None, progress_bar=False)
         Read any file type supported by ``vtk`` or ``meshio``.
-    
-        .. deprecated:: 0.35.0
-            Use of `attrs` is deprecated.
-            Use a reader class using :func:`pyvista.get_reader`
     
         Automatically determines the correct reader to use then wraps the
         corresponding mesh as a pyvista object.  Attempts native ``vtk``
@@ -89,13 +85,6 @@ airplane mesh.
             The string path to the file to read. If a list of files is
             given, a :class:`pyvista.MultiBlock` dataset is returned with
             each file being a separate block in the dataset.
-    
-        attrs : dict, optional
-            Deprecated. Use a Reader class using :func:`pyvista.get_reader`.
-            A dictionary of attributes to call on the reader. Keys of
-            dictionary are the attribute/method names and values are the
-            arguments passed to those calls. If you do not have any
-            attributes to call, pass ``None`` as the value.
     
         force_ext : str, optional
             If specified, the reader will be chosen by an extension which
@@ -117,18 +106,18 @@ airplane mesh.
         --------
         Load an example mesh.
     
-        >>> import pyvista
+        >>> import pyvista as pv
         >>> from pyvista import examples
-        >>> mesh = pyvista.read(examples.antfile)
+        >>> mesh = pv.read(examples.antfile)
         >>> mesh.plot(cpos='xz')
     
         Load a vtk file.
     
-        >>> mesh = pyvista.read('my_mesh.vtk')  # doctest:+SKIP
+        >>> mesh = pv.read('my_mesh.vtk')  # doctest:+SKIP
     
         Load a meshio file.
     
-        >>> mesh = pyvista.read("mesh.obj")  # doctest:+SKIP
+        >>> mesh = pv.read("mesh.obj")  # doctest:+SKIP
 
 
 
@@ -286,12 +275,12 @@ extensions are listed in an internal function:
     
         Examples
         --------
-        >>> import pyvista
+        >>> import pyvista as pv
         >>> from pyvista import examples
         >>> filename = examples.download_human(load=False)
         >>> filename.split("/")[-1]  # omit the path
         'Human.vtp'
-        >>> reader = pyvista.get_reader(filename)
+        >>> reader = pv.get_reader(filename)
         >>> reader
         XMLPolyDataReader('.../Human.vtp')
         >>> mesh = reader.read()
@@ -349,10 +338,32 @@ Use ``pv.read`` to load the file as a mesh:
 
 
 
-.. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_001.png
-   :alt: e read file
-   :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_001.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_001.png
+        :alt: e read file
+        :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_001.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_001.vtksz
+
 
 
 
@@ -442,10 +453,32 @@ Example STL file:
 
 
 
-.. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_002.png
-   :alt: e read file
-   :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_002.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_002.png
+        :alt: e read file
+        :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_002.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_002.vtksz
+
 
 
 
@@ -466,10 +499,32 @@ Example OBJ file
 
 
 
-.. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_003.png
-   :alt: e read file
-   :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_003.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_003.png
+        :alt: e read file
+        :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_003.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_003.vtksz
+
 
 
 
@@ -490,10 +545,32 @@ Example BYU file
 
 
 
-.. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_004.png
-   :alt: e read file
-   :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_004.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_004.png
+        :alt: e read file
+        :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_004.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_004.vtksz
+
 
 
 
@@ -515,10 +592,32 @@ Example VTK file
 
 
 
-.. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_005.png
-   :alt: e read file
-   :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_005.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_005.png
+        :alt: e read file
+        :srcset: /tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_005.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_005.vtksz
+
 
 
 
@@ -560,7 +659,7 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.145 seconds)
+   **Total running time of the script:** (0 minutes 2.444 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_e_read-file.py:

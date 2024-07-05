@@ -58,10 +58,32 @@ This is a plot with the default flat shading.
 
 
 
-.. image-sg:: /tutorial/03_figures/images/sphx_glr_b_shading_001.png
-   :alt: b shading
-   :srcset: /tutorial/03_figures/images/sphx_glr_b_shading_001.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/03_figures/images/sphx_glr_b_shading_001.png
+        :alt: b shading
+        :srcset: /tutorial/03_figures/images/sphx_glr_b_shading_001.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/03_figures/images/sphx_glr_b_shading_001.vtksz
+
 
 
 
@@ -81,10 +103,32 @@ Here's the same sphere with smooth shading.
 
 
 
-.. image-sg:: /tutorial/03_figures/images/sphx_glr_b_shading_002.png
-   :alt: b shading
-   :srcset: /tutorial/03_figures/images/sphx_glr_b_shading_002.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/03_figures/images/sphx_glr_b_shading_002.png
+        :alt: b shading
+        :srcset: /tutorial/03_figures/images/sphx_glr_b_shading_002.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/03_figures/images/sphx_glr_b_shading_002.vtksz
+
 
 
 
@@ -111,10 +155,32 @@ enabling ``split_sharp_edges``.
 
 
 
-.. image-sg:: /tutorial/03_figures/images/sphx_glr_b_shading_003.png
-   :alt: b shading
-   :srcset: /tutorial/03_figures/images/sphx_glr_b_shading_003.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/03_figures/images/sphx_glr_b_shading_003.png
+        :alt: b shading
+        :srcset: /tutorial/03_figures/images/sphx_glr_b_shading_003.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/03_figures/images/sphx_glr_b_shading_003.vtksz
+
 
 
 
@@ -146,10 +212,32 @@ We can even plot the edges that will be split using
 
 
 
-.. image-sg:: /tutorial/03_figures/images/sphx_glr_b_shading_004.png
-   :alt: b shading
-   :srcset: /tutorial/03_figures/images/sphx_glr_b_shading_004.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/03_figures/images/sphx_glr_b_shading_004.png
+        :alt: b shading
+        :srcset: /tutorial/03_figures/images/sphx_glr_b_shading_004.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/03_figures/images/sphx_glr_b_shading_004.vtksz
+
 
 
 
@@ -174,10 +262,32 @@ physically based rendering as well.
 
 
 
-.. image-sg:: /tutorial/03_figures/images/sphx_glr_b_shading_005.png
-   :alt: b shading
-   :srcset: /tutorial/03_figures/images/sphx_glr_b_shading_005.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/03_figures/images/sphx_glr_b_shading_005.png
+        :alt: b shading
+        :srcset: /tutorial/03_figures/images/sphx_glr_b_shading_005.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/03_figures/images/sphx_glr_b_shading_005.vtksz
+
 
 
 
@@ -196,7 +306,7 @@ physically based rendering as well.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.334 seconds)
+   **Total running time of the script:** (0 minutes 1.359 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_b_shading.py:

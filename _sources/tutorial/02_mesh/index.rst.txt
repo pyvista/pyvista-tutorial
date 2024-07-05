@@ -52,17 +52,19 @@ Let's start with a point cloud – this is a mesh type that only has vertices.
 You can create one by defining a 2D array of Cartesian coordinates like so:
 
 
-.. jupyter-execute::
-   :hide-code:
+.. pyvista-plot::
+   :context:
+   :include-source: False
 
    import pyvista
    pyvista.set_plot_theme('document')
-   pyvista.set_jupyter_backend('static')
+   pyvista.set_jupyter_backend('trame')
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
 
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     import numpy as np
     import pyvista as pv
@@ -76,7 +78,8 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
 But it's important to note that most meshes have some sort of
 connectivity between points such as this gridded mesh:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     from pyvista import examples
 
@@ -95,7 +98,8 @@ connectivity between points such as this gridded mesh:
 
 Or this triangulated surface:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     mesh = examples.download_bunny_coarse()
 
@@ -117,7 +121,8 @@ lines (edges colored in black) connecting points (colored in red).
 For example, a cell in the beam example is a voxel defined by the region
 between eight points in that mesh:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     mesh = examples.load_hexbeam()
 
@@ -162,9 +167,10 @@ corresponds to a point in the mesh.  Let's create some point
 data for the beam mesh.  When plotting, the values between points are
 interpolated across the cells.
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
-    mesh.point_data['my point values'] = np.arange(mesh.n_points)
+    mesh.point_data['my point values'] = np.arange(mesh.n_points, dtype=float)
     mesh.plot(scalars='my point values', cpos=cpos, show_edges=True)
 
 Cell Data
@@ -173,7 +179,8 @@ Cell data refers to arrays of values (scalars, vectors, etc.) that
 live throughout each cell of the mesh.  That is the entire cell (2D
 face or 3D volume) is assigned the value of that attribute.
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
     mesh.cell_data['my cell values'] = np.arange(mesh.n_cells)
     mesh.plot(scalars='my cell values', cpos=cpos, show_edges=True)
@@ -218,7 +225,8 @@ generate cube containing 6 faces and assign each face an integer from
 
 Note how this varies from assigning scalars to each point
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
    cube = pv.Cube()
    cube.cell_data['myscalars'] = range(6)

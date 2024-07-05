@@ -736,8 +736,9 @@ simple surface mesh:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/index_1_0.png" src="../../_images/index_1_0.png" />
-</div>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "0038a9fb320f44dbb33d404a9cfd8108"}
+</script></div>
 </div>
 </td>
 </tr>
@@ -826,18 +827,26 @@ VTK</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 PyVista</label><div class="sd-tab-content docutils">
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="n">pc</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
 <span class="n">pc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">scalars</span><span class="o">=</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">point_size</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-1_00_001.png" src="../../_images/index-1_00_001.png" />
+</figure>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/index_2_0.png" src="../../_images/index_2_0.png" />
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/00_intro/index-1_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
 </div>
 </div>
 </div>
@@ -854,8 +863,8 @@ interested in data visualization, I’d encourage you for explore them all!</p>
 </ul>
 <p>Here’s a few of them:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-2">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
 vtk</label><div class="sd-tab-content docutils">
 <p>The Visualization Toolkit (<a class="reference external" href="https://vtk.org/">VTK</a>) is open source
 software for manipulating and displaying scientific data. It comes with
@@ -863,8 +872,8 @@ state-of-the-art tools for 3D rendering, a suite of widgets for 3D
 interaction, and extensive 2D plotting capability.</p>
 <img alt="VTK" src="https://miro.medium.com/max/1400/1*B3aEPDxSvgR6Giyh4I4a2w.jpeg" />
 </div>
-<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-3">
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
 ParaView</label><div class="sd-tab-content docutils">
 <p><a class="reference external" href="https://www.paraview.org/">ParaView</a> is an open-source, multi-platform
 data analysis and visualization application. ParaView users can quickly
@@ -873,15 +882,15 @@ quantitative techniques. The data exploration can be done interactively
 in 3D or programmatically using ParaView’s batch processing capabilities.</p>
 <img alt="ParaView" src="https://www.kitware.com/main/wp-content/uploads/2018/11/ParaView-5.6.png" />
 </div>
-<input id="sd-tab-item-4" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-4">
+<input id="sd-tab-item-6" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
 vedo</label><div class="sd-tab-content docutils">
 <p><a class="reference external" href="https://vedo.embl.es/">vedo</a> is a Python library for scientific
 analysis of 3D objects and point clouds based on VTK and numpy.</p>
 <img alt="vedo" src="https://user-images.githubusercontent.com/32848391/80292484-50757180-8757-11ea-841f-2c0c5fe2c3b4.jpg" />
 </div>
-<input id="sd-tab-item-5" name="sd-tab-set-1" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-5">
+<input id="sd-tab-item-7" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
 Mayavi</label><div class="sd-tab-content docutils">
 <p><a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/">Mayavi</a> is a general
 purpose, cross-platform tool for 2-D and 3-D scientific data
@@ -906,6 +915,12 @@ bottom of the page and clicking on either the <code class="docutils literal notr
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
 </section>
 </section>
+
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {"e2f1574931e34b44801264f143d295e3": {"model_name": "LayoutModel", "model_module": "@jupyter-widgets/base", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/base", "_model_module_version": "2.0.0", "_model_name": "LayoutModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "LayoutView", "align_content": null, "align_items": null, "align_self": null, "border_bottom": null, "border_left": null, "border_right": null, "border_top": null, "bottom": null, "display": null, "flex": null, "flex_flow": null, "grid_area": null, "grid_auto_columns": null, "grid_auto_flow": null, "grid_auto_rows": null, "grid_column": null, "grid_gap": null, "grid_row": null, "grid_template_areas": null, "grid_template_columns": null, "grid_template_rows": null, "height": null, "justify_content": null, "justify_items": null, "left": null, "margin": null, "max_height": null, "max_width": null, "min_height": null, "min_width": null, "object_fit": null, "object_position": null, "order": null, "overflow": null, "padding": null, "right": null, "top": null, "visibility": null, "width": null}}, "63e38294dad4472088bf49b18f38980b": {"model_name": "HTMLStyleModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLStyleModel", "_view_count": null, "_view_module": "@jupyter-widgets/base", "_view_module_version": "2.0.0", "_view_name": "StyleView", "background": null, "description_width": "", "font_size": null, "text_color": null}}, "0038a9fb320f44dbb33d404a9cfd8108": {"model_name": "HTMLModel", "model_module": "@jupyter-widgets/controls", "model_module_version": "2.0.0", "state": {"_dom_classes": [], "_model_module": "@jupyter-widgets/controls", "_model_module_version": "2.0.0", "_model_name": "HTMLModel", "_view_count": null, "_view_module": "@jupyter-widgets/controls", "_view_module_version": "2.0.0", "_view_name": "HTMLView", "description": "", "description_allow_html": false, "layout": "IPY_MODEL_e2f1574931e34b44801264f143d295e3", "placeholder": "\u200b", "style": "IPY_MODEL_63e38294dad4472088bf49b18f38980b", "tabbable": null, "tooltip": null, "value": "<iframe src=\"http://localhost:37801/index.html?ui=P_0x7f90ec6124d0_0&reconnect=auto\" class=\"pyvista\" style=\"width: 600px; height: 400px; border: 1px solid rgb(221,221,221);\"></iframe>"}}}, "version_major": 2, "version_minor": 0}
+</script>
+
 
 
                 </article>

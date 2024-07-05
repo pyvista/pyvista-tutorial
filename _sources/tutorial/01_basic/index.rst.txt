@@ -31,18 +31,20 @@ module.
 
 Here's a very basic dataset you can download.
 
-.. jupyter-execute::
-   :hide-code:
+.. pyvista-plot::
+   :context:
+   :include-source: False
 
    # Configure for trame
    import pyvista
    pyvista.set_plot_theme('document')
-   pyvista.set_jupyter_backend('static')
+   pyvista.set_jupyter_backend('trame')
    pyvista.global_theme.axes.show = False
    pyvista.global_theme.smooth_shading = True
 
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
    from pyvista import examples
    dataset = examples.download_saddle_surface()
@@ -53,7 +55,8 @@ Here's a very basic dataset you can download.
 Note how this is a :class:`pyvista.PolyData`, which is effectively a surface
 dataset containing points, lines, and/or faces. We can immediately plot this with:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
    dataset.plot(color='tan')
 
@@ -65,7 +68,8 @@ a different value. All of this is described in PyVista's API documentation in
 :func:`pyvista.plot`, but for now let's take a look at another dataset. This
 one is a volumetric dataset.
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
    dataset = examples.download_frog()
    dataset
@@ -77,7 +81,8 @@ set of points with consistent spacing. When we plot this dataset, we have the
 option of enabling volumetric plotting, which plots individual cells based on
 the content of the data associated with those cells.
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
    dataset.plot(volume=True)
 
@@ -102,7 +107,8 @@ In the following example, we load VTK's iron protein dataset `ironProt.vtk
 <https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk>`_ from a
 file using :func:`pyvista.read`.
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
    import pyvista as pv
    dataset = pv.read('ironProt.vtk')
@@ -113,7 +119,8 @@ file using :func:`pyvista.read`.
 This is again a :class:`pyvista.ImageData` and we can plot it volumetrically
 with:
 
-.. jupyter-execute::
+.. pyvista-plot::
+   :context:
 
    dataset.plot(volume=True)
 

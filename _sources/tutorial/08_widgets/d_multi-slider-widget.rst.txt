@@ -118,10 +118,32 @@ mesh-generating/altering code.
 
 
 
-.. image-sg:: /tutorial/08_widgets/images/sphx_glr_d_multi-slider-widget_001.png
-   :alt: d multi slider widget
-   :srcset: /tutorial/08_widgets/images/sphx_glr_d_multi-slider-widget_001.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/08_widgets/images/sphx_glr_d_multi-slider-widget_001.png
+        :alt: d multi slider widget
+        :srcset: /tutorial/08_widgets/images/sphx_glr_d_multi-slider-widget_001.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/08_widgets/images/sphx_glr_d_multi-slider-widget_001.vtksz
+
 
 
 
@@ -146,7 +168,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.235 seconds)
+   **Total running time of the script:** (0 minutes 0.238 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_d_multi-slider-widget.py:

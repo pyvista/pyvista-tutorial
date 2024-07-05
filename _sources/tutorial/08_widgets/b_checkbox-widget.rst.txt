@@ -67,10 +67,32 @@ Single Checkbox
 
 
 
-.. image-sg:: /tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_001.png
-   :alt: b checkbox widget
-   :srcset: /tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_001.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_001.png
+        :alt: b checkbox widget
+        :srcset: /tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_001.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_001.vtksz
+
 
 
 
@@ -155,10 +177,32 @@ their visibility in the scene.
 
 
 
-.. image-sg:: /tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_002.png
-   :alt: b checkbox widget
-   :srcset: /tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_002.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_002.png
+        :alt: b checkbox widget
+        :srcset: /tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_002.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/08_widgets/images/sphx_glr_b_checkbox-widget_002.vtksz
+
 
 
 

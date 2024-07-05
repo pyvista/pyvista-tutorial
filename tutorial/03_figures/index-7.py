@@ -1,10 +1,11 @@
 import pyvista as pv
-from pyvista import examples
 
-mesh = examples.load_random_hills()
+p = pv.Plotter(shape=(1, 2))
 
-p = pv.Plotter()
-p.add_mesh(mesh)
-p.show_axes()
-p.show_bounds()
+p.subplot(0, 0)
+p.add_mesh(pv.Sphere())
+
+p.subplot(0, 1)
+p.add_mesh(pv.Cube())
+
 p.show()

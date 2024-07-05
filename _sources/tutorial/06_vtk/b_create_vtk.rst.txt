@@ -89,7 +89,7 @@ Add point data
  .. code-block:: none
 
 
-    <vtkmodules.vtkCommonDataModel.vtkImageData(0x55a2f24910c0) at 0x7f219ce74a60>
+    <vtkmodules.vtkCommonDataModel.vtkImageData(0x55ad9b1ae690) at 0x7f262af2fdc0>
 
 
 
@@ -106,10 +106,32 @@ Plot with PyVista for simplicity
 
 
 
-.. image-sg:: /tutorial/06_vtk/images/sphx_glr_b_create_vtk_001.png
-   :alt: b create vtk
-   :srcset: /tutorial/06_vtk/images/sphx_glr_b_create_vtk_001.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/06_vtk/images/sphx_glr_b_create_vtk_001.png
+        :alt: b create vtk
+        :srcset: /tutorial/06_vtk/images/sphx_glr_b_create_vtk_001.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/06_vtk/images/sphx_glr_b_create_vtk_001.vtksz
+
 
 
 
@@ -154,7 +176,7 @@ Create ``vtkStructuredGrid``
  .. code-block:: none
 
 
-    <vtkmodules.vtkCommonDataModel.vtkStructuredGrid(0x55a2e55618a0) at 0x7f21ca28f760>
+    <vtkmodules.vtkCommonDataModel.vtkStructuredGrid(0x55ad950f6780) at 0x7f263bebfac0>
 
 
 
@@ -197,10 +219,32 @@ Plot with PyVista for simplicity
 
 
 
-.. image-sg:: /tutorial/06_vtk/images/sphx_glr_b_create_vtk_002.png
-   :alt: b create vtk
-   :srcset: /tutorial/06_vtk/images/sphx_glr_b_create_vtk_002.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/06_vtk/images/sphx_glr_b_create_vtk_002.png
+        :alt: b create vtk
+        :srcset: /tutorial/06_vtk/images/sphx_glr_b_create_vtk_002.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/06_vtk/images/sphx_glr_b_create_vtk_002.vtksz
+
 
 
 
@@ -219,7 +263,7 @@ Plot with PyVista for simplicity
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.570 seconds)
+   **Total running time of the script:** (0 minutes 0.571 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_b_create_vtk.py:

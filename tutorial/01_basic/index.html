@@ -643,46 +643,32 @@ you can use that. If you don’t have something immediately available, PyVista
 has a variety of files you can download in its <a class="reference external" href="https://docs.pyvista.org/api/examples/_autosummary/pyvista.examples.downloads.html">pyvista.examples.downloads</a>
 module.</p>
 <p>Here’s a very basic dataset you can download.</p>
-<div class="jupyter_cell docutils container">
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_saddle_surface</span><span class="p">()</span>
 <span class="n">dataset</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html">
-<table style='width: 100%;'>
-<tr><th>PolyData</th><th>Information</th></tr>
-<tr><td>N Cells</td><td>5131</td></tr>
-<tr><td>N Points</td><td>2669</td></tr>
-<tr><td>N Strips</td><td>0</td></tr>
-<tr><td>X Bounds</td><td>-2.001e+01, 2.000e+01</td></tr>
-<tr><td>Y Bounds</td><td>-6.480e-01, 4.024e+01</td></tr>
-<tr><td>Z Bounds</td><td>-6.093e-01, 1.513e+01</td></tr>
-<tr><td>N Arrays</td><td>0</td></tr>
-</table>
-
-</div></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>Note how this is a <a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.43.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a>, which is effectively a surface
 dataset containing points, lines, and/or faces. We can immediately plot this with:</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tan&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tan&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-3_00_00.png" src="../../_images/index-3_00_00.png" />
+</figure>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/index_2_01.png" src="../../_images/index_2_01.png" />
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/01_basic/index-3_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
 </div>
 </div>
 <div class="line-block">
@@ -693,34 +679,9 @@ parameters as <code class="docutils literal notranslate"><span class="pre">show_
 a different value. All of this is described in PyVista’s API documentation in
 <a class="reference external" href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.plot.html#pyvista.plot" title="(in PyVista v0.43.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.plot()</span></code></a>, but for now let’s take a look at another dataset. This
 one is a volumetric dataset.</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_frog</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_frog</span><span class="p">()</span>
 <span class="n">dataset</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table style='width: 100%;'>
-<tr><th>ImageData</th><th>Information</th></tr>
-<tr><td>N Cells</td><td>31594185</td></tr>
-<tr><td>N Points</td><td>31960000</td></tr>
-<tr><td>X Bounds</td><td>0.000e+00, 4.990e+02</td></tr>
-<tr><td>Y Bounds</td><td>0.000e+00, 4.690e+02</td></tr>
-<tr><td>Z Bounds</td><td>0.000e+00, 2.025e+02</td></tr>
-<tr><td>Dimensions</td><td>500, 470, 136</td></tr>
-<tr><td>Spacing</td><td>1.000e+00, 1.000e+00, 1.500e+00</td></tr>
-<tr><td>N Arrays</td><td>1</td></tr>
-</table>
-
-</td><td>
-<table style='width: 100%;'>
-<tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
-<tr><td><b>MetaImage</b></td><td>Points</td><td>uint8</td><td>1</td><td>0.000e+00</td><td>2.540e+02</td></tr>
-</table>
-
-</td></tr> </table></div></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -729,14 +690,22 @@ one is a volumetric dataset.</p>
 set of points with consistent spacing. When we plot this dataset, we have the
 option of enabling volumetric plotting, which plots individual cells based on
 the content of the data associated with those cells.</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-5_00_00.png" src="../../_images/index-5_00_00.png" />
+</figure>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/index_4_0.png" src="../../_images/index_4_0.png" />
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/01_basic/index-5_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
 </div>
 </div>
 <div class="admonition note">
@@ -757,49 +726,32 @@ your computer. This can be one of the many file formats that VTK supports, and
 many more that it doesn’t as PyVista can rely on libraries like <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a>.</p>
 <p>In the following example, we load VTK’s iron protein dataset <a class="reference external" href="https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk">ironProt.vtk</a> from a
 file using <a class="reference external" href="https://docs.pyvista.org/version/stable/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.43.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a>.</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;ironProt.vtk&#39;</span><span class="p">)</span>
 <span class="n">dataset</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
-<table style='width: 100%;'>
-<tr><th>ImageData</th><th>Information</th></tr>
-<tr><td>N Cells</td><td>300763</td></tr>
-<tr><td>N Points</td><td>314432</td></tr>
-<tr><td>X Bounds</td><td>0.000e+00, 6.700e+01</td></tr>
-<tr><td>Y Bounds</td><td>0.000e+00, 6.700e+01</td></tr>
-<tr><td>Z Bounds</td><td>0.000e+00, 6.700e+01</td></tr>
-<tr><td>Dimensions</td><td>68, 68, 68</td></tr>
-<tr><td>Spacing</td><td>1.000e+00, 1.000e+00, 1.000e+00</td></tr>
-<tr><td>N Arrays</td><td>1</td></tr>
-</table>
-
-</td><td>
-<table style='width: 100%;'>
-<tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
-<tr><td><b>scalars</b></td><td>Points</td><td>uint8</td><td>1</td><td>0.000e+00</td><td>2.550e+02</td></tr>
-</table>
-
-</td></tr> </table></div></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <p>This is again a <a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.43.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> and we can plot it volumetrically
 with:</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-7_00_00.png" src="../../_images/index-7_00_00.png" />
+</figure>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/index_6_0.png" src="../../_images/index_6_0.png" />
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/01_basic/index-7_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
 </div>
 </div>
 <div class="line-block">

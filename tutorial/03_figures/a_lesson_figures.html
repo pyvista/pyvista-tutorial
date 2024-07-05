@@ -648,19 +648,55 @@ to download the full example code or to run this example in your browser via Bin
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_figures_001.png" srcset="../../_images/sphx_glr_a_lesson_figures_001.png" alt="a lesson figures" class = "sphx-glr-single-img"/><p>You can customize how that mesh is displayed through the parameters of the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> method. For example, we can change the colormap via the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> argument:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_a_lesson_figures_001.png" srcset="../../_images/sphx_glr_a_lesson_figures_001.png" alt="a lesson figures" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/images/sphx_glr_a_lesson_figures_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>You can customize how that mesh is displayed through the parameters of the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> method. For example, we can change the colormap via the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> argument:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_figures_002.png" srcset="../../_images/sphx_glr_a_lesson_figures_002.png" alt="a lesson figures" class = "sphx-glr-single-img"/><p>Or show the edges of the mesh with <code class="docutils literal notranslate"><span class="pre">show_edges</span></code>:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_a_lesson_figures_002.png" srcset="../../_images/sphx_glr_a_lesson_figures_002.png" alt="a lesson figures" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/images/sphx_glr_a_lesson_figures_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>Or show the edges of the mesh with <code class="docutils literal notranslate"><span class="pre">show_edges</span></code>:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_figures_003.png" srcset="../../_images/sphx_glr_a_lesson_figures_003.png" alt="a lesson figures" class = "sphx-glr-single-img"/><p>Or adjust the opacity to be a scalar value or linear transfer function via the <code class="docutils literal notranslate"><span class="pre">opacity</span></code> argument:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_a_lesson_figures_003.png" srcset="../../_images/sphx_glr_a_lesson_figures_003.png" alt="a lesson figures" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/images/sphx_glr_a_lesson_figures_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>Or adjust the opacity to be a scalar value or linear transfer function via the <code class="docutils literal notranslate"><span class="pre">opacity</span></code> argument:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_st_helens</span><span class="p">()</span><span class="o">.</span><span class="n">warp_by_scalar</span><span class="p">()</span>
 
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
@@ -668,7 +704,19 @@ to download the full example code or to run this example in your browser via Bin
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_figures_004.png" srcset="../../_images/sphx_glr_a_lesson_figures_004.png" alt="a lesson figures" class = "sphx-glr-single-img"/><p>Take a look at all of the options for <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html">add_mesh</a>.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_a_lesson_figures_004.png" srcset="../../_images/sphx_glr_a_lesson_figures_004.png" alt="a lesson figures" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/images/sphx_glr_a_lesson_figures_004.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>Take a look at all of the options for <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html">add_mesh</a>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">add_mesh</span></code> method can be called over and over to add different data to the same <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> scene. For example, we can create many different mesh objects and plot them together:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">kinds</span></a> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;tetrahedron&#39;</span><span class="p">,</span>
@@ -696,7 +744,19 @@ to download the full example code or to run this example in your browser via Bin
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_figures_005.png" srcset="../../_images/sphx_glr_a_lesson_figures_005.png" alt="a lesson figures" class = "sphx-glr-single-img"/></section>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_a_lesson_figures_005.png" srcset="../../_images/sphx_glr_a_lesson_figures_005.png" alt="a lesson figures" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/images/sphx_glr_a_lesson_figures_005.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+</section>
 <section id="subplotting">
 <h2>Subplotting<a class="headerlink" href="#subplotting" title="Link to this heading">#</a></h2>
 <p>Creating side-by-side comparisons of datasets is easy with PyVista’s subplotting API. Get started by specifying the shape of the <a class="reference external" href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.43.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> object then registering the active subplot by the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.subplot()</span></code> method much like how you subplot with Matplotlib’s API.</p>
@@ -711,7 +771,19 @@ to download the full example code or to run this example in your browser via Bin
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_figures_006.png" srcset="../../_images/sphx_glr_a_lesson_figures_006.png" alt="a lesson figures" class = "sphx-glr-single-img"/><p>Below is an example of side-by-side comparisons of the contours and slices of a single dataset.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_a_lesson_figures_006.png" srcset="../../_images/sphx_glr_a_lesson_figures_006.png" alt="a lesson figures" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/images/sphx_glr_a_lesson_figures_006.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>Below is an example of side-by-side comparisons of the contours and slices of a single dataset.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>You can link the cameras of both views with the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.link_views()</span></code> method</p>
@@ -732,7 +804,19 @@ to download the full example code or to run this example in your browser via Bin
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_figures_007.png" srcset="../../_images/sphx_glr_a_lesson_figures_007.png" alt="a lesson figures" class = "sphx-glr-single-img"/></section>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_a_lesson_figures_007.png" srcset="../../_images/sphx_glr_a_lesson_figures_007.png" alt="a lesson figures" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/images/sphx_glr_a_lesson_figures_007.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+</section>
 <section id="axes-and-bounds">
 <h2>Axes and Bounds<a class="headerlink" href="#axes-and-bounds" title="Link to this heading">#</a></h2>
 <p>Axes can be added to the scene with <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.show_axes()</span></code></p>
@@ -744,7 +828,19 @@ to download the full example code or to run this example in your browser via Bin
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_figures_008.png" srcset="../../_images/sphx_glr_a_lesson_figures_008.png" alt="a lesson figures" class = "sphx-glr-single-img"/><p>And bounds similarly with <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.show_bounds()</span></code></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_a_lesson_figures_008.png" srcset="../../_images/sphx_glr_a_lesson_figures_008.png" alt="a lesson figures" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/images/sphx_glr_a_lesson_figures_008.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>And bounds similarly with <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.show_bounds()</span></code></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>See <a class="reference external" href="https://docs.pyvista.org/examples/02-plot/bounds.html">Plotting Bounds</a> for more details.</p>
@@ -756,11 +852,23 @@ to download the full example code or to run this example in your browser via Bin
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_a_lesson_figures_009.png" srcset="../../_images/sphx_glr_a_lesson_figures_009.png" alt="a lesson figures" class = "sphx-glr-single-img"/><center>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_a_lesson_figures_009.png" srcset="../../_images/sphx_glr_a_lesson_figures_009.png" alt="a lesson figures" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/images/sphx_glr_a_lesson_figures_009.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<center>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/a_lesson_figures.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.984 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.053 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-figures-a-lesson-figures-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/a_lesson_figures.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo8.svg" width="150px" /></a>

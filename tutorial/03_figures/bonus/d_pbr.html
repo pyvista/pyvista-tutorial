@@ -672,7 +672,19 @@ finish.</p>
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="n">cpos</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_pbr_001.png" srcset="../../../_images/sphx_glr_d_pbr_001.png" alt="d pbr" class = "sphx-glr-single-img"/><p>Show the variation of the metallic and roughness parameters.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_d_pbr_001.png" srcset="../../../_images/sphx_glr_d_pbr_001.png" alt="d pbr" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_d_pbr_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>Show the variation of the metallic and roughness parameters.</p>
 <p>Plot with metallic increasing from left to right and roughness
 increasing from bottom to top.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">colors</span></a> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;teal&#39;</span><span class="p">,</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="s1">&#39;silver&#39;</span><span class="p">]</span>
@@ -688,7 +700,19 @@ increasing from bottom to top.</p>
 <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_pbr_002.png" srcset="../../../_images/sphx_glr_d_pbr_002.png" alt="d pbr" class = "sphx-glr-single-img"/><p>Combine custom lighting and physically based rendering.</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_d_pbr_002.png" srcset="../../../_images/sphx_glr_d_pbr_002.png" alt="d pbr" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_d_pbr_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>Combine custom lighting and physically based rendering.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># download louis model</span>
 <a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_louis_louvre</span><span class="p">()</span>
 <a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSet.rotate_z.html#pyvista.DataSet.rotate_z" title="pyvista.DataSet.rotate_z" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">mesh</span><span class="o">.</span><span class="n">rotate_z</span></a><span class="p">(</span><span class="mi">140</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -715,11 +739,23 @@ increasing from bottom to top.</p>
 <span class="n">cpos</span> <span class="o">=</span> <a href="https://docs.pyvista.org/version/stable/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_pbr_003.png" srcset="../../../_images/sphx_glr_d_pbr_003.png" alt="d pbr" class = "sphx-glr-single-img"/><center>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_d_pbr_003.png" srcset="../../../_images/sphx_glr_d_pbr_003.png" alt="d pbr" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_d_pbr_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<center>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/bonus/d_pbr.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (13 minutes 1.637 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (12 minutes 47.297 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-figures-bonus-d-pbr-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/bonus/d_pbr.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo9.svg" width="150px" /></a>

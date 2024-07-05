@@ -1,0 +1,16 @@
+import vtk
+vtk_array = vtk.vtkDoubleArray()
+vtk_array.SetNumberOfComponents(3)
+vtk_array.SetNumberOfValues(9)
+vtk_array.SetValue(0, 0)
+vtk_array.SetValue(1, 0)
+vtk_array.SetValue(2, 0)
+vtk_array.SetValue(3, 1)
+vtk_array.SetValue(4, 0)
+vtk_array.SetValue(5, 0)
+vtk_array.SetValue(6, 0.5)
+vtk_array.SetValue(7, 0.667)
+vtk_array.SetValue(8, 0)
+vtk_points = vtk.vtkPoints()
+vtk_points.SetData(vtk_array)
+vtk_points

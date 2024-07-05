@@ -641,50 +641,50 @@ and fancy indexing.  This section demonstrates the difference between
 the two approaches in a series of examples.</p>
 <p>For example, to hard-code values for a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtk.vtkImageData</a> data
 structure using VTK Python’s bindings, one would write the following:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">vtk</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vtk</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">cos</span><span class="p">,</span> <span class="n">sin</span>
+</pre></div>
+</div>
+<p>Create values for a 300x300 image dataset</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDoubleArray</span><span class="p">()</span>
+<span class="n">values</span><span class="o">.</span><span class="n">SetName</span><span class="p">(</span><span class="s2">&quot;values&quot;</span><span class="p">)</span>
+<span class="n">values</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">values</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="mi">300</span><span class="o">*</span><span class="mi">300</span><span class="p">)</span>
 
-<span class="go">Create values for a 300x300 image dataset</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="n">values</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDoubleArray</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">values</span><span class="o">.</span><span class="n">SetName</span><span class="p">(</span><span class="s2">&quot;values&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">values</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">values</span><span class="o">.</span><span class="n">SetNumberOfTuples</span><span class="p">(</span><span class="mi">300</span><span class="o">*</span><span class="mi">300</span><span class="p">)</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">):</span>
-<span class="gp">... </span>    <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="n">values</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">300</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mf">127.5</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mf">25.0</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="mf">25.0</span><span class="p">)))</span>
-
-<span class="go">Create the image structure</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image_data</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageData</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image_data</span><span class="o">.</span><span class="n">SetOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image_data</span><span class="o">.</span><span class="n">SetSpacing</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image_data</span><span class="o">.</span><span class="n">SetDimensions</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="go">Assign the values to the image</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="n">image_data</span><span class="o">.</span><span class="n">GetPointData</span><span class="p">()</span><span class="o">.</span><span class="n">SetScalars</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">300</span><span class="p">):</span>
+      <span class="n">values</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">300</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="mf">127.5</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mf">25.0</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="mf">25.0</span><span class="p">)))</span>
+</pre></div>
+</div>
+<p>Create the image structure</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image_data</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageData</span><span class="p">()</span>
+<span class="n">image_data</span><span class="o">.</span><span class="n">SetOrigin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">image_data</span><span class="o">.</span><span class="n">SetSpacing</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">image_data</span><span class="o">.</span><span class="n">SetDimensions</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Assign the values to the image</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">image_data</span><span class="o">.</span><span class="n">GetPointData</span><span class="p">()</span><span class="o">.</span><span class="n">SetScalars</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>As you can see, there is quite a bit of boilerplate that goes into
 the creation of a simple <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtk.vtkImageData</a> dataset. PyVista provides
 much more concise syntax that is more “Pythonic”. The equivalent code in
 PyVista is:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="go">Use the meshgrid function to create 2D &quot;grids&quot; of the x and y values.</span>
-<span class="go">This section effectively replaces the vtkDoubleArray.</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="n">xi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">xi</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">values</span> <span class="o">=</span> <span class="mf">127.5</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mf">25.0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="mf">25.0</span><span class="p">))</span>
-
-<span class="go">Create the grid.  Note how the values must use Fortran ordering.</span>
-
-<span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">ImageData</span><span class="p">(</span><span class="n">dimensions</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span><span class="o">.</span><span class="n">point_data</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+<p>Use the meshgrid function to create 2D “grids” of the x and y values.
+This section effectively replaces the vtkDoubleArray.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">xi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">xi</span><span class="p">)</span>
+<span class="n">values</span> <span class="o">=</span> <span class="mf">127.5</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="mf">25.0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="mf">25.0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Create the grid.  Note how the values must use Fortran ordering.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">ImageData</span><span class="p">(</span><span class="n">dimensions</span><span class="o">=</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">point_data</span><span class="p">[</span><span class="s2">&quot;values&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="n">order</span><span class="o">=</span><span class="s2">&quot;F&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Here, PyVista has done several things for us:</p>
@@ -708,8 +708,8 @@ Rather than having to know everything about the VTK library up front,
 you can get started very easily! Once you get more familiar with it
 and need to do something more complex, you can dive deeper. For
 example, changing the origin and spacing is as simple as:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">grid</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">grid</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
@@ -727,27 +727,37 @@ practice of “Explicit is better than implicit”.</p></li>
 <p>Finally, with PyVista, each geometry class contains methods that allow
 you to immediately plot the mesh without also setting up the plot.
 For example, in VTK you would have to do:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">actor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageActor</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">actor</span><span class="o">.</span><span class="n">GetMapper</span><span class="p">()</span><span class="o">.</span><span class="n">SetInputData</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ren</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">renWin</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindow</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">renWin</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">ren</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">renWin</span><span class="o">.</span><span class="n">SetWindowName</span><span class="p">(</span><span class="s1">&#39;ReadSTL&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">iren</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindowInteractor</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">iren</span><span class="o">.</span><span class="n">SetRenderWindow</span><span class="p">(</span><span class="n">renWin</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ren</span><span class="o">.</span><span class="n">AddActor</span><span class="p">(</span><span class="n">actor</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">iren</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">renWin</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">iren</span><span class="o">.</span><span class="n">Start</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">actor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkImageActor</span><span class="p">()</span>
+<span class="n">actor</span><span class="o">.</span><span class="n">GetMapper</span><span class="p">()</span><span class="o">.</span><span class="n">SetInputData</span><span class="p">(</span><span class="n">image_data</span><span class="p">)</span>
+<span class="n">ren</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+<span class="n">renWin</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindow</span><span class="p">()</span>
+<span class="n">renWin</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">ren</span><span class="p">)</span>
+<span class="n">renWin</span><span class="o">.</span><span class="n">SetWindowName</span><span class="p">(</span><span class="s1">&#39;ReadSTL&#39;</span><span class="p">)</span>
+<span class="n">iren</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindowInteractor</span><span class="p">()</span>
+<span class="n">iren</span><span class="o">.</span><span class="n">SetRenderWindow</span><span class="p">(</span><span class="n">renWin</span><span class="p">)</span>
+<span class="n">ren</span><span class="o">.</span><span class="n">AddActor</span><span class="p">(</span><span class="n">actor</span><span class="p">)</span>
+<span class="n">iren</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span>
+<span class="n">renWin</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
+<span class="n">iren</span><span class="o">.</span><span class="n">Start</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>However, with PyVista you only need:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="jupyter_cell docutils container">
-<div class="cell_output docutils container">
-<img alt="../../_images/index_0_0.png" src="../../_images/index_0_0.png" />
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-9_00_002.png" src="../../_images/index-9_00_002.png" />
+</figure>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-9_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
 </div>
 </div>
 <section id="pointset-construction">
@@ -756,58 +766,28 @@ For example, in VTK you would have to do:</p>
 VTK’s C arrays.  For example, to create an array of points within VTK
 one would normally loop through all the points of a list and supply
 that to a  <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a> class.  For example:</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">vtk</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDoubleArray</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetNumberOfValues</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mf">0.667</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_points</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPoints</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_points</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">vtk_array</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">vtk_points</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vtk</span>
+<span class="n">vtk_array</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDoubleArray</span><span class="p">()</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetNumberOfValues</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mf">0.667</span><span class="p">)</span>
+<span class="n">vtk_array</span><span class="o">.</span><span class="n">SetValue</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">vtk_points</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPoints</span><span class="p">()</span>
+<span class="n">vtk_points</span><span class="o">.</span><span class="n">SetData</span><span class="p">(</span><span class="n">vtk_array</span><span class="p">)</span>
+<span class="n">vtk_points</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>vtkPoints (0x564c59edea20)
-  Debug: Off
-  Modified Time: 15784
-  Reference Count: 1
-  Registered Events: (none)
-  Data: 0x564c60d1f470
-  Data Array Name: Points
-  Number Of Points: 3
-  Bounds: 
-    Xmin,Xmax: (0, 1)
-    Ymin,Ymax: (0, 0.667)
-    Zmin,Zmax: (0, 0)
-
-
-</pre></div>
-</div>
-</div>
 </div>
 <p>To do the same within PyVista, you simply need to create a NumPy array:</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">np_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="o">...</span>                       <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-<span class="o">...</span>                       <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.667</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.667</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -816,60 +796,33 @@ object, but this is unnecessary in almost all situations.</p>
 </div>
 <p>Since the end goal is to construct a <a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="(in PyVista v0.43.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span></code></a>, you would simply pass the
 <code class="docutils literal notranslate"><span class="pre">np_points</span></code> array to the <a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.43.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> constructor:</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">poly_data</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">np_points</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="n">poly_data</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">np_points</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>Whereas in VTK you would have to do:</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_poly_data</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPolyData</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_poly_data</span><span class="o">.</span><span class="n">SetPoints</span><span class="p">(</span><span class="n">vtk_points</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vtk_poly_data</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPolyData</span><span class="p">()</span>
+<span class="n">vtk_poly_data</span><span class="o">.</span><span class="n">SetPoints</span><span class="p">(</span><span class="n">vtk_points</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>The same goes with assigning face or cell connectivity/topology.  With
 VTK you would normally have to loop using <code class="xref py py-func docutils literal notranslate"><span class="pre">InsertNextCell()</span></code> and
 <code class="xref py py-func docutils literal notranslate"><span class="pre">InsertCellPoint()</span></code>.  For example, to create a single cell
 (triangle) and then assign it to <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPolyData.html">vtkPolyData</a>:</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">cell_arr</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCellArray</span><span class="p">()</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cell_arr</span><span class="o">.</span><span class="n">InsertNextCell</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cell_arr</span><span class="o">.</span><span class="n">InsertCellPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cell_arr</span><span class="o">.</span><span class="n">InsertCellPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">cell_arr</span><span class="o">.</span><span class="n">InsertCellPoint</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">vtk_poly_data</span><span class="o">.</span><span class="n">SetPolys</span><span class="p">(</span><span class="n">cell_arr</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cell_arr</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCellArray</span><span class="p">()</span>
+<span class="n">cell_arr</span><span class="o">.</span><span class="n">InsertNextCell</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">cell_arr</span><span class="o">.</span><span class="n">InsertCellPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">cell_arr</span><span class="o">.</span><span class="n">InsertCellPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">cell_arr</span><span class="o">.</span><span class="n">InsertCellPoint</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">vtk_poly_data</span><span class="o">.</span><span class="n">SetPolys</span><span class="p">(</span><span class="n">cell_arr</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>In PyVista, we can assign this directly in the constructor and then
 access it (or change it) from the <a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="(in PyVista v0.43.1)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">faces</span></code></a> attribute.</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">faces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">poly_data</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">np_points</span><span class="p">,</span> <span class="n">faces</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">poly_data</span><span class="o">.</span><span class="n">faces</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">faces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="n">poly_data</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">np_points</span><span class="p">,</span> <span class="n">faces</span><span class="p">)</span>
+<span class="n">poly_data</span><span class="o">.</span><span class="n">faces</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([3, 0, 1, 2])
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="pyvista-tradeoffs">
@@ -879,13 +832,7 @@ losing functionality or performance.</p>
 <p>In the <code class="xref py py-class docutils literal notranslate"><span class="pre">collision</span></code> filter,
 we demonstrate how to calculate the collision between two meshes.  For
 example:</p>
-<div class="jupyter_cell docutils container">
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 
 <span class="c1"># create a default sphere and a shifted sphere</span>
 <span class="n">mesh_a</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span><span class="p">()</span>
@@ -899,9 +846,19 @@ example:</p>
 <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-17_00_00.png" src="../../_images/index-17_00_00.png" />
+</figure>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/index_8_0.png" src="../../_images/index_8_0.png" />
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-17_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
 </div>
 </div>
 <p>Under the hood, the collision filter detects mesh collisions using
@@ -923,9 +880,7 @@ you may want to use VTK classes directly.</p>
 </div>
 <p>Nothing stops you from using VTK classes and then wrapping
 the output with PyVista for streamlined plotting. For example:</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vtk</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vtk</span>
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 
 <span class="c1"># Create a circle using vtk</span>
@@ -941,9 +896,19 @@ the output with PyVista for streamlined plotting. For example:</p>
 <span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">line_width</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-18_00_00.png" src="../../_images/index-18_00_00.png" />
+</figure>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/index_9_0.png" src="../../_images/index_9_0.png" />
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-18_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
 </div>
 </div>
 <p>In this manner, you can get the “best of both worlds” should you need
@@ -956,9 +921,7 @@ the above VTK code.</p>
 <section id="vtk-algorithms">
 <h3>VTK Algorithms<a class="headerlink" href="#vtk-algorithms" title="Link to this heading">#</a></h3>
 <p>Perhaps there is a VTK algorithm that is not (yet) exposed in PyVista that you’d like to use. This is easy enough to work with since PyVista objects are VTK objects. We can pass our PyVista meshes to the VTK algorithm, then wrap the output for plotting, further filtering, or anything.</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 <span class="kn">import</span> <span class="nn">vtk</span>
 
@@ -991,9 +954,19 @@ the above VTK code.</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-19_00_00.png" src="../../_images/index-19_00_00.png" />
+</figure>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/index_10_0.png" src="../../_images/index_10_0.png" />
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-19_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
 </div>
 </div>
 <div class="admonition note">

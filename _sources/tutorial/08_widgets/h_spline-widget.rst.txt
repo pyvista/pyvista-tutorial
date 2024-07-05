@@ -75,10 +75,32 @@ path. To do this, we have added a convenient helper method which leverages the
 
 
 
-.. image-sg:: /tutorial/08_widgets/images/sphx_glr_h_spline-widget_001.png
-   :alt: h spline widget
-   :srcset: /tutorial/08_widgets/images/sphx_glr_h_spline-widget_001.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/08_widgets/images/sphx_glr_h_spline-widget_001.png
+        :alt: h spline widget
+        :srcset: /tutorial/08_widgets/images/sphx_glr_h_spline-widget_001.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/08_widgets/images/sphx_glr_h_spline-widget_001.vtksz
+
 
 
 
@@ -103,7 +125,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.373 seconds)
+   **Total running time of the script:** (0 minutes 0.398 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_h_spline-widget.py:

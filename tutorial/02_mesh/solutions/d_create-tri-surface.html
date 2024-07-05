@@ -664,11 +664,11 @@ to download the full example code or to run this example in your browser via Bin
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-203.21512425, -201.56429985,    1.66353108],
-       [-176.32769437, -201.56429985,    2.77094675],
-       [-162.04333204, -201.56429985,    3.52845382],
-       [-137.85250266, -201.56429985,    5.07129502],
-       [-111.24482469, -201.56429985,    7.06385747]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[-196.33529711, -204.35520633,    1.80351984],
+       [-182.84932117, -204.35520633,    2.32896498],
+       [-157.87503569, -204.35520633,    3.56402785],
+       [-140.92367218, -204.35520633,    4.59120997],
+       [-120.77816845, -204.35520633,    5.97598758]])
 </pre></div>
 </div>
 <p>Now use those points to create a point cloud PyVista data object. This will
@@ -678,7 +678,19 @@ be encompassed in a <a class="reference external" href="https://docs.pyvista.org
 <a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">cloud</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">point_size</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_create-tri-surface_001.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_001.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p>Now that we have a PyVista data structure of the points, we can perform a
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_d_create-tri-surface_001.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_001.png" alt="d create tri surface" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_d_create-tri-surface_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>Now that we have a PyVista data structure of the points, we can perform a
 triangulation to turn those boring discrete points into a connected surface.
 See <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.UnstructuredGridFilters.delaunay_2d()</span></code>.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyDataFilters.delaunay_2d.html#pyvista.PolyDataFilters.delaunay_2d" title="pyvista.PolyDataFilters.delaunay_2d" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">cloud</span><span class="o">.</span><span class="n">delaunay_2d</span></a><span class="p">)</span>
@@ -773,7 +785,19 @@ delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound=False, inplace=False, edge_s
 <a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">surf</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_create-tri-surface_002.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_002.png" alt="d create tri surface" class = "sphx-glr-single-img"/></section>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_d_create-tri-surface_002.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_002.png" alt="d create tri surface" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_d_create-tri-surface_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+</section>
 <section id="clean-edges-triangulations">
 <h2>Clean Edges &amp; Triangulations<a class="headerlink" href="#clean-edges-triangulations" title="Link to this heading">#</a></h2>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the points to triangulate</span>
@@ -796,8 +820,8 @@ delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound=False, inplace=False, edge_s
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
 <tr><td>N Strips</td><td>0</td></tr>
-<tr><td>X Bounds</td><td>7.098e-03, 9.289e+00</td></tr>
-<tr><td>Y Bounds</td><td>4.236e-02, 9.300e+00</td></tr>
+<tr><td>X Bounds</td><td>3.786e-02, 9.262e+00</td></tr>
+<tr><td>Y Bounds</td><td>4.763e-02, 9.291e+00</td></tr>
 <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
@@ -808,22 +832,58 @@ delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound=False, inplace=False, edge_s
 <br /><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">cloud</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_create-tri-surface_003.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_003.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p>Run the triangulation on these points</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_d_create-tri-surface_003.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_003.png" alt="d create tri surface" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_d_create-tri-surface_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>Run the triangulation on these points</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">surf</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyDataFilters.delaunay_2d.html#pyvista.PolyDataFilters.delaunay_2d" title="pyvista.PolyDataFilters.delaunay_2d" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">cloud</span><span class="o">.</span><span class="n">delaunay_2d</span></a><span class="p">()</span>
 <a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">surf</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_create-tri-surface_004.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_004.png" alt="d create tri surface" class = "sphx-glr-single-img"/><p>Note that some of the outer edges are unconstrained and the triangulation
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_d_create-tri-surface_004.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_004.png" alt="d create tri surface" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_d_create-tri-surface_004.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>Note that some of the outer edges are unconstrained and the triangulation
 added unwanted triangles. We can mitigate that with the <code class="docutils literal notranslate"><span class="pre">alpha</span></code> parameter.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">surf</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyDataFilters.delaunay_2d.html#pyvista.PolyDataFilters.delaunay_2d" title="pyvista.PolyDataFilters.delaunay_2d" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">cloud</span><span class="o">.</span><span class="n">delaunay_2d</span></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">surf</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s2">&quot;xy&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/><center>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_d_create-tri-surface_005.png" srcset="../../../_images/sphx_glr_d_create-tri-surface_005.png" alt="d create tri surface" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_d_create-tri-surface_005.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<center>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/d_create-tri-surface.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.975 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.998 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-d-create-tri-surface-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/d_create-tri-surface.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" width="150px" /></a>

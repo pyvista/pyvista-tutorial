@@ -647,13 +647,7 @@ complete list):</p>
 </ul>
 <p>To use these filters, call the method of your choice directly on your data
 object:</p>
-<div class="jupyter_cell docutils container">
-<div class="cell_output docutils container">
-</div>
-</div>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_uniform</span><span class="p">()</span>
@@ -665,10 +659,6 @@ object:</p>
 <span class="n">outline</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">outline</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-</div>
-</div>
 <p>And now there is a thresholded version of the input dataset in the new
 <code class="docutils literal notranslate"><span class="pre">threshed</span></code> object. To learn more about what keyword arguments are available to
 alter how filters are executed, print the docstring for any filter attached to
@@ -676,18 +666,26 @@ PyVista objects with either <code class="docutils literal notranslate"><span cla
 in an IPython environment.</p>
 <p>We can now plot this filtered dataset along side an outline of the original
 dataset:</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">outline</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">threshed</span><span class="p">)</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-3_00_003.png" src="../../_images/index-3_00_003.png" />
+</figure>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/index_2_04.png" src="../../_images/index_2_04.png" />
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/04_filters/index-3_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
 </div>
 </div>
 <p>What about other filters? Let’s collect a few filter results and compare them:</p>
@@ -726,9 +724,21 @@ dataset:</p>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Static Scene</label><div class="sd-tab-content docutils">
 <figure class="align-default">
-<img alt="../../_images/index-1_00_003.png" src="../../_images/index-1_00_003.png" />
+<img alt="../../_images/index-4_00_002.png" src="../../_images/index-4_00_002.png" />
 </figure>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/04_filters/index-4_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
 <section id="filter-pipeline">
 <h2>Filter Pipeline<a class="headerlink" href="#filter-pipeline" title="Link to this heading">#</a></h2>
 <p>In VTK, filters are often used in a pipeline where each algorithm passes its
@@ -742,29 +752,31 @@ In the following example, several filters are chained together:</p>
 <li><p>Create three slices along each axial plane using the <code class="docutils literal notranslate"><span class="pre">slice_orthogonal</span></code> filter.</p></li>
 </ol>
 <p>Apply a filtering chain</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">threshold</span><span class="p">()</span><span class="o">.</span><span class="n">elevation</span><span class="p">()</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">normal</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">slice_orthogonal</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">threshold</span><span class="p">()</span><span class="o">.</span><span class="n">elevation</span><span class="p">()</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">normal</span><span class="o">=</span><span class="s2">&quot;z&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">slice_orthogonal</span><span class="p">()</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-</div>
 </div>
 <p>And to view this filtered data, simply call the <code class="docutils literal notranslate"><span class="pre">plot</span></code> method
 (<code class="docutils literal notranslate"><span class="pre">result.plot()</span></code>) or create a rendering scene:</p>
-<div class="jupyter_cell jupyter_container docutils container">
-<div class="cell_input code_cell docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">outline</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;Elevation&quot;</span><span class="p">)</span>
 <span class="n">p</span><span class="o">.</span><span class="n">view_isometric</span><span class="p">()</span>
 <span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-6_00_002.png" src="../../_images/index-6_00_002.png" />
+</figure>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/index_4_02.png" src="../../_images/index_4_02.png" />
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/04_filters/index-6_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
 </div>
 </div>
 <section id="exercises">

@@ -117,10 +117,32 @@ Plot the pine roots using PyVista's default plotting settings.
 
 
 
-.. image-sg:: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_001.png
-   :alt: a load examples solution
-   :srcset: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_001.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_001.png
+        :alt: a load examples solution
+        :srcset: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_001.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_001.vtksz
+
 
 
 
@@ -197,10 +219,32 @@ Here, we plot the dataset using a custom view direction using
 
 
 
-.. image-sg:: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_002.png
-   :alt: a load examples solution
-   :srcset: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_002.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_002.png
+        :alt: a load examples solution
+        :srcset: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_002.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_002.vtksz
+
 
 
 
@@ -234,10 +278,32 @@ examples you can download.
 
 
 
-.. image-sg:: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_003.png
-   :alt: a load examples solution
-   :srcset: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_003.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_003.png
+        :alt: a load examples solution
+        :srcset: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_003.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_003.vtksz
+
 
 
 
@@ -270,10 +336,32 @@ https://www.thingiverse.com/thing:5412753
 
 
 
-.. image-sg:: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_004.png
-   :alt: a load examples solution
-   :srcset: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_004.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_004.png
+        :alt: a load examples solution
+        :srcset: /tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_004.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/01_basic/solutions/images/sphx_glr_a_load_examples_solution_004.vtksz
+
 
 
 
@@ -292,7 +380,7 @@ https://www.thingiverse.com/thing:5412753
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.501 seconds)
+   **Total running time of the script:** (0 minutes 5.620 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_solutions_a_load_examples_solution.py:

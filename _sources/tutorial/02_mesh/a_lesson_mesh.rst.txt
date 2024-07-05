@@ -65,11 +65,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
  .. code-block:: none
 
 
-    array([[0.16407468, 0.67517952, 0.88685793],
-           [0.53502624, 0.46053331, 0.42709881],
-           [0.13009044, 0.53082835, 0.19787899],
-           [0.13766964, 0.65935148, 0.39122792],
-           [0.53829878, 0.26672958, 0.46089489]])
+    array([[0.23066155, 0.91221387, 0.70677054],
+           [0.38478432, 0.40009386, 0.70189064],
+           [0.76283082, 0.28227298, 0.78309174],
+           [0.05342715, 0.60229563, 0.28323546],
+           [0.11663844, 0.45565942, 0.59719837]])
 
 
 
@@ -98,9 +98,9 @@ Pass numpy array of points (n by 3) to PolyData
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>1.640e-02, 9.915e-01</td></tr>
-    <tr><td>Y Bounds</td><td>1.889e-02, 9.975e-01</td></tr>
-    <tr><td>Z Bounds</td><td>1.710e-02, 9.969e-01</td></tr>
+    <tr><td>X Bounds</td><td>2.626e-02, 9.566e-01</td></tr>
+    <tr><td>Y Bounds</td><td>1.380e-02, 9.917e-01</td></tr>
+    <tr><td>Z Bounds</td><td>9.475e-03, 9.896e-01</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -118,10 +118,32 @@ Pass numpy array of points (n by 3) to PolyData
 
 
 
-.. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_001.png
-   :alt: a lesson mesh
-   :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_001.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_001.png
+        :alt: a lesson mesh
+        :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_001.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_001.vtksz
+
 
 
 
@@ -149,10 +171,32 @@ between points such as this gridded mesh:
 
 
 
-.. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_002.png
-   :alt: a lesson mesh
-   :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_002.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_002.png
+        :alt: a lesson mesh
+        :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_002.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_002.vtksz
+
 
 
 
@@ -173,10 +217,32 @@ between points such as this gridded mesh:
 
 
 
-.. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_003.png
-   :alt: a lesson mesh
-   :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_003.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_003.png
+        :alt: a lesson mesh
+        :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_003.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_003.vtksz
+
 
 
 
@@ -213,10 +279,32 @@ points in that mesh:
 
 
 
-.. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_004.png
-   :alt: a lesson mesh
-   :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_004.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_004.png
+        :alt: a lesson mesh
+        :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_004.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_004.vtksz
+
 
 
 
@@ -260,10 +348,32 @@ plotting, the values between points are interpolated across the cells.
 
 
 
-.. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_005.png
-   :alt: a lesson mesh
-   :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_005.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_005.png
+        :alt: a lesson mesh
+        :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_005.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_005.vtksz
+
 
 
 
@@ -288,10 +398,32 @@ volume) is assigned the value of that attribute.
 
 
 
-.. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_006.png
-   :alt: a lesson mesh
-   :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_006.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_006.png
+        :alt: a lesson mesh
+        :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_006.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_006.vtksz
+
 
 
 
@@ -323,10 +455,32 @@ which has a single value across the cell’s domain:
 
 
 
-.. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_007.png
-   :alt: a lesson mesh
-   :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_007.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_007.png
+        :alt: a lesson mesh
+        :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_007.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_007.vtksz
+
 
 
 
@@ -393,10 +547,32 @@ Note how this varies from assigning scalars to each point
 
 
 
-.. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_008.png
-   :alt: a lesson mesh
-   :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_008.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_008.png
+        :alt: a lesson mesh
+        :srcset: /tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_008.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/02_mesh/images/sphx_glr_a_lesson_mesh_008.vtksz
+
 
 
 
@@ -415,7 +591,7 @@ Note how this varies from assigning scalars to each point
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.952 seconds)
+   **Total running time of the script:** (0 minutes 3.118 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_a_lesson_mesh.py:

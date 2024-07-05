@@ -66,10 +66,32 @@ slider widget to control a thresholding value.
 
 
 
-.. image-sg:: /tutorial/08_widgets/images/sphx_glr_f_slider-bar-widget_001.png
-   :alt: f slider bar widget
-   :srcset: /tutorial/08_widgets/images/sphx_glr_f_slider-bar-widget_001.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/08_widgets/images/sphx_glr_f_slider-bar-widget_001.png
+        :alt: f slider bar widget
+        :srcset: /tutorial/08_widgets/images/sphx_glr_f_slider-bar-widget_001.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/08_widgets/images/sphx_glr_f_slider-bar-widget_001.vtksz
+
 
 
 
@@ -94,7 +116,7 @@ After interacting with the scene, the threshold mesh is available as:
  .. code-block:: none
 
 
-    [UnstructuredGrid (0x7f219ce752a0)
+    [UnstructuredGrid (0x7f260c57de40)
       N Cells:    295424
       N Points:   394455
       X Bounds:   3.615e+01, 1.178e+02
@@ -140,10 +162,32 @@ of a mesh. Again note the use of the ``name`` argument in ``add_mesh``:
 
 
 
-.. image-sg:: /tutorial/08_widgets/images/sphx_glr_f_slider-bar-widget_002.png
-   :alt: f slider bar widget
-   :srcset: /tutorial/08_widgets/images/sphx_glr_f_slider-bar-widget_002.png
-   :class: sphx-glr-single-img
+
+
+
+
+.. tab-set::
+
+
+
+   .. tab-item:: Static Scene
+
+
+
+            
+     .. image-sg:: /tutorial/08_widgets/images/sphx_glr_f_slider-bar-widget_002.png
+        :alt: f slider bar widget
+        :srcset: /tutorial/08_widgets/images/sphx_glr_f_slider-bar-widget_002.png
+        :class: sphx-glr-single-img
+     
+
+
+   .. tab-item:: Interactive Scene
+
+
+
+       .. offlineviewer:: /home/runner/work/pyvista-tutorial/pyvista-tutorial/doc/source/tutorial/08_widgets/images/sphx_glr_f_slider-bar-widget_002.vtksz
+
 
 
 
@@ -168,7 +212,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.261 seconds)
+   **Total running time of the script:** (0 minutes 3.274 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_f_slider-bar-widget.py:

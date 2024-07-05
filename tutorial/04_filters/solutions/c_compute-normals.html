@@ -648,7 +648,19 @@ to download the full example code or to run this example in your browser via Bin
 <a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">mesh</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gist_earth&quot;</span><span class="p">,</span> <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_compute-normals_001.png" srcset="../../../_images/sphx_glr_c_compute-normals_001.png" alt="c compute normals" class = "sphx-glr-single-img"/><p>Now we have a surface dataset of the globe loaded - unfortunately, the
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_c_compute-normals_001.png" srcset="../../../_images/sphx_glr_c_compute-normals_001.png" alt="c compute normals" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/04_filters/solutions/images/sphx_glr_c_compute-normals_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>Now we have a surface dataset of the globe loaded - unfortunately, the
 dataset shows the globe with a uniform radius which hides topographic relief.
 Using <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.PolyData.compute_normals()</span></code>, we can compute the normal
 vectors on the globe at all points in the dataset, then use the values given
@@ -690,7 +702,19 @@ exaggerated topographic relief.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">warp</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gist_earth&quot;</span><span class="p">,</span> <span class="n">show_scalar_bar</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_compute-normals_002.png" srcset="../../../_images/sphx_glr_c_compute-normals_002.png" alt="c compute normals" class = "sphx-glr-single-img"/><p>We could also use face or cell normals to extract all the faces of a mesh
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_c_compute-normals_002.png" srcset="../../../_images/sphx_glr_c_compute-normals_002.png" alt="c compute normals" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/04_filters/solutions/images/sphx_glr_c_compute-normals_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<p>We could also use face or cell normals to extract all the faces of a mesh
 facing a general direction. In the following snippet, we take a mesh, compute
 the normals along its cell faces, and extract the faces that face upward.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_nefertiti</span><span class="p">()</span>
@@ -712,11 +736,23 @@ the normals along its cell faces, and extract the faces that face upward.</p>
 <a href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">top</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cpos</span></a><span class="o">=</span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">cpos</span></a><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../../_images/sphx_glr_c_compute-normals_003.png" srcset="../../../_images/sphx_glr_c_compute-normals_003.png" alt="c compute normals" class = "sphx-glr-single-img"/><center>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+Static Scene</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_c_compute-normals_003.png" srcset="../../../_images/sphx_glr_c_compute-normals_003.png" alt="c compute normals" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/04_filters/solutions/images/sphx_glr_c_compute-normals_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<center>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/04_filters/solutions/c_compute-normals.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 42.243 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 39.795 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-04-filters-solutions-c-compute-normals-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/04_filters/solutions/c_compute-normals.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo15.svg" width="150px" /></a>
