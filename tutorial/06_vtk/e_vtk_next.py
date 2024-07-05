@@ -9,15 +9,21 @@ This requires a pre-release version of VTK:
     pip install --extra-index-url https://wheels.vtk.org vtk==9.3.20240629.dev0
 
 """
+
+import vtkmodules.vtkInteractionStyle
 from vtkmodules.vtkRenderingCore import (
-    vtkActor, vtkLightKit, vtkCompositePolyDataMapper,
-    vtkPolyDataMapper, vtkRenderer, vtkRenderWindow,
-    vtkRenderWindowInteractor)
+    vtkActor,
+    vtkCompositePolyDataMapper,
+    vtkLightKit,
+    vtkPolyDataMapper,
+    vtkRenderer,
+    vtkRenderWindow,
+    vtkRenderWindowInteractor,
+)
 
 # for factory overrides
 import vtkmodules.vtkRenderingOpenGL2
 import vtkmodules.vtkRenderingUI
-import vtkmodules.vtkInteractionStyle
 
 # Creates a render window interactor, connects it to a render window.
 # Switch the interactor style such that left mouse click and drag orbit the camera
@@ -52,12 +58,14 @@ renderer.AddActor(actor)
 ###############################################################################
 # Construct magpy coil objects for each coil in the reactor mesh.
 from utils.build_magnetic_coils import build_magnetic_coils
+
 coils = build_magnetic_coils(reactor, current=1000)
+
+from vtkmodules.util.numpy_support import numpy_to_vtk, vtk_to_numpy
 
 ###############################################################################
 # Compute B, H in a 32x32x32 grid
 from vtkmodules.vtkCommonDataModel import vtkImageData
-from vtkmodules.util.numpy_support import numpy_to_vtk, vtk_to_numpy
 
 grid = vtkImageData(extent=(-16, 16, -16, 16, -16, 16), spacing=(0.1, 0.1, 0.1))
 grid_points = vtk_to_numpy(grid.points.data)
@@ -74,13 +82,19 @@ from utils.save_dataset import save_dataset
 magpy.show(coils, arrow=True)
 save_dataset(grid, "data/solution.vti")
 
+from vtkmodules.util.execution_model import select_ports
+from vtkmodules.vtkFiltersFlowPaths import vtkStreamTracer
+
 ###############################################################################
 # Compute streamlines of B field induced by toroidal coils.
 from vtkmodules.vtkFiltersSources import vtkSphereSource
-from vtkmodules.vtkFiltersFlowPaths import vtkStreamTracer
-from vtkmodules.util.execution_model import select_ports
 
-trace_streamlines = vtkStreamTracer(integrator_type=vtkStreamTracer.RUNGE_KUTTA45, integration_direction=vtkStreamTracer.BOTH, initial_integration_step=0.2, maximum_propagation=3.2)
+trace_streamlines = vtkStreamTracer(
+    integrator_type=vtkStreamTracer.RUNGE_KUTTA45,
+    integration_direction=vtkStreamTracer.BOTH,
+    initial_integration_step=0.2,
+    maximum_propagation=3.2,
+)
 trace_streamlines.SetInputArrayToProcess(0, 0, 0, 0, "B (mT)")
 
 create_sphere = vtkSphereSource(theta_resolution=16)
@@ -93,24 +107,31 @@ create_sphere >> select_ports(1, trace_streamlines)
 from vtkmodules.vtkFiltersCore import vtkTubeFilter
 
 actor = vtkActor()
-actor.mapper = (trace_streamlines >> vtkTubeFilter(number_of_sides=3, radius=0.00383538) >> vtkPolyDataMapper()).last
+actor.mapper = (
+    trace_streamlines >> vtkTubeFilter(number_of_sides=3, radius=0.00383538) >> vtkPolyDataMapper()
+).last
 renderer.AddActor(actor)
 
 ###############################################################################
 # Animate the disk position such that it oscillates between y=-1 and y=1.
 from itertools import cycle
+
 import numpy as np
 
-class vtkTimerCallback():
+
+class vtkTimerCallback:
     def __init__(self, sphere, window, nsteps=10):
         half_nsteps = int(nsteps / 2)
-        self.radii = cycle(np.append(np.linspace(0, 0.8, half_nsteps), np.linspace(0.8, 0, half_nsteps)))
+        self.radii = cycle(
+            np.append(np.linspace(0, 0.8, half_nsteps), np.linspace(0.8, 0, half_nsteps))
+        )
         self.sphere = sphere
         self.window = window
 
     def execute(self, obj, event):
         self.sphere.radius = next(self.radii)
         self.window.Render()
+
 
 ###############################################################################
 # Sign up to receive TimerEvent
