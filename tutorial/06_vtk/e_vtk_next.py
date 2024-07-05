@@ -22,8 +22,8 @@ from vtkmodules.vtkRenderingCore import (
 )
 
 # for factory overrides
-import vtkmodules.vtkRenderingOpenGL2
-import vtkmodules.vtkRenderingUI
+import vtkmodules.vtkRenderingOpenGL2  # noqa
+import vtkmodules.vtkRenderingUI  # noqa
 
 # Creates a render window interactor, connects it to a render window.
 # Switch the interactor style such that left mouse click and drag orbit the camera
