@@ -3,3 +3,4 @@
 **/*.ipynb_checkpoints
 
 doc/source/images/auto-generated/*
+node_modules/
