@@ -545,6 +545,8 @@ document.write(`
 
 <li class="toctree-l2"><a class="reference internal" href="../06_vtk/b_create_vtk.html">Create VTK Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06_vtk/c_vtk_algorithms.html">Using VTK Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_vtk/d_wasm.html">VTK + WASM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_vtk/e_vtk_next.html">VTK’s Next Generation API</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../08_widgets/index.html">Widgets in PyVista</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -558,9 +560,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../08_widgets/h_spline-widget.html">Spline Widget</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../09_trame/index.html">PyVista and Trame</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09_trame/index.html">Trame</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/a_getting_started.html">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../09_trame/a_trame_simple.html">Simple Trame App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../09_trame/b_trame_actor_color.html">Control the Color of an Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../09_trame/b_trame_vtk.html">Using VTK/PyVista and Trame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../09_trame/c_trame_scalars.html">Control Scalar Array</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../09_trame/d_trame_scalar_range.html">Control Scalar Range</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../09_trame/e_trame_algorithm.html">Using VTK, PyVista, and Trame</a></li>
@@ -649,11 +653,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># output first 5 rows</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.23066155, 0.91221387, 0.70677054],
-       [0.38478432, 0.40009386, 0.70189064],
-       [0.76283082, 0.28227298, 0.78309174],
-       [0.05342715, 0.60229563, 0.28323546],
-       [0.11663844, 0.45565942, 0.59719837]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.22060726, 0.47188321, 0.51254728],
+       [0.71033423, 0.91627776, 0.37453811],
+       [0.59139558, 0.64135998, 0.86795236],
+       [0.90177118, 0.18676461, 0.6375066 ],
+       [0.72774276, 0.17309835, 0.92227828]])
 </pre></div>
 </div>
 <p>Pass numpy array of points (n by 3) to PolyData</p>
@@ -668,9 +672,9 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
 <tr><td>N Strips</td><td>0</td></tr>
-<tr><td>X Bounds</td><td>2.626e-02, 9.566e-01</td></tr>
-<tr><td>Y Bounds</td><td>1.380e-02, 9.917e-01</td></tr>
-<tr><td>Z Bounds</td><td>9.475e-03, 9.896e-01</td></tr>
+<tr><td>X Bounds</td><td>1.385e-03, 9.997e-01</td></tr>
+<tr><td>Y Bounds</td><td>2.438e-04, 9.984e-01</td></tr>
+<tr><td>Z Bounds</td><td>6.278e-03, 9.876e-01</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -908,7 +912,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/a_lesson_mesh.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.118 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.855 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-a-lesson-mesh-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/a_lesson_mesh.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo5.svg" width="150px" /></a>

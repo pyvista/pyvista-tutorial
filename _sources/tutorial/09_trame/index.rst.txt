@@ -2,8 +2,8 @@
 
 .. _trame:
 
-PyVista and Trame
-=================
+Trame
+=====
 
 `Kitware's Trame <https://kitware.github.io/trame/index.html>`_ is an open-source platform for creating interactive and powerful visual analytics applications. Based on Python, and leveraging platforms such as VTK, ParaView, and Vega, it is possible to create web-based applications in minutes.
 
@@ -68,11 +68,11 @@ contains all of the boilerplate code needed to get started.
 
       .. code:: python
 
+        import pyvista as pv
+        from pyvista import examples
+        from pyvista.trame.ui import plotter_ui
         from trame.app import get_server
         from trame.ui.vuetify3 import SinglePageLayout
-
-        import pyvista as pv
-        from pyvista.trame.ui import plotter_ui
 
         # Always set PyVista to plot off screen with Trame
         pv.OFF_SCREEN = True
@@ -80,7 +80,7 @@ contains all of the boilerplate code needed to get started.
         server = get_server()
         state, ctrl = server.state, server.controller
 
-        mesh = pv.Wavelet()
+        mesh = examples.load_random_hills()
 
         pl = pv.Plotter()
         pl.add_mesh(mesh)
@@ -107,6 +107,35 @@ contains all of the boilerplate code needed to get started.
     Jupyter backend is a micro Trame application.
 
 
+Trame applications
+~~~~~~~~~~~~~~~~~~
+
+Using an existing app
+
+.. code:: python
+
+    from trame.app.demo import Cone
+
+    app = Cone("demo")
+    await app.ui.ready
+    app.ui
+
+
+Try Pan3D: ``pip install pan3d``
+
+.. code:: python
+
+    from pan3d import DatasetBuilder
+
+    builder = DatasetBuilder(viewer=True)
+
+    builder.import_config('example_sst_xarray.json')
+
+    # Show viewer in cell output
+    await builder.viewer.ready
+    builder.viewer.ui
+
+
 Exercises
 ~~~~~~~~~
 
@@ -117,6 +146,23 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 .. raw:: html
 
     <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Getting started with PyVista and Trame">
+
+.. only:: html
+
+  .. image:: /tutorial/09_trame/images/thumb/sphx_glr_a_getting_started_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_tutorial_09_trame_a_getting_started.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Getting started</div>
+    </div>
 
 
 .. raw:: html
@@ -150,6 +196,23 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 .. raw:: html
 
       <div class="sphx-glr-thumbnail-title">Control the Color of an Actor</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this application, we will connect a VTK filter with PyVista.">
+
+.. only:: html
+
+  .. image:: /tutorial/09_trame/images/thumb/sphx_glr_b_trame_vtk_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_tutorial_09_trame_b_trame_vtk.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Using VTK/PyVista and Trame</div>
     </div>
 
 
@@ -229,8 +292,10 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 .. toctree::
    :hidden:
 
+   /tutorial/09_trame/a_getting_started
    /tutorial/09_trame/a_trame_simple
    /tutorial/09_trame/b_trame_actor_color
+   /tutorial/09_trame/b_trame_vtk
    /tutorial/09_trame/c_trame_scalars
    /tutorial/09_trame/d_trame_scalar_range
    /tutorial/09_trame/e_trame_algorithm

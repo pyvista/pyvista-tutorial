@@ -468,6 +468,40 @@ Exercises
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Use WASM local rendering. This requires a pre-release version of VTK:">
+
+.. only:: html
+
+  .. image:: /tutorial/06_vtk/images/thumb/sphx_glr_d_wasm_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_tutorial_06_vtk_d_wasm.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">VTK + WASM</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This requires a pre-release version of VTK:">
+
+.. only:: html
+
+  .. image:: /tutorial/06_vtk/images/thumb/sphx_glr_e_vtk_next_thumb.png
+    :alt:
+
+  :ref:`sphx_glr_tutorial_06_vtk_e_vtk_next.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">VTK's Next Generation API</div>
+    </div>
+
+
+.. raw:: html
+
     </div>
 
 
@@ -478,6 +512,8 @@ Exercises
    /tutorial/06_vtk/a_2_pyvista_vtk
    /tutorial/06_vtk/b_create_vtk
    /tutorial/06_vtk/c_vtk_algorithms
+   /tutorial/06_vtk/d_wasm
+   /tutorial/06_vtk/e_vtk_next
 
 
 

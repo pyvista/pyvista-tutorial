@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.000** total execution time for 6 files **from tutorial/09_trame**:
+**00:00.000** total execution time for 8 files **from tutorial/09_trame**:
 
 .. container::
 
@@ -32,10 +32,16 @@ Computation times
    * - Example
      - Time
      - Mem (MB)
+   * - :ref:`sphx_glr_tutorial_09_trame_a_getting_started.py` (``a_getting_started.py``)
+     - 00:00.000
+     - 0.0
    * - :ref:`sphx_glr_tutorial_09_trame_a_trame_simple.py` (``a_trame_simple.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_tutorial_09_trame_b_trame_actor_color.py` (``b_trame_actor_color.py``)
+     - 00:00.000
+     - 0.0
+   * - :ref:`sphx_glr_tutorial_09_trame_b_trame_vtk.py` (``b_trame_vtk.py``)
      - 00:00.000
      - 0.0
    * - :ref:`sphx_glr_tutorial_09_trame_c_trame_scalars.py` (``c_trame_scalars.py``)

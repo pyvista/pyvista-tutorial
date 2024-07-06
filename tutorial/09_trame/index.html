@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PyVista and Trame &#8212; PyVista Tutorial</title>
+    <title>Trame &#8212; PyVista Tutorial</title>
   
   
   
@@ -61,7 +61,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/09_trame/index';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Simple Trame App" href="a_trame_simple.html" />
+    <link rel="next" title="Getting started" href="a_getting_started.html" />
     <link rel="prev" title="Spline Widget" href="../08_widgets/h_spline-widget.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -545,6 +545,8 @@ document.write(`
 
 <li class="toctree-l2"><a class="reference internal" href="../06_vtk/b_create_vtk.html">Create VTK Objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06_vtk/c_vtk_algorithms.html">Using VTK Algorithms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_vtk/d_wasm.html">VTK + WASM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06_vtk/e_vtk_next.html">VTK’s Next Generation API</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../08_widgets/index.html">Widgets in PyVista</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -558,9 +560,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../08_widgets/h_spline-widget.html">Spline Widget</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">PyVista and Trame</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Trame</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="a_getting_started.html">Getting started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="a_trame_simple.html">Simple Trame App</a></li>
 <li class="toctree-l2"><a class="reference internal" href="b_trame_actor_color.html">Control the Color of an Actor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="b_trame_vtk.html">Using VTK/PyVista and Trame</a></li>
 <li class="toctree-l2"><a class="reference internal" href="c_trame_scalars.html">Control Scalar Array</a></li>
 <li class="toctree-l2"><a class="reference internal" href="d_trame_scalar_range.html">Control Scalar Range</a></li>
 <li class="toctree-l2"><a class="reference internal" href="e_trame_algorithm.html">Using VTK, PyVista, and Trame</a></li>
@@ -607,7 +611,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../../tutorial.html" class="nav-link">PyVista Tutorial</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">PyVista and Trame</li>
+    <li class="breadcrumb-item active" aria-current="page">Trame</li>
   </ul>
 </nav>
 </div>
@@ -624,8 +628,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="pyvista-and-trame">
-<span id="trame"></span><h1>PyVista and Trame<a class="headerlink" href="#pyvista-and-trame" title="Link to this heading">#</a></h1>
+  <section id="trame">
+<span id="id1"></span><h1>Trame<a class="headerlink" href="#trame" title="Link to this heading">#</a></h1>
 <p><a class="reference external" href="https://kitware.github.io/trame/index.html">Kitware’s Trame</a> is an open-source platform for creating interactive and powerful visual analytics applications. Based on Python, and leveraging platforms such as VTK, ParaView, and Vega, it is possible to create web-based applications in minutes.</p>
 <iframe src="https://player.vimeo.com/video/764741737?muted=1" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe><section id="what-is-trame">
 <h2>What is Trame?<a class="headerlink" href="#what-is-trame" title="Link to this heading">#</a></h2>
@@ -665,11 +669,11 @@ contains all of the boilerplate code needed to get started.</p>
 <input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-2">
 Code</label><div class="sd-tab-content docutils">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">trame.app</span> <span class="kn">import</span> <span class="n">get_server</span>
-<span class="kn">from</span> <span class="nn">trame.ui.vuetify3</span> <span class="kn">import</span> <span class="n">SinglePageLayout</span>
-
-<span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
+<span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 <span class="kn">from</span> <span class="nn">pyvista.trame.ui</span> <span class="kn">import</span> <span class="n">plotter_ui</span>
+<span class="kn">from</span> <span class="nn">trame.app</span> <span class="kn">import</span> <span class="n">get_server</span>
+<span class="kn">from</span> <span class="nn">trame.ui.vuetify3</span> <span class="kn">import</span> <span class="n">SinglePageLayout</span>
 
 <span class="c1"># Always set PyVista to plot off screen with Trame</span>
 <span class="n">pv</span><span class="o">.</span><span class="n">OFF_SCREEN</span> <span class="o">=</span> <span class="kc">True</span>
@@ -677,7 +681,7 @@ Code</label><div class="sd-tab-content docutils">
 <span class="n">server</span> <span class="o">=</span> <span class="n">get_server</span><span class="p">()</span>
 <span class="n">state</span><span class="p">,</span> <span class="n">ctrl</span> <span class="o">=</span> <span class="n">server</span><span class="o">.</span><span class="n">state</span><span class="p">,</span> <span class="n">server</span><span class="o">.</span><span class="n">controller</span>
 
-<span class="n">mesh</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Wavelet</span><span class="p">()</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_random_hills</span><span class="p">()</span>
 
 <span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
 <span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
@@ -704,15 +708,44 @@ Web App</label><div class="sd-tab-content docutils">
 PyVista in Jupyter lately, you’ve been using Trame all along – our
 Jupyter backend is a micro Trame application.</p>
 </div>
+<section id="trame-applications">
+<h3>Trame applications<a class="headerlink" href="#trame-applications" title="Link to this heading">#</a></h3>
+<p>Using an existing app</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">trame.app.demo</span> <span class="kn">import</span> <span class="n">Cone</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Cone</span><span class="p">(</span><span class="s2">&quot;demo&quot;</span><span class="p">)</span>
+<span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">ready</span>
+<span class="n">app</span><span class="o">.</span><span class="n">ui</span>
+</pre></div>
+</div>
+<p>Try Pan3D: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pan3d</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pan3d</span> <span class="kn">import</span> <span class="n">DatasetBuilder</span>
+
+<span class="n">builder</span> <span class="o">=</span> <span class="n">DatasetBuilder</span><span class="p">(</span><span class="n">viewer</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">builder</span><span class="o">.</span><span class="n">import_config</span><span class="p">(</span><span class="s1">&#39;example_sst_xarray.json&#39;</span><span class="p">)</span>
+
+<span class="c1"># Show viewer in cell output</span>
+<span class="k">await</span> <span class="n">builder</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">ready</span>
+<span class="n">builder</span><span class="o">.</span><span class="n">viewer</span><span class="o">.</span><span class="n">ui</span>
+</pre></div>
+</div>
+</section>
 <section id="exercises">
 <h3>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h3>
 <p>Do not run these examples in Jupyter but rather as standalone scripts.</p>
-<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="A simple example of how to create a Trame app with a PyVista Plotter."><img alt="" src="../../_images/sphx_glr_a_trame_simple_thumb.png" />
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Getting started with PyVista and Trame"><img alt="" src="../../_images/sphx_glr_a_getting_started_thumb.png" />
+<p><a class="reference internal" href="a_getting_started.html#sphx-glr-tutorial-09-trame-a-getting-started-py"><span class="std std-ref">Getting started</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Getting started</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="A simple example of how to create a Trame app with a PyVista Plotter."><img alt="" src="../../_images/sphx_glr_a_trame_simple_thumb.png" />
 <p><a class="reference internal" href="a_trame_simple.html#sphx-glr-tutorial-09-trame-a-trame-simple-py"><span class="std std-ref">Simple Trame App</span></a></p>
   <div class="sphx-glr-thumbnail-title">Simple Trame App</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Extending our simple example to have a dropdown menu to control the color of the actor."><img alt="" src="../../_images/sphx_glr_b_trame_actor_color_thumb.png" />
 <p><a class="reference internal" href="b_trame_actor_color.html#sphx-glr-tutorial-09-trame-b-trame-actor-color-py"><span class="std std-ref">Control the Color of an Actor</span></a></p>
   <div class="sphx-glr-thumbnail-title">Control the Color of an Actor</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="In this application, we will connect a VTK filter with PyVista."><img alt="" src="../../_images/sphx_glr_b_trame_vtk_thumb.png" />
+<p><a class="reference internal" href="b_trame_vtk.html#sphx-glr-tutorial-09-trame-b-trame-vtk-py"><span class="std std-ref">Using VTK/PyVista and Trame</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Using VTK/PyVista and Trame</div>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Extending our simple example to have a dropdown menu to control which scalar array is used to c..."><img alt="" src="../../_images/sphx_glr_c_trame_scalars_thumb.png" />
 <p><a class="reference internal" href="c_trame_scalars.html#sphx-glr-tutorial-09-trame-c-trame-scalars-py"><span class="std std-ref">Control Scalar Array</span></a></p>
   <div class="sphx-glr-thumbnail-title">Control Scalar Array</div>
@@ -752,11 +785,11 @@ Jupyter backend is a micro Trame application.</p>
       </div>
     </a>
     <a class="right-next"
-       href="a_trame_simple.html"
+       href="a_getting_started.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Simple Trame App</p>
+        <p class="prev-next-title">Getting started</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -780,6 +813,7 @@ Jupyter backend is a micro Trame application.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-trame">What is Trame?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-visualization-in-web-applications">3D visualization in web applications</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#trame-applications">Trame applications</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
 </ul>
 </li>
