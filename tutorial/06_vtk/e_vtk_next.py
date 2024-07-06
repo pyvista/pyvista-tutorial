@@ -61,7 +61,7 @@ from utils.build_magnetic_coils import build_magnetic_coils
 
 coils = build_magnetic_coils(reactor, current=1000)
 
-from vtkmodules.util.numpy_support import numpy_to_vtk, vtk_to_numpy
+from vtkmodules.util.numpy_support import vtk_to_numpy
 
 ###############################################################################
 # Compute B, H in a 32x32x32 grid
