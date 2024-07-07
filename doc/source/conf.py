@@ -14,6 +14,7 @@ make_external_gallery.make_example_gallery()
 
 # -- PyVista configuration ---------------------------------------------------
 import pyvista
+from pyvista.plotting.utilities.sphinx_gallery import DynamicScraper
 
 # Manage errors
 pyvista.set_error_output_file('errors.txt')
@@ -53,6 +54,7 @@ extensions = [
     "sphinx_design",
     'jupyter_sphinx',
     'pyvista.ext.plot_directive',
+    'pyvista.ext.viewer_directive',
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
@@ -83,6 +85,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'friendly'
 
+suppress_warnings = ["config.cache"]
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -142,6 +145,7 @@ html_theme_options = {
             'icon': 'fa fa-file-text fa-fw',
         },
     ],
+    'navigation_with_keys': False,
 }
 
 html_sidebars = {
@@ -209,7 +213,7 @@ sphinx_gallery_conf = {
     # path where to save gallery generated examples
     'gallery_dirs': [d.lstrip('../../') for d in tutorial_dirs],
     # Don't execute any files containing "exercise" in the filename
-    'filename_pattern': r'^((?!exercise|trame).)*$',
+    'filename_pattern': r'^((?!exercise|trame|wasm|vtk_next).)*$',
     # Remove the 'Download all examples' button from the top level gallery
     'download_all_examples': False,
     # Remove sphinx configuration comments from code blocks
@@ -220,7 +224,7 @@ sphinx_gallery_conf = {
     'backreferences_dir': None,
     # Modules for which function level galleries are created.  In
     'doc_module': 'pyvista',
-    'image_scrapers': ('pyvista', 'matplotlib'),
+    'image_scrapers': (DynamicScraper(), 'matplotlib'),
     'first_notebook_cell': 'import subprocess\n'
     'import sys\n'
     '\n'
