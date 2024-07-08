@@ -4,7 +4,7 @@ imageio-ffmpeg
 ipywidgets<9.0.0
 jupyterlab<5.0.0
 matplotlib
-pyvista[trame]
+pyvista[all]
 sphinx
 tqdm
 trame>=2.5.0
