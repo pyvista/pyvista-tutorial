@@ -5,6 +5,8 @@
 Exercises
 ---------
 
+See `GeoVista tutorial <https://geovista.readthedocs.io/en/latest/tutorials/region-manifold-extraction.html>`_ .
+
 
 
 .. raw:: html
@@ -14,30 +16,7 @@ Exercises
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is provided by @bjlittle in this discussion and modified by @tkoyama010 .">
-
-.. only:: html
-
-  .. image:: /tutorial/05_action/images/thumb/sphx_glr_a_lesson_geovista_thumb.png
-    :alt:
-
-  :ref:`sphx_glr_tutorial_05_action_a_lesson_geovista.py`
-
-.. raw:: html
-
-      <div class="sphx-glr-thumbnail-title">Using GeoVista</div>
     </div>
-
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /tutorial/05_action/a_lesson_geovista
 
 
 
