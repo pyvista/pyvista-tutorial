@@ -123,7 +123,7 @@ simple surface mesh:
 +-------------------------------------------+-------------------------------------+
 | Using ``vtk``                             | Using PyVista                       |
 +===========================================+=====================================+
-| .. code:: python                          | .. jupyter-execute::                |
+| .. code:: python                          | .. pyvista-plot::                   |
 |                                           |                                     |
 |    import vtk                             |    from pyvista import examples     |
 |    reader = vtk.vtkSTLReader()            |    mesh = examples.download_bunny() |
