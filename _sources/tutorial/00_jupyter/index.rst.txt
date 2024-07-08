@@ -90,7 +90,7 @@ Using pip, you can set up your jupyter environment with:
 
 .. code::
 
-    pip install 'jupyterlab>=3' ipywidgets 'pyvista[all,trame]'
+    pip install 'jupyterlab' 'pyvista[all]'
 
 
 Jupyter-Server-Proxy
