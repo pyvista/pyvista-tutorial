@@ -1,4 +1,5 @@
 cmocean
+geovista
 imageio>=2.5.0
 imageio-ffmpeg
 ipywidgets<9.0.0
