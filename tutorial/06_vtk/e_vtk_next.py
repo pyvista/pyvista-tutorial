@@ -94,10 +94,12 @@ window.AddRenderer(renderer)
 light_kit = vtkLightKit()
 light_kit.AddLightsToRenderer(renderer)
 
+import pathlib
+
 ###############################################################################
 # Load input mesh from a vtkPartitionedDataSetCollection file
 from vtkmodules.vtkIOXML import vtkXMLPartitionedDataSetCollectionReader
-import pathlib
+
 path = _download_archive_file_or_folder('reactor.zip', target_file='')
 
 reader = vtkXMLPartitionedDataSetCollectionReader()
