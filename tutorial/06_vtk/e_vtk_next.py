@@ -10,6 +10,21 @@ This requires a pre-release version of VTK:
 
 """
 
+import magpylib as magpy
+import numpy as np
+from pyvista.examples.downloads import _download_archive_file_or_folder
+from vtkmodules.util.data_model import *  # noqa
+from vtkmodules.util.execution_model import select_ports
+from vtkmodules.util.numpy_support import vtk_to_numpy
+from vtkmodules.vtkCommonCore import vtkIdList
+from vtkmodules.vtkCommonDataModel import vtkDataObjectTreeIterator, vtkImageData
+from vtkmodules.vtkFiltersExtraction import vtkExtractBlockUsingDataAssembly
+from vtkmodules.vtkFiltersFlowPaths import vtkStreamTracer
+from vtkmodules.vtkFiltersSources import vtkSphereSource
+from vtkmodules.vtkIOParallelXML import vtkXMLPartitionedDataSetCollectionWriter
+
+# Utility function to save simulation input/output datasets to filesystem
+from vtkmodules.vtkIOXML import vtkXMLImageDataWriter, vtkXMLPolyDataWriter
 import vtkmodules.vtkInteractionStyle
 from vtkmodules.vtkRenderingCore import (
     vtkActor,
@@ -24,6 +39,45 @@ from vtkmodules.vtkRenderingCore import (
 # for factory overrides
 import vtkmodules.vtkRenderingOpenGL2  # noqa
 import vtkmodules.vtkRenderingUI  # noqa
+
+
+def build_magnetic_coils(mesh, current=1000):
+
+    magpy_coils = magpy.Collection()
+
+    # Extract blocks under the "coils" node.
+    coil_extractor = vtkExtractBlockUsingDataAssembly(
+        assembly_name="Assembly", selector="//coils", input_data=mesh
+    )
+    coil_extractor.Update()
+
+    # Build a magpy current source for every coil.
+    coil_iter = vtkDataObjectTreeIterator(data_set=coil_extractor.output)
+    coil_iter.visit_only_leaves = True
+    coil_iter.InitTraversal()
+    while not coil_iter.IsDoneWithTraversal():
+        line = vtkIdList()
+        coil = coil_iter.current_data_object
+        coil.lines.InitTraversal()
+        while coil.lines.GetNextCell(line):
+            vertices = [coil.points[line.GetId(i)] for i in range(line.GetNumberOfIds())]
+            magpy_coils.add(magpy.current.Polyline(vertices=vertices, current=current))
+        coil_iter.GoToNextItem()
+
+    return magpy_coils
+
+
+def save_dataset(dataset, file_name):
+    if file_name.endswith(".vti"):
+        writer = vtkXMLImageDataWriter()
+    elif file_name.endswith(".vtp"):
+        writer = vtkXMLPolyDataWriter()
+    elif file_name.endswith(".vtpc"):
+        writer = vtkXMLPartitionedDataSetCollectionWriter()
+    writer.input_data_object = dataset
+    writer.file_name = file_name
+    writer.Write()
+
 
 # Creates a render window interactor, connects it to a render window.
 # Switch the interactor style such that left mouse click and drag orbit the camera
@@ -40,12 +94,16 @@ window.AddRenderer(renderer)
 light_kit = vtkLightKit()
 light_kit.AddLightsToRenderer(renderer)
 
+import pathlib
+
 ###############################################################################
 # Load input mesh from a vtkPartitionedDataSetCollection file
 from vtkmodules.vtkIOXML import vtkXMLPartitionedDataSetCollectionReader
 
+path = _download_archive_file_or_folder('reactor.zip', target_file='')
+
 reader = vtkXMLPartitionedDataSetCollectionReader()
-reader.file_name = "data/mesh.vtpc"
+reader.file_name = pathlib.Path(path + "/reactor/" + "mesh.vtpc")
 reader.Update()
 reactor = reader.output
 
@@ -57,15 +115,10 @@ renderer.AddActor(actor)
 
 ###############################################################################
 # Construct magpy coil objects for each coil in the reactor mesh.
-from utils.build_magnetic_coils import build_magnetic_coils
-
 coils = build_magnetic_coils(reactor, current=1000)
-
-from vtkmodules.util.numpy_support import vtk_to_numpy
 
 ###############################################################################
 # Compute B, H in a 32x32x32 grid
-from vtkmodules.vtkCommonDataModel import vtkImageData
 
 grid = vtkImageData(extent=(-16, 16, -16, 16, -16, 16), spacing=(0.1, 0.1, 0.1))
 grid_points = vtk_to_numpy(grid.points.data)
@@ -76,19 +129,11 @@ grid.point_data.set_array("H (A/m)", h)
 
 ###############################################################################
 # Show coils
-import magpylib as magpy
-from utils.save_dataset import save_dataset
-
 magpy.show(coils, arrow=True)
 save_dataset(grid, "data/solution.vti")
 
-from vtkmodules.util.execution_model import select_ports
-from vtkmodules.vtkFiltersFlowPaths import vtkStreamTracer
-
 ###############################################################################
 # Compute streamlines of B field induced by toroidal coils.
-from vtkmodules.vtkFiltersSources import vtkSphereSource
-
 trace_streamlines = vtkStreamTracer(
     integrator_type=vtkStreamTracer.RUNGE_KUTTA45,
     integration_direction=vtkStreamTracer.BOTH,
@@ -115,8 +160,6 @@ renderer.AddActor(actor)
 ###############################################################################
 # Animate the disk position such that it oscillates between y=-1 and y=1.
 from itertools import cycle
-
-import numpy as np
 
 
 class vtkTimerCallback:
