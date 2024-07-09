@@ -54,8 +54,9 @@ with SinglePageLayout(server) as layout:
             view = plotter_ui(pl, default_server_rendering=False)
             ctrl.view_update = view.update
 
-server.start()
-
+# Show UI
+await layout.ready  # noqa
+layout
 ###############################################################################
 # .. raw:: html
 #
