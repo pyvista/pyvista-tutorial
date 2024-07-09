@@ -12,6 +12,7 @@ This requires a pre-release version of VTK:
 
 import magpylib as magpy
 import numpy as np
+from pyvista.examples.downloads import _download_archive_file_or_folder
 from vtkmodules.util.data_model import *  # noqa
 from vtkmodules.util.execution_model import select_ports
 from vtkmodules.util.numpy_support import vtk_to_numpy
@@ -97,8 +98,10 @@ light_kit.AddLightsToRenderer(renderer)
 # Load input mesh from a vtkPartitionedDataSetCollection file
 from vtkmodules.vtkIOXML import vtkXMLPartitionedDataSetCollectionReader
 
+path = _download_archive_file_or_folder('reactor.zip', target_file='')
+
 reader = vtkXMLPartitionedDataSetCollectionReader()
-reader.file_name = "data/mesh.vtpc"
+reader.file_name = path + "/" + "mesh.vtpc"
 reader.Update()
 reactor = reader.output
 
