@@ -41,7 +41,7 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 1. PyVista & Jupyter (Tetsuo Koyama) - Demonstrate how to use PyVista in Jupyter for state-of-the-art 3D visualization in Notebooks and make sure the class room is up and running. (5 min for talk, 15 for exercise)
 
-2. Basic usage (Bane Sullivan) - Reading and plotting 3D data using `examples` module and external files. (10 min for talk, 10 min for exercise)
+2. Basic usage (Tetsuo Koyama) - Reading and plotting 3D data using `examples` module and external files. (10 min for talk, 10 min for exercise)
 
 3. What is a Mesh? (Bane Sullivan) - Learn the basics of the PyVista data types and how to open common 3D file formats to visualize the data in 3D (20 min for talk, 10 min for exercise)
 
@@ -49,7 +49,7 @@ We see this tutorial catering to anyone who wants to visualize data in any domai
 
 5. Plotting Options and Animations (Bane Sullivan) - Demonstrate many features of the PyVista plotting API to create compelling 3D visualizations and touch on animations (15 min for talk, 20 min for exercise)
 
-6. Filters (Tetsuo Koyama & Bane Sullivan) - Demonstrate the PyVista filters API to perform mesh analysis and alteration (15 minutes)
+6. Filters (Bane Sullivan) - Demonstrate the PyVista filters API to perform mesh analysis and alteration (15 minutes)
 
 7. PyVista in Action (Tetsuo Koyama & Bill Little) - Show how PyVista is already being used within several projects and can be used for all things visualization. (15 min for talk)
 
