@@ -107,6 +107,24 @@ jobs:
           publish_dir: doc/build/html
           cname: tutorial.pyvista.org
 
+      - name: Copy Tutorial Content
+        run: |
+          mkdir tutorial-content
+          cp -r notebooks tutorial-content/notebooks
+          cp README.md tutorial-content/
+          cp LICENSE tutorial-content/
+          cp requirements.txt tutorial-content/
+          cp requirements_docs.txt tutorial-content/
+          cp start tutorial-content/
+          cp Dockerfile tutorial-content/
+
+      - name: Deploy to Tutorial branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: tutorial-content/
+          publish_branch: tutorial
+
   preview:
     name: Preview Documentation
     runs-on: ubuntu-latest
