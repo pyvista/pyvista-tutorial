@@ -243,10 +243,10 @@ sphinx_gallery_conf = {
     '    %matplotlib inline\n'
     '    from pyvista import set_plot_theme\n'
     '\n'
-    '    set_plot_theme("document")\n',
+    '    set_plot_theme("document")\n'
     '\n'
     'import pyvista as pv\n'
-    'pv.start_xvfb()\n'
+    'pv.start_xvfb()\n',
     'binder': {
         'org': "pyvista",
         'repo': "pyvista-tutorial",
