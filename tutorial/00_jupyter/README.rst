@@ -91,11 +91,19 @@ Using pip, you can set up your jupyter environment with:
     pip install 'jupyterlab' 'pyvista[all]'
 
 
-Jupyter-Server-Proxy
-++++++++++++++++++++
+Remote JupyterHubs
+++++++++++++++++++
 
 When using PyVista in Jupyter that is hosted remotely (docker, cloud JupyterHub,
-or otherwise), you will need to pair the Trame backend with ``jupyter-server-proxy``.
+or otherwise), you will need to pair the Trame backend with either
+``jupyter-server-proxy`` or ``trame-jupyter-extension``.
+
+These tools allow us to connect to the Trame web application that embeds PyVista's
+render window directly in Jupyter. Without one of these mechanisms, you may see
+server connection issues or 404 pages where you expect to see a PyVista Plotter.
+
+Jupyter-Server-Proxy
+~~~~~~~~~~~~~~~~~~~~
 
 `Jupyter Server Proxy <https://jupyter-server-proxy.readthedocs.io/en/latest/>`_
 lets you access the Trame server hosting the views of the PyVista plotters
@@ -133,3 +141,33 @@ On MyBinder, the ``JUPYTERHUB_SERVICE_PREFIX`` string often needs to prefix
 ``'/proxy/'``. This makes it so the prefix includes the users ID in the URL.
 In PyVista, we automatically check for the presence of this variable and
 prepend it to the ``server_proxy_prefix``.
+
+
+Trame-Jupyter-Extension
+~~~~~~~~~~~~~~~~~~~~~~~
+
+`Trame Jupyter Extension <https://github.com/Kitware/trame-jupyter-extension/>`_
+enables the trame server and client to communicate over the existing
+`Jupyter Comms <https://jupyter-notebook.readthedocs.io/en/stable/comms.html>`_
+infrastructure, instead of creating a separate WebSocket connection.
+
+Using this extension removes the need for a secondary web server and thus
+``jupyter-server-proxy``.
+
+Using pip, you can install the extension:
+
+.. code-block:: bash
+
+    pip install trame_jupyter_extension
+
+If using Jupyter Lab 3.x, make sure to install the version 1.x of the extension:
+
+.. code-block:: bash
+
+    pip install "trame_jupyter_extension<2"
+
+Once the extension is installed, you can select whether PyVista will use it by
+setting the following flag to ``True`` or ``False``:
+
+* :py:attr:`pyvista.global_theme.trame.jupyter_extension_enabled
+  <pyvista.plotting.themes._TrameConfig.jupyter_extension_enabled>`
