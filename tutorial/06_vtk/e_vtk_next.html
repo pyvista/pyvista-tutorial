@@ -641,7 +641,22 @@ to download the full example code or to run this example in your browser via Bin
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--extra-index-url<span class="w"> </span>https://wheels.vtk.org<span class="w"> </span><span class="nv">vtk</span><span class="o">==</span><span class="m">9</span>.3.20240629.dev0
 </pre></div>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">vtkmodules.vtkInteractionStyle</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">magpylib</span> <span class="k">as</span> <span class="nn">magpy</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">pyvista.examples.downloads</span> <span class="kn">import</span> <span class="n">_download_archive_file_or_folder</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.util.data_model</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.util.execution_model</span> <span class="kn">import</span> <span class="n">select_ports</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.util.numpy_support</span> <span class="kn">import</span> <span class="n">vtk_to_numpy</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="kn">import</span> <span class="n">vtkIdList</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkDataObjectTreeIterator</span><span class="p">,</span> <span class="n">vtkImageData</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersExtraction</span> <span class="kn">import</span> <span class="n">vtkExtractBlockUsingDataAssembly</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersFlowPaths</span> <span class="kn">import</span> <span class="n">vtkStreamTracer</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersSources</span> <span class="kn">import</span> <span class="n">vtkSphereSource</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkIOParallelXML</span> <span class="kn">import</span> <span class="n">vtkXMLPartitionedDataSetCollectionWriter</span>
+
+<span class="c1"># Utility function to save simulation input/output datasets to filesystem</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.vtkIOXML</span> <span class="kn">import</span> <span class="n">vtkXMLImageDataWriter</span><span class="p">,</span> <span class="n">vtkXMLPolyDataWriter</span>
+<span class="kn">import</span> <span class="nn">vtkmodules.vtkInteractionStyle</span>
 <span class="kn">from</span> <span class="nn">vtkmodules.vtkRenderingCore</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">vtkActor</span><span class="p">,</span>
     <span class="n">vtkCompositePolyDataMapper</span><span class="p">,</span>
@@ -655,6 +670,45 @@ to download the full example code or to run this example in your browser via Bin
 <span class="c1"># for factory overrides</span>
 <span class="kn">import</span> <span class="nn">vtkmodules.vtkRenderingOpenGL2</span>  <span class="c1"># noqa</span>
 <span class="kn">import</span> <span class="nn">vtkmodules.vtkRenderingUI</span>  <span class="c1"># noqa</span>
+
+
+<span class="k">def</span> <span class="nf">build_magnetic_coils</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">current</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+
+    <span class="n">magpy_coils</span> <span class="o">=</span> <span class="n">magpy</span><span class="o">.</span><span class="n">Collection</span><span class="p">()</span>
+
+    <span class="c1"># Extract blocks under the &quot;coils&quot; node.</span>
+    <span class="n">coil_extractor</span> <span class="o">=</span> <span class="n">vtkExtractBlockUsingDataAssembly</span><span class="p">(</span>
+        <span class="n">assembly_name</span><span class="o">=</span><span class="s2">&quot;Assembly&quot;</span><span class="p">,</span> <span class="n">selector</span><span class="o">=</span><span class="s2">&quot;//coils&quot;</span><span class="p">,</span> <span class="n">input_data</span><span class="o">=</span><span class="n">mesh</span>
+    <span class="p">)</span>
+    <span class="n">coil_extractor</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+    <span class="c1"># Build a magpy current source for every coil.</span>
+    <span class="n">coil_iter</span> <span class="o">=</span> <span class="n">vtkDataObjectTreeIterator</span><span class="p">(</span><span class="n">data_set</span><span class="o">=</span><span class="n">coil_extractor</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+    <span class="n">coil_iter</span><span class="o">.</span><span class="n">visit_only_leaves</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">coil_iter</span><span class="o">.</span><span class="n">InitTraversal</span><span class="p">()</span>
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">coil_iter</span><span class="o">.</span><span class="n">IsDoneWithTraversal</span><span class="p">():</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">vtkIdList</span><span class="p">()</span>
+        <span class="n">coil</span> <span class="o">=</span> <span class="n">coil_iter</span><span class="o">.</span><span class="n">current_data_object</span>
+        <span class="n">coil</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">InitTraversal</span><span class="p">()</span>
+        <span class="k">while</span> <span class="n">coil</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">GetNextCell</span><span class="p">(</span><span class="n">line</span><span class="p">):</span>
+            <span class="n">vertices</span> <span class="o">=</span> <span class="p">[</span><span class="n">coil</span><span class="o">.</span><span class="n">points</span><span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">GetId</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">line</span><span class="o">.</span><span class="n">GetNumberOfIds</span><span class="p">())]</span>
+            <span class="n">magpy_coils</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">magpy</span><span class="o">.</span><span class="n">current</span><span class="o">.</span><span class="n">Polyline</span><span class="p">(</span><span class="n">vertices</span><span class="o">=</span><span class="n">vertices</span><span class="p">,</span> <span class="n">current</span><span class="o">=</span><span class="n">current</span><span class="p">))</span>
+        <span class="n">coil_iter</span><span class="o">.</span><span class="n">GoToNextItem</span><span class="p">()</span>
+
+    <span class="k">return</span> <span class="n">magpy_coils</span>
+
+
+<span class="k">def</span> <span class="nf">save_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.vti&quot;</span><span class="p">):</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">vtkXMLImageDataWriter</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.vtp&quot;</span><span class="p">):</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">vtkXMLPolyDataWriter</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.vtpc&quot;</span><span class="p">):</span>
+        <span class="n">writer</span> <span class="o">=</span> <span class="n">vtkXMLPartitionedDataSetCollectionWriter</span><span class="p">()</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">input_data_object</span> <span class="o">=</span> <span class="n">dataset</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">file_name</span> <span class="o">=</span> <span class="n">file_name</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">Write</span><span class="p">()</span>
+
 
 <span class="c1"># Creates a render window interactor, connects it to a render window.</span>
 <span class="c1"># Switch the interactor style such that left mouse click and drag orbit the camera</span>
@@ -670,13 +724,17 @@ to download the full example code or to run this example in your browser via Bin
 <span class="c1"># Uses light kit for better lit scenes than the default in VTK.</span>
 <span class="n">light_kit</span> <span class="o">=</span> <span class="n">vtkLightKit</span><span class="p">()</span>
 <span class="n">light_kit</span><span class="o">.</span><span class="n">AddLightsToRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">pathlib</span>
 </pre></div>
 </div>
 <p>Load input mesh from a vtkPartitionedDataSetCollection file</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vtkmodules.vtkIOXML</span> <span class="kn">import</span> <span class="n">vtkXMLPartitionedDataSetCollectionReader</span>
 
+<span class="n">path</span> <span class="o">=</span> <span class="n">_download_archive_file_or_folder</span><span class="p">(</span><span class="s1">&#39;reactor.zip&#39;</span><span class="p">,</span> <span class="n">target_file</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
 <span class="n">reader</span> <span class="o">=</span> <span class="n">vtkXMLPartitionedDataSetCollectionReader</span><span class="p">()</span>
-<span class="n">reader</span><span class="o">.</span><span class="n">file_name</span> <span class="o">=</span> <span class="s2">&quot;data/mesh.vtpc&quot;</span>
+<span class="n">reader</span><span class="o">.</span><span class="n">file_name</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span></a><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/reactor/&quot;</span> <span class="o">+</span> <span class="s2">&quot;mesh.vtpc&quot;</span><span class="p">)</span>
 <span class="n">reader</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
 <span class="n">reactor</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">output</span>
 
@@ -688,17 +746,11 @@ to download the full example code or to run this example in your browser via Bin
 </pre></div>
 </div>
 <p>Construct magpy coil objects for each coil in the reactor mesh.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">utils.build_magnetic_coils</span> <span class="kn">import</span> <span class="n">build_magnetic_coils</span>
-
-<span class="n">coils</span> <span class="o">=</span> <span class="n">build_magnetic_coils</span><span class="p">(</span><span class="n">reactor</span><span class="p">,</span> <span class="n">current</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">vtkmodules.util.numpy_support</span> <span class="kn">import</span> <span class="n">vtk_to_numpy</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">coils</span> <span class="o">=</span> <span class="n">build_magnetic_coils</span><span class="p">(</span><span class="n">reactor</span><span class="p">,</span> <span class="n">current</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Compute B, H in a 32x32x32 grid</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonDataModel</span> <span class="kn">import</span> <span class="n">vtkImageData</span>
-
-<span class="n">grid</span> <span class="o">=</span> <span class="n">vtkImageData</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">vtkImageData</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="o">-</span><span class="mi">16</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="n">spacing</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
 <span class="n">grid_points</span> <span class="o">=</span> <span class="n">vtk_to_numpy</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">points</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">coils</span><span class="o">.</span><span class="n">getB</span><span class="p">(</span><span class="n">grid_points</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">point_data</span><span class="o">.</span><span class="n">set_array</span><span class="p">(</span><span class="s2">&quot;B (mT)&quot;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
@@ -707,20 +759,12 @@ to download the full example code or to run this example in your browser via Bin
 </pre></div>
 </div>
 <p>Show coils</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">magpylib</span> <span class="k">as</span> <span class="nn">magpy</span>
-<span class="kn">from</span> <span class="nn">utils.save_dataset</span> <span class="kn">import</span> <span class="n">save_dataset</span>
-
-<span class="n">magpy</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">coils</span><span class="p">,</span> <span class="n">arrow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">magpy</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">coils</span><span class="p">,</span> <span class="n">arrow</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">save_dataset</span><span class="p">(</span><span class="n">grid</span><span class="p">,</span> <span class="s2">&quot;data/solution.vti&quot;</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">vtkmodules.util.execution_model</span> <span class="kn">import</span> <span class="n">select_ports</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersFlowPaths</span> <span class="kn">import</span> <span class="n">vtkStreamTracer</span>
 </pre></div>
 </div>
 <p>Compute streamlines of B field induced by toroidal coils.</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersSources</span> <span class="kn">import</span> <span class="n">vtkSphereSource</span>
-
-<span class="n">trace_streamlines</span> <span class="o">=</span> <span class="n">vtkStreamTracer</span><span class="p">(</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">trace_streamlines</span> <span class="o">=</span> <span class="n">vtkStreamTracer</span><span class="p">(</span>
     <span class="n">integrator_type</span><span class="o">=</span><span class="n">vtkStreamTracer</span><span class="o">.</span><span class="n">RUNGE_KUTTA45</span><span class="p">,</span>
     <span class="n">integration_direction</span><span class="o">=</span><span class="n">vtkStreamTracer</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span>
     <span class="n">initial_integration_step</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
@@ -746,8 +790,6 @@ to download the full example code or to run this example in your browser via Bin
 </div>
 <p>Animate the disk position such that it oscillates between y=-1 and y=1.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <a href="https://docs.python.org/dev/library/itertools.html#itertools.cycle" title="itertools.cycle" class="sphx-glr-backref-module-itertools sphx-glr-backref-type-py-function"><span class="n">cycle</span></a>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 
 <span class="k">class</span> <span class="nc">vtkTimerCallback</span><span class="p">:</span>
