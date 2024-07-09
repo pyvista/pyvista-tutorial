@@ -245,10 +245,8 @@ sphinx_gallery_conf = {
     '\n'
     '    set_plot_theme("document")\n',
     '\n'
-    'import vtkmodules\n'
-    'if not hasattr(vtkmodules "vtkEGLRenderWindow")\n'
-    '    # vtk is not egl.\n'
-    '    pv.start_xvfb()\n'
+'import pyvista as pv\n'
+'pv.start_xvfb()\n'
     'binder': {
         'org': "pyvista",
         'repo': "pyvista-tutorial",
