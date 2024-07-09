@@ -24,7 +24,7 @@ Control Scalar Array
 Extending our simple example to have a dropdown menu to control which
 scalar array is used to color the mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-73
+.. GENERATED FROM PYTHON SOURCE LINES 8-74
 
 .. code-block:: Python
 
@@ -91,10 +91,11 @@ scalar array is used to color the mesh.
                 view = plotter_ui(pl)
                 ctrl.view_update = view.update
 
-    server.start()
+    # Show UI
+    await layout.ready  # noqa
+    layout
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 74-81
+.. GENERATED FROM PYTHON SOURCE LINES 75-82
 
 .. raw:: html
 

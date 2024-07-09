@@ -24,7 +24,7 @@ Using VTK, PyVista, and Trame
 This example demonstrates how to use VTK, PyVista, and Trame together
 to show how the three libraries complement each other.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-63
+.. GENERATED FROM PYTHON SOURCE LINES 8-64
 
 .. code-block:: Python
 
@@ -81,10 +81,11 @@ to show how the three libraries complement each other.
                 view = plotter_ui(pl)
                 ctrl.view_update = view.update
 
-    server.start()
+    # Show UI
+    await layout.ready  # noqa
+    layout
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 64-71
+.. GENERATED FROM PYTHON SOURCE LINES 65-72
 
 .. raw:: html
 

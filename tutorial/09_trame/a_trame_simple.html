@@ -660,7 +660,9 @@ new Trame application with PyVista.</p>
     <span class="k">with</span> <span class="n">layout</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
         <span class="n">view</span> <span class="o">=</span> <span class="n">plotter_ui</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
 
-<span class="n">server</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<span class="c1"># Show UI</span>
+<span class="k">await</span> <span class="n">layout</span><span class="o">.</span><span class="n">ready</span>  <span class="c1"># noqa</span>
+<span class="n">layout</span>
 </pre></div>
 </div>
 <center>

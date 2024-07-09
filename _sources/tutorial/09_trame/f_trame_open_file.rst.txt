@@ -23,7 +23,7 @@ Open Mesh File
 
 An example of opening a mesh file from the browser and viewing it with PyVista.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-69
+.. GENERATED FROM PYTHON SOURCE LINES 8-70
 
 .. code-block:: Python
 
@@ -86,10 +86,11 @@ An example of opening a mesh file from the browser and viewing it with PyVista.
                 view = plotter_ui(pl)
                 ctrl.view_update = view.update
 
-    server.start()
+    # Show UI
+    await layout.ready  # noqa
+    layout
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 70-77
+.. GENERATED FROM PYTHON SOURCE LINES 71-78
 
 .. raw:: html
 

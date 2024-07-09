@@ -23,7 +23,7 @@ Control Scalar Range
 
 Extending our simple example to control the color limits of the mapped scalars.
 
-.. GENERATED FROM PYTHON SOURCE LINES 7-57
+.. GENERATED FROM PYTHON SOURCE LINES 7-58
 
 .. code-block:: Python
 
@@ -75,10 +75,11 @@ Extending our simple example to control the color limits of the mapped scalars.
                 view = plotter_ui(pl)
                 ctrl.view_update = view.update
 
-    server.start()
+    # Show UI
+    await layout.ready  # noqa
+    layout
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 58-65
+.. GENERATED FROM PYTHON SOURCE LINES 59-66
 
 .. raw:: html
 

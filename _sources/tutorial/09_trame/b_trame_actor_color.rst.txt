@@ -24,7 +24,7 @@ Control the Color of an Actor
 Extending our simple example to have a dropdown menu to control the color of
 the actor.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-59
+.. GENERATED FROM PYTHON SOURCE LINES 9-60
 
 .. code-block:: Python
 
@@ -76,10 +76,11 @@ the actor.
                 view = plotter_ui(pl, default_server_rendering=False)
                 ctrl.view_update = view.update
 
-    server.start()
+    # Show UI
+    await layout.ready  # noqa
+    layout
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 60-67
+.. GENERATED FROM PYTHON SOURCE LINES 61-68
 
 .. raw:: html
 
