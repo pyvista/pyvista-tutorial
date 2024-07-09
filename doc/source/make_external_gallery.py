@@ -262,7 +262,7 @@ Here are a list of longer, more technical examples of what PyVista can do!
 
 
 
-"""
+""",
         )
         # Reverse to put the latest items at the top
         for example in list(articles.values())[::-1]:
@@ -276,21 +276,18 @@ Here are a list of longer, more technical examples of what PyVista can do!
     <div class="sphx-glr-clear"></div>
 
 
-"""
+""",
         )
         new_fid.seek(0)
         new_text = new_fid.read()
 
     # check if it's necessary to overwrite the table
     existing = ""
-    if os.path.exists(path):
-        with open(path) as existing_fid:
+    if Path(path).exists():
+        with Path(path).open() as existing_fid:
             existing = existing_fid.read()
 
     # write if different or does not exist
     if new_text != existing:
-        dirname = os.path.dirname(path)
-        if not os.path.exists(dirname):
-            os.makedirs(dirname)
-        with open(path, "w") as fid:
+        with Path(path).open("w", encoding="utf-8") as fid:
             fid.write(new_text)
