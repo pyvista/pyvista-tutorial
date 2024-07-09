@@ -1,0 +1,14 @@
+cmocean
+geovista
+imageio>=2.5.0
+imageio-ffmpeg
+ipywidgets<9.0.0
+jupyterlab<5.0.0
+matplotlib
+pyvista[all]
+sphinx
+tqdm
+trame>=2.5.0
+trame-client>=2.9.4
+trame-server>=2.11.4
+trame-vtk>=2.5.4
