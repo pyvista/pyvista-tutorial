@@ -31,6 +31,9 @@ with SinglePageLayout(server) as layout:
 
 server.start()
 
+# Show UI
+await layout.ready  # noqa
+layout
 ###############################################################################
 # .. raw:: html
 #
