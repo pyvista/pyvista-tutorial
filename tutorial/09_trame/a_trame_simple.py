@@ -29,8 +29,6 @@ with SinglePageLayout(server) as layout:
     with layout.content:
         view = plotter_ui(pl)
 
-server.start()
-
 # Show UI
 await layout.ready  # noqa
 layout
