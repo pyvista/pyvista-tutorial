@@ -13,7 +13,7 @@ def format_icon(title, link, image):
       :text-align: center
       :class-title: pyvista-card-title
 
-      .. image:: ../images/action/{}
+      .. image:: ../../images/action/{}
 """
     return body.format(title, link, image)
 
