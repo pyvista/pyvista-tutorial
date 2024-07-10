@@ -109,7 +109,7 @@ html_use_smartypants = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'pydata_sphinx_theme'
+html_theme = 'sphinx_book_theme'
 html_context = {
     'github_user': 'pyvista',
     'github_repo': 'pyvista-tutorial',
@@ -146,10 +146,8 @@ html_theme_options = {
         },
     ],
     'navigation_with_keys': False,
-}
-
-html_sidebars = {
-    'index': [],
+    'show_navbar_depth': 1,
+    'max_navbar_depth': 3,
 }
 
 # notfound_context = {
