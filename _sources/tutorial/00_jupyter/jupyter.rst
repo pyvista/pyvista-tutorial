@@ -208,7 +208,7 @@ Server-side rendering only
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.777 seconds)
+   **Total running time of the script:** (0 minutes 2.028 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_jupyter_jupyter.py:
