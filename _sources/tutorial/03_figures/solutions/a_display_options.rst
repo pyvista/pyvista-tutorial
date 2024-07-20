@@ -94,10 +94,7 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
 
     Help on method add_mesh in module pyvista.plotting.plotter:
 
-    add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=None, line_width=None, opacity=None, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=None, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=None, smooth_shading=None, split_sharp_edges=None, ambient=None, diffuse=None, specular=None, specular_power=None, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=None, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference='point', log_scale=False, pbr=None, metallic=None, roughness=None, render=True, user_matrix=array([[1., 0., 0., 0.],
-           [0., 1., 0., 0.],
-           [0., 0., 1., 0.],
-           [0., 0., 0., 1.]]), component=None, emissive=None, copy_mesh=False, backface_params=None, show_vertices=None, edge_opacity=None, **kwargs) method of pyvista.plotting.plotter.Plotter instance
+    add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=None, line_width=None, opacity=None, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=None, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=None, smooth_shading=None, split_sharp_edges=None, ambient=None, diffuse=None, specular=None, specular_power=None, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=None, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference='point', log_scale=False, pbr=None, metallic=None, roughness=None, render=True, user_matrix=None, component=None, emissive=None, copy_mesh=False, backface_params=None, show_vertices=None, edge_opacity=None, **kwargs) method of pyvista.plotting.plotter.Plotter instance
         Add any PyVista/VTK mesh or dataset that PyVista can wrap to the scene.
     
         This method is using a mesh representation to view the surfaces
@@ -533,6 +530,20 @@ See also https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_
         ...     render_points_as_spheres=False,
         ...     show_scalar_bar=False,
         ... )
+    
+        Plot spheres using `points_gaussian` style and scale them by radius.
+    
+        >>> N_SPHERES = 1_000_000
+        >>> rng = np.random.default_rng(seed=0)
+        >>> pos = rng.random((N_SPHERES, 3))
+        >>> rad = rng.random(N_SPHERES) * 0.01
+        >>> pdata = pv.PolyData(pos)
+        >>> pdata['radius'] = rad
+        >>> pdata.plot(
+        ...     style='points_gaussian',
+        ...     emissive=False,
+        ...     render_points_as_spheres=True,
+        ... )
 
 
 
@@ -832,7 +843,7 @@ There you go! Those are a few of the most commonly used display options!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.043 seconds)
+   **Total running time of the script:** (0 minutes 2.989 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py:

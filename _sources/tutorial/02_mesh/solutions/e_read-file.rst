@@ -81,7 +81,7 @@ airplane mesh.
     
         Parameters
         ----------
-        filename : str
+        filename : str, Path
             The string path to the file to read. If a list of files is
             given, a :class:`pyvista.MultiBlock` dataset is returned with
             each file being a separate block in the dataset.
@@ -160,6 +160,8 @@ extensions are listed in an internal function:
         | ``.case``      | :class:`pyvista.EnSightReader`              |
         +----------------+---------------------------------------------+
         | ``.cgns``      | :class:`pyvista.CGNSReader`                 |
+        +----------------+---------------------------------------------+
+        | ``.cube``      | :class:`pyvista.GaussianCubeReader`         |
         +----------------+---------------------------------------------+
         | ``.dat``       | :class:`pyvista.TecplotReader`              |
         +----------------+---------------------------------------------+
@@ -241,6 +243,8 @@ extensions are listed in an internal function:
         +----------------+---------------------------------------------+
         | ``.tri``       | :class:`pyvista.BinaryMarchingCubesReader`  |
         +----------------+---------------------------------------------+
+        | ``.vrt``       | :class:`pyvista.ProStarReader`              |
+        +----------------+---------------------------------------------+
         | ``.vti``       | :class:`pyvista.XMLImageDataReader`         |
         +----------------+---------------------------------------------+
         | ``.vtk``       | :class:`pyvista.VTKDataSetReader`           |
@@ -259,10 +263,12 @@ extensions are listed in an internal function:
         +----------------+---------------------------------------------+
         | ``.xdmf``      | :class:`pyvista.XdmfReader`                 |
         +----------------+---------------------------------------------+
+        | ``.vtpd``      | :class:`pyvista.XMLPartitionedDataSetReader`|
+        +----------------+---------------------------------------------+
     
         Parameters
         ----------
-        filename : str
+        filename : str, Path
             The string path to the file to read.
     
         force_ext : str, optional
@@ -659,7 +665,7 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.397 seconds)
+   **Total running time of the script:** (0 minutes 5.074 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_e_read-file.py:

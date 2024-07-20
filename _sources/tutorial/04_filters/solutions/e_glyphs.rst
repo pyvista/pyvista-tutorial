@@ -78,7 +78,7 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
 
     Help on method glyph in module pyvista.core.filters.data_set:
 
-    glyph(orient=True, scale=True, factor=1.0, geom=None, indices=None, tolerance=None, absolute=False, clamping=False, rng=None, progress_bar=False) method of pyvista.core.pointset.PolyData instance
+    glyph(orient=True, scale=True, factor=1.0, geom=None, indices=None, tolerance=None, absolute=False, clamping=False, rng=None, color_mode='scale', progress_bar=False) method of pyvista.core.pointset.PolyData instance
         Copy a geometric representation (called a glyph) to the input dataset.
     
         The glyph may be oriented along the input vectors, and it may
@@ -133,6 +133,13 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
         rng : sequence[float], optional
             Set the range of values to be considered by the filter
             when scalars values are provided.
+    
+        color_mode : str, optional, default: ``'scale'``
+            If ``'scale'`` , color the glyphs by scale.
+            If ``'scalar'`` , color the glyphs by scalar.
+            If ``'vector'`` , color the glyphs by vector.
+    
+            .. versionadded:: 0.44
     
         progress_bar : bool, default: False
             Display a progress bar to indicate progress.
@@ -384,7 +391,7 @@ Plot the arrows and the sphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.270 seconds)
+   **Total running time of the script:** (0 minutes 1.267 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py:

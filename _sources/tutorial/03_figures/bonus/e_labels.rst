@@ -60,7 +60,7 @@ point labels to a scene.
 
     Help on function add_point_labels in module pyvista.plotting.plotter:
 
-    add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, text_color=None, font_family=None, shadow=False, show_points=True, point_color=None, point_size=None, name=None, shape_color='grey', shape='rounded_rect', fill_shape=True, margin=3, shape_opacity=1.0, pickable=False, render_points_as_spheres=False, tolerance=0.001, reset_camera=None, always_visible=False, render=True)
+    add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, text_color=None, font_family=None, shadow=False, show_points=True, point_color=None, point_size=None, name=None, shape_color='grey', shape='rounded_rect', fill_shape=True, margin=3, shape_opacity=1.0, pickable=False, render_points_as_spheres=False, tolerance=0.001, reset_camera=None, always_visible=False, render=True, justification_horizontal=None, justification_vertical=None, background_color=None, background_opacity=None)
         Create a point actor with one label from list labels assigned to each point.
     
         Parameters
@@ -156,6 +156,34 @@ point labels to a scene.
         render : bool, default: True
             Force a render when ``True``.
     
+        justification_horizontal : str, optional
+            Text's horizontal justification.
+            Should be either "left", "center" or "right".
+    
+            .. warning::
+                If the justification is not default,
+                the shape will be out of alignment with the label.
+                If you use other than default,
+                Please use the background color.
+                See: https://github.com/pyvista/pyvista/pull/5407
+    
+        justification_vertical : str, optional
+            Text's vertical justification.
+            Should be either "bottom", "center" or "top".
+    
+            .. warning::
+                If the justification is not default,
+                the shape will be out of alignment with the label.
+                If you use other than default,
+                Please use the background color.
+                See: https://github.com/pyvista/pyvista/pull/5407
+    
+        background_color : pyvista.Color, optional
+            Background color of text's property.
+    
+        background_opacity : pyvista.Color, optional
+            Background opacity of text's property.
+    
         Returns
         -------
         vtk.vtkActor2D
@@ -237,9 +265,9 @@ node:
     <tr><td>N Cells</td><td>10</td></tr>
     <tr><td>N Points</td><td>10</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>7.774e-03, 9.537e-01</td></tr>
-    <tr><td>Y Bounds</td><td>7.126e-02, 9.709e-01</td></tr>
-    <tr><td>Z Bounds</td><td>1.010e-03, 7.973e-01</td></tr>
+    <tr><td>X Bounds</td><td>3.390e-02, 6.318e-01</td></tr>
+    <tr><td>Y Bounds</td><td>5.670e-02, 9.202e-01</td></tr>
+    <tr><td>Z Bounds</td><td>2.036e-01, 9.645e-01</td></tr>
     <tr><td>N Arrays</td><td>1</td></tr>
     </table>
 
@@ -478,7 +506,7 @@ This example will label each point with their scalar values
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.798 seconds)
+   **Total running time of the script:** (0 minutes 0.792 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_e_labels.py:
