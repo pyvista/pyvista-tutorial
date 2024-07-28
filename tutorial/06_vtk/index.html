@@ -556,7 +556,7 @@ and “components” to describe the type of data (1 = scalars/scalar
 fields, 2 = vectors/vector fields, n = tensors/tensor
 fields). Here, shape and values are stored concretely in one
 variable.</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.44.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> wraps <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtk.vtkImageData</a>, just with a
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.44.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> wraps <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtk.vtkImageData</a>, just with a
 different name; they are both containers of evenly spaced points. Your
 data does not have to be an “image” to use it with
 <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtk.vtkImageData</a>; rather, like images, values in the dataset are
@@ -651,11 +651,11 @@ that to a  <a class="reference external" href="https://vtk.org/doc/nightly/html/
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.44.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> to construct a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a>
+<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.44.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> to construct a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a>
 object, but this is unnecessary in almost all situations.</p>
 </div>
-<p>Since the end goal is to construct a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="(in PyVista v0.44.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span></code></a>, you would simply pass the
-<code class="docutils literal notranslate"><span class="pre">np_points</span></code> array to the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.44.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> constructor:</p>
+<p>Since the end goal is to construct a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="(in PyVista v0.44.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span></code></a>, you would simply pass the
+<code class="docutils literal notranslate"><span class="pre">np_points</span></code> array to the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.44.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> constructor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="n">poly_data</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">np_points</span><span class="p">)</span>
 </pre></div>
@@ -678,7 +678,7 @@ VTK you would normally have to loop using <code class="xref py py-func docutils 
 </pre></div>
 </div>
 <p>In PyVista, we can assign this directly in the constructor and then
-access it (or change it) from the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="(in PyVista v0.44.0)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">faces</span></code></a> attribute.</p>
+access it (or change it) from the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="(in PyVista v0.44.1)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">faces</span></code></a> attribute.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">faces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">poly_data</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">np_points</span><span class="p">,</span> <span class="n">faces</span><span class="p">)</span>
 <span class="n">poly_data</span><span class="o">.</span><span class="n">faces</span>
@@ -775,7 +775,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
 the flexibility of PyVista and the raw power of VTK.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Polygon.html#pyvista.Polygon" title="(in PyVista v0.44.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Polygon()</span></code></a> for a one line replacement of
+<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Polygon.html#pyvista.Polygon" title="(in PyVista v0.44.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Polygon()</span></code></a> for a one line replacement of
 the above VTK code.</p>
 </div>
 <section id="vtk-algorithms">
