@@ -26,7 +26,7 @@ sphinx-copybutton==0.5.2
 sphinx-gallery==0.15.0
 sphinx-notfound-page==1.0.4
 sphinx_design==0.6.0
-sphinxcontrib-websupport==1.2.7
+sphinxcontrib-websupport==2.0.0
 sphinxcontrib.asciinema
 trame==3.6.3
 trame-client==3.2.1
