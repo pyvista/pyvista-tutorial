@@ -16,9 +16,8 @@ numpydoc==1.7.0
 osmnx==1.9.4
 pypandoc==1.13
 pytest-sphinx==0.6.3
-pyvista==0.44.1
 pyvista-xarray==0.1.7
-pyvista[all]==0.44.0
+pyvista[all]==0.44.1
 scipy==1.12.0
 Sphinx==7.3.7
 sphinx-autobuild==2024.4.16
