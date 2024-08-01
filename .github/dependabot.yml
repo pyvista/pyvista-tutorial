@@ -5,6 +5,7 @@ updates:
     insecure-external-code-execution: allow
     schedule:
       interval: "monthly"
+    open-pull-requests-limit: 100
     groups:
       trame:
         patterns:
@@ -14,10 +15,12 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+    open-pull-requests-limit: 100
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 100
     labels:
       - "maintenance"
       - "dependencies"
