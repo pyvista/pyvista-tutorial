@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_09_trame_c_trame_scalars.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -126,6 +126,10 @@ scalar array is used to color the mesh.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: c_trame_scalars.py <c_trame_scalars.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: c_trame_scalars.zip <c_trame_scalars.zip>`
 
 
 .. only:: html

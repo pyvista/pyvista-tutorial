@@ -397,10 +397,11 @@ Exercises
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="VTK is primarily developed in C++ and uses chained setter and getter commands to access data. I...">
+    <div class="sphx-glr-thumbcontainer" tooltip="VTK is primarily developed in C++ and uses chained setter and getter commands to access data. Instead, PyVista wraps the VTK data types into numpy arrays so that users can benefit from its bracket syntax and fancy indexing.  This section demonstrates the difference between the two approaches in a series of examples.">
 
 .. only:: html
 
@@ -417,7 +418,7 @@ Exercises
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="PyVista is best known for is easy to use plotting API -- being familiar to most Python users al...">
+    <div class="sphx-glr-thumbcontainer" tooltip="PyVista is best known for is easy to use plotting API -- being familiar to most Python users already experienced with libraries like Matplotlib. Many people benefit from combining the power of VTK&#x27;s Python bindings for their data pipelines and the flexibility and simplicity of PyVista for 3D rendering. The following section demonstrates this usage scenario.">
 
 .. only:: html
 
@@ -499,6 +500,8 @@ Exercises
       <div class="sphx-glr-thumbnail-title">VTK's Next Generation API</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

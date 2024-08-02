@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -843,7 +843,7 @@ There you go! Those are a few of the most commonly used display options!
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.059 seconds)
+   **Total running time of the script:** (0 minutes 2.948 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_a_display_options.py:
@@ -866,6 +866,10 @@ There you go! Those are a few of the most commonly used display options!
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_display_options.py <a_display_options.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_display_options.zip <a_display_options.zip>`
 
 
 .. only:: html

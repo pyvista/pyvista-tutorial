@@ -138,10 +138,11 @@ along with this lesson.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This section demonstrates how to use PyVista to read and plot 3D data using the pyvista.example...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This section demonstrates how to use PyVista to read and plot 3D data using the pyvista.examples.downloads module and external files.">
 
 .. only:: html
 
@@ -155,6 +156,8 @@ along with this lesson.
       <div class="sphx-glr-thumbnail-title">Basic Usage Lesson</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
@@ -175,6 +178,7 @@ Exercises
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -193,6 +197,8 @@ Exercises
     </div>
 
 
+.. thumbnail-parent-div-close
+
 .. raw:: html
 
     </div>
@@ -208,6 +214,7 @@ These are the solutions to the above examples.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -225,6 +232,8 @@ These are the solutions to the above examples.
       <div class="sphx-glr-thumbnail-title">Download and Plot Examples</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

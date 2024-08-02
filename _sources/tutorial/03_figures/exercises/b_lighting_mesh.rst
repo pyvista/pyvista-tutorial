@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_exercises_b_lighting_mesh.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -151,6 +151,10 @@ For detailed control over lighting conditions in general see the
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: b_lighting_mesh.py <b_lighting_mesh.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: b_lighting_mesh.zip <b_lighting_mesh.zip>`
 
 
 .. only:: html

@@ -11,6 +11,7 @@ Solutions
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -79,6 +80,8 @@ Solutions
       <div class="sphx-glr-thumbnail-title">Plotting Glyphs (Vectors or PolyData)</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

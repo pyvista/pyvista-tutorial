@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_06_vtk_d_wasm.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -268,6 +268,10 @@ Only needed at first execution
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: d_wasm.py <d_wasm.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: d_wasm.zip <d_wasm.zip>`
 
 
 .. only:: html

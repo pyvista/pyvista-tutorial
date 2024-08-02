@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_bonus_g_orbit.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -175,7 +175,7 @@ Orbit around the Mt. St Helens dataset.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 0.029 seconds)
+   **Total running time of the script:** (0 minutes 59.359 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_g_orbit.py:
@@ -198,6 +198,10 @@ Orbit around the Mt. St Helens dataset.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: g_orbit.py <g_orbit.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: g_orbit.zip <g_orbit.zip>`
 
 
 .. only:: html

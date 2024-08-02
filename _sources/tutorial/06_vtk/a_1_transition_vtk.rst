@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_06_vtk_a_1_transition_vtk.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -332,12 +332,12 @@ that to a  `vtkPoints`_ class.  For example:
 
  .. code-block:: none
 
-    vtkPoints (0x560266b861a0)
+    vtkPoints (0x55da6d81eca0)
       Debug: Off
-      Modified Time: 13984386
+      Modified Time: 14382854
       Reference Count: 1
       Registered Events: (none)
-      Data: 0x560266b5abd0
+      Data: 0x55da6e6fc6e0
       Data Array Name: Points
       Number Of Points: 3
       Bounds: 
@@ -565,7 +565,7 @@ you may want to use VTK classes directly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.689 seconds)
+   **Total running time of the script:** (0 minutes 1.671 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_a_1_transition_vtk.py:
@@ -588,6 +588,10 @@ you may want to use VTK classes directly.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_1_transition_vtk.py <a_1_transition_vtk.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_1_transition_vtk.zip <a_1_transition_vtk.zip>`
 
 
 .. only:: html

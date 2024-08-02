@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_01_basic_a_lesson_basic.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -351,7 +351,7 @@ with:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.025 seconds)
+   **Total running time of the script:** (0 minutes 4.886 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_a_lesson_basic.py:
@@ -374,6 +374,10 @@ with:
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_lesson_basic.py <a_lesson_basic.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_lesson_basic.zip <a_lesson_basic.zip>`
 
 
 .. only:: html

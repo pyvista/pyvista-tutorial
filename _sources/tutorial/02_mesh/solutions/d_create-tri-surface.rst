@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_solutions_d_create-tri-surface.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -76,11 +76,11 @@ First, create some points for the surface.
  .. code-block:: none
 
 
-    array([[-195.93138815, -199.02274549,    2.02427595],
-           [-180.1078007 , -199.02274549,    2.72570342],
-           [-156.76353531, -199.02274549,    4.03871764],
-           [-134.66163563, -199.02274549,    5.57325754],
-           [-114.88150697, -199.02274549,    7.13333946]])
+    array([[-197.39473987, -198.41701498,    1.99066833],
+           [-179.0953446 , -198.41701498,    2.80933408],
+           [-162.85770511, -198.41701498,    3.70829792],
+           [-138.31631547, -198.41701498,    5.36627735],
+           [-118.06354884, -198.41701498,    6.95704292]])
 
 
 
@@ -322,8 +322,8 @@ Clean Edges & Triangulations
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>2.656e-02, 9.293e+00</td></tr>
-    <tr><td>Y Bounds</td><td>7.886e-03, 9.284e+00</td></tr>
+    <tr><td>X Bounds</td><td>2.764e-02, 9.228e+00</td></tr>
+    <tr><td>Y Bounds</td><td>1.671e-02, 9.263e+00</td></tr>
     <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
@@ -477,7 +477,7 @@ added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.033 seconds)
+   **Total running time of the script:** (0 minutes 0.973 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_d_create-tri-surface.py:
@@ -500,6 +500,10 @@ added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: d_create-tri-surface.py <d_create-tri-surface.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: d_create-tri-surface.zip <d_create-tri-surface.zip>`
 
 
 .. only:: html

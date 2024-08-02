@@ -313,6 +313,7 @@ bottom of the page and clicking on either the ``*.py`` (script) or ``*.ipynb``
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -330,6 +331,8 @@ bottom of the page and clicking on either the ``*.py`` (script) or ``*.ipynb``
       <div class="sphx-glr-thumbnail-title">Create Basic Geometric Objects</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

@@ -11,6 +11,7 @@ Do it yourself
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -31,7 +32,7 @@ Do it yourself
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Control aspects of the rendered mesh&#x27;s lighting such as Ambient, Diffuse, and Specular. These o...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Control aspects of the rendered mesh&#x27;s lighting such as Ambient, Diffuse, and Specular. These options only work if the lighting argument to add_mesh is True (it&#x27;s True by default).">
 
 .. only:: html
 
@@ -48,7 +49,7 @@ Do it yourself
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Eye-Dome Lighting (EDL) is a non-photorealistic, image-based shading technique designed to impr...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Eye-Dome Lighting (EDL) is a non-photorealistic, image-based shading technique designed to improve depth perception in scientific visualization images. To learn more, please see `this blog post`_.">
 
 .. only:: html
 
@@ -62,6 +63,8 @@ Do it yourself
       <div class="sphx-glr-thumbnail-title">Eye Dome Lighting</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

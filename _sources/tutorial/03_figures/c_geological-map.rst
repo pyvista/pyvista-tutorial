@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_c_geological-map.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -334,7 +334,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 14.521 seconds)
+   **Total running time of the script:** (0 minutes 13.963 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_c_geological-map.py:
@@ -357,6 +357,10 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: c_geological-map.py <c_geological-map.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: c_geological-map.zip <c_geological-map.zip>`
 
 
 .. only:: html

@@ -13,6 +13,7 @@ These are the solutions to the above examples.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -30,6 +31,8 @@ These are the solutions to the above examples.
       <div class="sphx-glr-thumbnail-title">Download and Plot Examples</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

@@ -180,6 +180,7 @@ setting the following flag to ``True`` or ``False``:
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -197,6 +198,8 @@ setting the following flag to ``True`` or ``False``:
       <div class="sphx-glr-thumbnail-title">Test out PyVista's Jupyter Backend</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

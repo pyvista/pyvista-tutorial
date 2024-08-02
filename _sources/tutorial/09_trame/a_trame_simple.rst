@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_09_trame_a_trame_simple.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -86,6 +86,10 @@ new Trame application with PyVista.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_trame_simple.py <a_trame_simple.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_trame_simple.zip <a_trame_simple.zip>`
 
 
 .. only:: html

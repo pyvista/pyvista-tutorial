@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_01_basic_exercises_a_load_examples_exercise.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -169,6 +169,10 @@ one from the following sources:
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_load_examples_exercise.py <a_load_examples_exercise.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_load_examples_exercise.zip <a_load_examples_exercise.zip>`
 
 
 .. only:: html

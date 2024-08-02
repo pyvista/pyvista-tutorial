@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_09_trame_d_trame_scalar_range.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -110,6 +110,10 @@ Extending our simple example to control the color limits of the mapped scalars.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: d_trame_scalar_range.py <d_trame_scalar_range.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: d_trame_scalar_range.zip <d_trame_scalar_range.zip>`
 
 
 .. only:: html

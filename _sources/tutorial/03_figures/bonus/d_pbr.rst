@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_bonus_d_pbr.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -253,7 +253,7 @@ Combine custom lighting and physically based rendering.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (13 minutes 14.881 seconds)
+   **Total running time of the script:** (12 minutes 39.847 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_d_pbr.py:
@@ -276,6 +276,10 @@ Combine custom lighting and physically based rendering.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: d_pbr.py <d_pbr.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: d_pbr.zip <d_pbr.zip>`
 
 
 .. only:: html

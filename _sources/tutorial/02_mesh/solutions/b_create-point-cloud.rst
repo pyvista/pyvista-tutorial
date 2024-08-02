@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_solutions_b_create-point-cloud.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -79,11 +79,11 @@ locations.
  .. code-block:: none
 
 
-    pyvista_ndarray([[4.81118075e+05, 4.40020650e+06, 1.76942004e+03],
-                     [4.81057175e+05, 4.40020210e+06, 1.75834998e+03],
-                     [4.80982075e+05, 4.40020710e+06, 1.77350000e+03],
-                     [4.80995175e+05, 4.40020270e+06, 1.77094995e+03],
-                     [4.81005975e+05, 4.40017200e+06, 1.76021997e+03]])
+    pyvista_ndarray([[4.81110675e+05, 4.40010230e+06, 1.77858997e+03],
+                     [4.81060375e+05, 4.40019970e+06, 1.75842004e+03],
+                     [4.81119475e+05, 4.40021080e+06, 1.76945996e+03],
+                     [4.81123775e+05, 4.40008540e+06, 1.76043994e+03],
+                     [4.81002875e+05, 4.40016800e+06, 1.76039001e+03]])
 
 
 
@@ -116,7 +116,7 @@ data or your own project, create a PyVista mesh using those points.
     <tr><td>N Strips</td><td>0</td></tr>
     <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
     <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-    <tr><td>Z Bounds</td><td>1.754e+03, 1.785e+03</td></tr>
+    <tr><td>Z Bounds</td><td>1.754e+03, 1.784e+03</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -333,11 +333,11 @@ This time, we're going to create a totally new, random point cloud containing
  .. code-block:: none
 
 
-    pyvista_ndarray([[ 9.42646557e-01,  3.32818775e-01,  2.54780441e-02],
-                     [ 3.40663274e-01,  4.61616554e-01, -8.19059638e-01],
-                     [ 5.21806193e-01, -6.23278214e-01, -5.82445333e-01],
-                     [ 6.46927963e-01,  2.76135344e-04, -7.62551070e-01],
-                     [ 3.99039702e-01,  8.95300567e-01,  1.98000530e-01]])
+    pyvista_ndarray([[ 0.60865222,  0.63858263, -0.47090838],
+                     [ 0.88684632, -0.4242569 , -0.18305651],
+                     [-0.04391715,  0.73326395,  0.67852433],
+                     [-0.58555184, -0.80590389,  0.0874526 ],
+                     [ 0.50095652,  0.7571888 , -0.41917501]])
 
 
 
@@ -432,7 +432,7 @@ for more details).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.656 seconds)
+   **Total running time of the script:** (0 minutes 5.590 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_b_create-point-cloud.py:
@@ -455,6 +455,10 @@ for more details).
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: b_create-point-cloud.py <b_create-point-cloud.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: b_create-point-cloud.zip <b_create-point-cloud.zip>`
 
 
 .. only:: html

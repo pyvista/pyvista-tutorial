@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_a_lesson_figures.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -538,7 +538,7 @@ And bounds similarly with :func:`pyvista.Plotter.show_bounds`
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.065 seconds)
+   **Total running time of the script:** (0 minutes 4.874 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_a_lesson_figures.py:
@@ -561,6 +561,10 @@ And bounds similarly with :func:`pyvista.Plotter.show_bounds`
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_lesson_figures.py <a_lesson_figures.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_lesson_figures.zip <a_lesson_figures.zip>`
 
 
 .. only:: html

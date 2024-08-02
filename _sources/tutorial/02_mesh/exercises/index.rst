@@ -11,10 +11,11 @@ Do it yourself
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Create a pyvista.PolyData object from a point cloud of vertices and scalar arrays for those poi...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Create a pyvista.PolyData object from a point cloud of vertices and scalar arrays for those points.">
 
 .. only:: html
 
@@ -79,6 +80,8 @@ Do it yourself
       <div class="sphx-glr-thumbnail-title">Load and Plot from a File</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -391,7 +391,7 @@ Plot the arrows and the sphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.288 seconds)
+   **Total running time of the script:** (0 minutes 1.261 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py:
@@ -414,6 +414,10 @@ Plot the arrows and the sphere.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: e_glyphs.py <e_glyphs.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: e_glyphs.zip <e_glyphs.zip>`
 
 
 .. only:: html

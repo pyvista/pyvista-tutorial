@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_08_widgets_g_sphere-widget.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -344,7 +344,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.447 seconds)
+   **Total running time of the script:** (0 minutes 1.329 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_g_sphere-widget.py:
@@ -367,6 +367,10 @@ And here is a screen capture of a user interacting with this
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: g_sphere-widget.py <g_sphere-widget.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: g_sphere-widget.zip <g_sphere-widget.zip>`
 
 
 .. only:: html

@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_04_filters_solutions_d_contouring.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -372,7 +372,7 @@ of 50 and 200
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 9.044 seconds)
+   **Total running time of the script:** (0 minutes 8.742 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_d_contouring.py:
@@ -395,6 +395,10 @@ of 50 and 200
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: d_contouring.py <d_contouring.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: d_contouring.zip <d_contouring.zip>`
 
 
 .. only:: html

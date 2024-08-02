@@ -33,10 +33,11 @@ Widget Examples
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The box widget can be enabled and disabled by the pyvista.Plotter.add_box_widget and pyvista.Pl...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The box widget can be enabled and disabled by the pyvista.Plotter.add_box_widget and pyvista.Plotter.clear_box_widgets methods respectively. When enabling the box widget, you must provide a custom callback function otherwise the box would appear and do nothing - the callback functions are what allow us to leverage the widget to perform a task like clipping/cropping.">
 
 .. only:: html
 
@@ -70,7 +71,7 @@ Widget Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The line widget can be enabled and disabled by the pyvista.Plotter.add_line_widget and pyvista....">
+    <div class="sphx-glr-thumbcontainer" tooltip="The line widget can be enabled and disabled by the pyvista.Plotter.add_line_widget and pyvista.Plotter.clear_line_widgets methods respectively. Unfortunately, PyVista does not have any helper methods to utilize this widget, so it is necessary to pass a custom callback method.">
 
 .. only:: html
 
@@ -104,7 +105,7 @@ Widget Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The plane widget can be enabled and disabled by the pyvista.Plotter.add_plane_widget and pyvist...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The plane widget can be enabled and disabled by the pyvista.Plotter.add_plane_widget and pyvista.Plotter.clear_plane_widgets methods respectively. As with all widgets, you must provide a custom callback method to utilize that plane. Considering that planes are most commonly used for clipping and slicing meshes, we have included two helper methods for doing those tasks!">
 
 .. only:: html
 
@@ -121,7 +122,7 @@ Widget Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The slider widget can be enabled and disabled by the pyvista.Plotter.add_slider_widget and pyvi...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The slider widget can be enabled and disabled by the pyvista.Plotter.add_slider_widget and pyvista.Plotter.clear_slider_widgets methods respectively. This is one of the most versatile widgets as it can control a value that can be used for just about anything.">
 
 .. only:: html
 
@@ -138,7 +139,7 @@ Widget Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="The sphere widget can be enabled and disabled by the pyvista.Plotter.add_sphere_widget and pyvi...">
+    <div class="sphx-glr-thumbcontainer" tooltip="The sphere widget can be enabled and disabled by the pyvista.Plotter.add_sphere_widget and pyvista.Plotter.clear_sphere_widgets methods respectively. This is a very versatile widget as it can control vertex location that can be used to control or update the location of just about anything.">
 
 .. only:: html
 
@@ -155,7 +156,7 @@ Widget Examples
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip=" A spline widget can be enabled and disabled by the pyvista.Plotter.add_spline_widget and pyvis...">
+    <div class="sphx-glr-thumbcontainer" tooltip=" A spline widget can be enabled and disabled by the pyvista.Plotter.add_spline_widget and pyvista.Plotter.clear_spline_widgets methods respectively. This widget allows users to interactively create a poly line (spline) through a scene and use that spline.">
 
 .. only:: html
 
@@ -169,6 +170,8 @@ Widget Examples
       <div class="sphx-glr-thumbnail-title">Spline Widget</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

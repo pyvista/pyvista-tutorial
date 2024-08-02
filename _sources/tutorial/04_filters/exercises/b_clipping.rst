@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_04_filters_exercises_b_clipping.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -288,6 +288,10 @@ Plot comparison
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: b_clipping.py <b_clipping.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: b_clipping.zip <b_clipping.zip>`
 
 
 .. only:: html

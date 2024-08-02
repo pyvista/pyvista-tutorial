@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_00_jupyter_jupyter.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -208,7 +208,7 @@ Server-side rendering only
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.804 seconds)
+   **Total running time of the script:** (0 minutes 1.827 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_jupyter_jupyter.py:
@@ -231,6 +231,10 @@ Server-side rendering only
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: jupyter.py <jupyter.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: jupyter.zip <jupyter.zip>`
 
 
 .. only:: html

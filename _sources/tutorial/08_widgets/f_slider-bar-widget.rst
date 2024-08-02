@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_08_widgets_f_slider-bar-widget.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -116,7 +116,7 @@ After interacting with the scene, the threshold mesh is available as:
  .. code-block:: none
 
 
-    [UnstructuredGrid (0x7f643b797d60)
+    [UnstructuredGrid (0x7f0a41234040)
       N Cells:    295424
       N Points:   394455
       X Bounds:   3.615e+01, 1.178e+02
@@ -212,7 +212,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.353 seconds)
+   **Total running time of the script:** (0 minutes 3.007 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_f_slider-bar-widget.py:
@@ -235,6 +235,10 @@ And here is a screen capture of a user interacting with this
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: f_slider-bar-widget.py <f_slider-bar-widget.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: f_slider-bar-widget.zip <f_slider-bar-widget.zip>`
 
 
 .. only:: html

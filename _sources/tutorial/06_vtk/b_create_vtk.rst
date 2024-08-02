@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_06_vtk_b_create_vtk.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -89,7 +89,7 @@ Add point data
  .. code-block:: none
 
 
-    <vtkmodules.vtkCommonDataModel.vtkImageData(0x560262bf7490) at 0x7f6416f8ca60>
+    <vtkmodules.vtkCommonDataModel.vtkImageData(0x55da8716db50) at 0x7f0a70fd3940>
 
 
 
@@ -176,7 +176,7 @@ Create ``vtkStructuredGrid``
  .. code-block:: none
 
 
-    <vtkmodules.vtkCommonDataModel.vtkStructuredGrid(0x56026a9ebea0) at 0x7f6443a4bf40>
+    <vtkmodules.vtkCommonDataModel.vtkStructuredGrid(0x55da6f7be750) at 0x7f0a3c3d3be0>
 
 
 
@@ -263,7 +263,7 @@ Plot with PyVista for simplicity
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.590 seconds)
+   **Total running time of the script:** (0 minutes 0.559 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_b_create_vtk.py:
@@ -286,6 +286,10 @@ Plot with PyVista for simplicity
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: b_create_vtk.py <b_create_vtk.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: b_create_vtk.zip <b_create_vtk.zip>`
 
 
 .. only:: html

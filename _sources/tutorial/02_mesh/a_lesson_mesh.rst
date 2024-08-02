@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_a_lesson_mesh.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -65,11 +65,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
  .. code-block:: none
 
 
-    array([[0.23802112, 0.71140587, 0.59002858],
-           [0.71417423, 0.9074139 , 0.0559842 ],
-           [0.08764128, 0.97751762, 0.23330664],
-           [0.68692743, 0.22324409, 0.64813148],
-           [0.57643993, 0.37576664, 0.26857821]])
+    array([[0.88163037, 0.02199245, 0.421893  ],
+           [0.16331763, 0.55492318, 0.06991295],
+           [0.13697311, 0.19381913, 0.4590698 ],
+           [0.27750939, 0.4001201 , 0.5130438 ],
+           [0.90576757, 0.21082322, 0.95045805]])
 
 
 
@@ -98,9 +98,9 @@ Pass numpy array of points (n by 3) to PolyData
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>2.905e-04, 9.955e-01</td></tr>
-    <tr><td>Y Bounds</td><td>2.908e-03, 9.816e-01</td></tr>
-    <tr><td>Z Bounds</td><td>2.709e-02, 9.912e-01</td></tr>
+    <tr><td>X Bounds</td><td>3.439e-04, 9.856e-01</td></tr>
+    <tr><td>Y Bounds</td><td>3.976e-03, 9.976e-01</td></tr>
+    <tr><td>Z Bounds</td><td>6.416e-04, 9.896e-01</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -591,7 +591,7 @@ Note how this varies from assigning scalars to each point
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.947 seconds)
+   **Total running time of the script:** (0 minutes 2.831 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_a_lesson_mesh.py:
@@ -614,6 +614,10 @@ Note how this varies from assigning scalars to each point
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_lesson_mesh.py <a_lesson_mesh.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_lesson_mesh.zip <a_lesson_mesh.zip>`
 
 
 .. only:: html

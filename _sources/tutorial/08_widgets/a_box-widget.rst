@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_08_widgets_a_box-widget.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -117,7 +117,7 @@ After interacting with the scene, the clipped mesh is available as:
  .. code-block:: none
 
 
-    [UnstructuredGrid (0x7f6443ac2e60)
+    [UnstructuredGrid (0x7f0a538b1d80)
       N Cells:    2018232
       N Points:   1009118
       X Bounds:   -1.194e+02, 1.194e+02
@@ -140,7 +140,7 @@ After interacting with the scene, the clipped mesh is available as:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 14.613 seconds)
+   **Total running time of the script:** (0 minutes 13.842 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_a_box-widget.py:
@@ -163,6 +163,10 @@ After interacting with the scene, the clipped mesh is available as:
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_box-widget.py <a_box-widget.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_box-widget.zip <a_box-widget.zip>`
 
 
 .. only:: html

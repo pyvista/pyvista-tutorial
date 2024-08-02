@@ -11,10 +11,11 @@ Bonus Content
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Video games like Minecraft use Perlin noise to create terrain.  Here, we create a voxelized mes...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Video games like Minecraft use Perlin noise to create terrain.  Here, we create a voxelized mesh similar to a Minecraft &quot;cave&quot;.">
 
 .. only:: html
 
@@ -28,6 +29,8 @@ Bonus Content
       <div class="sphx-glr-thumbnail-title">Sample Function: Perlin Noise in 3D</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

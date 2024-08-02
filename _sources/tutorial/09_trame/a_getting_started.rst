@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_09_trame_a_getting_started.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -123,6 +123,10 @@ Now, let's build a simple application that updates the mesh color with the click
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_getting_started.py <a_getting_started.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_getting_started.zip <a_getting_started.zip>`
 
 
 .. only:: html

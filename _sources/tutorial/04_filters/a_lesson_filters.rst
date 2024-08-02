@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_04_filters_a_lesson_filters.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -310,7 +310,7 @@ And to view this filtered data, simply call the ``plot`` method
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 6.708 seconds)
+   **Total running time of the script:** (0 minutes 6.731 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_a_lesson_filters.py:
@@ -333,6 +333,10 @@ And to view this filtered data, simply call the ``plot`` method
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_lesson_filters.py <a_lesson_filters.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_lesson_filters.zip <a_lesson_filters.zip>`
 
 
 .. only:: html

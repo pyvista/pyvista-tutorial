@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_00_intro_a_basic.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -151,7 +151,7 @@ Now let's plot them all in one window
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.896 seconds)
+   **Total running time of the script:** (0 minutes 0.834 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_intro_a_basic.py:
@@ -174,6 +174,10 @@ Now let's plot them all in one window
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_basic.py <a_basic.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_basic.zip <a_basic.zip>`
 
 
 .. only:: html

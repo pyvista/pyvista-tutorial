@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_06_vtk_c_vtk_algorithms.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -412,6 +412,12 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |  ----------------------------------------------------------------------
      |  Methods inherited from vtkmodules.vtkCommonExecutionModel.vtkAlgorithm:
      |  
+     |  ABORTED(...)
+     |      ABORTED() -> vtkInformationIntegerKey
+     |      C++: static vtkInformationIntegerKey *ABORTED()
+     |      
+     |      \ingroup InformationKeys
+     |  
      |  AbortExecuteOff(...)
      |      AbortExecuteOff(self) -> None
      |      C++: virtual void AbortExecuteOff()
@@ -471,6 +477,12 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |      such as the legacy structured data readers cannot support this
      |      feature.\ingroup InformationKeys
      |  
+     |  CheckAbort(...)
+     |      CheckAbort(self) -> bool
+     |      C++: bool CheckAbort()
+     |      
+     |      Checks to see if this filter should abort.
+     |  
      |  ConvertTotalInputToPortConnection(...)
      |      ConvertTotalInputToPortConnection(self, ind:int, port:int,
      |          conn:int) -> None
@@ -483,6 +495,14 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |  GetAbortExecute(...)
      |      GetAbortExecute(self) -> int
      |      C++: virtual vtkTypeBool GetAbortExecute()
+     |  
+     |  GetAbortOutput(...)
+     |      GetAbortOutput(self) -> bool
+     |      C++: virtual bool GetAbortOutput()
+     |  
+     |  GetContainerAlgorithm(...)
+     |      GetContainerAlgorithm(self) -> vtkAlgorithm
+     |      C++: vtkAlgorithm *GetContainerAlgorithm()
      |  
      |  GetErrorCode(...)
      |      GetErrorCode(self) -> int
@@ -649,7 +669,7 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |  
      |  GetReleaseDataFlag(...)
      |      GetReleaseDataFlag(self) -> int
-     |      C++: virtual int GetReleaseDataFlag()
+     |      C++: virtual vtkTypeBool GetReleaseDataFlag()
      |  
      |  GetTotalNumberOfInputConnections(...)
      |      GetTotalNumberOfInputConnections(self) -> int
@@ -705,7 +725,7 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |  
      |  HasExecutive(...)
      |      HasExecutive(self) -> int
-     |      C++: int HasExecutive()
+     |      C++: vtkTypeBool HasExecutive()
      |      
      |      Check whether this algorithm has an assigned executive.  This
      |      will NOT create a default executive.
@@ -824,6 +844,31 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |      Set/Get the AbortExecute flag for the process object. Process
      |      objects may handle premature termination of execution in
      |      different ways.
+     |  
+     |  SetAbortExecuteAndUpdateTime(...)
+     |      SetAbortExecuteAndUpdateTime(self) -> None
+     |      C++: void SetAbortExecuteAndUpdateTime()
+     |      
+     |      Set AbortExecute Flag and update LastAbortTime.
+     |  
+     |  SetAbortOutput(...)
+     |      SetAbortOutput(self, _arg:bool) -> None
+     |      C++: virtual void SetAbortOutput(bool _arg)
+     |      
+     |      Set/Get an internal variable used to communicate between the
+     |      algorithm and executive. If the executive sees this value is set,
+     |      it will initialize the output data and pass the ABORTED flag
+     |      downstream.
+     |      
+     |      CheckAbort sets this value to true if the function returns true.
+     |  
+     |  SetContainerAlgorithm(...)
+     |      SetContainerAlgorithm(self, containerAlg:vtkAlgorithm) -> None
+     |      C++: void SetContainerAlgorithm(vtkAlgorithm *containerAlg)
+     |      
+     |      Set/get a Container algorithm for this algorithm. Allows this
+     |      algorithm to check to abort status of its Container algorithm as
+     |      well as have access to its Container's information.
      |  
      |  SetDefaultExecutivePrototype(...)
      |      SetDefaultExecutivePrototype(proto:vtkExecutive) -> None
@@ -947,7 +992,7 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |  
      |  SetReleaseDataFlag(...)
      |      SetReleaseDataFlag(self, __a:int) -> None
-     |      C++: virtual void SetReleaseDataFlag(int)
+     |      C++: virtual void SetReleaseDataFlag(vtkTypeBool)
      |      
      |      Turn release data flag on or off for all output ports.
      |  
@@ -1095,7 +1140,7 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |  
      |  GetGlobalWarningDisplay(...)
      |      GetGlobalWarningDisplay() -> int
-     |      C++: static int GetGlobalWarningDisplay()
+     |      C++: static vtkTypeBool GetGlobalWarningDisplay()
      |  
      |  GetMTime(...)
      |      GetMTime(self) -> int
@@ -1183,7 +1228,7 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |  
      |  SetGlobalWarningDisplay(...)
      |      SetGlobalWarningDisplay(val:int) -> None
-     |      C++: static void SetGlobalWarningDisplay(int val)
+     |      C++: static void SetGlobalWarningDisplay(vtkTypeBool val)
      |      
      |      This is a global flag that controls whether any debug, warning or
      |      error messages are displayed.
@@ -1453,7 +1498,7 @@ See https://kitware.github.io/vtk-examples/site/Python/
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.796 seconds)
+   **Total running time of the script:** (0 minutes 0.775 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_c_vtk_algorithms.py:
@@ -1476,6 +1521,10 @@ See https://kitware.github.io/vtk-examples/site/Python/
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: c_vtk_algorithms.py <c_vtk_algorithms.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: c_vtk_algorithms.zip <c_vtk_algorithms.zip>`
 
 
 .. only:: html

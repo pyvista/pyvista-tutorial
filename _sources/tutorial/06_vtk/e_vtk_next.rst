@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_06_vtk_e_vtk_next.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -287,6 +287,10 @@ Sign up to receive TimerEvent
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: e_vtk_next.py <e_vtk_next.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: e_vtk_next.zip <e_vtk_next.zip>`
 
 
 .. only:: html

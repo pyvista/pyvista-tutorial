@@ -147,6 +147,7 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
@@ -218,7 +219,7 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Extending our simple example to have a dropdown menu to control which scalar array is used to c...">
+    <div class="sphx-glr-thumbcontainer" tooltip="Extending our simple example to have a dropdown menu to control which scalar array is used to color the mesh.">
 
 .. only:: html
 
@@ -252,7 +253,7 @@ Do not run these examples in Jupyter but rather as standalone scripts.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to use VTK, PyVista, and Trame together to show how the three lib...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to use VTK, PyVista, and Trame together to show how the three libraries complement each other.">
 
 .. only:: html
 
@@ -283,6 +284,8 @@ Do not run these examples in Jupyter but rather as standalone scripts.
       <div class="sphx-glr-thumbnail-title">Open Mesh File</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

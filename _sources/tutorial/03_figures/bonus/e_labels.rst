@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_bonus_e_labels.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -265,9 +265,9 @@ node:
     <tr><td>N Cells</td><td>10</td></tr>
     <tr><td>N Points</td><td>10</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>2.541e-01, 9.905e-01</td></tr>
-    <tr><td>Y Bounds</td><td>1.171e-01, 9.723e-01</td></tr>
-    <tr><td>Z Bounds</td><td>3.266e-02, 9.779e-01</td></tr>
+    <tr><td>X Bounds</td><td>7.809e-02, 9.185e-01</td></tr>
+    <tr><td>Y Bounds</td><td>1.835e-02, 8.052e-01</td></tr>
+    <tr><td>Z Bounds</td><td>1.447e-02, 9.334e-01</td></tr>
     <tr><td>N Arrays</td><td>1</td></tr>
     </table>
 
@@ -506,7 +506,7 @@ This example will label each point with their scalar values
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.839 seconds)
+   **Total running time of the script:** (0 minutes 0.788 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_e_labels.py:
@@ -529,6 +529,10 @@ This example will label each point with their scalar values
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: e_labels.py <e_labels.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: e_labels.zip <e_labels.zip>`
 
 
 .. only:: html

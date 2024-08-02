@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_06_vtk_a_2_pyvista_vtk.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -304,7 +304,7 @@ Use PyVista to plot
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.260 seconds)
+   **Total running time of the script:** (0 minutes 2.251 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_a_2_pyvista_vtk.py:
@@ -327,6 +327,10 @@ Use PyVista to plot
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_2_pyvista_vtk.py <a_2_pyvista_vtk.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_2_pyvista_vtk.zip <a_2_pyvista_vtk.zip>`
 
 
 .. only:: html

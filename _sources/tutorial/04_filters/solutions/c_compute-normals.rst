@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_04_filters_solutions_c_compute-normals.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -260,7 +260,7 @@ the normals along its cell faces, and extract the faces that face upward.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 42.464 seconds)
+   **Total running time of the script:** (0 minutes 41.878 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_c_compute-normals.py:
@@ -283,6 +283,10 @@ the normals along its cell faces, and extract the faces that face upward.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: c_compute-normals.py <c_compute-normals.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: c_compute-normals.zip <c_compute-normals.zip>`
 
 
 .. only:: html

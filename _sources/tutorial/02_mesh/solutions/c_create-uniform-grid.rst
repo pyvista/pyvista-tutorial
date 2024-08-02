@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -8899,6 +8899,14 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  DeepCopy(...)
      |      DeepCopy(self, src:vtkDataObject) -> None
      |      C++: void DeepCopy(vtkDataObject *src) override;
+     |      
+     |      The goal of the method is to copy the complete data from src into
+     |      this object. The implementation is delegated to the differenent
+     |      subclasses. If you want to copy the data up to the array pointers
+     |      only, @see ShallowCopy.
+     |      
+     |      This method deep copy the field data and copy the internal
+     |      structure.
      |  
      |  ExtendedNew(...)
      |      ExtendedNew() -> vtkImageData
@@ -9756,6 +9764,20 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      the pointer to the array to save a lookup involving string
      |      comparisons
      |  
+     |  GetCellNumberOfFaces(...)
+     |      GetCellNumberOfFaces(self, cellId:int, cellType:int,
+     |          cell:vtkGenericCell) -> int
+     |      C++: int GetCellNumberOfFaces(vtkIdType cellId,
+     |          unsigned char &cellType, vtkGenericCell *cell)
+     |      
+     |      Get the number of faces of a cell.
+     |      
+     |      Most of the times extracting the number of faces requires only
+     |      extracting the cell type. However, for some cell types, the
+     |      number of faces is not constant. For example, a vtkPolyhedron
+     |      cell can have a different number of faces for each cell. That's
+     |      why this method requires the cell id and the dataset.
+     |  
      |  GetCellTypes(...)
      |      GetCellTypes(self, types:vtkCellTypes) -> None
      |      C++: virtual void GetCellTypes(vtkCellTypes *types)
@@ -10056,7 +10078,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  
      |  GetDataReleased(...)
      |      GetDataReleased(self) -> int
-     |      C++: virtual int GetDataReleased()
+     |      C++: virtual vtkTypeBool GetDataReleased()
      |      
      |      Get the flag indicating the data has been released.
      |  
@@ -10066,7 +10088,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  
      |  GetGlobalReleaseDataFlag(...)
      |      GetGlobalReleaseDataFlag() -> int
-     |      C++: static int GetGlobalReleaseDataFlag()
+     |      C++: static vtkTypeBool GetGlobalReleaseDataFlag()
      |  
      |  GetInformation(...)
      |      GetInformation(self) -> vtkInformation
@@ -10173,7 +10195,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  
      |  SetGlobalReleaseDataFlag(...)
      |      SetGlobalReleaseDataFlag(val:int) -> None
-     |      C++: static void SetGlobalReleaseDataFlag(int val)
+     |      C++: static void SetGlobalReleaseDataFlag(vtkTypeBool val)
      |      
      |      Turn on/off flag to control whether every object releases its
      |      data after being used by a filter.
@@ -10288,7 +10310,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  
      |  GetGlobalWarningDisplay(...)
      |      GetGlobalWarningDisplay() -> int
-     |      C++: static int GetGlobalWarningDisplay()
+     |      C++: static vtkTypeBool GetGlobalWarningDisplay()
      |  
      |  GetObjectDescription(...)
      |      GetObjectDescription(self) -> str
@@ -10370,7 +10392,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  
      |  SetGlobalWarningDisplay(...)
      |      SetGlobalWarningDisplay(val:int) -> None
-     |      C++: static void SetGlobalWarningDisplay(int val)
+     |      C++: static void SetGlobalWarningDisplay(vtkTypeBool val)
      |      
      |      This is a global flag that controls whether any debug, warning or
      |      error messages are displayed.
@@ -10707,7 +10729,7 @@ Here's one of these example datasets:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.429 seconds)
+   **Total running time of the script:** (0 minutes 5.218 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py:
@@ -10730,6 +10752,10 @@ Here's one of these example datasets:
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: c_create-uniform-grid.py <c_create-uniform-grid.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: c_create-uniform-grid.zip <c_create-uniform-grid.zip>`
 
 
 .. only:: html

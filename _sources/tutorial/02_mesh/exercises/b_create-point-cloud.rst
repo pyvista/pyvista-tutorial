@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_exercises_b_create-point-cloud.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -250,6 +250,10 @@ for more details).
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: b_create-point-cloud.py <b_create-point-cloud.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: b_create-point-cloud.zip <b_create-point-cloud.zip>`
 
 
 .. only:: html

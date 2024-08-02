@@ -13,6 +13,9 @@ See `GeoVista tutorial <https://geovista.readthedocs.io/en/latest/tutorials/regi
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 

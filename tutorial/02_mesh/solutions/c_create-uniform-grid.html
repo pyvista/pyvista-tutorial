@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=f9b2bc2b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
@@ -479,7 +479,7 @@ document.write(`
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#sphx-glr-download-tutorial-02-mesh-solutions-c-create-uniform-grid-py"><span class="std std-ref">Go to the end</span></a>
-to download the full example code or to run this example in your browser via Binder</p>
+to download the full example code. or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="creating-a-uniform-grid">
 <span id="create-uniform-grid-solution"></span><span id="sphx-glr-tutorial-02-mesh-solutions-c-create-uniform-grid-py"></span><h1>Creating a Uniform Grid<a class="headerlink" href="#creating-a-uniform-grid" title="Link to this heading">#</a></h1>
@@ -9158,6 +9158,14 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |      DeepCopy(self, src:vtkDataObject) -&gt; None
  |      C++: void DeepCopy(vtkDataObject *src) override;
  |
+ |      The goal of the method is to copy the complete data from src into
+ |      this object. The implementation is delegated to the differenent
+ |      subclasses. If you want to copy the data up to the array pointers
+ |      only, @see ShallowCopy.
+ |
+ |      This method deep copy the field data and copy the internal
+ |      structure.
+ |
  |  ExtendedNew(...)
  |      ExtendedNew() -&gt; vtkImageData
  |      C++: static vtkImageData *ExtendedNew()
@@ -10014,6 +10022,20 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |      the pointer to the array to save a lookup involving string
  |      comparisons
  |
+ |  GetCellNumberOfFaces(...)
+ |      GetCellNumberOfFaces(self, cellId:int, cellType:int,
+ |          cell:vtkGenericCell) -&gt; int
+ |      C++: int GetCellNumberOfFaces(vtkIdType cellId,
+ |          unsigned char &amp;cellType, vtkGenericCell *cell)
+ |
+ |      Get the number of faces of a cell.
+ |
+ |      Most of the times extracting the number of faces requires only
+ |      extracting the cell type. However, for some cell types, the
+ |      number of faces is not constant. For example, a vtkPolyhedron
+ |      cell can have a different number of faces for each cell. That&#39;s
+ |      why this method requires the cell id and the dataset.
+ |
  |  GetCellTypes(...)
  |      GetCellTypes(self, types:vtkCellTypes) -&gt; None
  |      C++: virtual void GetCellTypes(vtkCellTypes *types)
@@ -10314,7 +10336,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |
  |  GetDataReleased(...)
  |      GetDataReleased(self) -&gt; int
- |      C++: virtual int GetDataReleased()
+ |      C++: virtual vtkTypeBool GetDataReleased()
  |
  |      Get the flag indicating the data has been released.
  |
@@ -10324,7 +10346,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |
  |  GetGlobalReleaseDataFlag(...)
  |      GetGlobalReleaseDataFlag() -&gt; int
- |      C++: static int GetGlobalReleaseDataFlag()
+ |      C++: static vtkTypeBool GetGlobalReleaseDataFlag()
  |
  |  GetInformation(...)
  |      GetInformation(self) -&gt; vtkInformation
@@ -10431,7 +10453,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |
  |  SetGlobalReleaseDataFlag(...)
  |      SetGlobalReleaseDataFlag(val:int) -&gt; None
- |      C++: static void SetGlobalReleaseDataFlag(int val)
+ |      C++: static void SetGlobalReleaseDataFlag(vtkTypeBool val)
  |
  |      Turn on/off flag to control whether every object releases its
  |      data after being used by a filter.
@@ -10546,7 +10568,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |
  |  GetGlobalWarningDisplay(...)
  |      GetGlobalWarningDisplay() -&gt; int
- |      C++: static int GetGlobalWarningDisplay()
+ |      C++: static vtkTypeBool GetGlobalWarningDisplay()
  |
  |  GetObjectDescription(...)
  |      GetObjectDescription(self) -&gt; str
@@ -10628,7 +10650,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |
  |  SetGlobalWarningDisplay(...)
  |      SetGlobalWarningDisplay(val:int) -&gt; None
- |      C++: static void SetGlobalWarningDisplay(int val)
+ |      C++: static void SetGlobalWarningDisplay(vtkTypeBool val)
  |
  |      This is a global flag that controls whether any debug, warning or
  |      error messages are displayed.
@@ -10841,7 +10863,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/c_create-uniform-grid.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.429 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.218 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-c-create-uniform-grid-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/c_create-uniform-grid.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" width="150px" /></a>
@@ -10851,6 +10873,9 @@ Interactive Scene</label><div class="sd-tab-content docutils">
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../../_downloads/795eddffe80555c4fb390d2b3353888d/c_create-uniform-grid.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">c_create-uniform-grid.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../../_downloads/f91f7eed7b928699cf8a5fa4f6d249b7/c_create-uniform-grid.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">c_create-uniform-grid.zip</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>

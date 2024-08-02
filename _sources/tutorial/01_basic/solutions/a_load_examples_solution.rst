@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_01_basic_solutions_a_load_examples_solution.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -380,7 +380,7 @@ https://www.thingiverse.com/thing:5412753
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.994 seconds)
+   **Total running time of the script:** (0 minutes 5.229 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_solutions_a_load_examples_solution.py:
@@ -403,6 +403,10 @@ https://www.thingiverse.com/thing:5412753
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: a_load_examples_solution.py <a_load_examples_solution.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: a_load_examples_solution.zip <a_load_examples_solution.zip>`
 
 
 .. only:: html

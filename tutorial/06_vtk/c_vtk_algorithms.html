@@ -37,7 +37,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=61a4c737" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
@@ -479,7 +479,7 @@ document.write(`
   <div class="sphx-glr-download-link-note admonition note">
 <p class="admonition-title">Note</p>
 <p><a class="reference internal" href="#sphx-glr-download-tutorial-06-vtk-c-vtk-algorithms-py"><span class="std std-ref">Go to the end</span></a>
-to download the full example code or to run this example in your browser via Binder</p>
+to download the full example code. or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="using-vtk-algorithms">
 <span id="sphx-glr-tutorial-06-vtk-c-vtk-algorithms-py"></span><h1>Using VTK Algorithms<a class="headerlink" href="#using-vtk-algorithms" title="Link to this heading">#</a></h1>
@@ -807,6 +807,12 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |  ----------------------------------------------------------------------
  |  Methods inherited from vtkmodules.vtkCommonExecutionModel.vtkAlgorithm:
  |
+ |  ABORTED(...)
+ |      ABORTED() -&gt; vtkInformationIntegerKey
+ |      C++: static vtkInformationIntegerKey *ABORTED()
+ |
+ |      \ingroup InformationKeys
+ |
  |  AbortExecuteOff(...)
  |      AbortExecuteOff(self) -&gt; None
  |      C++: virtual void AbortExecuteOff()
@@ -866,6 +872,12 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |      such as the legacy structured data readers cannot support this
  |      feature.\ingroup InformationKeys
  |
+ |  CheckAbort(...)
+ |      CheckAbort(self) -&gt; bool
+ |      C++: bool CheckAbort()
+ |
+ |      Checks to see if this filter should abort.
+ |
  |  ConvertTotalInputToPortConnection(...)
  |      ConvertTotalInputToPortConnection(self, ind:int, port:int,
  |          conn:int) -&gt; None
@@ -878,6 +890,14 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |  GetAbortExecute(...)
  |      GetAbortExecute(self) -&gt; int
  |      C++: virtual vtkTypeBool GetAbortExecute()
+ |
+ |  GetAbortOutput(...)
+ |      GetAbortOutput(self) -&gt; bool
+ |      C++: virtual bool GetAbortOutput()
+ |
+ |  GetContainerAlgorithm(...)
+ |      GetContainerAlgorithm(self) -&gt; vtkAlgorithm
+ |      C++: vtkAlgorithm *GetContainerAlgorithm()
  |
  |  GetErrorCode(...)
  |      GetErrorCode(self) -&gt; int
@@ -1044,7 +1064,7 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |
  |  GetReleaseDataFlag(...)
  |      GetReleaseDataFlag(self) -&gt; int
- |      C++: virtual int GetReleaseDataFlag()
+ |      C++: virtual vtkTypeBool GetReleaseDataFlag()
  |
  |  GetTotalNumberOfInputConnections(...)
  |      GetTotalNumberOfInputConnections(self) -&gt; int
@@ -1100,7 +1120,7 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |
  |  HasExecutive(...)
  |      HasExecutive(self) -&gt; int
- |      C++: int HasExecutive()
+ |      C++: vtkTypeBool HasExecutive()
  |
  |      Check whether this algorithm has an assigned executive.  This
  |      will NOT create a default executive.
@@ -1219,6 +1239,31 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |      Set/Get the AbortExecute flag for the process object. Process
  |      objects may handle premature termination of execution in
  |      different ways.
+ |
+ |  SetAbortExecuteAndUpdateTime(...)
+ |      SetAbortExecuteAndUpdateTime(self) -&gt; None
+ |      C++: void SetAbortExecuteAndUpdateTime()
+ |
+ |      Set AbortExecute Flag and update LastAbortTime.
+ |
+ |  SetAbortOutput(...)
+ |      SetAbortOutput(self, _arg:bool) -&gt; None
+ |      C++: virtual void SetAbortOutput(bool _arg)
+ |
+ |      Set/Get an internal variable used to communicate between the
+ |      algorithm and executive. If the executive sees this value is set,
+ |      it will initialize the output data and pass the ABORTED flag
+ |      downstream.
+ |
+ |      CheckAbort sets this value to true if the function returns true.
+ |
+ |  SetContainerAlgorithm(...)
+ |      SetContainerAlgorithm(self, containerAlg:vtkAlgorithm) -&gt; None
+ |      C++: void SetContainerAlgorithm(vtkAlgorithm *containerAlg)
+ |
+ |      Set/get a Container algorithm for this algorithm. Allows this
+ |      algorithm to check to abort status of its Container algorithm as
+ |      well as have access to its Container&#39;s information.
  |
  |  SetDefaultExecutivePrototype(...)
  |      SetDefaultExecutivePrototype(proto:vtkExecutive) -&gt; None
@@ -1342,7 +1387,7 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |
  |  SetReleaseDataFlag(...)
  |      SetReleaseDataFlag(self, __a:int) -&gt; None
- |      C++: virtual void SetReleaseDataFlag(int)
+ |      C++: virtual void SetReleaseDataFlag(vtkTypeBool)
  |
  |      Turn release data flag on or off for all output ports.
  |
@@ -1490,7 +1535,7 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |
  |  GetGlobalWarningDisplay(...)
  |      GetGlobalWarningDisplay() -&gt; int
- |      C++: static int GetGlobalWarningDisplay()
+ |      C++: static vtkTypeBool GetGlobalWarningDisplay()
  |
  |  GetMTime(...)
  |      GetMTime(self) -&gt; int
@@ -1578,7 +1623,7 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |
  |  SetGlobalWarningDisplay(...)
  |      SetGlobalWarningDisplay(val:int) -&gt; None
- |      C++: static void SetGlobalWarningDisplay(int val)
+ |      C++: static void SetGlobalWarningDisplay(vtkTypeBool val)
  |
  |      This is a global flag that controls whether any debug, warning or
  |      error messages are displayed.
@@ -1776,7 +1821,7 @@ to apply to your mesh. The instructors will be around to help you implement.</p>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/06_vtk/c_vtk_algorithms.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.796 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.775 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-c-vtk-algorithms-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/c_vtk_algorithms.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo16.svg" width="150px" /></a>
@@ -1786,6 +1831,9 @@ to apply to your mesh. The instructors will be around to help you implement.</p>
 </div>
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/ddf2406dbf8ef542fad2ea7194495bc2/c_vtk_algorithms.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">c_vtk_algorithms.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/fd1cece8ad17c44d03fc774b30f75bf7/c_vtk_algorithms.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">c_vtk_algorithms.zip</span></code></a></p>
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>

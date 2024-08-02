@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_04_filters_solutions_b_clipping.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -709,7 +709,7 @@ Plot comparison
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.086 seconds)
+   **Total running time of the script:** (0 minutes 2.012 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_b_clipping.py:
@@ -732,6 +732,10 @@ Plot comparison
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: b_clipping.py <b_clipping.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: b_clipping.zip <b_clipping.zip>`
 
 
 .. only:: html

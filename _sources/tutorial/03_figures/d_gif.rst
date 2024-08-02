@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_03_figures_d_gif.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -112,7 +112,7 @@ Generate a moving gif from an active plotter.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.129 seconds)
+   **Total running time of the script:** (0 minutes 2.066 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_d_gif.py:
@@ -135,6 +135,10 @@ Generate a moving gif from an active plotter.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: d_gif.py <d_gif.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: d_gif.zip <d_gif.zip>`
 
 
 .. only:: html

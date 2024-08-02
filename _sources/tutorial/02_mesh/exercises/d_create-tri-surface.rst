@@ -11,7 +11,7 @@
         :class: sphx-glr-download-link-note
 
         :ref:`Go to the end <sphx_glr_download_tutorial_02_mesh_exercises_d_create-tri-surface.py>`
-        to download the full example code or to run this example in your browser via Binder
+        to download the full example code. or to run this example in your browser via Binder
 
 .. rst-class:: sphx-glr-example-title
 
@@ -192,6 +192,10 @@ added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
     .. container:: sphx-glr-download sphx-glr-download-python
 
       :download:`Download Python source code: d_create-tri-surface.py <d_create-tri-surface.py>`
+
+    .. container:: sphx-glr-download sphx-glr-download-zip
+
+      :download:`Download zipped: d_create-tri-surface.zip <d_create-tri-surface.zip>`
 
 
 .. only:: html

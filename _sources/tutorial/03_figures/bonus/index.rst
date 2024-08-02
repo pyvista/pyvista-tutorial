@@ -11,10 +11,11 @@ Bonus Content
 
     <div class="sphx-glr-thumbnails">
 
+.. thumbnail-parent-div-open
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="VTK 9 introduced Physically Based Rendering (PBR) and we have exposed that functionality in PyV...">
+    <div class="sphx-glr-thumbcontainer" tooltip="VTK 9 introduced Physically Based Rendering (PBR) and we have exposed that functionality in PyVista. Read the blog about PBR for more details.">
 
 .. only:: html
 
@@ -62,6 +63,8 @@ Bonus Content
       <div class="sphx-glr-thumbnail-title">Orbiting</div>
     </div>
 
+
+.. thumbnail-parent-div-close
 
 .. raw:: html
 
