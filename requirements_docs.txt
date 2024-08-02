@@ -19,7 +19,7 @@ pytest-sphinx==0.6.3
 pyvista-xarray==0.1.7
 pyvista[all]==0.44.1
 scipy==1.14.0
-Sphinx==7.3.7
+Sphinx==8.0.2
 sphinx-autobuild==2024.4.16
 sphinx-book-theme==1.1.3
 sphinx-copybutton==0.5.2
