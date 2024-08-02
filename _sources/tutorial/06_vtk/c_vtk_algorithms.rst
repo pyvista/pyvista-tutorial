@@ -1498,7 +1498,7 @@ See https://kitware.github.io/vtk-examples/site/Python/
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.776 seconds)
+   **Total running time of the script:** (0 minutes 0.780 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_c_vtk_algorithms.py:
