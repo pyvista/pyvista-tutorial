@@ -253,7 +253,7 @@ Combine custom lighting and physically based rendering.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (12 minutes 30.389 seconds)
+   **Total running time of the script:** (13 minutes 19.884 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_d_pbr.py:
