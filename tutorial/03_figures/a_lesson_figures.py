@@ -1,7 +1,6 @@
 """
 Lesson Overview
 ~~~~~~~~~~~~~~~
-
 """
 
 import pyvista as pv
