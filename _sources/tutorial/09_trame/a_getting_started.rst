@@ -23,15 +23,16 @@ Getting started
 
 Getting started with PyVista and Trame
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-12
+.. GENERATED FROM PYTHON SOURCE LINES 9-13
 
 .. code-block:: Python
+
 
     import pyvista as pv
     from pyvista import examples
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-29
+.. GENERATED FROM PYTHON SOURCE LINES 14-30
 
 PyVista's Jupyter backend is powered by **Trame**. So by default you are
 using trame without knowing it.
@@ -50,7 +51,7 @@ options to configure your visualization.
 
 One sends images generated on the server side while the other is sending geometry to vtk.js.
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-32
+.. GENERATED FROM PYTHON SOURCE LINES 30-33
 
 .. code-block:: Python
 
@@ -58,13 +59,13 @@ One sends images generated on the server side while the other is sending geometr
     dataset.plot(smooth_shading=True, color='white')
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-36
+.. GENERATED FROM PYTHON SOURCE LINES 34-37
 
 Building applications with PyVista and Trame
 
 Now, let's build a simple application that updates the mesh color with the click of a button.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-69
+.. GENERATED FROM PYTHON SOURCE LINES 37-70
 
 .. code-block:: Python
 

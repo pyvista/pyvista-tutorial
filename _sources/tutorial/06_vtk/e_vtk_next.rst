@@ -27,7 +27,7 @@ This requires a pre-release version of VTK:
 
     pip install --extra-index-url https://wheels.vtk.org vtk==9.3.20240629.dev0
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-99
+.. GENERATED FROM PYTHON SOURCE LINES 12-98
 
 .. code-block:: Python
 
@@ -64,7 +64,6 @@ This requires a pre-release version of VTK:
 
 
     def build_magnetic_coils(mesh, current=1000):
-
         magpy_coils = magpy.Collection()
 
         # Extract blocks under the "coils" node.
@@ -119,11 +118,11 @@ This requires a pre-release version of VTK:
     import pathlib
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-101
+.. GENERATED FROM PYTHON SOURCE LINES 99-100
 
 Load input mesh from a vtkPartitionedDataSetCollection file
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-116
+.. GENERATED FROM PYTHON SOURCE LINES 100-115
 
 .. code-block:: Python
 
@@ -143,22 +142,22 @@ Load input mesh from a vtkPartitionedDataSetCollection file
     renderer.AddActor(actor)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-118
+.. GENERATED FROM PYTHON SOURCE LINES 116-117
 
 Construct magpy coil objects for each coil in the reactor mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 118-120
+.. GENERATED FROM PYTHON SOURCE LINES 117-119
 
 .. code-block:: Python
 
     coils = build_magnetic_coils(reactor, current=1000)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-122
+.. GENERATED FROM PYTHON SOURCE LINES 120-121
 
 Compute B, H in a 32x32x32 grid
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-130
+.. GENERATED FROM PYTHON SOURCE LINES 121-129
 
 .. code-block:: Python
 
@@ -171,11 +170,11 @@ Compute B, H in a 32x32x32 grid
     grid.point_data.set_array("H (A/m)", h)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-132
+.. GENERATED FROM PYTHON SOURCE LINES 130-131
 
 Show coils
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-135
+.. GENERATED FROM PYTHON SOURCE LINES 131-134
 
 .. code-block:: Python
 
@@ -183,11 +182,11 @@ Show coils
     save_dataset(grid, "data/solution.vti")
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-137
+.. GENERATED FROM PYTHON SOURCE LINES 135-136
 
 Compute streamlines of B field induced by toroidal coils.
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-150
+.. GENERATED FROM PYTHON SOURCE LINES 136-149
 
 .. code-block:: Python
 
@@ -205,11 +204,11 @@ Compute streamlines of B field induced by toroidal coils.
     create_sphere >> select_ports(1, trace_streamlines)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-152
+.. GENERATED FROM PYTHON SOURCE LINES 150-151
 
 Visualize streamlines
 
-.. GENERATED FROM PYTHON SOURCE LINES 152-160
+.. GENERATED FROM PYTHON SOURCE LINES 151-159
 
 .. code-block:: Python
 
@@ -222,11 +221,11 @@ Visualize streamlines
     renderer.AddActor(actor)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 161-162
+.. GENERATED FROM PYTHON SOURCE LINES 160-161
 
 Animate the disk position such that it oscillates between y=-1 and y=1.
 
-.. GENERATED FROM PYTHON SOURCE LINES 162-179
+.. GENERATED FROM PYTHON SOURCE LINES 161-178
 
 .. code-block:: Python
 
@@ -248,11 +247,11 @@ Animate the disk position such that it oscillates between y=-1 and y=1.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-181
+.. GENERATED FROM PYTHON SOURCE LINES 179-180
 
 Sign up to receive TimerEvent
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-190
+.. GENERATED FROM PYTHON SOURCE LINES 180-189
 
 .. code-block:: Python
 
