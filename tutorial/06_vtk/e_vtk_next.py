@@ -42,7 +42,6 @@ import vtkmodules.vtkRenderingUI  # noqa
 
 
 def build_magnetic_coils(mesh, current=1000):
-
     magpy_coils = magpy.Collection()
 
     # Extract blocks under the "coils" node.
