@@ -499,11 +499,11 @@ locations.</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81031075e+05, 4.40013820e+06, 1.76198999e+03],
-                 [4.81121275e+05, 4.40018980e+06, 1.76953003e+03],
-                 [4.80959975e+05, 4.40021420e+06, 1.75844995e+03],
-                 [4.81056375e+05, 4.40016410e+06, 1.76010999e+03],
-                 [4.80946375e+05, 4.40007770e+06, 1.76596997e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81095675e+05, 4.40019090e+06, 1.75885999e+03],
+                 [4.81064775e+05, 4.40021820e+06, 1.76926001e+03],
+                 [4.81065675e+05, 4.40018870e+06, 1.75883997e+03],
+                 [4.80955675e+05, 4.40023460e+06, 1.75783997e+03],
+                 [4.81113175e+05, 4.40024160e+06, 1.77356006e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -521,7 +521,7 @@ data or your own project, create a PyVista mesh using those points.</p>
 <tr><td>N Strips</td><td>0</td></tr>
 <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
 <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-<tr><td>Z Bounds</td><td>1.754e+03, 1.784e+03</td></tr>
+<tr><td>Z Bounds</td><td>1.754e+03, 1.787e+03</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -597,7 +597,7 @@ than one scalar value - perhaps a vector with three elements? Let’s make a
 little function that will compute vectors for every point in the point cloud
 and add those vectors to the mesh.</p>
 <p>This time, we’re going to create a totally new, random point cloud containing
-100 points using <a class="reference external" href="https://numpy.org/devdocs/reference/random/generated/numpy.random.random.html#numpy.random.random" title="(in NumPy v2.1.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.random.random()</span></code></a>.</p>
+100 points using <a class="reference external" href="https://numpy.org/devdocs/reference/random/generated/numpy.random.random.html#numpy.random.random" title="(in NumPy v2.2.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.random.random()</span></code></a>.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a random point cloud with Cartesian coordinates</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.rand.html#numpy.random.rand" title="numpy.random.rand" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span></a><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="c1"># Construct PolyData from those points</span>
@@ -616,11 +616,11 @@ and add those vectors to the mesh.</p>
 <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vectors</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.99123217, -0.01872231, -0.13079856],
-                 [-0.56198612,  0.82659726, -0.03014236],
-                 [-0.23795699,  0.67940072, -0.69411176],
-                 [ 0.65239742,  0.18243851,  0.73559078],
-                 [-0.75820728,  0.51916695,  0.39444568]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.66150405, -0.44386679, -0.60447883],
+                 [-0.17106849, -0.06341086,  0.98321647],
+                 [-0.54068049,  0.47449073,  0.69463887],
+                 [-0.45565906,  0.10236727, -0.8842487 ],
+                 [-0.8266925 , -0.07728725,  0.55732054]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the new mesh:</p>
@@ -662,7 +662,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/b_create-point-cloud.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.922 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 6.741 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-b-create-point-cloud-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/b_create-point-cloud.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" style="width: 150px;" />
