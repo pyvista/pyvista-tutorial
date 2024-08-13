@@ -3,6 +3,10 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+<p align="center">
+    <img src="https://github.com/pyvista/pyvista/blob/main/doc/source/_static/pyvista_logo_sm.png" alt="pyvista_logo_sm" width="500"/>
+</p>
+
 ## Abstract
 
 [PyVista](https://github.com/pyvista/pyvista) is a general purpose 3D visualization library used for over 1400+ open source projects and many closed source projects for the visualization of everything from [computer aided engineering and geophysics to volcanoes and digital artwork](https://dev.pyvista.org/getting-started/external_examples.html).
