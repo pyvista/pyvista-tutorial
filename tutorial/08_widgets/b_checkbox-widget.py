@@ -23,7 +23,7 @@ p = pv.Plotter()
 actor = p.add_mesh(mesh)
 
 
-def toggle_vis(flag):
+def toggle_vis(flag) -> None:
     actor.SetVisibility(flag)
 
 
@@ -55,7 +55,7 @@ colors = [
 class SetVisibilityCallback:
     """Helper callback to keep a reference to the actor being modified."""
 
-    def __init__(self, actor):
+    def __init__(self, actor) -> None:
         self.actor = actor
 
     def __call__(self, state):
@@ -82,8 +82,8 @@ for i, lst in enumerate(colors):
             size=size,
             border_size=1,
             color_on=color,
-            color_off='grey',
-            background_color='grey',
+            color_off="grey",
+            background_color="grey",
         )
         Startpos = Startpos + size + (size // 10)
 

@@ -1,4 +1,5 @@
 [project]
+name = "pyvista-tutorial"
 requires-python = '>=3.9'
 
 [tool.isort]
@@ -24,6 +25,44 @@ exclude = [
 ]
 line-length = 100
 indent-width = 4
+lint.select = ["ALL"]
+lint.ignore = [
+  "COM812",
+  "D203",
+  "D212",
+  "E501",
+  "ERA001",
+  "ISC001"
+]
+
+[tool.ruff.lint.per-file-ignores]
+"doc/**" = [
+    "ANN",
+    "ARG",
+    "D",
+    "INP001",
+]
+"tutorial/**" = [
+    "ANN",
+    "ARG",
+    # https://github.com/pyvista/pyvista/pull/6014
+    "B015",
+    # https://github.com/pyvista/pyvista/pull/6019
+    "B018",
+    "E402",
+    "D101",
+    "D102",
+    "D103",
+    "D107",
+    "D205",
+    "D400",
+    "D401",
+    "D415",
+    "F704",
+    "INP001",
+    "NPY",
+    "PLE1142",
+]
 
 [tool.ruff.format]
 docstring-code-format = true

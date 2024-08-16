@@ -1,6 +1,6 @@
 # Getting started with PyVista and Trame
 """
-Getting started
+Getting started.
 ~~~~~~~~~~~~~~~
 
 Getting started with PyVista and Trame
@@ -28,7 +28,7 @@ from pyvista import examples
 #
 # One sends images generated on the server side while the other is sending geometry to vtk.js.
 dataset = examples.download_lucy()
-dataset.plot(smooth_shading=True, color='white')
+dataset.plot(smooth_shading=True, color="white")
 
 ###############################################################################
 # Building applications with PyVista and Trame
@@ -48,8 +48,8 @@ viewer = get_viewer(plotter)
 view = None
 
 
-def change_color():
-    actor.prop.color = random.choice(list(hexcolors.keys()))
+def change_color() -> None:
+    actor.prop.color = random.choice(list(hexcolors.keys()))  # noqa: S311
     view.update()
 
 
@@ -58,12 +58,12 @@ with SinglePageLayout(viewer.server) as layout:
     with layout.toolbar.clear() as tb:
         tb.density = "compact"
         tb.theme = "dark"
-        viewer.ui_controls(mode='trame')
+        viewer.ui_controls(mode="trame")
         v3.VBtn(icon="mdi-palette", click=change_color)
     with layout.content:
-        view = viewer.ui(add_menu=False, mode='trame')
+        view = viewer.ui(add_menu=False, mode="trame")
 
 
 # Show UI
-await layout.ready  # noqa
+await layout.ready
 layout

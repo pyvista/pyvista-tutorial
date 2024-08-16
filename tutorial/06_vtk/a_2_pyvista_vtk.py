@@ -1,5 +1,5 @@
 """
-PyVista and VTK Together
+PyVista and VTK Together.
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 PyVista is best known for is easy to use plotting API -- being familiar to most Python users already experienced with libraries like Matplotlib. Many people benefit from combining the power of VTK's Python bindings for their data pipelines and the flexibility and simplicity of PyVista for 3D rendering. The following section demonstrates this usage scenario.
@@ -19,12 +19,12 @@ the output with PyVista for streamlined plotting. For example:
 """
 
 import pyvista as pv
-from pyvista import examples
 import vtk
+from pyvista import examples
 
 ###############################################################################
 # Create a circle using vtk
-polygonSource = vtk.vtkRegularPolygonSource()
+polygonSource = vtk.vtkRegularPolygonSource()  # noqa: N816
 polygonSource.GeneratePolygonOff()
 polygonSource.SetNumberOfSides(50)
 polygonSource.SetRadius(5.0)
@@ -34,7 +34,7 @@ polygonSource.Update()
 ###############################################################################
 # wrap and plot using pyvista
 mesh = pv.wrap(polygonSource.GetOutput())
-mesh.plot(line_width=3, cpos='xy', color='k')
+mesh.plot(line_width=3, cpos="xy", color="k")
 
 ###############################################################################
 # In this manner, you can get the "best of both worlds" should you need
@@ -80,7 +80,7 @@ cntrs = vol.contour([0.95 * splatter.GetRadius()])
 ###############################################################################
 # Use PyVista to plot
 p = pv.Plotter()
-p.add_mesh(mesh, style='wireframe')
+p.add_mesh(mesh, style="wireframe")
 p.add_mesh(cntrs, color=True)
 p.show()
 

@@ -1,5 +1,5 @@
 """
-Plotting Glyphs (Vectors or PolyData)
+Plotting Glyphs (Vectors or PolyData).
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use vectors in a dataset to plot and orient glyphs/geometric objects.
@@ -62,7 +62,7 @@ sphere.arrows.plot()
 ###############################################################################
 # Plot the arrows and the sphere.
 p = pv.Plotter()
-p.add_mesh(sphere.arrows, lighting=False, scalar_bar_args={'title': "Vector Magnitude"})
+p.add_mesh(sphere.arrows, lighting=False, scalar_bar_args={"title": "Vector Magnitude"})
 p.add_mesh(sphere, color="grey", ambient=0.6, opacity=0.5, show_edges=False)
 p.show()
 

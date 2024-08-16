@@ -1,5 +1,5 @@
 """
-VTK + WASM
+VTK + WASM.
 ~~~~~~~~~~
 
 Use WASM local rendering. This requires a pre-release version of VTK:
@@ -10,6 +10,7 @@ Use WASM local rendering. This requires a pre-release version of VTK:
 
 """
 
+# Required for vtk factory
 from trame.app import get_server
 from trame.decorators import TrameApp, change
 from trame.ui.vuetify3 import SinglePageLayout
@@ -21,7 +22,6 @@ from vtkmodules.vtkFiltersCore import vtkElevationFilter, vtkGlyph3D
 from vtkmodules.vtkFiltersSources import vtkConeSource, vtkCubeSource, vtkSphereSource
 from vtkmodules.vtkImagingCore import vtkRTAnalyticSource
 from vtkmodules.vtkImagingGeneral import vtkImageGradient
-from vtkmodules.vtkInteractionStyle import vtkInteractorStyleSwitch  # noqa
 from vtkmodules.vtkRenderingCore import (
     vtkActor,
     vtkPolyDataMapper,
@@ -30,13 +30,10 @@ from vtkmodules.vtkRenderingCore import (
     vtkRenderWindowInteractor,
 )
 
-# Required for vtk factory
-import vtkmodules.vtkRenderingOpenGL2  # noqa
-
 ###############################################################################
 
 
-def setup_vtk():
+def setup_vtk():  # noqa: PLR0915
     colors = vtkNamedColors()
 
     # The Wavelet Source is nice for generating a test vtkImageData set
@@ -109,10 +106,10 @@ def setup_vtk():
     ren.AddActor(actor)
     ren.SetBackground(colors.GetColor3d("DarkGray"))
 
-    renWin = vtkRenderWindow()
+    renWin = vtkRenderWindow()  # noqa: N806
     renWin.AddRenderer(ren)
 
-    renderWindowInteractor = vtkRenderWindowInteractor()
+    renderWindowInteractor = vtkRenderWindowInteractor()  # noqa: N806
     renderWindowInteractor.SetRenderWindow(renWin)
     renderWindowInteractor.GetInteractorStyle().SetCurrentStyleToTrackballCamera()
 
@@ -126,7 +123,7 @@ def setup_vtk():
 
 @TrameApp()
 class App:
-    def __init__(self, server=None):
+    def __init__(self, server=None) -> None:
         self.server = get_server(server, client_type="vue3")
         self.render_window, self.renderer, self.cone, self.sphere = setup_vtk()
         self.view_local = None
@@ -138,13 +135,13 @@ class App:
         return self.server.controller
 
     @change("resolution")
-    def on_resolution_change(self, resolution, **kwargs):
+    def on_resolution_change(self, resolution, **kwargs) -> None:
         self.cone.SetResolution(int(resolution))
         self.sphere.SetStartTheta(int(resolution) * 6)
         self.view_remote.update()
         self.view_local.update()
 
-    def reset_camera(self):
+    def reset_camera(self) -> None:
         self.renderer.ResetCamera()
         self.view_local.update()
         self.view_remote.update()
@@ -164,23 +161,25 @@ class App:
                 )
                 vuetify.VBtn("Update", click=self.ctrl.view_update)
 
-            with layout.content:
-                with vuetify.VContainer(
+            with (
+                layout.content,
+                vuetify.VContainer(
                     fluid=True,
                     classes="pa-0 fill-height",
+                ),
+            ):
+                with vuetify.VContainer(
+                    fluid=True, classes="pa-0 fill-height", style="width: 50%;"
                 ):
-                    with vuetify.VContainer(
-                        fluid=True, classes="pa-0 fill-height", style="width: 50%;"
-                    ):
-                        self.view_local = vtklocal.LocalView(
-                            self.render_window,
-                            eager_sync=True,
-                        )
-                        self.ctrl.view_update = self.view_local.update
-                    with vuetify.VContainer(
-                        fluid=True, classes="pa-0 fill-height", style="width: 50%;"
-                    ):
-                        self.view_remote = VtkRemoteView(self.render_window, interactive_ratio=1)
+                    self.view_local = vtklocal.LocalView(
+                        self.render_window,
+                        eager_sync=True,
+                    )
+                    self.ctrl.view_update = self.view_local.update
+                with vuetify.VContainer(
+                    fluid=True, classes="pa-0 fill-height", style="width: 50%;"
+                ):
+                    self.view_remote = VtkRemoteView(self.render_window, interactive_ratio=1)
 
             # hide footer
             layout.footer.hide()
@@ -190,14 +189,14 @@ class App:
 
 ###############################################################################
 app = App("wasm")
-await app.ui.ready  # noqa
+await app.ui.ready
 
 ###############################################################################
 # Make sure to give room for the download of WASM bundle
 # Only needed at first execution
-import asyncio  # noqa
+import asyncio
 
-await asyncio.sleep(1)  # noqa
+await asyncio.sleep(1)
 
 ###############################################################################
 app.ui

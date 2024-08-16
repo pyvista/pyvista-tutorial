@@ -1,5 +1,5 @@
 """
-VTK's Next Generation API
+VTK's Next Generation API.
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This requires a pre-release version of VTK:
@@ -12,8 +12,10 @@ This requires a pre-release version of VTK:
 
 import magpylib as magpy
 import numpy as np
+
+# for factory overrides
 from pyvista.examples.downloads import _download_archive_file_or_folder
-from vtkmodules.util.data_model import *  # noqa
+from vtkmodules.util.data_model import *  # noqa: F403
 from vtkmodules.util.execution_model import select_ports
 from vtkmodules.util.numpy_support import vtk_to_numpy
 from vtkmodules.vtkCommonCore import vtkIdList
@@ -25,7 +27,6 @@ from vtkmodules.vtkIOParallelXML import vtkXMLPartitionedDataSetCollectionWriter
 
 # Utility function to save simulation input/output datasets to filesystem
 from vtkmodules.vtkIOXML import vtkXMLImageDataWriter, vtkXMLPolyDataWriter
-import vtkmodules.vtkInteractionStyle
 from vtkmodules.vtkRenderingCore import (
     vtkActor,
     vtkCompositePolyDataMapper,
@@ -35,10 +36,6 @@ from vtkmodules.vtkRenderingCore import (
     vtkRenderWindow,
     vtkRenderWindowInteractor,
 )
-
-# for factory overrides
-import vtkmodules.vtkRenderingOpenGL2  # noqa
-import vtkmodules.vtkRenderingUI  # noqa
 
 
 def build_magnetic_coils(mesh, current=1000):
@@ -66,7 +63,7 @@ def build_magnetic_coils(mesh, current=1000):
     return magpy_coils
 
 
-def save_dataset(dataset, file_name):
+def save_dataset(dataset, file_name) -> None:
     if file_name.endswith(".vti"):
         writer = vtkXMLImageDataWriter()
     elif file_name.endswith(".vtp"):
@@ -99,7 +96,7 @@ import pathlib
 # Load input mesh from a vtkPartitionedDataSetCollection file
 from vtkmodules.vtkIOXML import vtkXMLPartitionedDataSetCollectionReader
 
-path = _download_archive_file_or_folder('reactor.zip', target_file='')
+path = _download_archive_file_or_folder("reactor.zip", target_file="")
 
 reader = vtkXMLPartitionedDataSetCollectionReader()
 reader.file_name = pathlib.Path(path + "/reactor/" + "mesh.vtpc")
@@ -161,8 +158,8 @@ renderer.AddActor(actor)
 from itertools import cycle
 
 
-class vtkTimerCallback:
-    def __init__(self, sphere, window, nsteps=10):
+class vtkTimerCallback:  # noqa: N801
+    def __init__(self, sphere, window, nsteps=10) -> None:
         half_nsteps = int(nsteps / 2)
         self.radii = cycle(
             np.append(np.linspace(0, 0.8, half_nsteps), np.linspace(0.8, 0, half_nsteps))
@@ -170,7 +167,7 @@ class vtkTimerCallback:
         self.sphere = sphere
         self.window = window
 
-    def execute(self, obj, event):
+    def execute(self, obj, event) -> None:
         self.sphere.radius = next(self.radii)
         self.window.Render()
 
@@ -179,8 +176,8 @@ class vtkTimerCallback:
 # Sign up to receive TimerEvent
 
 cb = vtkTimerCallback(create_sphere, window, nsteps=250)
-interactor.RemoveObservers('TimerEvent')
-interactor.AddObserver('TimerEvent', cb.execute)
+interactor.RemoveObservers("TimerEvent")
+interactor.AddObserver("TimerEvent", cb.execute)
 cb.timerId = interactor.CreateRepeatingTimer(2)
 
 renderer.ResetCamera()

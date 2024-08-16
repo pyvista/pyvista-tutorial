@@ -1,5 +1,5 @@
 """
-Test out PyVista's Jupyter Backend
+Test out PyVista's Jupyter Backend.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Become familiar with PyVista Jupyter backend.
@@ -8,7 +8,7 @@ Become familiar with PyVista Jupyter backend.
 import pyvista as pv
 
 # Set/enable the backed
-pv.set_jupyter_backend('trame')
+pv.set_jupyter_backend("trame")
 
 ###############################################################################
 
@@ -22,7 +22,7 @@ pl.show()
 
 pl = pv.Plotter()
 pl.add_mesh(pv.ParametricRandomHills().elevation())
-pl.show(jupyter_backend='client')
+pl.show(jupyter_backend="client")
 
 
 ###############################################################################
@@ -30,7 +30,7 @@ pl.show(jupyter_backend='client')
 
 pl = pv.Plotter()
 pl.add_volume(pv.Wavelet())
-pl.show(jupyter_backend='server')
+pl.show(jupyter_backend="server")
 
 ###############################################################################
 # .. raw:: html

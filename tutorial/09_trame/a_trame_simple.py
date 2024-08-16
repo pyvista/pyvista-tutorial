@@ -1,5 +1,5 @@
 """
-Simple Trame App
+Simple Trame App.
 ~~~~~~~~~~~~~~~~
 
 A simple example of how to create a Trame app with a PyVista Plotter.
@@ -25,12 +25,11 @@ mesh = examples.load_random_hills()
 pl = pv.Plotter()
 pl.add_mesh(mesh)
 
-with SinglePageLayout(server) as layout:
-    with layout.content:
-        view = plotter_ui(pl)
+with SinglePageLayout(server) as layout, layout.content:
+    view = plotter_ui(pl)
 
 # Show UI
-await layout.ready  # noqa
+await layout.ready
 layout
 ###############################################################################
 # .. raw:: html

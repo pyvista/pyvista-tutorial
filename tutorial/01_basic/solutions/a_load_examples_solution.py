@@ -80,7 +80,7 @@ pl.show()
 dataset = examples.download_gears()
 bodies = dataset.split_bodies()
 bodies.plot(
-    cmap='jet',
+    cmap="jet",
     multi_colors=True,
     smooth_shading=True,
     split_sharp_edges=True,
@@ -102,7 +102,7 @@ bodies.plot(
 # Download the file ``'P_shelf_pin.stl'`` from
 # https://www.thingiverse.com/thing:5412753
 
-mesh = pv.read('P_shelf_pin.stl')
+mesh = pv.read("P_shelf_pin.stl")
 mesh.plot()
 
 ###############################################################################

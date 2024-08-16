@@ -1,5 +1,5 @@
 """
-Lesson Overview
+Lesson Overview.
 ~~~~~~~~~~~~~~~
 
 This exercise provides an overview of the example in the initial lesson for you
@@ -16,7 +16,7 @@ from pyvista import examples
 # What is a Point?
 # ^^^^^^^^^^^^^^^^
 #
-# Let’s start with a point cloud – this is a mesh type that only has vertices.
+# Let's start with a point cloud - this is a mesh type that only has vertices.
 # You can create one by defining a 2D array of Cartesian coordinates like so:
 
 points = np.random.rand(100, 3)
@@ -31,7 +31,7 @@ mesh
 mesh.plot(point_size=10, style="points")
 
 ###############################################################################
-# But it’s important to note that most meshes have some sort of connectivity
+# But it's important to note that most meshes have some sort of connectivity
 # between points such as this gridded mesh:
 
 mesh = examples.load_hexbeam()
@@ -75,9 +75,9 @@ pl.camera_position = [(6.20, 3.00, 7.50), (0.16, 0.13, 2.65), (-0.28, 0.94, -0.2
 pl.show()
 
 ###############################################################################
-# Cells aren’t limited to voxels, they could be a triangle between three
+# Cells aren't limited to voxels, they could be a triangle between three
 # points, a line between two points, or even a single point could be its own
-# cell (but that’s a special case).
+# cell (but that's a special case).
 
 ###############################################################################
 # What are attributes?
@@ -95,7 +95,7 @@ pl.show()
 # ~~~~~~~~~~
 # Point data refers to arrays of values (scalars, vectors, etc.) that live on
 # each point of the mesh. Each element in an attribute array corresponds to a
-# point in the mesh. Let’s create some point data for the beam mesh. When
+# point in the mesh. Let's create some point data for the beam mesh. When
 # plotting, the values between points are interpolated across the cells.
 
 mesh.point_data["my point values"] = np.arange(mesh.n_points)
@@ -112,9 +112,9 @@ mesh.cell_data["my cell values"] = np.arange(mesh.n_cells)
 mesh.plot(scalars="my cell values", cpos=cpos, show_edges=True)
 
 ###############################################################################
-# Here’s a comparison of point data versus cell data and how point data is
+# Here's a comparison of point data versus cell data and how point data is
 # interpolated across cells when mapping colors. This is unlike cell data
-# which has a single value across the cell’s domain:
+# which has a single value across the cell's domain:
 
 import pyvista as pv
 from pyvista import examples
@@ -134,14 +134,14 @@ pl.show()
 # Field data is not directly associated with either the points or cells but
 # still should be attached to the mesh. This may be a string array storing notes.
 mesh = pv.Cube()
-mesh.field_data['metadata'] = ['Foo', 'bar']
+mesh.field_data["metadata"] = ["Foo", "bar"]
 mesh.field_data
 
 ###############################################################################
 # Assigning Scalars to a Mesh
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
-# Here’s how we assign values to cell attributes and plot it. Here, we
+# Here's how we assign values to cell attributes and plot it. Here, we
 # generate cube containing 6 faces and assign each face an integer from
 # ``range(6)`` and then have it plotted.
 #

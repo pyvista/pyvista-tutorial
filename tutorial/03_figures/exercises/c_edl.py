@@ -1,5 +1,5 @@
 """
-Eye Dome Lighting
+Eye Dome Lighting.
 ~~~~~~~~~~~~~~~~~
 
 Eye-Dome Lighting (EDL) is a non-photorealistic, image-based shading technique
@@ -43,7 +43,7 @@ p.show()
 
 p = pv.Plotter()
 p.add_mesh(point_cloud, color="tan", point_size=5)
-...  # Turn on eye dome lighting here
+# Turn on eye dome lighting here
 p.show()
 
 

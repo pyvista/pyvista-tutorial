@@ -1,20 +1,9 @@
 repos:
-  - repo: https://github.com/pycqa/isort
-    rev: 5.13.2
-    hooks:
-      - id: isort
-
   - repo: https://github.com/codespell-project/codespell
     rev: v2.3.0
     hooks:
       - id: codespell
         args: ["doc tutorial", "*.py *.rst *.md"]
-
-  - repo: https://github.com/asottile/pyupgrade
-    rev: v3.17.0
-    hooks:
-      - id: pyupgrade
-        args: [--py37-plus, --keep-runtime-typing]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
@@ -43,4 +32,6 @@ repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.5.7
     hooks:
+      - id: ruff
+        args: [--fix, --show-fixes]
       - id: ruff-format

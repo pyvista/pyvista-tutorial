@@ -1,5 +1,5 @@
 """
-Using VTK, PyVista, and Trame
+Using VTK, PyVista, and Trame.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This example demonstrates how to use VTK, PyVista, and Trame together
@@ -21,11 +21,11 @@ state, ctrl = server.state, server.controller
 source = vtkConeSource()
 
 pl = pv.Plotter()
-pl.add_mesh(source, color='seagreen')
+pl.add_mesh(source, color="seagreen")
 
 
 @state.change("resolution")
-def update_contour(resolution, **kwargs):
+def update_contour(resolution, **kwargs) -> None:
     source.SetResolution(int(resolution))
     ctrl.view_update()
 
@@ -49,17 +49,19 @@ with SinglePageLayout(server) as layout:
             active=("trame__busy",),
         )
 
-    with layout.content:
-        with vuetify3.VContainer(
+    with (
+        layout.content,
+        vuetify3.VContainer(
             fluid=True,
             classes="pa-0 fill-height",
-        ):
-            # Use PyVista UI template for Plotters
-            view = plotter_ui(pl)
-            ctrl.view_update = view.update
+        ),
+    ):
+        # Use PyVista UI template for Plotters
+        view = plotter_ui(pl)
+        ctrl.view_update = view.update
 
 # Show UI
-await layout.ready  # noqa
+await layout.ready
 layout
 ###############################################################################
 # .. raw:: html

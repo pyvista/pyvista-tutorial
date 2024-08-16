@@ -1,5 +1,5 @@
 """
-Sphere Widget
+Sphere Widget.
 ~~~~~~~~~~~~~
 
 The sphere widget can be enabled and disabled by the
@@ -40,7 +40,7 @@ surf.faces = np.array([3, 0, 1, 2])
 p = pv.Plotter()
 
 
-def callback(point):
+def callback(point) -> None:
     surf.points[0] = point
 
 
@@ -80,7 +80,7 @@ surf.faces = np.array([3, 0, 1, 2])
 p = pv.Plotter()
 
 
-def callback(point, i):
+def callback(point, i) -> None:
     surf.points[i] = point
 
 
@@ -108,15 +108,14 @@ from scipy.interpolate import griddata
 
 
 def get_colors(n):
-    """A helper function to get n colors"""
+    """A helper function to get n colors."""
     from itertools import cycle
 
-    import matplotlib
+    import matplotlib as mpl
 
-    cycler = matplotlib.rcParams['axes.prop_cycle']
+    cycler = mpl.rcParams["axes.prop_cycle"]
     colors = cycle(cycler)
-    colors = [next(colors)['color'] for i in range(n)]
-    return colors
+    return [next(colors)["color"] for i in range(n)]
 
 
 # Create a grid to interpolate to
@@ -137,12 +136,11 @@ points = np.array([[33, 25, 45], [70, 80, 13], [51, 57, 10], [25, 69, 20]])
 
 
 # Create an interpolation function to update that surface mesh
-def update_surface(point, i):
+def update_surface(point, i) -> None:
     points[i] = point
     tp = np.vstack((points, boundaries))
-    zz = griddata(tp[:, 0:2], tp[:, 2], (xx[:, :, 0], yy[:, :, 0]), method='cubic')
-    surf.points[:, -1] = zz.ravel(order='F')
-    return
+    zz = griddata(tp[:, 0:2], tp[:, 2], (xx[:, :, 0], yy[:, :, 0]), method="cubic")
+    surf.points[:, -1] = zz.ravel(order="F")
 
 
 # Get a list of unique colors for each widget

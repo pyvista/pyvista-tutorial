@@ -63,10 +63,10 @@ p = pv.Plotter()
 p.add_mesh(mesh.contour(8).extract_largest(), opacity=0.5)
 
 
-def my_plane_func(normal, origin):
+def my_plane_func(normal, origin) -> None:
     slc = mesh.slice(normal=normal, origin=origin)
-    arrows = slc.glyph(orient='vectors', scale="scalars", factor=0.01)
-    p.add_mesh(arrows, name='arrows')
+    arrows = slc.glyph(orient="vectors", scale="scalars", factor=0.01)
+    p.add_mesh(arrows, name="arrows")
 
 
 p.add_plane_widget(my_plane_func)
@@ -94,7 +94,7 @@ p.show()
 # The vector is also forcibly disabled anytime the ``assign_to_axis`` argument
 # is set.
 p = pv.Plotter()
-p.add_mesh_slice(vol, assign_to_axis='z')
+p.add_mesh_slice(vol, assign_to_axis="z")
 p.show()
 
 
@@ -106,7 +106,7 @@ p.show()
 import vtk
 
 p = pv.Plotter()
-p.add_mesh_slice(vol, assign_to_axis='z', interaction_event=vtk.vtkCommand.InteractionEvent)
+p.add_mesh_slice(vol, assign_to_axis="z", interaction_event=vtk.vtkCommand.InteractionEvent)
 p.show()
 
 ###############################################################################

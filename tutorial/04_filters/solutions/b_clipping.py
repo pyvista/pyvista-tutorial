@@ -25,14 +25,14 @@ help(dataset.clip)
 
 ###############################################################################
 # Perform a clip with a Y axis normal
-clipped = dataset.clip('y', invert=False)
+clipped = dataset.clip("y", invert=False)
 clipped
 
 ###############################################################################
 # Plot the result.
 p = pv.Plotter()
-p.add_mesh(dataset, style='wireframe', color='blue', label='Input')
-p.add_mesh(clipped, label='Clipped')
+p.add_mesh(dataset, style="wireframe", color="blue", label="Input")
+p.add_mesh(clipped, label="Clipped")
 p.add_legend()
 p.camera_position = [(0.24, 0.32, 0.7), (0.02, 0.03, -0.02), (-0.12, 0.93, -0.34)]
 p.show()
@@ -61,8 +61,8 @@ clipped
 ###############################################################################
 # Plot the original dataset and the clipped one.
 p = pv.Plotter()
-p.add_mesh(dataset, style='wireframe', color='blue', label='Input')
-p.add_mesh(clipped, label='Clipped')
+p.add_mesh(dataset, style="wireframe", color="blue", label="Input")
+p.add_mesh(clipped, label="Clipped")
 p.add_legend()
 p.show()
 
@@ -101,7 +101,7 @@ p.show()
 ###############################################################################
 # Crinkled Clipping
 # +++++++++++++++++
-# Crinkled clipping is useful if you don’t want the clip filter to truly clip
+# Crinkled clipping is useful if you don't want the clip filter to truly clip
 # cells on the boundary, but want to preserve the input cell structure and to
 # pass the entire cell on through the boundary.
 #
@@ -130,10 +130,10 @@ crinkled = mesh.clip(normal=normal, crinkle=True)
 # Plot comparison
 p = pv.Plotter(shape=(1, 2))
 p.add_mesh(clipped, show_edges=True)
-p.add_mesh(plane.extract_feature_edges(), color='r')
+p.add_mesh(plane.extract_feature_edges(), color="r")
 p.subplot(0, 1)
 p.add_mesh(crinkled, show_edges=True)
-p.add_mesh(plane.extract_feature_edges(), color='r')
+p.add_mesh(plane.extract_feature_edges(), color="r")
 p.link_views()
 p.show()
 

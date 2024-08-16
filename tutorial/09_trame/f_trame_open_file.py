@@ -1,5 +1,5 @@
 """
-Open Mesh File
+Open Mesh File.
 ~~~~~~~~~~~~~~
 
 An example of opening a mesh file from the browser and viewing it with PyVista.
@@ -7,6 +7,7 @@ An example of opening a mesh file from the browser and viewing it with PyVista.
 """
 
 import tempfile
+from pathlib import Path
 
 import pyvista as pv
 from pyvista.trame.ui import plotter_ui
@@ -24,14 +25,14 @@ pl = pv.Plotter()
 
 
 @server.state.change("file_exchange")
-def handle(file_exchange, **kwargs):
+def handle(file_exchange, **kwargs) -> None:
     file = ClientFile(file_exchange)
 
     if file.content:
-        print(file.info)
-        bytes = file.content
+        print(file.info)  # noqa: T201
+        bytes = file.content  # noqa: A001
         with tempfile.NamedTemporaryFile(suffix=file.name) as path:
-            with open(path.name, 'wb') as f:
+            with Path(path.name).open("wb") as f:
                 f.write(bytes)
             ds = pv.read(path.name)
         pl.add_mesh(ds, name=file.name)
@@ -57,7 +58,7 @@ with SinglePageLayout(server) as layout:
             indeterminate=True, absolute=True, bottom=True, active=("trame__busy",)
         )
 
-    with layout.content:
+    with layout.content:  # noqa: SIM117
         with vuetify3.VContainer(
             fluid=True, classes="pa-0 fill-height", style="position: relative;"
         ):
@@ -65,7 +66,7 @@ with SinglePageLayout(server) as layout:
             ctrl.view_update = view.update
 
 # Show UI
-await layout.ready  # noqa
+await layout.ready
 layout
 ###############################################################################
 # .. raw:: html
