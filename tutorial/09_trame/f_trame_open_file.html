@@ -473,6 +473,7 @@ to download the full example code. or to run this example in your browser via Bi
 <span id="sphx-glr-tutorial-09-trame-f-trame-open-file-py"></span><h1>Open Mesh File<a class="headerlink" href="#open-mesh-file" title="Link to this heading">#</a></h1>
 <p>An example of opening a mesh file from the browser and viewing it with PyVista.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <a href="https://docs.python.org/dev/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a>
 
 <span class="kn">import</span> <span class="nn">pyvista</span> <span class="k">as</span> <span class="nn">pv</span>
 <span class="kn">from</span> <span class="nn">pyvista.trame.ui</span> <span class="kn">import</span> <span class="n">plotter_ui</span>
@@ -490,14 +491,14 @@ to download the full example code. or to run this example in your browser via Bi
 
 
 <span class="nd">@server</span><span class="o">.</span><span class="n">state</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="s2">&quot;file_exchange&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">file_exchange</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">handle</span><span class="p">(</span><span class="n">file_exchange</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">file</span> <span class="o">=</span> <span class="n">ClientFile</span><span class="p">(</span><span class="n">file_exchange</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">file</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>
-        <span class="nb">bytes</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">content</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">info</span><span class="p">)</span>  <span class="c1"># noqa: T201</span>
+        <span class="nb">bytes</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">content</span>  <span class="c1"># noqa: A001</span>
         <span class="k">with</span> <a href="https://docs.python.org/dev/library/tempfile.html#tempfile.NamedTemporaryFile" title="tempfile.NamedTemporaryFile" class="sphx-glr-backref-module-tempfile sphx-glr-backref-type-py-function"><span class="n">tempfile</span><span class="o">.</span><span class="n">NamedTemporaryFile</span></a><span class="p">(</span><span class="n">suffix</span><span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">as</span> <span class="n">path</span><span class="p">:</span>
-            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="k">with</span> <a href="https://docs.python.org/dev/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Path</span></a><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
                 <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">bytes</span><span class="p">)</span>
             <span class="n">ds</span> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="pyvista.read" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">read</span></a><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
@@ -523,7 +524,7 @@ to download the full example code. or to run this example in your browser via Bi
             <span class="n">indeterminate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">absolute</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">bottom</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">active</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;trame__busy&quot;</span><span class="p">,)</span>
         <span class="p">)</span>
 
-    <span class="k">with</span> <span class="n">layout</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
+    <span class="k">with</span> <span class="n">layout</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>  <span class="c1"># noqa: SIM117</span>
         <span class="k">with</span> <span class="n">vuetify3</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
             <span class="n">fluid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;pa-0 fill-height&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;position: relative;&quot;</span>
         <span class="p">):</span>
@@ -531,7 +532,7 @@ to download the full example code. or to run this example in your browser via Bi
             <span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">update</span>
 
 <span class="c1"># Show UI</span>
-<span class="k">await</span> <span class="n">layout</span><span class="o">.</span><span class="n">ready</span>  <span class="c1"># noqa</span>
+<span class="k">await</span> <span class="n">layout</span><span class="o">.</span><span class="n">ready</span>
 <span class="n">layout</span>
 </pre></div>
 </div>

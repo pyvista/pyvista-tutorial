@@ -154,12 +154,12 @@ Feel free to adjust the specular value in the ``s`` variable.
 
     p.subplot(0, 0)
     p.add_mesh(mesh, show_scalar_bar=False)
-    p.add_text('No Specular')
+    p.add_text("No Specular")
 
     p.subplot(0, 1)
     specular = 1.0
     p.add_mesh(mesh, specular=specular, show_scalar_bar=False)
-    p.add_text(f'Specular of {specular}')
+    p.add_text(f"Specular of {specular}")
 
     p.link_views()
     p.view_isometric()
@@ -306,7 +306,7 @@ For detailed control over lighting conditions in general see the
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 8.708 seconds)
+   **Total running time of the script:** (0 minutes 8.116 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_b_lighting_mesh.py:

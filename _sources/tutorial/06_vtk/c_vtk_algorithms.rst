@@ -39,8 +39,8 @@ Let's see if we can try a few VTK algorithms with that standard workflow.
 
 
     import pyvista as pv
-    from pyvista import examples
     import vtk
+    from pyvista import examples
 
 
 
@@ -1352,14 +1352,13 @@ Try using this VTK filter yourself here:
 
 Remember that you will have to wrap the output of the algorithm with :func:`pyvista.wrap`
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-48
+.. GENERATED FROM PYTHON SOURCE LINES 40-47
 
 .. code-block:: Python
 
     alg = vtk.vtkOutlineFilter()
 
     # (your code here, answer below)
-    ...
 
     outline = pv.wrap(alg.GetOutput())
     outline
@@ -1389,12 +1388,12 @@ Remember that you will have to wrap the output of the algorithm with :func:`pyvi
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-56
+.. GENERATED FROM PYTHON SOURCE LINES 48-55
 
 .. code-block:: Python
 
     alg.SetInputDataObject(mesh)
-    alg.SetGenerateFaces(False)
+    alg.SetGenerateFaces(False)  # noqa: FBT003
     alg.Update()
 
     outline = pv.wrap(alg.GetOutput())
@@ -1425,19 +1424,19 @@ Remember that you will have to wrap the output of the algorithm with :func:`pyvi
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-60
+.. GENERATED FROM PYTHON SOURCE LINES 56-59
 
 .. note::
 
   Note that the about filter can be replaced with a ``.outline()`` filter in PyVista
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-68
+.. GENERATED FROM PYTHON SOURCE LINES 61-67
 
 .. code-block:: Python
 
     p = pv.Plotter()
     p.add_mesh(mesh)
-    p.add_mesh(outline, color='k')
+    p.add_mesh(outline, color="k")
     p.show()
 
 
@@ -1475,7 +1474,7 @@ Remember that you will have to wrap the output of the algorithm with :func:`pyvi
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-76
+.. GENERATED FROM PYTHON SOURCE LINES 68-75
 
 Find your own filter
 ^^^^^^^^^^^^^^^^^^^^
@@ -1485,7 +1484,7 @@ to apply to your mesh. The instructors will be around to help you implement.
 
 See https://kitware.github.io/vtk-examples/site/Python/
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-85
+.. GENERATED FROM PYTHON SOURCE LINES 77-84
 
 .. raw:: html
 
@@ -1498,7 +1497,7 @@ See https://kitware.github.io/vtk-examples/site/Python/
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.786 seconds)
+   **Total running time of the script:** (0 minutes 0.741 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_c_vtk_algorithms.py:

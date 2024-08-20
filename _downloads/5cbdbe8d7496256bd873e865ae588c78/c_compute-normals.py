@@ -23,7 +23,6 @@ mesh.plot(cmap="gist_earth", show_scalar_bar=False)
 # exaggerated topographic relief.
 
 # Compute the normals in-place and use them to warp the globe
-...
 
 ###############################################################################
 # Now use those normals to warp the surface
@@ -44,7 +43,7 @@ mesh = examples.download_nefertiti()
 mesh.compute_normals(...)
 
 # Get list of cell IDs that meet condition
-ids = np.arange(mesh.n_cells)[mesh['Normals'][...] > ...]
+ids = np.arange(mesh.n_cells)[mesh["Normals"][...] > ...]
 
 # Extract those cells
 top = mesh.extract_cells(ids)

@@ -79,11 +79,11 @@ locations.
  .. code-block:: none
 
 
-    pyvista_ndarray([[4.80950275e+05, 4.40020380e+06, 1.75901001e+03],
-                     [4.81016475e+05, 4.40022470e+06, 1.75806006e+03],
-                     [4.81059775e+05, 4.40015730e+06, 1.76130005e+03],
-                     [4.81028675e+05, 4.40019900e+06, 1.76331995e+03],
-                     [4.81066775e+05, 4.40011360e+06, 1.76079004e+03]])
+    pyvista_ndarray([[4.81025275e+05, 4.40009100e+06, 1.76768005e+03],
+                     [4.80977975e+05, 4.40021380e+06, 1.75856006e+03],
+                     [4.81110075e+05, 4.40023100e+06, 1.76943994e+03],
+                     [4.81060675e+05, 4.40010540e+06, 1.76193005e+03],
+                     [4.81121075e+05, 4.40011650e+06, 1.75904004e+03]])
 
 
 
@@ -116,7 +116,7 @@ data or your own project, create a PyVista mesh using those points.
     <tr><td>N Strips</td><td>0</td></tr>
     <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
     <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-    <tr><td>Z Bounds</td><td>1.754e+03, 1.784e+03</td></tr>
+    <tr><td>Z Bounds</td><td>1.754e+03, 1.787e+03</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -301,7 +301,7 @@ and add those vectors to the mesh.
 This time, we're going to create a totally new, random point cloud containing
 100 points using :func:`numpy.random.random`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-113
+.. GENERATED FROM PYTHON SOURCE LINES 94-112
 
 .. code-block:: Python
 
@@ -316,8 +316,7 @@ This time, we're going to create a totally new, random point cloud containing
         """Create normalized vectors pointing outward from the center of the cloud."""
         origin = mesh.center
         vectors = mesh.points - origin
-        vectors = vectors / np.linalg.norm(vectors, axis=1)[:, None]
-        return vectors
+        return vectors / np.linalg.norm(vectors, axis=1)[:, None]
 
 
     vectors = compute_vectors(point_cloud)
@@ -333,24 +332,24 @@ This time, we're going to create a totally new, random point cloud containing
  .. code-block:: none
 
 
-    pyvista_ndarray([[ 0.75437665,  0.39573419,  0.52374643],
-                     [-0.98994278, -0.1004466 , -0.09961817],
-                     [ 0.55064632, -0.65649021,  0.51556691],
-                     [-0.00500743,  0.32387673,  0.94608604],
-                     [ 0.62381715,  0.32072341,  0.71273323]])
+    pyvista_ndarray([[-0.4543647 , -0.71582315,  0.53023574],
+                     [-0.47324831,  0.47248926,  0.74349844],
+                     [-0.57552453,  0.72932291, -0.3699454 ],
+                     [ 0.32488661, -0.65350466,  0.68365221],
+                     [ 0.34098757, -0.66758456,  0.66185975]])
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-115
+.. GENERATED FROM PYTHON SOURCE LINES 113-114
 
 Add the vector array as point data to the new mesh:
 
-.. GENERATED FROM PYTHON SOURCE LINES 115-118
+.. GENERATED FROM PYTHON SOURCE LINES 114-117
 
 .. code-block:: Python
 
 
-    point_cloud['vectors'] = vectors
+    point_cloud["vectors"] = vectors
 
 
 
@@ -359,27 +358,27 @@ Add the vector array as point data to the new mesh:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 119-122
+.. GENERATED FROM PYTHON SOURCE LINES 118-121
 
 Now we can make arrows using those vectors using the glyph filter (see the
 `Glyph Example <https://docs.pyvista.org/examples/01-filter/glyphs.html>`_
 for more details).
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-138
+.. GENERATED FROM PYTHON SOURCE LINES 121-137
 
 .. code-block:: Python
 
 
     arrows = point_cloud.glyph(
-        orient='vectors',
+        orient="vectors",
         scale=False,
         factor=0.15,
     )
 
     # Display the arrows
     plotter = pv.Plotter()
-    plotter.add_mesh(point_cloud, color='maroon', point_size=10.0, render_points_as_spheres=True)
-    plotter.add_mesh(arrows, color='lightblue')
+    plotter.add_mesh(point_cloud, color="maroon", point_size=10.0, render_points_as_spheres=True)
+    plotter.add_mesh(arrows, color="lightblue")
     # plotter.add_point_labels([point_cloud.center,], ['Center',],
     #                          point_color='yellow', point_size=20)
     plotter.show_grid()
@@ -419,7 +418,7 @@ for more details).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-146
+.. GENERATED FROM PYTHON SOURCE LINES 138-145
 
 .. raw:: html
 
@@ -432,7 +431,7 @@ for more details).
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.898 seconds)
+   **Total running time of the script:** (0 minutes 3.478 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_b_create-point-cloud.py:

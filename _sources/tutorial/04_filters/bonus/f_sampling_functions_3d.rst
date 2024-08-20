@@ -101,12 +101,12 @@ color limits without blue
 
 .. code-block:: Python
 
-    mn, mx = [out['scalars'].min(), out['scalars'].max()]
+    mn, mx = [out["scalars"].min(), out["scalars"].max()]
     clim = (mn, mx * 1.8)
 
     out.plot(
-        cmap='gist_earth_r',
-        background='white',
+        cmap="gist_earth_r",
+        background="white",
         show_scalar_bar=False,
         lighting=True,
         clim=clim,
@@ -160,7 +160,7 @@ color limits without blue
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.603 seconds)
+   **Total running time of the script:** (0 minutes 0.577 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_bonus_f_sampling_functions_3d.py:

@@ -489,11 +489,11 @@ to show how the three libraries complement each other.</p>
 <span class="n">source</span> <span class="o">=</span> <span class="n">vtkConeSource</span><span class="p">()</span>
 
 <span class="n">pl</span> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
-<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;seagreen&#39;</span><span class="p">)</span>
+<span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;seagreen&quot;</span><span class="p">)</span>
 
 
 <span class="nd">@state</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="s2">&quot;resolution&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">update_contour</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">update_contour</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">source</span><span class="o">.</span><span class="n">SetResolution</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">resolution</span><span class="p">))</span>
     <span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span><span class="p">()</span>
 
@@ -517,17 +517,19 @@ to show how the three libraries complement each other.</p>
             <span class="n">active</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;trame__busy&quot;</span><span class="p">,),</span>
         <span class="p">)</span>
 
-    <span class="k">with</span> <span class="n">layout</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
-        <span class="k">with</span> <span class="n">vuetify3</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
+    <span class="k">with</span> <span class="p">(</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">content</span><span class="p">,</span>
+        <span class="n">vuetify3</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
             <span class="n">fluid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;pa-0 fill-height&quot;</span><span class="p">,</span>
-        <span class="p">):</span>
-            <span class="c1"># Use PyVista UI template for Plotters</span>
-            <span class="n">view</span> <span class="o">=</span> <span class="n">plotter_ui</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
-            <span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">update</span>
+        <span class="p">),</span>
+    <span class="p">):</span>
+        <span class="c1"># Use PyVista UI template for Plotters</span>
+        <span class="n">view</span> <span class="o">=</span> <span class="n">plotter_ui</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
+        <span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">update</span>
 
 <span class="c1"># Show UI</span>
-<span class="k">await</span> <span class="n">layout</span><span class="o">.</span><span class="n">ready</span>  <span class="c1"># noqa</span>
+<span class="k">await</span> <span class="n">layout</span><span class="o">.</span><span class="n">ready</span>
 <span class="n">layout</span>
 </pre></div>
 </div>

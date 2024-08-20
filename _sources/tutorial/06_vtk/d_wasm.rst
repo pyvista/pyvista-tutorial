@@ -27,11 +27,12 @@ Use WASM local rendering. This requires a pre-release version of VTK:
 
     pip install --extra-index-url https://wheels.vtk.org vtk==9.3.20240629.dev0
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-36
+.. GENERATED FROM PYTHON SOURCE LINES 12-33
 
 .. code-block:: Python
 
 
+    # Required for vtk factory
     from trame.app import get_server
     from trame.decorators import TrameApp, change
     from trame.ui.vuetify3 import SinglePageLayout
@@ -43,7 +44,6 @@ Use WASM local rendering. This requires a pre-release version of VTK:
     from vtkmodules.vtkFiltersSources import vtkConeSource, vtkCubeSource, vtkSphereSource
     from vtkmodules.vtkImagingCore import vtkRTAnalyticSource
     from vtkmodules.vtkImagingGeneral import vtkImageGradient
-    from vtkmodules.vtkInteractionStyle import vtkInteractorStyleSwitch  # noqa
     from vtkmodules.vtkRenderingCore import (
         vtkActor,
         vtkPolyDataMapper,
@@ -52,17 +52,14 @@ Use WASM local rendering. This requires a pre-release version of VTK:
         vtkRenderWindowInteractor,
     )
 
-    # Required for vtk factory
-    import vtkmodules.vtkRenderingOpenGL2  # noqa
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 37-124
+.. GENERATED FROM PYTHON SOURCE LINES 34-121
 
 .. code-block:: Python
 
 
 
-    def setup_vtk():
+    def setup_vtk():  # noqa: PLR0915
         colors = vtkNamedColors()
 
         # The Wavelet Source is nice for generating a test vtkImageData set
@@ -135,10 +132,10 @@ Use WASM local rendering. This requires a pre-release version of VTK:
         ren.AddActor(actor)
         ren.SetBackground(colors.GetColor3d("DarkGray"))
 
-        renWin = vtkRenderWindow()
+        renWin = vtkRenderWindow()  # noqa: N806
         renWin.AddRenderer(ren)
 
-        renderWindowInteractor = vtkRenderWindowInteractor()
+        renderWindowInteractor = vtkRenderWindowInteractor()  # noqa: N806
         renderWindowInteractor.SetRenderWindow(renWin)
         renderWindowInteractor.GetInteractorStyle().SetCurrentStyleToTrackballCamera()
 
@@ -148,7 +145,7 @@ Use WASM local rendering. This requires a pre-release version of VTK:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-191
+.. GENERATED FROM PYTHON SOURCE LINES 122-190
 
 .. code-block:: Python
 
@@ -156,7 +153,7 @@ Use WASM local rendering. This requires a pre-release version of VTK:
 
     @TrameApp()
     class App:
-        def __init__(self, server=None):
+        def __init__(self, server=None) -> None:
             self.server = get_server(server, client_type="vue3")
             self.render_window, self.renderer, self.cone, self.sphere = setup_vtk()
             self.view_local = None
@@ -168,13 +165,13 @@ Use WASM local rendering. This requires a pre-release version of VTK:
             return self.server.controller
 
         @change("resolution")
-        def on_resolution_change(self, resolution, **kwargs):
+        def on_resolution_change(self, resolution, **kwargs) -> None:
             self.cone.SetResolution(int(resolution))
             self.sphere.SetStartTheta(int(resolution) * 6)
             self.view_remote.update()
             self.view_local.update()
 
-        def reset_camera(self):
+        def reset_camera(self) -> None:
             self.renderer.ResetCamera()
             self.view_local.update()
             self.view_remote.update()
@@ -194,23 +191,25 @@ Use WASM local rendering. This requires a pre-release version of VTK:
                     )
                     vuetify.VBtn("Update", click=self.ctrl.view_update)
 
-                with layout.content:
-                    with vuetify.VContainer(
+                with (
+                    layout.content,
+                    vuetify.VContainer(
                         fluid=True,
                         classes="pa-0 fill-height",
+                    ),
+                ):
+                    with vuetify.VContainer(
+                        fluid=True, classes="pa-0 fill-height", style="width: 50%;"
                     ):
-                        with vuetify.VContainer(
-                            fluid=True, classes="pa-0 fill-height", style="width: 50%;"
-                        ):
-                            self.view_local = vtklocal.LocalView(
-                                self.render_window,
-                                eager_sync=True,
-                            )
-                            self.ctrl.view_update = self.view_local.update
-                        with vuetify.VContainer(
-                            fluid=True, classes="pa-0 fill-height", style="width: 50%;"
-                        ):
-                            self.view_remote = VtkRemoteView(self.render_window, interactive_ratio=1)
+                        self.view_local = vtklocal.LocalView(
+                            self.render_window,
+                            eager_sync=True,
+                        )
+                        self.ctrl.view_update = self.view_local.update
+                    with vuetify.VContainer(
+                        fluid=True, classes="pa-0 fill-height", style="width: 50%;"
+                    ):
+                        self.view_remote = VtkRemoteView(self.render_window, interactive_ratio=1)
 
                 # hide footer
                 layout.footer.hide()
@@ -219,29 +218,29 @@ Use WASM local rendering. This requires a pre-release version of VTK:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 192-195
+.. GENERATED FROM PYTHON SOURCE LINES 191-194
 
 .. code-block:: Python
 
     app = App("wasm")
-    await app.ui.ready  # noqa
+    await app.ui.ready
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 196-198
+.. GENERATED FROM PYTHON SOURCE LINES 195-197
 
 Make sure to give room for the download of WASM bundle
 Only needed at first execution
 
-.. GENERATED FROM PYTHON SOURCE LINES 198-202
+.. GENERATED FROM PYTHON SOURCE LINES 197-201
 
 .. code-block:: Python
 
-    import asyncio  # noqa
+    import asyncio
 
-    await asyncio.sleep(1)  # noqa
+    await asyncio.sleep(1)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-204
+.. GENERATED FROM PYTHON SOURCE LINES 202-203
 
 .. code-block:: Python
 

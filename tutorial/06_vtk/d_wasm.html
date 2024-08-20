@@ -476,7 +476,8 @@ to download the full example code. or to run this example in your browser via Bi
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--extra-index-url<span class="w"> </span>https://wheels.vtk.org<span class="w"> </span><span class="nv">vtk</span><span class="o">==</span><span class="m">9</span>.3.20240629.dev0
 </pre></div>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">trame.app</span> <span class="kn">import</span> <span class="n">get_server</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Required for vtk factory</span>
+<span class="kn">from</span> <span class="nn">trame.app</span> <span class="kn">import</span> <span class="n">get_server</span>
 <span class="kn">from</span> <span class="nn">trame.decorators</span> <span class="kn">import</span> <span class="n">TrameApp</span><span class="p">,</span> <span class="n">change</span>
 <span class="kn">from</span> <span class="nn">trame.ui.vuetify3</span> <span class="kn">import</span> <span class="n">SinglePageLayout</span>
 <span class="kn">from</span> <span class="nn">trame.widgets</span> <span class="kn">import</span> <span class="n">vuetify3</span> <span class="k">as</span> <span class="n">vuetify</span>
@@ -487,7 +488,6 @@ to download the full example code. or to run this example in your browser via Bi
 <span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersSources</span> <span class="kn">import</span> <span class="n">vtkConeSource</span><span class="p">,</span> <span class="n">vtkCubeSource</span><span class="p">,</span> <span class="n">vtkSphereSource</span>
 <span class="kn">from</span> <span class="nn">vtkmodules.vtkImagingCore</span> <span class="kn">import</span> <span class="n">vtkRTAnalyticSource</span>
 <span class="kn">from</span> <span class="nn">vtkmodules.vtkImagingGeneral</span> <span class="kn">import</span> <span class="n">vtkImageGradient</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkInteractionStyle</span> <span class="kn">import</span> <span class="n">vtkInteractorStyleSwitch</span>  <span class="c1"># noqa</span>
 <span class="kn">from</span> <span class="nn">vtkmodules.vtkRenderingCore</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">vtkActor</span><span class="p">,</span>
     <span class="n">vtkPolyDataMapper</span><span class="p">,</span>
@@ -495,12 +495,9 @@ to download the full example code. or to run this example in your browser via Bi
     <span class="n">vtkRenderWindow</span><span class="p">,</span>
     <span class="n">vtkRenderWindowInteractor</span><span class="p">,</span>
 <span class="p">)</span>
-
-<span class="c1"># Required for vtk factory</span>
-<span class="kn">import</span> <span class="nn">vtkmodules.vtkRenderingOpenGL2</span>  <span class="c1"># noqa</span>
 </pre></div>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup_vtk</span><span class="p">():</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup_vtk</span><span class="p">():</span>  <span class="c1"># noqa: PLR0915</span>
     <span class="n">colors</span> <span class="o">=</span> <span class="n">vtkNamedColors</span><span class="p">()</span>
 
     <span class="c1"># The Wavelet Source is nice for generating a test vtkImageData set</span>
@@ -573,10 +570,10 @@ to download the full example code. or to run this example in your browser via Bi
     <span class="n">ren</span><span class="o">.</span><span class="n">AddActor</span><span class="p">(</span><span class="n">actor</span><span class="p">)</span>
     <span class="n">ren</span><span class="o">.</span><span class="n">SetBackground</span><span class="p">(</span><span class="n">colors</span><span class="o">.</span><span class="n">GetColor3d</span><span class="p">(</span><span class="s2">&quot;DarkGray&quot;</span><span class="p">))</span>
 
-    <span class="n">renWin</span> <span class="o">=</span> <span class="n">vtkRenderWindow</span><span class="p">()</span>
+    <span class="n">renWin</span> <span class="o">=</span> <span class="n">vtkRenderWindow</span><span class="p">()</span>  <span class="c1"># noqa: N806</span>
     <span class="n">renWin</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">ren</span><span class="p">)</span>
 
-    <span class="n">renderWindowInteractor</span> <span class="o">=</span> <span class="n">vtkRenderWindowInteractor</span><span class="p">()</span>
+    <span class="n">renderWindowInteractor</span> <span class="o">=</span> <span class="n">vtkRenderWindowInteractor</span><span class="p">()</span>  <span class="c1"># noqa: N806</span>
     <span class="n">renderWindowInteractor</span><span class="o">.</span><span class="n">SetRenderWindow</span><span class="p">(</span><span class="n">renWin</span><span class="p">)</span>
     <span class="n">renderWindowInteractor</span><span class="o">.</span><span class="n">GetInteractorStyle</span><span class="p">()</span><span class="o">.</span><span class="n">SetCurrentStyleToTrackballCamera</span><span class="p">()</span>
 
@@ -587,7 +584,7 @@ to download the full example code. or to run this example in your browser via Bi
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@TrameApp</span><span class="p">()</span>
 <span class="k">class</span> <span class="nc">App</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">server</span> <span class="o">=</span> <span class="n">get_server</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">client_type</span><span class="o">=</span><span class="s2">&quot;vue3&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cone</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sphere</span> <span class="o">=</span> <span class="n">setup_vtk</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view_local</span> <span class="o">=</span> <span class="kc">None</span>
@@ -599,13 +596,13 @@ to download the full example code. or to run this example in your browser via Bi
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">controller</span>
 
     <span class="nd">@change</span><span class="p">(</span><span class="s2">&quot;resolution&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">on_resolution_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">on_resolution_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cone</span><span class="o">.</span><span class="n">SetResolution</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">resolution</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sphere</span><span class="o">.</span><span class="n">SetStartTheta</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view_remote</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view_local</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">reset_camera</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">reset_camera</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">ResetCamera</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view_local</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view_remote</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
@@ -625,23 +622,25 @@ to download the full example code. or to run this example in your browser via Bi
                 <span class="p">)</span>
                 <span class="n">vuetify</span><span class="o">.</span><span class="n">VBtn</span><span class="p">(</span><span class="s2">&quot;Update&quot;</span><span class="p">,</span> <span class="n">click</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span><span class="p">)</span>
 
-            <span class="k">with</span> <span class="n">layout</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
-                <span class="k">with</span> <span class="n">vuetify</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
+            <span class="k">with</span> <span class="p">(</span>
+                <span class="n">layout</span><span class="o">.</span><span class="n">content</span><span class="p">,</span>
+                <span class="n">vuetify</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
                     <span class="n">fluid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                     <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;pa-0 fill-height&quot;</span><span class="p">,</span>
+                <span class="p">),</span>
+            <span class="p">):</span>
+                <span class="k">with</span> <span class="n">vuetify</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
+                    <span class="n">fluid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;pa-0 fill-height&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;width: 50%;&quot;</span>
                 <span class="p">):</span>
-                    <span class="k">with</span> <span class="n">vuetify</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
-                        <span class="n">fluid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;pa-0 fill-height&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;width: 50%;&quot;</span>
-                    <span class="p">):</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">view_local</span> <span class="o">=</span> <span class="n">vtklocal</span><span class="o">.</span><span class="n">LocalView</span><span class="p">(</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">,</span>
-                            <span class="n">eager_sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                        <span class="p">)</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">view_local</span><span class="o">.</span><span class="n">update</span>
-                    <span class="k">with</span> <span class="n">vuetify</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
-                        <span class="n">fluid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;pa-0 fill-height&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;width: 50%;&quot;</span>
-                    <span class="p">):</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">view_remote</span> <span class="o">=</span> <span class="n">VtkRemoteView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">,</span> <span class="n">interactive_ratio</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">view_local</span> <span class="o">=</span> <span class="n">vtklocal</span><span class="o">.</span><span class="n">LocalView</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">,</span>
+                        <span class="n">eager_sync</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="p">)</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">view_local</span><span class="o">.</span><span class="n">update</span>
+                <span class="k">with</span> <span class="n">vuetify</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
+                    <span class="n">fluid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;pa-0 fill-height&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;width: 50%;&quot;</span>
+                <span class="p">):</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">view_remote</span> <span class="o">=</span> <span class="n">VtkRemoteView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">,</span> <span class="n">interactive_ratio</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
             <span class="c1"># hide footer</span>
             <span class="n">layout</span><span class="o">.</span><span class="n">footer</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
@@ -650,14 +649,14 @@ to download the full example code. or to run this example in your browser via Bi
 </pre></div>
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">(</span><span class="s2">&quot;wasm&quot;</span><span class="p">)</span>
-<span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">ready</span>  <span class="c1"># noqa</span>
+<span class="k">await</span> <span class="n">app</span><span class="o">.</span><span class="n">ui</span><span class="o">.</span><span class="n">ready</span>
 </pre></div>
 </div>
 <p>Make sure to give room for the download of WASM bundle
 Only needed at first execution</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>  <span class="c1"># noqa</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
 
-<span class="k">await</span> <a href="https://docs.python.org/dev/library/asyncio-task.html#asyncio.sleep" title="asyncio.sleep" class="sphx-glr-backref-module-asyncio sphx-glr-backref-type-py-function"><span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># noqa</span>
+<span class="k">await</span> <a href="https://docs.python.org/dev/library/asyncio-task.html#asyncio.sleep" title="asyncio.sleep" class="sphx-glr-backref-module-asyncio sphx-glr-backref-type-py-function"><span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">app</span><span class="o">.</span><span class="n">ui</span>

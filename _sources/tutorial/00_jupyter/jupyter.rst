@@ -31,7 +31,7 @@ Become familiar with PyVista Jupyter backend.
     import pyvista as pv
 
     # Set/enable the backed
-    pv.set_jupyter_backend('trame')
+    pv.set_jupyter_backend("trame")
 
 
 
@@ -95,7 +95,7 @@ Client-side rendering only (in browser)
 
     pl = pv.Plotter()
     pl.add_mesh(pv.ParametricRandomHills().elevation())
-    pl.show(jupyter_backend='client')
+    pl.show(jupyter_backend="client")
 
 
 
@@ -151,7 +151,7 @@ Server-side rendering only
 
     pl = pv.Plotter()
     pl.add_volume(pv.Wavelet())
-    pl.show(jupyter_backend='server')
+    pl.show(jupyter_backend="server")
 
 
 
@@ -208,7 +208,7 @@ Server-side rendering only
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.784 seconds)
+   **Total running time of the script:** (0 minutes 1.656 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_jupyter_jupyter.py:

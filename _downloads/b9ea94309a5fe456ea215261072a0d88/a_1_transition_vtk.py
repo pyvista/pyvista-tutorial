@@ -136,7 +136,7 @@ grid.point_data["values"] = values.flatten(order="F")
 ###############################################################################
 # However, with PyVista you only need:
 
-grid.plot(cpos='xy', show_scalar_bar=False, cmap='coolwarm')
+grid.plot(cpos="xy", show_scalar_bar=False, cmap="coolwarm")
 
 
 ###############################################################################
@@ -161,7 +161,6 @@ vtk_array.SetValue(7, 0.667)
 vtk_array.SetValue(8, 0)
 vtk_points = vtk.vtkPoints()
 vtk_points.SetData(vtk_array)
-print(vtk_points)
 
 ###############################################################################
 # To do the same within PyVista, you simply need to create a NumPy array:
@@ -228,8 +227,8 @@ out, n_coll = mesh_a.collision(mesh_b, generate_scalars=True, contact_mode=2)
 
 pl = pv.Plotter()
 pl.add_mesh(out)
-pl.add_mesh(mesh_b, style='wireframe', color='k')
-pl.camera_position = 'xy'
+pl.add_mesh(mesh_b, style="wireframe", color="k")
+pl.camera_position = "xy"
 pl.show()
 
 ###############################################################################

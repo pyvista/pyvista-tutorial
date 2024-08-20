@@ -205,7 +205,7 @@ We can even plot the edges that will be split using
     pl = pv.Plotter()
     # pl.enable_anti_aliasing()
     pl.add_mesh(mesh, smooth_shading=True, split_sharp_edges=True)
-    pl.add_mesh(edges, color='k', line_width=5)
+    pl.add_mesh(edges, color="k", line_width=5)
     pl.show()
 
 
@@ -256,7 +256,7 @@ physically based rendering as well.
     # plot both the edges and the smoothed mesh
     pl = pv.Plotter()
     # pl.enable_anti_aliasing()
-    pl.add_mesh(mesh, color='w', split_sharp_edges=True, pbr=True, metallic=1.0, roughness=0.5)
+    pl.add_mesh(mesh, color="w", split_sharp_edges=True, pbr=True, metallic=1.0, roughness=0.5)
     pl.show()
 
 
@@ -306,7 +306,7 @@ physically based rendering as well.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.345 seconds)
+   **Total running time of the script:** (0 minutes 1.258 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_b_shading.py:

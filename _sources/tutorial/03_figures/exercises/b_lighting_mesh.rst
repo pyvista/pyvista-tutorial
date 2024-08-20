@@ -80,12 +80,12 @@ Feel free to adjust the specular value in the ``s`` variable.
 
     p.subplot(0, 0)
     p.add_mesh(mesh, show_scalar_bar=False)
-    p.add_text('No Specular')
+    p.add_text("No Specular")
 
     p.subplot(0, 1)
     specular = ...
     p.add_mesh(mesh, ..., show_scalar_bar=False)
-    p.add_text(f'Specular of {specular}')
+    p.add_text(f"Specular of {specular}")
 
     p.link_views()
     p.view_isometric()

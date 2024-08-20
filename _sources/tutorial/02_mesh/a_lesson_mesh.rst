@@ -45,7 +45,7 @@ to try out!
 What is a Point?
 ^^^^^^^^^^^^^^^^
 
-Let’s start with a point cloud – this is a mesh type that only has vertices.
+Let's start with a point cloud - this is a mesh type that only has vertices.
 You can create one by defining a 2D array of Cartesian coordinates like so:
 
 .. GENERATED FROM PYTHON SOURCE LINES 21-25
@@ -65,11 +65,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
  .. code-block:: none
 
 
-    array([[0.02681323, 0.37777521, 0.01480324],
-           [0.74775338, 0.83493636, 0.03455256],
-           [0.54057014, 0.22484122, 0.08297257],
-           [0.25632186, 0.60855213, 0.41246643],
-           [0.82846714, 0.83787882, 0.69883862]])
+    array([[0.18591411, 0.16788438, 0.84960525],
+           [0.51869005, 0.80054041, 0.19171903],
+           [0.80428652, 0.79932192, 0.44696961],
+           [0.84511744, 0.05394057, 0.89576018],
+           [0.61659107, 0.53985372, 0.60746064]])
 
 
 
@@ -98,9 +98,9 @@ Pass numpy array of points (n by 3) to PolyData
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>1.121e-03, 9.989e-01</td></tr>
-    <tr><td>Y Bounds</td><td>1.890e-03, 9.909e-01</td></tr>
-    <tr><td>Z Bounds</td><td>1.480e-02, 9.995e-01</td></tr>
+    <tr><td>X Bounds</td><td>7.265e-03, 9.919e-01</td></tr>
+    <tr><td>Y Bounds</td><td>1.011e-02, 9.991e-01</td></tr>
+    <tr><td>Z Bounds</td><td>2.124e-03, 9.791e-01</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 
@@ -151,7 +151,7 @@ Pass numpy array of points (n by 3) to PolyData
 
 .. GENERATED FROM PYTHON SOURCE LINES 34-36
 
-But it’s important to note that most meshes have some sort of connectivity
+But it's important to note that most meshes have some sort of connectivity
 between points such as this gridded mesh:
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-46
@@ -312,9 +312,9 @@ points in that mesh:
 
 .. GENERATED FROM PYTHON SOURCE LINES 78-81
 
-Cells aren’t limited to voxels, they could be a triangle between three
+Cells aren't limited to voxels, they could be a triangle between three
 points, a line between two points, or even a single point could be its own
-cell (but that’s a special case).
+cell (but that's a special case).
 
 .. GENERATED FROM PYTHON SOURCE LINES 83-92
 
@@ -334,7 +334,7 @@ Point Data
 ~~~~~~~~~~
 Point data refers to arrays of values (scalars, vectors, etc.) that live on
 each point of the mesh. Each element in an attribute array corresponds to a
-point in the mesh. Let’s create some point data for the beam mesh. When
+point in the mesh. Let's create some point data for the beam mesh. When
 plotting, the values between points are interpolated across the cells.
 
 .. GENERATED FROM PYTHON SOURCE LINES 100-104
@@ -431,9 +431,9 @@ volume) is assigned the value of that attribute.
 
 .. GENERATED FROM PYTHON SOURCE LINES 115-118
 
-Here’s a comparison of point data versus cell data and how point data is
+Here's a comparison of point data versus cell data and how point data is
 interpolated across cells when mapping colors. This is unlike cell data
-which has a single value across the cell’s domain:
+which has a single value across the cell's domain:
 
 .. GENERATED FROM PYTHON SOURCE LINES 118-131
 
@@ -498,7 +498,7 @@ still should be attached to the mesh. This may be a string array storing notes.
 .. code-block:: Python
 
     mesh = pv.Cube()
-    mesh.field_data['metadata'] = ['Foo', 'bar']
+    mesh.field_data["metadata"] = ["Foo", "bar"]
     mesh.field_data
 
 
@@ -522,7 +522,7 @@ still should be attached to the mesh. This may be a string array storing notes.
 Assigning Scalars to a Mesh
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Here’s how we assign values to cell attributes and plot it. Here, we
+Here's how we assign values to cell attributes and plot it. Here, we
 generate cube containing 6 faces and assign each face an integer from
 ``range(6)`` and then have it plotted.
 
@@ -591,7 +591,7 @@ Note how this varies from assigning scalars to each point
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.912 seconds)
+   **Total running time of the script:** (0 minutes 2.675 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_a_lesson_mesh.py:

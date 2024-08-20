@@ -27,15 +27,17 @@ This requires a pre-release version of VTK:
 
     pip install --extra-index-url https://wheels.vtk.org vtk==9.3.20240629.dev0
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-98
+.. GENERATED FROM PYTHON SOURCE LINES 12-95
 
 .. code-block:: Python
 
 
     import magpylib as magpy
     import numpy as np
+
+    # for factory overrides
     from pyvista.examples.downloads import _download_archive_file_or_folder
-    from vtkmodules.util.data_model import *  # noqa
+    from vtkmodules.util.data_model import *  # noqa: F403
     from vtkmodules.util.execution_model import select_ports
     from vtkmodules.util.numpy_support import vtk_to_numpy
     from vtkmodules.vtkCommonCore import vtkIdList
@@ -47,7 +49,6 @@ This requires a pre-release version of VTK:
 
     # Utility function to save simulation input/output datasets to filesystem
     from vtkmodules.vtkIOXML import vtkXMLImageDataWriter, vtkXMLPolyDataWriter
-    import vtkmodules.vtkInteractionStyle
     from vtkmodules.vtkRenderingCore import (
         vtkActor,
         vtkCompositePolyDataMapper,
@@ -57,10 +58,6 @@ This requires a pre-release version of VTK:
         vtkRenderWindow,
         vtkRenderWindowInteractor,
     )
-
-    # for factory overrides
-    import vtkmodules.vtkRenderingOpenGL2  # noqa
-    import vtkmodules.vtkRenderingUI  # noqa
 
 
     def build_magnetic_coils(mesh, current=1000):
@@ -88,7 +85,7 @@ This requires a pre-release version of VTK:
         return magpy_coils
 
 
-    def save_dataset(dataset, file_name):
+    def save_dataset(dataset, file_name) -> None:
         if file_name.endswith(".vti"):
             writer = vtkXMLImageDataWriter()
         elif file_name.endswith(".vtp"):
@@ -118,17 +115,17 @@ This requires a pre-release version of VTK:
     import pathlib
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-100
+.. GENERATED FROM PYTHON SOURCE LINES 96-97
 
 Load input mesh from a vtkPartitionedDataSetCollection file
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-115
+.. GENERATED FROM PYTHON SOURCE LINES 97-112
 
 .. code-block:: Python
 
     from vtkmodules.vtkIOXML import vtkXMLPartitionedDataSetCollectionReader
 
-    path = _download_archive_file_or_folder('reactor.zip', target_file='')
+    path = _download_archive_file_or_folder("reactor.zip", target_file="")
 
     reader = vtkXMLPartitionedDataSetCollectionReader()
     reader.file_name = pathlib.Path(path + "/reactor/" + "mesh.vtpc")
@@ -142,22 +139,22 @@ Load input mesh from a vtkPartitionedDataSetCollection file
     renderer.AddActor(actor)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-117
+.. GENERATED FROM PYTHON SOURCE LINES 113-114
 
 Construct magpy coil objects for each coil in the reactor mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-119
+.. GENERATED FROM PYTHON SOURCE LINES 114-116
 
 .. code-block:: Python
 
     coils = build_magnetic_coils(reactor, current=1000)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-121
+.. GENERATED FROM PYTHON SOURCE LINES 117-118
 
 Compute B, H in a 32x32x32 grid
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-129
+.. GENERATED FROM PYTHON SOURCE LINES 118-126
 
 .. code-block:: Python
 
@@ -170,11 +167,11 @@ Compute B, H in a 32x32x32 grid
     grid.point_data.set_array("H (A/m)", h)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 130-131
+.. GENERATED FROM PYTHON SOURCE LINES 127-128
 
 Show coils
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-134
+.. GENERATED FROM PYTHON SOURCE LINES 128-131
 
 .. code-block:: Python
 
@@ -182,11 +179,11 @@ Show coils
     save_dataset(grid, "data/solution.vti")
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-136
+.. GENERATED FROM PYTHON SOURCE LINES 132-133
 
 Compute streamlines of B field induced by toroidal coils.
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-149
+.. GENERATED FROM PYTHON SOURCE LINES 133-146
 
 .. code-block:: Python
 
@@ -204,11 +201,11 @@ Compute streamlines of B field induced by toroidal coils.
     create_sphere >> select_ports(1, trace_streamlines)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-151
+.. GENERATED FROM PYTHON SOURCE LINES 147-148
 
 Visualize streamlines
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-159
+.. GENERATED FROM PYTHON SOURCE LINES 148-156
 
 .. code-block:: Python
 
@@ -221,19 +218,19 @@ Visualize streamlines
     renderer.AddActor(actor)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-161
+.. GENERATED FROM PYTHON SOURCE LINES 157-158
 
 Animate the disk position such that it oscillates between y=-1 and y=1.
 
-.. GENERATED FROM PYTHON SOURCE LINES 161-178
+.. GENERATED FROM PYTHON SOURCE LINES 158-175
 
 .. code-block:: Python
 
     from itertools import cycle
 
 
-    class vtkTimerCallback:
-        def __init__(self, sphere, window, nsteps=10):
+    class vtkTimerCallback:  # noqa: N801
+        def __init__(self, sphere, window, nsteps=10) -> None:
             half_nsteps = int(nsteps / 2)
             self.radii = cycle(
                 np.append(np.linspace(0, 0.8, half_nsteps), np.linspace(0.8, 0, half_nsteps))
@@ -241,24 +238,24 @@ Animate the disk position such that it oscillates between y=-1 and y=1.
             self.sphere = sphere
             self.window = window
 
-        def execute(self, obj, event):
+        def execute(self, obj, event) -> None:
             self.sphere.radius = next(self.radii)
             self.window.Render()
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 179-180
+.. GENERATED FROM PYTHON SOURCE LINES 176-177
 
 Sign up to receive TimerEvent
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-189
+.. GENERATED FROM PYTHON SOURCE LINES 177-186
 
 .. code-block:: Python
 
 
     cb = vtkTimerCallback(create_sphere, window, nsteps=250)
-    interactor.RemoveObservers('TimerEvent')
-    interactor.AddObserver('TimerEvent', cb.execute)
+    interactor.RemoveObservers("TimerEvent")
+    interactor.AddObserver("TimerEvent", cb.execute)
     cb.timerId = interactor.CreateRepeatingTimer(2)
 
     renderer.ResetCamera()

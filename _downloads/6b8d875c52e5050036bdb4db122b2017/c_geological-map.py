@@ -17,8 +17,8 @@ import tempfile
 
 import numpy as np
 import pyvista as pv
-from pyvista import examples
 import requests
+from pyvista import examples
 
 ###############################################################################
 path = examples.download_file("topo_clean.vtk")
@@ -30,9 +30,9 @@ topo
 # https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0
 url = "https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0"
 
-response = requests.get(url)
-filename = os.path.join(tempfile.gettempdir(), "downsampled_Geologic_map_on_air_photo.tif")
-open(filename, "wb").write(response.content)
+response = requests.get(url)  # noqa: S113
+filename = os.path.join(tempfile.gettempdir(), "downsampled_Geologic_map_on_air_photo.tif")  # noqa: PTH118
+open(filename, "wb").write(response.content)  # noqa: SIM115, PTH123
 
 
 ###############################################################################
@@ -43,11 +43,15 @@ open(filename, "wb").write(response.content)
 
 
 def get_gcps(filename):
-    """This helper function retrieves the Ground Control
-    Points of a GeoTIFF. Note that this requires gdal"""
+    """
+    Helper function retrieves the Ground Control
+    Points of a GeoTIFF. Note that this requires gdal.
+    """
     import rasterio
 
-    get_point = lambda gcp: np.array([gcp.x, gcp.y, gcp.z])
+    def get_point(gcp):
+        return np.array([gcp.x, gcp.y, gcp.z])
+
     # Load a raster
     src = rasterio.open(filename)
     # Grab the Groung Control Points

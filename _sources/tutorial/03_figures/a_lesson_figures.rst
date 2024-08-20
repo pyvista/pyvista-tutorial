@@ -98,7 +98,7 @@ You can customize how that mesh is displayed through the parameters of the :func
 
 
     p = pv.Plotter()
-    p.add_mesh(mesh, cmap='coolwarm')
+    p.add_mesh(mesh, cmap="coolwarm")
     p.show()
 
 
@@ -194,7 +194,7 @@ Or adjust the opacity to be a scalar value or linear transfer function via the `
     mesh = examples.download_st_helens().warp_by_scalar()
 
     p = pv.Plotter()
-    p.add_mesh(mesh, cmap='terrain', opacity="linear")
+    p.add_mesh(mesh, cmap="terrain", opacity="linear")
     p.show()
 
 
@@ -243,11 +243,11 @@ The ``add_mesh`` method can be called over and over to add different data to the
 
 
     kinds = [
-        'tetrahedron',
-        'cube',
-        'octahedron',
-        'dodecahedron',
-        'icosahedron',
+        "tetrahedron",
+        "cube",
+        "octahedron",
+        "dodecahedron",
+        "icosahedron",
     ]
     centers = [
         (0, 1, 0),
@@ -260,10 +260,10 @@ The ``add_mesh`` method can be called over and over to add different data to the
     solids = [pv.PlatonicSolid(kind, radius=0.4, center=center) for kind, center in zip(kinds, centers)]
 
     p = pv.Plotter(window_size=[1000, 1000])
-    for ind, solid in enumerate(solids):
-        p.add_mesh(solid, color='silver', specular=1.0, specular_power=10)
+    for _ind, solid in enumerate(solids):
+        p.add_mesh(solid, color="silver", specular=1.0, specular_power=10)
     p.view_vector((5.0, 2, 3))
-    p.add_floor('-z', lighting=True, color='tan', pad=1.0)
+    p.add_floor("-z", lighting=True, color="tan", pad=1.0)
     p.enable_shadows()
     p.show()
 
@@ -538,7 +538,7 @@ And bounds similarly with :func:`pyvista.Plotter.show_bounds`
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.917 seconds)
+   **Total running time of the script:** (0 minutes 4.473 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_a_lesson_figures.py:

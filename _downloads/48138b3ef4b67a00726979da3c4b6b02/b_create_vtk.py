@@ -11,7 +11,7 @@ import vtk
 
 try:
     from vtkmodules.util.numpy_support import numpy_to_vtk
-except:
+except:  # noqa: E722
     from vtk.util.numpy_support import numpy_to_vtk
 
 ###############################################################################
@@ -24,7 +24,7 @@ image.SetOrigin(-0.5, -3, 0)
 
 ###############################################################################
 # Add point data
-values = np.arange(np.product(image.GetDimensions()))
+values = np.arange(np.prod(image.GetDimensions()))
 # Convert numpy array to VTK array
 arr = numpy_to_vtk(values)
 arr.SetName("values")  # CRITICAL

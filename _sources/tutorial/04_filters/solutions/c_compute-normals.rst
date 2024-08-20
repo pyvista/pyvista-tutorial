@@ -200,7 +200,7 @@ the normals along its cell faces, and extract the faces that face upward.
     mesh.compute_normals(cell_normals=True, point_normals=False, inplace=True)
 
     # Get list of cell IDs that meet condition
-    ids = np.arange(mesh.n_cells)[mesh['Normals'][:, 2] > 0.0]
+    ids = np.arange(mesh.n_cells)[mesh["Normals"][:, 2] > 0.0]
 
     # Extract those cells
     top = mesh.extract_cells(ids)
@@ -260,7 +260,7 @@ the normals along its cell faces, and extract the faces that face upward.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 41.982 seconds)
+   **Total running time of the script:** (0 minutes 36.386 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_c_compute-normals.py:

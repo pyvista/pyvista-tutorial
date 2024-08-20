@@ -268,7 +268,7 @@ examples you can download.
     dataset = examples.download_gears()
     bodies = dataset.split_bodies()
     bodies.plot(
-        cmap='jet',
+        cmap="jet",
         multi_colors=True,
         smooth_shading=True,
         split_sharp_edges=True,
@@ -330,7 +330,7 @@ https://www.thingiverse.com/thing:5412753
 .. code-block:: Python
 
 
-    mesh = pv.read('P_shelf_pin.stl')
+    mesh = pv.read("P_shelf_pin.stl")
     mesh.plot()
 
 
@@ -380,7 +380,7 @@ https://www.thingiverse.com/thing:5412753
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.995 seconds)
+   **Total running time of the script:** (0 minutes 4.324 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_solutions_a_load_examples_solution.py:

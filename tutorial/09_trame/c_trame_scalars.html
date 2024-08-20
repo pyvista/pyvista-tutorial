@@ -494,14 +494,14 @@ scalar array is used to color the mesh.</p>
 
 
 <span class="nd">@state</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="s2">&quot;scalars&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">set_scalars</span><span class="p">(</span><span class="n">scalars</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">active_scalars_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">set_scalars</span><span class="p">(</span><span class="n">scalars</span><span class="o">=</span><span class="n">mesh</span><span class="o">.</span><span class="n">active_scalars_name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">actor</span><span class="o">.</span><span class="n">mapper</span><span class="o">.</span><span class="n">array_name</span> <span class="o">=</span> <span class="n">scalars</span>
     <span class="n">actor</span><span class="o">.</span><span class="n">mapper</span><span class="o">.</span><span class="n">scalar_range</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">get_data_range</span><span class="p">(</span><span class="n">scalars</span><span class="p">)</span>
     <span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span><span class="p">()</span>
 
 
 <span class="nd">@state</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="s2">&quot;log_scale&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">set_log_scale</span><span class="p">(</span><span class="n">log_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">set_log_scale</span><span class="p">(</span><span class="n">log_scale</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># noqa: FBT002</span>
     <span class="n">actor</span><span class="o">.</span><span class="n">mapper</span><span class="o">.</span><span class="n">lookup_table</span><span class="o">.</span><span class="n">log_scale</span> <span class="o">=</span> <span class="n">log_scale</span>
     <span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span><span class="p">()</span>
 
@@ -527,17 +527,19 @@ scalar array is used to color the mesh.</p>
             <span class="n">style</span><span class="o">=</span><span class="s2">&quot;max-width: 250px&quot;</span><span class="p">,</span>
         <span class="p">)</span>
 
-    <span class="k">with</span> <span class="n">layout</span><span class="o">.</span><span class="n">content</span><span class="p">:</span>
-        <span class="k">with</span> <span class="n">vuetify3</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
+    <span class="k">with</span> <span class="p">(</span>
+        <span class="n">layout</span><span class="o">.</span><span class="n">content</span><span class="p">,</span>
+        <span class="n">vuetify3</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span>
             <span class="n">fluid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
             <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;pa-0 fill-height&quot;</span><span class="p">,</span>
-        <span class="p">):</span>
-            <span class="c1"># Use PyVista UI template for Plotters</span>
-            <span class="n">view</span> <span class="o">=</span> <span class="n">plotter_ui</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
-            <span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">update</span>
+        <span class="p">),</span>
+    <span class="p">):</span>
+        <span class="c1"># Use PyVista UI template for Plotters</span>
+        <span class="n">view</span> <span class="o">=</span> <span class="n">plotter_ui</span><span class="p">(</span><span class="n">pl</span><span class="p">)</span>
+        <span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">update</span>
 
 <span class="c1"># Show UI</span>
-<span class="k">await</span> <span class="n">layout</span><span class="o">.</span><span class="n">ready</span>  <span class="c1"># noqa</span>
+<span class="k">await</span> <span class="n">layout</span><span class="o">.</span><span class="n">ready</span>
 <span class="n">layout</span>
 </pre></div>
 </div>

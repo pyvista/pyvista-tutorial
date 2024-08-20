@@ -46,31 +46,30 @@ vectors on the globe at all points in the dataset, then use the values given
 in the dataset to warp the surface in the normals direction to create some
 exaggerated topographic relief.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-28
+.. GENERATED FROM PYTHON SOURCE LINES 24-27
 
 .. code-block:: Python
 
 
     # Compute the normals in-place and use them to warp the globe
-    ...
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-30
+.. GENERATED FROM PYTHON SOURCE LINES 28-29
 
 Now use those normals to warp the surface
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-32
+.. GENERATED FROM PYTHON SOURCE LINES 29-31
 
 .. code-block:: Python
 
     warp = mesh.warp_by_scalar(factor=0.5e-5)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-34
+.. GENERATED FROM PYTHON SOURCE LINES 32-33
 
 And let's see it!
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-37
+.. GENERATED FROM PYTHON SOURCE LINES 33-36
 
 .. code-block:: Python
 
@@ -78,13 +77,13 @@ And let's see it!
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-41
+.. GENERATED FROM PYTHON SOURCE LINES 37-40
 
 We could also use face or cell normals to extract all the faces of a mesh
 facing a general direction. In the following snippet, we take a mesh, compute
 the normals along its cell faces, and extract the faces that face upward.
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-60
+.. GENERATED FROM PYTHON SOURCE LINES 40-59
 
 .. code-block:: Python
 
@@ -94,7 +93,7 @@ the normals along its cell faces, and extract the faces that face upward.
     mesh.compute_normals(...)
 
     # Get list of cell IDs that meet condition
-    ids = np.arange(mesh.n_cells)[mesh['Normals'][...] > ...]
+    ids = np.arange(mesh.n_cells)[mesh["Normals"][...] > ...]
 
     # Extract those cells
     top = mesh.extract_cells(ids)
@@ -108,7 +107,7 @@ the normals along its cell faces, and extract the faces that face upward.
     top.plot(cpos=cpos, color=True)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-68
+.. GENERATED FROM PYTHON SOURCE LINES 60-67
 
 .. raw:: html
 

@@ -71,7 +71,7 @@ finish.
     p = pv.Plotter()
     p.add_actor(cubemap.to_skybox())
     p.set_environment_texture(cubemap)  # For reflecting the environment off the mesh
-    p.add_mesh(mesh, color='linen', pbr=True, metallic=0.8, roughness=0.1, diffuse=1)
+    p.add_mesh(mesh, color="linen", pbr=True, metallic=0.8, roughness=0.1, diffuse=1)
 
     # Define a nice camera perspective
     cpos = [(-313.40, 66.09, 1000.61), (0.0, 0.0, 0.0), (0.018, 0.99, -0.06)]
@@ -125,7 +125,7 @@ increasing from bottom to top.
 .. code-block:: Python
 
 
-    colors = ['red', 'teal', 'black', 'orange', 'silver']
+    colors = ["red", "teal", "black", "orange", "silver"]
 
     p = pv.Plotter()
     p.set_environment_texture(cubemap)
@@ -187,18 +187,18 @@ Combine custom lighting and physically based rendering.
 
 
     plotter = pv.Plotter(lighting=None)
-    plotter.set_background('black')
-    plotter.add_mesh(mesh, color='linen', pbr=True, metallic=0.5, roughness=0.5, diffuse=1)
+    plotter.set_background("black")
+    plotter.add_mesh(mesh, color="linen", pbr=True, metallic=0.5, roughness=0.5, diffuse=1)
 
 
     # set up lighting
-    light = pv.Light((-2, 2, 0), (0, 0, 0), 'white')
+    light = pv.Light((-2, 2, 0), (0, 0, 0), "white")
     plotter.add_light(light)
 
     light = pv.Light((2, 0, 0), (0, 0, 0), (0.7, 0.0862, 0.0549))
     plotter.add_light(light)
 
-    light = pv.Light((0, 0, 10), (0, 0, 0), 'white')
+    light = pv.Light((0, 0, 10), (0, 0, 0), "white")
     plotter.add_light(light)
 
 
@@ -253,7 +253,7 @@ Combine custom lighting and physically based rendering.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (12 minutes 36.543 seconds)
+   **Total running time of the script:** (11 minutes 47.108 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_d_pbr.py:

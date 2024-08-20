@@ -24,7 +24,7 @@ Control Scalar Array
 Extending our simple example to have a dropdown menu to control which
 scalar array is used to color the mesh.
 
-.. GENERATED FROM PYTHON SOURCE LINES 8-74
+.. GENERATED FROM PYTHON SOURCE LINES 8-76
 
 .. code-block:: Python
 
@@ -49,14 +49,14 @@ scalar array is used to color the mesh.
 
 
     @state.change("scalars")
-    def set_scalars(scalars=mesh.active_scalars_name, **kwargs):
+    def set_scalars(scalars=mesh.active_scalars_name, **kwargs) -> None:
         actor.mapper.array_name = scalars
         actor.mapper.scalar_range = mesh.get_data_range(scalars)
         ctrl.view_update()
 
 
     @state.change("log_scale")
-    def set_log_scale(log_scale=False, **kwargs):
+    def set_log_scale(log_scale=False, **kwargs) -> None:  # noqa: FBT002
         actor.mapper.lookup_table.log_scale = log_scale
         ctrl.view_update()
 
@@ -82,20 +82,22 @@ scalar array is used to color the mesh.
                 style="max-width: 250px",
             )
 
-        with layout.content:
-            with vuetify3.VContainer(
+        with (
+            layout.content,
+            vuetify3.VContainer(
                 fluid=True,
                 classes="pa-0 fill-height",
-            ):
-                # Use PyVista UI template for Plotters
-                view = plotter_ui(pl)
-                ctrl.view_update = view.update
+            ),
+        ):
+            # Use PyVista UI template for Plotters
+            view = plotter_ui(pl)
+            ctrl.view_update = view.update
 
     # Show UI
-    await layout.ready  # noqa
+    await layout.ready
     layout
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-82
+.. GENERATED FROM PYTHON SOURCE LINES 77-84
 
 .. raw:: html
 

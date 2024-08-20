@@ -479,7 +479,8 @@ parameters of the VTK filter.</p>
 <span class="kn">from</span> <span class="nn">pyvista</span> <span class="kn">import</span> <span class="n">examples</span>
 <span class="kn">from</span> <span class="nn">trame.app</span> <span class="kn">import</span> <span class="n">get_server</span>
 <span class="kn">from</span> <span class="nn">trame.ui.vuetify3</span> <span class="kn">import</span> <span class="n">VAppLayout</span>
-<span class="kn">from</span> <span class="nn">trame.widgets</span> <span class="kn">import</span> <span class="n">vtk</span> <span class="k">as</span> <span class="n">vtk_widgets</span><span class="p">,</span> <span class="n">vuetify3</span> <span class="k">as</span> <span class="n">v3</span>
+<span class="kn">from</span> <span class="nn">trame.widgets</span> <span class="kn">import</span> <span class="n">vtk</span> <span class="k">as</span> <span class="n">vtk_widgets</span>
+<span class="kn">from</span> <span class="nn">trame.widgets</span> <span class="kn">import</span> <span class="n">vuetify3</span> <span class="k">as</span> <span class="n">v3</span>
 <span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersGeneral</span> <span class="kn">import</span> <span class="n">vtkWarpScalar</span>
 
 <span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_random_hills</span><span class="p">()</span>
@@ -497,13 +498,12 @@ parameters of the VTK filter.</p>
 
 
 <span class="nd">@state</span><span class="o">.</span><span class="n">change</span><span class="p">(</span><span class="s2">&quot;scale&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">update_scale</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">update_scale</span><span class="p">(</span><span class="n">scale</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="n">warp_by_scalar</span><span class="o">.</span><span class="n">SetScaleFactor</span><span class="p">(</span><span class="n">scale</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;update scale </span><span class="si">{</span><span class="n">scale</span><span class="si">=}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span><span class="p">()</span>
 
 
-<span class="k">with</span> <span class="n">VAppLayout</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">full_height</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">layout</span><span class="p">:</span>
+<span class="k">with</span> <span class="n">VAppLayout</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">full_height</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">as</span> <span class="n">layout</span><span class="p">:</span>  <span class="c1"># noqa: SIM117</span>
     <span class="k">with</span> <span class="n">v3</span><span class="o">.</span><span class="n">VContainer</span><span class="p">(</span><span class="n">fluid</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">classes</span><span class="o">=</span><span class="s2">&quot;fill-height&quot;</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">vtk_widgets</span><span class="o">.</span><span class="n">VtkRemoteView</span><span class="p">(</span><span class="n">plotter</span><span class="o">.</span><span class="n">render_window</span><span class="p">,</span> <span class="n">interactive_ratio</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">view</span><span class="p">:</span>
             <span class="n">ctrl</span><span class="o">.</span><span class="n">view_update</span> <span class="o">=</span> <span class="n">view</span><span class="o">.</span><span class="n">update</span>
@@ -530,7 +530,7 @@ parameters of the VTK filter.</p>
         <span class="p">)</span>
 
 <span class="c1"># Make sure the app is running and ready</span>
-<span class="k">await</span> <span class="n">layout</span><span class="o">.</span><span class="n">ready</span>  <span class="c1"># noqa</span>
+<span class="k">await</span> <span class="n">layout</span><span class="o">.</span><span class="n">ready</span>
 <span class="c1"># Show UI in result</span>
 <span class="n">layout</span>
 </pre></div>

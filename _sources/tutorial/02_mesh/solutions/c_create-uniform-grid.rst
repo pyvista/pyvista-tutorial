@@ -10564,7 +10564,7 @@ Create the :class:`pyvista.ImageData`.
 
     vol = pv.ImageData()
     vol.dimensions = arr.shape
-    vol['array'] = arr.ravel(order="F")
+    vol["array"] = arr.ravel(order="F")
 
 
 
@@ -10729,7 +10729,7 @@ Here's one of these example datasets:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.328 seconds)
+   **Total running time of the script:** (0 minutes 4.915 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py:

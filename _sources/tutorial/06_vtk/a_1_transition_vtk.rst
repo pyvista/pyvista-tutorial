@@ -257,7 +257,7 @@ However, with PyVista you only need:
 .. code-block:: Python
 
 
-    grid.plot(cpos='xy', show_scalar_bar=False, cmap='coolwarm')
+    grid.plot(cpos="xy", show_scalar_bar=False, cmap="coolwarm")
 
 
 
@@ -303,7 +303,7 @@ VTK's C arrays.  For example, to create an array of points within VTK
 one would normally loop through all the points of a list and supply
 that to a  `vtkPoints`_ class.  For example:
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-166
+.. GENERATED FROM PYTHON SOURCE LINES 149-165
 
 .. code-block:: Python
 
@@ -322,39 +322,19 @@ that to a  `vtkPoints`_ class.  For example:
     vtk_array.SetValue(8, 0)
     vtk_points = vtk.vtkPoints()
     vtk_points.SetData(vtk_array)
-    print(vtk_points)
-
-
-
-
-
-.. rst-class:: sphx-glr-script-out
-
- .. code-block:: none
-
-    vtkPoints (0x561877780a20)
-      Debug: Off
-      Modified Time: 14382618
-      Reference Count: 1
-      Registered Events: (none)
-      Data: 0x561872fa4690
-      Data Array Name: Points
-      Number Of Points: 3
-      Bounds: 
-        Xmin,Xmax: (0, 1)
-        Ymin,Ymax: (0, 0.667)
-        Zmin,Zmax: (0, 0)
 
 
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-168
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 166-167
 
 To do the same within PyVista, you simply need to create a NumPy array:
 
-.. GENERATED FROM PYTHON SOURCE LINES 168-171
+.. GENERATED FROM PYTHON SOURCE LINES 167-170
 
 .. code-block:: Python
 
@@ -368,7 +348,7 @@ To do the same within PyVista, you simply need to create a NumPy array:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 172-179
+.. GENERATED FROM PYTHON SOURCE LINES 171-178
 
 .. note::
    You can use :func:`pyvista.vtk_points` to construct a `vtkPoints`_
@@ -378,7 +358,7 @@ Since the end goal is to construct a :class:`pyvista.DataSet
 <pyvista.core.dataset.DataSet>`, you would simply pass the
 ``np_points`` array to the :class:`pyvista.PolyData` constructor:
 
-.. GENERATED FROM PYTHON SOURCE LINES 179-183
+.. GENERATED FROM PYTHON SOURCE LINES 178-182
 
 .. code-block:: Python
 
@@ -393,11 +373,11 @@ Since the end goal is to construct a :class:`pyvista.DataSet
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 184-185
+.. GENERATED FROM PYTHON SOURCE LINES 183-184
 
 Whereas in VTK you would have to do:
 
-.. GENERATED FROM PYTHON SOURCE LINES 185-189
+.. GENERATED FROM PYTHON SOURCE LINES 184-188
 
 .. code-block:: Python
 
@@ -412,14 +392,14 @@ Whereas in VTK you would have to do:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 190-194
+.. GENERATED FROM PYTHON SOURCE LINES 189-193
 
 The same goes with assigning face or cell connectivity/topology.  With
 VTK you would normally have to loop using :func:`InsertNextCell` and
 :func:`InsertCellPoint`.  For example, to create a single cell
 (triangle) and then assign it to `vtkPolyData`_:
 
-.. GENERATED FROM PYTHON SOURCE LINES 194-202
+.. GENERATED FROM PYTHON SOURCE LINES 193-201
 
 .. code-block:: Python
 
@@ -438,13 +418,13 @@ VTK you would normally have to loop using :func:`InsertNextCell` and
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-206
+.. GENERATED FROM PYTHON SOURCE LINES 202-205
 
 In PyVista, we can assign this directly in the constructor and then
 access it (or change it) from the :attr:`faces
 <pyvista.PolyData.faces>` attribute.
 
-.. GENERATED FROM PYTHON SOURCE LINES 206-212
+.. GENERATED FROM PYTHON SOURCE LINES 205-211
 
 .. code-block:: Python
 
@@ -467,7 +447,7 @@ access it (or change it) from the :attr:`faces
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 213-221
+.. GENERATED FROM PYTHON SOURCE LINES 212-220
 
 PyVista Tradeoffs
 ~~~~~~~~~~~~~~~~~
@@ -478,7 +458,7 @@ In the :class:`collision <pyvista.PolyDataFilters.collision>` filter,
 we demonstrate how to calculate the collision between two meshes.  For
 example:
 
-.. GENERATED FROM PYTHON SOURCE LINES 221-227
+.. GENERATED FROM PYTHON SOURCE LINES 220-226
 
 .. code-block:: Python
 
@@ -495,15 +475,15 @@ example:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 228-235
+.. GENERATED FROM PYTHON SOURCE LINES 227-234
 
 .. code-block:: Python
 
 
     pl = pv.Plotter()
     pl.add_mesh(out)
-    pl.add_mesh(mesh_b, style='wireframe', color='k')
-    pl.camera_position = 'xy'
+    pl.add_mesh(mesh_b, style="wireframe", color="k")
+    pl.camera_position = "xy"
     pl.show()
 
 
@@ -540,7 +520,7 @@ example:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 236-245
+.. GENERATED FROM PYTHON SOURCE LINES 235-244
 
 Under the hood, the collision filter detects mesh collisions using
 oriented bounding box (OBB) trees.  For a single collision, this filter
@@ -552,7 +532,7 @@ as the OBB tree is computed once for each mesh.  In most cases, pure
 PyVista is sufficient for most data science, but there are times when
 you may want to use VTK classes directly.
 
-.. GENERATED FROM PYTHON SOURCE LINES 247-254
+.. GENERATED FROM PYTHON SOURCE LINES 246-253
 
 .. raw:: html
 
@@ -565,7 +545,7 @@ you may want to use VTK classes directly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.674 seconds)
+   **Total running time of the script:** (0 minutes 1.604 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_a_1_transition_vtk.py:

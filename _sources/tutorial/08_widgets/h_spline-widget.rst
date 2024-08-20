@@ -67,7 +67,7 @@ path. To do this, we have added a convenient helper method which leverages the
     )
 
     p = pv.Plotter()
-    p.add_mesh(mesh.outline(), color='black')
+    p.add_mesh(mesh.outline(), color="black")
     p.add_mesh_slice_spline(mesh, initial_points=points, n_handles=5)
     p.camera_position = [(30, -42, 30), (0.0, 0.0, 0.0), (-0.09, 0.53, 0.84)]
     p.show()
@@ -125,7 +125,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.392 seconds)
+   **Total running time of the script:** (0 minutes 0.371 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_h_spline-widget.py:

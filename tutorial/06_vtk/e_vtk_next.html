@@ -478,8 +478,10 @@ to download the full example code. or to run this example in your browser via Bi
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">magpylib</span> <span class="k">as</span> <span class="nn">magpy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># for factory overrides</span>
 <span class="kn">from</span> <span class="nn">pyvista.examples.downloads</span> <span class="kn">import</span> <span class="n">_download_archive_file_or_folder</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.util.data_model</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa</span>
+<span class="kn">from</span> <span class="nn">vtkmodules.util.data_model</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa: F403</span>
 <span class="kn">from</span> <span class="nn">vtkmodules.util.execution_model</span> <span class="kn">import</span> <span class="n">select_ports</span>
 <span class="kn">from</span> <span class="nn">vtkmodules.util.numpy_support</span> <span class="kn">import</span> <span class="n">vtk_to_numpy</span>
 <span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonCore</span> <span class="kn">import</span> <span class="n">vtkIdList</span>
@@ -491,7 +493,6 @@ to download the full example code. or to run this example in your browser via Bi
 
 <span class="c1"># Utility function to save simulation input/output datasets to filesystem</span>
 <span class="kn">from</span> <span class="nn">vtkmodules.vtkIOXML</span> <span class="kn">import</span> <span class="n">vtkXMLImageDataWriter</span><span class="p">,</span> <span class="n">vtkXMLPolyDataWriter</span>
-<span class="kn">import</span> <span class="nn">vtkmodules.vtkInteractionStyle</span>
 <span class="kn">from</span> <span class="nn">vtkmodules.vtkRenderingCore</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">vtkActor</span><span class="p">,</span>
     <span class="n">vtkCompositePolyDataMapper</span><span class="p">,</span>
@@ -501,10 +502,6 @@ to download the full example code. or to run this example in your browser via Bi
     <span class="n">vtkRenderWindow</span><span class="p">,</span>
     <span class="n">vtkRenderWindowInteractor</span><span class="p">,</span>
 <span class="p">)</span>
-
-<span class="c1"># for factory overrides</span>
-<span class="kn">import</span> <span class="nn">vtkmodules.vtkRenderingOpenGL2</span>  <span class="c1"># noqa</span>
-<span class="kn">import</span> <span class="nn">vtkmodules.vtkRenderingUI</span>  <span class="c1"># noqa</span>
 
 
 <span class="k">def</span> <span class="nf">build_magnetic_coils</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">current</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
@@ -532,7 +529,7 @@ to download the full example code. or to run this example in your browser via Bi
     <span class="k">return</span> <span class="n">magpy_coils</span>
 
 
-<span class="k">def</span> <span class="nf">save_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">save_dataset</span><span class="p">(</span><span class="n">dataset</span><span class="p">,</span> <span class="n">file_name</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.vti&quot;</span><span class="p">):</span>
         <span class="n">writer</span> <span class="o">=</span> <span class="n">vtkXMLImageDataWriter</span><span class="p">()</span>
     <span class="k">elif</span> <span class="n">file_name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.vtp&quot;</span><span class="p">):</span>
@@ -565,7 +562,7 @@ to download the full example code. or to run this example in your browser via Bi
 <p>Load input mesh from a vtkPartitionedDataSetCollection file</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">vtkmodules.vtkIOXML</span> <span class="kn">import</span> <span class="n">vtkXMLPartitionedDataSetCollectionReader</span>
 
-<span class="n">path</span> <span class="o">=</span> <span class="n">_download_archive_file_or_folder</span><span class="p">(</span><span class="s1">&#39;reactor.zip&#39;</span><span class="p">,</span> <span class="n">target_file</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">_download_archive_file_or_folder</span><span class="p">(</span><span class="s2">&quot;reactor.zip&quot;</span><span class="p">,</span> <span class="n">target_file</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
 <span class="n">reader</span> <span class="o">=</span> <span class="n">vtkXMLPartitionedDataSetCollectionReader</span><span class="p">()</span>
 <span class="n">reader</span><span class="o">.</span><span class="n">file_name</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/pathlib.html#pathlib.Path" title="pathlib.Path" class="sphx-glr-backref-module-pathlib sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span></a><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;/reactor/&quot;</span> <span class="o">+</span> <span class="s2">&quot;mesh.vtpc&quot;</span><span class="p">)</span>
@@ -626,8 +623,8 @@ to download the full example code. or to run this example in your browser via Bi
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <a href="https://docs.python.org/dev/library/itertools.html#itertools.cycle" title="itertools.cycle" class="sphx-glr-backref-module-itertools sphx-glr-backref-type-py-function"><span class="n">cycle</span></a>
 
 
-<span class="k">class</span> <span class="nc">vtkTimerCallback</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sphere</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">nsteps</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">class</span> <span class="nc">vtkTimerCallback</span><span class="p">:</span>  <span class="c1"># noqa: N801</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sphere</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">nsteps</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">half_nsteps</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">nsteps</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">radii</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/itertools.html#itertools.cycle" title="itertools.cycle" class="sphx-glr-backref-module-itertools sphx-glr-backref-type-py-function"><span class="n">cycle</span></a><span class="p">(</span>
             <a href="https://numpy.org/devdocs/reference/generated/numpy.append.html#numpy.append" title="numpy.append" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">append</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">half_nsteps</span><span class="p">),</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">half_nsteps</span><span class="p">))</span>
@@ -635,15 +632,15 @@ to download the full example code. or to run this example in your browser via Bi
         <span class="bp">self</span><span class="o">.</span><span class="n">sphere</span> <span class="o">=</span> <span class="n">sphere</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">window</span> <span class="o">=</span> <span class="n">window</span>
 
-    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">event</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">execute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">event</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sphere</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radii</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">window</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Sign up to receive TimerEvent</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">cb</span> <span class="o">=</span> <span class="n">vtkTimerCallback</span><span class="p">(</span><span class="n">create_sphere</span><span class="p">,</span> <span class="n">window</span><span class="p">,</span> <span class="n">nsteps</span><span class="o">=</span><span class="mi">250</span><span class="p">)</span>
-<span class="n">interactor</span><span class="o">.</span><span class="n">RemoveObservers</span><span class="p">(</span><span class="s1">&#39;TimerEvent&#39;</span><span class="p">)</span>
-<span class="n">interactor</span><span class="o">.</span><span class="n">AddObserver</span><span class="p">(</span><span class="s1">&#39;TimerEvent&#39;</span><span class="p">,</span> <span class="n">cb</span><span class="o">.</span><span class="n">execute</span><span class="p">)</span>
+<span class="n">interactor</span><span class="o">.</span><span class="n">RemoveObservers</span><span class="p">(</span><span class="s2">&quot;TimerEvent&quot;</span><span class="p">)</span>
+<span class="n">interactor</span><span class="o">.</span><span class="n">AddObserver</span><span class="p">(</span><span class="s2">&quot;TimerEvent&quot;</span><span class="p">,</span> <span class="n">cb</span><span class="o">.</span><span class="n">execute</span><span class="p">)</span>
 <span class="n">cb</span><span class="o">.</span><span class="n">timerId</span> <span class="o">=</span> <span class="n">interactor</span><span class="o">.</span><span class="n">CreateRepeatingTimer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="n">renderer</span><span class="o">.</span><span class="n">ResetCamera</span><span class="p">()</span>

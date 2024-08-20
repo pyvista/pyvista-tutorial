@@ -26,7 +26,7 @@ A simple example of how to create a Trame app with a PyVista Plotter.
 This example contains the boilerplate code to use anytime you are creating a
 new Trame application with PyVista.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-35
+.. GENERATED FROM PYTHON SOURCE LINES 11-34
 
 .. code-block:: Python
 
@@ -47,15 +47,14 @@ new Trame application with PyVista.
     pl = pv.Plotter()
     pl.add_mesh(mesh)
 
-    with SinglePageLayout(server) as layout:
-        with layout.content:
-            view = plotter_ui(pl)
+    with SinglePageLayout(server) as layout, layout.content:
+        view = plotter_ui(pl)
 
     # Show UI
-    await layout.ready  # noqa
+    await layout.ready
     layout
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-43
+.. GENERATED FROM PYTHON SOURCE LINES 35-42
 
 .. raw:: html
 

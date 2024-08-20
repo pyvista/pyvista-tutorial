@@ -41,8 +41,8 @@ the output with PyVista for streamlined plotting. For example:
 
 
     import pyvista as pv
-    from pyvista import examples
     import vtk
+    from pyvista import examples
 
 
 
@@ -59,7 +59,7 @@ Create a circle using vtk
 
 .. code-block:: Python
 
-    polygonSource = vtk.vtkRegularPolygonSource()
+    polygonSource = vtk.vtkRegularPolygonSource()  # noqa: N816
     polygonSource.GeneratePolygonOff()
     polygonSource.SetNumberOfSides(50)
     polygonSource.SetRadius(5.0)
@@ -82,7 +82,7 @@ wrap and plot using pyvista
 .. code-block:: Python
 
     mesh = pv.wrap(polygonSource.GetOutput())
-    mesh.plot(line_width=3, cpos='xy', color='k')
+    mesh.plot(line_width=3, cpos="xy", color="k")
 
 
 
@@ -247,7 +247,7 @@ Use PyVista to plot
 .. code-block:: Python
 
     p = pv.Plotter()
-    p.add_mesh(mesh, style='wireframe')
+    p.add_mesh(mesh, style="wireframe")
     p.add_mesh(cntrs, color=True)
     p.show()
 
@@ -304,7 +304,7 @@ Use PyVista to plot
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.243 seconds)
+   **Total running time of the script:** (0 minutes 2.094 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_a_2_pyvista_vtk.py:

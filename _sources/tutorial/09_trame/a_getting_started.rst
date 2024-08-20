@@ -56,7 +56,7 @@ One sends images generated on the server side while the other is sending geometr
 .. code-block:: Python
 
     dataset = examples.download_lucy()
-    dataset.plot(smooth_shading=True, color='white')
+    dataset.plot(smooth_shading=True, color="white")
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 34-37
@@ -83,8 +83,8 @@ Now, let's build a simple application that updates the mesh color with the click
     view = None
 
 
-    def change_color():
-        actor.prop.color = random.choice(list(hexcolors.keys()))
+    def change_color() -> None:
+        actor.prop.color = random.choice(list(hexcolors.keys()))  # noqa: S311
         view.update()
 
 
@@ -93,14 +93,14 @@ Now, let's build a simple application that updates the mesh color with the click
         with layout.toolbar.clear() as tb:
             tb.density = "compact"
             tb.theme = "dark"
-            viewer.ui_controls(mode='trame')
+            viewer.ui_controls(mode="trame")
             v3.VBtn(icon="mdi-palette", click=change_color)
         with layout.content:
-            view = viewer.ui(add_menu=False, mode='trame')
+            view = viewer.ui(add_menu=False, mode="trame")
 
 
     # Show UI
-    await layout.ready  # noqa
+    await layout.ready
     layout
 
 

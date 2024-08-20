@@ -22,11 +22,11 @@ state, ctrl = server.state, server.controller
 mesh = pv.Cone()
 
 pl = pv.Plotter()
-actor = pl.add_mesh(mesh, color='seagreen')
+actor = pl.add_mesh(mesh, color="seagreen")
 
 
 @state.change("color")
-def color(color="seagreen", **kwargs):
+def color(color="seagreen", **kwargs) -> None:
     actor.prop.color = color
     ctrl.view_update()
 
@@ -45,17 +45,19 @@ with SinglePageLayout(server) as layout:
             style="max-width: 250px",
         )
 
-    with layout.content:
-        with vuetify3.VContainer(
+    with (
+        layout.content,
+        vuetify3.VContainer(
             fluid=True,
             classes="pa-0 fill-height",
-        ):
-            # Use PyVista UI template for Plotters
-            view = plotter_ui(pl, default_server_rendering=False)
-            ctrl.view_update = view.update
+        ),
+    ):
+        # Use PyVista UI template for Plotters
+        view = plotter_ui(pl, default_server_rendering=False)
+        ctrl.view_update = view.update
 
 # Show UI
-await layout.ready  # noqa
+await layout.ready
 layout
 ###############################################################################
 # .. raw:: html

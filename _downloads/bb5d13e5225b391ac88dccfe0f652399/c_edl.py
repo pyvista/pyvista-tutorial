@@ -43,7 +43,7 @@ p.show()
 
 p = pv.Plotter()
 p.add_mesh(point_cloud, color="tan", point_size=5)
-...  # Turn on eye dome lighting here
+# Turn on eye dome lighting here
 p.show()
 
 

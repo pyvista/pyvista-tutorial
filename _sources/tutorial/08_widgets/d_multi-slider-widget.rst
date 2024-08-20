@@ -28,7 +28,7 @@ In this example we simply change a few parameters for the
 :func:`pyvista.Sphere` method, but this could easily be applied to any
 mesh-generating/altering code.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-38
+.. GENERATED FROM PYTHON SOURCE LINES 13-37
 
 .. code-block:: Python
 
@@ -37,24 +37,23 @@ mesh-generating/altering code.
 
 
     class MyCustomRoutine:
-        def __init__(self, mesh):
+        def __init__(self, mesh) -> None:
             self.output = mesh  # Expected PyVista mesh type
             # default parameters
             self.kwargs = {
-                'radius': 0.5,
-                'theta_resolution': 30,
-                'phi_resolution': 30,
+                "radius": 0.5,
+                "theta_resolution": 30,
+                "phi_resolution": 30,
             }
 
         def __call__(self, param, value):
             self.kwargs[param] = value
             self.update()
 
-        def update(self):
+        def update(self) -> None:
             # This is where you call your simulation
             result = pv.Sphere(**self.kwargs)
             self.output.copy_from(result)
-            return
 
 
 
@@ -64,7 +63,7 @@ mesh-generating/altering code.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-43
+.. GENERATED FROM PYTHON SOURCE LINES 38-42
 
 .. code-block:: Python
 
@@ -79,7 +78,7 @@ mesh-generating/altering code.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-76
+.. GENERATED FROM PYTHON SOURCE LINES 43-75
 
 .. code-block:: Python
 
@@ -87,31 +86,31 @@ mesh-generating/altering code.
     p = pv.Plotter()
     p.add_mesh(starting_mesh, show_edges=True)
     p.add_slider_widget(
-        callback=lambda value: engine('phi_resolution', int(value)),
+        callback=lambda value: engine("phi_resolution", int(value)),
         rng=[3, 60],
         value=30,
         title="Phi Resolution",
         pointa=(0.025, 0.1),
         pointb=(0.31, 0.1),
-        style='modern',
+        style="modern",
     )
     p.add_slider_widget(
-        callback=lambda value: engine('theta_resolution', int(value)),
+        callback=lambda value: engine("theta_resolution", int(value)),
         rng=[3, 60],
         value=30,
         title="Theta Resolution",
         pointa=(0.35, 0.1),
         pointb=(0.64, 0.1),
-        style='modern',
+        style="modern",
     )
     p.add_slider_widget(
-        callback=lambda value: engine('radius', value),
+        callback=lambda value: engine("radius", value),
         rng=[0.1, 1.5],
         value=0.5,
         title="Radius",
         pointa=(0.67, 0.1),
         pointb=(0.98, 0.1),
-        style='modern',
+        style="modern",
     )
     p.show()
 
@@ -149,13 +148,13 @@ mesh-generating/altering code.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-80
+.. GENERATED FROM PYTHON SOURCE LINES 76-79
 
 And here is a screen capture of a user interacting with this
 
 .. image:: ../../images/gifs/multiple-slider-widget.gif
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-89
+.. GENERATED FROM PYTHON SOURCE LINES 81-88
 
 .. raw:: html
 
@@ -168,7 +167,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.231 seconds)
+   **Total running time of the script:** (0 minutes 0.221 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_d_multi-slider-widget.py:

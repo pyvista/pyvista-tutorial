@@ -39,8 +39,8 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
     import numpy as np
     import pyvista as pv
-    from pyvista import examples
     import requests
+    from pyvista import examples
 
 
 
@@ -92,9 +92,9 @@ https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.t
 
     url = "https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0"
 
-    response = requests.get(url)
-    filename = os.path.join(tempfile.gettempdir(), "downsampled_Geologic_map_on_air_photo.tif")
-    open(filename, "wb").write(response.content)
+    response = requests.get(url)  # noqa: S113
+    filename = os.path.join(tempfile.gettempdir(), "downsampled_Geologic_map_on_air_photo.tif")  # noqa: PTH118
+    open(filename, "wb").write(response.content)  # noqa: SIM115, PTH123
 
 
 
@@ -117,18 +117,22 @@ Ground Control Points of the raster, however this depends on GDAL. For this
 tutorial, we are going to hard code the GCPs to avoid having users install
 GDAL.
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-64
+.. GENERATED FROM PYTHON SOURCE LINES 43-68
 
 .. code-block:: Python
 
 
 
     def get_gcps(filename):
-        """This helper function retrieves the Ground Control
-        Points of a GeoTIFF. Note that this requires gdal"""
+        """
+        Helper function retrieves the Ground Control
+        Points of a GeoTIFF. Note that this requires gdal.
+        """
         import rasterio
 
-        get_point = lambda gcp: np.array([gcp.x, gcp.y, gcp.z])
+        def get_point(gcp):
+            return np.array([gcp.x, gcp.y, gcp.z])
+
         # Load a raster
         src = rasterio.open(filename)
         # Grab the Groung Control Points
@@ -149,7 +153,7 @@ GDAL.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-74
+.. GENERATED FROM PYTHON SOURCE LINES 69-78
 
 .. code-block:: Python
 
@@ -169,7 +173,7 @@ GDAL.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-79
+.. GENERATED FROM PYTHON SOURCE LINES 79-83
 
 .. code-block:: Python
 
@@ -207,11 +211,11 @@ GDAL.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-81
+.. GENERATED FROM PYTHON SOURCE LINES 84-85
 
 Show GCPs in relation to topo surface with texture coordinates displayed
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-98
+.. GENERATED FROM PYTHON SOURCE LINES 85-102
 
 .. code-block:: Python
 
@@ -266,11 +270,11 @@ Show GCPs in relation to topo surface with texture coordinates displayed
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-100
+.. GENERATED FROM PYTHON SOURCE LINES 103-104
 
 Read the GeoTIFF as a ``Texture`` in PyVista:
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-113
+.. GENERATED FROM PYTHON SOURCE LINES 104-117
 
 .. code-block:: Python
 
@@ -321,7 +325,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-121
+.. GENERATED FROM PYTHON SOURCE LINES 118-125
 
 .. raw:: html
 
@@ -334,7 +338,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 14.153 seconds)
+   **Total running time of the script:** (0 minutes 13.234 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_c_geological-map.py:

@@ -340,7 +340,7 @@ Plot the arrows and the sphere.
 .. code-block:: Python
 
     p = pv.Plotter()
-    p.add_mesh(sphere.arrows, lighting=False, scalar_bar_args={'title': "Vector Magnitude"})
+    p.add_mesh(sphere.arrows, lighting=False, scalar_bar_args={"title": "Vector Magnitude"})
     p.add_mesh(sphere, color="grey", ambient=0.6, opacity=0.5, show_edges=False)
     p.show()
 
@@ -391,7 +391,7 @@ Plot the arrows and the sphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.259 seconds)
+   **Total running time of the script:** (0 minutes 1.183 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py:

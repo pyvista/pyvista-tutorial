@@ -57,7 +57,7 @@ Single Checkbox
     actor = p.add_mesh(mesh)
 
 
-    def toggle_vis(flag):
+    def toggle_vis(flag) -> None:
         actor.SetVisibility(flag)
 
 
@@ -130,7 +130,7 @@ their visibility in the scene.
     class SetVisibilityCallback:
         """Helper callback to keep a reference to the actor being modified."""
 
-        def __init__(self, actor):
+        def __init__(self, actor) -> None:
             self.actor = actor
 
         def __call__(self, state):
@@ -167,8 +167,8 @@ their visibility in the scene.
                 size=size,
                 border_size=1,
                 color_on=color,
-                color_off='grey',
-                background_color='grey',
+                color_off="grey",
+                background_color="grey",
             )
             Startpos = Startpos + size + (size // 10)
 
@@ -227,7 +227,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.736 seconds)
+   **Total running time of the script:** (0 minutes 0.695 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_b_checkbox-widget.py:

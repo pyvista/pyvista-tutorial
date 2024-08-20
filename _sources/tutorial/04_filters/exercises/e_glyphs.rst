@@ -128,7 +128,7 @@ Plot the arrows and the sphere.
 .. code-block:: Python
 
     p = pv.Plotter()
-    p.add_mesh(sphere.arrows, lighting=False, scalar_bar_args={'title': "Vector Magnitude"})
+    p.add_mesh(sphere.arrows, lighting=False, scalar_bar_args={"title": "Vector Magnitude"})
     p.add_mesh(sphere, color="grey", ambient=0.6, opacity=0.5, show_edges=False)
     p.show()
 

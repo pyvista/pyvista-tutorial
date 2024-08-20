@@ -207,21 +207,20 @@ Create the :class:`pyvista.ImageData`.
    You will likely need to ``ravel`` the array with Fortran-ordering:
    ``arr.ravel(order="F")``
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-105
+.. GENERATED FROM PYTHON SOURCE LINES 100-104
 
 .. code-block:: Python
 
 
     vol = pv.ImageData()
     # Set attributes and data
-    ...
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-107
+.. GENERATED FROM PYTHON SOURCE LINES 105-106
 
 Plot the ImageData
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-110
+.. GENERATED FROM PYTHON SOURCE LINES 106-109
 
 .. code-block:: Python
 
@@ -229,7 +228,7 @@ Plot the ImageData
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-119
+.. GENERATED FROM PYTHON SOURCE LINES 110-118
 
 Example
 ^^^^^^^
@@ -240,7 +239,7 @@ See the PyVista documentation for further details on
 
 Here's one of these example datasets:
 
-.. GENERATED FROM PYTHON SOURCE LINES 119-127
+.. GENERATED FROM PYTHON SOURCE LINES 118-126
 
 .. code-block:: Python
 
@@ -253,7 +252,7 @@ Here's one of these example datasets:
     p.show()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-131
+.. GENERATED FROM PYTHON SOURCE LINES 127-130
 
 .. code-block:: Python
 
@@ -261,7 +260,7 @@ Here's one of these example datasets:
     vol.plot(volume=True)
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-139
+.. GENERATED FROM PYTHON SOURCE LINES 131-138
 
 .. raw:: html
 

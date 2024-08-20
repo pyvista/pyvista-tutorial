@@ -100,7 +100,6 @@ arr.shape
 
 vol = pv.ImageData()
 # Set attributes and data
-...
 
 ###############################################################################
 # Plot the ImageData

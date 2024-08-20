@@ -35,7 +35,8 @@ parameters of the VTK filter.
     from pyvista import examples
     from trame.app import get_server
     from trame.ui.vuetify3 import VAppLayout
-    from trame.widgets import vtk as vtk_widgets, vuetify3 as v3
+    from trame.widgets import vtk as vtk_widgets
+    from trame.widgets import vuetify3 as v3
     from vtkmodules.vtkFiltersGeneral import vtkWarpScalar
 
     mesh = examples.load_random_hills()
@@ -53,13 +54,12 @@ parameters of the VTK filter.
 
 
     @state.change("scale")
-    def update_scale(scale, **kwargs):
+    def update_scale(scale, **kwargs) -> None:
         warp_by_scalar.SetScaleFactor(scale)
-        print(f"update scale {scale=}")
         ctrl.view_update()
 
 
-    with VAppLayout(server, full_height=True) as layout:
+    with VAppLayout(server, full_height=True) as layout:  # noqa: SIM117
         with v3.VContainer(fluid=True, classes="fill-height"):
             with vtk_widgets.VtkRemoteView(plotter.render_window, interactive_ratio=1) as view:
                 ctrl.view_update = view.update
@@ -86,7 +86,7 @@ parameters of the VTK filter.
             )
 
     # Make sure the app is running and ready
-    await layout.ready  # noqa
+    await layout.ready
     # Show UI in result
     layout
 

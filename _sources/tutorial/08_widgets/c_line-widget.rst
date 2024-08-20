@@ -42,12 +42,12 @@ the ``name`` argument in ``add_mesh``.
     import pyvista as pv
     from pyvista import examples
 
-    pv.set_plot_theme('document')
+    pv.set_plot_theme("document")
 
     mesh = examples.download_kitchen()
     furniture = examples.download_kitchen(split=True)
 
-    arr = np.linalg.norm(mesh['velocity'], axis=1)
+    arr = np.linalg.norm(mesh["velocity"], axis=1)
     clim = [arr.min(), arr.max()]
 
 
@@ -63,16 +63,16 @@ the ``name`` argument in ``add_mesh``.
 
 
     p = pv.Plotter()
-    p.add_mesh(furniture, name='furniture', color=True)
-    p.add_mesh(mesh.outline(), color='black')
+    p.add_mesh(furniture, name="furniture", color=True)
+    p.add_mesh(mesh.outline(), color="black")
     p.add_axes()
 
 
-    def simulate(pointa, pointb):
+    def simulate(pointa, pointb) -> None:
         streamlines = mesh.streamlines(
-            n_points=10, max_steps=100, pointa=pointa, pointb=pointb, integration_direction='forward'
+            n_points=10, max_steps=100, pointa=pointa, pointb=pointb, integration_direction="forward"
         )
-        p.add_mesh(streamlines, name='streamlines', line_width=5, render_lines_as_tubes=True, clim=clim)
+        p.add_mesh(streamlines, name="streamlines", line_width=5, render_lines_as_tubes=True, clim=clim)
 
 
     p.add_line_widget(callback=simulate, use_vertices=True)
@@ -131,7 +131,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.592 seconds)
+   **Total running time of the script:** (0 minutes 1.309 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_c_line-widget.py:

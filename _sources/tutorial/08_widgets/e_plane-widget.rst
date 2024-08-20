@@ -99,7 +99,7 @@ After interacting with the scene, the clipped mesh is available as:
  .. code-block:: none
 
 
-    [UnstructuredGrid (0x7f40140e2aa0)
+    [UnstructuredGrid (0x7f31b81d5720)
       N Cells:    3538080
       N Points:   3613484
       X Bounds:   9.000e+01, 1.800e+02
@@ -180,7 +180,7 @@ After interacting with the scene, the slice is available as:
  .. code-block:: none
 
 
-    [PolyData (0x7f40116758a0)
+    [PolyData (0x7f31b7d30f40)
       N Cells:    38880
       N Points:   39277
       N Strips:   0
@@ -218,10 +218,10 @@ at a time.
     p.add_mesh(mesh.contour(8).extract_largest(), opacity=0.5)
 
 
-    def my_plane_func(normal, origin):
+    def my_plane_func(normal, origin) -> None:
         slc = mesh.slice(normal=normal, origin=origin)
-        arrows = slc.glyph(orient='vectors', scale="scalars", factor=0.01)
-        p.add_mesh(arrows, name='arrows')
+        arrows = slc.glyph(orient="vectors", scale="scalars", factor=0.01)
+        p.add_mesh(arrows, name="arrows")
 
 
     p.add_plane_widget(my_plane_func)
@@ -329,7 +329,7 @@ is set.
 .. code-block:: Python
 
     p = pv.Plotter()
-    p.add_mesh_slice(vol, assign_to_axis='z')
+    p.add_mesh_slice(vol, assign_to_axis="z")
     p.show()
 
 
@@ -381,7 +381,7 @@ we can have continuous slicing by using the ``InteractionEvent`` observer.
     import vtk
 
     p = pv.Plotter()
-    p.add_mesh_slice(vol, assign_to_axis='z', interaction_event=vtk.vtkCommand.InteractionEvent)
+    p.add_mesh_slice(vol, assign_to_axis="z", interaction_event=vtk.vtkCommand.InteractionEvent)
     p.show()
 
 
@@ -438,7 +438,7 @@ the ``InteractionEvent`` observer:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 11.378 seconds)
+   **Total running time of the script:** (0 minutes 10.843 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_e_plane-widget.py:

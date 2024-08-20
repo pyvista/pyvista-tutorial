@@ -164,7 +164,7 @@ and add those vectors to the mesh.
 This time, we're going to create a totally new, random point cloud containing
 100 points using :func:`numpy.random.random`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-112
+.. GENERATED FROM PYTHON SOURCE LINES 93-111
 
 .. code-block:: Python
 
@@ -179,8 +179,7 @@ This time, we're going to create a totally new, random point cloud containing
         """Create normalized vectors pointing outward from the center of the cloud."""
         origin = mesh.center
         vectors = mesh.points - origin
-        vectors = vectors / np.linalg.norm(vectors, axis=1)[:, None]
-        return vectors
+        return vectors / np.linalg.norm(vectors, axis=1)[:, None]
 
 
     vectors = compute_vectors(point_cloud)
@@ -188,38 +187,38 @@ This time, we're going to create a totally new, random point cloud containing
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-114
+.. GENERATED FROM PYTHON SOURCE LINES 112-113
 
 Add the vector array as point data to the new mesh:
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-120
+.. GENERATED FROM PYTHON SOURCE LINES 116-119
 
 Now we can make arrows using those vectors using the glyph filter (see the
 `Glyph Example <https://docs.pyvista.org/examples/01-filter/glyphs.html>`_
 for more details).
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-136
+.. GENERATED FROM PYTHON SOURCE LINES 119-135
 
 .. code-block:: Python
 
 
     arrows = point_cloud.glyph(
-        orient='vectors',
+        orient="vectors",
         scale=False,
         factor=0.15,
     )
 
     # Display the arrows
     plotter = pv.Plotter()
-    plotter.add_mesh(point_cloud, color='maroon', point_size=10.0, render_points_as_spheres=True)
-    plotter.add_mesh(arrows, color='lightblue')
+    plotter.add_mesh(point_cloud, color="maroon", point_size=10.0, render_points_as_spheres=True)
+    plotter.add_mesh(arrows, color="lightblue")
     # plotter.add_point_labels([point_cloud.center,], ['Center',],
     #                          point_color='yellow', point_size=20)
     plotter.show_grid()
     plotter.show()
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-144
+.. GENERATED FROM PYTHON SOURCE LINES 136-143
 
 .. raw:: html
 
