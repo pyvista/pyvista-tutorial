@@ -1,5 +1,5 @@
 """
-VTK's Next Generation API.
+VTK's Next Generation API
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This requires a pre-release version of VTK:

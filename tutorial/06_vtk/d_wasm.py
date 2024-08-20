@@ -1,5 +1,5 @@
 """
-VTK + WASM.
+VTK + WASM
 ~~~~~~~~~~
 
 Use WASM local rendering. This requires a pre-release version of VTK:

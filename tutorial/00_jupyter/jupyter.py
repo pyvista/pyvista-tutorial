@@ -1,5 +1,5 @@
 """
-Test out PyVista's Jupyter Backend.
+Test out PyVista's Jupyter Backend
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Become familiar with PyVista Jupyter backend.

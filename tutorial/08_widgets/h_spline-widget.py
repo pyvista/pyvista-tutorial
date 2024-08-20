@@ -1,5 +1,5 @@
 """
-Spline Widget.
+Spline Widget
 ~~~~~~~~~~~~~
 
 

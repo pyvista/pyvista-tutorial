@@ -1,5 +1,5 @@
 """
-Geological Map on Topography.
+Geological Map on Topography
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Texture mapping for a GeoTIFF on a topography surface.

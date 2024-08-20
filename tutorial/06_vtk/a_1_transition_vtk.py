@@ -1,5 +1,5 @@
 """
-Transitioning from VTK to PyVista.
+Transitioning from VTK to PyVista
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 VTK is primarily developed in C++ and uses chained setter and getter

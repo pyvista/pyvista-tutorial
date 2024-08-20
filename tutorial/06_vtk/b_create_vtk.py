@@ -1,5 +1,5 @@
 """
-Create VTK Objects.
+Create VTK Objects
 ~~~~~~~~~~~~~~~~~~
 
 This exercise walks through the creation of a few different types of VTK datasets.

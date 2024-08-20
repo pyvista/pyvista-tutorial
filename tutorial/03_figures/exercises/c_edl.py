@@ -1,5 +1,5 @@
 """
-Eye Dome Lighting.
+Eye Dome Lighting
 ~~~~~~~~~~~~~~~~~
 
 Eye-Dome Lighting (EDL) is a non-photorealistic, image-based shading technique

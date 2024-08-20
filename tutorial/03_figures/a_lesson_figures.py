@@ -1,5 +1,5 @@
 """
-Lesson Overview.
+Lesson Overview
 ~~~~~~~~~~~~~~~
 """
 

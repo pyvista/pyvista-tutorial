@@ -1,5 +1,5 @@
 """
-Plotting Glyphs (Vectors or PolyData).
+Plotting Glyphs (Vectors or PolyData)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use vectors in a dataset to plot and orient glyphs/geometric objects.

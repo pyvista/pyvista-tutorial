@@ -1,5 +1,5 @@
 """
-Using VTK/PyVista and Trame.
+Using VTK/PyVista and Trame
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In this application, we will connect a VTK filter with PyVista.

@@ -1,5 +1,5 @@
 """
-Lighting Properties.
+Lighting Properties
 ~~~~~~~~~~~~~~~~~~~
 
 Control aspects of the rendered mesh's lighting such as Ambient, Diffuse,
