@@ -23,7 +23,7 @@ actor = pl.add_mesh(mesh)
 
 
 @state.change("scalar_range")
-def set_scalar_range(scalar_range=mesh.get_data_range(), **kwargs):
+def set_scalar_range(scalar_range=mesh.get_data_range(), **kwargs) -> None:  # noqa: B008
     actor.mapper.scalar_range = scalar_range
     ctrl.view_update()
 
@@ -36,24 +36,26 @@ with SinglePageLayout(server) as layout:
             thumb_label=True,
             label="Range",
             v_model=("scalar_range", [0, 300]),
-            min=('0',),
-            max=('500',),
+            min=("0",),
+            max=("500",),
             density="compact",
             hide_details=True,
             style="max-width: 400px",
         )
 
-    with layout.content:
-        with vuetify3.VContainer(
+    with (
+        layout.content,
+        vuetify3.VContainer(
             fluid=True,
             classes="pa-0 fill-height",
-        ):
-            # Use PyVista UI template for Plotters
-            view = plotter_ui(pl)
-            ctrl.view_update = view.update
+        ),
+    ):
+        # Use PyVista UI template for Plotters
+        view = plotter_ui(pl)
+        ctrl.view_update = view.update
 
 # Show UI
-await layout.ready  # noqa
+await layout.ready
 layout
 ###############################################################################
 # .. raw:: html

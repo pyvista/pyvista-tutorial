@@ -16,8 +16,8 @@ Let's see if we can try a few VTK algorithms with that standard workflow.
 """
 
 import pyvista as pv
-from pyvista import examples
 import vtk
+from pyvista import examples
 
 ###############################################################################
 # Here is a sample mesh
@@ -40,14 +40,13 @@ help(vtk.vtkOutlineFilter)
 alg = vtk.vtkOutlineFilter()
 
 # (your code here, answer below)
-...
 
 outline = pv.wrap(alg.GetOutput())
 outline
 
 ###############################################################################
 alg.SetInputDataObject(mesh)
-alg.SetGenerateFaces(False)
+alg.SetGenerateFaces(False)  # noqa: FBT003
 alg.Update()
 
 outline = pv.wrap(alg.GetOutput())
@@ -61,7 +60,7 @@ outline
 ###############################################################################
 p = pv.Plotter()
 p.add_mesh(mesh)
-p.add_mesh(outline, color='k')
+p.add_mesh(outline, color="k")
 p.show()
 
 

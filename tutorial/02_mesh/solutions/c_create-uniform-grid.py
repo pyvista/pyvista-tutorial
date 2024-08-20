@@ -100,7 +100,7 @@ arr.shape
 
 vol = pv.ImageData()
 vol.dimensions = arr.shape
-vol['array'] = arr.ravel(order="F")
+vol["array"] = arr.ravel(order="F")
 
 ###############################################################################
 # Plot the ImageData

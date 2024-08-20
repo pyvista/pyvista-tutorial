@@ -22,7 +22,7 @@ p.show()
 # You can customize how that mesh is displayed through the parameters of the :func:`pyvista.Plotter.add_mesh` method. For example, we can change the colormap via the ``cmap`` argument:
 
 p = pv.Plotter()
-p.add_mesh(mesh, cmap='coolwarm')
+p.add_mesh(mesh, cmap="coolwarm")
 p.show()
 
 ###############################################################################
@@ -38,7 +38,7 @@ p.show()
 mesh = examples.download_st_helens().warp_by_scalar()
 
 p = pv.Plotter()
-p.add_mesh(mesh, cmap='terrain', opacity="linear")
+p.add_mesh(mesh, cmap="terrain", opacity="linear")
 p.show()
 
 ###############################################################################
@@ -47,11 +47,11 @@ p.show()
 # The ``add_mesh`` method can be called over and over to add different data to the same ``Plotter`` scene. For example, we can create many different mesh objects and plot them together:
 
 kinds = [
-    'tetrahedron',
-    'cube',
-    'octahedron',
-    'dodecahedron',
-    'icosahedron',
+    "tetrahedron",
+    "cube",
+    "octahedron",
+    "dodecahedron",
+    "icosahedron",
 ]
 centers = [
     (0, 1, 0),
@@ -64,10 +64,10 @@ centers = [
 solids = [pv.PlatonicSolid(kind, radius=0.4, center=center) for kind, center in zip(kinds, centers)]
 
 p = pv.Plotter(window_size=[1000, 1000])
-for ind, solid in enumerate(solids):
-    p.add_mesh(solid, color='silver', specular=1.0, specular_power=10)
+for _ind, solid in enumerate(solids):
+    p.add_mesh(solid, color="silver", specular=1.0, specular_power=10)
 p.view_vector((5.0, 2, 3))
-p.add_floor('-z', lighting=True, color='tan', pad=1.0)
+p.add_floor("-z", lighting=True, color="tan", pad=1.0)
 p.enable_shadows()
 p.show()
 

@@ -72,7 +72,7 @@ dataset.plot(volume=True)
 # <https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk>`_ from a
 # file using :func:`pyvista.read`.
 
-dataset = pv.read('ironProt.vtk')
+dataset = pv.read("ironProt.vtk")
 dataset
 
 ###############################################################################
