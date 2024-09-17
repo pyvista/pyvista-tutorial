@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:22.734** total execution time for 4 files **from tutorial/03_figures**:
+**00:23.381** total execution time for 4 files **from tutorial/03_figures**:
 
 .. container::
 
@@ -33,14 +33,14 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_tutorial_03_figures_c_geological-map.py` (``c_geological-map.py``)
-     - 00:14.444
+     - 00:14.832
      - 0.0
    * - :ref:`sphx_glr_tutorial_03_figures_a_lesson_figures.py` (``a_lesson_figures.py``)
-     - 00:04.833
+     - 00:05.042
      - 0.0
    * - :ref:`sphx_glr_tutorial_03_figures_d_gif.py` (``d_gif.py``)
-     - 00:02.101
+     - 00:02.116
      - 0.0
    * - :ref:`sphx_glr_tutorial_03_figures_b_shading.py` (``b_shading.py``)
-     - 00:01.356
+     - 00:01.391
      - 0.0
