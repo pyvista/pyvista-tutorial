@@ -33,7 +33,7 @@ trame-client==3.3.2
 trame-server==3.2.3
 trame-vtk==2.8.10
 trame-vuetify==2.7.1
-trimesh==4.4.8
+trimesh==4.4.9
 typed-ast==1.5.5
 typing_extensions==4.12.2
 vtk<9.4
