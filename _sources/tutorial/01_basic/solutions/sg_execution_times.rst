@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:04.827** total execution time for 1 file **from tutorial/01_basic/solutions**:
+**00:06.082** total execution time for 1 file **from tutorial/01_basic/solutions**:
 
 .. container::
 
@@ -33,5 +33,5 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_tutorial_01_basic_solutions_a_load_examples_solution.py` (``a_load_examples_solution.py``)
-     - 00:04.827
+     - 00:06.082
      - 0.0
