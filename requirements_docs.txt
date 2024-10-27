@@ -1,6 +1,6 @@
 cmocean==4.0.3
 colorcet==3.1.0
-geovista==0.5.1
+geovista==0.5.3
 imageio>=2.5.0
 imageio-ffmpeg==0.5.1
 ipygany==0.5.0
