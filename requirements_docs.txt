@@ -27,7 +27,7 @@ sphinx-gallery==0.18.0
 sphinx-notfound-page==1.0.4
 sphinx_design==0.6.1
 sphinxcontrib-websupport==2.0.0
-sphinxcontrib.asciinema
+sphinxcontrib.asciinema==0.4.2
 trame==3.7.0
 trame-client==3.4.0
 trame-server==3.2.3
