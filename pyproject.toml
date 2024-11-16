@@ -4,10 +4,10 @@ requires-python = '>=3.9'
 
 [tool.ruff]
 exclude = ['.git', 'build', 'dist', 'doc/_build', 'doc/tutorial', 'pycache__']
-line-length = 100
 indent-width = 4
-lint.select = ["ALL"]
+line-length = 100
 lint.ignore = ["COM812", "D203", "D212", "E501", "ERA001", "ISC001"]
+lint.select = ["ALL"]
 
 [tool.ruff.lint.per-file-ignores]
 "doc/**" = ["ANN", "ARG", "D", "INP001"]
