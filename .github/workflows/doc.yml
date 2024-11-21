@@ -30,8 +30,6 @@ jobs:
 
       - uses: syphar/restore-virtualenv@v1
         id: cache-virtualenv
-        with:
-          requirement_files: requirements_docs.txt
 
       - name: Install OS Packages
         run: |
@@ -45,7 +43,7 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt -y install libgeos-dev
-          pip install -r requirements_docs.txt
+          pip install -e .[docs]
 
       - name: PyVista Report
         run: |
@@ -114,7 +112,6 @@ jobs:
           cp README.md tutorial-content/
           cp LICENSE tutorial-content/
           cp requirements.txt tutorial-content/
-          cp requirements_docs.txt tutorial-content/
           cp start tutorial-content/
           cp Dockerfile tutorial-content/
 
