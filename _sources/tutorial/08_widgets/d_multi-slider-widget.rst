@@ -167,7 +167,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.234 seconds)
+   **Total running time of the script:** (0 minutes 0.237 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_d_multi-slider-widget.py:
