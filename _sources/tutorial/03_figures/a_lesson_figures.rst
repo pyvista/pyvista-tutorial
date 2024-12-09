@@ -538,7 +538,7 @@ And bounds similarly with :func:`pyvista.Plotter.show_bounds`
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.900 seconds)
+   **Total running time of the script:** (0 minutes 5.370 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_a_lesson_figures.py:
