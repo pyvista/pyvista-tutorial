@@ -338,7 +338,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 15.390 seconds)
+   **Total running time of the script:** (0 minutes 14.307 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_c_geological-map.py:
