@@ -281,7 +281,8 @@ access the :attr:`pyvista.DataSet.arrows` property to produce glyphs.
            ...,
            [ 0.83088565,  0.97835207, -0.98625994],
            [ 0.61331964,  0.9901682 , -0.9971885 ],
-           [ 0.32600534,  0.99750996, -0.9998    ]], dtype=float32)
+           [ 0.32600534,  0.99750996, -0.9998    ]],
+          shape=(842, 3), dtype=float32)
 
 
 
@@ -391,7 +392,7 @@ Plot the arrows and the sphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.236 seconds)
+   **Total running time of the script:** (0 minutes 1.255 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py:

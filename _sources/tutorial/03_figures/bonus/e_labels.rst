@@ -265,9 +265,9 @@ node:
     <tr><td>N Cells</td><td>10</td></tr>
     <tr><td>N Points</td><td>10</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>3.994e-02, 9.843e-01</td></tr>
-    <tr><td>Y Bounds</td><td>3.154e-02, 9.256e-01</td></tr>
-    <tr><td>Z Bounds</td><td>1.749e-02, 9.013e-01</td></tr>
+    <tr><td>X Bounds</td><td>3.755e-02, 8.174e-01</td></tr>
+    <tr><td>Y Bounds</td><td>7.836e-02, 9.979e-01</td></tr>
+    <tr><td>Z Bounds</td><td>2.303e-02, 9.040e-01</td></tr>
     <tr><td>N Arrays</td><td>1</td></tr>
     </table>
 

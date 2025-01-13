@@ -16,8 +16,8 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
+  <!--
+    this give us a css class that will be invisible only if js is disabled
   -->
   <noscript>
     <style>
@@ -27,10 +27,10 @@
   </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=649a27d8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
@@ -47,10 +47,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/cards.css?v=90395a4f" />
   
   <!-- So that users can add custom icons -->
-  <script src="../../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
@@ -312,9 +312,14 @@
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
@@ -458,18 +463,18 @@ to download the full example code. or to run this example in your browser via Bi
 </pre></div>
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Required for vtk factory</span>
-<span class="kn">from</span> <span class="nn">trame.app</span> <span class="kn">import</span> <span class="n">get_server</span>
-<span class="kn">from</span> <span class="nn">trame.decorators</span> <span class="kn">import</span> <span class="n">TrameApp</span><span class="p">,</span> <span class="n">change</span>
-<span class="kn">from</span> <span class="nn">trame.ui.vuetify3</span> <span class="kn">import</span> <span class="n">SinglePageLayout</span>
-<span class="kn">from</span> <span class="nn">trame.widgets</span> <span class="kn">import</span> <span class="n">vuetify3</span> <span class="k">as</span> <span class="n">vuetify</span>
-<span class="kn">from</span> <span class="nn">trame.widgets.vtk</span> <span class="kn">import</span> <span class="n">VtkRemoteView</span>
-<span class="kn">from</span> <span class="nn">trame_vtklocal.widgets</span> <span class="kn">import</span> <span class="n">vtklocal</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkCommonColor</span> <span class="kn">import</span> <span class="n">vtkNamedColors</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersCore</span> <span class="kn">import</span> <span class="n">vtkElevationFilter</span><span class="p">,</span> <span class="n">vtkGlyph3D</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkFiltersSources</span> <span class="kn">import</span> <span class="n">vtkConeSource</span><span class="p">,</span> <span class="n">vtkCubeSource</span><span class="p">,</span> <span class="n">vtkSphereSource</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkImagingCore</span> <span class="kn">import</span> <span class="n">vtkRTAnalyticSource</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkImagingGeneral</span> <span class="kn">import</span> <span class="n">vtkImageGradient</span>
-<span class="kn">from</span> <span class="nn">vtkmodules.vtkRenderingCore</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">trame.app</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_server</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">trame.decorators</span><span class="w"> </span><span class="kn">import</span> <span class="n">TrameApp</span><span class="p">,</span> <span class="n">change</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">trame.ui.vuetify3</span><span class="w"> </span><span class="kn">import</span> <span class="n">SinglePageLayout</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">trame.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">vuetify3</span> <span class="k">as</span> <span class="n">vuetify</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">trame.widgets.vtk</span><span class="w"> </span><span class="kn">import</span> <span class="n">VtkRemoteView</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">trame_vtklocal.widgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">vtklocal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vtkmodules.vtkCommonColor</span><span class="w"> </span><span class="kn">import</span> <span class="n">vtkNamedColors</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vtkmodules.vtkFiltersCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">vtkElevationFilter</span><span class="p">,</span> <span class="n">vtkGlyph3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vtkmodules.vtkFiltersSources</span><span class="w"> </span><span class="kn">import</span> <span class="n">vtkConeSource</span><span class="p">,</span> <span class="n">vtkCubeSource</span><span class="p">,</span> <span class="n">vtkSphereSource</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vtkmodules.vtkImagingCore</span><span class="w"> </span><span class="kn">import</span> <span class="n">vtkRTAnalyticSource</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vtkmodules.vtkImagingGeneral</span><span class="w"> </span><span class="kn">import</span> <span class="n">vtkImageGradient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">vtkmodules.vtkRenderingCore</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">vtkActor</span><span class="p">,</span>
     <span class="n">vtkPolyDataMapper</span><span class="p">,</span>
     <span class="n">vtkRenderer</span><span class="p">,</span>
@@ -478,7 +483,7 @@ to download the full example code. or to run this example in your browser via Bi
 <span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup_vtk</span><span class="p">():</span>  <span class="c1"># noqa: PLR0915</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">setup_vtk</span><span class="p">():</span>  <span class="c1"># noqa: PLR0915</span>
     <span class="n">colors</span> <span class="o">=</span> <span class="n">vtkNamedColors</span><span class="p">()</span>
 
     <span class="c1"># The Wavelet Source is nice for generating a test vtkImageData set</span>
@@ -564,8 +569,8 @@ to download the full example code. or to run this example in your browser via Bi
 </pre></div>
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@TrameApp</span><span class="p">()</span>
-<span class="k">class</span> <span class="nc">App</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">App</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">server</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">server</span> <span class="o">=</span> <span class="n">get_server</span><span class="p">(</span><span class="n">server</span><span class="p">,</span> <span class="n">client_type</span><span class="o">=</span><span class="s2">&quot;vue3&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">render_window</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">cone</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">sphere</span> <span class="o">=</span> <span class="n">setup_vtk</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view_local</span> <span class="o">=</span> <span class="kc">None</span>
@@ -573,22 +578,22 @@ to download the full example code. or to run this example in your browser via Bi
         <span class="bp">self</span><span class="o">.</span><span class="n">ui</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_ui</span><span class="p">()</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">ctrl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ctrl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="o">.</span><span class="n">controller</span>
 
     <span class="nd">@change</span><span class="p">(</span><span class="s2">&quot;resolution&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">on_resolution_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">on_resolution_change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">resolution</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">cone</span><span class="o">.</span><span class="n">SetResolution</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">resolution</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sphere</span><span class="o">.</span><span class="n">SetStartTheta</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span> <span class="o">*</span> <span class="mi">6</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view_remote</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view_local</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">reset_camera</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">reset_camera</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="o">.</span><span class="n">ResetCamera</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view_local</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">view_remote</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_build_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">with</span> <span class="n">SinglePageLayout</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">server</span><span class="p">)</span> <span class="k">as</span> <span class="n">layout</span><span class="p">:</span>
             <span class="n">layout</span><span class="o">.</span><span class="n">icon</span><span class="o">.</span><span class="n">click</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">reset_camera</span>
             <span class="k">with</span> <span class="n">layout</span><span class="o">.</span><span class="n">toolbar</span><span class="p">:</span>
@@ -635,7 +640,7 @@ to download the full example code. or to run this example in your browser via Bi
 </div>
 <p>Make sure to give room for the download of WASM bundle
 Only needed at first execution</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">asyncio</span>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
 
 <span class="k">await</span> <a href="https://docs.python.org/dev/library/asyncio-task.html#asyncio.sleep" title="asyncio.sleep" class="sphx-glr-backref-module-asyncio sphx-glr-backref-type-py-function"><span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -740,8 +745,8 @@ By PyVista Developers
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

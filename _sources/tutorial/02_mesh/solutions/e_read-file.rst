@@ -401,7 +401,8 @@ The points from the mesh are directly accessible as a NumPy array:
                      ...,
                      [806.665  , 627.363  ,   5.11482],
                      [806.665  , 654.432  ,   7.51998],
-                     [806.665  , 681.537  ,   9.48744]], dtype=float32)
+                     [806.665  , 681.537  ,   9.48744]],
+                    shape=(1335, 3), dtype=float32)
 
 
 
@@ -432,7 +433,7 @@ The faces from the mesh are also directly accessible as a NumPy array:
            ...,
            [1324, 1333, 1323],
            [1325, 1216, 1334],
-           [1325, 1334, 1324]])
+           [1325, 1334, 1324]], shape=(2452, 3))
 
 
 
@@ -665,7 +666,7 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.306 seconds)
+   **Total running time of the script:** (0 minutes 6.019 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_e_read-file.py:
