@@ -392,7 +392,7 @@ Plot the arrows and the sphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.255 seconds)
+   **Total running time of the script:** (0 minutes 1.247 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py:
