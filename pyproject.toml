@@ -23,7 +23,7 @@ docs = [
   'mypy==1.14.1',
   'numpydoc==1.8.0',
   'osmnx==2.0.1',
-  'pypandoc==1.14',
+  'pypandoc==1.15',
   'pytest-sphinx==0.6.3',
   'pyvista-xarray==0.1.7',
   'pyvista[all]==0.44.2',
