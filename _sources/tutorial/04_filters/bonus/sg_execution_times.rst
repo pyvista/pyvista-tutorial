@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:00.602** total execution time for 1 file **from tutorial/04_filters/bonus**:
+**00:00.596** total execution time for 1 file **from tutorial/04_filters/bonus**:
 
 .. container::
 
@@ -33,5 +33,5 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_tutorial_04_filters_bonus_f_sampling_functions_3d.py` (``f_sampling_functions_3d.py``)
-     - 00:00.602
+     - 00:00.596
      - 0.0
