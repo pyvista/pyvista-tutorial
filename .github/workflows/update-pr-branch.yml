@@ -6,6 +6,10 @@ on:
       - "main"
 jobs:
   autoupdate:
+    permissions:
+      pull-requests: read
+      issues: read
+      repository-projects: read
     runs-on: ubuntu-latest
     steps:
       - name: Automatically update PR

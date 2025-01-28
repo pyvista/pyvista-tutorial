@@ -17,6 +17,10 @@ jobs:
       && github.event.action == 'created'
       && github.event.issue.pull_request != null
       && startsWith(github.event.comment.body, 'github-actions preview')
+    permissions:
+      pull-requests: read
+      issues: read
+      repository-projects: read
     runs-on: ubuntu-latest
     steps:
       - uses: sushichop/action-repository-permission@v2
@@ -76,6 +80,10 @@ jobs:
       && github.event.issue.pull_request != null
       && startsWith(github.event.comment.body, 'github-actions preview')
     name: Preview Documentation
+    permissions:
+      pull-requests: read
+      issues: read
+      repository-projects: read
     runs-on: ubuntu-latest
     needs: build-doc
     steps:

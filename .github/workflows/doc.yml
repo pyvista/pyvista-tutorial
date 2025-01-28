@@ -18,6 +18,10 @@ env:
 
 jobs:
   build-doc:
+    permissions:
+      pull-requests: read
+      issues: read
+      repository-projects: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -79,6 +83,10 @@ jobs:
 
   deploy:
     name: Publish Documentation
+    permissions:
+      pull-requests: read
+      issues: read
+      repository-projects: read
     runs-on: ubuntu-latest
     needs: build-doc
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -127,6 +135,10 @@ jobs:
 
   preview:
     name: Preview Documentation
+    permissions:
+      pull-requests: read
+      issues: read
+      repository-projects: read
     runs-on: ubuntu-latest
     needs: build-doc
     steps:

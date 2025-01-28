@@ -3,6 +3,10 @@ on: [pull_request]
 jobs:
   misspell:
     name: runner / misspell
+    permissions:
+      pull-requests: read
+      issues: read
+      repository-projects: read
     runs-on: ubuntu-latest
     steps:
       - name: Check out code.

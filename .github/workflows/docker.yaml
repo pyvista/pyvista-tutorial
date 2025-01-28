@@ -15,6 +15,10 @@ env:
 
 jobs:
   build-docker:
+    permissions:
+      pull-requests: read
+      issues: read
+      repository-projects: read
     runs-on: ubuntu-latest
     if:
       github.event_name == 'push' || github.event_name == 'workflow_dispatch' ||
