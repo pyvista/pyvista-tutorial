@@ -43,6 +43,6 @@ jobs:
         with:
           context: .
           file: Dockerfile
-          push: ${{ github.actor != 'dependabot[bot]' }}
+          push: ${{ github.actor != 'dependabot[bot]' && github.actor != 'pre-commit-ci[bot]' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
