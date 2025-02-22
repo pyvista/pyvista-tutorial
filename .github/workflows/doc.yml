@@ -84,6 +84,7 @@ jobs:
   deploy:
     name: Publish Documentation
     permissions:
+      contents: write
       pull-requests: read
       issues: read
       repository-projects: read
@@ -136,6 +137,7 @@ jobs:
   preview:
     name: Preview Documentation
     permissions:
+      contents: write
       pull-requests: read
       issues: read
       repository-projects: read
