@@ -16,7 +16,7 @@ env:
 jobs:
   build-docker:
     permissions:
-      contents: write
+      packages: write
       pull-requests: read
       issues: read
       repository-projects: read
