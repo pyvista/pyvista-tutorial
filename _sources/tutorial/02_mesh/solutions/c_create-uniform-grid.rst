@@ -499,7 +499,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      pyvista.StructuredGrid
      |          This grid as a structured grid.
      |  
-     |  to_tetrahedra(self, tetra_per_cell: 'int' = 5, mixed: 'Sequence[int] | bool' = False, pass_cell_ids: 'bool' = True, pass_data: 'bool' = True, progress_bar: 'bool' = False)
+     |  to_tetrahedra(self, tetra_per_cell: 'int' = 5, mixed: 'Sequence[int] | bool' = False, pass_cell_ids: 'bool' = True, pass_data: 'bool' = True, progress_bar: 'bool' = False) from pyvista.core.filters.rectilinear_grid.RectilinearGridFilters
      |      Create a tetrahedral mesh structured grid.
      |      
      |      Parameters
@@ -714,7 +714,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  ----------------------------------------------------------------------
      |  Methods inherited from Grid:
      |  
-     |  __new__(cls, *args, **kwargs)
+     |  __new__(cls, *args, **kwargs) from pyvista.core.utilities.misc.abstract_class.<locals>
      |  
      |  ----------------------------------------------------------------------
      |  Data descriptors inherited from Grid:
@@ -1767,7 +1767,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      tuple
      |          ``(min, max)`` of the named array.
      |  
-     |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text='', return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, anti_aliasing=None, zoom=None, border=False, border_color='k', border_width=2.0, ssao=False, **kwargs)
+     |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text='', return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, anti_aliasing=None, zoom=None, border=False, border_color='k', border_width=2.0, ssao=False, **kwargs) from pyvista._plot
      |      Plot a PyVista, numpy, or vtk object.
      |      
      |      Parameters
@@ -8416,10 +8416,10 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  Data descriptors inherited from pyvista.core.filters.data_set.DataSetFilters:
      |  
      |  __dict__
-     |      dictionary for instance variables (if defined)
+     |      dictionary for instance variables
      |  
      |  __weakref__
-     |      list of weak references to the object (if defined)
+     |      list of weak references to the object
      |  
      |  ----------------------------------------------------------------------
      |  Methods inherited from pyvista.core.dataobject.DataObject:
@@ -10505,7 +10505,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  ----------------------------------------------------------------------
      |  Class methods inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
      |  
-     |  override(...) from builtins.type
+     |  override(...)
      |      This method can be used to override a VTK class with a Python subclass.
      |      The class type passed to override will afterwards be instantiated
      |      instead of the type override is called on.
@@ -10729,7 +10729,7 @@ Here's one of these example datasets:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.156 seconds)
+   **Total running time of the script:** (0 minutes 5.055 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py:

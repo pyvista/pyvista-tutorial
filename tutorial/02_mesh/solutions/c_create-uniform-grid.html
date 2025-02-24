@@ -757,7 +757,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |      pyvista.StructuredGrid
  |          This grid as a structured grid.
  |
- |  to_tetrahedra(self, tetra_per_cell: &#39;int&#39; = 5, mixed: &#39;Sequence[int] | bool&#39; = False, pass_cell_ids: &#39;bool&#39; = True, pass_data: &#39;bool&#39; = True, progress_bar: &#39;bool&#39; = False)
+ |  to_tetrahedra(self, tetra_per_cell: &#39;int&#39; = 5, mixed: &#39;Sequence[int] | bool&#39; = False, pass_cell_ids: &#39;bool&#39; = True, pass_data: &#39;bool&#39; = True, progress_bar: &#39;bool&#39; = False) from pyvista.core.filters.rectilinear_grid.RectilinearGridFilters
  |      Create a tetrahedral mesh structured grid.
  |
  |      Parameters
@@ -972,7 +972,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |  ----------------------------------------------------------------------
  |  Methods inherited from Grid:
  |
- |  __new__(cls, *args, **kwargs)
+ |  __new__(cls, *args, **kwargs) from pyvista.core.utilities.misc.abstract_class.&lt;locals&gt;
  |
  |  ----------------------------------------------------------------------
  |  Data descriptors inherited from Grid:
@@ -2025,7 +2025,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |      tuple
  |          ``(min, max)`` of the named array.
  |
- |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text=&#39;&#39;, return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, anti_aliasing=None, zoom=None, border=False, border_color=&#39;k&#39;, border_width=2.0, ssao=False, **kwargs)
+ |  plot(var_item, off_screen=None, full_screen=None, screenshot=None, interactive=True, cpos=None, window_size=None, show_bounds=False, show_axes=None, notebook=None, background=None, text=&#39;&#39;, return_img=False, eye_dome_lighting=False, volume=False, parallel_projection=False, jupyter_backend=None, return_viewer=False, return_cpos=False, jupyter_kwargs=None, theme=None, anti_aliasing=None, zoom=None, border=False, border_color=&#39;k&#39;, border_width=2.0, ssao=False, **kwargs) from pyvista._plot
  |      Plot a PyVista, numpy, or vtk object.
  |
  |      Parameters
@@ -8674,10 +8674,10 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |  Data descriptors inherited from pyvista.core.filters.data_set.DataSetFilters:
  |
  |  __dict__
- |      dictionary for instance variables (if defined)
+ |      dictionary for instance variables
  |
  |  __weakref__
- |      list of weak references to the object (if defined)
+ |      list of weak references to the object
  |
  |  ----------------------------------------------------------------------
  |  Methods inherited from pyvista.core.dataobject.DataObject:
@@ -10763,7 +10763,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |  ----------------------------------------------------------------------
  |  Class methods inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
  |
- |  override(...) from builtins.type
+ |  override(...)
  |      This method can be used to override a VTK class with a Python subclass.
  |      The class type passed to override will afterwards be instantiated
  |      instead of the type override is called on.
@@ -10863,7 +10863,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/c_create-uniform-grid.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.156 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.055 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-c-create-uniform-grid-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/c_create-uniform-grid.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" style="width: 150px;" />

@@ -337,7 +337,7 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |  ----------------------------------------------------------------------
      |  Static methods defined here:
      |  
-     |  __new__(*args, **kwargs) from builtins.type
+     |  __new__(*args, **kwargs)
      |      Create and return a new object.  See help(type) for accurate signature.
      |  
      |  ----------------------------------------------------------------------
@@ -1327,7 +1327,7 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |  ----------------------------------------------------------------------
      |  Class methods inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
      |  
-     |  override(...) from builtins.type
+     |  override(...)
      |      This method can be used to override a VTK class with a Python subclass.
      |      The class type passed to override will afterwards be instantiated
      |      instead of the type override is called on.
