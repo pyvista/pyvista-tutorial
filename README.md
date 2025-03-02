@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <p align="center">
-    <img src="https://github.com/pyvista/pyvista/blob/main/doc/source/_static/pyvista_logo_sm.png" alt="pyvista_logo_sm" width="500"/>
+    <img src="https://github.com/pyvista/pyvista/blob/main/doc/source/_static/pyvista_logo.svg" alt="pyvista_logo_sm" width="500"/>
 </p>
 
 ## Abstract
