@@ -490,7 +490,7 @@ to download the full example code. or to run this example in your browser via Bi
 </div>
 <p>Take a 3D NumPy array of data values that holds some spatial data where each
 axis corresponds to the XYZ cartesian axes. This example will create a
-<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.44.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> that will hold the spatial reference for
+<a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> that will hold the spatial reference for
 a 3D grid by which a 3D NumPy array of values can be plotted against.</p>
 <p>Create the 3D NumPy array of spatially referenced data. This is spatially
 referenced such that the grid is <code class="docutils literal notranslate"><span class="pre">(20,</span> <span class="pre">5,</span> <span class="pre">10)</span></code>, <code class="docutils literal notranslate"><span class="pre">(nx,</span> <span class="pre">ny,</span> <span class="pre">nz)</span></code>.</p>
@@ -523,7 +523,7 @@ on the CELL data.</p>
 </pre></div>
 </div>
 <p>Don’t like cell data? You could also add the NumPy array to the point data of
-a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.44.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a>. Take note of the subtle difference when
+a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a>. Take note of the subtle difference when
 setting the grid dimensions upon initialization.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the 3D NumPy array of spatially referenced data again.</span>
 <span class="n">values</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
@@ -553,7 +553,7 @@ setting the grid dimensions upon initialization.</p>
 </div>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
-<p>Now create your own <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.44.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> from a 3D NumPy array!</p>
+<p>Now create your own <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> from a 3D NumPy array!</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="pyvista.ImageData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pv</span><span class="o">.</span><span class="n">ImageData</span></a><span class="p">)</span>
 </pre></div>
 </div>
@@ -563,7 +563,7 @@ your own 3D numpy array here.</p>
 <span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
-<p>Create the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.44.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a>.</p>
+<p>Create the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You will likely need to <code class="docutils literal notranslate"><span class="pre">ravel</span></code> the array with Fortran-ordering:
