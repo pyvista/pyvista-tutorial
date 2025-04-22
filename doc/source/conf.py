@@ -33,7 +33,7 @@ pyvista.FIGURE_PATH = os.path.join(os.path.abspath("./images/"), "auto-generated
 if not os.path.exists(pyvista.FIGURE_PATH):  # noqa: PTH110
     os.makedirs(pyvista.FIGURE_PATH)  # noqa: PTH103
 
-# necessary when building the sphinx gallery
+# Required when building the sphinx gallery
 pyvista.BUILDING_GALLERY = True
 os.environ["PYVISTA_BUILDING_GALLERY"] = "true"
 
@@ -63,10 +63,10 @@ extensions = [
     "sphinxcontrib.asciinema",
 ]
 
-# 国際化の設定
-locale_dirs = ["../locale/"]  # localeディレクトリのパス
-gettext_compact = False  # 複数のポットファイルを生成する設定
-language = "en"  # デフォルト言語を英語に設定
+# Internationalization settings
+locale_dirs = ["../locale/"]  # Path to the locale directory
+gettext_compact = False  # Generate multiple .pot files
+language = "en"  # Set default language to English
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/dev", None),
@@ -99,8 +99,8 @@ suppress_warnings = ["config.cache"]
 # so a file named 'default.css' will overwrite the builtin 'default.css'.
 html_static_path = ["_static"]
 html_css_files = [
-    "cards.css",  # used in card CSS
-    "language_selector.css",  # 言語切り替えドロップダウン用CSS
+    "cards.css",  # Used for card CSS
+    "language_selector.css",  # CSS for language switch dropdown
 ]
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
@@ -112,9 +112,6 @@ html_short_title = ""
 html_extra_path = []  # TODO: 'CNAME',  # noqa: FIX002, TD002, TD003
 html_use_smartypants = True
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
 html_theme = "sphinx_book_theme"
 html_context = {
     "github_user": "pyvista",
@@ -154,14 +151,14 @@ html_theme_options = {
     "navigation_with_keys": False,
     "show_navbar_depth": 1,
     "max_navbar_depth": 3,
-    # 言語切り替え機能を有効にする
+    # Enable language switch feature
     "repository_url": "https://github.com/pyvista/pyvista-tutorial",
     "repository_branch": "main",
     "path_to_docs": "doc",
     "use_repository_button": True,
     "use_issues_button": True,
     "use_edit_page_button": True,
-    # 言語セレクターの設定
+    # Language selector settings
     "extra_navbar": """
         <div class="dropdown">
             <button class="btn btn-sm navbar-btn dropdown-toggle" type="button" id="languageSelector"
@@ -185,12 +182,11 @@ html_theme_options = {
 notfound_no_urls_prefix = True
 
 # Copy button customization
-# exclude traditional Python prompts from the copied code
+# Exclude traditional Python prompts from the copied code
 copybutton_prompt_text = r">>> ?|\.\.\. "
 copybutton_prompt_is_regexp = True
 
-# sphinx-panels shouldn't add bootstrap css since the pydata-sphinx-theme
-# already loads it
+# Prevent sphinx-panels from adding bootstrap CSS since pydata-sphinx-theme already includes it
 panels_add_bootstrap_css = False
 
 
@@ -225,29 +221,29 @@ tutorial_dirs = [
     "../../tutorial/04_filters/",
     "../../tutorial/05_action/",
     "../../tutorial/06_vtk/",
-    # '../../tutorial/07_sphinx/',
+    # "../../tutorial/07_sphinx/",
     "../../tutorial/08_widgets/",
     "../../tutorial/09_trame/",
 ]
 
 sphinx_gallery_conf = {
-    # convert rst to md for ipynb
+    # Convert .rst to .md for ipynb
     "pypandoc": True,
-    # path to your examples scripts
+    # Path to your example scripts
     "examples_dirs": tutorial_dirs,
-    # path where to save gallery generated examples
+    # Path where gallery-generated examples are saved
     "gallery_dirs": [d.lstrip("../../") for d in tutorial_dirs],  # noqa: B005
     # Don't execute any files containing "exercise" in the filename
     "filename_pattern": r"^((?!exercise|trame|wasm|vtk_next).)*$",
-    # Remove the 'Download all examples' button from the top level gallery
+    # Remove the 'Download all examples' button from the top-level gallery
     "download_all_examples": False,
     # Remove sphinx configuration comments from code blocks
     "remove_config_comments": True,
-    # Sort gallery example by file name instead of number of lines (default)
+    # Sort gallery examples by file name
     "within_subsection_order": FileNameSortKey,
-    # directory where function granular galleries are stored
+    # Directory where function-level galleries are stored
     "backreferences_dir": None,
-    # Modules for which function level galleries are created.  In
+    # Modules for which function-level galleries are created
     "doc_module": "pyvista",
     "image_scrapers": (DynamicScraper(), "matplotlib"),
     "binder": {
