@@ -19250,12 +19250,10 @@
                         numberOfComponents: 1,
                         values: r,
                       });
-                      t.tris
-                        .getCABO()
-                        .createVBO(o, "polys", ss.SURFACE, {
-                          points: n,
-                          cellOffset: 0,
-                        });
+                      t.tris.getCABO().createVBO(o, "polys", ss.SURFACE, {
+                        points: n,
+                        cellOffset: 0,
+                      });
                     }
                     t.renderable.getFormat() !== t.lastFormat &&
                       ((t.lastFormat = t.renderable.getFormat()),
@@ -23497,13 +23495,11 @@
                         numberOfComponents: 1,
                         values: v,
                       });
-                      t.tris
-                        .getCABO()
-                        .createVBO(y, "polys", ss.SURFACE, {
-                          points: m,
-                          tcoords: h,
-                          cellOffset: 0,
-                        }),
+                      t.tris.getCABO().createVBO(y, "polys", ss.SURFACE, {
+                        points: m,
+                        tcoords: h,
+                        cellOffset: 0,
+                      }),
                         t.VBOBuildTime.modified(),
                         (t.VBOBuildString = A);
                     }
@@ -24000,12 +23996,10 @@
                           });
                         y.push(a, s);
                       }
-                      t.tris
-                        .getCABO()
-                        .createVBO(d, "polys", ss.SURFACE, {
-                          points: c,
-                          customAttributes: y,
-                        }),
+                      t.tris.getCABO().createVBO(d, "polys", ss.SURFACE, {
+                        points: c,
+                        customAttributes: y,
+                      }),
                         t.VBOBuildTime.modified();
                     }
                   }),
@@ -26145,12 +26139,10 @@
                         numberOfComponents: 1,
                         values: n,
                       });
-                      t.tris
-                        .getCABO()
-                        .createVBO(o, "polys", ss.SURFACE, {
-                          points: r,
-                          cellOffset: 0,
-                        });
+                      t.tris.getCABO().createVBO(o, "polys", ss.SURFACE, {
+                        points: r,
+                        cellOffset: 0,
+                      });
                     }
                     t.VBOBuildTime.modified();
                   }),
@@ -26394,13 +26386,11 @@
                             values: r,
                           });
                         return (
-                          t
-                            .getCABO()
-                            .createVBO(i, "polys", em.SURFACE, {
-                              points: a,
-                              cellOffset: 0,
-                              tcoords: s,
-                            }),
+                          t.getCABO().createVBO(i, "polys", em.SURFACE, {
+                            points: a,
+                            cellOffset: 0,
+                            tcoords: s,
+                          }),
                           t
                         );
                       })(t._openGLRenderWindow)),
@@ -27470,13 +27460,11 @@
                               values: r,
                             });
                           return (
-                            t
-                              .getCABO()
-                              .createVBO(i, "polys", bm.SURFACE, {
-                                points: a,
-                                cellOffset: 0,
-                                tcoords: s,
-                              }),
+                            t.getCABO().createVBO(i, "polys", bm.SURFACE, {
+                              points: a,
+                              cellOffset: 0,
+                              tcoords: s,
+                            }),
                             t
                           );
                         })(t._openGLRenderWindow)),
@@ -31975,13 +31963,11 @@
                       numberOfComponents: 1,
                       values: r,
                     });
-                    t.tris
-                      .getCABO()
-                      .createVBO(i, "polys", sy.SURFACE, {
-                        points: o,
-                        tcoords: a,
-                        cellOffset: 0,
-                      }),
+                    t.tris.getCABO().createVBO(i, "polys", sy.SURFACE, {
+                      points: o,
+                      tcoords: a,
+                      cellOffset: 0,
+                    }),
                       t.VBOBuildTime.modified();
                   }),
                   (e.createFramebuffer = (e) => {
@@ -33943,13 +33929,11 @@
                       (n.binding = e), o.push(n);
                     }
                     return (
-                      (t.bindGroup = n
-                        .getHandle()
-                        .createBindGroup({
-                          layout: e.getBindGroupLayout(n),
-                          entries: o,
-                          label: t.label,
-                        })),
+                      (t.bindGroup = n.getHandle().createBindGroup({
+                        layout: e.getBindGroupLayout(n),
+                        entries: o,
+                        label: t.label,
+                      })),
                       t.bindGroupTime.modified(),
                       t.bindGroup
                     );
@@ -35188,14 +35172,12 @@
                     })(t.device.getHandle(), t.handle, 0, e.buffer);
                   }),
                   (e.createAndWrite = (e, n) => {
-                    (t.handle = t.device
-                      .getHandle()
-                      .createBuffer({
-                        size: e.byteLength,
-                        usage: n,
-                        mappedAtCreation: !0,
-                        label: t.label,
-                      })),
+                    (t.handle = t.device.getHandle().createBuffer({
+                      size: e.byteLength,
+                      usage: n,
+                      mappedAtCreation: !0,
+                      label: t.label,
+                    })),
                       (t.sizeInBytes = e.byteLength),
                       (t.usage = n),
                       new Uint8Array(t.handle.getMappedRange()).set(
@@ -35889,16 +35871,14 @@
                         ? n.usage
                         : GPUTextureUsage.TEXTURE_BINDING |
                           GPUTextureUsage.COPY_DST),
-                      (t.handle = t.device
-                        .getHandle()
-                        .createTexture({
-                          size: [t.width, t.height, t.depth],
-                          format: t.format,
-                          usage: t.usage,
-                          label: t.label,
-                          dimension: r,
-                          mipLevelCount: t.mipLevel + 1,
-                        }));
+                      (t.handle = t.device.getHandle().createTexture({
+                        size: [t.width, t.height, t.depth],
+                        format: t.format,
+                        usage: t.usage,
+                        label: t.label,
+                        dimension: r,
+                        mipLevelCount: t.mipLevel + 1,
+                      }));
                   }),
                   (e.assignFromHandle = (e, n, r) => {
                     (t.device = e),
@@ -36060,14 +36040,12 @@
                       ((t.width = e.getWidth()),
                       (t.height = e.getHeight()),
                       (t.depth = e.getDepth()),
-                      (t.handle = t.device
-                        .getHandle()
-                        .createTexture({
-                          size: [t.width, t.height, t.depth],
-                          format: t.format,
-                          usage: t.usage,
-                          label: t.label,
-                        })));
+                      (t.handle = t.device.getHandle().createTexture({
+                        size: [t.width, t.height, t.depth],
+                        format: t.format,
+                        usage: t.usage,
+                        label: t.label,
+                      })));
                   }),
                   (e.resize = function (e, n) {
                     let r =
@@ -36078,14 +36056,12 @@
                       ((t.width = e),
                       (t.height = n),
                       (t.depth = r),
-                      (t.handle = t.device
-                        .getHandle()
-                        .createTexture({
-                          size: [t.width, t.height, t.depth],
-                          format: t.format,
-                          usage: t.usage,
-                          label: t.label,
-                        })));
+                      (t.handle = t.device.getHandle().createTexture({
+                        size: [t.width, t.height, t.depth],
+                        format: t.format,
+                        usage: t.usage,
+                        label: t.label,
+                      })));
                   }),
                   (e.createView = function (n) {
                     let r =
