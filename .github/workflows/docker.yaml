@@ -29,18 +29,18 @@ jobs:
         with:
           persist-credentials: false
       - name: Log into the Container registry
-        uses: docker/login-action@343f7c4fad5f423a31dc94bcb2f7d7eb2e7c733e # v3
+        uses: docker/login-action@abd3abc99c62be8f17fda11fadefceaa006f6f9e
         with:
           registry: ${{ env.REGISTRY }}
           username: token
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Extract metadata for the Jupyter Docker image
         id: meta
-        uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81 # v5
+        uses: docker/metadata-action@12d9b9a905eda64a7255fe54e5dd14b7f0624941
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       - name: Build and push the Jupyter Docker image
-        uses: docker/build-push-action@4a13e500e55cf31b7a5d59a38ab2040ab0f42f56 # v6
+        uses: docker/build-push-action@c566248492c912e39910ac79e2f05a82260233a8
         with:
           context: .
           file: Dockerfile
