@@ -23,7 +23,7 @@ jobs:
       repository-projects: read
     runs-on: ubuntu-latest
     steps:
-      - uses: sushichop/action-repository-permission@v2
+      - uses: sushichop/action-repository-permission@0e0f12cef50b8f22f75fba93273b2a02c8581c04 # v2
         with:
           required-permission: write
           reaction-permitted: rocket
@@ -38,7 +38,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - uses: syphar/restore-virtualenv@v1
+      - uses: syphar/restore-virtualenv@a687f2083fbfdf634dc7a9a5fca2fb021ba5de01 # v1
         id: cache-virtualenv
         with:
           requirement_files: requirements_docs.txt
@@ -87,7 +87,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build-doc
     steps:
-      - uses: sushichop/action-repository-permission@v2
+      - uses: sushichop/action-repository-permission@0e0f12cef50b8f22f75fba93273b2a02c8581c04 # v2
         with:
           required-permission: write
           reaction-permitted: rocket
@@ -111,7 +111,7 @@ jobs:
           zip -r notebooks.zip notebooks/
           mv notebooks.zip doc/build/html/
 
-      - uses: nwtgck/actions-netlify@v3.0
+      - uses: nwtgck/actions-netlify@2ebd85a3a2dfa76a36ea0c3e1aa472fc35f33258 # v3.0
         with:
           publish-dir: doc/build/html
           production-deploy: false

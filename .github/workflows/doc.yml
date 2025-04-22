@@ -33,7 +33,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - uses: syphar/restore-virtualenv@v1
+      - uses: syphar/restore-virtualenv@a687f2083fbfdf634dc7a9a5fca2fb021ba5de01 # v1
         id: cache-virtualenv
 
       - name: Install OS Packages
@@ -111,7 +111,7 @@ jobs:
           mv notebooks.zip doc/build/html/
 
       - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@a45fed82485aa2d6939c68df679025c0a11f3b57 # v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: doc/build/html
@@ -128,7 +128,7 @@ jobs:
           cp Dockerfile tutorial-content/
 
       - name: Deploy to Tutorial branch
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@a45fed82485aa2d6939c68df679025c0a11f3b57 # v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: tutorial-content/
@@ -162,7 +162,7 @@ jobs:
           zip -r notebooks.zip notebooks/
           mv notebooks.zip doc/build/html/
 
-      - uses: nwtgck/actions-netlify@v3.0
+      - uses: nwtgck/actions-netlify@2ebd85a3a2dfa76a36ea0c3e1aa472fc35f33258 # v3.0
         with:
           publish-dir: doc/build/html
           production-branch: main
