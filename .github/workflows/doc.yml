@@ -31,10 +31,9 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-
-      - uses: syphar/restore-virtualenv@v1
-        id: cache-virtualenv
+          python-version: "3.13"
+          cache: 'pip'
+          cache-dependency-path: 'requirements.txt'
 
       - name: Install OS Packages
         run: |
@@ -111,7 +110,7 @@ jobs:
           mv notebooks.zip doc/build/html/
 
       - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@a45fed82485aa2d6939c68df679025c0a11f3b57 # v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: doc/build/html
