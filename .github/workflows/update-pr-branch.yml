@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Automatically update PR
-        uses: adRise/update-pr-branch@c7d14f96dba8efaadd533e5d411c5e9d7989b20f # v0.9.1
+        uses: adRise/update-pr-branch@v0.9.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           base: "main"
