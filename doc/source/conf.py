@@ -63,6 +63,11 @@ extensions = [
     "sphinxcontrib.asciinema",
 ]
 
+# 国際化の設定
+locale_dirs = ['../locale/']  # localeディレクトリのパス
+gettext_compact = False  # 複数のポットファイルを生成する設定
+language = 'en'  # デフォルト言語を英語に設定
+
 intersphinx_mapping = {
     "python": ("https://docs.python.org/dev", None),
     "scipy": ("https://docs.scipy.org/doc/scipy/", None),
@@ -95,6 +100,7 @@ suppress_warnings = ["config.cache"]
 html_static_path = ["_static"]
 html_css_files = [
     "cards.css",  # used in card CSS
+    "language_selector.css",  # 言語切り替えドロップダウン用CSS
 ]
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
@@ -148,6 +154,26 @@ html_theme_options = {
     "navigation_with_keys": False,
     "show_navbar_depth": 1,
     "max_navbar_depth": 3,
+    # 言語切り替え機能を有効にする
+    "repository_url": "https://github.com/pyvista/pyvista-tutorial",
+    "repository_branch": "main",
+    "path_to_docs": "doc",
+    "use_repository_button": True,
+    "use_issues_button": True,
+    "use_edit_page_button": True,
+    # 言語セレクターの設定
+    "extra_navbar": """
+        <div class="dropdown">
+            <button class="btn btn-sm navbar-btn dropdown-toggle" type="button" id="languageSelector" 
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-globe"></i> Language
+            </button>
+            <div class="dropdown-menu" aria-labelledby="languageSelector">
+                <a class="dropdown-item" href="/en/index.html">English</a>
+                <a class="dropdown-item" href="/ja/index.html">日本語</a>
+            </div>
+        </div>
+    """,
 }
 
 # notfound_context = {

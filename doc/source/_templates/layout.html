@@ -1,0 +1,38 @@
+{# カスタムレイアウトテンプレート - 言語切り替え機能を統合 #}
+{% extends "sphinx_book_theme/layout.html" %}
+
+{% block extrahead %}
+  {{ super() }}
+  <script type="text/javascript">
+    // 現在のページの言語を判断するための関数
+    function getCurrentLanguage() {
+      const path = window.location.pathname;
+      if (path.includes('/ja/')) {
+        return 'ja';
+      }
+      return 'en';
+    }
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      // 現在の言語に応じてドロップダウンテキストを更新
+      const currentLang = getCurrentLanguage();
+      const langButton = document.getElementById('languageSelector');
+      if (langButton) {
+        if (currentLang === 'ja') {
+          langButton.innerHTML = '<i class="fa fa-globe"></i> 日本語';
+        } else {
+          langButton.innerHTML = '<i class="fa fa-globe"></i> English';
+        }
+      }
+    });
+  </script>
+{% endblock %}
+
+{% block navbar_center %}
+  {{ super() }}
+{% endblock %}
+
+{% block navbar_right %}
+  {% include "language_selector.html" %}
+  {{ super() }}
+{% endblock %}

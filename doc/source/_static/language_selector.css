@@ -1,0 +1,22 @@
+/* 言語切り替えドロップダウンのスタイル */
+.dropdown {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.dropdown-menu {
+  min-width: 100px;
+}
+
+.dropdown-item {
+  padding: 0.25rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* モバイル表示時のスタイル調整 */
+@media (max-width: 768px) {
+  .dropdown {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
