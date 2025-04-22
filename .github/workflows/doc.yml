@@ -110,7 +110,7 @@ jobs:
           mv notebooks.zip doc/build/html/
 
       - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@4b09552702d0b65573696410d4707c765da2630b
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: doc/build/html
@@ -127,7 +127,7 @@ jobs:
           cp Dockerfile tutorial-content/
 
       - name: Deploy to Tutorial branch
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@4b09552702d0b65573696410d4707c765da2630b
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: tutorial-content/
@@ -161,7 +161,7 @@ jobs:
           zip -r notebooks.zip notebooks/
           mv notebooks.zip doc/build/html/
 
-      - uses: nwtgck/actions-netlify@v3.0
+      - uses: nwtgck/actions-netlify@f242d4c9f946f94d2ed8413888eaf35e1f7e848d
         with:
           publish-dir: doc/build/html
           production-branch: main
