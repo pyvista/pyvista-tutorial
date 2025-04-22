@@ -1,4 +1,4 @@
-/* 言語切り替えドロップダウンのスタイル */
+/* Styles for the language switch dropdown */
 .dropdown {
   display: inline-block;
   margin-left: 10px;
@@ -13,7 +13,7 @@
   font-size: 0.9rem;
 }
 
-/* モバイル表示時のスタイル調整 */
+/* Style adjustments for mobile display */
 @media (max-width: 768px) {
   .dropdown {
     margin-top: 10px;
