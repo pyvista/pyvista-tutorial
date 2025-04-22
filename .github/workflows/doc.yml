@@ -110,7 +110,7 @@ jobs:
           mv notebooks.zip doc/build/html/
 
       - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@a45fed82485aa2d6939c68df679025c0a11f3b57 # v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: doc/build/html
