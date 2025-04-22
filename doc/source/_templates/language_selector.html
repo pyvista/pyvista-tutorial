@@ -1,18 +1,28 @@
 {# このファイルは言語セレクタのためのカスタムテンプレートです #}
 <div class="language-selector">
   <div class="dropdown">
-    <button class="btn btn-sm navbar-btn dropdown-toggle" type="button" id="languageSelector" 
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <i class="fa fa-globe"></i> 
-      {% if language == 'ja' %}
-        日本語
-      {% else %}
-        English
-      {% endif %}
+    <button
+      class="btn btn-sm navbar-btn dropdown-toggle"
+      type="button"
+      id="languageSelector"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      <i class="fa fa-globe"></i>
+      {% if language == 'ja' %} 日本語 {% else %} English {% endif %}
     </button>
     <div class="dropdown-menu" aria-labelledby="languageSelector">
-      <a class="dropdown-item{% if language == 'en' %} active{% endif %}" href="{{ pathto('', 1) }}/../en/{{ pagename }}.html">English</a>
-      <a class="dropdown-item{% if language == 'ja' %} active{% endif %}" href="{{ pathto('', 1) }}/../ja/{{ pagename }}.html">日本語</a>
+      <a
+        class="dropdown-item{% if language == 'en' %} active{% endif %}"
+        href="{{ pathto('', 1) }}/../en/{{ pagename }}.html"
+        >English</a
+      >
+      <a
+        class="dropdown-item{% if language == 'ja' %} active{% endif %}"
+        href="{{ pathto('', 1) }}/../ja/{{ pagename }}.html"
+        >日本語</a
+      >
     </div>
   </div>
 </div>

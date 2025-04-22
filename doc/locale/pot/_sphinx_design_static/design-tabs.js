@@ -52,14 +52,14 @@ function ready() {
           groups.push(group);
           // Check if a specific tab has been selected via URL parameter
           const tabParam = new URLSearchParams(window.location.search).get(
-            group
+            group,
           );
           if (tabParam) {
             console.log(
               "sphinx-design: Selecting tab id for group '" +
                 group +
                 "' from URL parameter: " +
-                tabParam
+                tabParam,
             );
             window.sessionStorage.setItem(storageKeyPrefix + group, tabParam);
           }
@@ -67,7 +67,7 @@ function ready() {
 
         // Check is a specific tab has been selected previously
         let previousId = window.sessionStorage.getItem(
-          storageKeyPrefix + group
+          storageKeyPrefix + group,
         );
         if (previousId === id) {
           // console.log(

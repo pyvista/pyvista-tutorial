@@ -64,9 +64,9 @@ extensions = [
 ]
 
 # 国際化の設定
-locale_dirs = ['../locale/']  # localeディレクトリのパス
+locale_dirs = ["../locale/"]  # localeディレクトリのパス
 gettext_compact = False  # 複数のポットファイルを生成する設定
-language = 'en'  # デフォルト言語を英語に設定
+language = "en"  # デフォルト言語を英語に設定
 
 intersphinx_mapping = {
     "python": ("https://docs.python.org/dev", None),
@@ -164,7 +164,7 @@ html_theme_options = {
     # 言語セレクターの設定
     "extra_navbar": """
         <div class="dropdown">
-            <button class="btn btn-sm navbar-btn dropdown-toggle" type="button" id="languageSelector" 
+            <button class="btn btn-sm navbar-btn dropdown-toggle" type="button" id="languageSelector"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-globe"></i> Language
             </button>
