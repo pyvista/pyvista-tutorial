@@ -488,7 +488,7 @@ to download the full example code. or to run this example in your browser via Bi
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on method glyph in module pyvista.core.filters.data_set:
 
-glyph(orient=True, scale=True, factor=1.0, geom=None, indices=None, tolerance=None, absolute=False, clamping=False, rng=None, color_mode=&#39;scale&#39;, progress_bar=False) method of pyvista.core.pointset.PolyData instance
+glyph(orient: &#39;bool | str&#39; = True, scale: &#39;bool | str&#39; = True, factor: &#39;float&#39; = 1.0, geom: &#39;_vtk.vtkDataSet | DataSet | Sequence[_vtk.vtkDataSet | DataSet] | None&#39; = None, indices: &#39;VectorLike[int] | None&#39; = None, tolerance: &#39;float | None&#39; = None, absolute: &#39;bool&#39; = False, clamping: &#39;bool&#39; = False, rng: &#39;VectorLike[float] | None&#39; = None, color_mode: &quot;Literal[&#39;scale&#39;, &#39;scalar&#39;, &#39;vector&#39;]&quot; = &#39;scale&#39;, progress_bar: &#39;bool&#39; = False) method of pyvista.core.pointset.PolyData instance
     Copy a geometric representation (called a glyph) to the input dataset.
 
     The glyph may be oriented along the input vectors, and it may
@@ -520,6 +520,13 @@ glyph(orient=True, scale=True, factor=1.0, geom=None, indices=None, tolerance=No
         case a sequence of numbers of the same length must be passed as
         ``indices``. The values of the range (see ``rng``) affect lookup
         in the table.
+
+        .. note::
+
+            The reference direction is relative to ``(1, 0, 0)`` on the
+            provided geometry. That is, the provided geometry will be rotated
+            from ``(1, 0, 0)`` to the direction of the ``orient`` vector at
+            each point.
 
     indices : sequence[float], optional
         Specifies the index of each glyph in the table for lookup in case
@@ -567,15 +574,13 @@ glyph(orient=True, scale=True, factor=1.0, geom=None, indices=None, tolerance=No
     &gt;&gt;&gt; import pyvista as pv
     &gt;&gt;&gt; from pyvista import examples
     &gt;&gt;&gt; mesh = examples.load_random_hills()
-    &gt;&gt;&gt; arrows = mesh.glyph(
-    ...     scale=&quot;Normals&quot;, orient=&quot;Normals&quot;, tolerance=0.05
-    ... )
+    &gt;&gt;&gt; arrows = mesh.glyph(scale=&#39;Normals&#39;, orient=&#39;Normals&#39;, tolerance=0.05)
     &gt;&gt;&gt; pl = pv.Plotter()
-    &gt;&gt;&gt; actor = pl.add_mesh(arrows, color=&quot;black&quot;)
+    &gt;&gt;&gt; actor = pl.add_mesh(arrows, color=&#39;black&#39;)
     &gt;&gt;&gt; actor = pl.add_mesh(
     ...     mesh,
-    ...     scalars=&quot;Elevation&quot;,
-    ...     cmap=&quot;terrain&quot;,
+    ...     scalars=&#39;Elevation&#39;,
+    ...     cmap=&#39;terrain&#39;,
     ...     show_scalar_bar=False,
     ... )
     &gt;&gt;&gt; pl.show()
@@ -678,7 +683,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/04_filters/solutions/e_glyphs.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.203 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.279 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-04-filters-solutions-e-glyphs-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/04_filters/solutions/e_glyphs.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo15.svg" style="width: 150px;" />

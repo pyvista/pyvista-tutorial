@@ -497,7 +497,7 @@ point labels to a scene.</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function add_point_labels in module pyvista.plotting.plotter:
 
-add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, text_color=None, font_family=None, shadow=False, show_points=True, point_color=None, point_size=None, name=None, shape_color=&#39;grey&#39;, shape=&#39;rounded_rect&#39;, fill_shape=True, margin=3, shape_opacity=1.0, pickable=False, render_points_as_spheres=False, tolerance=0.001, reset_camera=None, always_visible=False, render=True, justification_horizontal=None, justification_vertical=None, background_color=None, background_opacity=None)
+add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, text_color=None, font_family=None, font_file=None, shadow=False, show_points=True, point_color=None, point_size=None, name=None, shape_color=&#39;grey&#39;, shape=&#39;rounded_rect&#39;, fill_shape=True, margin=3, shape_opacity=1.0, pickable=False, render_points_as_spheres=False, tolerance=0.001, reset_camera=None, always_visible=False, render=True, justification_horizontal=None, justification_vertical=None, background_color=None, background_opacity=None)
     Create a point actor with one label from list labels assigned to each point.
 
     Parameters
@@ -530,7 +530,11 @@ add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, 
 
     font_family : str, optional
         Font family.  Must be either ``&#39;courier&#39;``, ``&#39;times&#39;``,
-        or ``&#39;arial``.
+        or ``&#39;arial``. This is ignored if the `font_file` is set.
+
+    font_file : str, default: None
+        The absolute file path to a local file containing a freetype
+        readable font.
 
     shadow : bool, default: False
         Adds a black shadow to the text.
@@ -631,9 +635,7 @@ add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, 
     &gt;&gt;&gt; import numpy as np
     &gt;&gt;&gt; import pyvista as pv
     &gt;&gt;&gt; pl = pv.Plotter()
-    &gt;&gt;&gt; points = np.array(
-    ...     [[0.0, 0.0, 0.0], [1.0, 1.0, 0.0], [2.0, 0.0, 0.0]]
-    ... )
+    &gt;&gt;&gt; points = np.array([[0.0, 0.0, 0.0], [1.0, 1.0, 0.0], [2.0, 0.0, 0.0]])
     &gt;&gt;&gt; labels = [&#39;Point A&#39;, &#39;Point B&#39;, &#39;Point C&#39;]
     &gt;&gt;&gt; actor = pl.add_point_labels(
     ...     points,
@@ -670,9 +672,9 @@ node:</p>
 <tr><td>N Cells</td><td>10</td></tr>
 <tr><td>N Points</td><td>10</td></tr>
 <tr><td>N Strips</td><td>0</td></tr>
-<tr><td>X Bounds</td><td>1.056e-01, 9.515e-01</td></tr>
-<tr><td>Y Bounds</td><td>1.071e-02, 9.725e-01</td></tr>
-<tr><td>Z Bounds</td><td>8.763e-02, 8.803e-01</td></tr>
+<tr><td>X Bounds</td><td>2.216e-02, 8.689e-01</td></tr>
+<tr><td>Y Bounds</td><td>1.852e-01, 8.982e-01</td></tr>
+<tr><td>Z Bounds</td><td>2.489e-03, 8.705e-01</td></tr>
 <tr><td>N Arrays</td><td>1</td></tr>
 </table>
 
@@ -776,7 +778,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/bonus/e_labels.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.740 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.776 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-figures-bonus-e-labels-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/bonus/e_labels.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo9.svg" style="width: 150px;" />

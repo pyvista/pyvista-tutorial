@@ -80,7 +80,7 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
     Help on method contour in module pyvista.core.filters.data_set:
 
-    contour(isosurfaces=10, scalars=None, compute_normals=False, compute_gradients=False, compute_scalars=True, rng=None, preference='point', method='contour', progress_bar=False) method of pyvista.core.pointset.PolyData instance
+    contour(isosurfaces: 'int | Sequence[float]' = 10, scalars: 'str | NumpyArray[float] | None' = None, compute_normals: 'bool' = False, compute_gradients: 'bool' = False, compute_scalars: 'bool' = True, rng: 'VectorLike[float] | None' = None, preference: "Literal['point', 'cell']" = 'point', method: "Literal['contour', 'marching_cubes', 'flying_edges']" = 'contour', progress_bar: 'bool' = False) method of pyvista.core.pointset.PolyData instance
         Contour an input self by an array.
     
         ``isosurfaces`` can be an integer specifying the number of
@@ -158,7 +158,6 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
         ...         - 2 * (a - b) * xyz
         ...         - a * b * xx_yy
         ...     ) ** 2 - 4 * (xx + yy) * (a_xx + b_yy - xyz * (a - b)) ** 2
-        ...
         >>> n = 100
         >>> x_min, y_min, z_min = -1.35, -1.7, -0.65
         >>> grid = pv.ImageData(
@@ -372,7 +371,7 @@ of 50 and 200
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 8.653 seconds)
+   **Total running time of the script:** (0 minutes 9.340 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_d_contouring.py:

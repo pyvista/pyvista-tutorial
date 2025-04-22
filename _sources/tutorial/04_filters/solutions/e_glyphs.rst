@@ -78,7 +78,7 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
 
     Help on method glyph in module pyvista.core.filters.data_set:
 
-    glyph(orient=True, scale=True, factor=1.0, geom=None, indices=None, tolerance=None, absolute=False, clamping=False, rng=None, color_mode='scale', progress_bar=False) method of pyvista.core.pointset.PolyData instance
+    glyph(orient: 'bool | str' = True, scale: 'bool | str' = True, factor: 'float' = 1.0, geom: '_vtk.vtkDataSet | DataSet | Sequence[_vtk.vtkDataSet | DataSet] | None' = None, indices: 'VectorLike[int] | None' = None, tolerance: 'float | None' = None, absolute: 'bool' = False, clamping: 'bool' = False, rng: 'VectorLike[float] | None' = None, color_mode: "Literal['scale', 'scalar', 'vector']" = 'scale', progress_bar: 'bool' = False) method of pyvista.core.pointset.PolyData instance
         Copy a geometric representation (called a glyph) to the input dataset.
     
         The glyph may be oriented along the input vectors, and it may
@@ -110,6 +110,13 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
             case a sequence of numbers of the same length must be passed as
             ``indices``. The values of the range (see ``rng``) affect lookup
             in the table.
+    
+            .. note::
+    
+                The reference direction is relative to ``(1, 0, 0)`` on the
+                provided geometry. That is, the provided geometry will be rotated
+                from ``(1, 0, 0)`` to the direction of the ``orient`` vector at
+                each point.
     
         indices : sequence[float], optional
             Specifies the index of each glyph in the table for lookup in case
@@ -157,15 +164,13 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
         >>> import pyvista as pv
         >>> from pyvista import examples
         >>> mesh = examples.load_random_hills()
-        >>> arrows = mesh.glyph(
-        ...     scale="Normals", orient="Normals", tolerance=0.05
-        ... )
+        >>> arrows = mesh.glyph(scale='Normals', orient='Normals', tolerance=0.05)
         >>> pl = pv.Plotter()
-        >>> actor = pl.add_mesh(arrows, color="black")
+        >>> actor = pl.add_mesh(arrows, color='black')
         >>> actor = pl.add_mesh(
         ...     mesh,
-        ...     scalars="Elevation",
-        ...     cmap="terrain",
+        ...     scalars='Elevation',
+        ...     cmap='terrain',
         ...     show_scalar_bar=False,
         ... )
         >>> pl.show()
@@ -392,7 +397,7 @@ Plot the arrows and the sphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.203 seconds)
+   **Total running time of the script:** (0 minutes 1.279 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py:

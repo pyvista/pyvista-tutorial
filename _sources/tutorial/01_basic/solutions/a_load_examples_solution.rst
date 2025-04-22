@@ -175,10 +175,10 @@ Download the bolt dataset. This is an excellent dataset to visualize using
     <table style='width: 100%;'><tr><th>Information</th><th>Blocks</th></tr><tr><td>
     <table>
     <tr><th>MultiBlock</th><th>Values</th></tr>
-    <tr><td>N Blocks</td><td>2</td></tr>
-    <tr><td>X Bounds</td><td>0.000, 69.000</td></tr>
-    <tr><td>Y Bounds</td><td>0.000, 122.000</td></tr>
-    <tr><td>Z Bounds</td><td>0.000, 65.000</td></tr>
+    <tr><td>N Blocks:</td><td>2</td></tr>
+    <tr><td>X Bounds:</td><td>0.000e+00, 6.900e+01</td></tr>
+    <tr><td>Y Bounds:</td><td>0.000e+00, 1.220e+02</td></tr>
+    <tr><td>Z Bounds:</td><td>0.000e+00, 6.500e+01</td></tr>
     </table>
 
     </td><td>
@@ -380,7 +380,7 @@ https://www.thingiverse.com/thing:5412753
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.801 seconds)
+   **Total running time of the script:** (0 minutes 6.721 seconds)
 
 
 .. _sphx_glr_download_tutorial_01_basic_solutions_a_load_examples_solution.py:

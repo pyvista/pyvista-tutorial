@@ -65,23 +65,39 @@ airplane mesh.
 
     Help on function read in module pyvista.core.utilities.fileio:
 
-    read(filename, force_ext=None, file_format=None, progress_bar=False)
+    read(filename: 'PathStrSeq', force_ext: 'str | None' = None, file_format: 'str | None' = None, progress_bar: 'bool' = False) -> 'DataObject'
         Read any file type supported by ``vtk`` or ``meshio``.
     
         Automatically determines the correct reader to use then wraps the
         corresponding mesh as a pyvista object.  Attempts native ``vtk``
-        readers first then tries to use ``meshio``.
+        readers first then tries to use ``meshio``. :py:mod:`Pickled<pickle>`
+        meshes (``'.pkl'`` or ``'.pickle'``) are also supported.
     
-        See :func:`pyvista.get_reader` for list of formats supported.
+        See :func:`pyvista.get_reader` for list of vtk formats supported.
     
         .. note::
            See https://github.com/nschloe/meshio for formats supported by
            ``meshio``. Be sure to install ``meshio`` with ``pip install
            meshio`` if you wish to use it.
     
+        .. versionadded:: 0.45
+    
+            Support reading pickled meshes.
+    
+        .. warning::
+    
+            The pickle module is not secure. Only read pickled mesh files
+            (``'.pkl'`` or ``'.pickle'``) you trust. See :py:mod:`pickle`
+            for details.
+    
+        See Also
+        --------
+        pyvista.DataObject.save
+            Save a mesh to file.
+    
         Parameters
         ----------
-        filename : str, Path
+        filename : str, Path, Sequence[str | Path]
             The string path to the file to read. If a list of files is
             given, a :class:`pyvista.MultiBlock` dataset is returned with
             each file being a separate block in the dataset.
@@ -117,7 +133,11 @@ airplane mesh.
     
         Load a meshio file.
     
-        >>> mesh = pv.read("mesh.obj")  # doctest:+SKIP
+        >>> mesh = pv.read('mesh.obj')  # doctest:+SKIP
+    
+        Load a pickled mesh file.
+    
+        >>> mesh = pv.read('mesh.pkl')  # doctest:+SKIP
 
 
 
@@ -169,6 +189,14 @@ extensions are listed in an internal function:
         +----------------+---------------------------------------------+
         | ``.dem``       | :class:`pyvista.DEMReader`                  |
         +----------------+---------------------------------------------+
+        | ``.e``         | :class:`pyvista.ExodusIIReader`             |
+        +----------------+---------------------------------------------+
+        | ``.exo``       | :class:`pyvista.ExodusIIReader`             |
+        +----------------+---------------------------------------------+
+        | ``.exii``      | :class:`pyvista.ExodusIIReader`             |
+        +----------------+---------------------------------------------+
+        | ``.ex2``       | :class:`pyvista.ExodusIIReader`             |
+        +----------------+---------------------------------------------+
         | ``.facet``     | :class:`pyvista.FacetReader`                |
         +----------------+---------------------------------------------+
         | ``.foam``      | :class:`pyvista.POpenFOAMReader`            |
@@ -196,6 +224,8 @@ extensions are listed in an internal function:
         | ``.mha``       | :class:`pyvista.MetaImageReader`            |
         +----------------+---------------------------------------------+
         | ``.mhd``       | :class:`pyvista.MetaImageReader`            |
+        +----------------+---------------------------------------------+
+        | ``.nek5000``   | :class:`pyvista.Nek5000Reader`              |
         +----------------+---------------------------------------------+
         | ``.nii``       | :class:`pyvista.NIFTIReader`                |
         +----------------+---------------------------------------------+
@@ -249,6 +279,8 @@ extensions are listed in an internal function:
         +----------------+---------------------------------------------+
         | ``.vtk``       | :class:`pyvista.VTKDataSetReader`           |
         +----------------+---------------------------------------------+
+        | ``.vtkhdf``    | :class:`pyvista.HDFReader`                  |
+        +----------------+---------------------------------------------+
         | ``.vtm``       | :class:`pyvista.XMLMultiBlockDataReader`    |
         +----------------+---------------------------------------------+
         | ``.vtmb``      | :class:`pyvista.XMLMultiBlockDataReader`    |
@@ -284,7 +316,7 @@ extensions are listed in an internal function:
         >>> import pyvista as pv
         >>> from pyvista import examples
         >>> filename = examples.download_human(load=False)
-        >>> filename.split("/")[-1]  # omit the path
+        >>> filename.split('/')[-1]  # omit the path
         'Human.vtp'
         >>> reader = pv.get_reader(filename)
         >>> reader
@@ -666,7 +698,7 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.359 seconds)
+   **Total running time of the script:** (0 minutes 6.093 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_e_read-file.py:

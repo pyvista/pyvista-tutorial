@@ -720,6 +720,9 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |  __getattribute__(self, name, /)
  |      Return getattr(self, name).
  |
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |
  |  __repr__(self, /)
  |      Return repr(self).
  |
@@ -743,6 +746,15 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |
  |  __this__
  |      Pointer to the C++ object.
+ |
+ |  composite_style
+ |      read-write, Calls GetCompositeStyle/SetCompositeStyle
+ |
+ |  generate_faces
+ |      read-write, Calls GetGenerateFaces/SetGenerateFaces
+ |
+ |  output_points_precision
+ |      read-write, Calls GetOutputPointsPrecision/SetOutputPointsPrecision
  |
  |  ----------------------------------------------------------------------
  |  Data and other attributes defined here:
@@ -803,6 +815,18 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |  SetOutput(...)
  |      SetOutput(self, d:vtkDataObject) -&gt; None
  |      C++: virtual void SetOutput(vtkDataObject *d)
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm:
+ |
+ |  input
+ |      read-only, Calls GetInput
+ |
+ |  input_data
+ |      write-only, Calls SetInputData
+ |
+ |  output
+ |      read-write, Calls GetOutput/SetOutput
  |
  |  ----------------------------------------------------------------------
  |  Methods inherited from vtkmodules.vtkCommonExecutionModel.vtkAlgorithm:
@@ -1232,6 +1256,14 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |
  |      * filter2-&gt;RemoveInputConnection(0, filter1-&gt;GetOutputPort(0)).
  |
+ |  RemoveNoPriorTemporalAccessInformationKey(...)
+ |      RemoveNoPriorTemporalAccessInformationKey(self) -&gt; None
+ |      C++: void RemoveNoPriorTemporalAccessInformationKey()
+ |
+ |      Removes any information key
+ |      `vtkStreamingDemandDrivenPipeline::NO_PRIOR_TEMPORAL_ACCESS()` to
+ |      all output ports of this `vtkAlgorithm`.
+ |
  |  SetAbortExecute(...)
  |      SetAbortExecute(self, _arg:int) -&gt; None
  |      C++: virtual void SetAbortExecute(vtkTypeBool _arg)
@@ -1345,6 +1377,24 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |      port. It is safe to call this method repeatedly with the same
  |      input data object. The MTime of the vtkAlgorithm will not change
  |      unless the data object changed.
+ |
+ |  SetNoPriorTemporalAccessInformationKey(...)
+ |      SetNoPriorTemporalAccessInformationKey(self, key:int) -&gt; None
+ |      C++: void SetNoPriorTemporalAccessInformationKey(int key)
+ |      SetNoPriorTemporalAccessInformationKey(self) -&gt; None
+ |      C++: void SetNoPriorTemporalAccessInformationKey()
+ |
+ |      Set to all output ports of this algorithm the information key
+ |      `vtkStreamingDemandDrivenPipeline::NO_PRIOR_TEMPORAL_ACCESS()`.
+ |      This should be set on sources of pipelines for which all
+ |      timesteps are not necessarily all available at once. This is
+ |      typically the case for visualization in situ.
+ |
+ |      ote Default value in
+ |      `vtkStreamingDemandDrivenPipeline::NO_PRIOR_TEMPORAL_ACCESS_RESET`
+ |      . `vtkStreamingDemandDrivenPipeline` will set it to
+ |      `NO_PRIOR_TEMPORAL_ACCESS_CONTINUE&#39; after execution of the first
+ |      time step.
  |
  |  SetProgressObserver(...)
  |      SetProgressObserver(self, __a:vtkProgressObserver) -&gt; None
@@ -1481,6 +1531,108 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |      C++: bool UsesGarbageCollector() override;
  |
  |      Participate in garbage collection.
+ |
+ |  __call__(self, /, *args, **kwargs)
+ |      Call self as a function.
+ |
+ |  __rrshift__(self, value, /)
+ |      Return value&gt;&gt;self.
+ |
+ |  __rshift__(self, value, /)
+ |      Return self&gt;&gt;value.
+ |
+ |  update(...)
+ |      This method updates the pipeline connected to this algorithm
+ |      and returns an Output object with an output property. This property
+ |      provides either a single data object (for algorithms with single output
+ |      or a tuple (for algorithms with multiple outputs).
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from vtkmodules.vtkCommonExecutionModel.vtkAlgorithm:
+ |
+ |  abort_execute
+ |      read-write, Calls GetAbortExecute/SetAbortExecute
+ |
+ |  abort_output
+ |      read-write, Calls GetAbortOutput/SetAbortOutput
+ |
+ |  container_algorithm
+ |      read-write, Calls GetContainerAlgorithm/SetContainerAlgorithm
+ |
+ |  default_executive_prototype
+ |      write-only, Calls SetDefaultExecutivePrototype
+ |
+ |  error_code
+ |      read-only, Calls GetErrorCode
+ |
+ |  executive
+ |      read-write, Calls GetExecutive/SetExecutive
+ |
+ |  information
+ |      read-write, Calls GetInformation/SetInformation
+ |
+ |  input_algorithm
+ |      read-only, Calls GetInputAlgorithm
+ |
+ |  input_array_to_process
+ |      write-only, Calls SetInputArrayToProcess
+ |
+ |  input_connection
+ |      write-only, Calls SetInputConnection
+ |
+ |  input_data_object
+ |      write-only, Calls SetInputDataObject
+ |
+ |  input_executive
+ |      read-only, Calls GetInputExecutive
+ |
+ |  input_information
+ |      read-only, Calls GetInputInformation
+ |
+ |  no_prior_temporal_access_information_key
+ |      write-only, Calls SetNoPriorTemporalAccessInformationKey
+ |
+ |  number_of_input_ports
+ |      read-only, Calls GetNumberOfInputPorts
+ |
+ |  output_port
+ |      read-only, Calls GetOutputPort
+ |
+ |  progress
+ |      read-only, Calls GetProgress
+ |
+ |  progress_observer
+ |      read-write, Calls GetProgressObserver/SetProgressObserver
+ |
+ |  progress_scale
+ |      read-only, Calls GetProgressScale
+ |
+ |  progress_shift
+ |      read-only, Calls GetProgressShift
+ |
+ |  progress_shift_scale
+ |      write-only, Calls SetProgressShiftScale
+ |
+ |  progress_text
+ |      read-write, Calls GetProgressText/SetProgressText
+ |
+ |  release_data_flag
+ |      read-write, Calls GetReleaseDataFlag/SetReleaseDataFlag
+ |
+ |  total_number_of_input_connections
+ |      read-only, Calls GetTotalNumberOfInputConnections
+ |
+ |  update_extent
+ |      read-only, Calls GetUpdateExtent
+ |
+ |  update_ghost_level
+ |      read-only, Calls GetUpdateGhostLevel
+ |
+ |  update_number_of_pieces
+ |      read-only, Calls GetUpdateNumberOfPieces
+ |
+ |  update_piece
+ |      read-only, Calls GetUpdatePiece
  |
  |  ----------------------------------------------------------------------
  |  Data and other attributes inherited from vtkmodules.vtkCommonExecutionModel.vtkAlgorithm:
@@ -1639,6 +1791,24 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |      methods are expected not to copy the ObjectName.
  |
  |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from vtkmodules.vtkCommonCore.vtkObject:
+ |
+ |  debug
+ |      read-write, Calls GetDebug/SetDebug
+ |
+ |  global_warning_display
+ |      read-write, Calls GetGlobalWarningDisplay/SetGlobalWarningDisplay
+ |
+ |  m_time
+ |      read-only, Calls GetMTime
+ |
+ |  object_description
+ |      read-only, Calls GetObjectDescription
+ |
+ |  object_name
+ |      read-write, Calls GetObjectName/SetObjectName
+ |
+ |  ----------------------------------------------------------------------
  |  Methods inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
  |
  |  FastDelete(...)
@@ -1732,10 +1902,28 @@ class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
  |        pass
  |      vtk.vtkPoints.override(foo)
  |
- |      will lead to foo being instantied everytime vtkPoints() is called.
+ |      will lead to foo being instantied every time vtkPoints() is called.
  |      The main objective of this functionality is to enable developers to
  |      extend VTK classes with more pythonic subclasses that contain
  |      convenience functionality.
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
+ |
+ |  class_name
+ |      read-only, Calls GetClassName
+ |
+ |  is_in_memkind
+ |      read-only, Calls GetIsInMemkind
+ |
+ |  memkind_directory
+ |      write-only, Calls SetMemkindDirectory
+ |
+ |  reference_count
+ |      read-write, Calls GetReferenceCount/SetReferenceCount
+ |
+ |  using_memkind
+ |      read-only, Calls GetUsingMemkind
 </pre></div>
 </div>
 <p>Try using this VTK filter yourself here:</p>
@@ -1820,7 +2008,7 @@ to apply to your mesh. The instructors will be around to help you implement.</p>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/06_vtk/c_vtk_algorithms.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.740 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.791 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-c-vtk-algorithms-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/c_vtk_algorithms.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo16.svg" style="width: 150px;" />

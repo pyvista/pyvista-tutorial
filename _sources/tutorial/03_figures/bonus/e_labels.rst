@@ -60,7 +60,7 @@ point labels to a scene.
 
     Help on function add_point_labels in module pyvista.plotting.plotter:
 
-    add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, text_color=None, font_family=None, shadow=False, show_points=True, point_color=None, point_size=None, name=None, shape_color='grey', shape='rounded_rect', fill_shape=True, margin=3, shape_opacity=1.0, pickable=False, render_points_as_spheres=False, tolerance=0.001, reset_camera=None, always_visible=False, render=True, justification_horizontal=None, justification_vertical=None, background_color=None, background_opacity=None)
+    add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, text_color=None, font_family=None, font_file=None, shadow=False, show_points=True, point_color=None, point_size=None, name=None, shape_color='grey', shape='rounded_rect', fill_shape=True, margin=3, shape_opacity=1.0, pickable=False, render_points_as_spheres=False, tolerance=0.001, reset_camera=None, always_visible=False, render=True, justification_horizontal=None, justification_vertical=None, background_color=None, background_opacity=None)
         Create a point actor with one label from list labels assigned to each point.
     
         Parameters
@@ -93,7 +93,11 @@ point labels to a scene.
     
         font_family : str, optional
             Font family.  Must be either ``'courier'``, ``'times'``,
-            or ``'arial``.
+            or ``'arial``. This is ignored if the `font_file` is set.
+    
+        font_file : str, default: None
+            The absolute file path to a local file containing a freetype
+            readable font.
     
         shadow : bool, default: False
             Adds a black shadow to the text.
@@ -194,9 +198,7 @@ point labels to a scene.
         >>> import numpy as np
         >>> import pyvista as pv
         >>> pl = pv.Plotter()
-        >>> points = np.array(
-        ...     [[0.0, 0.0, 0.0], [1.0, 1.0, 0.0], [2.0, 0.0, 0.0]]
-        ... )
+        >>> points = np.array([[0.0, 0.0, 0.0], [1.0, 1.0, 0.0], [2.0, 0.0, 0.0]])
         >>> labels = ['Point A', 'Point B', 'Point C']
         >>> actor = pl.add_point_labels(
         ...     points,
@@ -265,9 +267,9 @@ node:
     <tr><td>N Cells</td><td>10</td></tr>
     <tr><td>N Points</td><td>10</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>1.056e-01, 9.515e-01</td></tr>
-    <tr><td>Y Bounds</td><td>1.071e-02, 9.725e-01</td></tr>
-    <tr><td>Z Bounds</td><td>8.763e-02, 8.803e-01</td></tr>
+    <tr><td>X Bounds</td><td>2.216e-02, 8.689e-01</td></tr>
+    <tr><td>Y Bounds</td><td>1.852e-01, 8.982e-01</td></tr>
+    <tr><td>Z Bounds</td><td>2.489e-03, 8.705e-01</td></tr>
     <tr><td>N Arrays</td><td>1</td></tr>
     </table>
 
@@ -506,7 +508,7 @@ This example will label each point with their scalar values
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.740 seconds)
+   **Total running time of the script:** (0 minutes 0.776 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_e_labels.py:

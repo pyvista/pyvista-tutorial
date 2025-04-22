@@ -100,9 +100,9 @@ Clip any dataset by a user defined plane using the
 
  .. code-block:: none
 
-    Help on method clip in module pyvista.core.filters.data_set:
+    Help on method clip in module pyvista.core.filters.data_object:
 
-    clip(normal='x', origin=None, invert=True, value=0.0, inplace=False, return_clipped=False, progress_bar=False, crinkle=False) method of pyvista.core.pointset.PolyData instance
+    clip(normal: 'VectorLike[float] | NormalsLiteral' = 'x', origin: 'VectorLike[float] | None' = None, invert: 'bool' = True, value: 'float' = 0.0, inplace: 'bool' = False, return_clipped: 'bool' = False, progress_bar: 'bool' = False, crinkle: 'bool' = False) method of pyvista.core.pointset.PolyData instance
         Clip a dataset by a plane by specifying the origin and normal.
     
         If no parameters are given the clip will occur in the center
@@ -110,7 +110,7 @@ Clip any dataset by a user defined plane using the
     
         Parameters
         ----------
-        normal : tuple(float) or str, default: 'x'
+        normal : tuple(float) | str, default: 'x'
             Length 3 tuple for the normal vector direction. Can also
             be specified as a string conventional direction such as
             ``'x'`` for ``(1, 0, 0)`` or ``'-x'`` for ``(-1, 0, 0)``, etc.
@@ -142,7 +142,7 @@ Clip any dataset by a user defined plane using the
     
         Returns
         -------
-        pyvista.PolyData or tuple[pyvista.PolyData]
+        pyvista.PolyData | tuple[pyvista.PolyData]
             Clipped mesh when ``return_clipped=False``,
             otherwise a tuple containing the unclipped and clipped datasets.
     
@@ -300,9 +300,9 @@ First, download an example dataset.
 
  .. code-block:: none
 
-    Help on method clip_box in module pyvista.core.filters.data_set:
+    Help on method clip_box in module pyvista.core.filters.data_object:
 
-    clip_box(bounds=None, invert=True, factor=0.35, progress_bar=False, merge_points=True, crinkle=False) method of pyvista.core.pointset.StructuredGrid instance
+    clip_box(bounds: 'float | VectorLike[float] | pyvista.PolyData | None' = None, invert: 'bool' = True, factor: 'float' = 0.35, progress_bar: 'bool' = False, merge_points: 'bool' = True, crinkle: 'bool' = False) method of pyvista.core.pointset.StructuredGrid instance
         Clip a dataset by a bounding box defined by the bounds.
     
         If no bounds are given, a corner of the dataset bounds will be removed.
@@ -310,7 +310,7 @@ First, download an example dataset.
         Parameters
         ----------
         bounds : sequence[float], optional
-            Length 6 sequence of floats: ``(xmin, xmax, ymin, ymax, zmin, zmax)``.
+            Length 6 sequence of floats: ``(x_min, x_max, y_min, y_max, z_min, z_max)``.
             Length 3 sequence of floats: distances from the min coordinate of
             of the input mesh. Single float value: uniform distance from the
             min coordinate. Length 12 sequence of length 3 sequence of floats:
@@ -709,7 +709,7 @@ Plot comparison
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.935 seconds)
+   **Total running time of the script:** (0 minutes 2.303 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_b_clipping.py:

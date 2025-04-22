@@ -503,7 +503,7 @@ alter how the above data are displayed.</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on method add_mesh in module pyvista.plotting.plotter:
 
-add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=None, line_width=None, opacity=None, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=None, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=None, smooth_shading=None, split_sharp_edges=None, ambient=None, diffuse=None, specular=None, specular_power=None, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=None, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference=&#39;point&#39;, log_scale=False, pbr=None, metallic=None, roughness=None, render=True, user_matrix=None, component=None, emissive=None, copy_mesh=False, backface_params=None, show_vertices=None, edge_opacity=None, **kwargs) method of pyvista.plotting.plotter.Plotter instance
+add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=None, line_width=None, opacity=None, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=None, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=None, smooth_shading=None, split_sharp_edges=None, ambient=None, diffuse=None, specular=None, specular_power=None, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=None, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference=&#39;point&#39;, log_scale=False, pbr=None, metallic=None, roughness=None, render=True, user_matrix=None, component=None, emissive=None, copy_mesh=False, backface_params=None, show_vertices=None, edge_opacity=None, **kwargs) -&gt; &#39;Actor&#39; method of pyvista.plotting.plotter.Plotter instance
     Add any PyVista/VTK mesh or dataset that PyVista can wrap to the scene.
 
     This method is using a mesh representation to view the surfaces
@@ -850,7 +850,7 @@ add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None,
 
     Returns
     -------
-    pyvista.plotting.actor.Actor
+    pyvista.Actor
         Actor of the mesh.
 
     Examples
@@ -862,9 +862,7 @@ add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None,
     &gt;&gt;&gt; sphere = pv.Sphere()
     &gt;&gt;&gt; sphere[&#39;Data&#39;] = sphere.points[:, 2]
     &gt;&gt;&gt; plotter = pv.Plotter()
-    &gt;&gt;&gt; _ = plotter.add_mesh(
-    ...     sphere, scalar_bar_args={&#39;title&#39;: &#39;Z Position&#39;}
-    ... )
+    &gt;&gt;&gt; _ = plotter.add_mesh(sphere, scalar_bar_args={&#39;title&#39;: &#39;Z Position&#39;})
     &gt;&gt;&gt; plotter.show()
 
     Plot using RGB on a single cell.  Note that since the number of
@@ -881,9 +879,7 @@ add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None,
     ...         [0.5, 0.33, 0.667],
     ...     ]
     ... )
-    &gt;&gt;&gt; faces = np.hstack(
-    ...     [[3, 0, 1, 2], [3, 0, 3, 2], [3, 0, 1, 3], [3, 1, 2, 3]]
-    ... )
+    &gt;&gt;&gt; faces = np.hstack([[3, 0, 1, 2], [3, 0, 3, 2], [3, 0, 1, 3], [3, 1, 2, 3]])
     &gt;&gt;&gt; mesh = pv.PolyData(vertices, faces)
     &gt;&gt;&gt; mesh.cell_data[&#39;colors&#39;] = [
     ...     [255, 255, 255],
@@ -1069,7 +1065,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/solutions/a_display_options.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.804 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.994 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-figures-solutions-a-display-options-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/solutions/a_display_options.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo11.svg" style="width: 150px;" />
