@@ -182,7 +182,8 @@ notfound_no_urls_prefix = True
 copybutton_prompt_text = r">>> ?|\.\.\. "
 copybutton_prompt_is_regexp = True
 
-# Prevent sphinx-panels from adding bootstrap CSS since pydata-sphinx-theme already includes it
+# sphinx-panels shouldn't add bootstrap css since the pydata-sphinx-theme
+# already loads it
 panels_add_bootstrap_css = False
 
 
