@@ -217,29 +217,29 @@ tutorial_dirs = [
     "../../tutorial/04_filters/",
     "../../tutorial/05_action/",
     "../../tutorial/06_vtk/",
-    # "../../tutorial/07_sphinx/",
+    # '../../tutorial/07_sphinx/',
     "../../tutorial/08_widgets/",
     "../../tutorial/09_trame/",
 ]
 
 sphinx_gallery_conf = {
-    # Convert .rst to .md for ipynb
+    # convert rst to md for ipynb
     "pypandoc": True,
-    # Path to your example scripts
+    # path to your examples scripts
     "examples_dirs": tutorial_dirs,
-    # Path where gallery-generated examples are saved
+    # path where to save gallery generated examples
     "gallery_dirs": [d.lstrip("../../") for d in tutorial_dirs],  # noqa: B005
     # Don't execute any files containing "exercise" in the filename
     "filename_pattern": r"^((?!exercise|trame|wasm|vtk_next).)*$",
-    # Remove the 'Download all examples' button from the top-level gallery
+    # Remove the 'Download all examples' button from the top level gallery
     "download_all_examples": False,
     # Remove sphinx configuration comments from code blocks
     "remove_config_comments": True,
-    # Sort gallery examples by file name
+    # Sort gallery example by file name instead of number of lines (default)
     "within_subsection_order": FileNameSortKey,
-    # Directory where function-level galleries are stored
+    # directory where function granular galleries are stored
     "backreferences_dir": None,
-    # Modules for which function-level galleries are created
+    # Modules for which function level galleries are created.  In
     "doc_module": "pyvista",
     "image_scrapers": (DynamicScraper(), "matplotlib"),
     "binder": {
