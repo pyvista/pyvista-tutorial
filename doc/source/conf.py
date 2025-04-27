@@ -154,13 +154,6 @@ html_theme_options = {
     "navigation_with_keys": False,
     "show_navbar_depth": 1,
     "max_navbar_depth": 3,
-    # Enable language switch feature
-    "repository_url": "https://github.com/pyvista/pyvista-tutorial",
-    "repository_branch": "main",
-    "path_to_docs": "doc",
-    "use_repository_button": True,
-    "use_issues_button": True,
-    "use_edit_page_button": True,
     # Language selector settings
     "extra_navbar": """
         <div class="dropdown">
