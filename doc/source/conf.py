@@ -33,7 +33,7 @@ pyvista.FIGURE_PATH = os.path.join(os.path.abspath("./images/"), "auto-generated
 if not os.path.exists(pyvista.FIGURE_PATH):  # noqa: PTH110
     os.makedirs(pyvista.FIGURE_PATH)  # noqa: PTH103
 
-# Required when building the sphinx gallery
+# necessary when building the sphinx gallery
 pyvista.BUILDING_GALLERY = True
 os.environ["PYVISTA_BUILDING_GALLERY"] = "true"
 
