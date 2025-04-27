@@ -112,6 +112,9 @@ html_short_title = ""
 html_extra_path = []  # TODO: 'CNAME',  # noqa: FIX002, TD002, TD003
 html_use_smartypants = True
 
+# The theme to use for HTML and HTML Help pages.  See the documentation for
+# a list of builtin themes.
+#
 html_theme = "sphinx_book_theme"
 html_context = {
     "github_user": "pyvista",
