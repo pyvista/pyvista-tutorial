@@ -178,7 +178,7 @@ html_theme_options = {
 notfound_no_urls_prefix = True
 
 # Copy button customization
-# Exclude traditional Python prompts from the copied code
+# exclude traditional Python prompts from the copied code
 copybutton_prompt_text = r">>> ?|\.\.\. "
 copybutton_prompt_is_regexp = True
 
