@@ -104,67 +104,67 @@ Clip any dataset by a user defined plane using the
 
     clip(normal: 'VectorLike[float] | NormalsLiteral' = 'x', origin: 'VectorLike[float] | None' = None, invert: 'bool' = True, value: 'float' = 0.0, inplace: 'bool' = False, return_clipped: 'bool' = False, progress_bar: 'bool' = False, crinkle: 'bool' = False) method of pyvista.core.pointset.PolyData instance
         Clip a dataset by a plane by specifying the origin and normal.
-    
+
         If no parameters are given the clip will occur in the center
         of that dataset.
-    
+
         Parameters
         ----------
         normal : tuple(float) | str, default: 'x'
             Length 3 tuple for the normal vector direction. Can also
             be specified as a string conventional direction such as
             ``'x'`` for ``(1, 0, 0)`` or ``'-x'`` for ``(-1, 0, 0)``, etc.
-    
+
         origin : sequence[float], optional
             The center ``(x, y, z)`` coordinate of the plane on which the clip
             occurs. The default is the center of the dataset.
-    
+
         invert : bool, default: True
             Flag on whether to flip/invert the clip.
-    
+
         value : float, default: 0.0
             Set the clipping value along the normal direction.
-    
+
         inplace : bool, default: False
             Updates mesh in-place.
-    
+
         return_clipped : bool, default: False
             Return both unclipped and clipped parts of the dataset.
-    
+
         progress_bar : bool, default: False
             Display a progress bar to indicate progress.
-    
+
         crinkle : bool, default: False
             Crinkle the clip by extracting the entire cells along the
             clip. This adds the ``"cell_ids"`` array to the ``cell_data``
             attribute that tracks the original cell IDs of the original
             dataset.
-    
+
         Returns
         -------
         pyvista.PolyData | tuple[pyvista.PolyData]
             Clipped mesh when ``return_clipped=False``,
             otherwise a tuple containing the unclipped and clipped datasets.
-    
+
         Examples
         --------
         Clip a cube along the +X direction.  ``triangulate`` is used as
         the cube is initially composed of quadrilateral faces and
         subdivide only works on triangles.
-    
+
         >>> import pyvista as pv
         >>> cube = pv.Cube().triangulate().subdivide(3)
         >>> clipped_cube = cube.clip()
         >>> clipped_cube.plot()
-    
+
         Clip a cube in the +Z direction.  This leaves half a cube
         below the XY plane.
-    
+
         >>> import pyvista as pv
         >>> cube = pv.Cube().triangulate().subdivide(3)
         >>> clipped_cube = cube.clip('z')
         >>> clipped_cube.plot()
-    
+
         See :ref:`clip_with_surface_example` for more examples using this filter.
 
 
@@ -304,9 +304,9 @@ First, download an example dataset.
 
     clip_box(bounds: 'float | VectorLike[float] | pyvista.PolyData | None' = None, invert: 'bool' = True, factor: 'float' = 0.35, progress_bar: 'bool' = False, merge_points: 'bool' = True, crinkle: 'bool' = False) method of pyvista.core.pointset.StructuredGrid instance
         Clip a dataset by a bounding box defined by the bounds.
-    
+
         If no bounds are given, a corner of the dataset bounds will be removed.
-    
+
         Parameters
         ----------
         bounds : sequence[float], optional
@@ -318,43 +318,43 @@ First, download an example dataset.
             :class:`pyvista.PolyData`: if a poly mesh is passed that represents
             a box with 6 faces that all form a standard box, then planes will
             be extracted from the box to define the clipping region.
-    
+
         invert : bool, default: True
             Flag on whether to flip/invert the clip.
-    
+
         factor : float, default: 0.35
             If bounds are not given this is the factor along each axis to
             extract the default box.
-    
+
         progress_bar : bool, default: False
             Display a progress bar to indicate progress.
-    
+
         merge_points : bool, default: True
             If ``True``, coinciding points of independently defined mesh
             elements will be merged.
-    
+
         crinkle : bool, default: False
             Crinkle the clip by extracting the entire cells along the
             clip. This adds the ``"cell_ids"`` array to the ``cell_data``
             attribute that tracks the original cell IDs of the original
             dataset.
-    
+
         Returns
         -------
         pyvista.UnstructuredGrid
             Clipped dataset.
-    
+
         Examples
         --------
         Clip a corner of a cube.  The bounds of a cube are normally
         ``[-0.5, 0.5, -0.5, 0.5, -0.5, 0.5]``, and this removes 1/8 of
         the cube's surface.
-    
+
         >>> import pyvista as pv
         >>> cube = pv.Cube().triangulate().subdivide(3)
         >>> clipped_cube = cube.clip_box([0, 1, 0, 1, 0, 1])
         >>> clipped_cube.plot()
-    
+
         See :ref:`clip_with_plane_box_example` for more examples using this filter.
 
 
@@ -709,7 +709,7 @@ Plot comparison
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.303 seconds)
+   **Total running time of the script:** (0 minutes 1.957 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_b_clipping.py:

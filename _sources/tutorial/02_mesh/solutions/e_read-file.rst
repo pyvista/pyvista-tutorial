@@ -67,76 +67,76 @@ airplane mesh.
 
     read(filename: 'PathStrSeq', force_ext: 'str | None' = None, file_format: 'str | None' = None, progress_bar: 'bool' = False) -> 'DataObject'
         Read any file type supported by ``vtk`` or ``meshio``.
-    
+
         Automatically determines the correct reader to use then wraps the
         corresponding mesh as a pyvista object.  Attempts native ``vtk``
         readers first then tries to use ``meshio``. :py:mod:`Pickled<pickle>`
         meshes (``'.pkl'`` or ``'.pickle'``) are also supported.
-    
+
         See :func:`pyvista.get_reader` for list of vtk formats supported.
-    
+
         .. note::
            See https://github.com/nschloe/meshio for formats supported by
            ``meshio``. Be sure to install ``meshio`` with ``pip install
            meshio`` if you wish to use it.
-    
+
         .. versionadded:: 0.45
-    
+
             Support reading pickled meshes.
-    
+
         .. warning::
-    
+
             The pickle module is not secure. Only read pickled mesh files
             (``'.pkl'`` or ``'.pickle'``) you trust. See :py:mod:`pickle`
             for details.
-    
+
         See Also
         --------
         pyvista.DataObject.save
             Save a mesh to file.
-    
+
         Parameters
         ----------
         filename : str, Path, Sequence[str | Path]
             The string path to the file to read. If a list of files is
             given, a :class:`pyvista.MultiBlock` dataset is returned with
             each file being a separate block in the dataset.
-    
+
         force_ext : str, optional
             If specified, the reader will be chosen by an extension which
             is different to its actual extension. For example, ``'.vts'``,
             ``'.vtu'``.
-    
+
         file_format : str, optional
             Format of file to read with meshio.
-    
+
         progress_bar : bool, default: False
             Optionally show a progress bar. Ignored when using ``meshio``.
-    
+
         Returns
         -------
         pyvista.DataSet
             Wrapped PyVista dataset.
-    
+
         Examples
         --------
         Load an example mesh.
-    
+
         >>> import pyvista as pv
         >>> from pyvista import examples
         >>> mesh = pv.read(examples.antfile)
         >>> mesh.plot(cpos='xz')
-    
+
         Load a vtk file.
-    
+
         >>> mesh = pv.read('my_mesh.vtk')  # doctest:+SKIP
-    
+
         Load a meshio file.
-    
+
         >>> mesh = pv.read('mesh.obj')  # doctest:+SKIP
-    
+
         Load a pickled mesh file.
-    
+
         >>> mesh = pv.read('mesh.pkl')  # doctest:+SKIP
 
 
@@ -167,9 +167,9 @@ extensions are listed in an internal function:
 
     get_reader(filename, force_ext=None)
         Get a reader for fine-grained control of reading data files.
-    
+
         Supported file types and Readers:
-    
+
         +----------------+---------------------------------------------+
         | File Extension | Class                                       |
         +================+=============================================+
@@ -297,20 +297,20 @@ extensions are listed in an internal function:
         +----------------+---------------------------------------------+
         | ``.vtpd``      | :class:`pyvista.XMLPartitionedDataSetReader`|
         +----------------+---------------------------------------------+
-    
+
         Parameters
         ----------
         filename : str, Path
             The string path to the file to read.
-    
+
         force_ext : str, optional
             An extension to force a specific reader to be chosen.
-    
+
         Returns
         -------
         pyvista.BaseReader
             A subclass of :class:`pyvista.BaseReader` is returned based on file type.
-    
+
         Examples
         --------
         >>> import pyvista as pv
@@ -353,7 +353,7 @@ file, displays an airplane mesh and returns the camera's position:
  .. code-block:: none
 
 
-    '/home/runner/.virtualenvs/.venv/lib/python3.11/site-packages/pyvista/examples/airplane.ply'
+    '/home/runner/.virtualenvs/.venv/lib/python3.12/site-packages/pyvista/examples/airplane.ply'
 
 
 
@@ -698,7 +698,7 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 6.093 seconds)
+   **Total running time of the script:** (0 minutes 3.119 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_e_read-file.py:

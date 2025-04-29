@@ -80,29 +80,29 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
 
     glyph(orient: 'bool | str' = True, scale: 'bool | str' = True, factor: 'float' = 1.0, geom: '_vtk.vtkDataSet | DataSet | Sequence[_vtk.vtkDataSet | DataSet] | None' = None, indices: 'VectorLike[int] | None' = None, tolerance: 'float | None' = None, absolute: 'bool' = False, clamping: 'bool' = False, rng: 'VectorLike[float] | None' = None, color_mode: "Literal['scale', 'scalar', 'vector']" = 'scale', progress_bar: 'bool' = False) method of pyvista.core.pointset.PolyData instance
         Copy a geometric representation (called a glyph) to the input dataset.
-    
+
         The glyph may be oriented along the input vectors, and it may
         be scaled according to scalar data or vector
         magnitude. Passing a table of glyphs to choose from based on
         scalars or vector magnitudes is also supported.  The arrays
         used for ``orient`` and ``scale`` must be either both point data
         or both cell data.
-    
+
         Parameters
         ----------
         orient : bool | str, default: True
             If ``True``, use the active vectors array to orient the glyphs.
             If string, the vector array to use to orient the glyphs.
             If ``False``, the glyphs will not be orientated.
-    
+
         scale : bool | str | sequence[float], default: True
             If ``True``, use the active scalars to scale the glyphs.
             If string, the scalar array to use to scale the glyphs.
             If ``False``, the glyphs will not be scaled.
-    
+
         factor : float, default: 1.0
             Scale factor applied to scaling array.
-    
+
         geom : vtk.vtkDataSet or tuple(vtk.vtkDataSet), optional
             The geometry to use for the glyph. If missing, an arrow glyph
             is used. If a sequence, the datasets inside define a table of
@@ -110,57 +110,57 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
             case a sequence of numbers of the same length must be passed as
             ``indices``. The values of the range (see ``rng``) affect lookup
             in the table.
-    
+
             .. note::
-    
+
                 The reference direction is relative to ``(1, 0, 0)`` on the
                 provided geometry. That is, the provided geometry will be rotated
                 from ``(1, 0, 0)`` to the direction of the ``orient`` vector at
                 each point.
-    
+
         indices : sequence[float], optional
             Specifies the index of each glyph in the table for lookup in case
             ``geom`` is a sequence. If given, must be the same length as
             ``geom``. If missing, a default value of ``range(len(geom))`` is
             used. Indices are interpreted in terms of the scalar range
             (see ``rng``). Ignored if ``geom`` has length 1.
-    
+
         tolerance : float, optional
             Specify tolerance in terms of fraction of bounding box length.
             Float value is between 0 and 1. Default is None. If ``absolute``
             is ``True`` then the tolerance can be an absolute distance.
             If ``None``, points merging as a preprocessing step is disabled.
-    
+
         absolute : bool, default: False
             Control if ``tolerance`` is an absolute distance or a fraction.
-    
+
         clamping : bool, default: False
             Turn on/off clamping of "scalar" values to range.
-    
+
         rng : sequence[float], optional
             Set the range of values to be considered by the filter
             when scalars values are provided.
-    
+
         color_mode : str, optional, default: ``'scale'``
             If ``'scale'`` , color the glyphs by scale.
             If ``'scalar'`` , color the glyphs by scalar.
             If ``'vector'`` , color the glyphs by vector.
-    
+
             .. versionadded:: 0.44
-    
+
         progress_bar : bool, default: False
             Display a progress bar to indicate progress.
-    
+
         Returns
         -------
         pyvista.PolyData
             Glyphs at either the cell centers or points.
-    
+
         Examples
         --------
         Create arrow glyphs oriented by vectors and scaled by scalars.
         Factor parameter is used to reduce the size of the arrows.
-    
+
         >>> import pyvista as pv
         >>> from pyvista import examples
         >>> mesh = examples.load_random_hills()
@@ -174,7 +174,7 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
         ...     show_scalar_bar=False,
         ... )
         >>> pl.show()
-    
+
         See :ref:`glyph_example` and :ref:`glyph_table_example` for more
         examples using this filter.
 
@@ -397,7 +397,7 @@ Plot the arrows and the sphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.279 seconds)
+   **Total running time of the script:** (0 minutes 1.287 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py:

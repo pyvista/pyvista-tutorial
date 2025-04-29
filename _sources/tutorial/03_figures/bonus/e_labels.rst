@@ -62,137 +62,137 @@ point labels to a scene.
 
     add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, text_color=None, font_family=None, font_file=None, shadow=False, show_points=True, point_color=None, point_size=None, name=None, shape_color='grey', shape='rounded_rect', fill_shape=True, margin=3, shape_opacity=1.0, pickable=False, render_points_as_spheres=False, tolerance=0.001, reset_camera=None, always_visible=False, render=True, justification_horizontal=None, justification_vertical=None, background_color=None, background_opacity=None)
         Create a point actor with one label from list labels assigned to each point.
-    
+
         Parameters
         ----------
         points : sequence | pyvista.DataSet | vtk.vtkAlgorithm
             An ``n x 3`` sequence points or :class:`pyvista.DataSet` with
             points or mesh-producing algorithm.
-    
+
         labels : list | str
             List of labels.  Must be the same length as points. If a
             string name is given with a :class:`pyvista.DataSet` input for
             points, then these are fetched.
-    
+
         italic : bool, default: False
             Italicises title and bar labels.
-    
+
         bold : bool, default: True
             Bolds title and bar labels.
-    
+
         font_size : float, optional
             Sets the size of the title font.
-    
+
         text_color : ColorLike, optional
             Color of text. Either a string, RGB sequence, or hex color string.
-    
+
             * ``text_color='white'``
             * ``text_color='w'``
             * ``text_color=[1.0, 1.0, 1.0]``
             * ``text_color='#FFFFFF'``
-    
+
         font_family : str, optional
             Font family.  Must be either ``'courier'``, ``'times'``,
             or ``'arial``. This is ignored if the `font_file` is set.
-    
+
         font_file : str, default: None
             The absolute file path to a local file containing a freetype
             readable font.
-    
+
         shadow : bool, default: False
             Adds a black shadow to the text.
-    
+
         show_points : bool, default: True
             Controls if points are visible.
-    
+
         point_color : ColorLike, optional
             Either a string, rgb list, or hex color string.  One of
             the following.
-    
+
             * ``point_color='white'``
             * ``point_color='w'``
             * ``point_color=[1.0, 1.0, 1.0]``
             * ``point_color='#FFFFFF'``
-    
+
         point_size : float, optional
             Size of points if visible.
-    
+
         name : str, optional
             The name for the added actor so that it can be easily
             updated.  If an actor of this name already exists in the
             rendering window, it will be replaced by the new actor.
-    
+
         shape_color : ColorLike, default: "grey"
             Color of shape (if visible).  Either a string, rgb
             sequence, or hex color string.
-    
+
         shape : str, default: "rounded_rect"
             The string name of the shape to use. Options are ``'rect'`` or
             ``'rounded_rect'``. If you want no shape, pass ``None``.
-    
+
         fill_shape : bool, default: True
             Fill the shape with the ``shape_color``. Outlines if ``False``.
-    
+
         margin : int, default: 3
             The size of the margin on the label background shape.
-    
+
         shape_opacity : float, default: 1.0
             The opacity of the shape in the range of ``[0, 1]``.
-    
+
         pickable : bool, default: False
             Set whether this actor is pickable.
-    
+
         render_points_as_spheres : bool, default: False
             Render points as spheres rather than dots.
-    
+
         tolerance : float, default: 0.001
             A tolerance to use to determine whether a point label is
             visible.  A tolerance is usually required because the
             conversion from world space to display space during
             rendering introduces numerical round-off.
-    
+
         reset_camera : bool, optional
             Reset the camera after adding the points to the scene.
-    
+
         always_visible : bool, default: False
             Skip adding the visibility filter.
-    
+
         render : bool, default: True
             Force a render when ``True``.
-    
+
         justification_horizontal : str, optional
             Text's horizontal justification.
             Should be either "left", "center" or "right".
-    
+
             .. warning::
                 If the justification is not default,
                 the shape will be out of alignment with the label.
                 If you use other than default,
                 Please use the background color.
                 See: https://github.com/pyvista/pyvista/pull/5407
-    
+
         justification_vertical : str, optional
             Text's vertical justification.
             Should be either "bottom", "center" or "top".
-    
+
             .. warning::
                 If the justification is not default,
                 the shape will be out of alignment with the label.
                 If you use other than default,
                 Please use the background color.
                 See: https://github.com/pyvista/pyvista/pull/5407
-    
+
         background_color : pyvista.Color, optional
             Background color of text's property.
-    
+
         background_opacity : pyvista.Color, optional
             Background opacity of text's property.
-    
+
         Returns
         -------
         vtk.vtkActor2D
             VTK label actor.  Can be used to change properties of the labels.
-    
+
         Examples
         --------
         >>> import numpy as np
@@ -267,9 +267,9 @@ node:
     <tr><td>N Cells</td><td>10</td></tr>
     <tr><td>N Points</td><td>10</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>2.216e-02, 8.689e-01</td></tr>
-    <tr><td>Y Bounds</td><td>1.852e-01, 8.982e-01</td></tr>
-    <tr><td>Z Bounds</td><td>2.489e-03, 8.705e-01</td></tr>
+    <tr><td>X Bounds</td><td>3.075e-02, 8.251e-01</td></tr>
+    <tr><td>Y Bounds</td><td>1.999e-01, 9.734e-01</td></tr>
+    <tr><td>Z Bounds</td><td>1.446e-02, 9.640e-01</td></tr>
     <tr><td>N Arrays</td><td>1</td></tr>
     </table>
 
@@ -508,7 +508,7 @@ This example will label each point with their scalar values
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.776 seconds)
+   **Total running time of the script:** (0 minutes 0.761 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_e_labels.py:

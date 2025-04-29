@@ -82,65 +82,65 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 
     contour(isosurfaces: 'int | Sequence[float]' = 10, scalars: 'str | NumpyArray[float] | None' = None, compute_normals: 'bool' = False, compute_gradients: 'bool' = False, compute_scalars: 'bool' = True, rng: 'VectorLike[float] | None' = None, preference: "Literal['point', 'cell']" = 'point', method: "Literal['contour', 'marching_cubes', 'flying_edges']" = 'contour', progress_bar: 'bool' = False) method of pyvista.core.pointset.PolyData instance
         Contour an input self by an array.
-    
+
         ``isosurfaces`` can be an integer specifying the number of
         isosurfaces in the data range or a sequence of values for
         explicitly setting the isosurfaces.
-    
+
         Parameters
         ----------
         isosurfaces : int | sequence[float], optional
             Number of isosurfaces to compute across valid data range or a
             sequence of float values to explicitly use as the isosurfaces.
-    
+
         scalars : str | array_like[float], optional
             Name or array of scalars to threshold on. If this is an array, the
             output of this filter will save them as ``"Contour Data"``.
             Defaults to currently active scalars.
-    
+
         compute_normals : bool, default: False
             Compute normals for the dataset.
-    
+
         compute_gradients : bool, default: False
             Compute gradients for the dataset.
-    
+
         compute_scalars : bool, default: True
             Preserves the scalar values that are being contoured.
-    
+
         rng : sequence[float], optional
             If an integer number of isosurfaces is specified, this is
             the range over which to generate contours. Default is the
             scalars array's full data range.
-    
+
         preference : str, default: "point"
             When ``scalars`` is specified, this is the preferred array
             type to search for in the dataset.  Must be either
             ``'point'`` or ``'cell'``.
-    
+
         method : str, default:  "contour"
             Specify to choose which vtk filter is used to create the contour.
             Must be one of ``'contour'``, ``'marching_cubes'`` and
             ``'flying_edges'``.
-    
+
         progress_bar : bool, default: False
             Display a progress bar to indicate progress.
-    
+
         Returns
         -------
         pyvista.PolyData
             Contoured surface.
-    
+
         Examples
         --------
         Generate contours for the random hills dataset.
-    
+
         >>> from pyvista import examples
         >>> hills = examples.load_random_hills()
         >>> contours = hills.contour()
         >>> contours.plot(line_width=5)
-    
+
         Generate the surface of a mobius strip using flying edges.
-    
+
         >>> import pyvista as pv
         >>> a = 0.4
         >>> b = 0.1
@@ -178,7 +178,7 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
         ...     method='flying_edges',
         ... )
         >>> out.plot(color='lightblue', smooth_shading=True)
-    
+
         See :ref:`common_filter_example` or
         :ref:`marching_cubes_example` for more examples using this
         filter.
@@ -371,7 +371,7 @@ of 50 and 200
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 9.340 seconds)
+   **Total running time of the script:** (0 minutes 9.697 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_d_contouring.py:

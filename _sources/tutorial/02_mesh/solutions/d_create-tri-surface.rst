@@ -76,11 +76,11 @@ First, create some points for the surface.
  .. code-block:: none
 
 
-    array([[-204.04785294, -199.43020335,    1.70706167],
-           [-182.67481117, -199.43020335,    2.58066096],
-           [-153.93340608, -199.43020335,    4.18612385],
-           [-132.04630887, -199.43020335,    5.72440435],
-           [-118.64883859, -199.43020335,    6.77116084]])
+    array([[-199.48875373, -195.99011811,    2.00325974],
+           [-174.25694157, -195.99011811,    3.21006049],
+           [-162.32028982, -195.99011811,    3.92422956],
+           [-141.80838629, -195.99011811,    5.36063772],
+           [-119.16121123, -195.99011811,    7.20369546]])
 
 
 
@@ -156,40 +156,40 @@ See :func:`pyvista.UnstructuredGridFilters.delaunay_2d`.
 
     delaunay_2d(tol=1e-05, alpha=0.0, offset=1.0, bound: 'bool' = False, inplace: 'bool' = False, edge_source=None, progress_bar: 'bool' = False) method of pyvista.core.pointset.PolyData instance
         Apply a 2D Delaunay filter along the best fitting plane.
-    
+
         This filter can be used to generate a 2d surface from a set of
         points on a plane.  If you want to create a surface from a
         point cloud, see :func:`pyvista.PolyDataFilters.reconstruct_surface`.
-    
+
         Parameters
         ----------
         tol : float, default: 1e-05
             Specify a tolerance to control discarding of closely
             spaced points. This tolerance is specified as a fraction
             of the diagonal length of the bounding box of the points.
-    
+
         alpha : float, default: 0.0
             Specify alpha (or distance) value to control output of
             this filter. For a non-zero alpha value, only edges or
             triangles contained within a sphere centered at mesh
             vertices will be output. Otherwise, only triangles will be
             output.
-    
+
         offset : float, default: 1.0
             Specify a multiplier to control the size of the initial,
             bounding Delaunay triangulation.
-    
+
         bound : bool, default: False
             Boolean controls whether bounding triangulation points
             and associated triangles are included in the
             output. These are introduced as an initial triangulation
             to begin the triangulation process. This feature is nice
             for debugging output.
-    
+
         inplace : bool, default: False
             If ``True``, overwrite this mesh with the triangulated
             mesh.
-    
+
         edge_source : pyvista.PolyData, optional
             Specify the source object used to specify constrained
             edges and loops. If set, and lines/polygons are defined, a
@@ -197,32 +197,32 @@ See :func:`pyvista.UnstructuredGridFilters.delaunay_2d`.
             are assumed to reference points in the input point set
             (i.e. point ids are identical in the input and
             source).
-    
+
         progress_bar : bool, default: False
             Display a progress bar to indicate progress.
-    
+
         Returns
         -------
         pyvista.PolyData
             Mesh from the 2D delaunay filter.
-    
+
         Examples
         --------
         First, generate 30 points on circle and plot them.
-    
+
         >>> import pyvista as pv
         >>> points = pv.Polygon(n_sides=30).points
         >>> circle = pv.PolyData(points)
         >>> circle.plot(show_edges=True, point_size=15)
-    
+
         Use :func:`delaunay_2d` to fill the interior of the circle.
-    
+
         >>> filled_circle = circle.delaunay_2d()
         >>> filled_circle.plot(show_edges=True, line_width=5)
-    
+
         Use the ``edge_source`` parameter to create a constrained delaunay
         triangulation and plot it.
-    
+
         >>> squar = pv.Polygon(n_sides=4, radius=8, fill=False)
         >>> squar = squar.rotate_z(45, inplace=False)
         >>> circ0 = pv.Polygon(center=(2, 3, 0), n_sides=30, radius=1)
@@ -230,7 +230,7 @@ See :func:`pyvista.UnstructuredGridFilters.delaunay_2d`.
         >>> comb = circ0 + circ1 + squar
         >>> tess = comb.delaunay_2d(edge_source=comb)
         >>> tess.plot(cpos='xy', show_edges=True)
-    
+
         See :ref:`triangulated_surface` for more examples using this filter.
 
 
@@ -322,8 +322,8 @@ Clean Edges & Triangulations
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>7.102e-02, 9.250e+00</td></tr>
-    <tr><td>Y Bounds</td><td>1.344e-02, 9.280e+00</td></tr>
+    <tr><td>X Bounds</td><td>2.691e-02, 9.287e+00</td></tr>
+    <tr><td>Y Bounds</td><td>9.277e-02, 9.288e+00</td></tr>
     <tr><td>Z Bounds</td><td>0.000e+00, 0.000e+00</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
@@ -477,7 +477,7 @@ added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.025 seconds)
+   **Total running time of the script:** (0 minutes 1.008 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_d_create-tri-surface.py:
