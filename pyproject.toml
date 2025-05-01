@@ -19,7 +19,7 @@ docs = [
   'lxml==5.4.0',
   'matplotlib==3.10.1',
   'meshio==5.3.5',
-  'mypy-extensions==1.0.0',
+  'mypy-extensions==1.1.0',
   'mypy==1.15.0',
   'numpydoc==1.8.0',
   'osmnx==2.0.2',
