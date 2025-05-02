@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:47.583** total execution time for 3 files **from tutorial/03_figures/solutions**:
+**00:47.918** total execution time for 3 files **from tutorial/03_figures/solutions**:
 
 .. container::
 
@@ -33,11 +33,11 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_tutorial_03_figures_solutions_c_edl.py` (``c_edl.py``)
-     - 00:35.224
+     - 00:35.460
      - 0.0
    * - :ref:`sphx_glr_tutorial_03_figures_solutions_b_lighting_mesh.py` (``b_lighting_mesh.py``)
-     - 00:09.329
+     - 00:09.428
      - 0.0
    * - :ref:`sphx_glr_tutorial_03_figures_solutions_a_display_options.py` (``a_display_options.py``)
-     - 00:03.031
+     - 00:03.030
      - 0.0
