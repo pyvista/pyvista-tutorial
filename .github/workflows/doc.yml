@@ -56,7 +56,9 @@ jobs:
           echo PYVISTA_EXAMPLE_DATA_PATH=$(python -c "from pyvista import examples; print(examples.USER_DATA_PATH)") >> $GITHUB_ENV
 
       - name: Build Documentation
-        run: make -C doc html SPHINXOPTS="-W --keep-going"
+        run: |
+          make -C doc html SPHINXOPTS="-W --keep-going"
+          make -C doc mini18n-html SPHINXOPTS="-W --keep-going"
 
       - name: Tar build
         run: tar -zcvf doc-build.tar.gz doc/build/
