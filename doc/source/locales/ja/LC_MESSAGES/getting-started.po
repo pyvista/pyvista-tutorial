@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, PyVista Developers
+# This file is distributed under the same license as the PyVista Tutorial package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# Tetsuo Koyama <tkoyama010@gmail.com>, 2024
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyVista Tutorial\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-09 00:48+0000\n"
+"PO-Revision-Date: 2022-07-24 15:42+0000\n"
+"Last-Translator: Tetsuo Koyama <tkoyama010@gmail.com>, 2024\n"
+"Language-Team: Japanese (https://app.transifex.com/tkoyama010/teams/112279/ja/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ja\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:4
+msgid "Getting Started"
+msgstr "はじめに"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:6
+msgid ""
+"The only prerequisite for installing PyVista is Python itself. If you don't "
+"have Python yet and want the simplest way to get started, we recommend you "
+"use the `Anaconda Distribution`_."
+msgstr ""
+"PyVistaをインストールするための唯一の前提条件は，Pythonそのものです．Pythonをまだ持っていなくて，最も簡単な方法で始めたい場合は， "
+"`Anaconda Distribution`_ を使うことをお勧めします．"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:12
+msgid ""
+"PyVista can be installed locally with conda or pip. If you'd prefer it, you "
+"can also run PyVista on the cloud using :ref:`colab` or :ref:`mybinder`. For"
+" more detailed instructions, see the installation guide below."
+msgstr ""
+"PyVista は conda や pip を使ってローカルにインストールできます．また，クラウド上で :ref:`colab` や "
+":ref:`mybinder` を使って PyVista "
+"を実行することもできます．より詳細な手順については，以下のインストールガイドを参照してください．"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:19
+msgid "Installation"
+msgstr "インストール"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:21
+msgid ""
+"PyVista can be installed on several environments, including, but not limited"
+" to:"
+msgstr "PyVistaは，いくつかの環境にインストールすることができますが，これらに限定されません:"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:0
+msgid "pip"
+msgstr "pip"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:0
+msgid "conda"
+msgstr "conda"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:40
+msgid ""
+"You can then plot in Jupyter with either a static or interactive backend:"
+msgstr "その後、Jupyterで静的またはインタラクティブなバックエンドでプロットすることができます:"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:0
+msgid "Static Scene"
+msgstr "スタティックなシーン"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:0
+msgid "Interactive Scene"
+msgstr "インタラクティブなシーン"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:54
+msgid "MyBinder"
+msgstr "MyBinder"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:55
+msgid ""
+"MyBinder, similar to Google Colab, allows you to run Jupyter notebooks on "
+"the cloud. Click on the link below to open up a MyBinder environment to run "
+"PyVista."
+msgstr ""
+"MyBinderはGoogle "
+"Colabと同様に，クラウド上でJupyterノートブックを実行することができます．以下のリンクをクリックして，PyVistaを実行するためのMyBinder環境を開いてみてください．"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:59
+msgid "|binder|"
+msgstr "|binder|"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:61
+msgid "Launch on Binder"
+msgstr "Binderでの起動"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:69
+msgid "Google Colab"
+msgstr "Google Colab"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:70
+msgid ""
+"Google Colab is a moving target and many of the \"cloud ready\" JavaScript "
+"plotting environments that make PyVista so great to work with do not seem to"
+" be available on Google Colab. However, we still have a working PyVista "
+"example for `Google Colab <https://colab.research.google.com/>`_ with static"
+" plotting."
+msgstr ""
+"Google Colabは動いているターゲットで，PyVistaをとても素晴らしいものにしている \"クラウド対応\" "
+"のJavaScriptプロット環境の多くは，Google Colabでは利用できないようです．しかし，静的プロット機能を持つ `Google Colab"
+" <https://colab.research.google.com/>`_ 用の PyVista サンプルはまだ動作しています．"
+
+#: ../../pyvista-tutorial/doc/source/getting-started.rst:75
+msgid ""
+"Visit the `PyVista on Colab  "
+"<https://colab.research.google.com/drive/1y0yURyB-5ApO3zM0vsSK7OaobxjncI3h?usp=sharing>`_"
+" notebook to see PyVista in action. The minimum code to get PyVista running "
+"in a Colab environment is:"
+msgstr ""
+"`PyVista on Colab "
+"<https://colab.research.google.com/drive/1y0yURyB-5ApO3zM0vsSK7OaobxjncI3h?usp=sharing>`_"
+" ノートブックで，PyVistaが実際に動いているところをご覧ください．Colab環境でPyVistaを動作させるための最小限のコードは以下の通りです．"

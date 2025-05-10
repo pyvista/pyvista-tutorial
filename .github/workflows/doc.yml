@@ -58,6 +58,9 @@ jobs:
       - name: Build Documentation
         run: make -C doc html SPHINXOPTS="-W --keep-going"
 
+      - name: Build I18N Documentation
+        run: make -C doc mini18n-html SPHINXOPTS="-W --keep-going"
+
       - name: Tar build
         run: tar -zcvf doc-build.tar.gz doc/build/
 
@@ -114,7 +117,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: doc/build/html
+          publish_dir: doc/build
           cname: tutorial.pyvista.org
 
       - name: Copy Tutorial Content
@@ -164,7 +167,7 @@ jobs:
 
       - uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: doc/build/html
+          publish-dir: doc/build
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
