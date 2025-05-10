@@ -56,6 +56,9 @@ jobs:
           echo PYVISTA_EXAMPLE_DATA_PATH=$(python -c "from pyvista import examples; print(examples.USER_DATA_PATH)") >> $GITHUB_ENV
 
       - name: Build Documentation
+        run: make -C doc html SPHINXOPTS="-W --keep-going"
+
+      - name: Build I18N Documentation
         run: make -C doc mini18n-html SPHINXOPTS="-W --keep-going"
 
       - name: Tar build
@@ -106,15 +109,15 @@ jobs:
 
       - name: Zip Notebooks
         run: |
-          cp -r doc/build/mini18n-html/notebooks/tutorial/ notebooks
+          cp -r doc/build/html/notebooks/tutorial/ notebooks
           zip -r notebooks.zip notebooks/
-          mv notebooks.zip doc/build/mini18n-html/
+          mv notebooks.zip doc/build/html/
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: doc/build/mini18n-html
+          publish_dir: doc/build/html
           cname: tutorial.pyvista.org
 
       - name: Copy Tutorial Content
@@ -158,13 +161,13 @@ jobs:
 
       - name: Zip Notebooks
         run: |
-          cp -r doc/build/mini18n-html/notebooks/tutorial/ notebooks
+          cp -r doc/build/html/notebooks/tutorial/ notebooks
           zip -r notebooks.zip notebooks/
-          mv notebooks.zip doc/build/mini18n-html/
+          mv notebooks.zip doc/build/html/
 
       - uses: nwtgck/actions-netlify@v3.0
         with:
-          publish-dir: doc/build/mini18n-html
+          publish-dir: doc/build/html
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from GitHub Actions"
