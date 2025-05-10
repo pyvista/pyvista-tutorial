@@ -140,7 +140,7 @@ jobs:
     name: Preview Documentation
     permissions:
       contents: write
-      pull-requests: read
+      pull-requests: write
       issues: read
       repository-projects: read
     runs-on: ubuntu-latest
