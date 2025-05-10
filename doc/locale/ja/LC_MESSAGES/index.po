@@ -1,0 +1,43 @@
+# Japanese translations for PyVista Tutorial.
+# Copyright (C) 2022 PyVista Developers
+# This file is distributed under the same license as the PyVista Tutorial project.
+msgid ""
+msgstr ""
+"Project-Id-Version: PyVista Tutorial\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-04-22 22:00+0900\n"
+"PO-Revision-Date: 2025-04-22 22:00+0900\n"
+"Last-Translator: \n"
+"Language-Team: ja <ja@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/index.rst:7
+msgid "PyVista Tutorial"
+msgstr "PyVista チュートリアル"
+
+#: ../../source/index.rst:9
+msgid "Open source Python package for 3D visualization and mesh analysis."
+msgstr "3D可視化とメッシュ解析のためのオープンソースPythonパッケージ。"
+
+#: ../../source/index.rst:11
+msgid "Welcome to the PyVista tutorial! This is a Sphinx-generated site containing a comprehensive tutorial for the PyVista package."
+msgstr "PyVistaチュートリアルへようこそ！このサイトはPyVistaパッケージの総合的なチュートリアルを含むSphinxで生成されたサイトです。"
+
+#: ../../source/index.rst:14
+msgid "Tutorial Structure"
+msgstr "チュートリアルの構成"
+
+#: ../../source/index.rst:16
+msgid "This tutorial is broken down into a series of lessons that incrementally teach you how to do visualization and mesh analysis with PyVista. This is designed for users with little to no experience with PyVista, but have a desire to do 3D visualization or 3D data processing in Python."
+msgstr "このチュートリアルは、PyVistaでの可視化とメッシュ解析の方法を段階的に教える一連のレッスンに分かれています。これはPyVistaの経験がほとんどないか全くない方向けに設計されていますが、Pythonで3D可視化や3Dデータ処理を行いたいと考えている方を対象としています。"
+
+#: ../../source/index.rst:22
+msgid "Getting Started"
+msgstr "はじめに"
+
+#: ../../source/index.rst:24
+msgid "Continue to :ref:`getting_started` for instructions on getting started with the tutorial."
+msgstr "チュートリアルの開始方法については、:ref:`getting_started` を参照してください。"

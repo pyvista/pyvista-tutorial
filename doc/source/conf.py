@@ -63,6 +63,11 @@ extensions = [
     "sphinxcontrib.asciinema",
 ]
 
+# Internationalization settings
+locale_dirs = ["../locale/"]  # Path to the locale directory
+gettext_compact = False  # Generate multiple .pot files
+language = "en"  # Set default language to English
+
 intersphinx_mapping = {
     "python": ("https://docs.python.org/dev", None),
     "scipy": ("https://docs.scipy.org/doc/scipy/", None),
@@ -94,7 +99,8 @@ suppress_warnings = ["config.cache"]
 # so a file named 'default.css' will overwrite the builtin 'default.css'.
 html_static_path = ["_static"]
 html_css_files = [
-    "cards.css",  # used in card CSS
+    "cards.css",  # Used for card CSS
+    "language_selector.css",  # CSS for language switch dropdown
 ]
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
@@ -148,6 +154,19 @@ html_theme_options = {
     "navigation_with_keys": False,
     "show_navbar_depth": 1,
     "max_navbar_depth": 3,
+    # Language selector settings
+    "extra_navbar": """
+        <div class="dropdown">
+            <button class="btn btn-sm navbar-btn dropdown-toggle" type="button" id="languageSelector"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-globe"></i> Language
+            </button>
+            <div class="dropdown-menu" aria-labelledby="languageSelector">
+                <a class="dropdown-item" href="/en/index.html">English</a>
+                <a class="dropdown-item" href="/ja/index.html">日本語</a>
+            </div>
+        </div>
+    """,
 }
 
 # notfound_context = {
