@@ -51,6 +51,7 @@ author = "PyVista Developers"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "atsphinx.mini18n",
     "sphinx_design",
     "jupyter_sphinx",
     "pyvista.ext.plot_directive",
