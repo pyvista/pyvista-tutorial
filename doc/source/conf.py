@@ -5,6 +5,8 @@ import os
 import sys
 from pathlib import Path
 
+from atsphinx.mini18n import get_template_dir
+
 faulthandler.enable()
 
 sys.path.insert(0, str(Path(__file__).absolute().parent))
@@ -76,7 +78,7 @@ intersphinx_mapping = {
 
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ["_templates"]
+templates_path = ["_templates", get_template_dir()]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -149,6 +151,10 @@ html_theme_options = {
     "navigation_with_keys": False,
     "show_navbar_depth": 1,
     "max_navbar_depth": 3,
+    "navbar_start": [
+        "navbar-logo",
+        "mini18n/snippets/select-lang",
+    ],
 }
 
 # notfound_context = {
