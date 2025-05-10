@@ -151,9 +151,6 @@ html_theme_options = {
     "navigation_with_keys": False,
     "show_navbar_depth": 1,
     "max_navbar_depth": 3,
-    "navbar_start": [
-        "mini18n/snippets/select-lang",
-    ],
 }
 
 # notfound_context = {
@@ -239,6 +236,16 @@ sphinx_gallery_conf = {
         "use_jupyter_lab": True,
     },
     "reset_modules": (ResetPyVista(),),
+}
+
+html_sidebars = {
+    "**": [
+        "navbar-logo.html",
+        "icon-links.html",
+        "mini18n/snippets/select-lang.html",
+        "search-button-field.html",
+        "sbt-sidebar-nav.html",
+    ],
 }
 
 
