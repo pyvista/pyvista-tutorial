@@ -152,7 +152,6 @@ html_theme_options = {
     "show_navbar_depth": 1,
     "max_navbar_depth": 3,
     "navbar_start": [
-        "navbar-logo",
         "mini18n/snippets/select-lang",
     ],
 }
