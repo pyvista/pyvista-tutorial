@@ -248,6 +248,10 @@ html_sidebars = {
     ],
 }
 
+# atsphinx.mini18n configuration
+mini18n_default_language = "en"
+mini18n_support_languages = ["en", "ja"]
+
 
 def setup(app) -> None:
     app.add_css_file("copybutton.css")
