@@ -78,7 +78,6 @@ intersphinx_mapping = {
 
 
 # Add any paths that contain templates here, relative to this directory.
-# `get_template_dir()` retrieves the path to the default template directory provided by the `atsphinx.mini18n` module.
 templates_path = ["_templates", get_template_dir()]
 
 # List of patterns, relative to source directory, that match files and
