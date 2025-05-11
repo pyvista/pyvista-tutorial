@@ -59,7 +59,10 @@ jobs:
         run: make -C doc html SPHINXOPTS="-W --keep-going"
 
       - name: Build I18N Documentation
-        run: make -C doc mini18n-html SPHINXOPTS="-W --keep-going" BUILDDIR=doc/build/html
+        run: |
+          make -C doc mini18n-html SPHINXOPTS="-W --keep-going"
+          mv doc/build/mini18n-html/en doc/build/html
+          mv doc/build/mini18n-html/ja doc/build/html
 
       - name: Tar build
         run: tar -zcvf doc-build.tar.gz doc/build/
