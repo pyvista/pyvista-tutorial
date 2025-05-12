@@ -5,6 +5,8 @@ import os
 import sys
 from pathlib import Path
 
+from atsphinx.mini18n import get_template_dir
+
 faulthandler.enable()
 
 sys.path.insert(0, str(Path(__file__).absolute().parent))
@@ -51,6 +53,7 @@ author = "PyVista Developers"
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    "atsphinx.mini18n",
     "sphinx_design",
     "jupyter_sphinx",
     "pyvista.ext.plot_directive",
@@ -75,7 +78,7 @@ intersphinx_mapping = {
 
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ["_templates"]
+templates_path = ["_templates", get_template_dir()]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -234,6 +237,20 @@ sphinx_gallery_conf = {
     },
     "reset_modules": (ResetPyVista(),),
 }
+
+html_sidebars = {
+    "**": [
+        "navbar-logo.html",
+        "icon-links.html",
+        "mini18n/snippets/select-lang.html",
+        "search-button-field.html",
+        "sbt-sidebar-nav.html",
+    ],
+}
+
+# atsphinx.mini18n configuration
+mini18n_default_language = "en"
+mini18n_support_languages = ["en", "ja"]
 
 
 def setup(app) -> None:
