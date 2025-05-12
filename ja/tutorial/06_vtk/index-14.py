@@ -1,0 +1,6 @@
+cell_arr = vtk.vtkCellArray()
+cell_arr.InsertNextCell(3)
+cell_arr.InsertCellPoint(0)
+cell_arr.InsertCellPoint(1)
+cell_arr.InsertCellPoint(2)
+vtk_poly_data.SetPolys(cell_arr)

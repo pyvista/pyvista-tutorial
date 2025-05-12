@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>やってみよう &#8212; PyVista Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/no_search_highlight.css?v=4b20ffad" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/fontawesome/css/all.css?v=1500ccdc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=f9b2bc2b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cards.css?v=90395a4f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/thebelab-helper.js"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/translations.js?v=4755f45a"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/02_mesh/exercises/index';</script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../search.html" />
+    <link rel="next" title="点群を作成" href="b_create-point-cloud.html" />
+    <link rel="prev" title="レッスンの概要" href="../a_lesson_mesh.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/pyvista_logo_sm.png" class="logo__image only-light" alt="PyVista Tutorial - Home"/>
+    <script>document.write(`<img src="../../../_static/pyvista_logo_sm.png" class="logo__image only-dark" alt="PyVista Tutorial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista-tutorial" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://docs.pyvista.org/" title="Docs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Docs</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" title="Contributing" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-gavel fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Contributing</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://doi.org/10.21105/joss.01450" title="The Paper" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-file-text fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">The Paper</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><div id="atsphinx-mini18n-select-component">
+  <style>
+    div#atsphinx-mini18n-select-component div {
+      text-align: center;
+    }
+  </style>
+  <div>
+    <label for="atsphinx-mini18n-select-lang">Language:</label>
+    <select name="lang" onchange="{
+                        const values = value.split('@@');
+                        document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
+                        location.href=values[1];
+                        }" id="atsphinx-mini18n-select-lang">
+      <option value="en@@../../../../en/tutorial/02_mesh/exercises/index.html">en</option>
+      <option value="ja@@../../../../ja/tutorial/02_mesh/exercises/index.html"
+        selected>ja</option>
+    </select>
+  </div>
+</div></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started.html">はじめに</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../tutorial.html">PyVistaチュートリアル</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../00_intro/index.html">はじめに</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../00_intro/a_basic.html">基本的な幾何学的オブジェクトを作成します</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../00_jupyter/index.html">JupyterでPyVistaを使う</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../00_jupyter/jupyter.html">PyVistaのJupyterバックエンドを試す</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_basic/index.html">基本的な使い方</a></li>
+
+
+
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html">メッシュとは?</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../a_lesson_mesh.html">レッスンの概要</a></li>
+
+
+
+
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../03_figures/index.html">プロットオプションとアニメーション</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/a_lesson_figures.html">レッスンの概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/b_shading.html">シェーディングのタイプ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/c_geological-map.html">地形上の地質図</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/d_gif.html">GIFムービーの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/bonus/index.html">ボーナスコンテンツ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../03_figures/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../04_filters/index.html">フィルタ</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/a_lesson_filters.html">共通フィルタの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/bonus/index.html">ボーナスコンテンツ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../05_action/index.html">PyVistaの活用</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../06_vtk/index.html">PyVistaとVTK</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/a_1_transition_vtk.html">VTKからPyVistaへの移行</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/a_2_pyvista_vtk.html">PyVistaとVTKの連携</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/b_create_vtk.html">VTKオブジェクトの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/c_vtk_algorithms.html">VTKアルゴリズムの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/d_wasm.html">VTK + WASM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/e_vtk_next.html">VTKの次世代API</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../08_widgets/index.html">PyVistaのウィジェット</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/a_box-widget.html">ボックスウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/b_checkbox-widget.html">チェックボックスウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/c_line-widget.html">線ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/d_multi-slider-widget.html">複数のスライダウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/e_plane-widget.html">平面ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/f_slider-bar-widget.html">スライダバーウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/g_sphere-widget.html">球体ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/h_spline-widget.html">スプラインウィジェット</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../09_trame/index.html">Trame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/a_getting_started.html">スタート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/a_trame_simple.html">シンプルなTrameアプリ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/b_trame_actor_color.html">アクターの色をコントロールします</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/b_trame_vtk.html">VTK/PyVistaとTrameの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/c_trame_scalars.html">スカラー配列の制御</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/d_trame_scalar_range.html">スカラー範囲の制御</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/e_trame_algorithm.html">VTK，PyVista，Trameの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/f_trame_open_file.html">メッシュファイルを開きます</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/tutorial/02_mesh/exercises/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="ソースファイルをダウンロード"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDFに印刷"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>やってみよう</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="do-it-yourself">
+<span id="sphx-glr-tutorial-02-mesh-exercises"></span><h1>やってみよう<a class="headerlink" href="#do-it-yourself" title="Link to this heading">#</a></h1>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Create a pyvista.PolyData object from a point cloud of vertices and scalar arrays for those points."><img alt="" src="../../../_images/sphx_glr_b_create-point-cloud_thumb.png" />
+<p><a class="reference internal" href="b_create-point-cloud.html#sphx-glr-tutorial-02-mesh-exercises-b-create-point-cloud-py"><span class="std std-ref">点群を作成</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Create Point Cloud</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Create a simple uniform grid from a 3D NumPy array of values."><img alt="" src="../../../_images/sphx_glr_c_create-uniform-grid_thumb.png" />
+<p><a class="reference internal" href="c_create-uniform-grid.html#sphx-glr-tutorial-02-mesh-exercises-c-create-uniform-grid-py"><span class="std std-ref">均一グリッドを作成</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Creating a Uniform Grid</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Create a surface from a set of points through a Delaunay triangulation."><img alt="" src="../../../_images/sphx_glr_d_create-tri-surface_thumb.png" />
+<p><a class="reference internal" href="d_create-tri-surface.html#sphx-glr-tutorial-02-mesh-exercises-d-create-tri-surface-py"><span class="std std-ref">三角形状のサーフェスを作成する</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Create Triangulated Surface</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Read a dataset from a known file type."><img alt="" src="../../../_images/sphx_glr_e_read-file_thumb.png" />
+<p><a class="reference internal" href="e_read-file.html#sphx-glr-tutorial-02-mesh-exercises-e-read-file-py"><span class="std std-ref">ファイルからロードおよびプロットする</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Load and Plot from a File</div>
+</div></div><div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../a_lesson_mesh.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">レッスンの概要</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="b_create-point-cloud.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">点群を作成</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 PyVista Developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, PyVista Developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

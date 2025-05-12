@@ -1,0 +1,921 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>ラベルポイント &#8212; PyVista Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/no_search_highlight.css?v=4b20ffad" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/fontawesome/css/all.css?v=1500ccdc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=f9b2bc2b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/cards.css?v=90395a4f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/thebelab-helper.js"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../../_static/translations.js?v=4755f45a"></script>
+    <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/03_figures/bonus/e_labels';</script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../search.html" />
+    <link rel="next" title="オービット" href="g_orbit.html" />
+    <link rel="prev" title="物理ベースのレンダリング" href="d_pbr.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/pyvista_logo_sm.png" class="logo__image only-light" alt="PyVista Tutorial - Home"/>
+    <script>document.write(`<img src="../../../_static/pyvista_logo_sm.png" class="logo__image only-dark" alt="PyVista Tutorial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista-tutorial" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://docs.pyvista.org/" title="Docs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Docs</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" title="Contributing" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-gavel fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Contributing</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://doi.org/10.21105/joss.01450" title="The Paper" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-file-text fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">The Paper</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><div id="atsphinx-mini18n-select-component">
+  <style>
+    div#atsphinx-mini18n-select-component div {
+      text-align: center;
+    }
+  </style>
+  <div>
+    <label for="atsphinx-mini18n-select-lang">Language:</label>
+    <select name="lang" onchange="{
+                        const values = value.split('@@');
+                        document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
+                        location.href=values[1];
+                        }" id="atsphinx-mini18n-select-lang">
+      <option value="en@@../../../../en/tutorial/03_figures/bonus/e_labels.html">en</option>
+      <option value="ja@@../../../../ja/tutorial/03_figures/bonus/e_labels.html"
+        selected>ja</option>
+    </select>
+  </div>
+</div></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../getting-started.html">はじめに</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../tutorial.html">PyVistaチュートリアル</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../00_intro/index.html">はじめに</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../00_intro/a_basic.html">基本的な幾何学的オブジェクトを作成します</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../00_jupyter/index.html">JupyterでPyVistaを使う</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../00_jupyter/jupyter.html">PyVistaのJupyterバックエンドを試す</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../01_basic/index.html">基本的な使い方</a></li>
+
+
+
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../02_mesh/index.html">メッシュとは?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/a_lesson_mesh.html">レッスンの概要</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../02_mesh/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../index.html">プロットオプションとアニメーション</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../a_lesson_figures.html">レッスンの概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../b_shading.html">シェーディングのタイプ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../c_geological-map.html">地形上の地質図</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../d_gif.html">GIFムービーの作成</a></li>
+<li class="toctree-l3 current active"><a class="reference internal" href="index.html">ボーナスコンテンツ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../04_filters/index.html">フィルタ</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/a_lesson_filters.html">共通フィルタの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/bonus/index.html">ボーナスコンテンツ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../04_filters/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../../05_action/index.html">PyVistaの活用</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../06_vtk/index.html">PyVistaとVTK</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/a_1_transition_vtk.html">VTKからPyVistaへの移行</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/a_2_pyvista_vtk.html">PyVistaとVTKの連携</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/b_create_vtk.html">VTKオブジェクトの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/c_vtk_algorithms.html">VTKアルゴリズムの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/d_wasm.html">VTK + WASM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../06_vtk/e_vtk_next.html">VTKの次世代API</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../08_widgets/index.html">PyVistaのウィジェット</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/a_box-widget.html">ボックスウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/b_checkbox-widget.html">チェックボックスウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/c_line-widget.html">線ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/d_multi-slider-widget.html">複数のスライダウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/e_plane-widget.html">平面ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/f_slider-bar-widget.html">スライダバーウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/g_sphere-widget.html">球体ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../08_widgets/h_spline-widget.html">スプラインウィジェット</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../09_trame/index.html">Trame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/a_getting_started.html">スタート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/a_trame_simple.html">シンプルなTrameアプリ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/b_trame_actor_color.html">アクターの色をコントロールします</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/b_trame_vtk.html">VTK/PyVistaとTrameの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/c_trame_scalars.html">スカラー配列の制御</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/d_trame_scalar_range.html">スカラー範囲の制御</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/e_trame_algorithm.html">VTK，PyVista，Trameの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../09_trame/f_trame_open_file.html">メッシュファイルを開きます</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/tutorial/03_figures/bonus/e_labels.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="ソースファイルをダウンロード"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDFに印刷"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>ラベルポイント</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-point-cloud">ラベル点群</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-node-locations">ラベルノードの位置</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-scalar-values">ラベルスカラー値</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">注釈</p>
+<p><a class="reference internal" href="#sphx-glr-download-tutorial-03-figures-bonus-e-labels-py"><span class="std std-ref">Go to the end</span></a>
+to download the full example code. or to run this example in your browser via Binder</p>
+</div>
+<section class="sphx-glr-example-title" id="label-points">
+<span id="sphx-glr-tutorial-03-figures-bonus-e-labels-py"></span><h1>ラベルポイント<a class="headerlink" href="#label-points" title="Link to this heading">#</a></h1>
+<p>ポイントセットで文字列配列を使用してポイントにラベルを付ける</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
+</pre></div>
+</div>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_point_labels()</span></code> メソッドを使用すると，シーンにポイントラベルを簡単に追加することができます．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_point_labels.html#pyvista.Plotter.add_point_labels" title="pyvista.Plotter.add_point_labels" class="sphx-glr-backref-module-pyvista-Plotter sphx-glr-backref-type-py-method"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="o">.</span><span class="n">add_point_labels</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function add_point_labels in module pyvista.plotting.plotter:
+
+add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, text_color=None, font_family=None, font_file=None, shadow=False, show_points=True, point_color=None, point_size=None, name=None, shape_color=&#39;grey&#39;, shape=&#39;rounded_rect&#39;, fill_shape=True, margin=3, shape_opacity=1.0, pickable=False, render_points_as_spheres=False, tolerance=0.001, reset_camera=None, always_visible=False, render=True, justification_horizontal=None, justification_vertical=None, background_color=None, background_opacity=None)
+    Create a point actor with one label from list labels assigned to each point.
+
+    Parameters
+    ----------
+    points : sequence | pyvista.DataSet | vtk.vtkAlgorithm
+        An ``n x 3`` sequence points or :class:`pyvista.DataSet` with
+        points or mesh-producing algorithm.
+
+    labels : list | str
+        List of labels.  Must be the same length as points. If a
+        string name is given with a :class:`pyvista.DataSet` input for
+        points, then these are fetched.
+
+    italic : bool, default: False
+        Italicises title and bar labels.
+
+    bold : bool, default: True
+        Bolds title and bar labels.
+
+    font_size : float, optional
+        Sets the size of the title font.
+
+    text_color : ColorLike, optional
+        Color of text. Either a string, RGB sequence, or hex color string.
+
+        * ``text_color=&#39;white&#39;``
+        * ``text_color=&#39;w&#39;``
+        * ``text_color=[1.0, 1.0, 1.0]``
+        * ``text_color=&#39;#FFFFFF&#39;``
+
+    font_family : str, optional
+        Font family.  Must be either ``&#39;courier&#39;``, ``&#39;times&#39;``,
+        or ``&#39;arial``. This is ignored if the `font_file` is set.
+
+    font_file : str, default: None
+        The absolute file path to a local file containing a freetype
+        readable font.
+
+    shadow : bool, default: False
+        Adds a black shadow to the text.
+
+    show_points : bool, default: True
+        Controls if points are visible.
+
+    point_color : ColorLike, optional
+        Either a string, rgb list, or hex color string.  One of
+        the following.
+
+        * ``point_color=&#39;white&#39;``
+        * ``point_color=&#39;w&#39;``
+        * ``point_color=[1.0, 1.0, 1.0]``
+        * ``point_color=&#39;#FFFFFF&#39;``
+
+    point_size : float, optional
+        Size of points if visible.
+
+    name : str, optional
+        The name for the added actor so that it can be easily
+        updated.  If an actor of this name already exists in the
+        rendering window, it will be replaced by the new actor.
+
+    shape_color : ColorLike, default: &quot;grey&quot;
+        Color of shape (if visible).  Either a string, rgb
+        sequence, or hex color string.
+
+    shape : str, default: &quot;rounded_rect&quot;
+        The string name of the shape to use. Options are ``&#39;rect&#39;`` or
+        ``&#39;rounded_rect&#39;``. If you want no shape, pass ``None``.
+
+    fill_shape : bool, default: True
+        Fill the shape with the ``shape_color``. Outlines if ``False``.
+
+    margin : int, default: 3
+        The size of the margin on the label background shape.
+
+    shape_opacity : float, default: 1.0
+        The opacity of the shape in the range of ``[0, 1]``.
+
+    pickable : bool, default: False
+        Set whether this actor is pickable.
+
+    render_points_as_spheres : bool, default: False
+        Render points as spheres rather than dots.
+
+    tolerance : float, default: 0.001
+        A tolerance to use to determine whether a point label is
+        visible.  A tolerance is usually required because the
+        conversion from world space to display space during
+        rendering introduces numerical round-off.
+
+    reset_camera : bool, optional
+        Reset the camera after adding the points to the scene.
+
+    always_visible : bool, default: False
+        Skip adding the visibility filter.
+
+    render : bool, default: True
+        Force a render when ``True``.
+
+    justification_horizontal : str, optional
+        Text&#39;s horizontal justification.
+        Should be either &quot;left&quot;, &quot;center&quot; or &quot;right&quot;.
+
+        .. warning::
+            If the justification is not default,
+            the shape will be out of alignment with the label.
+            If you use other than default,
+            Please use the background color.
+            See: https://github.com/pyvista/pyvista/pull/5407
+
+    justification_vertical : str, optional
+        Text&#39;s vertical justification.
+        Should be either &quot;bottom&quot;, &quot;center&quot; or &quot;top&quot;.
+
+        .. warning::
+            If the justification is not default,
+            the shape will be out of alignment with the label.
+            If you use other than default,
+            Please use the background color.
+            See: https://github.com/pyvista/pyvista/pull/5407
+
+    background_color : pyvista.Color, optional
+        Background color of text&#39;s property.
+
+    background_opacity : pyvista.Color, optional
+        Background opacity of text&#39;s property.
+
+    Returns
+    -------
+    vtk.vtkActor2D
+        VTK label actor.  Can be used to change properties of the labels.
+
+    Examples
+    --------
+    &gt;&gt;&gt; import numpy as np
+    &gt;&gt;&gt; import pyvista as pv
+    &gt;&gt;&gt; pl = pv.Plotter()
+    &gt;&gt;&gt; points = np.array([[0.0, 0.0, 0.0], [1.0, 1.0, 0.0], [2.0, 0.0, 0.0]])
+    &gt;&gt;&gt; labels = [&#39;Point A&#39;, &#39;Point B&#39;, &#39;Point C&#39;]
+    &gt;&gt;&gt; actor = pl.add_point_labels(
+    ...     points,
+    ...     labels,
+    ...     italic=True,
+    ...     font_size=20,
+    ...     point_color=&#39;red&#39;,
+    ...     point_size=20,
+    ...     render_points_as_spheres=True,
+    ...     always_visible=True,
+    ...     shadow=True,
+    ... )
+    &gt;&gt;&gt; pl.camera_position = &#39;xy&#39;
+    &gt;&gt;&gt; pl.show()
+</pre></div>
+</div>
+<section id="label-point-cloud">
+<h2>ラベル点群<a class="headerlink" href="#label-point-cloud" title="Link to this heading">#</a></h2>
+<p>ランダムな点群を作り，各点に3次元空間上のラベルを付けてみよう．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make some random points</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">poly</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.rand.html#numpy.random.rand" title="numpy.random.rand" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span></a><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>文字列ラベルをポイントデータに追加します．これにより，各ノードにラベルが関連付けられます．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">poly</span></a><span class="p">[</span><span class="s2">&quot;My Labels&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Label </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.n_points.html#pyvista.DataSet.n_points" title="pyvista.DataSet.n_points" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">poly</span><span class="o">.</span><span class="n">n_points</span></a><span class="p">)]</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">poly</span></a>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+<table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table style='width: 100%;'>
+<tr><th>PolyData</th><th>Information</th></tr>
+<tr><td>N Cells</td><td>10</td></tr>
+<tr><td>N Points</td><td>10</td></tr>
+<tr><td>N Strips</td><td>0</td></tr>
+<tr><td>X Bounds</td><td>2.331e-01, 9.957e-01</td></tr>
+<tr><td>Y Bounds</td><td>8.252e-02, 9.211e-01</td></tr>
+<tr><td>Z Bounds</td><td>1.645e-01, 9.926e-01</td></tr>
+<tr><td>N Arrays</td><td>1</td></tr>
+</table>
+
+</td><td>
+<table style='width: 100%;'>
+<tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
+<tr><td>My Labels</td><td>Points</td><td><U7</td><td>1</td><td>nan</td><td>nan</td></tr>
+</table>
+
+</td></tr> </table>
+</div>
+<br />
+<br /><p><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_point_labels()</span></code> を使って，ラベルを付けて点をプロットします．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (your code here, answer below)</span>
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">plotter</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_point_labels.html#pyvista.Plotter.add_point_labels" title="pyvista.Plotter.add_point_labels" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">add_point_labels</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">poly</span></a><span class="p">,</span> <span class="s2">&quot;My Labels&quot;</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">36</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_e_labels_001.png" srcset="../../../_images/sphx_glr_e_labels_001.png" alt="e labels" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_e_labels_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+</section>
+<section id="label-node-locations">
+<h2>ラベルノードの位置<a class="headerlink" href="#label-node-locations" title="Link to this heading">#</a></h2>
+<p>この例では，メッシュの節点に座標位置のラベルを付けます．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load example beam file</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UnstructuredGrid.html#pyvista.UnstructuredGrid" title="pyvista.UnstructuredGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UnstructuredGrid.html#pyvista.UnstructuredGrid" title="pyvista.UnstructuredGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">UnstructuredGrid</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">examples</span><span class="o">.</span><span class="n">hexbeamfile</span></a><span class="p">)</span>
+</pre></div>
+</div>
+<p>プロッティングクラスを作成し，非構造化グリッドを追加します</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">plotter</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UnstructuredGrid.html#pyvista.UnstructuredGrid" title="pyvista.UnstructuredGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tan&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add labels to points on the yz plane (where x == 0)</span>
+<a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UnstructuredGridFilters.points.html#pyvista.UnstructuredGridFilters.points" title="pyvista.UnstructuredGridFilters.points" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-attribute"><span class="n">grid</span><span class="o">.</span><span class="n">points</span></a>
+<a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_point_labels.html#pyvista.Plotter.add_point_labels" title="pyvista.Plotter.add_point_labels" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">add_point_labels</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[</span><a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask</span></a><span class="p">],</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[</span><a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mask</span></a><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">36</span><span class="p">)</span>
+
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.camera_position.html#pyvista.Plotter.camera_position" title="pyvista.Plotter.camera_position" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">plotter</span><span class="o">.</span><span class="n">camera_position</span></a> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">)]</span>
+
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">plotter</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_e_labels_002.png" srcset="../../../_images/sphx_glr_e_labels_002.png" alt="e labels" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_e_labels_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+</section>
+<section id="label-scalar-values">
+<h2>ラベルスカラー値<a class="headerlink" href="#label-scalar-values" title="Link to this heading">#</a></h2>
+<p>この例では，各ポイントにスカラー値のラベルを付けます．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_uniform</span><span class="p">()</span><span class="o">.</span><span class="n">slice</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
+
+<span class="c1"># Add the mesh:</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a><span class="p">,</span> <span class="n">scalars</span><span class="o">=</span><span class="s2">&quot;Spatial Point Data&quot;</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Add the points with scalar labels:</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_point_scalar_labels.html#pyvista.Plotter.add_point_scalar_labels" title="pyvista.Plotter.add_point_scalar_labels" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_point_scalar_labels</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a><span class="p">,</span> <span class="s2">&quot;Spatial Point Data&quot;</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">36</span><span class="p">)</span>
+
+<span class="c1"># Use a nice camera position:</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.camera_position.html#pyvista.Plotter.camera_position" title="pyvista.Plotter.camera_position" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">p</span><span class="o">.</span><span class="n">camera_position</span></a> <span class="o">=</span> <span class="p">[(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mf">4.4</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">,</span> <span class="mf">7.2</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)]</span>
+
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<img src="../../../_images/sphx_glr_e_labels_003.png" srcset="../../../_images/sphx_glr_e_labels_003.png" alt="e labels" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_e_labels_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<center>
+  <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/bonus/e_labels.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+  </a>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.775 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-figures-bonus-e-labels-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/bonus/e_labels.ipynb"><img alt="Binderの起動" src="../../../_images/binder_badge_logo9.svg" style="width: 150px;" />
+</a>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../../_downloads/ac3e592a1da18cd288340256d6c41568/e_labels.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">e_labels.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../../_downloads/4da0ff5384ee4848d5a1dbec3be0dfd7/e_labels.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">e_labels.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../../_downloads/e78d5ef6955415cec3e053649f0a6201/e_labels.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">e_labels.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Sphinx-Galleryによるギャラリー</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="d_pbr.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">物理ベースのレンダリング</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="g_orbit.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">オービット</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-point-cloud">ラベル点群</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-node-locations">ラベルノードの位置</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#label-scalar-values">ラベルスカラー値</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 PyVista Developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, PyVista Developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

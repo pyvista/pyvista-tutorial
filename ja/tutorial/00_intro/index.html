@@ -1,0 +1,880 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>はじめに &#8212; PyVista Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cards.css?v=90395a4f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/thebelab-helper.js"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/translations.js?v=4755f45a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/00_intro/index';</script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="基本的な幾何学的オブジェクトを作成します" href="a_basic.html" />
+    <link rel="prev" title="PyVistaチュートリアル" href="../../tutorial.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyvista_logo_sm.png" class="logo__image only-light" alt="PyVista Tutorial - Home"/>
+    <script>document.write(`<img src="../../_static/pyvista_logo_sm.png" class="logo__image only-dark" alt="PyVista Tutorial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista-tutorial" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://docs.pyvista.org/" title="Docs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Docs</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" title="Contributing" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-gavel fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Contributing</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://doi.org/10.21105/joss.01450" title="The Paper" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-file-text fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">The Paper</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><div id="atsphinx-mini18n-select-component">
+  <style>
+    div#atsphinx-mini18n-select-component div {
+      text-align: center;
+    }
+  </style>
+  <div>
+    <label for="atsphinx-mini18n-select-lang">Language:</label>
+    <select name="lang" onchange="{
+                        const values = value.split('@@');
+                        document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
+                        location.href=values[1];
+                        }" id="atsphinx-mini18n-select-lang">
+      <option value="en@@../../../en/tutorial/00_intro/index.html">en</option>
+      <option value="ja@@../../../ja/tutorial/00_intro/index.html"
+        selected>ja</option>
+    </select>
+  </div>
+</div></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">はじめに</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../tutorial.html">PyVistaチュートリアル</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">はじめに</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="a_basic.html">基本的な幾何学的オブジェクトを作成します</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../00_jupyter/index.html">JupyterでPyVistaを使う</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00_jupyter/jupyter.html">PyVistaのJupyterバックエンドを試す</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_basic/index.html">基本的な使い方</a></li>
+
+
+
+<li class="toctree-l2 has-children"><a class="reference internal" href="../02_mesh/index.html">メッシュとは?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/a_lesson_mesh.html">レッスンの概要</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../03_figures/index.html">プロットオプションとアニメーション</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/a_lesson_figures.html">レッスンの概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/b_shading.html">シェーディングのタイプ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/c_geological-map.html">地形上の地質図</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/d_gif.html">GIFムービーの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/bonus/index.html">ボーナスコンテンツ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../04_filters/index.html">フィルタ</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/a_lesson_filters.html">共通フィルタの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/bonus/index.html">ボーナスコンテンツ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_action/index.html">PyVistaの活用</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../06_vtk/index.html">PyVistaとVTK</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/a_1_transition_vtk.html">VTKからPyVistaへの移行</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/a_2_pyvista_vtk.html">PyVistaとVTKの連携</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/b_create_vtk.html">VTKオブジェクトの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/c_vtk_algorithms.html">VTKアルゴリズムの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/d_wasm.html">VTK + WASM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/e_vtk_next.html">VTKの次世代API</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_widgets/index.html">PyVistaのウィジェット</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/a_box-widget.html">ボックスウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/b_checkbox-widget.html">チェックボックスウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/c_line-widget.html">線ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/d_multi-slider-widget.html">複数のスライダウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/e_plane-widget.html">平面ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/f_slider-bar-widget.html">スライダバーウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/g_sphere-widget.html">球体ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/h_spline-widget.html">スプラインウィジェット</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../09_trame/index.html">Trame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/a_getting_started.html">スタート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/a_trame_simple.html">シンプルなTrameアプリ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/b_trame_actor_color.html">アクターの色をコントロールします</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/b_trame_vtk.html">VTK/PyVistaとTrameの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/c_trame_scalars.html">スカラー配列の制御</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/d_trame_scalar_range.html">スカラー範囲の制御</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/e_trame_algorithm.html">VTK，PyVista，Trameの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/f_trame_open_file.html">メッシュファイルを開きます</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/tutorial/00_intro/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="ソースファイルをダウンロード"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDFに印刷"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>はじめに</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-history">沿革</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-is-pyvista-for">PyVistaは誰のためのものですか？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-examples">簡単な例</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-plot-a-surface-mesh">サーフェスメッシュの読み込みとプロット</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construct-a-simple-point-cloud-with-color">色を使った簡単な点群の構築</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-other-libraries-compare">他のライブラリとの比較</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">演習</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduction">
+<span id="intro"></span><h1>はじめに<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>ここでは，PyVistaの背景や歴史について簡単に説明します．</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>このチュートリアルのセクションは，PyVista ドキュメントの <a class="reference external" href="https://docs.pyvista.org/getting-started/index.html">Getting Started</a> の章から採用されています．</p>
+</div>
+<p>PyVistaは <a class="reference external" href="https://vtk.org/">VTK - The Visualization Toolkit</a> の上に構築された多くの視覚化ライブラリの一つです．PyVistaの主な目的は，VTKの上の抽象化レイヤとして，VTKの便利さと機能を &quot;Python的に&quot; 提供することです．</p>
+<section id="brief-history">
+<h2>沿革<a class="headerlink" href="#brief-history" title="Link to this heading">#</a></h2>
+<p>PyVistaは，VTKの低レベルの機能を &quot;包む&quot; 再利用可能な高位の抽象化レイヤーを作りたいという思いから生まれました．</p>
+<ul class="simple">
+<li><p>元々は2016年に <a class="reference external" href="https://github.com/akaszynski">&#64;akaszynski</a> によって <a class="reference external" href="https://www.wpafb.af.mil/News/Article-Display/Article/1503043/afrl-signs-first-of-its-kind-software-license-with-pratt-whitney/">femorph</a> のサブライブラリとして作成されました．</p></li>
+<li><p>2017年に <a class="reference external" href="https://github.com/akaszynski/vtki">akaszynski/vtki</a> としてGitHubに最初に投稿されました．</p></li>
+<li><p><a class="reference external" href="https://github.com/banesullivan/">&#64;banesullivan</a> が2018年にプロジェクトに参加し，機能，特徴の拡張，例を用いたドキュメントの改善を行っています．</p></li>
+<li><p>2019年， <a class="reference external" href="https://pypi.org/project/pyvista/#history">PyVista</a> をPyPIで初公開．</p></li>
+<li><p>論文 <a class="reference external" href="https://joss.theoj.org/papers/10.21105/joss.01450">Sullivan, B., &amp; Kaszynski, A. (2019). PyVista: 3D plotting and mesh analysis through a streamlined interface for the Visualization Toolkit (VTK). Journal of Open Source Software, 4(37), 1450. https://doi.org/10.21105/joss.01450</a> を発表しました．</p></li>
+<li><p>2024年10月現在，GitHubに150人以上のコントリビューターと <a class="reference external" href="https://github.com/pyvista/pyvista/stargazers">~2.4k Stars</a> がいます．</p></li>
+<li><p>GitHubにある他の <a class="reference external" href="https://github.com/pyvista/pyvista/network/dependents">libraries, examples, and repositories</a> で少なくとも2.8k以上使用されています．</p></li>
+<li><p>プロジェクト内のプレゼンスを大きく向上させ，継続的なサポートを実現しました</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/tkoyama010">&#64;tkoyama010</a></p></li>
+<li><p><a class="reference external" href="https://github.com/adeak">&#64;adeak</a></p></li>
+<li><p><a class="reference external" href="https://github.com/MatthewFlamm">&#64;MatthewFlamm</a></p></li>
+<li><p><a class="reference external" href="https://github.com/user27182">&#64;user27182</a></p></li>
+</ul>
+</li>
+<li><p>PyVistaエコシステムが大幅に拡張されました</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/bjlittle/geovista">GeoVista</a> の作成者 <a class="reference external" href="https://github.com/bjlittle">&#64;bjlittle</a></p></li>
+<li><p><a class="reference external" href="https://github.com/adtzlr/felupe">FElupe</a> の作成者 <a class="reference external" href="https://github.com/adtzlr">&#64;adtzlr</a></p></li>
+</ul>
+</li>
+</ul>
+<p><a class="reference external" href="https://pypi.org/project/pyvista/"><img alt="PyPIact" src="https://img.shields.io/pypi/dm/pyvista.svg?label=PyPI%20downloads" /></a>
+<a class="reference external" href="https://anaconda.org/conda-forge/pyvista"><img alt="condaact" src="https://img.shields.io/conda/dn/conda-forge/pyvista.svg?label=Conda%20downloads" /></a>
+<a class="reference external" href="https://github.com/pyvista/pyvista/graphs/contributors/"><img alt="contributors" src="https://img.shields.io/github/contributors/pyvista/pyvista.svg?logo=github&amp;logoColor=white" /></a>
+<a class="reference external" href="https://github.com/pyvista/pyvista"><img alt="GitHub" src="https://img.shields.io/github/stars/pyvista/pyvista.svg?style=social&amp;label=Stars" /></a></p>
+<p>PyVistaの開発者についてもっと知るには， <a class="reference external" href="https://github.com/pyvista/pyvista/graphs/contributors/">contributors page</a> とアクティブな <a class="reference external" href="https://docs.pyvista.org/getting-started/authors.html#authors">list of authors</a> ご覧ください．</p>
+<p><a class="reference external" href="https://github.com/pyvista/pyvista/graphs/contributors"><img alt="contrib.rocks" src="https://contrib.rocks/image?repo=pyvista/pyvista" /></a></p>
+<p><a class="reference external" href="https://contrib.rocks">Contrib rocks</a> で作られました．</p>
+</section>
+<section id="who-is-pyvista-for">
+<h2>PyVistaは誰のためのものですか？<a class="headerlink" href="#who-is-pyvista-for" title="Link to this heading">#</a></h2>
+<p>Pythonを使って3Dデータを可視化したい人．</p>
+<p>PyVistaの活用事例をご紹介します．</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pyvista/pyvista/discussions/2133">PyVista User Stories</a></p></li>
+</ul>
+<p>PyVistaで実現したこと，これから実現したいことを自由に書いてください．</p>
+</section>
+<section id="brief-examples">
+<h2>簡単な例<a class="headerlink" href="#brief-examples" title="Link to this heading">#</a></h2>
+<section id="read-and-plot-a-surface-mesh">
+<h3>サーフェスメッシュの読み込みとプロット<a class="headerlink" href="#read-and-plot-a-surface-mesh" title="Link to this heading">#</a></h3>
+<p>VTKは強力です，本当に強力です!VTKでは何でもできるのですが，PyVistaはそれをより簡単にするために， <code class="docutils literal notranslate"><span class="pre">numpy</span></code> や <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> 風の構文を使っています．例えば，単純なサーフェスメッシュをプロットすることができればいいのです．</p>
+<div class="jupyter_cell docutils container">
+<div class="cell_output docutils container">
+</div>
+</div>
+<p><strong>サーフェスデータセットの読み込みとプロット</strong></p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">vtk</span></code> の使用</p></th>
+<th class="head"><p>PyVistaの使用</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vtk</span>
+<span class="n">reader</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkSTLReader</span><span class="p">()</span>
+<span class="n">reader</span><span class="o">.</span><span class="n">SetFileName</span><span class="p">(</span><span class="s2">&quot;bunny.stl&quot;</span><span class="p">)</span>
+<span class="n">mapper</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPolyDataMapper</span><span class="p">()</span>
+<span class="n">output_port</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="n">GetOutputPort</span><span class="p">()</span>
+<span class="n">mapper</span><span class="o">.</span><span class="n">SetInputConnection</span><span class="p">(</span><span class="n">output_port</span><span class="p">)</span>
+<span class="n">actor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkActor</span><span class="p">()</span>
+<span class="n">actor</span><span class="o">.</span><span class="n">SetMapper</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
+<span class="n">ren</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+<span class="n">renWin</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindow</span><span class="p">()</span>
+<span class="n">renWin</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">ren</span><span class="p">)</span>
+<span class="n">iren</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindowInteractor</span><span class="p">()</span>
+<span class="n">iren</span><span class="o">.</span><span class="n">SetRenderWindow</span><span class="p">(</span><span class="n">renWin</span><span class="p">)</span>
+<span class="n">ren</span><span class="o">.</span><span class="n">AddActor</span><span class="p">(</span><span class="n">actor</span><span class="p">)</span>
+<span class="n">iren</span><span class="o">.</span><span class="n">Initialize</span><span class="p">()</span>
+<span class="n">renWin</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
+<span class="n">iren</span><span class="o">.</span><span class="n">Start</span><span class="p">()</span>
+<span class="k">del</span> <span class="n">iren</span><span class="p">,</span> <span class="n">renWin</span>
+</pre></div>
+</div>
+</td>
+<td><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_bunny</span><span class="p">()</span>
+<span class="n">mesh</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">cpos</span><span class="o">=</span><span class="s1">&#39;xy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-1_00_001.png" src="../../_images/index-1_00_001.png" />
+</figure>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="construct-a-simple-point-cloud-with-color">
+<h3>色を使った簡単な点群の構築<a class="headerlink" href="#construct-a-simple-point-cloud-with-color" title="Link to this heading">#</a></h3>
+<p>これらの例は，PyVistaとVTKの両方を使用して， <code class="docutils literal notranslate"><span class="pre">numpy</span></code> を使った点群の構築と可視化を行う方法を示しています．ここでは，NumPyの配列を直接操作することがいかに簡単であるかを示しています．</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+VTK</label><div class="sd-tab-content docutils">
+<p>この例は，この <a class="reference external" href="https://stackoverflow.com/a/7604478/3369879">SO Answer</a> から引用したものです．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">vtk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="kn">import</span> <span class="n">random</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">VtkPointCloud</span><span class="p">:</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">zMin</span><span class="o">=-</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">zMax</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">maxNumPoints</span><span class="o">=</span><span class="mf">1e6</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">maxNumPoints</span> <span class="o">=</span> <span class="n">maxNumPoints</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkPolyData</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPolyData</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">clearPoints</span><span class="p">()</span>
+        <span class="n">mapper</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPolyDataMapper</span><span class="p">()</span>
+        <span class="n">mapper</span><span class="o">.</span><span class="n">SetInputData</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vtkPolyData</span><span class="p">)</span>
+        <span class="n">mapper</span><span class="o">.</span><span class="n">SetColorModeToDefault</span><span class="p">()</span>
+        <span class="n">mapper</span><span class="o">.</span><span class="n">SetScalarRange</span><span class="p">(</span><span class="n">zMin</span><span class="p">,</span> <span class="n">zMax</span><span class="p">)</span>
+        <span class="n">mapper</span><span class="o">.</span><span class="n">SetScalarVisibility</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkActor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkActor</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkActor</span><span class="o">.</span><span class="n">SetMapper</span><span class="p">(</span><span class="n">mapper</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">addPoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">point</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">vtkPoints</span><span class="o">.</span><span class="n">GetNumberOfPoints</span><span class="p">()</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxNumPoints</span><span class="p">:</span>
+            <span class="n">pointId</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">vtkPoints</span><span class="o">.</span><span class="n">InsertNextPoint</span><span class="p">(</span><span class="n">point</span><span class="p">[:])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vtkDepth</span><span class="o">.</span><span class="n">InsertNextValue</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vtkCells</span><span class="o">.</span><span class="n">InsertNextCell</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vtkCells</span><span class="o">.</span><span class="n">InsertCellPoint</span><span class="p">(</span><span class="n">pointId</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">maxNumPoints</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">vtkPoints</span><span class="o">.</span><span class="n">SetPoint</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">point</span><span class="p">[:])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkCells</span><span class="o">.</span><span class="n">Modified</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkPoints</span><span class="o">.</span><span class="n">Modified</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkDepth</span><span class="o">.</span><span class="n">Modified</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">clearPoints</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkPoints</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkPoints</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkCells</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCellArray</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkDepth</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDoubleArray</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkDepth</span><span class="o">.</span><span class="n">SetName</span><span class="p">(</span><span class="s1">&#39;DepthArray&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkPolyData</span><span class="o">.</span><span class="n">SetPoints</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vtkPoints</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkPolyData</span><span class="o">.</span><span class="n">SetVerts</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vtkCells</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkPolyData</span><span class="o">.</span><span class="n">GetPointData</span><span class="p">()</span><span class="o">.</span><span class="n">SetScalars</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">vtkDepth</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">vtkPolyData</span><span class="o">.</span><span class="n">GetPointData</span><span class="p">()</span><span class="o">.</span><span class="n">SetActiveScalars</span><span class="p">(</span><span class="s1">&#39;DepthArray&#39;</span><span class="p">)</span>
+
+<span class="n">pointCloud</span> <span class="o">=</span> <span class="n">VtkPointCloud</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000</span><span class="p">):</span>
+    <span class="n">point</span> <span class="o">=</span> <span class="mi">20</span><span class="o">*</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">-</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">pointCloud</span><span class="o">.</span><span class="n">addPoint</span><span class="p">(</span><span class="n">point</span><span class="p">)</span>
+<span class="n">pointCloud</span><span class="o">.</span><span class="n">addPoint</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">pointCloud</span><span class="o">.</span><span class="n">addPoint</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">pointCloud</span><span class="o">.</span><span class="n">addPoint</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">pointCloud</span><span class="o">.</span><span class="n">addPoint</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Renderer</span>
+<span class="n">renderer</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderer</span><span class="p">()</span>
+<span class="n">renderer</span><span class="o">.</span><span class="n">AddActor</span><span class="p">(</span><span class="n">pointCloud</span><span class="o">.</span><span class="n">vtkActor</span><span class="p">)</span>
+<span class="n">renderer</span><span class="o">.</span><span class="n">SetBackground</span><span class="p">(</span><span class="mf">.2</span><span class="p">,</span> <span class="mf">.3</span><span class="p">,</span> <span class="mf">.4</span><span class="p">)</span>
+<span class="n">renderer</span><span class="o">.</span><span class="n">ResetCamera</span><span class="p">()</span>
+
+<span class="c1"># Render Window</span>
+<span class="n">renderWindow</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindow</span><span class="p">()</span>
+<span class="n">renderWindow</span><span class="o">.</span><span class="n">AddRenderer</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+
+<span class="c1"># Interactor</span>
+<span class="n">renderWindowInteractor</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkRenderWindowInteractor</span><span class="p">()</span>
+<span class="n">renderWindowInteractor</span><span class="o">.</span><span class="n">SetRenderWindow</span><span class="p">(</span><span class="n">renderWindow</span><span class="p">)</span>
+
+<span class="c1"># Begin Interaction</span>
+<span class="n">renderWindow</span><span class="o">.</span><span class="n">Render</span><span class="p">()</span>
+<span class="n">renderWindowInteractor</span><span class="o">.</span><span class="n">Start</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+PyVista</label><div class="sd-tab-content docutils">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">pc</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">points</span><span class="p">)</span>
+<span class="n">pc</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">scalars</span><span class="o">=</span><span class="n">points</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">point_size</span><span class="o">=</span><span class="mf">5.0</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-2_00_00.png" src="../../_images/index-2_00_00.png" />
+</figure>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="how-other-libraries-compare">
+<h3>他のライブラリとの比較<a class="headerlink" href="#how-other-libraries-compare" title="Link to this heading">#</a></h3>
+<p>データビジュアライゼーションに興味があるのであれば，ぜひいろいろなライブラリを試してみてください．</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://towardsdatascience.com/python-libraries-for-mesh-and-point-cloud-visualization-part-1-daa2af36de30?gi=70edd77e5fc">メッシュ，点群，データ可視化のための Python ライブラリ</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pyvista/pyvista/discussions/1438">PyVistaと他の可視化ツールとの関連は？</a></p></li>
+<li><p><a class="reference external" href="https://pyviz.org/scivis/index.html">SciVis ライブラリ</a></p></li>
+</ul>
+<p>そのいくつかをご紹介します．</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+vtk</label><div class="sd-tab-content docutils">
+<p>Visualization Toolkit (<a class="reference external" href="https://vtk.org/">VTK</a>) は，科学的データを操作・表示するためのオープンソースソフトウェアです．3Dレンダリングのための最先端のツール，3Dインタラクションのためのウィジェット群，そして広範な2Dプロット機能が付属しています．</p>
+<img alt="VTK" src="https://miro.medium.com/max/1400/1*B3aEPDxSvgR6Giyh4I4a2w.jpeg" />
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+ParaView</label><div class="sd-tab-content docutils">
+<p><a class="reference external" href="https://www.paraview.org/">ParaView</a> は，オープンソースのマルチプラットフォーム・データ分析・可視化アプリケーションです．ParaViewのユーザーは，定性的および定量的な手法を使ってデータを分析するための可視化を迅速に構築することができます．データの探索は，3Dでインタラクティブに行うことも，ParaViewのバッチ処理機能を使ってプログラムで行うこともできます．</p>
+<img alt="ParaView" src="https://www.kitware.com/main/wp-content/uploads/2018/11/ParaView-5.6.png" />
+</div>
+<input id="sd-tab-item-8" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+vedo</label><div class="sd-tab-content docutils">
+<p><a class="reference external" href="https://vedo.embl.es/">vedo</a> は，VTKとnumpyをベースにした，3Dオブジェクトや点群の科学的解析のためのPythonライブラリです．</p>
+<img alt="vedo" src="https://user-images.githubusercontent.com/32848391/80292484-50757180-8757-11ea-841f-2c0c5fe2c3b4.jpg" />
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+Mayavi</label><div class="sd-tab-content docutils">
+<p><a class="reference external" href="https://docs.enthought.com/mayavi/mayavi/">Mayavi</a> は，2次元および3次元の科学的データを可視化するための汎用クロスプラットフォームツールです．</p>
+<img alt="Mayavi" src="https://viscid-hub.github.io/Viscid-docs/docs/dev/_images/mvi-000.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="exercises">
+<h2>演習<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="../../getting-started.html#getting-started"><span class="std std-ref">はじめに</span></a> にアクセスして，PyVistaをインストールします．</p>
+<p>PyVistaをインストールしたら，以下のサンプルを開いて，PyVistaの &quot;Hello World &quot;を実行できるかどうか試してみてください．ページの一番下までスクロールして， <code class="docutils literal notranslate"><span class="pre">*.py</span></code> (スクリプト) または <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> (ノートブック) ファイル形式のいずれかをクリックすると，サンプルをダウンロードすることができます．</p>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This is the &quot;Hello, world!&quot; of PyVista."><img alt="" src="../../_images/sphx_glr_a_basic_thumb.png" />
+<p><a class="reference internal" href="a_basic.html#sphx-glr-tutorial-00-intro-a-basic-py"><span class="std std-ref">基本的な幾何学的オブジェクトを作成します</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Create Basic Geometric Objects</div>
+</div></div><div class="toctree-wrapper compound">
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Sphinx-Galleryによるギャラリー</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../tutorial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">PyVistaチュートリアル</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="a_basic.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">基本的な幾何学的オブジェクトを作成します</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-history">沿革</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#who-is-pyvista-for">PyVistaは誰のためのものですか？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#brief-examples">簡単な例</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#read-and-plot-a-surface-mesh">サーフェスメッシュの読み込みとプロット</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#construct-a-simple-point-cloud-with-color">色を使った簡単な点群の構築</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-other-libraries-compare">他のライブラリとの比較</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">演習</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 PyVista Developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, PyVista Developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

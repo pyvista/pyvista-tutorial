@@ -1,0 +1,1022 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>プロットオプションとアニメーション &#8212; PyVista Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cards.css?v=90395a4f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/thebelab-helper.js"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/translations.js?v=4755f45a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/03_figures/index';</script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="レッスンの概要" href="a_lesson_figures.html" />
+    <link rel="prev" title="ファイルからロードおよびプロットする" href="../02_mesh/solutions/e_read-file.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyvista_logo_sm.png" class="logo__image only-light" alt="PyVista Tutorial - Home"/>
+    <script>document.write(`<img src="../../_static/pyvista_logo_sm.png" class="logo__image only-dark" alt="PyVista Tutorial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista-tutorial" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://docs.pyvista.org/" title="Docs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Docs</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" title="Contributing" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-gavel fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Contributing</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://doi.org/10.21105/joss.01450" title="The Paper" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-file-text fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">The Paper</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><div id="atsphinx-mini18n-select-component">
+  <style>
+    div#atsphinx-mini18n-select-component div {
+      text-align: center;
+    }
+  </style>
+  <div>
+    <label for="atsphinx-mini18n-select-lang">Language:</label>
+    <select name="lang" onchange="{
+                        const values = value.split('@@');
+                        document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
+                        location.href=values[1];
+                        }" id="atsphinx-mini18n-select-lang">
+      <option value="en@@../../../en/tutorial/03_figures/index.html">en</option>
+      <option value="ja@@../../../ja/tutorial/03_figures/index.html"
+        selected>ja</option>
+    </select>
+  </div>
+</div></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">はじめに</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../tutorial.html">PyVistaチュートリアル</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../00_intro/index.html">はじめに</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00_intro/a_basic.html">基本的な幾何学的オブジェクトを作成します</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../00_jupyter/index.html">JupyterでPyVistaを使う</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00_jupyter/jupyter.html">PyVistaのJupyterバックエンドを試す</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_basic/index.html">基本的な使い方</a></li>
+
+
+
+<li class="toctree-l2 has-children"><a class="reference internal" href="../02_mesh/index.html">メッシュとは?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/a_lesson_mesh.html">レッスンの概要</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">プロットオプションとアニメーション</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="a_lesson_figures.html">レッスンの概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="b_shading.html">シェーディングのタイプ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="c_geological-map.html">地形上の地質図</a></li>
+<li class="toctree-l3"><a class="reference internal" href="d_gif.html">GIFムービーの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="bonus/index.html">ボーナスコンテンツ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../04_filters/index.html">フィルタ</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/a_lesson_filters.html">共通フィルタの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/bonus/index.html">ボーナスコンテンツ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_action/index.html">PyVistaの活用</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../06_vtk/index.html">PyVistaとVTK</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/a_1_transition_vtk.html">VTKからPyVistaへの移行</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/a_2_pyvista_vtk.html">PyVistaとVTKの連携</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/b_create_vtk.html">VTKオブジェクトの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/c_vtk_algorithms.html">VTKアルゴリズムの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/d_wasm.html">VTK + WASM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../06_vtk/e_vtk_next.html">VTKの次世代API</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_widgets/index.html">PyVistaのウィジェット</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/a_box-widget.html">ボックスウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/b_checkbox-widget.html">チェックボックスウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/c_line-widget.html">線ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/d_multi-slider-widget.html">複数のスライダウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/e_plane-widget.html">平面ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/f_slider-bar-widget.html">スライダバーウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/g_sphere-widget.html">球体ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/h_spline-widget.html">スプラインウィジェット</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../09_trame/index.html">Trame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/a_getting_started.html">スタート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/a_trame_simple.html">シンプルなTrameアプリ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/b_trame_actor_color.html">アクターの色をコントロールします</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/b_trame_vtk.html">VTK/PyVistaとTrameの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/c_trame_scalars.html">スカラー配列の制御</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/d_trame_scalar_range.html">スカラー範囲の制御</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/e_trame_algorithm.html">VTK，PyVista，Trameの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/f_trame_open_file.html">メッシュファイルを開きます</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/tutorial/03_figures/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="ソースファイルをダウンロード"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDFに印刷"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>プロットオプションとアニメーション</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basics">基礎編</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-mesh-to-plotter-object">Plotterオブジェクトにメッシュを追加する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplotting">サブプロット</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-the-scene">シーンの制御</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axes-and-bounds">軸と境界</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">演習</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content">ボーナスコンテンツ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-it-yourself">やってみよう</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">解答</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="plotting-options-and-animations">
+<span id="figures"></span><h1>プロットオプションとアニメーション<a class="headerlink" href="#plotting-options-and-animations" title="Link to this heading">#</a></h1>
+<p>PyVistaプロッティングAPIの多くの機能を使って，説得力のある3Dビジュアリゼーションとタッチオンアニメーションを作成するデモを行います（講演10分，演習10分）</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>このチュートリアルのセクションは <a class="reference external" href="https://docs.pyvista.org/examples/index.html#plotting">PyVista's Example Gallery</a> のプロットセクションから採用されたものです．</p>
+</div>
+<p>PyVistaは，3Dデータの表示方法を変更するための様々な可能性を提供します．</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code> のカラーマップを用いたスカラー値のカラーマッピング</p></li>
+<li><p>異なる種類のメッシュのエッジとノードの表示</p></li>
+<li><p>メッシュの横にある3D空間のポイントにラベルを貼ることができる</p></li>
+<li><p>並列比較の作成</p></li>
+<li><p>データセットを透明にする，またはスカラー値を使用して不透明度をマップします</p></li>
+<li><p>メッシュ上にまとったテクスチャ/イメージを追加する(テクスチャマッピング)</p></li>
+<li><p>スムースシェーディングやアイドームライティングなどの洗練されたライティングテクニックを使用する</p></li>
+<li><p>GIFまたはムービーファイルとしてアニメーションを作成します</p></li>
+</ul>
+<p>このセクションでは，PyVista の <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> API の概要と，これらのタスクの実行方法について説明します．このレッスンのゴールは，PyVistaのプロットAPIの包括的な概要ではなく，それがどのように動作し，どのように使えばいいのかを示すことです！このレッスンは，PyVistaのプロットAPIがどのように動作するかを説明します．</p>
+<section id="the-basics">
+<h2>基礎編<a class="headerlink" href="#the-basics" title="Link to this heading">#</a></h2>
+<p>PyVistaのプロットAPIはデータセントリックで，3DデータはMatplotlibライクな方法で表示パラメータを変えて個別にシーンに追加されます．</p>
+<section id="add-mesh-to-plotter-object">
+<h3>Plotterオブジェクトにメッシュを追加する<a class="headerlink" href="#add-mesh-to-plotter-object" title="Link to this heading">#</a></h3>
+<p>プロットする場合，ユーザーはまず <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> のインスタンスを作成する必要があります（Matplotlib の図形のようなものです）．それから， <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> メソッドを通して，プロッタのインスタンスにデータを追加します．このワークフローは，典型的には次のようになります．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
+
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Wavelet</span><span class="p">()</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-2_00_002.png" src="../../_images/index-2_00_002.png" />
+</figure>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> メソッドのパラメータを使用すると，メッシュの表示方法をカスタマイズすることができます．例えば， <code class="docutils literal notranslate"><span class="pre">cmap</span></code> 引数でカラーマップを変更することができます．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;coolwarm&#39;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-3_00_002.png" src="../../_images/index-3_00_002.png" />
+</figure>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+<p>また， <code class="docutils literal notranslate"><span class="pre">show_edges</span></code> でメッシュのエッジを表示することもできます．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-4">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-4_00_001.png" src="../../_images/index-4_00_001.png" />
+</figure>
+</div>
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-5">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+<p>また， <code class="docutils literal notranslate"><span class="pre">opacity</span></code> 引数で不透明度をスカラー値や線形伝達関数に調整することもできます．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
+
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_st_helens</span><span class="p">()</span><span class="o">.</span><span class="n">warp_by_scalar</span><span class="p">()</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;terrain&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="s2">&quot;linear&quot;</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-6">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-5_00_002.png" src="../../_images/index-5_00_002.png" />
+</figure>
+</div>
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-7">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+<p><a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html">add_mesh</a> のすべてのオプションを見てみましょう．</p>
+<p><code class="docutils literal notranslate"><span class="pre">add_mesh</span></code> メソッドは，同じ <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> のシーンに異なるデータを追加するために何度も呼び出すことができます．例えば，多くの異なるメッシュオブジェクトを作成し，それらを一緒にプロットすることができます．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
+
+<span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;tetrahedron&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;cube&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;octahedron&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;dodecahedron&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;icosahedron&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">centers</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+    <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">solids</span> <span class="o">=</span> <span class="p">[</span><span class="n">pv</span><span class="o">.</span><span class="n">PlatonicSolid</span><span class="p">(</span><span class="n">kind</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="n">center</span><span class="p">)</span> <span class="k">for</span> <span class="n">kind</span><span class="p">,</span> <span class="n">center</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">kinds</span><span class="p">,</span> <span class="n">centers</span><span class="p">)]</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">window_size</span><span class="o">=</span><span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">solid</span> <span class="ow">in</span> <span class="n">solids</span><span class="p">:</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span>
+        <span class="n">solid</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;silver&#39;</span><span class="p">,</span> <span class="n">specular</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">specular_power</span><span class="o">=</span><span class="mi">10</span>
+    <span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">view_vector</span><span class="p">((</span><span class="mf">5.0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_floor</span><span class="p">(</span><span class="s1">&#39;-z&#39;</span><span class="p">,</span> <span class="n">lighting</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;tan&#39;</span><span class="p">,</span> <span class="n">pad</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">enable_shadows</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-8">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-6_00_001.png" src="../../_images/index-6_00_001.png" />
+</figure>
+</div>
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-9">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+</section>
+<section id="subplotting">
+<h3>サブプロット<a class="headerlink" href="#subplotting" title="Link to this heading">#</a></h3>
+<p>PyVistaのサブプロットAPIを使えば，データセットを横に並べて比較することも簡単にできます．まず <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> オブジェクトの形状を指定して，次に <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.subplot()</span></code> メソッドでアクティブなサブプロットを登録します．これは Matplotlib の API でサブプロットを行う方法と同じように行います．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span><span class="p">())</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">Cube</span><span class="p">())</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-10">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-7_00_002.png" src="../../_images/index-7_00_002.png" />
+</figure>
+</div>
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-11">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+<p>以下は，1つのデータセットのコンターとスライスを並べて比較した例です．</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>両方のビューのカメラをリンクさせるには <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.link_views()</span></code> メソッドを使用します．</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Wavelet</span><span class="p">()</span>
+<span class="n">cntr</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">contour</span><span class="p">()</span>
+<span class="n">slices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">slice_orthogonal</span><span class="p">()</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">cntr</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">slices</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">view_isometric</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-12">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-8_00_001.png" src="../../_images/index-8_00_001.png" />
+</figure>
+</div>
+<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-13">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+<p>その他のカスタムレイアウトは， <code class="docutils literal notranslate"><span class="pre">shape</span></code> 引数の文字列記述子でサポートされています．</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shape=&quot;3|1&quot;</span></code> とは，左側に3区画，右側に1区画という意味です．</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shape=&quot;4/2&quot;</span></code> は，上に4プロット，下に2プロットを意味します．</p></li>
+</ul>
+<p>ここでは，右側に3つ，左側に1つのプロットを作成した例を示します．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Wavelet</span><span class="p">()</span>
+<span class="n">cntr</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">contour</span><span class="p">()</span>
+<span class="n">slices</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">slice_orthogonal</span><span class="p">()</span>
+<span class="n">thresh</span> <span class="o">=</span> <span class="n">mesh</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="s2">&quot;1|3&quot;</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">cntr</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">slices</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">thresh</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
+
+<span class="n">p</span><span class="o">.</span><span class="n">link_views</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">view_isometric</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-14">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-9_00_001.png" src="../../_images/index-9_00_001.png" />
+</figure>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-15">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>サブプロットの包括的な概要は <a class="reference external" href="https://docs.pyvista.org/examples/02-plot/multi-window.html">Multi-Window Plotting Example</a> にあります．この例では，より複雑なレイアウトを作成する方法について詳しく説明しています．</p>
+</div>
+</section>
+</section>
+<section id="controlling-the-scene">
+<h2>シーンの制御<a class="headerlink" href="#controlling-the-scene" title="Link to this heading">#</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> のメソッドの一覧は， <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html">API documentation</a> を参照してください．</p>
+</div>
+<section id="axes-and-bounds">
+<h3>軸と境界<a class="headerlink" href="#axes-and-bounds" title="Link to this heading">#</a></h3>
+<p>軸は <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.show_axes()</span></code> を使ってシーンに追加することができます．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
+
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_random_hills</span><span class="p">()</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show_axes</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-16">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-10_00_00.png" src="../../_images/index-10_00_00.png" />
+</figure>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-17">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+<p>境界線も同様に <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.show_bounds()</span></code> で表示されます．</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>詳しくは <a class="reference external" href="https://docs.pyvista.org/examples/02-plot/bounds.html">Plotting Bounds</a> を参照してください．</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
+
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_random_hills</span><span class="p">()</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show_axes</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show_bounds</span><span class="p">()</span>
+<span class="n">p</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-18">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="../../_images/index-11_00_00.png" src="../../_images/index-11_00_00.png" />
+</figure>
+</div>
+<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-19">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+</div>
+</div>
+</section>
+</section>
+<section id="exercises">
+<h2>演習<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Lesson Overview"><img alt="" src="../../_images/sphx_glr_a_lesson_figures_thumb.png" />
+<p><a class="reference internal" href="a_lesson_figures.html#sphx-glr-tutorial-03-figures-a-lesson-figures-py"><span class="std std-ref">レッスンの概要</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Lesson Overview</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Comparison of default, flat shading vs. smooth shading."><img alt="" src="../../_images/sphx_glr_b_shading_thumb.png" />
+<p><a class="reference internal" href="b_shading.html#sphx-glr-tutorial-03-figures-b-shading-py"><span class="std std-ref">シェーディングのタイプ</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Types of Shading</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Texture mapping for a GeoTIFF on a topography surface."><img alt="" src="../../_images/sphx_glr_c_geological-map_thumb.png" />
+<p><a class="reference internal" href="c_geological-map.html#sphx-glr-tutorial-03-figures-c-geological-map-py"><span class="std std-ref">地形上の地質図</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Geological Map on Topography</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Create a GIF Movie"><img alt="" src="../../_images/sphx_glr_d_gif_thumb.gif" />
+<p><a class="reference internal" href="d_gif.html#sphx-glr-tutorial-03-figures-d-gif-py"><span class="std std-ref">GIFムービーの作成</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Create a GIF Movie</div>
+</div></div><div class="toctree-wrapper compound">
+</div>
+<section id="bonus-content">
+<h3>ボーナスコンテンツ<a class="headerlink" href="#bonus-content" title="Link to this heading">#</a></h3>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="VTK 9 introduced Physically Based Rendering (PBR) and we have exposed that functionality in PyVista. Read the blog about PBR for more details."><img alt="" src="../../_images/sphx_glr_d_pbr_thumb.png" />
+<p><a class="reference internal" href="bonus/d_pbr.html#sphx-glr-tutorial-03-figures-bonus-d-pbr-py"><span class="std std-ref">物理ベースのレンダリング</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Physically Based Rendering</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Use string arrays in a point set to label points"><img alt="" src="../../_images/sphx_glr_e_labels_thumb.png" />
+<p><a class="reference internal" href="bonus/e_labels.html#sphx-glr-tutorial-03-figures-bonus-e-labels-py"><span class="std std-ref">ラベルポイント</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Label Points</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Orbit around a scene."><img alt="" src="../../_images/sphx_glr_g_orbit_thumb.gif" />
+<p><a class="reference internal" href="bonus/g_orbit.html#sphx-glr-tutorial-03-figures-bonus-g-orbit-py"><span class="std std-ref">オービット</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Orbiting</div>
+</div></div></section>
+<section id="do-it-yourself">
+<h3>やってみよう<a class="headerlink" href="#do-it-yourself" title="Link to this heading">#</a></h3>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Take a look at the different display options offered by the add_mesh method."><img alt="" src="../../_images/sphx_glr_a_display_options_thumb.png" />
+<p><a class="reference internal" href="exercises/a_display_options.html#sphx-glr-tutorial-03-figures-exercises-a-display-options-py"><span class="std std-ref">表示オプション</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Display Options</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Control aspects of the rendered mesh&#x27;s lighting such as Ambient, Diffuse, and Specular. These options only work if the lighting argument to add_mesh is True (it&#x27;s True by default)."><img alt="" src="../../_images/sphx_glr_b_lighting_mesh_thumb.png" />
+<p><a class="reference internal" href="exercises/b_lighting_mesh.html#sphx-glr-tutorial-03-figures-exercises-b-lighting-mesh-py"><span class="std std-ref">照明特性</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Lighting Properties</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Eye-Dome Lighting (EDL) is a non-photorealistic, image-based shading technique designed to improve depth perception in scientific visualization images. To learn more, please see `this blog post`_."><img alt="" src="../../_images/sphx_glr_c_edl_thumb.png" />
+<p><a class="reference internal" href="exercises/c_edl.html#sphx-glr-tutorial-03-figures-exercises-c-edl-py"><span class="std std-ref">Eye Dome Lighting</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Eye Dome Lighting</div>
+</div></div></section>
+<section id="solutions">
+<h3>解答<a class="headerlink" href="#solutions" title="Link to this heading">#</a></h3>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Take a look at the different display options offered by the add_mesh method."><img alt="" src="../../_images/sphx_glr_a_display_options_thumb1.png" />
+<p><a class="reference internal" href="solutions/a_display_options.html#sphx-glr-tutorial-03-figures-solutions-a-display-options-py"><span class="std std-ref">表示オプション</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Display Options</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Control aspects of the rendered mesh&#x27;s lighting such as Ambient, Diffuse, and Specular. These options only work if the lighting argument to add_mesh is True (it&#x27;s True by default)."><img alt="" src="../../_images/sphx_glr_b_lighting_mesh_thumb1.png" />
+<p><a class="reference internal" href="solutions/b_lighting_mesh.html#sphx-glr-tutorial-03-figures-solutions-b-lighting-mesh-py"><span class="std std-ref">照明特性</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Lighting Properties</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="Eye-Dome Lighting (EDL) is a non-photorealistic, image-based shading technique designed to improve depth perception in scientific visualization images. To learn more, please see `this blog post`_."><img alt="" src="../../_images/sphx_glr_c_edl_thumb1.png" />
+<p><a class="reference internal" href="solutions/c_edl.html#sphx-glr-tutorial-03-figures-solutions-c-edl-py"><span class="std std-ref">Eye Dome Lighting</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Eye Dome Lighting</div>
+</div></div><div class="toctree-wrapper compound">
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Sphinx-Galleryによるギャラリー</a></p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../02_mesh/solutions/e_read-file.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">ファイルからロードおよびプロットする</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="a_lesson_figures.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">レッスンの概要</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basics">基礎編</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#add-mesh-to-plotter-object">Plotterオブジェクトにメッシュを追加する</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#subplotting">サブプロット</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#controlling-the-scene">シーンの制御</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#axes-and-bounds">軸と境界</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">演習</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bonus-content">ボーナスコンテンツ</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#do-it-yourself">やってみよう</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#solutions">解答</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 PyVista Developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, PyVista Developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

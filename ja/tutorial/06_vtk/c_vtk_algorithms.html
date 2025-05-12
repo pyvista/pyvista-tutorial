@@ -1,0 +1,2156 @@
+
+<!DOCTYPE html>
+
+
+<html lang="ja" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>VTKアルゴリズムの使用 &#8212; PyVista Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
+    <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/cards.css?v=90395a4f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=1cf7f4d9"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/thebelab-helper.js"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=49e1bf35"></script>
+    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/translations.js?v=4755f45a"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'tutorial/06_vtk/c_vtk_algorithms';</script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="検索" href="../../search.html" />
+    <link rel="next" title="VTK + WASM" href="d_wasm.html" />
+    <link rel="prev" title="VTKオブジェクトの作成" href="b_create_vtk.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="ja"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/pyvista_logo_sm.png" class="logo__image only-light" alt="PyVista Tutorial - Home"/>
+    <script>document.write(`<img src="../../_static/pyvista_logo_sm.png" class="logo__image only-dark" alt="PyVista Tutorial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista-tutorial" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://docs.pyvista.org/" title="Docs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Docs</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" title="Contributing" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-gavel fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Contributing</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://doi.org/10.21105/joss.01450" title="The Paper" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-file-text fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">The Paper</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><div id="atsphinx-mini18n-select-component">
+  <style>
+    div#atsphinx-mini18n-select-component div {
+      text-align: center;
+    }
+  </style>
+  <div>
+    <label for="atsphinx-mini18n-select-lang">Language:</label>
+    <select name="lang" onchange="{
+                        const values = value.split('@@');
+                        document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
+                        location.href=values[1];
+                        }" id="atsphinx-mini18n-select-lang">
+      <option value="en@@../../../en/tutorial/06_vtk/c_vtk_algorithms.html">en</option>
+      <option value="ja@@../../../ja/tutorial/06_vtk/c_vtk_algorithms.html"
+        selected>ja</option>
+    </select>
+  </div>
+</div></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">検索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../getting-started.html">はじめに</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../tutorial.html">PyVistaチュートリアル</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../00_intro/index.html">はじめに</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00_intro/a_basic.html">基本的な幾何学的オブジェクトを作成します</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../00_jupyter/index.html">JupyterでPyVistaを使う</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../00_jupyter/jupyter.html">PyVistaのJupyterバックエンドを試す</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../01_basic/index.html">基本的な使い方</a></li>
+
+
+
+<li class="toctree-l2 has-children"><a class="reference internal" href="../02_mesh/index.html">メッシュとは?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/a_lesson_mesh.html">レッスンの概要</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../02_mesh/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../03_figures/index.html">プロットオプションとアニメーション</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/a_lesson_figures.html">レッスンの概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/b_shading.html">シェーディングのタイプ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/c_geological-map.html">地形上の地質図</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/d_gif.html">GIFムービーの作成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/bonus/index.html">ボーナスコンテンツ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../03_figures/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../04_filters/index.html">フィルタ</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/a_lesson_filters.html">共通フィルタの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/bonus/index.html">ボーナスコンテンツ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/exercises/index.html">やってみよう</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../04_filters/solutions/index.html">解答</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="../05_action/index.html">PyVistaの活用</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="index.html">PyVistaとVTK</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="a_1_transition_vtk.html">VTKからPyVistaへの移行</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="a_2_pyvista_vtk.html">PyVistaとVTKの連携</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="b_create_vtk.html">VTKオブジェクトの作成</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">VTKアルゴリズムの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="d_wasm.html">VTK + WASM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="e_vtk_next.html">VTKの次世代API</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../08_widgets/index.html">PyVistaのウィジェット</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/a_box-widget.html">ボックスウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/b_checkbox-widget.html">チェックボックスウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/c_line-widget.html">線ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/d_multi-slider-widget.html">複数のスライダウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/e_plane-widget.html">平面ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/f_slider-bar-widget.html">スライダバーウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/g_sphere-widget.html">球体ウィジェット</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../08_widgets/h_spline-widget.html">スプラインウィジェット</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../09_trame/index.html">Trame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/a_getting_started.html">スタート</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/a_trame_simple.html">シンプルなTrameアプリ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/b_trame_actor_color.html">アクターの色をコントロールします</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/b_trame_vtk.html">VTK/PyVistaとTrameの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/c_trame_scalars.html">スカラー配列の制御</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/d_trame_scalar_range.html">スカラー範囲の制御</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/e_trame_algorithm.html">VTK，PyVista，Trameの使用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../09_trame/f_trame_open_file.html">メッシュファイルを開きます</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="このページをダウンロード">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/tutorial/06_vtk/c_vtk_algorithms.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="ソースファイルをダウンロード"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="PDFに印刷"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全画面モード"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="検索" aria-label="検索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>VTKアルゴリズムの使用</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目次 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-filter">簡易フィルター</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-your-own-filter">自分だけのフィルターを探す</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="sphx-glr-download-link-note admonition note">
+<p class="admonition-title">注釈</p>
+<p>完全なサンプルコードをダウンロードしたり、Binderを使ってブラウザでこのサンプルを実行するには、 <a class="reference internal" href="#sphx-glr-download-tutorial-06-vtk-c-vtk-algorithms-py"><span class="std std-ref">最後に進んでください</span></a> 。</p>
+</div>
+<section class="sphx-glr-example-title" id="using-vtk-algorithms">
+<span id="sphx-glr-tutorial-06-vtk-c-vtk-algorithms-py"></span><h1>VTKアルゴリズムの使用<a class="headerlink" href="#using-vtk-algorithms" title="Link to this heading">#</a></h1>
+<p>この演習では，VTK Algorithm を直接使用して PyVista メッシュをフィルタリングします．</p>
+<p>VTKのアルゴリズム（フィルター）は，ほとんどの場合，標準的なフローに従います．</p>
+<ol class="arabic simple">
+<li><p>アルゴリズムのインスタンス化</p></li>
+<li><p>入力データオブジェクトまたはコネクションの設定: <code class="docutils literal notranslate"><span class="pre">.SetInputDataObject(mesh)</span></code></p></li>
+<li><p>アルゴリズムのパラメータをセッターメソッドで調整する，例., <code class="docutils literal notranslate"><span class="pre">SetParameterName(value)</span></code></p></li>
+<li><p>アルゴリズムを実行するために <code class="docutils literal notranslate"><span class="pre">.Update()</span></code> を呼び出します．</p></li>
+<li><p>アルゴリズムの出力を取得する: <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">=</span> <span class="pre">alg.GetOutput()</span></code></p></li>
+</ol>
+<p>その標準的なワークフローで，VTKのアルゴリズムをいくつか試してみましょう．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">vtk</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
+</pre></div>
+</div>
+<p>以下はメッシュのサンプルです．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_random_hills</span><span class="p">()</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+<table style='width: 100%;'><tr><th>Header</th><th>Data Arrays</th></tr><tr><td>
+<table style='width: 100%;'>
+<tr><th>PolyData</th><th>Information</th></tr>
+<tr><td>N Cells</td><td>19602</td></tr>
+<tr><td>N Points</td><td>10000</td></tr>
+<tr><td>N Strips</td><td>0</td></tr>
+<tr><td>X Bounds</td><td>-1.000e+01, 1.000e+01</td></tr>
+<tr><td>Y Bounds</td><td>-2.309e-14, 2.000e+01</td></tr>
+<tr><td>Z Bounds</td><td>1.416e-01, 7.483e+00</td></tr>
+<tr><td>N Arrays</td><td>2</td></tr>
+</table>
+
+</td><td>
+<table style='width: 100%;'>
+<tr><th>Name</th><th>Field</th><th>Type</th><th>N Comp</th><th>Min</th><th>Max</th></tr>
+<tr><td>Normals</td><td>Points</td><td>float32</td><td>3</td><td>-8.663e-01</td><td>9.999e-01</td></tr>
+<tr><td><b>Elevation</b></td><td>Points</td><td>float32</td><td>1</td><td>1.416e-01</td><td>7.483e+00</td></tr>
+</table>
+
+</td></tr> </table>
+</div>
+<br />
+<br /><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.plot.html#pyvista.DataSet.plot" title="pyvista.DataSet.plot" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">mesh</span><span class="o">.</span><span class="n">plot</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_c_vtk_algorithms_001.png" srcset="../../_images/sphx_glr_c_vtk_algorithms_001.png" alt="c vtk algorithms" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/06_vtk/images/sphx_glr_c_vtk_algorithms_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+<section id="simple-filter">
+<h2>簡易フィルター<a class="headerlink" href="#simple-filter" title="Link to this heading">#</a></h2>
+<p>まずは，シンプルな VTK フィルタである <code class="docutils literal notranslate"><span class="pre">vtkOutlineFilter</span></code> から始めましょう．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">vtk</span><span class="o">.</span><span class="n">vtkOutlineFilter</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on class vtkOutlineFilter in module vtkmodules.vtkFiltersModeling:
+
+class vtkOutlineFilter(vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm)
+ |  vtkOutlineFilter - create wireframe outline for an arbitrary data set
+ |  or composite dataset
+ |
+ |  Superclass: vtkPolyDataAlgorithm
+ |
+ |  vtkOutlineFilter is a filter that generates a wireframe outline of
+ |  any dataset or composite dataset. An outline consists of the twelve
+ |  edges of the dataset bounding box. An option exists for generating
+ |  faces instead of a wireframe outline.
+ |
+ |  @warning
+ |  When an input composite dataset is provided, options exist for
+ |  producing different styles of outline(s). Also, if the composite
+ |  dataset has non-geometric members (like tables) the result is
+ |  unpredictable.
+ |
+ |  @warning
+ |  Specialized versions of the outline filter are also available. For
+ |  example see vtkStructuredGridOutlineFilter,
+ |  vtkRectilinearGridOutlineFilter, and vtkImageDataOutlineFilter.
+ |
+ |  Method resolution order:
+ |      vtkOutlineFilter
+ |      vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm
+ |      vtkmodules.vtkCommonExecutionModel.vtkAlgorithm
+ |      vtkmodules.vtkCommonCore.vtkObject
+ |      vtkmodules.vtkCommonCore.vtkObjectBase
+ |      builtins.object
+ |
+ |  Methods defined here:
+ |
+ |  AddIndex(...)
+ |      AddIndex(self, index:int) -&gt; None
+ |      C++: void AddIndex(unsigned int index)
+ |
+ |      If the composite style is set to SpecifiedIndex, then one or more
+ |      flat indices can be specified, and bounding boxes will be drawn
+ |      around those pieces of the composite dataset. (Recall that the
+ |      flat index is a non-negative integer, with root index=0,
+ |      increasing in perorder (depth-first) traversal order.
+ |
+ |  GenerateFacesOff(...)
+ |      GenerateFacesOff(self) -&gt; None
+ |      C++: virtual void GenerateFacesOff()
+ |
+ |  GenerateFacesOn(...)
+ |      GenerateFacesOn(self) -&gt; None
+ |      C++: virtual void GenerateFacesOn()
+ |
+ |  GetCompositeStyle(...)
+ |      GetCompositeStyle(self) -&gt; int
+ |      C++: virtual int GetCompositeStyle()
+ |
+ |  GetGenerateFaces(...)
+ |      GetGenerateFaces(self) -&gt; int
+ |      C++: virtual vtkTypeBool GetGenerateFaces()
+ |
+ |  GetNumberOfGenerationsFromBase(...)
+ |      GetNumberOfGenerationsFromBase(self, type:str) -&gt; int
+ |      C++: vtkIdType GetNumberOfGenerationsFromBase(const char *type)
+ |          override;
+ |
+ |      Given the name of a base class of this class type, return the
+ |      distance of inheritance between this class type and the named
+ |      class (how many generations of inheritance are there between this
+ |      class and the named class). If the named class is not in this
+ |      class&#39;s inheritance tree, return a negative value. Valid
+ |      responses will always be nonnegative. This method works in
+ |      combination with vtkTypeMacro found in vtkSetGet.h.
+ |
+ |  GetNumberOfGenerationsFromBaseType(...)
+ |      GetNumberOfGenerationsFromBaseType(type:str) -&gt; int
+ |      C++: static vtkIdType GetNumberOfGenerationsFromBaseType(
+ |          const char *type)
+ |
+ |      Given a the name of a base class of this class type, return the
+ |      distance of inheritance between this class type and the named
+ |      class (how many generations of inheritance are there between this
+ |      class and the named class). If the named class is not in this
+ |      class&#39;s inheritance tree, return a negative value. Valid
+ |      responses will always be nonnegative. This method works in
+ |      combination with vtkTypeMacro found in vtkSetGet.h.
+ |
+ |  GetOutputPointsPrecision(...)
+ |      GetOutputPointsPrecision(self) -&gt; int
+ |      C++: virtual int GetOutputPointsPrecision()
+ |
+ |  IsA(...)
+ |      IsA(self, type:str) -&gt; int
+ |      C++: vtkTypeBool IsA(const char *type) override;
+ |
+ |      Return 1 if this class is the same type of (or a subclass of) the
+ |      named class. Returns 0 otherwise. This method works in
+ |      combination with vtkTypeMacro found in vtkSetGet.h.
+ |
+ |  IsTypeOf(...)
+ |      IsTypeOf(type:str) -&gt; int
+ |      C++: static vtkTypeBool IsTypeOf(const char *type)
+ |
+ |      Return 1 if this class type is the same type of (or a subclass
+ |      of) the named class. Returns 0 otherwise. This method works in
+ |      combination with vtkTypeMacro found in vtkSetGet.h.
+ |
+ |  NewInstance(...)
+ |      NewInstance(self) -&gt; vtkOutlineFilter
+ |      C++: vtkOutlineFilter *NewInstance()
+ |
+ |  RemoveAllIndices(...)
+ |      RemoveAllIndices(self) -&gt; None
+ |      C++: void RemoveAllIndices()
+ |
+ |  RemoveIndex(...)
+ |      RemoveIndex(self, index:int) -&gt; None
+ |      C++: void RemoveIndex(unsigned int index)
+ |
+ |  SafeDownCast(...)
+ |      SafeDownCast(o:vtkObjectBase) -&gt; vtkOutlineFilter
+ |      C++: static vtkOutlineFilter *SafeDownCast(vtkObjectBase *o)
+ |
+ |  SetCompositeStyle(...)
+ |      SetCompositeStyle(self, _arg:int) -&gt; None
+ |      C++: virtual void SetCompositeStyle(int _arg)
+ |
+ |      Specify a style for creating bounding boxes around input
+ |      composite datasets. (If the filter input is a vtkDataSet type
+ |      these options have no effect.) There are four choices: 1) place a
+ |      bounding box around the root of the vtkCompositeDataSet (i.e.,
+ |      all of the data); 2) place separate bounding boxes around each
+ |      vtkDataSet leaf of the composite dataset; 3) place a bounding box
+ |      around the root and all dataset leaves; and 4) place a bounding
+ |      box around each (flat) index of the composite dataset. The
+ |      default behavior is both root and leafs.
+ |
+ |  SetCompositeStyleToLeafs(...)
+ |      SetCompositeStyleToLeafs(self) -&gt; None
+ |      C++: void SetCompositeStyleToLeafs()
+ |
+ |  SetCompositeStyleToRoot(...)
+ |      SetCompositeStyleToRoot(self) -&gt; None
+ |      C++: void SetCompositeStyleToRoot()
+ |
+ |  SetCompositeStyleToRootAndLeafs(...)
+ |      SetCompositeStyleToRootAndLeafs(self) -&gt; None
+ |      C++: void SetCompositeStyleToRootAndLeafs()
+ |
+ |  SetCompositeStyleToSpecifiedIndex(...)
+ |      SetCompositeStyleToSpecifiedIndex(self) -&gt; None
+ |      C++: void SetCompositeStyleToSpecifiedIndex()
+ |
+ |  SetGenerateFaces(...)
+ |      SetGenerateFaces(self, _arg:int) -&gt; None
+ |      C++: virtual void SetGenerateFaces(vtkTypeBool _arg)
+ |
+ |      Generate solid faces for the box. This is off by default.
+ |
+ |  SetOutputPointsPrecision(...)
+ |      SetOutputPointsPrecision(self, _arg:int) -&gt; None
+ |      C++: virtual void SetOutputPointsPrecision(int _arg)
+ |
+ |      Set/get the desired precision for the output points.
+ |      vtkAlgorithm::SINGLE_PRECISION - Output single-precision floating
+ |      point. vtkAlgorithm::DOUBLE_PRECISION - Output double-precision
+ |      floating point.
+ |
+ |  __buffer__(self, flags, /)
+ |      Return a buffer object that exposes the underlying memory of the object.
+ |
+ |  __delattr__(self, name, /)
+ |      Implement delattr(self, name).
+ |
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |
+ |  __release_buffer__(self, buffer, /)
+ |      Release the buffer object that exposes the underlying memory of the object.
+ |
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |
+ |  __setattr__(self, name, value, /)
+ |      Implement setattr(self, name, value).
+ |
+ |  __str__(self, /)
+ |      Return str(self).
+ |
+ |  ----------------------------------------------------------------------
+ |  Static methods defined here:
+ |
+ |  __new__(*args, **kwargs)
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |
+ |  __dict__
+ |      Dictionary of attributes set by user.
+ |
+ |  __this__
+ |      Pointer to the C++ object.
+ |
+ |  composite_style
+ |      read-write, Calls GetCompositeStyle/SetCompositeStyle
+ |
+ |  generate_faces
+ |      read-write, Calls GetGenerateFaces/SetGenerateFaces
+ |
+ |  output_points_precision
+ |      read-write, Calls GetOutputPointsPrecision/SetOutputPointsPrecision
+ |
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |
+ |  CompositeOutlineStyle = &lt;class &#39;vtkmodules.vtkFiltersModeling.vtkOutli...
+ |
+ |  LEAF_DATASETS = 1
+ |
+ |  ROOT_AND_LEAFS = 2
+ |
+ |  ROOT_LEVEL = 0
+ |
+ |  SPECIFIED_INDEX = 3
+ |
+ |  __vtkname__ = &#39;vtkOutlineFilter&#39;
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm:
+ |
+ |  AddInputData(...)
+ |      AddInputData(self, __a:vtkDataObject) -&gt; None
+ |      C++: void AddInputData(vtkDataObject *)
+ |      AddInputData(self, __a:int, __b:vtkDataObject) -&gt; None
+ |      C++: void AddInputData(int, vtkDataObject *)
+ |
+ |      Assign a data object as input. Note that this method does not
+ |      establish a pipeline connection. Use AddInputConnection() to
+ |      setup a pipeline connection.
+ |
+ |  GetInput(...)
+ |      GetInput(self) -&gt; vtkDataObject
+ |      C++: vtkDataObject *GetInput()
+ |      GetInput(self, port:int) -&gt; vtkDataObject
+ |      C++: vtkDataObject *GetInput(int port)
+ |
+ |  GetOutput(...)
+ |      GetOutput(self) -&gt; vtkPolyData
+ |      C++: vtkPolyData *GetOutput()
+ |      GetOutput(self, __a:int) -&gt; vtkPolyData
+ |      C++: vtkPolyData *GetOutput(int)
+ |
+ |      Get the output data object for a port on this algorithm.
+ |
+ |  GetPolyDataInput(...)
+ |      GetPolyDataInput(self, port:int) -&gt; vtkPolyData
+ |      C++: vtkPolyData *GetPolyDataInput(int port)
+ |
+ |  SetInputData(...)
+ |      SetInputData(self, __a:vtkDataObject) -&gt; None
+ |      C++: void SetInputData(vtkDataObject *)
+ |      SetInputData(self, __a:int, __b:vtkDataObject) -&gt; None
+ |      C++: void SetInputData(int, vtkDataObject *)
+ |
+ |      Assign a data object as input. Note that this method does not
+ |      establish a pipeline connection. Use SetInputConnection() to
+ |      setup a pipeline connection.
+ |
+ |  SetOutput(...)
+ |      SetOutput(self, d:vtkDataObject) -&gt; None
+ |      C++: virtual void SetOutput(vtkDataObject *d)
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from vtkmodules.vtkCommonExecutionModel.vtkPolyDataAlgorithm:
+ |
+ |  input
+ |      read-only, Calls GetInput
+ |
+ |  input_data
+ |      write-only, Calls SetInputData
+ |
+ |  output
+ |      read-write, Calls GetOutput/SetOutput
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from vtkmodules.vtkCommonExecutionModel.vtkAlgorithm:
+ |
+ |  ABORTED(...)
+ |      ABORTED() -&gt; vtkInformationIntegerKey
+ |      C++: static vtkInformationIntegerKey *ABORTED()
+ |
+ |      \ingroup InformationKeys
+ |
+ |  AbortExecuteOff(...)
+ |      AbortExecuteOff(self) -&gt; None
+ |      C++: virtual void AbortExecuteOff()
+ |
+ |  AbortExecuteOn(...)
+ |      AbortExecuteOn(self) -&gt; None
+ |      C++: virtual void AbortExecuteOn()
+ |
+ |  AddInputConnection(...)
+ |      AddInputConnection(self, port:int, input:vtkAlgorithmOutput)
+ |          -&gt; None
+ |      C++: virtual void AddInputConnection(int port,
+ |          vtkAlgorithmOutput *input)
+ |      AddInputConnection(self, input:vtkAlgorithmOutput) -&gt; None
+ |      C++: virtual void AddInputConnection(vtkAlgorithmOutput *input)
+ |
+ |      Add a connection to the given input port index.  See
+ |      SetInputConnection() for details on input connections.  This
+ |      method is the complement to RemoveInputConnection() in that it
+ |      adds only the connection specified without affecting other
+ |      connections.  Typical usage is
+ |
+ |      * filter2-&gt;AddInputConnection(0, filter1-&gt;GetOutputPort(0)).
+ |
+ |  AddInputDataObject(...)
+ |      AddInputDataObject(self, port:int, data:vtkDataObject) -&gt; None
+ |      C++: virtual void AddInputDataObject(int port,
+ |          vtkDataObject *data)
+ |      AddInputDataObject(self, data:vtkDataObject) -&gt; None
+ |      C++: virtual void AddInputDataObject(vtkDataObject *data)
+ |
+ |      Add the data-object as an input to this given port. This will add
+ |      a new input connection on the specified port without affecting
+ |      any existing connections on the same input port.
+ |
+ |  CAN_HANDLE_PIECE_REQUEST(...)
+ |      CAN_HANDLE_PIECE_REQUEST() -&gt; vtkInformationIntegerKey
+ |      C++: static vtkInformationIntegerKey *CAN_HANDLE_PIECE_REQUEST()
+ |
+ |      Key that tells the pipeline that a particular algorithm can or
+ |      cannot handle piece request. If a filter cannot handle piece
+ |      requests and is asked for a piece, the executive will flag an
+ |      error. If a structured data source cannot handle piece requests
+ |      but can produce sub-extents (CAN_PRODUCE_SUB_EXTENT), the
+ |      executive will use an extent translator to split the extent into
+ |      pieces. Otherwise, if a source cannot handle piece requests, the
+ |      executive will ask for the whole data for piece 0 and not execute
+ |      the source for other pieces.\ingroup InformationKeys
+ |
+ |  CAN_PRODUCE_SUB_EXTENT(...)
+ |      CAN_PRODUCE_SUB_EXTENT() -&gt; vtkInformationIntegerKey
+ |      C++: static vtkInformationIntegerKey *CAN_PRODUCE_SUB_EXTENT()
+ |
+ |      This key tells the executive that a particular output port is
+ |      capable of producing an arbitrary subextent of the whole extent.
+ |      Many image sources and readers fall into this category but some
+ |      such as the legacy structured data readers cannot support this
+ |      feature.\ingroup InformationKeys
+ |
+ |  CheckAbort(...)
+ |      CheckAbort(self) -&gt; bool
+ |      C++: bool CheckAbort()
+ |
+ |      Checks to see if this filter should abort.
+ |
+ |  ConvertTotalInputToPortConnection(...)
+ |      ConvertTotalInputToPortConnection(self, ind:int, port:int,
+ |          conn:int) -&gt; None
+ |      C++: void ConvertTotalInputToPortConnection(int ind, int &amp;port,
+ |          int &amp;conn)
+ |
+ |      Convenience routine to convert from a linear ordering of input
+ |      connections to a port/connection pair.
+ |
+ |  GetAbortExecute(...)
+ |      GetAbortExecute(self) -&gt; int
+ |      C++: virtual vtkTypeBool GetAbortExecute()
+ |
+ |  GetAbortOutput(...)
+ |      GetAbortOutput(self) -&gt; bool
+ |      C++: virtual bool GetAbortOutput()
+ |
+ |  GetContainerAlgorithm(...)
+ |      GetContainerAlgorithm(self) -&gt; vtkAlgorithm
+ |      C++: vtkAlgorithm *GetContainerAlgorithm()
+ |
+ |  GetErrorCode(...)
+ |      GetErrorCode(self) -&gt; int
+ |      C++: virtual unsigned long GetErrorCode()
+ |
+ |      The error code contains a possible error that occurred while
+ |      reading or writing the file.
+ |
+ |  GetExecutive(...)
+ |      GetExecutive(self) -&gt; vtkExecutive
+ |      C++: vtkExecutive *GetExecutive()
+ |
+ |      Get this algorithm&#39;s executive.  If it has none, a default
+ |      executive will be created.
+ |
+ |  GetInformation(...)
+ |      GetInformation(self) -&gt; vtkInformation
+ |      C++: virtual vtkInformation *GetInformation()
+ |
+ |      Set/Get the information object associated with this algorithm.
+ |
+ |  GetInputAlgorithm(...)
+ |      GetInputAlgorithm(self, port:int, index:int, algPort:int)
+ |          -&gt; vtkAlgorithm
+ |      C++: vtkAlgorithm *GetInputAlgorithm(int port, int index,
+ |          int &amp;algPort)
+ |      GetInputAlgorithm(self, port:int, index:int) -&gt; vtkAlgorithm
+ |      C++: vtkAlgorithm *GetInputAlgorithm(int port, int index)
+ |      GetInputAlgorithm(self) -&gt; vtkAlgorithm
+ |      C++: vtkAlgorithm *GetInputAlgorithm()
+ |
+ |      Returns the algorithm and the output port index of that algorithm
+ |      connected to a port-index pair.
+ |
+ |  GetInputArrayInformation(...)
+ |      GetInputArrayInformation(self, idx:int) -&gt; vtkInformation
+ |      C++: vtkInformation *GetInputArrayInformation(int idx)
+ |
+ |      Get the info object for the specified input array to this
+ |      algorithm
+ |
+ |  GetInputConnection(...)
+ |      GetInputConnection(self, port:int, index:int)
+ |          -&gt; vtkAlgorithmOutput
+ |      C++: vtkAlgorithmOutput *GetInputConnection(int port, int index)
+ |
+ |      Get the algorithm output port connected to an input port.
+ |
+ |  GetInputDataObject(...)
+ |      GetInputDataObject(self, port:int, connection:int)
+ |          -&gt; vtkDataObject
+ |      C++: vtkDataObject *GetInputDataObject(int port, int connection)
+ |
+ |      Get the data object that will contain the algorithm input for the
+ |      given port and given connection.
+ |
+ |  GetInputExecutive(...)
+ |      GetInputExecutive(self, port:int, index:int) -&gt; vtkExecutive
+ |      C++: vtkExecutive *GetInputExecutive(int port, int index)
+ |      GetInputExecutive(self) -&gt; vtkExecutive
+ |      C++: vtkExecutive *GetInputExecutive()
+ |
+ |      Returns the executive associated with a particular input
+ |      connection.
+ |
+ |  GetInputInformation(...)
+ |      GetInputInformation(self, port:int, index:int) -&gt; vtkInformation
+ |      C++: vtkInformation *GetInputInformation(int port, int index)
+ |      GetInputInformation(self) -&gt; vtkInformation
+ |      C++: vtkInformation *GetInputInformation()
+ |
+ |      Return the information object that is associated with a
+ |      particular input connection. This can be used to get meta-data
+ |      coming from the REQUEST_INFORMATION pass and set requests for the
+ |      REQUEST_UPDATE_EXTENT pass. NOTE: Do not use this in any of the
+ |      pipeline passes. Use the information objects passed as arguments
+ |      instead.
+ |
+ |  GetInputPortInformation(...)
+ |      GetInputPortInformation(self, port:int) -&gt; vtkInformation
+ |      C++: vtkInformation *GetInputPortInformation(int port)
+ |
+ |      Get the information object associated with an input port.  There
+ |      is one input port per kind of input to the algorithm.  Each input
+ |      port tells executives what kind of data and downstream requests
+ |      this algorithm can handle for that input.
+ |
+ |  GetNumberOfInputConnections(...)
+ |      GetNumberOfInputConnections(self, port:int) -&gt; int
+ |      C++: int GetNumberOfInputConnections(int port)
+ |
+ |      Get the number of inputs currently connected to a port.
+ |
+ |  GetNumberOfInputPorts(...)
+ |      GetNumberOfInputPorts(self) -&gt; int
+ |      C++: int GetNumberOfInputPorts()
+ |
+ |      Get the number of input ports used by the algorithm.
+ |
+ |  GetNumberOfOutputPorts(...)
+ |      GetNumberOfOutputPorts(self) -&gt; int
+ |      C++: int GetNumberOfOutputPorts()
+ |
+ |      Get the number of output ports provided by the algorithm.
+ |
+ |  GetOutputDataObject(...)
+ |      GetOutputDataObject(self, port:int) -&gt; vtkDataObject
+ |      C++: vtkDataObject *GetOutputDataObject(int port)
+ |
+ |      Get the data object that will contain the algorithm output for
+ |      the given port.
+ |
+ |  GetOutputInformation(...)
+ |      GetOutputInformation(self, port:int) -&gt; vtkInformation
+ |      C++: vtkInformation *GetOutputInformation(int port)
+ |
+ |      Return the information object that is associated with a
+ |      particular output port. This can be used to set meta-data coming
+ |      during the REQUEST_INFORMATION. NOTE: Do not use this in any of
+ |      the pipeline passes. Use the information objects passed as
+ |      arguments instead.
+ |
+ |  GetOutputPort(...)
+ |      GetOutputPort(self, index:int) -&gt; vtkAlgorithmOutput
+ |      C++: vtkAlgorithmOutput *GetOutputPort(int index)
+ |      GetOutputPort(self) -&gt; vtkAlgorithmOutput
+ |      C++: vtkAlgorithmOutput *GetOutputPort()
+ |
+ |      Get a proxy object corresponding to the given output port of this
+ |      algorithm.  The proxy object can be passed to another algorithm&#39;s
+ |      SetInputConnection(), AddInputConnection(), and
+ |      RemoveInputConnection() methods to modify pipeline connectivity.
+ |
+ |  GetOutputPortInformation(...)
+ |      GetOutputPortInformation(self, port:int) -&gt; vtkInformation
+ |      C++: vtkInformation *GetOutputPortInformation(int port)
+ |
+ |      Get the information object associated with an output port.  There
+ |      is one output port per output from the algorithm.  Each output
+ |      port tells executives what kind of upstream requests this
+ |      algorithm can handle for that output.
+ |
+ |  GetProgress(...)
+ |      GetProgress(self) -&gt; float
+ |      C++: virtual double GetProgress()
+ |
+ |      Get the execution progress of a process object.
+ |
+ |  GetProgressObserver(...)
+ |      GetProgressObserver(self) -&gt; vtkProgressObserver
+ |      C++: virtual vtkProgressObserver *GetProgressObserver()
+ |
+ |  GetProgressScale(...)
+ |      GetProgressScale(self) -&gt; float
+ |      C++: virtual double GetProgressScale()
+ |
+ |  GetProgressShift(...)
+ |      GetProgressShift(self) -&gt; float
+ |      C++: virtual double GetProgressShift()
+ |
+ |  GetProgressText(...)
+ |      GetProgressText(self) -&gt; str
+ |      C++: virtual char *GetProgressText()
+ |
+ |  GetReleaseDataFlag(...)
+ |      GetReleaseDataFlag(self) -&gt; int
+ |      C++: virtual vtkTypeBool GetReleaseDataFlag()
+ |
+ |  GetTotalNumberOfInputConnections(...)
+ |      GetTotalNumberOfInputConnections(self) -&gt; int
+ |      C++: int GetTotalNumberOfInputConnections()
+ |
+ |      Get the total number of inputs for this algorithm
+ |
+ |  GetUpdateExtent(...)
+ |      GetUpdateExtent(self) -&gt; (int, int, int, int, int, int)
+ |      C++: int *GetUpdateExtent()
+ |      GetUpdateExtent(self, port:int) -&gt; (int, int, int, int, int, int)
+ |      C++: int *GetUpdateExtent(int port)
+ |      GetUpdateExtent(self, x0:int, x1:int, y0:int, y1:int, z0:int,
+ |          z1:int) -&gt; None
+ |      C++: void GetUpdateExtent(int &amp;x0, int &amp;x1, int &amp;y0, int &amp;y1,
+ |          int &amp;z0, int &amp;z1)
+ |      GetUpdateExtent(self, port:int, x0:int, x1:int, y0:int, y1:int,
+ |          z0:int, z1:int) -&gt; None
+ |      C++: void GetUpdateExtent(int port, int &amp;x0, int &amp;x1, int &amp;y0,
+ |          int &amp;y1, int &amp;z0, int &amp;z1)
+ |      GetUpdateExtent(self, extent:[int, int, int, int, int, int])
+ |          -&gt; None
+ |      C++: void GetUpdateExtent(int extent[6])
+ |      GetUpdateExtent(self, port:int, extent:[int, int, int, int, int,
+ |          int]) -&gt; None
+ |      C++: void GetUpdateExtent(int port, int extent[6])
+ |
+ |      These functions return the update extent for output ports that
+ |      use 3D extents. Where port is not specified, it is assumed to be
+ |      0.
+ |
+ |  GetUpdateGhostLevel(...)
+ |      GetUpdateGhostLevel(self) -&gt; int
+ |      C++: int GetUpdateGhostLevel()
+ |      GetUpdateGhostLevel(self, port:int) -&gt; int
+ |      C++: int GetUpdateGhostLevel(int port)
+ |
+ |  GetUpdateNumberOfPieces(...)
+ |      GetUpdateNumberOfPieces(self) -&gt; int
+ |      C++: int GetUpdateNumberOfPieces()
+ |      GetUpdateNumberOfPieces(self, port:int) -&gt; int
+ |      C++: int GetUpdateNumberOfPieces(int port)
+ |
+ |  GetUpdatePiece(...)
+ |      GetUpdatePiece(self) -&gt; int
+ |      C++: int GetUpdatePiece()
+ |      GetUpdatePiece(self, port:int) -&gt; int
+ |      C++: int GetUpdatePiece(int port)
+ |
+ |      These functions return the update extent for output ports that
+ |      use piece extents. Where port is not specified, it is assumed to
+ |      be 0.
+ |
+ |  HasExecutive(...)
+ |      HasExecutive(self) -&gt; int
+ |      C++: vtkTypeBool HasExecutive()
+ |
+ |      Check whether this algorithm has an assigned executive.  This
+ |      will NOT create a default executive.
+ |
+ |  INPUT_ARRAYS_TO_PROCESS(...)
+ |      INPUT_ARRAYS_TO_PROCESS() -&gt; vtkInformationInformationVectorKey
+ |      C++: static vtkInformationInformationVectorKey *INPUT_ARRAYS_TO_PROCESS(
+ |          )
+ |
+ |      \ingroup InformationKeys
+ |
+ |  INPUT_CONNECTION(...)
+ |      INPUT_CONNECTION() -&gt; vtkInformationIntegerKey
+ |      C++: static vtkInformationIntegerKey *INPUT_CONNECTION()
+ |
+ |      \ingroup InformationKeys
+ |
+ |  INPUT_IS_OPTIONAL(...)
+ |      INPUT_IS_OPTIONAL() -&gt; vtkInformationIntegerKey
+ |      C++: static vtkInformationIntegerKey *INPUT_IS_OPTIONAL()
+ |
+ |      Keys used to specify input port requirements.\ingroup
+ |      InformationKeys
+ |
+ |  INPUT_IS_REPEATABLE(...)
+ |      INPUT_IS_REPEATABLE() -&gt; vtkInformationIntegerKey
+ |      C++: static vtkInformationIntegerKey *INPUT_IS_REPEATABLE()
+ |
+ |      \ingroup InformationKeys
+ |
+ |  INPUT_PORT(...)
+ |      INPUT_PORT() -&gt; vtkInformationIntegerKey
+ |      C++: static vtkInformationIntegerKey *INPUT_PORT()
+ |
+ |      \ingroup InformationKeys
+ |
+ |  INPUT_REQUIRED_DATA_TYPE(...)
+ |      INPUT_REQUIRED_DATA_TYPE() -&gt; vtkInformationStringVectorKey
+ |      C++: static vtkInformationStringVectorKey *INPUT_REQUIRED_DATA_TYPE(
+ |          )
+ |
+ |      \ingroup InformationKeys
+ |
+ |  INPUT_REQUIRED_FIELDS(...)
+ |      INPUT_REQUIRED_FIELDS() -&gt; vtkInformationInformationVectorKey
+ |      C++: static vtkInformationInformationVectorKey *INPUT_REQUIRED_FIELDS(
+ |          )
+ |
+ |      \ingroup InformationKeys
+ |
+ |  ModifyRequest(...)
+ |      ModifyRequest(self, request:vtkInformation, when:int) -&gt; int
+ |      C++: virtual int ModifyRequest(vtkInformation *request, int when)
+ |
+ |      This method gives the algorithm a chance to modify the contents
+ |      of a request before or after (specified in the when argument) it
+ |      is forwarded. The default implementation is empty. Returns 1 on
+ |      success, 0 on failure. When can be either
+ |      vtkExecutive::BeforeForward or vtkExecutive::AfterForward.
+ |
+ |  ProcessRequest(...)
+ |      ProcessRequest(self, request:vtkInformation, inInfo:vtkCollection,
+ |           outInfo:vtkInformationVector) -&gt; int
+ |      C++: vtkTypeBool ProcessRequest(vtkInformation *request,
+ |          vtkCollection *inInfo, vtkInformationVector *outInfo)
+ |
+ |      Version of ProcessRequest() that is wrapped. This converts the
+ |      collection to an array and calls the other version.
+ |
+ |  PropagateUpdateExtent(...)
+ |      PropagateUpdateExtent(self) -&gt; None
+ |      C++: virtual void PropagateUpdateExtent()
+ |
+ |      Propagate meta-data upstream.
+ |
+ |  ReleaseDataFlagOff(...)
+ |      ReleaseDataFlagOff(self) -&gt; None
+ |      C++: void ReleaseDataFlagOff()
+ |
+ |  ReleaseDataFlagOn(...)
+ |      ReleaseDataFlagOn(self) -&gt; None
+ |      C++: void ReleaseDataFlagOn()
+ |
+ |  RemoveAllInputConnections(...)
+ |      RemoveAllInputConnections(self, port:int) -&gt; None
+ |      C++: virtual void RemoveAllInputConnections(int port)
+ |
+ |      Removes all input connections.
+ |
+ |  RemoveAllInputs(...)
+ |      RemoveAllInputs(self) -&gt; None
+ |      C++: void RemoveAllInputs()
+ |
+ |      Remove all the input data.
+ |
+ |  RemoveInputConnection(...)
+ |      RemoveInputConnection(self, port:int, input:vtkAlgorithmOutput)
+ |          -&gt; None
+ |      C++: virtual void RemoveInputConnection(int port,
+ |          vtkAlgorithmOutput *input)
+ |      RemoveInputConnection(self, port:int, idx:int) -&gt; None
+ |      C++: virtual void RemoveInputConnection(int port, int idx)
+ |
+ |      Remove a connection from the given input port index.  See
+ |      SetInputConnection() for details on input connection.  This
+ |      method is the complement to AddInputConnection() in that it
+ |      removes only the connection specified without affecting other
+ |      connections.  Typical usage is
+ |
+ |      * filter2-&gt;RemoveInputConnection(0, filter1-&gt;GetOutputPort(0)).
+ |
+ |  RemoveNoPriorTemporalAccessInformationKey(...)
+ |      RemoveNoPriorTemporalAccessInformationKey(self) -&gt; None
+ |      C++: void RemoveNoPriorTemporalAccessInformationKey()
+ |
+ |      Removes any information key
+ |      `vtkStreamingDemandDrivenPipeline::NO_PRIOR_TEMPORAL_ACCESS()` to
+ |      all output ports of this `vtkAlgorithm`.
+ |
+ |  SetAbortExecute(...)
+ |      SetAbortExecute(self, _arg:int) -&gt; None
+ |      C++: virtual void SetAbortExecute(vtkTypeBool _arg)
+ |
+ |      Set/Get the AbortExecute flag for the process object. Process
+ |      objects may handle premature termination of execution in
+ |      different ways.
+ |
+ |  SetAbortExecuteAndUpdateTime(...)
+ |      SetAbortExecuteAndUpdateTime(self) -&gt; None
+ |      C++: void SetAbortExecuteAndUpdateTime()
+ |
+ |      Set AbortExecute Flag and update LastAbortTime.
+ |
+ |  SetAbortOutput(...)
+ |      SetAbortOutput(self, _arg:bool) -&gt; None
+ |      C++: virtual void SetAbortOutput(bool _arg)
+ |
+ |      Set/Get an internal variable used to communicate between the
+ |      algorithm and executive. If the executive sees this value is set,
+ |      it will initialize the output data and pass the ABORTED flag
+ |      downstream.
+ |
+ |      CheckAbort sets this value to true if the function returns true.
+ |
+ |  SetContainerAlgorithm(...)
+ |      SetContainerAlgorithm(self, containerAlg:vtkAlgorithm) -&gt; None
+ |      C++: void SetContainerAlgorithm(vtkAlgorithm *containerAlg)
+ |
+ |      Set/get a Container algorithm for this algorithm. Allows this
+ |      algorithm to check to abort status of its Container algorithm as
+ |      well as have access to its Container&#39;s information.
+ |
+ |  SetDefaultExecutivePrototype(...)
+ |      SetDefaultExecutivePrototype(proto:vtkExecutive) -&gt; None
+ |      C++: static void SetDefaultExecutivePrototype(vtkExecutive *proto)
+ |
+ |      If the DefaultExecutivePrototype is set, a copy of it is created
+ |      in CreateDefaultExecutive() using NewInstance().
+ |
+ |  SetExecutive(...)
+ |      SetExecutive(self, executive:vtkExecutive) -&gt; None
+ |      C++: virtual void SetExecutive(vtkExecutive *executive)
+ |
+ |      Set this algorithm&#39;s executive.  This algorithm is removed from
+ |      any executive to which it has previously been assigned and then
+ |      assigned to the given executive.
+ |
+ |  SetInformation(...)
+ |      SetInformation(self, __a:vtkInformation) -&gt; None
+ |      C++: virtual void SetInformation(vtkInformation *)
+ |
+ |  SetInputArrayToProcess(...)
+ |      SetInputArrayToProcess(self, idx:int, port:int, connection:int,
+ |          fieldAssociation:int, name:str) -&gt; None
+ |      C++: virtual void SetInputArrayToProcess(int idx, int port,
+ |          int connection, int fieldAssociation, const char *name)
+ |      SetInputArrayToProcess(self, idx:int, port:int, connection:int,
+ |          fieldAssociation:int, fieldAttributeType:int) -&gt; None
+ |      C++: virtual void SetInputArrayToProcess(int idx, int port,
+ |          int connection, int fieldAssociation, int fieldAttributeType)
+ |      SetInputArrayToProcess(self, idx:int, info:vtkInformation) -&gt; None
+ |      C++: virtual void SetInputArrayToProcess(int idx,
+ |          vtkInformation *info)
+ |      SetInputArrayToProcess(self, idx:int, port:int, connection:int,
+ |          fieldAssociation:str, attributeTypeorName:str) -&gt; None
+ |      C++: virtual void SetInputArrayToProcess(int idx, int port,
+ |          int connection, const char *fieldAssociation,
+ |          const char *attributeTypeorName)
+ |
+ |      Set the input data arrays that this algorithm will process.
+ |      Specifically the idx array that this algorithm will process
+ |      (starting from 0) is the array on port, connection with the
+ |      specified association and name or attribute type (such as
+ |      SCALARS). The fieldAssociation refers to which field in the data
+ |      object the array is stored. See vtkDataObject::FieldAssociations
+ |      for detail.
+ |
+ |  SetInputConnection(...)
+ |      SetInputConnection(self, port:int, input:vtkAlgorithmOutput)
+ |          -&gt; None
+ |      C++: virtual void SetInputConnection(int port,
+ |          vtkAlgorithmOutput *input)
+ |      SetInputConnection(self, input:vtkAlgorithmOutput) -&gt; None
+ |      C++: virtual void SetInputConnection(vtkAlgorithmOutput *input)
+ |
+ |      Set the connection for the given input port index.  Each input
+ |      port of a filter has a specific purpose.  A port may have zero or
+ |      more connections and the required number is specified by each
+ |      filter.  Setting the connection with this method removes all
+ |      other connections from the port.  To add more than one connection
+ |      use AddInputConnection().
+ |
+ |      * The input for the connection is the output port of another
+ |      * filter, which is obtained with GetOutputPort().  Typical usage
+ |        is
+ |
+ |      * filter2-&gt;SetInputConnection(0, filter1-&gt;GetOutputPort(0)).
+ |
+ |  SetInputDataObject(...)
+ |      SetInputDataObject(self, port:int, data:vtkDataObject) -&gt; None
+ |      C++: virtual void SetInputDataObject(int port,
+ |          vtkDataObject *data)
+ |      SetInputDataObject(self, data:vtkDataObject) -&gt; None
+ |      C++: virtual void SetInputDataObject(vtkDataObject *data)
+ |
+ |      Sets the data-object as an input on the given port index. Setting
+ |      the input with this method removes all other connections from the
+ |      port. Internally, this method creates a vtkTrivialProducer
+ |      instance and sets that as the input-connection for the given
+ |      port. It is safe to call this method repeatedly with the same
+ |      input data object. The MTime of the vtkAlgorithm will not change
+ |      unless the data object changed.
+ |
+ |  SetNoPriorTemporalAccessInformationKey(...)
+ |      SetNoPriorTemporalAccessInformationKey(self, key:int) -&gt; None
+ |      C++: void SetNoPriorTemporalAccessInformationKey(int key)
+ |      SetNoPriorTemporalAccessInformationKey(self) -&gt; None
+ |      C++: void SetNoPriorTemporalAccessInformationKey()
+ |
+ |      Set to all output ports of this algorithm the information key
+ |      `vtkStreamingDemandDrivenPipeline::NO_PRIOR_TEMPORAL_ACCESS()`.
+ |      This should be set on sources of pipelines for which all
+ |      timesteps are not necessarily all available at once. This is
+ |      typically the case for visualization in situ.
+ |
+ |      ote Default value in
+ |      `vtkStreamingDemandDrivenPipeline::NO_PRIOR_TEMPORAL_ACCESS_RESET`
+ |      . `vtkStreamingDemandDrivenPipeline` will set it to
+ |      `NO_PRIOR_TEMPORAL_ACCESS_CONTINUE&#39; after execution of the first
+ |      time step.
+ |
+ |  SetProgressObserver(...)
+ |      SetProgressObserver(self, __a:vtkProgressObserver) -&gt; None
+ |      C++: void SetProgressObserver(vtkProgressObserver *)
+ |
+ |      If an ProgressObserver is set, the algorithm will report progress
+ |      through it rather than directly. This means that it will call
+ |      UpdateProgress() on the ProgressObserver rather than itself
+ |      report it and set progress. This is most useful in situations
+ |      where multiple threads are executing an algorithm at the same
+ |      time and want to handle progress locally.
+ |
+ |  SetProgressShiftScale(...)
+ |      SetProgressShiftScale(self, shift:float, scale:float) -&gt; None
+ |      C++: void SetProgressShiftScale(double shift, double scale)
+ |
+ |      Specify the shift and scale values to use to apply to the
+ |      progress amount when `UpdateProgress` is called. By default shift
+ |      is set to 0, and scale is set to 1.0. This is useful when the
+ |      vtkAlgorithm instance is used as an internal algorithm to solve
+ |      only a part of a whole problem.
+ |
+ |      If calling on a internal vtkAlgorithm, make sure you take into
+ |      consideration that values set of the outer vtkAlgorithm as well
+ |      since the outer vtkAlgorithm itself may be nested in another
+ |      algorithm.
+ |
+ |      ote SetProgressShiftScale does not modify the MTime of the
+ |      algorithm.
+ |
+ |  SetProgressText(...)
+ |      SetProgressText(self, ptext:str) -&gt; None
+ |      C++: void SetProgressText(const char *ptext)
+ |
+ |      Set the current text message associated with the progress state.
+ |      This may be used by a calling process/GUI. Note: Because
+ |      SetProgressText() is called from inside RequestData() it does not
+ |      modify the algorithm object. Algorithms are not allowed to modify
+ |      themselves from inside RequestData().
+ |
+ |  SetReleaseDataFlag(...)
+ |      SetReleaseDataFlag(self, __a:int) -&gt; None
+ |      C++: virtual void SetReleaseDataFlag(vtkTypeBool)
+ |
+ |      Turn release data flag on or off for all output ports.
+ |
+ |  Update(...)
+ |      Update(self, port:int) -&gt; None
+ |      C++: virtual void Update(int port)
+ |      Update(self) -&gt; None
+ |      C++: virtual void Update()
+ |      Update(self, port:int, requests:vtkInformationVector) -&gt; int
+ |      C++: virtual vtkTypeBool Update(int port,
+ |          vtkInformationVector *requests)
+ |      Update(self, requests:vtkInformation) -&gt; int
+ |      C++: virtual vtkTypeBool Update(vtkInformation *requests)
+ |
+ |      Bring this algorithm&#39;s outputs up-to-date.
+ |
+ |  UpdateDataObject(...)
+ |      UpdateDataObject(self) -&gt; None
+ |      C++: virtual void UpdateDataObject()
+ |
+ |      Create output object(s).
+ |
+ |  UpdateExtent(...)
+ |      UpdateExtent(self, extents:(int, int, int, int, int, int)) -&gt; int
+ |      C++: virtual int UpdateExtent(const int extents[6])
+ |
+ |      Convenience method to update an algorithm after passing requests
+ |      to its first output port. Supports extent request.
+ |
+ |  UpdateExtentIsEmpty(...)
+ |      UpdateExtentIsEmpty(self, pinfo:vtkInformation,
+ |          output:vtkDataObject) -&gt; int
+ |      C++: int UpdateExtentIsEmpty(vtkInformation *pinfo,
+ |          vtkDataObject *output)
+ |      UpdateExtentIsEmpty(self, pinfo:vtkInformation, extentType:int)
+ |          -&gt; int
+ |      C++: int UpdateExtentIsEmpty(vtkInformation *pinfo,
+ |          int extentType)
+ |
+ |      This detects when the UpdateExtent will generate no data This
+ |      condition is satisfied when the UpdateExtent has zero volume
+ |      (0,-1,...) or the UpdateNumberOfPieces is 0. The source uses this
+ |      call to determine whether to call Execute.
+ |
+ |  UpdateInformation(...)
+ |      UpdateInformation(self) -&gt; None
+ |      C++: virtual void UpdateInformation()
+ |
+ |      Bring the algorithm&#39;s information up-to-date.
+ |
+ |  UpdatePiece(...)
+ |      UpdatePiece(self, piece:int, numPieces:int, ghostLevels:int,
+ |          extents:(int, int, int, int, int, int)=...) -&gt; int
+ |      C++: virtual int UpdatePiece(int piece, int numPieces,
+ |          int ghostLevels, const int extents[6]=nullptr)
+ |
+ |      Convenience method to update an algorithm after passing requests
+ |      to its first output port. See documentation for Update(int port,
+ |      vtkInformationVector* requests) for details. Supports piece and
+ |      extent (optional) requests.
+ |
+ |  UpdateProgress(...)
+ |      UpdateProgress(self, amount:float) -&gt; None
+ |      C++: void UpdateProgress(double amount)
+ |
+ |      Update the progress of the process object. If a ProgressMethod
+ |      exists, executes it.  Then set the Progress ivar to amount. The
+ |      parameter amount should range between (0,1).
+ |
+ |  UpdateTimeStep(...)
+ |      UpdateTimeStep(self, time:float, piece:int=-1, numPieces:int=1,
+ |          ghostLevels:int=0, extents:(int, int, int, int, int, int)=...)
+ |           -&gt; int
+ |      C++: virtual int UpdateTimeStep(double time, int piece=-1,
+ |          int numPieces=1, int ghostLevels=0,
+ |          const int extents[6]=nullptr)
+ |
+ |      Convenience method to update an algorithm after passing requests
+ |      to its first output port. See documentation for Update(int port,
+ |      vtkInformationVector* requests) for details. Supports time, piece
+ |      (optional) and extent (optional) requests.
+ |
+ |  UpdateWholeExtent(...)
+ |      UpdateWholeExtent(self) -&gt; None
+ |      C++: virtual void UpdateWholeExtent()
+ |
+ |      Bring this algorithm&#39;s outputs up-to-date.
+ |
+ |  UsesGarbageCollector(...)
+ |      UsesGarbageCollector(self) -&gt; bool
+ |      C++: bool UsesGarbageCollector() override;
+ |
+ |      Participate in garbage collection.
+ |
+ |  __call__(self, /, *args, **kwargs)
+ |      Call self as a function.
+ |
+ |  __rrshift__(self, value, /)
+ |      Return value&gt;&gt;self.
+ |
+ |  __rshift__(self, value, /)
+ |      Return self&gt;&gt;value.
+ |
+ |  update(...)
+ |      This method updates the pipeline connected to this algorithm
+ |      and returns an Output object with an output property. This property
+ |      provides either a single data object (for algorithms with single output
+ |      or a tuple (for algorithms with multiple outputs).
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from vtkmodules.vtkCommonExecutionModel.vtkAlgorithm:
+ |
+ |  abort_execute
+ |      read-write, Calls GetAbortExecute/SetAbortExecute
+ |
+ |  abort_output
+ |      read-write, Calls GetAbortOutput/SetAbortOutput
+ |
+ |  container_algorithm
+ |      read-write, Calls GetContainerAlgorithm/SetContainerAlgorithm
+ |
+ |  default_executive_prototype
+ |      write-only, Calls SetDefaultExecutivePrototype
+ |
+ |  error_code
+ |      read-only, Calls GetErrorCode
+ |
+ |  executive
+ |      read-write, Calls GetExecutive/SetExecutive
+ |
+ |  information
+ |      read-write, Calls GetInformation/SetInformation
+ |
+ |  input_algorithm
+ |      read-only, Calls GetInputAlgorithm
+ |
+ |  input_array_to_process
+ |      write-only, Calls SetInputArrayToProcess
+ |
+ |  input_connection
+ |      write-only, Calls SetInputConnection
+ |
+ |  input_data_object
+ |      write-only, Calls SetInputDataObject
+ |
+ |  input_executive
+ |      read-only, Calls GetInputExecutive
+ |
+ |  input_information
+ |      read-only, Calls GetInputInformation
+ |
+ |  no_prior_temporal_access_information_key
+ |      write-only, Calls SetNoPriorTemporalAccessInformationKey
+ |
+ |  number_of_input_ports
+ |      read-only, Calls GetNumberOfInputPorts
+ |
+ |  output_port
+ |      read-only, Calls GetOutputPort
+ |
+ |  progress
+ |      read-only, Calls GetProgress
+ |
+ |  progress_observer
+ |      read-write, Calls GetProgressObserver/SetProgressObserver
+ |
+ |  progress_scale
+ |      read-only, Calls GetProgressScale
+ |
+ |  progress_shift
+ |      read-only, Calls GetProgressShift
+ |
+ |  progress_shift_scale
+ |      write-only, Calls SetProgressShiftScale
+ |
+ |  progress_text
+ |      read-write, Calls GetProgressText/SetProgressText
+ |
+ |  release_data_flag
+ |      read-write, Calls GetReleaseDataFlag/SetReleaseDataFlag
+ |
+ |  total_number_of_input_connections
+ |      read-only, Calls GetTotalNumberOfInputConnections
+ |
+ |  update_extent
+ |      read-only, Calls GetUpdateExtent
+ |
+ |  update_ghost_level
+ |      read-only, Calls GetUpdateGhostLevel
+ |
+ |  update_number_of_pieces
+ |      read-only, Calls GetUpdateNumberOfPieces
+ |
+ |  update_piece
+ |      read-only, Calls GetUpdatePiece
+ |
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes inherited from vtkmodules.vtkCommonExecutionModel.vtkAlgorithm:
+ |
+ |  DEFAULT_PRECISION = 2
+ |
+ |  DOUBLE_PRECISION = 1
+ |
+ |  DesiredOutputPrecision = &lt;class &#39;vtkmodules.vtkCommonExecutionModel.vt...
+ |
+ |  SINGLE_PRECISION = 0
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from vtkmodules.vtkCommonCore.vtkObject:
+ |
+ |  AddObserver(...)
+ |      AddObserver(self, event:int, command:Callback, priority:float=0.0) -&gt; int
+ |      C++: unsigned long AddObserver(const char* event,
+ |          vtkCommand* command, float priority=0.0f)
+ |
+ |      Add an event callback command(o:vtkObject, event:int) for an event type.
+ |      Returns a handle that can be used with RemoveEvent(event:int).
+ |
+ |  BreakOnError(...)
+ |      BreakOnError() -&gt; None
+ |      C++: static void BreakOnError()
+ |
+ |      This method is called when vtkErrorMacro executes. It allows the
+ |      debugger to break on error.
+ |
+ |  DebugOff(...)
+ |      DebugOff(self) -&gt; None
+ |      C++: virtual void DebugOff()
+ |
+ |      Turn debugging output off.
+ |
+ |  DebugOn(...)
+ |      DebugOn(self) -&gt; None
+ |      C++: virtual void DebugOn()
+ |
+ |      Turn debugging output on.
+ |
+ |  GetCommand(...)
+ |      GetCommand(self, tag:int) -&gt; vtkCommand
+ |      C++: vtkCommand *GetCommand(unsigned long tag)
+ |
+ |  GetDebug(...)
+ |      GetDebug(self) -&gt; bool
+ |      C++: bool GetDebug()
+ |
+ |      Get the value of the debug flag.
+ |
+ |  GetGlobalWarningDisplay(...)
+ |      GetGlobalWarningDisplay() -&gt; int
+ |      C++: static vtkTypeBool GetGlobalWarningDisplay()
+ |
+ |  GetMTime(...)
+ |      GetMTime(self) -&gt; int
+ |      C++: virtual vtkMTimeType GetMTime()
+ |
+ |      Return this object&#39;s modified time.
+ |
+ |  GetObjectDescription(...)
+ |      GetObjectDescription(self) -&gt; str
+ |      C++: std::string GetObjectDescription() override;
+ |
+ |      The object description printed in messages and PrintSelf output.
+ |      To be used only for reporting purposes.
+ |
+ |  GetObjectName(...)
+ |      GetObjectName(self) -&gt; str
+ |      C++: virtual std::string GetObjectName()
+ |
+ |  GlobalWarningDisplayOff(...)
+ |      GlobalWarningDisplayOff() -&gt; None
+ |      C++: static void GlobalWarningDisplayOff()
+ |
+ |  GlobalWarningDisplayOn(...)
+ |      GlobalWarningDisplayOn() -&gt; None
+ |      C++: static void GlobalWarningDisplayOn()
+ |
+ |  HasObserver(...)
+ |      HasObserver(self, event:int, __b:vtkCommand) -&gt; int
+ |      C++: vtkTypeBool HasObserver(unsigned long event, vtkCommand *)
+ |      HasObserver(self, event:str, __b:vtkCommand) -&gt; int
+ |      C++: vtkTypeBool HasObserver(const char *event, vtkCommand *)
+ |      HasObserver(self, event:int) -&gt; int
+ |      C++: vtkTypeBool HasObserver(unsigned long event)
+ |      HasObserver(self, event:str) -&gt; int
+ |      C++: vtkTypeBool HasObserver(const char *event)
+ |
+ |  InvokeEvent(...)
+ |      InvokeEvent(self, event:int, callData:Any) -&gt; int
+ |      C++: int InvokeEvent(unsigned long event, void* callData)
+ |      InvokeEvent(self, event:str, callData:Any) -&gt; int
+ |      C++: int InvokeEvent(const char* event, void* callData)
+ |      InvokeEvent(self, event:int) -&gt; int
+ |      C++: int InvokeEvent(unsigned long event)
+ |      InvokeEvent(self, event:str) -&gt; int
+ |      C++: int InvokeEvent(const char* event)
+ |
+ |      This method invokes an event and returns whether the event was
+ |      aborted or not. If the event was aborted, the return value is 1,
+ |      otherwise it is 0.
+ |
+ |  Modified(...)
+ |      Modified(self) -&gt; None
+ |      C++: virtual void Modified()
+ |
+ |      Update the modification time for this object. Many filters rely
+ |      on the modification time to determine if they need to recompute
+ |      their data. The modification time is a unique monotonically
+ |      increasing unsigned long integer.
+ |
+ |  RemoveAllObservers(...)
+ |      RemoveAllObservers(self) -&gt; None
+ |      C++: void RemoveAllObservers()
+ |
+ |  RemoveObserver(...)
+ |      RemoveObserver(self, __a:vtkCommand) -&gt; None
+ |      C++: void RemoveObserver(vtkCommand *)
+ |      RemoveObserver(self, tag:int) -&gt; None
+ |      C++: void RemoveObserver(unsigned long tag)
+ |
+ |  RemoveObservers(...)
+ |      RemoveObservers(self, event:int, __b:vtkCommand) -&gt; None
+ |      C++: void RemoveObservers(unsigned long event, vtkCommand *)
+ |      RemoveObservers(self, event:str, __b:vtkCommand) -&gt; None
+ |      C++: void RemoveObservers(const char *event, vtkCommand *)
+ |      RemoveObservers(self, event:int) -&gt; None
+ |      C++: void RemoveObservers(unsigned long event)
+ |      RemoveObservers(self, event:str) -&gt; None
+ |      C++: void RemoveObservers(const char *event)
+ |
+ |  SetDebug(...)
+ |      SetDebug(self, debugFlag:bool) -&gt; None
+ |      C++: void SetDebug(bool debugFlag)
+ |
+ |      Set the value of the debug flag. A true value turns debugging on.
+ |
+ |  SetGlobalWarningDisplay(...)
+ |      SetGlobalWarningDisplay(val:int) -&gt; None
+ |      C++: static void SetGlobalWarningDisplay(vtkTypeBool val)
+ |
+ |      This is a global flag that controls whether any debug, warning or
+ |      error messages are displayed.
+ |
+ |  SetObjectName(...)
+ |      SetObjectName(self, objectName:str) -&gt; None
+ |      C++: virtual void SetObjectName(const std::string &amp;objectName)
+ |
+ |      Set/get the name of this object for reporting purposes. The name
+ |      appears in warning and debug messages and in the Print output.
+ |      Setting the object name does not change the MTime and does not
+ |      invoke a ModifiedEvent. Derived classes implementing copying
+ |      methods are expected not to copy the ObjectName.
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from vtkmodules.vtkCommonCore.vtkObject:
+ |
+ |  debug
+ |      read-write, Calls GetDebug/SetDebug
+ |
+ |  global_warning_display
+ |      read-write, Calls GetGlobalWarningDisplay/SetGlobalWarningDisplay
+ |
+ |  m_time
+ |      read-only, Calls GetMTime
+ |
+ |  object_description
+ |      read-only, Calls GetObjectDescription
+ |
+ |  object_name
+ |      read-write, Calls GetObjectName/SetObjectName
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
+ |
+ |  FastDelete(...)
+ |      FastDelete(self) -&gt; None
+ |      C++: virtual void FastDelete()
+ |
+ |      Delete a reference to this object.  This version will not invoke
+ |      garbage collection and can potentially leak the object if it is
+ |      part of a reference loop.  Use this method only when it is known
+ |      that the object has another reference and would not be collected
+ |      if a full garbage collection check were done.
+ |
+ |  GetAddressAsString(...)
+ |      GetAddressAsString(self, classname:str) -&gt; str
+ |
+ |      Get address of C++ object in format &#39;Addr=%p&#39; after casting to
+ |      the specified type.  This method is obsolete, you can get the
+ |      same information from o.__this__.
+ |
+ |  GetClassName(...)
+ |      GetClassName(self) -&gt; str
+ |      C++: const char *GetClassName()
+ |
+ |      Return the class name as a string.
+ |
+ |  GetIsInMemkind(...)
+ |      GetIsInMemkind(self) -&gt; bool
+ |      C++: bool GetIsInMemkind()
+ |
+ |      A local state flag that remembers whether this object lives in
+ |      the normal or extended memory space.
+ |
+ |  GetReferenceCount(...)
+ |      GetReferenceCount(self) -&gt; int
+ |      C++: int GetReferenceCount()
+ |
+ |      Return the current reference count of this object.
+ |
+ |  GetUsingMemkind(...)
+ |      GetUsingMemkind() -&gt; bool
+ |      C++: static bool GetUsingMemkind()
+ |
+ |      A global state flag that controls whether vtkObjects are
+ |      constructed in the usual way (the default) or within the extended
+ |      memory space.
+ |
+ |  InitializeObjectBase(...)
+ |      InitializeObjectBase(self) -&gt; None
+ |      C++: void InitializeObjectBase()
+ |
+ |  Register(...)
+ |      Register(self, o:vtkObjectBase)
+ |      C++: virtual void Register(vtkObjectBase *o)
+ |
+ |      Increase the reference count by 1.
+ |
+ |  SetMemkindDirectory(...)
+ |      SetMemkindDirectory(directoryname:str) -&gt; None
+ |      C++: static void SetMemkindDirectory(const char *directoryname)
+ |
+ |      The name of a directory, ideally mounted -o dax, to memory map an
+ |      extended memory space within. This must be called before any
+ |      objects are constructed in the extended space. It can not be
+ |      changed once setup.
+ |
+ |  SetReferenceCount(...)
+ |      SetReferenceCount(self, __a:int) -&gt; None
+ |      C++: void SetReferenceCount(int)
+ |
+ |      Sets the reference count. (This is very dangerous, use with
+ |      care.)
+ |
+ |  UnRegister(...)
+ |      UnRegister(self, o:vtkObjectBase)
+ |      C++: virtual void UnRegister(vtkObjectBase* o)
+ |
+ |      Decrease the reference count (release by another object). This
+ |      has the same effect as invoking Delete() (i.e., it reduces the
+ |      reference count by 1).
+ |
+ |  ----------------------------------------------------------------------
+ |  Class methods inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
+ |
+ |  override(...)
+ |      This method can be used to override a VTK class with a Python subclass.
+ |      The class type passed to override will afterwards be instantiated
+ |      instead of the type override is called on.
+ |      For example,
+ |
+ |      class foo(vtk.vtkPoints):
+ |        pass
+ |      vtk.vtkPoints.override(foo)
+ |
+ |      will lead to foo being instantied every time vtkPoints() is called.
+ |      The main objective of this functionality is to enable developers to
+ |      extend VTK classes with more pythonic subclasses that contain
+ |      convenience functionality.
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from vtkmodules.vtkCommonCore.vtkObjectBase:
+ |
+ |  class_name
+ |      read-only, Calls GetClassName
+ |
+ |  is_in_memkind
+ |      read-only, Calls GetIsInMemkind
+ |
+ |  memkind_directory
+ |      write-only, Calls SetMemkindDirectory
+ |
+ |  reference_count
+ |      read-write, Calls GetReferenceCount/SetReferenceCount
+ |
+ |  using_memkind
+ |      read-only, Calls GetUsingMemkind
+</pre></div>
+</div>
+<p>このVTKフィルタを自分で使ってみるには，こちらをご覧ください．</p>
+<p>アルゴリズムの出力を <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.wrap.html#pyvista.wrap" title="(in PyVista v0.45.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.wrap()</span></code></a> でラップする必要があることを忘れないでください．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">alg</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkOutlineFilter</span><span class="p">()</span>
+
+<span class="c1"># (your code here, answer below)</span>
+
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">outline</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.wrap.html#pyvista.wrap" title="pyvista.wrap" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">wrap</span></a><span class="p">(</span><span class="n">alg</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">outline</span></a>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+
+<table style='width: 100%;'>
+<tr><th>PolyData</th><th>Information</th></tr>
+<tr><td>N Cells</td><td>0</td></tr>
+<tr><td>N Points</td><td>0</td></tr>
+<tr><td>N Strips</td><td>0</td></tr>
+<tr><td>X Bounds</td><td>1.000e+299, -1.000e+299</td></tr>
+<tr><td>Y Bounds</td><td>1.000e+299, -1.000e+299</td></tr>
+<tr><td>Z Bounds</td><td>1.000e+299, -1.000e+299</td></tr>
+<tr><td>N Arrays</td><td>0</td></tr>
+</table>
+
+
+</div>
+<br />
+<br /><div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">alg</span><span class="o">.</span><span class="n">SetInputDataObject</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a><span class="p">)</span>
+<span class="n">alg</span><span class="o">.</span><span class="n">SetGenerateFaces</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># noqa: FBT003</span>
+<span class="n">alg</span><span class="o">.</span><span class="n">Update</span><span class="p">()</span>
+
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">outline</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.wrap.html#pyvista.wrap" title="pyvista.wrap" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">wrap</span></a><span class="p">(</span><span class="n">alg</span><span class="o">.</span><span class="n">GetOutput</span><span class="p">())</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">outline</span></a>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+
+<table style='width: 100%;'>
+<tr><th>PolyData</th><th>Information</th></tr>
+<tr><td>N Cells</td><td>12</td></tr>
+<tr><td>N Points</td><td>8</td></tr>
+<tr><td>N Strips</td><td>0</td></tr>
+<tr><td>X Bounds</td><td>-1.000e+01, 1.000e+01</td></tr>
+<tr><td>Y Bounds</td><td>-2.309e-14, 2.000e+01</td></tr>
+<tr><td>Z Bounds</td><td>1.416e-01, 7.483e+00</td></tr>
+<tr><td>N Arrays</td><td>0</td></tr>
+</table>
+
+
+</div>
+<br />
+<br /><div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>PyVistaでは，aboutフィルタを <code class="docutils literal notranslate"><span class="pre">.outline()</span></code> フィルタで置き換えることができることに注意してください．</p>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">p</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">outline</span></a><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">p</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+スタティックなシーン</label><div class="sd-tab-content docutils">
+<img src="../../_images/sphx_glr_c_vtk_algorithms_002.png" srcset="../../_images/sphx_glr_c_vtk_algorithms_002.png" alt="c vtk algorithms" class = "sphx-glr-single-img"/></div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+インタラクティブなシーン</label><div class="sd-tab-content docutils">
+
+    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/06_vtk/images/sphx_glr_c_vtk_algorithms_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+</section>
+<section id="find-your-own-filter">
+<h2>自分だけのフィルターを探す<a class="headerlink" href="#find-your-own-filter" title="Link to this heading">#</a></h2>
+<p>VTKのサンプルやドキュメントを見て，自分のメッシュに適用したいフィルタを探してみましょう．インストラクターが実装のお手伝いをします．</p>
+<p><a class="reference external" href="https://kitware.github.io/vtk-examples/site/Python/">https://kitware.github.io/vtk-examples/site/Python/</a> をご覧ください．</p>
+<center>
+  <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/06_vtk/c_vtk_algorithms.ipynb">
+    <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
+  </a>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.823 seconds)</p>
+<div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-c-vtk-algorithms-py">
+<div class="binder-badge docutils container">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/c_vtk_algorithms.ipynb"><img alt="Binderの起動" src="../../_images/binder_badge_logo16.svg" style="width: 150px;" />
+</a>
+</div>
+<div class="sphx-glr-download sphx-glr-download-jupyter docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/25ea3d3ddf3b865b4ecd54d3386ebc2d/c_vtk_algorithms.ipynb"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Jupyter</span> <span class="pre">notebook:</span> <span class="pre">c_vtk_algorithms.ipynb</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-python docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/ddf2406dbf8ef542fad2ea7194495bc2/c_vtk_algorithms.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">c_vtk_algorithms.py</span></code></a></p>
+</div>
+<div class="sphx-glr-download sphx-glr-download-zip docutils container">
+<p><a class="reference download internal" download="" href="../../_downloads/fd1cece8ad17c44d03fc774b30f75bf7/c_vtk_algorithms.zip"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">zipped:</span> <span class="pre">c_vtk_algorithms.zip</span></code></a></p>
+</div>
+</div>
+<p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Sphinx-Galleryによるギャラリー</a></p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="b_create_vtk.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">前へ</p>
+        <p class="prev-next-title">VTKオブジェクトの作成</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="d_wasm.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">次へ</p>
+        <p class="prev-next-title">VTK + WASM</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目次
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-filter">簡易フィルター</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#find-your-own-filter">自分だけのフィルターを探す</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+著者 PyVista Developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, PyVista Developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
