@@ -58,8 +58,16 @@ jobs:
       - name: Build Documentation
         run: make -C doc html SPHINXOPTS="-W --keep-going"
 
+      - uses: actions/checkout@v4
+        with:
+          repository: pyvista/pyvista-tutorial-translations
+          path: pyvista-tutorial-translations
+          fetch-depth: 0
+          persist-credentials: false
+
       - name: Build I18N Documentation
         run: |
+          cp -r pyvista-tutorial-translations/locale doc/source/locales
           make -C doc mini18n-html SPHINXOPTS="-W --keep-going"
           mv doc/build/mini18n-html/en doc/build/html
           mv doc/build/mini18n-html/ja doc/build/html
