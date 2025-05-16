@@ -53,3 +53,4 @@ repos:
     hooks:
       - id: lychee
         args: ["--no-progress", "--exclude", "file://"]
+        pass_filenames: false
