@@ -51,6 +51,6 @@ repos:
   - repo: https://github.com/lycheeverse/lychee
     rev: v0.15.1
     hooks:
-      - id: lychee-docker
+      - id: lychee
         args: ["--no-progress", "--exclude", "file://"]
         pass_filenames: false
