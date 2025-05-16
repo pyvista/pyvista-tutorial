@@ -66,11 +66,7 @@ jobs:
           persist-credentials: false
 
       - name: Build I18N Documentation
-        run: |
-          cp -r pyvista-tutorial-translations/locale/ja doc/source/locales/ja
-          make -C doc mini18n-html SPHINXOPTS="-W --keep-going"
-          mv doc/build/mini18n-html/en doc/build/html
-          mv doc/build/mini18n-html/ja doc/build/html
+        run: make -C doc mini18n-html SPHINXOPTS="-W --keep-going -D locale_dirs='../pyvista-tutorial-translations/locale' ./_build/html"
 
       - name: Tar build
         run: tar -zcvf doc-build.tar.gz doc/build/
