@@ -47,3 +47,9 @@ repos:
     rev: v1.5.2
     hooks:
       - id: zizmor
+
+  - repo: https://github.com/lycheeverse/lychee
+    rev: v0.15.1
+    hooks:
+      - id: lychee
+        args: ["--no-progress", "--exclude", "file://"]
