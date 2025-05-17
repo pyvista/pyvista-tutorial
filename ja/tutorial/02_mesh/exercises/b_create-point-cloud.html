@@ -491,13 +491,13 @@ document.write(`
 </div>
 <section class="sphx-glr-example-title" id="create-point-cloud">
 <span id="create-point-cloud-exercise"></span><span id="sphx-glr-tutorial-02-mesh-exercises-b-create-point-cloud-py"></span><h1>点群を作成<a class="headerlink" href="#create-point-cloud" title="Link to this heading">#</a></h1>
-<p>頂点のポイントクラウドとそれらのポイントのスカラー配列から <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> オブジェクトを作成します．</p>
+<p>頂点のポイントクラウドとそれらのポイントのスカラー配列から <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> オブジェクトを作成します．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
-<p>点群は一般的に <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> を使用して構築され， 個々の点に関連付けられたスカラーまたはベクトルデータ配列を簡単に持つことができます．この例では， まず <code class="docutils literal notranslate"><span class="pre">examples</span></code> モジュールから入手可能な点群を使って逆算してみます．ただし，これは独自の頂点位置のNumPy配列を使用してPyVistaメッシュを作成するのと同じです．</p>
+<p>点群は一般的に <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> を使用して構築され， 個々の点に関連付けられたスカラーまたはベクトルデータ配列を簡単に持つことができます．この例では， まず <code class="docutils literal notranslate"><span class="pre">examples</span></code> モジュールから入手可能な点群を使って逆算してみます．ただし，これは独自の頂点位置のNumPy配列を使用してPyVistaメッシュを作成するのと同じです．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define some helpers - ignore these and use your own data if you like!</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">generate_points</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="mf">0.02</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A helper to make a 3D NumPy array of points (n_points by 3).&quot;&quot;&quot;</span>

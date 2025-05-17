@@ -523,7 +523,7 @@ document.write(`
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>これは <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> であり，事実上，点，線，面を含むサーフェスデータセットであることに注意してください．このデータセットを使って，すぐにプロットすることができます．</p>
+<p>これは <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> であり，事実上，点，線，面を含むサーフェスデータセットであることに注意してください．このデータセットを使って，すぐにプロットすることができます．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tan&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -543,7 +543,7 @@ document.write(`
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>これはかなり基本的なプロットです． <code class="docutils literal notranslate"><span class="pre">show_edges=True</span></code> などのパラメータを追加したり， <code class="docutils literal notranslate"><span class="pre">color</span></code> を別の値に設定して色を変更することで，プロット方法を変更することができます．これらのことは，PyVistaのAPIドキュメントである <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.plot.html#pyvista.plot" title="(in PyVista v0.45.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.plot()</span></code></a> に記載されていますが，ここでは別のデータセットを見てみましょう．これは体積のデータセットです．</p>
+<p>これはかなり基本的なプロットです． <code class="docutils literal notranslate"><span class="pre">show_edges=True</span></code> などのパラメータを追加したり， <code class="docutils literal notranslate"><span class="pre">color</span></code> を別の値に設定して色を変更することで，プロット方法を変更することができます．これらのことは，PyVistaのAPIドキュメントである <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.plot.html#pyvista.plot" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.plot()</span></code></a> に記載されていますが，ここでは別のデータセットを見てみましょう．これは体積のデータセットです．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_frog</span><span class="p">()</span>
 <span class="n">dataset</span>
 </pre></div>
@@ -551,7 +551,7 @@ document.write(`
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>これは <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> で，一貫した間隔を持つ一様な点の集合を含むデータセットです．このデータセットをプロットするとき，個々のセルを，そのセルに関連するデータの内容に基づいてプロットする，volumetric plottingを有効にするオプションがあります．</p>
+<p>これは <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> で，一貫した間隔を持つ一様な点の集合を含むデータセットです．このデータセットをプロットするとき，個々のセルを，そのセルに関連するデータの内容に基づいてプロットする，volumetric plottingを有効にするオプションがあります．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -576,7 +576,7 @@ document.write(`
 <section id="read-from-a-file">
 <h2>ファイルから読み込む<a class="headerlink" href="#read-from-a-file" title="Link to this heading">#</a></h2>
 <p>コンピュータのローカルにアクセスできるのであれば，ファイルから直接データセットを読み込むことができます．これは，VTKがサポートしている多くのファイルフォーマットの1つであり，PyVistaが <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a> のようなライブラリに依存できるように，サポートしていない多くのファイルフォーマットでもあり得ます．</p>
-<p>以下の例では，VTKの鉄タンパク質データセット <a class="reference external" href="https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk">ironProt.vtk</a> を <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> を使ってファイルからロードしています．</p>
+<p>以下の例では，VTKの鉄タンパク質データセット <a class="reference external" href="https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk">ironProt.vtk</a> を <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> を使ってファイルからロードしています．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;ironProt.vtk&#39;</span><span class="p">)</span>
 <span class="n">dataset</span>
@@ -585,7 +585,7 @@ document.write(`
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>これもまた <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> で，ボリューム的にプロットすることができます．</p>
+<p>これもまた <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> で，ボリューム的にプロットすることができます．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>

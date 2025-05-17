@@ -528,7 +528,7 @@ most common features include:</p>
 <li><p>Use sophisticated lighting techniques like smooth shading or Eye Dome Lighting</p></li>
 <li><p>Creating animations as GIFs or movie files</p></li>
 </ul>
-<p>This section will overview PyVista’s <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> API and how to perform these tasks.
+<p>This section will overview PyVista’s <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> API and how to perform these tasks.
 The goal of this lesson is not to be a comprehensive overview of PyVista’s plotting API, but
 rather to demonstrate how it works and how you can learn to use it!</p>
 <section id="the-basics">
@@ -537,7 +537,7 @@ rather to demonstrate how it works and how you can learn to use it!</p>
 in a Matplotlib-like fashion.</p>
 <section id="add-mesh-to-plotter-object">
 <h3>Add Mesh to Plotter Object<a class="headerlink" href="#add-mesh-to-plotter-object" title="Link to this heading">#</a></h3>
-<p>When plotting, users must first create a <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> instance (much like a Matplotlib figure). Then data are added to the plotter instance through the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> method. This workflow typically looks like:</p>
+<p>When plotting, users must first create a <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> instance (much like a Matplotlib figure). Then data are added to the plotter instance through the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> method. This workflow typically looks like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 
@@ -682,7 +682,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
 </section>
 <section id="subplotting">
 <h3>Subplotting<a class="headerlink" href="#subplotting" title="Link to this heading">#</a></h3>
-<p>Creating side-by-side comparisons of datasets is easy with PyVista’s subplotting API. Get started by specifying the shape of the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> object then registering the active subplot by the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.subplot()</span></code> method much like how you subplot with Matplotlib’s API.</p>
+<p>Creating side-by-side comparisons of datasets is easy with PyVista’s subplotting API. Get started by specifying the shape of the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> object then registering the active subplot by the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.subplot()</span></code> method much like how you subplot with Matplotlib’s API.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 
 <span class="n">p</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -806,7 +806,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
 <h2>Controlling the Scene<a class="headerlink" href="#controlling-the-scene" title="Link to this heading">#</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For a full list of methods on the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a>, please see the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html">API documentation</a></p>
+<p>For a full list of methods on the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a>, please see the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html">API documentation</a></p>
 </div>
 <section id="axes-and-bounds">
 <h3>Axes and Bounds<a class="headerlink" href="#axes-and-bounds" title="Link to this heading">#</a></h3>

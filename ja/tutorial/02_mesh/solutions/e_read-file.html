@@ -503,7 +503,7 @@ to download the full example code. or to run this example in your browser via Bi
 <section class="sphx-glr-example-title" id="load-and-plot-from-a-file">
 <span id="read-file-example"></span><span id="sphx-glr-tutorial-02-mesh-solutions-e-read-file-py"></span><h1>ファイルからロードおよびプロットする<a class="headerlink" href="#load-and-plot-from-a-file" title="Link to this heading">#</a></h1>
 <p>既知のファイルタイプからデータセットを読み取ります．</p>
-<p>データがサポートされている多くのファイルフォーマットのうちの1つであれば， <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> を使って，空間参照されたデータセットを PyVista メッシュオブジェクトに読み込むだけで，メッシュをできるだけ簡単にロードできるようにします．</p>
+<p>データがサポートされている多くのファイルフォーマットのうちの1つであれば， <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> を使って，空間参照されたデータセットを PyVista メッシュオブジェクトに読み込むだけで，メッシュをできるだけ簡単にロードできるようにします．</p>
 <p>次のコードブロックでは，組み込みのサンプルファイルを使用して，飛行機のメッシュを表示します．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
@@ -811,7 +811,7 @@ get_reader(filename, force_ext=None)
        [1325, 1334, 1324]], shape=(2452, 3))
 </pre></div>
 </div>
-<p>他のファイルタイプのロードも同じくらい簡単です．ファイルパスを <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> 関数に渡すだけです．</p>
+<p>他のファイルタイプのロードも同じくらい簡単です．ファイルパスを <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> 関数に渡すだけです．</p>
 <p>以下の例の <code class="docutils literal notranslate"><span class="pre">examples.download_*</span></code> を <code class="docutils literal notranslate"><span class="pre">pyvista.read('path/to/you/file.ext')</span></code> に置き換えるだけで，他のいくつかの例があります．</p>
 <p>STLファイルの例:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_cad_model</span><span class="p">()</span>
@@ -885,7 +885,7 @@ get_reader(filename, force_ext=None)
 </div>
 <section id="exercise">
 <h2>演習<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> を使って，自分でファイルを読み込んでください．サポートされているファイル形式があれば，それを使ってください．そうでない場合は，このファイルをダウンロードしてください: <a class="github reference external" href="https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk">pyvista/pyvista-tutorial</a></p>
+<p><a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> を使って，自分でファイルを読み込んでください．サポートされているファイル形式があれば，それを使ってください．そうでない場合は，このファイルをダウンロードしてください: <a class="github reference external" href="https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk">pyvista/pyvista-tutorial</a></p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (your code here)</span>
 <span class="c1"># mesh = pv.read(&#39;path/to/file.vtk)</span>
 </pre></div>
@@ -894,7 +894,7 @@ get_reader(filename, force_ext=None)
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/e_read-file.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.528 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.906 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-e-read-file-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/e_read-file.ipynb"><img alt="Binderの起動" src="../../../_images/binder_badge_logo7.svg" style="width: 150px;" />
