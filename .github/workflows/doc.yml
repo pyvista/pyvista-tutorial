@@ -67,7 +67,7 @@ jobs:
 
       - name: Build I18N Documentation
         run: |
-          make -C doc mini18n-html SPHINXOPTS="-W --keep-going -D locale_dirs='pyvista-tutorial-translations/locale'"
+          make -C doc mini18n-html SPHINXOPTS="-W --keep-going -D locale_dirs=['pyvista-tutorial-translations/locale']"
           mv doc/build/mini18n-html/en doc/build/html
           mv doc/build/mini18n-html/ja doc/build/html
 
