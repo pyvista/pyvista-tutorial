@@ -65,11 +65,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:
  .. code-block:: none
 
 
-    array([[0.13378967, 0.60402794, 0.08571961],
-           [0.78589709, 0.76216538, 0.48316474],
-           [0.91187196, 0.66799548, 0.61632683],
-           [0.95396325, 0.80186712, 0.84907163],
-           [0.56343953, 0.8221412 , 0.79802746]])
+    array([[0.34461262, 0.78612277, 0.16748693],
+           [0.21463662, 0.67360883, 0.73557263],
+           [0.08649887, 0.0930335 , 0.03127383],
+           [0.50481882, 0.25659295, 0.02439748],
+           [0.89379282, 0.95486116, 0.6729732 ]])
 
 
 
@@ -98,9 +98,9 @@ Pass numpy array of points (n by 3) to PolyData
     <tr><td>N Cells</td><td>100</td></tr>
     <tr><td>N Points</td><td>100</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>1.251e-03, 9.969e-01</td></tr>
-    <tr><td>Y Bounds</td><td>1.046e-03, 9.993e-01</td></tr>
-    <tr><td>Z Bounds</td><td>1.063e-02, 9.798e-01</td></tr>
+    <tr><td>X Bounds</td><td>2.060e-03, 9.959e-01</td></tr>
+    <tr><td>Y Bounds</td><td>9.489e-03, 9.684e-01</td></tr>
+    <tr><td>Z Bounds</td><td>2.395e-03, 9.979e-01</td></tr>
     <tr><td>N Arrays</td><td>0</td></tr>
     </table>
 

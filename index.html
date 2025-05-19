@@ -1,33 +1,767 @@
+
 <!DOCTYPE html>
-<html>
 
-<head>
-  <title>PyVista Tutorial</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
 
-<body>
-  <script>
-    const url = new URL(window.location.href);
-    const default_language = 'en';
-    const targets = [
-      '/',
-      '//index.html',
-    ];
-    if (targets.includes(url.pathname)) {
-      const fromCookie = document.cookie.split("; ").find(kv => kv.startsWith("lang="));
-      if (fromCookie) {
-        url.pathname = `/${fromCookie.split("=")[1]}/`;
-      } else {
-        url.pathname = '/en/';
-      }
-      location.href = url.href;
-    }
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PyVista Tutorial &#8212; PyVista Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-  <noscript>
-  </noscript>
-</body>
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/thebelab.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="_static/no_search_highlight.css?v=4b20ffad" />
+    <link rel="stylesheet" type="text/css" href="_static/fontawesome/css/all.css?v=1500ccdc" />
+    <link rel="stylesheet" type="text/css" href="_static/table.css?v=f9b2bc2b" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css?v=d2d258e8" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css?v=f4aeca0c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-dataframe.css?v=2082cf3c" />
+    <link rel="stylesheet" type="text/css" href="_static/sg_gallery-rendered-html.css?v=1277b6f3" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/cards.css?v=90395a4f" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/thebelab-helper.js"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=49e1bf35"></script>
+    <script src="_static/asciinema-player_3.6.3.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Getting Started" href="getting-started.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pyvista_logo_sm.png" class="logo__image only-light" alt="PyVista Tutorial - Home"/>
+    <script>document.write(`<img src="_static/pyvista_logo_sm.png" class="logo__image only-dark" alt="PyVista Tutorial - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista-tutorial" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/discussions" title="Support" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-comment fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Support</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://docs.pyvista.org/" title="Docs" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-book fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Docs</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/pyvista/pyvista/blob/main/CONTRIBUTING.rst" title="Contributing" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-gavel fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Contributing</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://doi.org/10.21105/joss.01450" title="The Paper" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa fa-file-text fa-fw fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">The Paper</span></a>
+        </li>
+</ul></div>
+        <div class="sidebar-primary-item"><div id="atsphinx-mini18n-select-component">
+  <style>
+    div#atsphinx-mini18n-select-component div {
+      text-align: center;
+    }
+  </style>
+  <div>
+    <label for="atsphinx-mini18n-select-lang">Language:</label>
+    <select name="lang" onchange="{
+                        const values = value.split('@@');
+                        document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
+                        location.href=values[1];
+                        }" id="atsphinx-mini18n-select-lang">
+      <option value="en@@../en/index.html"
+        selected>en</option>
+      <option value="ja@@../ja/index.html">ja</option>
+    </select>
+  </div>
+</div></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="getting-started.html">Getting Started</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tutorial.html">PyVista Tutorial</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/00_intro/index.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/00_intro/a_basic.html">Create Basic Geometric Objects</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/00_jupyter/index.html">Using PyVista in Jupyter</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/00_jupyter/jupyter.html">Test out PyVista’s Jupyter Backend</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/01_basic/index.html">Basic usage</a></li>
+
+
+
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/02_mesh/index.html">What is a Mesh?</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/02_mesh/a_lesson_mesh.html">Lesson Overview</a></li>
+
+
+
+
+<li class="toctree-l3"><a class="reference internal" href="tutorial/02_mesh/exercises/index.html">Do it yourself</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/02_mesh/solutions/index.html">Solutions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/03_figures/index.html">Plotting Options and Animations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/03_figures/a_lesson_figures.html">Lesson Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/03_figures/b_shading.html">Types of Shading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/03_figures/c_geological-map.html">Geological Map on Topography</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/03_figures/d_gif.html">Create a GIF Movie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/03_figures/bonus/index.html">Bonus Content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/03_figures/exercises/index.html">Do it yourself</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/03_figures/solutions/index.html">Solutions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/04_filters/index.html">Filters</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/04_filters/a_lesson_filters.html">Using Common Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/04_filters/bonus/index.html">Bonus Content</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/04_filters/exercises/index.html">Do it yourself</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/04_filters/solutions/index.html">Solutions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial/05_action/index.html">PyVista in Action</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/06_vtk/index.html">PyVista &amp; VTK</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/06_vtk/a_1_transition_vtk.html">Transitioning from VTK to PyVista</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="tutorial/06_vtk/a_2_pyvista_vtk.html">PyVista and VTK Together</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="tutorial/06_vtk/b_create_vtk.html">Create VTK Objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/06_vtk/c_vtk_algorithms.html">Using VTK Algorithms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/06_vtk/d_wasm.html">VTK + WASM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/06_vtk/e_vtk_next.html">VTK’s Next Generation API</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/08_widgets/index.html">Widgets in PyVista</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/08_widgets/a_box-widget.html">Box Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/08_widgets/b_checkbox-widget.html">Checkbox Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/08_widgets/c_line-widget.html">Line Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/08_widgets/d_multi-slider-widget.html">Multiple Slider Widgets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/08_widgets/e_plane-widget.html">Plane Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/08_widgets/f_slider-bar-widget.html">Slider Bar Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/08_widgets/g_sphere-widget.html">Sphere Widget</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/08_widgets/h_spline-widget.html">Spline Widget</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="tutorial/09_trame/index.html">Trame</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/09_trame/a_getting_started.html">Getting started</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/09_trame/a_trame_simple.html">Simple Trame App</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/09_trame/b_trame_actor_color.html">Control the Color of an Actor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/09_trame/b_trame_vtk.html">Using VTK/PyVista and Trame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/09_trame/c_trame_scalars.html">Control Scalar Array</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/09_trame/d_trame_scalar_range.html">Control Scalar Range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/09_trame/e_trame_algorithm.html">Using VTK, PyVista, and Trame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/09_trame/f_trame_open_file.html">Open Mesh File</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PyVista Tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-links">Quick Links</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-gallery">Example Gallery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyvista-overview">PyVista Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-description">Tutorial Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructor-bios">Instructor Bios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alexander-kaszynski">Alexander Kaszynski</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bane-sullivan">Bane Sullivan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tetsuo-koyama">Tetsuo Koyama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bill-little">Bill Little</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-prerequisites">Tutorial Prerequisites</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pyvista-tutorial">
+<h1>PyVista Tutorial<a class="headerlink" href="#pyvista-tutorial" title="Link to this heading">#</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<p>Welcome to PyVista’s tutorial!</p>
+<p>Here you can find all the resources to be up and running with PyVista in no
+time. Feel free to reference our dedicated documentation at <a class="reference external" href="https://docs.pyvista.org/">PyVista
+Documentation</a></p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-0">
+JupyterLab</label><div class="sd-tab-content docutils">
+<p>Here’s a quick demo of PyVista running within <a class="reference external" href="https://jupyter.org/">Jupyterlab</a>.</p>
+<video width="100%" height="auto" controls autoplay muted>
+  <source src="_static/pyvista_jupyterlab_demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video></div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-1">
+IPython</label><div class="sd-tab-content docutils">
+<p>Here’s a quick demo of PyVista running within a terminal using <a class="reference external" href="https://ipython.org/">IPython</a>.</p>
+<video width="100%" height="auto" controls autoplay muted>
+  <source src="_static/pyvista_ipython_demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video></div>
+</div>
+<section id="quick-links">
+<h2>Quick Links<a class="headerlink" href="#quick-links" title="Link to this heading">#</a></h2>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold pyvista-card-title docutils">
+Tutorial</div>
+<p class="sd-card-text">Jump right to the tutorial content.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_saddle_surface</span><span class="p">()</span>
+<span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-2">
+Static Scene</label><div class="sd-tab-content docutils">
+<figure class="align-default">
+<img alt="_images/index-1_00_00.png" src="_images/index-1_00_00.png" />
+</figure>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+<label class="sd-tab-label" for="sd-tab-item-3">
+Interactive Scene</label><div class="sd-tab-content docutils">
+
+    <iframe src='_static/static_viewer.html?fileURL=../_images/plot_directive/index-1_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+</div>
+</div>
+</div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="tutorial.html#tutorial"><span class="std std-ref">PyVista Tutorial</span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold pyvista-card-title docutils">
+Installation and Getting Started</div>
+<p class="sd-card-text">Get PyVista setup on your environment.</p>
+<script async id="asciicast-507562" 
+                src="https://asciinema.org/a/507562.js"></script></div>
+<a class="sd-stretched-link sd-hide-link-text reference internal" href="getting-started.html#getting-started"><span class="std std-ref">Getting Started</span></a></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-gallery">
+<h2>Example Gallery<a class="headerlink" href="#example-gallery" title="Link to this heading">#</a></h2>
+<p>Click below for our extensive example gallery!</p>
+<a class="reference external image-reference" href="http://docs.pyvista.org/examples/index.html"><img alt="_images/pyvista_banner.png" src="_images/pyvista_banner.png" />
+</a>
+</section>
+<section id="pyvista-overview">
+<h2>PyVista Overview<a class="headerlink" href="#pyvista-overview" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://github.com/pyvista/pyvista">PyVista</a> is a general purpose 3D visualization library used for over 500+ open source projects and many closed source projects for the visualization of everything from <a class="reference external" href="https://dev.pyvista.org/getting-started/external_examples.html">computer aided engineering and geophysics to volcanoes and digital artwork</a>.</p>
+<p>PyVista exposes a Pythonic API to the <a class="reference external" href="http://www.vtk.org">Visualization Toolkit (VTK)</a> to provide tooling that is immediately usable without any prior knowledge of VTK and is being built as the 3D equivalent of <a class="reference external" href="https://matplotlib.org/">Matplotlib</a>, with plugins to <a class="reference external" href="https://jupyter.org/">Jupyter</a> to enable visualization of 3D data using both server and client-side rendering.</p>
+<p>We will provide a hands-on tutorial accessible to anyone with internet access and a computer via many of PyVista’s existing <a class="reference external" href="https://docs.pyvista.org/examples/index.html">example Jupyter notebooks</a> and new material through a comprehensive overview highlighting popular 3D visualization use cases.</p>
+</section>
+<section id="tutorial-description">
+<h2>Tutorial Description<a class="headerlink" href="#tutorial-description" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use PyVista to create 3D visualizations from a variety of datasets in common
+formats.</p></li>
+<li><p>Overview the classes and data structures of PyVista with real-world examples.</p></li>
+<li><p>Be familiar with the various filters and features of PyVista.</p></li>
+<li><p>Know which Python libraries are used and can be used by PyVista (meshio,
+trimesh etc).</p></li>
+</ul>
+<p>We see this tutorial catering to anyone who wants to visualize data in any
+domain, and this ranges from basic Python users to advanced power users.</p>
+<ol class="arabic simple">
+<li><p>Basic knowledge of Python to get started. Be able to install Jupyter Lab on
+your machine and be up and running.</p></li>
+<li><p>Intermediate users will want to be familiar with <a class="reference external" href="https://numpy.org/">NumPy</a> and other libraries that are compatible with PyVista,
+like <a class="reference external" href="https://trimsh.org/examples.html">trimesh</a> or <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a>.</p></li>
+<li><p>Advanced users should be familiar with the Visualization Toolkit (VTK), general
+data science, and GUI frameworks like Qt.</p></li>
+</ol>
+</section>
+<section id="instructor-bios">
+<h2>Instructor Bios<a class="headerlink" href="#instructor-bios" title="Link to this heading">#</a></h2>
+<section id="alexander-kaszynski">
+<h3>Alexander Kaszynski<a class="headerlink" href="#alexander-kaszynski" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/akaszynski/resume">Alex Kaszynski</a>, co-creator of PyVista
+and creator of the <a class="reference external" href="https://github.com/pyansys">PyAnsys</a> organization.</p>
+<p>Advocate for all things open source and has contributed to the creation of
+Ansys’s open source projects at <a class="reference external" href="https://ansys.github.io/">Ansys</a> and
+<a class="reference external" href="https://https://github.com/pyansys/pymapdl">PyMAPDL</a>. Enjoys presenting and
+demoing Python, especially 3D visualization but also its application to CAE and
+automation.</p>
+</section>
+<section id="bane-sullivan">
+<h3>Bane Sullivan<a class="headerlink" href="#bane-sullivan" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://banesullivan.com">Bane Sullivan</a>, co-creator of PyVista, is a Research Software Engineer working at the intersection of geoscience, visualization, and data science.</p>
+<p>Bane is a geophysicist/hydrologist by training and has been working to grow PyVista’s adoption within the subsurface geoscience communities, previously presenting PyVista at <a class="reference external" href="https://www.youtube.com/watch?v=FmNmRBsEBHE">Transform 2021</a>.</p>
+</section>
+<section id="tetsuo-koyama">
+<h3>Tetsuo Koyama<a class="headerlink" href="#tetsuo-koyama" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/tkoyama010">Tetsuo Koyama</a> is interested in scientific computing and visualization with computer graphics.
+Developer team member of PyVista.
+Past experience as a speaker:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/6JuB1GiDLQQ">PyConJP 2019 speaker “Introduction to FEM Analysis with Python”</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/X3Z54Kw4I6Y">PyConJP 2020 speaker “How to plot unstructured mesh file on Jupyter Notebook”</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/epxm9SjLMS0">SciPy Japan 2020 speaker “Translation Project of Mayavi2 documents”</a></p></li>
+<li><p><a class="reference external" href="https://youtu.be/ru-nENLgleo">PyConJP 2021 speaker “Visualize 3D scientific data in a Pythonic way like Matplotlib”</a></p></li>
+</ul>
+</section>
+<section id="bill-little">
+<h3>Bill Little<a class="headerlink" href="#bill-little" title="Link to this heading">#</a></h3>
+<p><a class="reference external" href="https://github.com/bjlittle">Bill Little</a>, creator of <a class="reference external" href="https://github.com/bjlittle/geovista">GeoVista</a>, is a software engineer working at the <a class="reference external" href="https://www.metoffice.gov.uk">UK Met Office</a> and a core developer on <a class="reference external" href="https://github.com/orgs/SciTools/repositories">SciTools</a>, which includes <a class="reference external" href="https://github.com/SciTools/cartopy">Cartopy</a> and <a class="reference external" href="https://github.com/SciTools/iris">Iris</a>.</p>
+</section>
+</section>
+<section id="tutorial-prerequisites">
+<h2>Tutorial Prerequisites<a class="headerlink" href="#tutorial-prerequisites" title="Link to this heading">#</a></h2>
+<p>We see this tutorial catering to anyone who wants to visualize data in any
+domain, and this ranges from basic Python users to advanced power users.  In
+fact, our tutorial instructors and community members are involved in any
+domain.</p>
+<ol class="arabic simple">
+<li><p>Basic knowledge of Python to get started. Be able to install Jupyter Lab on
+your machine and be up and running.</p></li>
+<li><p>Intermediate users will want to be familiar with <a class="reference external" href="https://numpy.org/">NumPy</a> and other libraries that are compatible with PyVista,
+like <a class="reference external" href="https://trimsh.org/examples.html">trimesh</a> or <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a>.</p></li>
+<li><p>Advanced users will be familiar with GUI frameworks like Qt, VTK, and
+advanced data science.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="getting-started.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Getting Started</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quick-links">Quick Links</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-gallery">Example Gallery</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pyvista-overview">PyVista Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-description">Tutorial Description</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instructor-bios">Instructor Bios</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#alexander-kaszynski">Alexander Kaszynski</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bane-sullivan">Bane Sullivan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tetsuo-koyama">Tetsuo Koyama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bill-little">Bill Little</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tutorial-prerequisites">Tutorial Prerequisites</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PyVista Developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022, PyVista Developers.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
 </html>
