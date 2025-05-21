@@ -53,6 +53,11 @@ jobs:
           sudo apt -y install libgeos-dev
           pip install -e .[docs]
 
+      - name: PyVista Report
+        run: |
+          python -c "import pyvista;print(pyvista.Report())"
+          echo PYVISTA_EXAMPLE_DATA_PATH=$(python -c "from pyvista import examples; print(examples.USER_DATA_PATH)") >> $GITHUB_ENV
+
       - uses: actions/checkout@v4
         with:
           repository: pyvista/pyvista-tutorial-translations
