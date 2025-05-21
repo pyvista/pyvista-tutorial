@@ -121,8 +121,7 @@ jobs:
           mv notebooks.zip doc/build/html/
 
       - name: Copy I18N Documentation
-        run: |
-          find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
+        run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -177,8 +176,7 @@ jobs:
           mv notebooks.zip doc/build/html/
 
       - name: Copy I18N Documentation
-        run: |
-          find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
+        run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
       - uses: nwtgck/actions-netlify@v3.0
         with:
