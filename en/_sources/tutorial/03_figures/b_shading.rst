@@ -306,7 +306,7 @@ physically based rendering as well.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.425 seconds)
+   **Total running time of the script:** (0 minutes 1.383 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_b_shading.py:
