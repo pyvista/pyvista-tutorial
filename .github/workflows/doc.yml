@@ -70,7 +70,6 @@ jobs:
 
       - name: Build I18N Documentation
         run: |
-          cp -r pyvista-tutorial-translations/locale/ja doc/source/locales/ja
           make -C doc mini18n-html SPHINXOPTS="-W --keep-going"
           find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
