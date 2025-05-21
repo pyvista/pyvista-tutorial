@@ -69,16 +69,16 @@ jobs:
         run: make -C doc ${{ matrix.builder }} SPHINXOPTS="-W --keep-going"
 
       - name: Tar build
-        run: tar -zcvf doc-build.tar.gz doc/build/
+        run: tar -zcvf doc-build-${{ matrix.builder }}.tar.gz doc/build/
 
       - uses: actions/upload-artifact@v4
         with:
-          name: doc-build
-          path: doc-build.tar.gz
+          name: doc-build-${{ matrix.builder }}
+          path: doc-build-${{ matrix.builder }}.tar.gz
 
       - uses: actions/upload-artifact@v4
         with:
-          name: tutorial
+          name: tutorial-${{ matrix.builder }}
           path: doc/source/tutorial
       - name: Get Notebooks
         run: |
@@ -88,7 +88,7 @@ jobs:
           rm _notebooks/doc/source/tutorial/09_trame/*.ipynb
       - uses: actions/upload-artifact@v4
         with:
-          name: tutorial-notebooks
+          name: tutorial-notebooks-${{ matrix.builder }}
           path: _notebooks
 
   deploy:
@@ -108,11 +108,19 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: doc-build
+          name: doc-build-html
+          path: .
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: doc-build-mini18n-html
           path: .
 
       - name: UnTar build
-        run: tar -xzvf doc-build.tar.gz
+        run: tar -xzvf doc-build-html.tar.gz
+
+      - name: UnTar build
+        run: tar -xzvf doc-build-mini18n-html.tar.gz
 
       - name: Zip Notebooks
         run: |
@@ -163,11 +171,19 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: doc-build
+          name: doc-build-html
+          path: .
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: doc-build-mini18n-html
           path: .
 
       - name: UnTar build
-        run: tar -xzvf doc-build.tar.gz
+        run: tar -xzvf doc-build-html.tar.gz
+
+      - name: UnTar build
+        run: tar -xzvf doc-build-mini18n-html.tar.gz
 
       - name: Zip Notebooks
         run: |
