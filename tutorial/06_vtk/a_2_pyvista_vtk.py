@@ -11,11 +11,6 @@ PyVista is best known for is easy to use plotting API -- being familiar to most 
 Nothing stops you from using VTK classes and then wrapping
 the output with PyVista for streamlined plotting. For example:
 
-.. _vtkDataArray: https://vtk.org/doc/nightly/html/classvtkDataArray.html
-.. _vtkPolyData: https://vtk.org/doc/nightly/html/classvtkPolyData.html
-.. _vtkImageData: https://vtk.org/doc/nightly/html/classvtkImageData.html
-.. _vtkpoints: https://vtk.org/doc/nightly/html/classvtkPoints.html
-
 """
 
 import pyvista as pv

@@ -8,14 +8,9 @@ into numpy arrays so that users can benefit from its bracket syntax
 and fancy indexing.  This section demonstrates the difference between
 the two approaches in a series of examples.
 
-For example, to hard-code values for a `vtk.vtkImageData`_ data
+For example, to hard-code values for a :vtk:`vtkImageData` data
 structure using VTK Python's bindings, one would write the following:
 
-.. _vtk.vtkImageData: https://vtk.org/doc/nightly/html/classvtkImageData.html
-.. _vtkDataArray: https://vtk.org/doc/nightly/html/classvtkDataArray.html
-.. _vtkPolyData: https://vtk.org/doc/nightly/html/classvtkPolyData.html
-.. _vtkImageData: https://vtk.org/doc/nightly/html/classvtkImageData.html
-.. _vtkpoints: https://vtk.org/doc/nightly/html/classvtkPoints.html
 """
 
 from math import cos, sin
