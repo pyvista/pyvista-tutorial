@@ -47,7 +47,7 @@ image_data.GetPointData().SetScalars(values)
 
 ###############################################################################
 # As you can see, there is quite a bit of boilerplate that goes into
-# the creation of a simple `vtk.vtkImageData`_ dataset. PyVista provides
+# the creation of a simple :vtk:`vtkImageData` dataset. PyVista provides
 # much more concise syntax that is more "Pythonic". The equivalent code in
 # PyVista is:
 
@@ -79,10 +79,10 @@ grid.point_data["values"] = values.flatten(order="F")
 #    fields). Here, shape and values are stored concretely in one
 #    variable.
 #
-# #. :class:`pyvista.ImageData` wraps `vtk.vtkImageData`_, just with a
+# #. :class:`pyvista.ImageData` wraps :vtk:`vtkImageData`, just with a
 #    different name; they are both containers of evenly spaced points. Your
 #    data does not have to be an "image" to use it with
-#    `vtk.vtkImageData`_; rather, like images, values in the dataset are
+#    :vtk:`vtkImageData`; rather, like images, values in the dataset are
 #    evenly spaced apart like pixels in an image.
 #
 #    Furthermore, since we know the container is for uniformly spaced data,
