@@ -140,7 +140,7 @@ grid.plot(cpos="xy", show_scalar_bar=False, cmap="coolwarm")
 # PyVista heavily relies on NumPy to efficiently allocate and access
 # VTK's C arrays.  For example, to create an array of points within VTK
 # one would normally loop through all the points of a list and supply
-# that to a  `vtkPoints`_ class.  For example:
+# that to a  :vtk:`vtkPoints` class.  For example:
 
 vtk_array = vtk.vtkDoubleArray()
 vtk_array.SetNumberOfComponents(3)
@@ -164,7 +164,7 @@ np_points = np.array([[0, 0, 0], [1, 0, 0], [0.5, 0.667, 0]])
 
 ###############################################################################
 # .. note::
-#    You can use :func:`pyvista.vtk_points` to construct a `vtkPoints`_
+#    You can use :func:`pyvista.vtk_points` to construct a :vtk:`vtkPoints`
 #    object, but this is unnecessary in almost all situations.
 #
 # Since the end goal is to construct a :class:`pyvista.DataSet
