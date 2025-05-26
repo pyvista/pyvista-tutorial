@@ -30,12 +30,7 @@ PyVista is best known for is easy to use plotting API -- being familiar to most 
 Nothing stops you from using VTK classes and then wrapping
 the output with PyVista for streamlined plotting. For example:
 
-.. _vtkDataArray: https://vtk.org/doc/nightly/html/classvtkDataArray.html
-.. _vtkPolyData: https://vtk.org/doc/nightly/html/classvtkPolyData.html
-.. _vtkImageData: https://vtk.org/doc/nightly/html/classvtkImageData.html
-.. _vtkpoints: https://vtk.org/doc/nightly/html/classvtkPoints.html
-
-.. GENERATED FROM PYTHON SOURCE LINES 20-25
+.. GENERATED FROM PYTHON SOURCE LINES 15-20
 
 .. code-block:: Python
 
@@ -51,11 +46,11 @@ the output with PyVista for streamlined plotting. For example:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-27
+.. GENERATED FROM PYTHON SOURCE LINES 21-22
 
 Create a circle using vtk
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-34
+.. GENERATED FROM PYTHON SOURCE LINES 22-29
 
 .. code-block:: Python
 
@@ -73,11 +68,11 @@ Create a circle using vtk
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-36
+.. GENERATED FROM PYTHON SOURCE LINES 30-31
 
 wrap and plot using pyvista
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-39
+.. GENERATED FROM PYTHON SOURCE LINES 31-34
 
 .. code-block:: Python
 
@@ -118,7 +113,7 @@ wrap and plot using pyvista
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-46
+.. GENERATED FROM PYTHON SOURCE LINES 35-41
 
 In this manner, you can get the "best of both worlds" should you need
 the flexibility of PyVista and the raw power of VTK.
@@ -127,14 +122,14 @@ the flexibility of PyVista and the raw power of VTK.
    You can use :func:`pyvista.Polygon` for a one line replacement of
    the above VTK code.
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-52
+.. GENERATED FROM PYTHON SOURCE LINES 43-47
 
 VTK Algorithms
 ~~~~~~~~~~~~~~
 
 Perhaps there is a VTK algorithm that is not (yet) exposed in PyVista that you'd like to use. This is easy enough to work with since PyVista objects are VTK objects. We can pass our PyVista meshes to the VTK algorithm, then wrap the output for plotting, further filtering, or anything.
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-55
+.. GENERATED FROM PYTHON SOURCE LINES 47-50
 
 .. code-block:: Python
 
@@ -148,11 +143,11 @@ Perhaps there is a VTK algorithm that is not (yet) exposed in PyVista that you'd
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-57
+.. GENERATED FROM PYTHON SOURCE LINES 51-52
 
 Initialize VTK algorithm
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-59
+.. GENERATED FROM PYTHON SOURCE LINES 52-54
 
 .. code-block:: Python
 
@@ -165,11 +160,11 @@ Initialize VTK algorithm
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-61
+.. GENERATED FROM PYTHON SOURCE LINES 55-56
 
 Pass PyVista object as input to VTK
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-63
+.. GENERATED FROM PYTHON SOURCE LINES 56-58
 
 .. code-block:: Python
 
@@ -182,11 +177,11 @@ Pass PyVista object as input to VTK
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-65
+.. GENERATED FROM PYTHON SOURCE LINES 59-60
 
 Set parameters
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-72
+.. GENERATED FROM PYTHON SOURCE LINES 60-67
 
 .. code-block:: Python
 
@@ -204,11 +199,11 @@ Set parameters
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-74
+.. GENERATED FROM PYTHON SOURCE LINES 68-69
 
 Retrieve output and wrap with PyVista
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-76
+.. GENERATED FROM PYTHON SOURCE LINES 69-71
 
 .. code-block:: Python
 
@@ -221,11 +216,11 @@ Retrieve output and wrap with PyVista
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-78
+.. GENERATED FROM PYTHON SOURCE LINES 72-73
 
 Use PyVista to produce contours
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-80
+.. GENERATED FROM PYTHON SOURCE LINES 73-75
 
 .. code-block:: Python
 
@@ -238,11 +233,11 @@ Use PyVista to produce contours
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-82
+.. GENERATED FROM PYTHON SOURCE LINES 76-77
 
 Use PyVista to plot
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-87
+.. GENERATED FROM PYTHON SOURCE LINES 77-82
 
 .. code-block:: Python
 
@@ -285,13 +280,13 @@ Use PyVista to plot
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-91
+.. GENERATED FROM PYTHON SOURCE LINES 83-86
 
 .. note::
 
     The above example was adapted from VTK's `Embed Points Into Volume <https://kitware.github.io/vtk-examples/site/Cxx/PolyData/EmbedPointsIntoVolume/>`_
 
-.. GENERATED FROM PYTHON SOURCE LINES 93-100
+.. GENERATED FROM PYTHON SOURCE LINES 88-95
 
 .. raw:: html
 
@@ -304,7 +299,7 @@ Use PyVista to plot
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.449 seconds)
+   **Total running time of the script:** (0 minutes 2.464 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_a_2_pyvista_vtk.py:
