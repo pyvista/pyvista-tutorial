@@ -45,6 +45,7 @@ docs = [
   'trimesh==4.6.8',
   'typed-ast==1.5.5',
   'typing_extensions==4.13.2',
+  'vtk-xref==0.1.0',
   'vtk<9.5',
 ]
 
