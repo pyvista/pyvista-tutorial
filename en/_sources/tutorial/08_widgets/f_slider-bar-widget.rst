@@ -116,7 +116,7 @@ After interacting with the scene, the threshold mesh is available as:
  .. code-block:: none
 
 
-    [UnstructuredGrid (0x7f9133393c40)
+    [UnstructuredGrid (0x7f32ab83c520)
       N Cells:    295424
       N Points:   394455
       X Bounds:   3.615e+01, 1.178e+02
