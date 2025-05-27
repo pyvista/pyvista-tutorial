@@ -64,6 +64,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_gallery.gen_gallery",
     "sphinxcontrib.asciinema",
+    "vtk_xref",
 ]
 
 intersphinx_mapping = {
@@ -238,6 +239,7 @@ sphinx_gallery_conf = {
     "reset_modules": (ResetPyVista(),),
 }
 
+# atsphinx.mini18n options ---------------------------------------------------------
 html_sidebars = {
     "**": [
         "navbar-logo.html",
@@ -247,10 +249,9 @@ html_sidebars = {
         "sbt-sidebar-nav.html",
     ],
 }
-
-# atsphinx.mini18n configuration
 mini18n_default_language = "en"
 mini18n_support_languages = ["en", "ja"]
+locale_dirs = ["../../pyvista-tutorial-translations/locale"]
 
 
 def setup(app) -> None:
