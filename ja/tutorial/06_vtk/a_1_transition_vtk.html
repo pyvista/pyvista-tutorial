@@ -507,8 +507,7 @@ document.write(`
 <section class="sphx-glr-example-title" id="transitioning-from-vtk-to-pyvista">
 <span id="sphx-glr-tutorial-06-vtk-a-1-transition-vtk-py"></span><h1>VTKからPyVistaへの移行<a class="headerlink" href="#transitioning-from-vtk-to-pyvista" title="Link to this heading">#</a></h1>
 <p>VTKは主にC++で開発されており，データへのアクセスには連鎖したセッターとゲッターのコマンドを使用します．その代わりに，PyVista は VTK のデータタイプを numpy 配列にラップして，ブラケット構文や派手なインデックスの恩恵を受けられるようにしています． このセクションでは，一連の例で2つのアプローチの違いを説明します．</p>
-<p>For example, to hard-code values for a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> data
-structure using VTK Python's bindings, one would write the following:</p>
+<p>例えば，VTK Python のバインディングを使用して <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> データ構造の値をハードコードするには，次のように記述します．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <a href="https://docs.python.org/dev/library/math.html#math.cos" title="math.cos" class="sphx-glr-backref-module-math sphx-glr-backref-type-py-function"><span class="n">cos</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/math.html#math.sin" title="math.sin" class="sphx-glr-backref-module-math sphx-glr-backref-type-py-function"><span class="n">sin</span></a>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">vtk</span>
@@ -543,10 +542,7 @@ structure using VTK Python's bindings, one would write the following:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>0
 </pre></div>
 </div>
-<p>As you can see, there is quite a bit of boilerplate that goes into
-the creation of a simple <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> dataset. PyVista provides
-much more concise syntax that is more &quot;Pythonic&quot;. The equivalent code in
-PyVista is:</p>
+<p>ご覧のように，単純な <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> データセットを作成するためには，かなり多くのボイラープレートが必要です．PyVistaでは，より簡潔で，より &quot;Pythonic &quot;な構文が提供されています．PyVistaで同等のコードは以下の通りです．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 </pre></div>
@@ -565,11 +561,7 @@ PyVista is:</p>
 <p>ここでは，PyVistaがいくつかのことをしてくれています．</p>
 <ol class="arabic">
 <li><p>PyVistaでは，データの次元（ <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> の形をしている）とデータの値を1行にまとめています．VTKでは，データの形状(空間上の位置)を表すために &quot;タプル&quot; を使用し，データの種類(1=スカラー/スカラーフィールド，2=ベクトル/ベクトルフィールド，n=テンソル/テンソルフィールド)を表すために &quot;コンポーネント&quot; を使用しています．ここでは，1つの変数に形状と値が具体的に格納されています．</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> wraps <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>, just with a
-different name; they are both containers of evenly spaced points. Your
-data does not have to be an &quot;image&quot; to use it with
-<a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>; rather, like images, values in the dataset are
-evenly spaced apart like pixels in an image.</p>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> は <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> をラップしたものです．名前が違うだけで，どちらも等間隔の点のコンテナです．どちらも等間隔の点のコンテナです．  <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> で使用するデータは &quot;画像&quot; である必要はありません．</p>
 <p>さらに，コンテナが等間隔のデータ用であることがわかっているので， pyvista はデフォルトで原点と間隔を <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> と <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></code> に設定します．これは，PyVistaとPythonのもう一つの素晴らしい点です．VTKライブラリのすべてを前もって知っておく必要はなく，非常に簡単に始めることができます．慣れてきて，もっと複雑なことをする必要が出てきたら，もっと深く掘り下げることができます．例えば，原点と間隔の変更は以下のように簡単にできます．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="pyvista.ImageData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="pyvista.ImageData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">grid</span></a><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -611,10 +603,7 @@ evenly spaced apart like pixels in an image.</p>
 </div>
 <section id="pointset-construction">
 <h2>ポイントセット構築<a class="headerlink" href="#pointset-construction" title="Link to this heading">#</a></h2>
-<p>PyVista heavily relies on NumPy to efficiently allocate and access
-VTK's C arrays.  For example, to create an array of points within VTK
-one would normally loop through all the points of a list and supply
-that to a  <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a> class.  For example:</p>
+<p>PyVista は，VTK の C 配列を効率的に割り当て，アクセスするために NumPy に大きく依存しています． 例えば，VTKで点の配列を作るには，通常，リストのすべての点をループして，それを <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a> クラスに供給します． 例えば，以下のようになります．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">vtk_array</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkDoubleArray</span><span class="p">()</span>
 <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetNumberOfComponents</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">vtk_array</span><span class="o">.</span><span class="n">SetNumberOfValues</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span>
@@ -637,8 +626,7 @@ that to a  <a class="reference external" href="https://vtk.org/doc/nightly/html/
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> to construct a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a>
-object, but this is unnecessary in almost all situations.</p>
+<p><a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> を使って <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a> オブジェクトを構築することもできますが，ほとんどの状況では必要ありません．</p>
 </div>
 <p>最終的な目的は， <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span> <span class="pre">&amp;lt;pyvista.core.dataset.DataSet&amp;gt;</span></code> を構築することなので， <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> のコンストラクタに <code class="docutils literal notranslate"><span class="pre">np_points</span></code> の配列を渡すだけです．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">poly_data</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np_points</span></a><span class="p">)</span>
@@ -649,10 +637,7 @@ object, but this is unnecessary in almost all situations.</p>
 <span class="n">vtk_poly_data</span><span class="o">.</span><span class="n">SetPoints</span><span class="p">(</span><span class="n">vtk_points</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The same goes with assigning face or cell connectivity/topology.  With
-VTK you would normally have to loop using <code class="xref py py-func docutils literal notranslate"><span class="pre">InsertNextCell()</span></code> and
-<code class="xref py py-func docutils literal notranslate"><span class="pre">InsertCellPoint()</span></code>.  For example, to create a single cell
-(triangle) and then assign it to <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPolyData.html">vtkPolyData</a>:</p>
+<p>面やセルの接続性/トポロジーを割り当てる場合も同様です． VTKでは通常， <code class="xref py py-func docutils literal notranslate"><span class="pre">InsertNextCell()</span></code> と <code class="xref py py-func docutils literal notranslate"><span class="pre">InsertCellPoint()</span></code> を使ってループする必要があります． 例えば，一つのセル(三角形)を作成して，それを <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPolyData.html">vtkPolyData</a> に割り当てる場合:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">cell_arr</span> <span class="o">=</span> <span class="n">vtk</span><span class="o">.</span><span class="n">vtkCellArray</span><span class="p">()</span>
 <span class="n">cell_arr</span><span class="o">.</span><span class="n">InsertNextCell</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">cell_arr</span><span class="o">.</span><span class="n">InsertCellPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -706,7 +691,7 @@ VTK you would normally have to loop using <code class="xref py py-func docutils 
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/06_vtk/a_1_transition_vtk.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.978 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.920 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-a-1-transition-vtk-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/a_1_transition_vtk.ipynb"><img alt="Binderの起動" src="../../_images/binder_badge_logo16.svg" style="width: 150px;" />
