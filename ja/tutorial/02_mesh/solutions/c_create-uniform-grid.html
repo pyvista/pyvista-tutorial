@@ -966,6 +966,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |      (0, 0, 0)
  |
  |      The offset defines the minimum extent.
+ |
  |      &gt;&gt;&gt; grid.extent
  |      (0, 9, 0, 9, 0, 9)
  |
@@ -1103,9 +1104,15 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |
  |      Examples
  |      --------
- |      Get the dimensionality of a uniform grid with dimensions ``(1, 2, 3)``.
+ |      Get the dimensionality of a 2D uniform grid.
  |
  |      &gt;&gt;&gt; import pyvista as pv
+ |      &gt;&gt;&gt; grid = pv.ImageData(dimensions=(1, 2, 3))
+ |      &gt;&gt;&gt; grid.dimensionality
+ |      2
+ |
+ |      Get the dimensionality of a 3D uniform grid.
+ |
  |      &gt;&gt;&gt; grid = pv.ImageData(dimensions=(2, 3, 4))
  |      &gt;&gt;&gt; grid.dimensionality
  |      3
@@ -3376,9 +3383,9 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |
  |          .. warning::
  |
- |              Enabling this option is likely to generate surfaces with normals
+ |              Enabling this option is `likely` to generate surfaces with normals
  |              pointing outward when ``pad_background`` is ``True`` and
- |              ``boundary_style`` is ``True`` (the default). However, this is
+ |              ``boundary_style`` is ``&#39;external&#39;`` (the default). However, this is
  |              not guaranteed if the generated surface is not closed or if internal
  |              boundaries are generated. Do not assume the normals will point outward
  |              in all cases.
@@ -4704,7 +4711,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |      &gt;&gt;&gt; image.point_data[&#39;data&#39;] = np.linspace(0, 255, 6, dtype=np.uint8)
  |
  |      Define a custom plotter to show the image. Although the image data is defined
- |      as point data, we use uses :meth:`points_to_cells` to display the image as
+ |      as point data, we use :meth:`points_to_cells` to display the image as
  |      :attr:`~pyvista.CellType.PIXEL` (or :attr:`~pyvista.CellType.VOXEL`) cells
  |      instead. Grayscale coloring is used and the camera is adjusted to fit the image.
  |
@@ -4842,7 +4849,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |
  |      This time the input and output bounds match without any further processing.
  |      Like before, the dimensions have doubled; unlike before, however, the spacing is
- |      not halved, but is instead smaller than half which is necessaru to ensure the
+ |      not halved, but is instead smaller than half which is necessary to ensure the
  |      bounds remain the same. Also unlike before, the origin is unaffected:
  |
  |      &gt;&gt;&gt; image.origin
@@ -5698,6 +5705,12 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |
  |      By default, a new ``&#39;int_rgb&#39;`` array is added with the same name as the
  |      specified ``scalars`` but with ``_rgb`` appended.
+ |
+ |      .. note::
+ |          The package ``colorcet`` is required to use the default colors from the
+ |          ``&#39;glasbey_category10&#39;`` colormap. For a similar, but very limited,
+ |          alternative that does not require ``colorcet``, set ``colors=&#39;tab10&#39;``
+ |          and consider setting the coloring mode explicitly.
  |
  |      .. versionadded:: 0.45
  |
@@ -7399,8 +7412,6 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |  merge(self: &#39;_DataSetType&#39;, grid: &#39;DataSet | _vtk.vtkDataSet | MultiBlock | Sequence[DataSet | _vtk.vtkDataSet] | None&#39; = None, merge_points: &#39;bool&#39; = True, tolerance: &#39;float&#39; = 0.0, inplace: &#39;bool&#39; = False, main_has_priority: &#39;bool&#39; = True, progress_bar: &#39;bool&#39; = False)
  |      Join one or many other grids to this grid.
  |
- |      Grid is updated in-place by default.
- |
  |      Can be used to merge points of adjacent cells when no grids
  |      are input.
  |
@@ -8806,7 +8817,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
  |      Generate streamlines of vectors from the points of a source mesh.
  |
  |      The integration is performed using a specified integrator, by default
- |      Runge-Kutta2. This supports integration through any type of dataset.
+ |      Runge-Kutta45. This supports integration through any type of dataset.
  |      If the dataset contains 2D cells like polygons or triangles and the
  |      ``surface_streamlines`` parameter is used, the integration is constrained
  |      to lie on the surface defined by 2D cells.
@@ -13864,7 +13875,7 @@ class ImageData(Grid, pyvista.core.filters.image_data.ImageDataFilters, vtkmodul
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/c_create-uniform-grid.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.103 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.266 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-c-create-uniform-grid-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/c_create-uniform-grid.ipynb"><img alt="Binderの起動" src="../../../_images/binder_badge_logo7.svg" style="width: 150px;" />

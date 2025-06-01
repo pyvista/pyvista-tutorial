@@ -697,6 +697,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      (0, 0, 0)
      |
      |      The offset defines the minimum extent.
+     |
      |      >>> grid.extent
      |      (0, 9, 0, 9, 0, 9)
      |
@@ -834,9 +835,15 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |
      |      Examples
      |      --------
-     |      Get the dimensionality of a uniform grid with dimensions ``(1, 2, 3)``.
+     |      Get the dimensionality of a 2D uniform grid.
      |
      |      >>> import pyvista as pv
+     |      >>> grid = pv.ImageData(dimensions=(1, 2, 3))
+     |      >>> grid.dimensionality
+     |      2
+     |
+     |      Get the dimensionality of a 3D uniform grid.
+     |
      |      >>> grid = pv.ImageData(dimensions=(2, 3, 4))
      |      >>> grid.dimensionality
      |      3
@@ -3107,9 +3114,9 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |
      |          .. warning::
      |
-     |              Enabling this option is likely to generate surfaces with normals
+     |              Enabling this option is `likely` to generate surfaces with normals
      |              pointing outward when ``pad_background`` is ``True`` and
-     |              ``boundary_style`` is ``True`` (the default). However, this is
+     |              ``boundary_style`` is ``'external'`` (the default). However, this is
      |              not guaranteed if the generated surface is not closed or if internal
      |              boundaries are generated. Do not assume the normals will point outward
      |              in all cases.
@@ -4435,7 +4442,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      >>> image.point_data['data'] = np.linspace(0, 255, 6, dtype=np.uint8)
      |
      |      Define a custom plotter to show the image. Although the image data is defined
-     |      as point data, we use uses :meth:`points_to_cells` to display the image as
+     |      as point data, we use :meth:`points_to_cells` to display the image as
      |      :attr:`~pyvista.CellType.PIXEL` (or :attr:`~pyvista.CellType.VOXEL`) cells
      |      instead. Grayscale coloring is used and the camera is adjusted to fit the image.
      |
@@ -4573,7 +4580,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |
      |      This time the input and output bounds match without any further processing.
      |      Like before, the dimensions have doubled; unlike before, however, the spacing is
-     |      not halved, but is instead smaller than half which is necessaru to ensure the
+     |      not halved, but is instead smaller than half which is necessary to ensure the
      |      bounds remain the same. Also unlike before, the origin is unaffected:
      |
      |      >>> image.origin
@@ -5429,6 +5436,12 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |
      |      By default, a new ``'int_rgb'`` array is added with the same name as the
      |      specified ``scalars`` but with ``_rgb`` appended.
+     |
+     |      .. note::
+     |          The package ``colorcet`` is required to use the default colors from the
+     |          ``'glasbey_category10'`` colormap. For a similar, but very limited,
+     |          alternative that does not require ``colorcet``, set ``colors='tab10'``
+     |          and consider setting the coloring mode explicitly.
      |
      |      .. versionadded:: 0.45
      |
@@ -7130,8 +7143,6 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  merge(self: '_DataSetType', grid: 'DataSet | _vtk.vtkDataSet | MultiBlock | Sequence[DataSet | _vtk.vtkDataSet] | None' = None, merge_points: 'bool' = True, tolerance: 'float' = 0.0, inplace: 'bool' = False, main_has_priority: 'bool' = True, progress_bar: 'bool' = False)
      |      Join one or many other grids to this grid.
      |
-     |      Grid is updated in-place by default.
-     |
      |      Can be used to merge points of adjacent cells when no grids
      |      are input.
      |
@@ -8537,7 +8548,7 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |      Generate streamlines of vectors from the points of a source mesh.
      |
      |      The integration is performed using a specified integrator, by default
-     |      Runge-Kutta2. This supports integration through any type of dataset.
+     |      Runge-Kutta45. This supports integration through any type of dataset.
      |      If the dataset contains 2D cells like polygons or triangles and the
      |      ``surface_streamlines`` parameter is used, the integration is constrained
      |      to lie on the surface defined by 2D cells.
@@ -13722,7 +13733,7 @@ Here's one of these example datasets:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.103 seconds)
+   **Total running time of the script:** (0 minutes 5.266 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py:

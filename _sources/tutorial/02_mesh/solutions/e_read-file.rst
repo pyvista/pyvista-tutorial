@@ -315,12 +315,13 @@ extensions are listed in an internal function:
         --------
         >>> import pyvista as pv
         >>> from pyvista import examples
+        >>> from pathlib import Path
         >>> filename = examples.download_human(load=False)
-        >>> filename.split('/')[-1]  # omit the path
+        >>> Path(filename).name
         'Human.vtp'
         >>> reader = pv.get_reader(filename)
         >>> reader
-        XMLPolyDataReader('.../Human.vtp')
+        XMLPolyDataReader('...Human.vtp')
         >>> mesh = reader.read()
         >>> mesh
         PolyData ...
@@ -698,7 +699,7 @@ https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.194 seconds)
+   **Total running time of the script:** (0 minutes 5.436 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_e_read-file.py:
