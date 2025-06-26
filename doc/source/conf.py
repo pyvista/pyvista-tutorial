@@ -182,8 +182,6 @@ class ResetPyVista:
 
         If default documentation settings are modified in any example, reset here.
         """
-        import pyvista
-
         pyvista._wrappers["vtkPolyData"] = pyvista.PolyData  # noqa: SLF001
         pyvista.set_plot_theme("document")
         pyvista.set_jupyter_backend("static")
