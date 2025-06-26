@@ -214,11 +214,14 @@ Example C
 This one is the coolest - use four sphere widgets to update perturbations on
 a surface and interpolate between them with some boundary conditions
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-149
+.. GENERATED FROM PYTHON SOURCE LINES 104-148
 
 .. code-block:: Python
 
 
+    from itertools import cycle
+
+    import matplotlib as mpl
     import numpy as np
     import pyvista as pv
     from scipy.interpolate import griddata
@@ -226,10 +229,6 @@ a surface and interpolate between them with some boundary conditions
 
     def get_colors(n):
         """A helper function to get n colors."""
-        from itertools import cycle
-
-        import matplotlib as mpl
-
         cycler = mpl.rcParams["axes.prop_cycle"]
         colors = cycle(cycler)
         return [next(colors)["color"] for i in range(n)]
@@ -270,7 +269,7 @@ a surface and interpolate between them with some boundary conditions
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-165
+.. GENERATED FROM PYTHON SOURCE LINES 149-164
 
 .. code-block:: Python
 
@@ -323,13 +322,13 @@ a surface and interpolate between them with some boundary conditions
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 166-169
+.. GENERATED FROM PYTHON SOURCE LINES 165-168
 
 And here is a screen capture of a user interacting with this
 
 .. image:: ../../images/gifs/sphere-widget-c.gif
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-178
+.. GENERATED FROM PYTHON SOURCE LINES 170-177
 
 .. raw:: html
 
@@ -342,7 +341,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.494 seconds)
+   **Total running time of the script:** (0 minutes 1.498 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_g_sphere-widget.py:

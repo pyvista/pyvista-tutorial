@@ -29,7 +29,7 @@ We can do this by using the spatial reference of the GeoTIFF itself, as this all
 
 Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-22
+.. GENERATED FROM PYTHON SOURCE LINES 13-27
 
 .. code-block:: Python
 
@@ -42,6 +42,10 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
     import requests
     from pyvista import examples
 
+    try:
+        import rasterio
+    except ImportError:
+        rasterio = None
 
 
 
@@ -49,7 +53,8 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-28
+
+.. GENERATED FROM PYTHON SOURCE LINES 29-33
 
 .. code-block:: Python
 
@@ -81,12 +86,12 @@ Originally posted here: https://github.com/pyvista/pyvista-support/issues/14
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-31
+.. GENERATED FROM PYTHON SOURCE LINES 34-36
 
 Load the GeoTIFF/texture (this could take a minute to download)
 https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-38
+.. GENERATED FROM PYTHON SOURCE LINES 36-43
 
 .. code-block:: Python
 
@@ -110,14 +115,14 @@ https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.t
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-43
+.. GENERATED FROM PYTHON SOURCE LINES 44-48
 
 In the block below, we can use the ``get_gcps`` function to get the
 Ground Control Points of the raster, however this depends on GDAL. For this
 tutorial, we are going to hard code the GCPs to avoid having users install
 GDAL.
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-68
+.. GENERATED FROM PYTHON SOURCE LINES 48-75
 
 .. code-block:: Python
 
@@ -128,7 +133,9 @@ GDAL.
         Helper function retrieves the Ground Control
         Points of a GeoTIFF. Note that this requires gdal.
         """
-        import rasterio
+        if rasterio is None:
+            msg = "rasterio is required for this function"
+            raise ImportError(msg)
 
         def get_point(gcp):
             return np.array([gcp.x, gcp.y, gcp.z])
@@ -153,7 +160,7 @@ GDAL.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-78
+.. GENERATED FROM PYTHON SOURCE LINES 76-85
 
 .. code-block:: Python
 
@@ -173,7 +180,7 @@ GDAL.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-83
+.. GENERATED FROM PYTHON SOURCE LINES 86-90
 
 .. code-block:: Python
 
@@ -211,11 +218,11 @@ GDAL.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-85
+.. GENERATED FROM PYTHON SOURCE LINES 91-92
 
 Show GCPs in relation to topo surface with texture coordinates displayed
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-102
+.. GENERATED FROM PYTHON SOURCE LINES 92-109
 
 .. code-block:: Python
 
@@ -270,11 +277,11 @@ Show GCPs in relation to topo surface with texture coordinates displayed
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-104
+.. GENERATED FROM PYTHON SOURCE LINES 110-111
 
 Read the GeoTIFF as a ``Texture`` in PyVista:
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-117
+.. GENERATED FROM PYTHON SOURCE LINES 111-124
 
 .. code-block:: Python
 
@@ -325,7 +332,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 118-125
+.. GENERATED FROM PYTHON SOURCE LINES 125-132
 
 .. raw:: html
 
@@ -338,7 +345,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 16.129 seconds)
+   **Total running time of the script:** (0 minutes 15.173 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_c_geological-map.py:
