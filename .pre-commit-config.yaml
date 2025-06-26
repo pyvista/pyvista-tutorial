@@ -3,7 +3,7 @@ repos:
     rev: v2.4.1
     hooks:
       - id: codespell
-        args: ["doc tutorial", "*.py *.rst *.md"]
+        args: ["doc", "tutorial", "*.py", "*.rst", "*.md"]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
@@ -29,7 +29,6 @@ repos:
       - id: prettier
         types_or: [yaml, markdown, html, css, scss, javascript, json]
 
-  # Fix pre-commit run --all-files error AI!
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.12.0
     hooks:
