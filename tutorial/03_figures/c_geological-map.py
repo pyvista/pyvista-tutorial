@@ -20,6 +20,11 @@ import pyvista as pv
 import requests
 from pyvista import examples
 
+try:
+    import rasterio
+except ImportError:
+    rasterio = None
+
 ###############################################################################
 path = examples.download_file("topo_clean.vtk")
 topo = pv.read(path)
@@ -47,7 +52,8 @@ def get_gcps(filename):
     Helper function retrieves the Ground Control
     Points of a GeoTIFF. Note that this requires gdal.
     """
-    import rasterio
+    if rasterio is None:
+        raise ImportError("rasterio is required for this function")
 
     def get_point(gcp):
         return np.array([gcp.x, gcp.y, gcp.z])
