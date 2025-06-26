@@ -53,7 +53,8 @@ def get_gcps(filename):
     Points of a GeoTIFF. Note that this requires gdal.
     """
     if rasterio is None:
-        raise ImportError("rasterio is required for this function")
+        msg = "rasterio is required for this function"
+        raise ImportError(msg)
 
     def get_point(gcp):
         return np.array([gcp.x, gcp.y, gcp.z])
