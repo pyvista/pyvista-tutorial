@@ -102,12 +102,12 @@ p.show()
 # This one is the coolest - use four sphere widgets to update perturbations on
 # a surface and interpolate between them with some boundary conditions
 
-import numpy as np
-import pyvista as pv
 from itertools import cycle
-from scipy.interpolate import griddata
 
 import matplotlib as mpl
+import numpy as np
+import pyvista as pv
+from scipy.interpolate import griddata
 
 
 def get_colors(n):
