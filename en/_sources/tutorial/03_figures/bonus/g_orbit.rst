@@ -175,7 +175,7 @@ Orbit around the Mt. St Helens dataset.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (1 minutes 0.683 seconds)
+   **Total running time of the script:** (0 minutes 57.627 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_g_orbit.py:

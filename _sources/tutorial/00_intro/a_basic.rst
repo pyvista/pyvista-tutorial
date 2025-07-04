@@ -151,7 +151,7 @@ Now let's plot them all in one window
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.950 seconds)
+   **Total running time of the script:** (0 minutes 1.003 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_intro_a_basic.py:
