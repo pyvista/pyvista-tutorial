@@ -44,20 +44,7 @@ If you have any questions about PyVista, feel free to post your questions in
 Professional Support
 ~~~~~~~~~~~~~~~~~~~~
 
-While PyVista is an Open Source project with a big community, you might be looking for professional support.
-This section aims to list companies with VTK/PyVista expertise who can help you with your software project.
-
-+---------------+-----------------------------------------+
-| Company Name  | Kitware Inc.                            |
-+---------------+-----------------------------------------+
-| Description   | Kitware is dedicated to build solutions |
-|               | for our customers based on our          |
-|               | well-established open source platforms. |
-+---------------+-----------------------------------------+
-| Expertise     | CMake, VTK, PyVista, ParaView, Trame    |
-+---------------+-----------------------------------------+
-| Contact       | https://www.kitware.com/contact/        |
-+---------------+-----------------------------------------+
+While PyVista is an Open Source project with a big community, you might be looking for professional support. Reach out to info@pyvista.org and we can help connect you with the right community experts to tackle your challenges.
 
 Tutorial Overview
 ~~~~~~~~~~~~~~~~~
