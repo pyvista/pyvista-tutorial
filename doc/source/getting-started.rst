@@ -26,7 +26,7 @@ PyVista can be installed on several environments, including, but not limited to:
 
       .. code::
 
-         pip install 'pyvista[all,trame]' jupyterlab
+         pip install 'pyvista[all]' jupyterlab
 
    .. tab-item:: conda
 
