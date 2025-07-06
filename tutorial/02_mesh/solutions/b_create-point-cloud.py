@@ -13,7 +13,7 @@ import numpy as np
 import pyvista as pv
 from pyvista import examples
 
-###############################################################################
+# %%
 # Point clouds are generally constructed using :class:`pyvista.PolyData` and
 # can easily have scalar or vector data arrays associated with the individual
 # points. In this example, we'll start by working backwards using a point cloud
@@ -35,27 +35,27 @@ points = generate_points()
 # Columns are (X, Y, Z)
 points[0:5, :]
 
-###############################################################################
+# %%
 # Now that you have a NumPy array of points/vertices either from our sample
 # data or your own project, create a PyVista mesh using those points.
 
 point_cloud = pv.PolyData(points)
 point_cloud
 
-###############################################################################
+# %%
 # Now, perform a sanity check to show that the points have been loaded
 # correctly.
 
 np.allclose(points, point_cloud.points)
 
-###############################################################################
+# %%
 # Now that we have a PyVista mesh, we can plot it. Note that we add an option
 # to use eye dome lighting - this is a shading technique to improve depth
 # perception with point clouds (learn more about `EDL
 # <https://docs.pyvista.org/examples/02-plot/edl.html>`_).
 point_cloud.plot(eye_dome_lighting=True)
 
-###############################################################################
+# %%
 # Now what if you have data attributes (scalar or vector arrays) that you'd
 # like to associate with every point of your mesh? You can easily add NumPy
 # data arrays that have a length equal to the number of points in the mesh
@@ -72,18 +72,18 @@ point_cloud.plot(eye_dome_lighting=True)
 # Make data array using z-component of points array
 data = points[:, -1]
 
-###############################################################################
+# %%
 # Add that data to the mesh with the name "elevation".
 
 point_cloud["elevation"] = data
 
-###############################################################################
+# %%
 # And now we can plot the point cloud with that elevation data. PyVista is
 # smart enough to plot the scalar array you added by default. This time, let's
 # render every point as its own sphere using ``render_points_as_spheres``.
 point_cloud.plot(render_points_as_spheres=True)
 
-###############################################################################
+# %%
 # That data is kind of boring, right? You can also add data arrays with more
 # than one scalar value - perhaps a vector with three elements? Let's make a
 # little function that will compute vectors for every point in the point cloud
@@ -109,12 +109,12 @@ vectors = compute_vectors(point_cloud)
 vectors[0:5, :]
 
 
-###############################################################################
+# %%
 # Add the vector array as point data to the new mesh:
 
 point_cloud["vectors"] = vectors
 
-###############################################################################
+# %%
 # Now we can make arrows using those vectors using the glyph filter (see the
 # `Glyph Example <https://docs.pyvista.org/examples/01-filter/glyphs.html>`_
 # for more details).
@@ -134,7 +134,7 @@ plotter.add_mesh(arrows, color="lightblue")
 plotter.show_grid()
 plotter.show()
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

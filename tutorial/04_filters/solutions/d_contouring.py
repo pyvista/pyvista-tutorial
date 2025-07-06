@@ -14,27 +14,27 @@ import numpy as np
 import pyvista as pv
 from pyvista import examples
 
-###############################################################################
+# %%
 # Iso-Lines
 # +++++++++
 #
 # Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
 mesh = examples.load_random_hills()
 
-###############################################################################
+# %%
 help(mesh.contour)
 
-###############################################################################
+# %%
 contours = mesh.contour()
 
-###############################################################################
+# %%
 p = pv.Plotter()
 p.add_mesh(mesh, opacity=0.85)
 p.add_mesh(contours, color="white", line_width=5)
 p.show()
 
 
-###############################################################################
+# %%
 # Iso-Surfaces
 # ++++++++++++
 #
@@ -43,13 +43,13 @@ p.show()
 mesh = examples.download_embryo()
 mesh
 
-###############################################################################
+# %%
 # For this example dataset, let's create 5 contour levels between the values
 # of 50 and 200
 
 contours = mesh.contour(np.linspace(50, 200, 5))
 
-###############################################################################
+# %%
 p = pv.Plotter()
 p.add_mesh(mesh.outline(), color="k")
 p.add_mesh(contours, opacity=0.25, clim=[0, 200])
@@ -60,7 +60,7 @@ p.camera_position = [
 ]
 p.show()
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

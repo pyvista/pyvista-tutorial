@@ -21,15 +21,15 @@ mesh = examples.download_st_helens().warp_by_scalar()
 
 cpos = [(575848.0, 5128459.0, 22289.0), (562835.0, 5114981.5, 2294.5), (-0.5, -0.5, 0.7)]
 
-###############################################################################
+# %%
 # First, let's take a look at the mesh with default lighting conditions
 mesh.plot(cpos=cpos, show_scalar_bar=False)
 
-###############################################################################
+# %%
 # What about with no lighting?
 mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 
-###############################################################################
+# %%
 # Demonstration of the specular property
 #
 # Feel free to adjust the specular value in the ``s`` variable.
@@ -48,20 +48,20 @@ p.link_views()
 p.view_isometric()
 p.show(cpos=cpos)
 
-###############################################################################
+# %%
 # Specular power (feel free to adjust)
 mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 
-###############################################################################
+# %%
 # Demonstration of all diffuse, specular, and ambient in use together
 # (feel free to adjust)
 mesh.plot(..., cpos=cpos, show_scalar_bar=False)
 
-###############################################################################
+# %%
 # For detailed control over lighting conditions in general see the
 # `lighting examples <https://docs.pyvista.org/examples/index.html#lighting>`_
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

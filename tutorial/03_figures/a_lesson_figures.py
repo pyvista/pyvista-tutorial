@@ -8,7 +8,7 @@ from pyvista import examples
 
 mesh = pv.Wavelet()
 
-###############################################################################
+# %%
 # ``add_mesh``
 # ++++++++++++++
 #
@@ -18,21 +18,21 @@ p = pv.Plotter()
 p.add_mesh(mesh)
 p.show()
 
-###############################################################################
+# %%
 # You can customize how that mesh is displayed through the parameters of the :func:`pyvista.Plotter.add_mesh` method. For example, we can change the colormap via the ``cmap`` argument:
 
 p = pv.Plotter()
 p.add_mesh(mesh, cmap="coolwarm")
 p.show()
 
-###############################################################################
+# %%
 # Or show the edges of the mesh with ``show_edges``:
 
 p = pv.Plotter()
 p.add_mesh(mesh, show_edges=True)
 p.show()
 
-###############################################################################
+# %%
 # Or adjust the opacity to be a scalar value or linear transfer function via the ``opacity`` argument:
 
 mesh = examples.download_st_helens().warp_by_scalar()
@@ -41,7 +41,7 @@ p = pv.Plotter()
 p.add_mesh(mesh, cmap="terrain", opacity="linear")
 p.show()
 
-###############################################################################
+# %%
 # Take a look at all of the options for `add_mesh <https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html>`_.
 #
 # The ``add_mesh`` method can be called over and over to add different data to the same ``Plotter`` scene. For example, we can create many different mesh objects and plot them together:
@@ -71,7 +71,7 @@ p.add_floor("-z", lighting=True, color="tan", pad=1.0)
 p.enable_shadows()
 p.show()
 
-###############################################################################
+# %%
 # Subplotting
 # +++++++++++
 #
@@ -86,7 +86,7 @@ p.add_mesh(pv.Cube())
 
 p.show()
 
-###############################################################################
+# %%
 # Below is an example of side-by-side comparisons of the contours and slices of a single dataset.
 #
 # .. tip::
@@ -107,7 +107,7 @@ p.link_views()
 p.view_isometric()
 p.show()
 
-###############################################################################
+# %%
 # Axes and Bounds
 # +++++++++++++++
 #
@@ -121,7 +121,7 @@ p.add_mesh(mesh)
 p.show_axes()
 p.show()
 
-###############################################################################
+# %%
 # And bounds similarly with :func:`pyvista.Plotter.show_bounds`
 #
 # .. tip::
@@ -135,7 +135,7 @@ p.show_axes()
 p.show_bounds()
 p.show()
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>
