@@ -64,6 +64,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_gallery.gen_gallery",
     "sphinxcontrib.asciinema",
+    "vtk_xref",
 ]
 
 intersphinx_mapping = {
@@ -181,8 +182,6 @@ class ResetPyVista:
 
         If default documentation settings are modified in any example, reset here.
         """
-        import pyvista
-
         pyvista._wrappers["vtkPolyData"] = pyvista.PolyData  # noqa: SLF001
         pyvista.set_plot_theme("document")
         pyvista.set_jupyter_backend("static")
