@@ -127,3 +127,7 @@ Past experience as a speaker:
 ## Paper
 
 [![DOI](https://joss.theoj.org/papers/10.21105/joss.01450/status.svg)](https://doi.org/10.21105/joss.01450)
+
+## Scipy2024 YouTube Video
+
+[PyVista Tutorial at SciPy 2024](https://youtu.be/J4FI8PPOUHI?si=EiOFp2SPSu8a8hz7)

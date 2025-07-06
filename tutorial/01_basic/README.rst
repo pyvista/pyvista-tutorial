@@ -3,7 +3,7 @@
 Basic usage
 ===========
 
-This section demonstrates how to use PyVista to reading and plotting 3D data
+This section demonstrates how to use PyVista for reading and plotting 3D data
 using the `pyvista.examples`_ module and external files.
 
 .. tip::
