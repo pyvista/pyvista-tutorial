@@ -2,7 +2,7 @@
 
 ## Introduction (1.5 minutes)
 
-"Welcome to the PyVista Figures and Visualization tutorial. Today, we'll learn how to make great pictures with PyVista's powerful plotting tools.
+"Welcome to the PyVista Figures and Visualization tutorial. In this section, we'll learn how to make great pictures with PyVista's powerful plotting tools.
 
 Making pictures of data is more than just showing numbers - it's about telling a story, finding new things, and sharing information clearly. PyVista gives you easy Python tools to make everything from simple 3D pictures to complex multi-view figures with advanced drawing techniques.
 
@@ -25,7 +25,7 @@ p.add_mesh(mesh)
 p.show()
 ```
 
-The workflow is intuitive:
+The workflow is simple:
 
 1. Create a Plotter instance
 2. Add meshes or other objects to it

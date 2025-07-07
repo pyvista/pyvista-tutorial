@@ -4,7 +4,7 @@
 
 ## Introduction (1 minute)
 
-"Welcome to PyVista in Action! Today, we'll look at how PyVista changes static 3D visualizations into dynamic, interactive experiences.
+"Welcome to PyVista in Action! In this section, we'll look at how PyVista changes static 3D visualizations into dynamic, interactive experiences.
 
 In the world of 3D data analysis, being able to interact with your visualizations is very important. Whether you're exploring complex datasets, making educational tools, or building professional applications, PyVista's interactive features help you go beyond static images.
 
@@ -421,7 +421,7 @@ def multi_update():
 
 **Code Organization:**
 
-````python
+```python
 class InteractiveAnalyzer:
     def __init__(self, mesh):
         self.mesh = mesh
@@ -436,7 +436,7 @@ class InteractiveAnalyzer:
     def setup_widgets(self):
         # Widget configuration
         pass
-```"
+```
 
 ## Real-World Example (1 minute)
 "Let's see these concepts in a real application - an interactive stress analysis tool:
@@ -490,7 +490,7 @@ class StressAnalyzer:
 
 analyzer = StressAnalyzer()
 analyzer.plotter.show()
-````
+```
 
 This creates a professional tool for engineering analysis with minimal code."
 
