@@ -13,7 +13,7 @@ be used for just about anything.
 
 # sphinx_gallery_thumbnail_number = 1
 
-##############################################################################
+# %%
 # One helper method we've added is the
 # :func:`pyvista.Plotter.add_mesh_threshold` method which leverages the
 # slider widget to control a thresholding value.
@@ -27,16 +27,16 @@ p = pv.Plotter()
 p.add_mesh_threshold(mesh)
 p.show()
 
-###############################################################################
+# %%
 # After interacting with the scene, the threshold mesh is available as:
 p.threshold_meshes
 
-##############################################################################
+# %%
 # And here is a screen capture of a user interacting with this
 #
 # .. image:: ../../images/gifs/slider-widget-threshold.gif
 
-###############################################################################
+# %%
 # Custom Callback
 # +++++++++++++++
 #
@@ -56,12 +56,12 @@ def create_mesh(value) -> None:
 p.add_slider_widget(create_mesh, [5, 100], title="Resolution")
 p.show()
 
-##############################################################################
+# %%
 # And here is a screen capture of a user interacting with this
 #
 # .. image:: ../../images/gifs/slider-widget-resolution.gif
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

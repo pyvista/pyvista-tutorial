@@ -30,7 +30,7 @@ mesh.rotate_x(-90.0, inplace=True)  # rotate to orient with the skybox
 cubemap = examples.download_sky_box_cube_map()
 
 
-###############################################################################
+# %%
 # Let's render the mesh with a base color of "linen" to give it a metal looking
 # finish.
 p = pv.Plotter()
@@ -44,7 +44,7 @@ cpos = [(-313.40, 66.09, 1000.61), (0.0, 0.0, 0.0), (0.018, 0.99, -0.06)]
 p.show(cpos=cpos)
 
 
-###############################################################################
+# %%
 # Show the variation of the metallic and roughness parameters.
 #
 # Plot with metallic increasing from left to right and roughness
@@ -63,7 +63,7 @@ p.view_vector((-1, 0, 0), (0, 1, 0))
 p.show()
 
 
-###############################################################################
+# %%
 # Combine custom lighting and physically based rendering.
 
 # download louis model
@@ -91,7 +91,7 @@ plotter.add_light(light)
 plotter.camera_position = [(9.51, 13.92, 15.81), (-2.836, -0.93, 10.2), (-0.22, -0.18, 0.959)]
 cpos = plotter.show()
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

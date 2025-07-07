@@ -459,7 +459,7 @@ Exercises
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Use WASM local rendering. This requires a pre-release version of VTK:">
+    <div class="sphx-glr-thumbcontainer" tooltip="Use WASM local rendering. This requires VTK version greater than 9.3:">
 
 .. only:: html
 

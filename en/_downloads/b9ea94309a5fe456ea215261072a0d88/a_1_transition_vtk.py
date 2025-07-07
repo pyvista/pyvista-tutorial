@@ -17,7 +17,7 @@ from math import cos, sin
 
 import vtk
 
-###############################################################################
+# %%
 # Create values for a 300x300 image dataset
 #
 # In our example, we want to have values from the function
@@ -34,18 +34,18 @@ for x in range(300):
     for y in range(300):
         values.SetValue(x * 300 + y, 127.5 + (1.0 + sin(x / 25.0) * cos(y / 25.0)))
 
-###############################################################################
+# %%
 # Create the image structure
 image_data = vtk.vtkImageData()
 image_data.SetOrigin(0, 0, 0)
 image_data.SetSpacing(1, 1, 1)
 image_data.SetDimensions(300, 300, 1)
 
-###############################################################################
+# %%
 # Assign the values to the image
 image_data.GetPointData().SetScalars(values)
 
-###############################################################################
+# %%
 # As you can see, there is quite a bit of boilerplate that goes into
 # the creation of a simple :vtk:`vtkImageData` dataset. PyVista provides
 # much more concise syntax that is more "Pythonic". The equivalent code in
@@ -54,7 +54,7 @@ image_data.GetPointData().SetScalars(values)
 import numpy as np
 import pyvista as pv
 
-###############################################################################
+# %%
 # Use the meshgrid function to create 2D "grids" of the x and y values.
 # This section effectively replaces the vtkDoubleArray.
 
@@ -62,13 +62,13 @@ xi = np.arange(300)
 x, y = np.meshgrid(xi, xi)
 values = 127.5 + (1.0 + np.sin(x / 25.0) * np.cos(y / 25.0))
 
-###############################################################################
+# %%
 # Create the grid.  Note how the values must use Fortran ordering.
 
 grid = pv.ImageData(dimensions=(300, 300, 1))
 grid.point_data["values"] = values.flatten(order="F")
 
-###############################################################################
+# %%
 # Here, PyVista has done several things for us:
 #
 # #. PyVista combines the dimensionality of the data (in the shape of
@@ -128,13 +128,13 @@ grid.point_data["values"] = values.flatten(order="F")
 #     renWin.Render()
 #     iren.Start()
 
-###############################################################################
+# %%
 # However, with PyVista you only need:
 
 grid.plot(cpos="xy", show_scalar_bar=False, cmap="coolwarm")
 
 
-###############################################################################
+# %%
 # PointSet Construction
 # ^^^^^^^^^^^^^^^^^^^^^
 # PyVista heavily relies on NumPy to efficiently allocate and access
@@ -157,12 +157,12 @@ vtk_array.SetValue(8, 0)
 vtk_points = vtk.vtkPoints()
 vtk_points.SetData(vtk_array)
 
-###############################################################################
+# %%
 # To do the same within PyVista, you simply need to create a NumPy array:
 
 np_points = np.array([[0, 0, 0], [1, 0, 0], [0.5, 0.667, 0]])
 
-###############################################################################
+# %%
 # .. note::
 #    You can use :func:`pyvista.vtk_points` to construct a :vtk:`vtkPoints`
 #    object, but this is unnecessary in almost all situations.
@@ -174,13 +174,13 @@ np_points = np.array([[0, 0, 0], [1, 0, 0], [0.5, 0.667, 0]])
 
 poly_data = pv.PolyData(np_points)
 
-###############################################################################
+# %%
 # Whereas in VTK you would have to do:
 
 vtk_poly_data = vtk.vtkPolyData()
 vtk_poly_data.SetPoints(vtk_points)
 
-###############################################################################
+# %%
 # The same goes with assigning face or cell connectivity/topology.  With
 # VTK you would normally have to loop using :func:`InsertNextCell` and
 # :func:`InsertCellPoint`.  For example, to create a single cell
@@ -193,7 +193,7 @@ cell_arr.InsertCellPoint(1)
 cell_arr.InsertCellPoint(2)
 vtk_poly_data.SetPolys(cell_arr)
 
-###############################################################################
+# %%
 # In PyVista, we can assign this directly in the constructor and then
 # access it (or change it) from the :attr:`faces
 # <pyvista.PolyData.faces>` attribute.
@@ -203,7 +203,7 @@ poly_data = pv.PolyData(np_points, faces)
 poly_data.faces
 
 
-###############################################################################
+# %%
 # PyVista Tradeoffs
 # ~~~~~~~~~~~~~~~~~
 # While most features can, not everything can be simplified in PyVista without
@@ -218,7 +218,7 @@ mesh_a = pv.Sphere()
 mesh_b = pv.Sphere(center=(-0.4, 0, 0))
 out, n_coll = mesh_a.collision(mesh_b, generate_scalars=True, contact_mode=2)
 
-###############################################################################
+# %%
 
 pl = pv.Plotter()
 pl.add_mesh(out)
@@ -226,7 +226,7 @@ pl.add_mesh(mesh_b, style="wireframe", color="k")
 pl.camera_position = "xy"
 pl.show()
 
-###############################################################################
+# %%
 # Under the hood, the collision filter detects mesh collisions using
 # oriented bounding box (OBB) trees.  For a single collision, this filter
 # is as performant as the VTK counterpart, but when computing multiple
@@ -237,7 +237,7 @@ pl.show()
 # PyVista is sufficient for most data science, but there are times when
 # you may want to use VTK classes directly.
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

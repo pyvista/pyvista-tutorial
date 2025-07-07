@@ -491,8 +491,8 @@ document.write(`
 </div>
 <section class="sphx-glr-example-title" id="vtk-wasm">
 <span id="sphx-glr-tutorial-06-vtk-d-wasm-py"></span><h1>VTK + WASM<a class="headerlink" href="#vtk-wasm" title="Link to this heading">#</a></h1>
-<p>WASMローカルレンダリングを使用する。 これにはVTKのプレリリースバージョンが必要です:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--extra-index-url<span class="w"> </span>https://wheels.vtk.org<span class="w"> </span><span class="nv">vtk</span><span class="o">==</span><span class="m">9</span>.3.20240629.dev0
+<p>Use WASM local rendering. This requires VTK version greater than 9.3:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>--extra-index-url<span class="w"> </span>https://wheels.vtk.org<span class="w"> </span>vtk&gt;<span class="o">=</span><span class="m">9</span>.3
 </pre></div>
 </div>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Required for vtk factory</span>

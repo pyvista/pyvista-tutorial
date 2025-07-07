@@ -2,11 +2,11 @@
 VTK + WASM
 ~~~~~~~~~~
 
-Use WASM local rendering. This requires a pre-release version of VTK:
+Use WASM local rendering. This requires VTK version greater than 9.3:
 
 .. code-block:: bash
 
-    pip install --extra-index-url https://wheels.vtk.org vtk==9.3.20240629.dev0
+    pip install --extra-index-url https://wheels.vtk.org vtk>=9.3
 
 """
 
@@ -30,7 +30,7 @@ from vtkmodules.vtkRenderingCore import (
     vtkRenderWindowInteractor,
 )
 
-###############################################################################
+# %%
 
 
 def setup_vtk():  # noqa: PLR0915
@@ -118,7 +118,7 @@ def setup_vtk():  # noqa: PLR0915
     return renWin, ren, cs2, ss
 
 
-###############################################################################
+# %%
 
 
 @TrameApp()
@@ -187,16 +187,16 @@ class App:
             return layout
 
 
-###############################################################################
+# %%
 app = App("wasm")
 await app.ui.ready
 
-###############################################################################
+# %%
 # Make sure to give room for the download of WASM bundle
 # Only needed at first execution
 import asyncio
 
 await asyncio.sleep(1)
 
-###############################################################################
+# %%
 app.ui

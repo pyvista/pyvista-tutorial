@@ -31,7 +31,7 @@ with SinglePageLayout(server) as layout, layout.content:
 # Show UI
 await layout.ready
 layout
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

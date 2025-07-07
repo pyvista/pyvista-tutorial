@@ -24,18 +24,18 @@ from pyvista import examples
 
 mesh = examples.download_nefertiti()
 
-###############################################################################
+# %%
 
 p = pv.Plotter()
 p.add_mesh_clip_box(mesh, color="white")
 p.show(cpos=[-1, -1, 0.2])
 
 
-###############################################################################
+# %%
 # After interacting with the scene, the clipped mesh is available as:
 p.box_clipped_meshes
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

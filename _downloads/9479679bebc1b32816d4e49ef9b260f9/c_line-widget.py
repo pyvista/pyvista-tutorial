@@ -27,7 +27,7 @@ furniture = examples.download_kitchen(split=True)
 arr = np.linalg.norm(mesh["velocity"], axis=1)
 clim = [arr.min(), arr.max()]
 
-###############################################################################
+# %%
 
 p = pv.Plotter()
 p.add_mesh(furniture, name="furniture", color=True)
@@ -45,12 +45,12 @@ def simulate(pointa, pointb) -> None:
 p.add_line_widget(callback=simulate, use_vertices=True)
 p.show()
 
-##############################################################################
+# %%
 # And here is a screen capture of a user interacting with this
 #
 # .. image:: ../../images/gifs/line-widget-streamlines.gif
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

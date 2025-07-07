@@ -17,7 +17,7 @@ Let's look at a few use cases that all update a surface mesh.
 
 # sphinx_gallery_thumbnail_number = 3
 
-##############################################################################
+# %%
 # Example A
 # +++++++++
 #
@@ -50,13 +50,13 @@ p.add_mesh(surf, color=True)
 p.show_grid()
 p.show()
 
-##############################################################################
+# %%
 # And here is a screen capture of a user interacting with this
 #
 # .. image:: ../../images/gifs/sphere-widget-a.gif
 
 
-###############################################################################
+# %%
 # Example B
 # +++++++++
 #
@@ -90,12 +90,12 @@ p.add_mesh(surf, color=True)
 p.show_grid()
 p.show()
 
-##############################################################################
+# %%
 # And here is a screen capture of a user interacting with this
 #
 # .. image:: ../../images/gifs/sphere-widget-b.gif
 
-###############################################################################
+# %%
 # Example C
 # +++++++++
 #
@@ -145,7 +145,7 @@ def update_surface(point, i) -> None:
 # Get a list of unique colors for each widget
 colors = get_colors(len(points))
 
-##############################################################################
+# %%
 
 # Begin the plotting routine
 p = pv.Plotter()
@@ -161,12 +161,12 @@ p.show_grid()
 # Show it!
 p.show()
 
-##############################################################################
+# %%
 # And here is a screen capture of a user interacting with this
 #
 # .. image:: ../../images/gifs/sphere-widget-c.gif
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

@@ -21,11 +21,11 @@
 VTK + WASM
 ~~~~~~~~~~
 
-Use WASM local rendering. This requires a pre-release version of VTK:
+Use WASM local rendering. This requires VTK version greater than 9.3:
 
 .. code-block:: bash
 
-    pip install --extra-index-url https://wheels.vtk.org vtk==9.3.20240629.dev0
+    pip install --extra-index-url https://wheels.vtk.org vtk>=9.3
 
 .. GENERATED FROM PYTHON SOURCE LINES 12-33
 

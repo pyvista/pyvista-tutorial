@@ -59,7 +59,7 @@ with SinglePageLayout(server) as layout:
 # Show UI
 await layout.ready
 layout
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

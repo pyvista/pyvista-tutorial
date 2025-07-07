@@ -10,7 +10,7 @@ Getting started with PyVista and Trame
 import pyvista as pv
 from pyvista import examples
 
-###############################################################################
+# %%
 # PyVista's Jupyter backend is powered by **Trame**. So by default you are
 # using trame without knowing it.
 #
@@ -30,7 +30,7 @@ from pyvista import examples
 dataset = examples.download_lucy()
 dataset.plot(smooth_shading=True, color="white")
 
-###############################################################################
+# %%
 # Building applications with PyVista and Trame
 #
 # Now, let's build a simple application that updates the mesh color with the click of a button.

@@ -16,13 +16,13 @@ PyVista without having to manually download and load them.
 
 """
 
-###############################################################################
+# %%
 # Import PyVista and the examples module
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import pyvista as pv
 from pyvista import examples
 
-###############################################################################
+# %%
 # Surface DataSet - Download
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Download a surface dataset of pine roots. Note how the dataset is
@@ -31,14 +31,14 @@ dataset = examples.download_pine_roots()
 dataset
 
 
-###############################################################################
+# %%
 # Surface DataSet - Plot
 # ~~~~~~~~~~~~~~~~~~~~~~
 # Plot the pine roots using PyVista's default plotting settings.
 dataset.plot()
 
 
-###############################################################################
+# %%
 # Volume DataSet - Download
 # ~~~~~~~~~~~~~~~~~~~~~~~~~
 # Download the bolt dataset. This is an excellent dataset to visualize using
@@ -48,7 +48,7 @@ dataset = examples.download_bolt_nut()
 dataset
 
 
-###############################################################################
+# %%
 # Volume DataSet - Plot
 # ~~~~~~~~~~~~~~~~~~~~~
 # Here, we plot the dataset using a custom view direction using
@@ -65,7 +65,7 @@ pl.camera_position = [(194.6, -141.8, 182.0), (34.5, 61.0, 32.5), (-0.229, 0.45,
 pl.show()
 
 
-###############################################################################
+# %%
 # Exercise #1 - Use PyVista Examples
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Visualize one of PyVista's built in examples.
@@ -75,7 +75,7 @@ pl.show()
 # examples you can download.
 
 
-###############################################################################
+# %%
 # Exercise #2 - Download and View a File
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Experiment on your own by downloading a dataset and reading it in with
@@ -86,7 +86,7 @@ pl.show()
 # - `Sample STL files <https://www.amtekcompany.com/teaching-resources/stl-files/>`_
 # - `Thingiverse <https://www.thingiverse.com/>`_
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

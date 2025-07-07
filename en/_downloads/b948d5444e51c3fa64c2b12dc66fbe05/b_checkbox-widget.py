@@ -13,7 +13,7 @@ See :func:`pyvista.Plotter.add_checkbox_button_widget` for more details.
 # sphinx_gallery_thumbnail_number = 2
 import pyvista as pv
 
-###############################################################################
+# %%
 # Single Checkbox
 # +++++++++++++++
 
@@ -30,12 +30,12 @@ def toggle_vis(flag) -> None:
 p.add_checkbox_button_widget(toggle_vis, value=True)
 p.show()
 
-##############################################################################
+# %%
 # And here is a screen capture of a user interacting with this
 #
 # .. image:: ../../images/gifs/single-checkbox-widget.gif
 
-###############################################################################
+# %%
 # Multiple Checkboxes
 # +++++++++++++++++++
 #
@@ -62,7 +62,7 @@ class SetVisibilityCallback:
         self.actor.SetVisibility(state)
 
 
-###############################################################################
+# %%
 
 # Widget size
 size = 50
@@ -89,12 +89,12 @@ for i, lst in enumerate(colors):
 
 p.show()
 
-##############################################################################
+# %%
 # And here is a screen capture of a user interacting with this
 #
 # .. image:: ../../images/gifs/multiple-checkbox-widget.gif
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

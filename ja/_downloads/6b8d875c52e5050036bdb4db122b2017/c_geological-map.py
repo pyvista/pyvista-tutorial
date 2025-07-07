@@ -25,12 +25,12 @@ try:
 except ImportError:
     rasterio = None
 
-###############################################################################
+# %%
 path = examples.download_file("topo_clean.vtk")
 topo = pv.read(path)
 topo
 
-###############################################################################
+# %%
 # Load the GeoTIFF/texture (this could take a minute to download)
 # https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0
 url = "https://dl.dropbox.com/s/bp9j3fl3wbi0fld/downsampled_Geologic_map_on_air_photo.tif?dl=0"
@@ -40,7 +40,7 @@ filename = os.path.join(tempfile.gettempdir(), "downsampled_Geologic_map_on_air_
 open(filename, "wb").write(response.content)  # noqa: SIM115, PTH123
 
 
-###############################################################################
+# %%
 # In the block below, we can use the ``get_gcps`` function to get the
 # Ground Control Points of the raster, however this depends on GDAL. For this
 # tutorial, we are going to hard code the GCPs to avoid having users install
@@ -72,7 +72,7 @@ def get_gcps(filename):
     return origin, point_u, point_v
 
 
-###############################################################################
+# %%
 
 # Fetch the GCPs
 # origin, point_u, point_v = get_gcps(filename)
@@ -82,12 +82,12 @@ origin = [310967.75148705335, 4238841.045453942, 0.0]
 point_u = [358682.9364281533, 4238841.045453942, 0.0]
 point_v = [310967.75148705335, 4276281.98755258, 0.0]
 
-###############################################################################
+# %%
 
 # Use the GCPs to map the texture coordinates onto the topography surface
 topo.texture_map_to_plane(origin, point_u, point_v, inplace=True)
 
-###############################################################################
+# %%
 # Show GCPs in relation to topo surface with texture coordinates displayed
 p = pv.Plotter()
 p.add_point_labels(
@@ -106,7 +106,7 @@ p.add_mesh(topo)
 p.show(cpos="xy")
 
 
-###############################################################################
+# %%
 # Read the GeoTIFF as a ``Texture`` in PyVista:
 texture = pv.read_texture(filename)
 
@@ -121,7 +121,7 @@ p.camera_position = [
 ]
 p.show()
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>
