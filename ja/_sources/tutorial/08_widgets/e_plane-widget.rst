@@ -42,9 +42,9 @@ Let's use a plane to clip a mesh:
 
     vol = examples.download_brain()
 
-    p = pv.Plotter()
-    p.add_mesh_clip_plane(vol)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh_clip_plane(vol)
+    pl.show()
 
 
 
@@ -88,7 +88,7 @@ After interacting with the scene, the clipped mesh is available as:
 
 .. code-block:: Python
 
-    p.plane_clipped_meshes
+    pl.plane_clipped_meshes
 
 
 
@@ -99,7 +99,7 @@ After interacting with the scene, the clipped mesh is available as:
  .. code-block:: none
 
 
-    [UnstructuredGrid (0x7fee23d0ab00)
+    [UnstructuredGrid (0x7fa1847d39a0)
       N Cells:    3538080
       N Points:   3613484
       X Bounds:   9.000e+01, 1.800e+02
@@ -124,9 +124,9 @@ Or you could slice a mesh using the plane widget:
 .. code-block:: Python
 
 
-    p = pv.Plotter()
-    p.add_mesh_slice(vol)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh_slice(vol)
+    pl.show()
 
 
 
@@ -169,7 +169,7 @@ After interacting with the scene, the slice is available as:
 
 .. code-block:: Python
 
-    p.plane_sliced_meshes
+    pl.plane_sliced_meshes
 
 
 
@@ -180,7 +180,7 @@ After interacting with the scene, the slice is available as:
  .. code-block:: none
 
 
-    [PolyData (0x7fee23d08b20)
+    [PolyData (0x7fa1847d1180)
       N Cells:    38880
       N Points:   39277
       N Strips:   0
@@ -214,20 +214,20 @@ at a time.
 
     mesh = examples.download_carotid()
 
-    p = pv.Plotter()
-    p.add_mesh(mesh.contour(8).extract_largest(), opacity=0.5)
+    pl = pv.Plotter()
+    pl.add_mesh(mesh.contour(8).extract_largest(), opacity=0.5)
 
 
     def my_plane_func(normal, origin) -> None:
         slc = mesh.slice(normal=normal, origin=origin)
         arrows = slc.glyph(orient="vectors", scale="scalars", factor=0.01)
-        p.add_mesh(arrows, name="arrows")
+        pl.add_mesh(arrows, name="arrows")
 
 
-    p.add_plane_widget(my_plane_func)
-    p.show_grid()
-    p.add_axes()
-    p.show()
+    pl.add_plane_widget(my_plane_func)
+    pl.show_grid()
+    pl.add_axes()
+    pl.show()
 
 
 
@@ -281,9 +281,9 @@ plane and we disable the arrow to prevent its rotation.
 .. code-block:: Python
 
 
-    p = pv.Plotter()
-    p.add_mesh_slice(vol, normal=(1, 1, 1), normal_rotation=False)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh_slice(vol, normal=(1, 1, 1), normal_rotation=False)
+    pl.show()
 
 
 
@@ -328,9 +328,9 @@ is set.
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh_slice(vol, assign_to_axis="z")
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh_slice(vol, assign_to_axis="z")
+    pl.show()
 
 
 
@@ -380,9 +380,9 @@ we can have continuous slicing by using the ``InteractionEvent`` observer.
 
     import vtk
 
-    p = pv.Plotter()
-    p.add_mesh_slice(vol, assign_to_axis="z", interaction_event=vtk.vtkCommand.InteractionEvent)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh_slice(vol, assign_to_axis="z", interaction_event=vtk.vtkCommand.InteractionEvent)
+    pl.show()
 
 
 
@@ -438,7 +438,7 @@ the ``InteractionEvent`` observer:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 12.426 seconds)
+   **Total running time of the script:** (0 minutes 11.297 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_e_plane-widget.py:

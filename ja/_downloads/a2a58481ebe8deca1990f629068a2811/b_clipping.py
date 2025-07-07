@@ -28,12 +28,12 @@ clipped
 
 # %%
 # Plot the result.
-p = pv.Plotter()
-p.add_mesh(dataset, style="wireframe", color="blue", label="Input")
-p.add_mesh(clipped, label="Clipped")
-p.add_legend()
-p.camera_position = [(0.24, 0.32, 0.7), (0.02, 0.03, -0.02), (-0.12, 0.93, -0.34)]
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(dataset, style="wireframe", color="blue", label="Input")
+pl.add_mesh(clipped, label="Clipped")
+pl.add_legend()
+pl.camera_position = [(0.24, 0.32, 0.7), (0.02, 0.03, -0.02), (-0.12, 0.93, -0.34)]
+pl.show()
 
 
 # %%
@@ -58,11 +58,11 @@ clipped
 
 # %%
 # Plot the original dataset and the clipped one.
-p = pv.Plotter()
-p.add_mesh(dataset, style="wireframe", color="blue", label="Input")
-p.add_mesh(clipped, label="Clipped")
-p.add_legend()
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(dataset, style="wireframe", color="blue", label="Input")
+pl.add_mesh(clipped, label="Clipped")
+pl.add_legend()
+pl.show()
 
 
 # %%
@@ -77,24 +77,24 @@ mesh = examples.load_airplane()
 roi = pv.Cube(center=(0.9e3, 0.2e3, mesh.center[2]), x_length=500, y_length=500, z_length=500)
 roi.rotate_z(33, inplace=True)
 
-p = pv.Plotter()
-p.add_mesh(roi, opacity=0.75, color="red")
-p.add_mesh(mesh, opacity=0.5)
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(roi, opacity=0.75, color="red")
+pl.add_mesh(mesh, opacity=0.5)
+pl.show()
 
 # %%
 # Run the box clipping algorithm with the defined box geometry.
 extracted = ...
 
-p = pv.Plotter(shape=(1, 2))
-p.add_mesh(roi, opacity=0.75, color="red")
-p.add_mesh(mesh)
-p.subplot(0, 1)
-p.add_mesh(extracted)
-p.add_mesh(roi, opacity=0.75, color="red")
-p.link_views()
-p.view_isometric()
-p.show()
+pl = pv.Plotter(shape=(1, 2))
+pl.add_mesh(roi, opacity=0.75, color="red")
+pl.add_mesh(mesh)
+pl.subplot(0, 1)
+pl.add_mesh(extracted)
+pl.add_mesh(roi, opacity=0.75, color="red")
+pl.link_views()
+pl.view_isometric()
+pl.show()
 
 # %%
 # Crinkled Clipping
@@ -126,14 +126,14 @@ crinkled = mesh.clip(..., normal=normal)
 
 # %%
 # Plot comparison
-p = pv.Plotter(shape=(1, 2))
-p.add_mesh(clipped, show_edges=True)
-p.add_mesh(plane.extract_feature_edges(), color="r")
-p.subplot(0, 1)
-p.add_mesh(crinkled, show_edges=True)
-p.add_mesh(plane.extract_feature_edges(), color="r")
-p.link_views()
-p.show()
+pl = pv.Plotter(shape=(1, 2))
+pl.add_mesh(clipped, show_edges=True)
+pl.add_mesh(plane.extract_feature_edges(), color="r")
+pl.subplot(0, 1)
+pl.add_mesh(crinkled, show_edges=True)
+pl.add_mesh(plane.extract_feature_edges(), color="r")
+pl.link_views()
+pl.show()
 
 # %%
 # .. raw:: html

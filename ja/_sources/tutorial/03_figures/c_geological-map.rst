@@ -226,8 +226,8 @@ Show GCPs in relation to topo surface with texture coordinates displayed
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_point_labels(
+    pl = pv.Plotter()
+    pl.add_point_labels(
         np.array(
             [
                 origin,
@@ -239,8 +239,8 @@ Show GCPs in relation to topo surface with texture coordinates displayed
         point_size=5,
     )
 
-    p.add_mesh(topo)
-    p.show(cpos="xy")
+    pl.add_mesh(topo)
+    pl.show(cpos="xy")
 
 
 
@@ -289,14 +289,14 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
     # Now plot the topo surface with the texture draped over it
     # And make window size large for a high-res screenshot
-    p = pv.Plotter(window_size=np.array([1024, 768]) * 3)
-    p.add_mesh(topo, texture=texture)
-    p.camera_position = [
+    pl = pv.Plotter(window_size=np.array([1024, 768]) * 3)
+    pl.add_mesh(topo, texture=texture)
+    pl.camera_position = [
         (337461.4124956896, 4257141.430658634, 2738.4956020899253),
         (339000.40935731295, 4260394.940646875, 1724.0720826501868),
         (0.10526647627366331, 0.2502863297360612, 0.962432190920575),
     ]
-    p.show()
+    pl.show()
 
 
 
@@ -345,7 +345,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 16.034 seconds)
+   **Total running time of the script:** (0 minutes 14.622 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_c_geological-map.py:

@@ -5,20 +5,20 @@ cntr = mesh.contour()
 slices = mesh.slice_orthogonal()
 thresh = mesh.threshold(200)
 
-p = pv.Plotter(shape="1|3")
+pl = pv.Plotter(shape="1|3")
 
-p.subplot(1)
-p.add_mesh(cntr)
+pl.subplot(1)
+pl.add_mesh(cntr)
 
-p.subplot(2)
-p.add_mesh(slices)
+pl.subplot(2)
+pl.add_mesh(slices)
 
-p.subplot(3)
-p.add_mesh(thresh)
+pl.subplot(3)
+pl.add_mesh(thresh)
 
-p.subplot(0)
-p.add_mesh(mesh)
+pl.subplot(0)
+pl.add_mesh(mesh)
 
-p.link_views()
-p.view_isometric()
-p.show()
+pl.link_views()
+pl.view_isometric()
+pl.show()

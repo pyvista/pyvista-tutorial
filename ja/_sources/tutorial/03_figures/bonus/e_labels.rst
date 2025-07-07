@@ -267,9 +267,9 @@ node:
     <tr><td>N Cells</td><td>10</td></tr>
     <tr><td>N Points</td><td>10</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>2.721e-03, 9.711e-01</td></tr>
-    <tr><td>Y Bounds</td><td>1.853e-02, 9.822e-01</td></tr>
-    <tr><td>Z Bounds</td><td>9.315e-03, 9.226e-01</td></tr>
+    <tr><td>X Bounds</td><td>3.312e-02, 8.327e-01</td></tr>
+    <tr><td>Y Bounds</td><td>1.309e-01, 9.881e-01</td></tr>
+    <tr><td>Z Bounds</td><td>1.598e-01, 8.501e-01</td></tr>
     <tr><td>N Arrays</td><td>1</td></tr>
     </table>
 
@@ -449,17 +449,17 @@ This example will label each point with their scalar values
 
 .. code-block:: Python
 
-    p = pv.Plotter()
+    pl = pv.Plotter()
 
     # Add the mesh:
-    p.add_mesh(mesh, scalars="Spatial Point Data", show_edges=True)
+    pl.add_mesh(mesh, scalars="Spatial Point Data", show_edges=True)
     # Add the points with scalar labels:
-    p.add_point_scalar_labels(mesh, "Spatial Point Data", point_size=20, font_size=36)
+    pl.add_point_scalar_labels(mesh, "Spatial Point Data", point_size=20, font_size=36)
 
     # Use a nice camera position:
-    p.camera_position = [(7, 4, 5), (4.4, 7.0, 7.2), (0.8, 0.5, 0.25)]
+    pl.camera_position = [(7, 4, 5), (4.4, 7.0, 7.2), (0.8, 0.5, 0.25)]
 
-    p.show()
+    pl.show()
 
 
 
@@ -508,7 +508,7 @@ This example will label each point with their scalar values
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.755 seconds)
+   **Total running time of the script:** (0 minutes 0.810 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_e_labels.py:

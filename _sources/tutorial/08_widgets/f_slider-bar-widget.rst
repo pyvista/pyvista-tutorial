@@ -59,9 +59,9 @@ slider widget to control a thresholding value.
 
     mesh = examples.download_knee_full()
 
-    p = pv.Plotter()
-    p.add_mesh_threshold(mesh)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh_threshold(mesh)
+    pl.show()
 
 
 
@@ -105,7 +105,7 @@ After interacting with the scene, the threshold mesh is available as:
 
 .. code-block:: Python
 
-    p.threshold_meshes
+    pl.threshold_meshes
 
 
 
@@ -116,7 +116,7 @@ After interacting with the scene, the threshold mesh is available as:
  .. code-block:: none
 
 
-    [UnstructuredGrid (0x7fee219deaa0)
+    [UnstructuredGrid (0x7fa177fc2e60)
       N Cells:    295424
       N Points:   394455
       X Bounds:   3.615e+01, 1.178e+02
@@ -146,17 +146,17 @@ of a mesh. Again note the use of the ``name`` argument in ``add_mesh``:
 .. code-block:: Python
 
 
-    p = pv.Plotter()
+    pl = pv.Plotter()
 
 
     def create_mesh(value) -> None:
         res = int(value)
         sphere = pv.Sphere(phi_resolution=res, theta_resolution=res)
-        p.add_mesh(sphere, name="sphere", show_edges=True)
+        pl.add_mesh(sphere, name="sphere", show_edges=True)
 
 
-    p.add_slider_widget(create_mesh, [5, 100], title="Resolution")
-    p.show()
+    pl.add_slider_widget(create_mesh, [5, 100], title="Resolution")
+    pl.show()
 
 
 
@@ -211,7 +211,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 3.124 seconds)
+   **Total running time of the script:** (0 minutes 3.156 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_f_slider-bar-widget.py:

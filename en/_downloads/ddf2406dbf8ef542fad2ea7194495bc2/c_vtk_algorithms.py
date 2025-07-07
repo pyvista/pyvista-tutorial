@@ -58,10 +58,10 @@ outline
 #   Note that the about filter can be replaced with a ``.outline()`` filter in PyVista
 
 # %%
-p = pv.Plotter()
-p.add_mesh(mesh)
-p.add_mesh(outline, color="k")
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(mesh)
+pl.add_mesh(outline, color="k")
+pl.show()
 
 
 # %%

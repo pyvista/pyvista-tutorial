@@ -76,10 +76,10 @@ create a subset of arrows using the glyph filter
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(arrows, color="black")
-    p.add_mesh(mesh, scalars="Elevation", cmap="terrain", smooth_shading=True)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(arrows, color="black")
+    pl.add_mesh(mesh, scalars="Elevation", cmap="terrain", smooth_shading=True)
+    pl.show()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 37-39
@@ -127,10 +127,10 @@ Plot the arrows and the sphere.
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(sphere.arrows, lighting=False, scalar_bar_args={"title": "Vector Magnitude"})
-    p.add_mesh(sphere, color="grey", ambient=0.6, opacity=0.5, show_edges=False)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(sphere.arrows, lighting=False, scalar_bar_args={"title": "Vector Magnitude"})
+    pl.add_mesh(sphere, color="grey", ambient=0.6, opacity=0.5, show_edges=False)
+    pl.show()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 70-77

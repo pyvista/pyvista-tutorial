@@ -6,7 +6,7 @@
 
 Computation times
 =================
-**00:03.078** total execution time for 1 file **from tutorial/02_mesh**:
+**00:02.971** total execution time for 1 file **from tutorial/02_mesh**:
 
 .. container::
 
@@ -33,5 +33,5 @@ Computation times
      - Time
      - Mem (MB)
    * - :ref:`sphx_glr_tutorial_02_mesh_a_lesson_mesh.py` (``a_lesson_mesh.py``)
-     - 00:03.078
+     - 00:02.971
      - 0.0

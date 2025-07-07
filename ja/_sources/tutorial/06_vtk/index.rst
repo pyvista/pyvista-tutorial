@@ -365,10 +365,10 @@ Perhaps there is a VTK algorithm that is not (yet) exposed in PyVista that you'd
     cntrs = vol.contour([.95 * splatter.GetRadius()])
 
     # Use PyVista to plot
-    p = pv.Plotter()
-    p.add_mesh(mesh, style='wireframe')
-    p.add_mesh(cntrs, color=True)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, style='wireframe')
+    pl.add_mesh(cntrs, color=True)
+    pl.show()
 
 
 .. note::

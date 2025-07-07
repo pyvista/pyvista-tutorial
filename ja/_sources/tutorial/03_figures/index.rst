@@ -62,9 +62,9 @@ When plotting, users must first create a :class:`pyvista.Plotter` instance (much
 
     mesh = pv.Wavelet()
 
-    p = pv.Plotter()
-    p.add_mesh(mesh)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh)
+    pl.show()
 
 
 You can customize how that mesh is displayed through the parameters of the :func:`pyvista.Plotter.add_mesh` method. For example, we can change the colormap via the ``cmap`` argument:
@@ -74,9 +74,9 @@ You can customize how that mesh is displayed through the parameters of the :func
 .. pyvista-plot::
    :context:
 
-    p = pv.Plotter()
-    p.add_mesh(mesh, cmap='coolwarm')
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, cmap='coolwarm')
+    pl.show()
 
 
 Or show the edges of the mesh with ``show_edges``:
@@ -84,9 +84,9 @@ Or show the edges of the mesh with ``show_edges``:
 .. pyvista-plot::
    :context:
 
-    p = pv.Plotter()
-    p.add_mesh(mesh, show_edges=True)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, show_edges=True)
+    pl.show()
 
 
 Or adjust the opacity to be a scalar value or linear transfer function via the ``opacity`` argument:
@@ -98,9 +98,9 @@ Or adjust the opacity to be a scalar value or linear transfer function via the `
 
     mesh = examples.download_st_helens().warp_by_scalar()
 
-    p = pv.Plotter()
-    p.add_mesh(mesh, cmap='terrain', opacity="linear")
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, cmap='terrain', opacity="linear")
+    pl.show()
 
 
 Take a look at all of the options for `add_mesh <https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html>`_.
@@ -130,15 +130,15 @@ The ``add_mesh`` method can be called over and over to add different data to the
 
     solids = [pv.PlatonicSolid(kind, radius=0.4, center=center) for kind, center in zip(kinds, centers)]
 
-    p = pv.Plotter(window_size=[1000, 1000])
+    pl = pv.Plotter(window_size=[1000, 1000])
     for solid in solids:
-        p.add_mesh(
+        pl.add_mesh(
             solid, color='silver', specular=1.0, specular_power=10
         )
-    p.view_vector((5.0, 2, 3))
-    p.add_floor('-z', lighting=True, color='tan', pad=1.0)
-    p.enable_shadows()
-    p.show()
+    pl.view_vector((5.0, 2, 3))
+    pl.add_floor('-z', lighting=True, color='tan', pad=1.0)
+    pl.enable_shadows()
+    pl.show()
 
 
 Subplotting
@@ -151,15 +151,15 @@ Creating side-by-side comparisons of datasets is easy with PyVista's subplotting
 
     import pyvista as pv
 
-    p = pv.Plotter(shape=(1, 2))
+    pl = pv.Plotter(shape=(1, 2))
 
-    p.subplot(0, 0)
-    p.add_mesh(pv.Sphere())
+    pl.subplot(0, 0)
+    pl.add_mesh(pv.Sphere())
 
-    p.subplot(0, 1)
-    p.add_mesh(pv.Cube())
+    pl.subplot(0, 1)
+    pl.add_mesh(pv.Cube())
 
-    p.show()
+    pl.show()
 
 Below is an example of side-by-side comparisons of the contours and slices of a single dataset.
 
@@ -176,16 +176,16 @@ Below is an example of side-by-side comparisons of the contours and slices of a 
     cntr = mesh.contour()
     slices = mesh.slice_orthogonal()
 
-    p = pv.Plotter(shape=(1, 2))
+    pl = pv.Plotter(shape=(1, 2))
 
-    p.add_mesh(cntr)
+    pl.add_mesh(cntr)
 
-    p.subplot(0, 1)
-    p.add_mesh(slices)
+    pl.subplot(0, 1)
+    pl.add_mesh(slices)
 
-    p.link_views()
-    p.view_isometric()
-    p.show()
+    pl.link_views()
+    pl.view_isometric()
+    pl.show()
 
 
 Other custom layouts are supported by the ``shape`` argument as string descriptors:
@@ -205,23 +205,23 @@ Here is an example of three plots on the right and one on the left:
     slices = mesh.slice_orthogonal()
     thresh = mesh.threshold(200)
 
-    p = pv.Plotter(shape="1|3")
+    pl = pv.Plotter(shape="1|3")
 
-    p.subplot(1)
-    p.add_mesh(cntr)
+    pl.subplot(1)
+    pl.add_mesh(cntr)
 
-    p.subplot(2)
-    p.add_mesh(slices)
+    pl.subplot(2)
+    pl.add_mesh(slices)
 
-    p.subplot(3)
-    p.add_mesh(thresh)
+    pl.subplot(3)
+    pl.add_mesh(thresh)
 
-    p.subplot(0)
-    p.add_mesh(mesh)
+    pl.subplot(0)
+    pl.add_mesh(mesh)
 
-    p.link_views()
-    p.view_isometric()
-    p.show()
+    pl.link_views()
+    pl.view_isometric()
+    pl.show()
 
 
 .. note::
@@ -249,10 +249,10 @@ Axes can be added to the scene with :func:`pyvista.Plotter.show_axes`
 
     mesh = examples.load_random_hills()
 
-    p = pv.Plotter()
-    p.add_mesh(mesh)
-    p.show_axes()
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh)
+    pl.show_axes()
+    pl.show()
 
 And bounds similarly with :func:`pyvista.Plotter.show_bounds`
 
@@ -267,11 +267,11 @@ And bounds similarly with :func:`pyvista.Plotter.show_bounds`
 
     mesh = examples.load_random_hills()
 
-    p = pv.Plotter()
-    p.add_mesh(mesh)
-    p.show_axes()
-    p.show_bounds()
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh)
+    pl.show_axes()
+    pl.show_bounds()
+    pl.show()
 
 
 

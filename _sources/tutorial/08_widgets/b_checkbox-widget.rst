@@ -53,16 +53,16 @@ Single Checkbox
 
     mesh = pv.Sphere()
 
-    p = pv.Plotter()
-    actor = p.add_mesh(mesh)
+    pl = pv.Plotter()
+    actor = pl.add_mesh(mesh)
 
 
     def toggle_vis(flag) -> None:
         actor.SetVisibility(flag)
 
 
-    p.add_checkbox_button_widget(toggle_vis, value=True)
-    p.show()
+    pl.add_checkbox_button_widget(toggle_vis, value=True)
+    pl.show()
 
 
 
@@ -152,15 +152,15 @@ their visibility in the scene.
     # Widget size
     size = 50
 
-    p = pv.Plotter()
+    pl = pv.Plotter()
 
     Startpos = 12
     for i, lst in enumerate(colors):
         for j, color in enumerate(lst):
-            actor = p.add_mesh(pv.Sphere(center=(i, j, 0)), color=color)
+            actor = pl.add_mesh(pv.Sphere(center=(i, j, 0)), color=color)
             # Make a separate callback for each widget
             callback = SetVisibilityCallback(actor)
-            p.add_checkbox_button_widget(
+            pl.add_checkbox_button_widget(
                 callback,
                 value=True,
                 position=(5.0, Startpos),
@@ -172,7 +172,7 @@ their visibility in the scene.
             )
             Startpos = Startpos + size + (size // 10)
 
-    p.show()
+    pl.show()
 
 
 
@@ -227,7 +227,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.769 seconds)
+   **Total running time of the script:** (0 minutes 0.786 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_b_checkbox-widget.py:

@@ -57,26 +57,28 @@ the ``name`` argument in ``add_mesh``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-48
+.. GENERATED FROM PYTHON SOURCE LINES 31-50
 
 .. code-block:: Python
 
 
-    p = pv.Plotter()
-    p.add_mesh(furniture, name="furniture", color=True)
-    p.add_mesh(mesh.outline(), color="black")
-    p.add_axes()
+    pl = pv.Plotter()
+    pl.add_mesh(furniture, name="furniture", color=True)
+    pl.add_mesh(mesh.outline(), color="black")
+    pl.add_axes()
 
 
     def simulate(pointa, pointb) -> None:
         streamlines = mesh.streamlines(
             n_points=10, max_steps=100, pointa=pointa, pointb=pointb, integration_direction="forward"
         )
-        p.add_mesh(streamlines, name="streamlines", line_width=5, render_lines_as_tubes=True, clim=clim)
+        pl.add_mesh(
+            streamlines, name="streamlines", line_width=5, render_lines_as_tubes=True, clim=clim
+        )
 
 
-    p.add_line_widget(callback=simulate, use_vertices=True)
-    p.show()
+    pl.add_line_widget(callback=simulate, use_vertices=True)
+    pl.show()
 
 
 
@@ -112,13 +114,13 @@ the ``name`` argument in ``add_mesh``.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-52
+.. GENERATED FROM PYTHON SOURCE LINES 51-54
 
 And here is a screen capture of a user interacting with this
 
 .. image:: ../../images/gifs/line-widget-streamlines.gif
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-61
+.. GENERATED FROM PYTHON SOURCE LINES 56-63
 
 .. raw:: html
 
@@ -131,7 +133,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.745 seconds)
+   **Total running time of the script:** (0 minutes 0.840 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_c_line-widget.py:

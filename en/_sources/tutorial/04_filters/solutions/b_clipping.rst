@@ -221,12 +221,12 @@ Plot the result.
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(dataset, style="wireframe", color="blue", label="Input")
-    p.add_mesh(clipped, label="Clipped")
-    p.add_legend()
-    p.camera_position = [(0.24, 0.32, 0.7), (0.02, 0.03, -0.02), (-0.12, 0.93, -0.34)]
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(dataset, style="wireframe", color="blue", label="Input")
+    pl.add_mesh(clipped, label="Clipped")
+    pl.add_legend()
+    pl.camera_position = [(0.24, 0.32, 0.7), (0.02, 0.03, -0.02), (-0.12, 0.93, -0.34)]
+    pl.show()
 
 
 
@@ -413,11 +413,11 @@ Plot the original dataset and the clipped one.
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(dataset, style="wireframe", color="blue", label="Input")
-    p.add_mesh(clipped, label="Clipped")
-    p.add_legend()
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(dataset, style="wireframe", color="blue", label="Input")
+    pl.add_mesh(clipped, label="Clipped")
+    pl.add_legend()
+    pl.show()
 
 
 
@@ -472,10 +472,10 @@ Clip any dataset by an arbitrarily rotated solid box using the
     roi = pv.Cube(center=(0.9e3, 0.2e3, mesh.center[2]), x_length=500, y_length=500, z_length=500)
     roi.rotate_z(33, inplace=True)
 
-    p = pv.Plotter()
-    p.add_mesh(roi, opacity=0.75, color="red")
-    p.add_mesh(mesh, opacity=0.5)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(roi, opacity=0.75, color="red")
+    pl.add_mesh(mesh, opacity=0.5)
+    pl.show()
 
 
 
@@ -521,15 +521,15 @@ Run the box clipping algorithm with the defined box geometry.
 
     extracted = mesh.clip_box(roi, invert=False)
 
-    p = pv.Plotter(shape=(1, 2))
-    p.add_mesh(roi, opacity=0.75, color="red")
-    p.add_mesh(mesh)
-    p.subplot(0, 1)
-    p.add_mesh(extracted)
-    p.add_mesh(roi, opacity=0.75, color="red")
-    p.link_views()
-    p.view_isometric()
-    p.show()
+    pl = pv.Plotter(shape=(1, 2))
+    pl.add_mesh(roi, opacity=0.75, color="red")
+    pl.add_mesh(mesh)
+    pl.subplot(0, 1)
+    pl.add_mesh(extracted)
+    pl.add_mesh(roi, opacity=0.75, color="red")
+    pl.link_views()
+    pl.view_isometric()
+    pl.show()
 
 
 
@@ -653,14 +653,14 @@ Plot comparison
 
 .. code-block:: Python
 
-    p = pv.Plotter(shape=(1, 2))
-    p.add_mesh(clipped, show_edges=True)
-    p.add_mesh(plane.extract_feature_edges(), color="r")
-    p.subplot(0, 1)
-    p.add_mesh(crinkled, show_edges=True)
-    p.add_mesh(plane.extract_feature_edges(), color="r")
-    p.link_views()
-    p.show()
+    pl = pv.Plotter(shape=(1, 2))
+    pl.add_mesh(clipped, show_edges=True)
+    pl.add_mesh(plane.extract_feature_edges(), color="r")
+    pl.subplot(0, 1)
+    pl.add_mesh(crinkled, show_edges=True)
+    pl.add_mesh(plane.extract_feature_edges(), color="r")
+    pl.link_views()
+    pl.show()
 
 
 
@@ -709,7 +709,7 @@ Plot comparison
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.225 seconds)
+   **Total running time of the script:** (0 minutes 1.980 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_b_clipping.py:

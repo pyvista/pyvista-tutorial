@@ -33,9 +33,9 @@ Take a look at the different display options offered by the ``add_mesh`` method.
 
     mesh = examples.load_random_hills()
 
-    p = pv.Plotter()
-    p.add_mesh(mesh)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh)
+    pl.show()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 18-20
@@ -47,7 +47,7 @@ alter how the above data are displayed.
 
 .. code-block:: Python
 
-    help(p.add_mesh)
+    help(pl.add_mesh)
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 23-24
@@ -58,9 +58,9 @@ Plot that mesh with the edges of cells displayed
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(mesh, ...)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, ...)
+    pl.show()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 29-31
@@ -72,9 +72,9 @@ color (use a named color!)
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(mesh, ...)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, ...)
+    pl.show()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 36-37
@@ -85,9 +85,9 @@ Display with a points representation style
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(mesh, ...)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, ...)
+    pl.show()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 42-43
@@ -98,9 +98,9 @@ And adjust the points display size
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(mesh, ...)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, ...)
+    pl.show()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 48-49
@@ -111,9 +111,9 @@ Change the color map and the color limits
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(mesh, ...)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, ...)
+    pl.show()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 54-55
@@ -124,9 +124,9 @@ Add some opacity
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(mesh, ...)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, ...)
+    pl.show()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 60-61

@@ -3,8 +3,8 @@ from pyvista import examples
 
 mesh = examples.load_random_hills()
 
-p = pv.Plotter()
-p.add_mesh(mesh)
-p.show_axes()
-p.show_bounds()
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(mesh)
+pl.show_axes()
+pl.show_bounds()
+pl.show()

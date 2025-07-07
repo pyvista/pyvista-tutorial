@@ -83,9 +83,9 @@ mesh-generating/altering code.
 .. code-block:: Python
 
 
-    p = pv.Plotter()
-    p.add_mesh(starting_mesh, show_edges=True)
-    p.add_slider_widget(
+    pl = pv.Plotter()
+    pl.add_mesh(starting_mesh, show_edges=True)
+    pl.add_slider_widget(
         callback=lambda value: engine("phi_resolution", int(value)),
         rng=[3, 60],
         value=30,
@@ -94,7 +94,7 @@ mesh-generating/altering code.
         pointb=(0.31, 0.1),
         style="modern",
     )
-    p.add_slider_widget(
+    pl.add_slider_widget(
         callback=lambda value: engine("theta_resolution", int(value)),
         rng=[3, 60],
         value=30,
@@ -103,7 +103,7 @@ mesh-generating/altering code.
         pointb=(0.64, 0.1),
         style="modern",
     )
-    p.add_slider_widget(
+    pl.add_slider_widget(
         callback=lambda value: engine("radius", value),
         rng=[0.1, 1.5],
         value=0.5,
@@ -112,7 +112,7 @@ mesh-generating/altering code.
         pointb=(0.98, 0.1),
         style="modern",
     )
-    p.show()
+    pl.show()
 
 
 
@@ -167,7 +167,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.237 seconds)
+   **Total running time of the script:** (0 minutes 0.244 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_d_multi-slider-widget.py:

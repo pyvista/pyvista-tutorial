@@ -241,10 +241,10 @@ Use PyVista to plot
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(mesh, style="wireframe")
-    p.add_mesh(cntrs, color=True)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh, style="wireframe")
+    pl.add_mesh(cntrs, color=True)
+    pl.show()
 
 
 
@@ -299,7 +299,7 @@ Use PyVista to plot
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.502 seconds)
+   **Total running time of the script:** (0 minutes 2.499 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_a_2_pyvista_vtk.py:

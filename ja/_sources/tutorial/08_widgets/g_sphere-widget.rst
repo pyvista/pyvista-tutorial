@@ -73,18 +73,18 @@ Use a single sphere widget
     )
     surf.faces = np.array([3, 0, 1, 2])
 
-    p = pv.Plotter()
+    pl = pv.Plotter()
 
 
     def callback(point) -> None:
         surf.points[0] = point
 
 
-    p.add_sphere_widget(callback)
-    p.add_mesh(surf, color=True)
+    pl.add_sphere_widget(callback)
+    pl.add_mesh(surf, color=True)
 
-    p.show_grid()
-    p.show()
+    pl.show_grid()
+    pl.show()
 
 
 
@@ -153,18 +153,18 @@ Use several sphere widgets at once
     surf.faces = np.array([3, 0, 1, 2])
 
 
-    p = pv.Plotter()
+    pl = pv.Plotter()
 
 
     def callback(point, i) -> None:
         surf.points[i] = point
 
 
-    p.add_sphere_widget(callback, center=surf.points)
-    p.add_mesh(surf, color=True)
+    pl.add_sphere_widget(callback, center=surf.points)
+    pl.add_mesh(surf, color=True)
 
-    p.show_grid()
-    p.show()
+    pl.show_grid()
+    pl.show()
 
 
 
@@ -275,18 +275,18 @@ a surface and interpolate between them with some boundary conditions
 
 
     # Begin the plotting routine
-    p = pv.Plotter()
+    pl = pv.Plotter()
 
     # Add the surface to the scene
-    p.add_mesh(surf, color=True)
+    pl.add_mesh(surf, color=True)
 
     # Add the widgets which will update the surface
-    p.add_sphere_widget(update_surface, center=points, color=colors, radius=3)
+    pl.add_sphere_widget(update_surface, center=points, color=colors, radius=3)
     # Add axes grid
-    p.show_grid()
+    pl.show_grid()
 
     # Show it!
-    p.show()
+    pl.show()
 
 
 
@@ -341,7 +341,7 @@ And here is a screen capture of a user interacting with this
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.387 seconds)
+   **Total running time of the script:** (0 minutes 1.523 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_g_sphere-widget.py:

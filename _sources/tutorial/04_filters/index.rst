@@ -103,29 +103,29 @@ What about other filters? Let's collect a few filter results and compare them:
     slices = dataset.slice_orthogonal()
     glyphs = dataset.glyph(factor=1e-3, geom=pv.Sphere(), orient=False)
 
-    p = pv.Plotter(shape=(2, 2))
+    pl = pv.Plotter(shape=(2, 2))
     # Show the threshold
-    p.add_mesh(outline, color="k")
-    p.add_mesh(threshed, show_scalar_bar=False)
-    p.camera_position = [-2, 5, 3]
+    pl.add_mesh(outline, color="k")
+    pl.add_mesh(threshed, show_scalar_bar=False)
+    pl.camera_position = [-2, 5, 3]
     # Show the contour
-    p.subplot(0, 1)
-    p.add_mesh(outline, color="k")
-    p.add_mesh(contours, show_scalar_bar=False)
-    p.camera_position = [-2, 5, 3]
+    pl.subplot(0, 1)
+    pl.add_mesh(outline, color="k")
+    pl.add_mesh(contours, show_scalar_bar=False)
+    pl.camera_position = [-2, 5, 3]
     # Show the slices
-    p.subplot(1, 0)
-    p.add_mesh(outline, color="k")
-    p.add_mesh(slices, show_scalar_bar=False)
-    p.camera_position = [-2, 5, 3]
+    pl.subplot(1, 0)
+    pl.add_mesh(outline, color="k")
+    pl.add_mesh(slices, show_scalar_bar=False)
+    pl.camera_position = [-2, 5, 3]
     # Show the glyphs
-    p.subplot(1, 1)
-    p.add_mesh(outline, color="k")
-    p.add_mesh(glyphs, show_scalar_bar=False)
-    p.camera_position = [-2, 5, 3]
+    pl.subplot(1, 1)
+    pl.add_mesh(outline, color="k")
+    pl.add_mesh(glyphs, show_scalar_bar=False)
+    pl.camera_position = [-2, 5, 3]
 
-    p.link_views()
-    p.show()
+    pl.link_views()
+    pl.show()
 
 
 Filter Pipeline
@@ -154,11 +154,11 @@ And to view this filtered data, simply call the ``plot`` method
 .. pyvista-plot::
    :context:
 
-    p = pv.Plotter()
-    p.add_mesh(outline, color="k")
-    p.add_mesh(result, scalars="Elevation")
-    p.view_isometric()
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(outline, color="k")
+    pl.add_mesh(result, scalars="Elevation")
+    pl.view_isometric()
+    pl.show()
 
 
 Exercises

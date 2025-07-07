@@ -25,7 +25,7 @@ vol = pv.wrap(splatter.GetOutput())
 cntrs = vol.contour([.95 * splatter.GetRadius()])
 
 # Use PyVista to plot
-p = pv.Plotter()
-p.add_mesh(mesh, style='wireframe')
-p.add_mesh(cntrs, color=True)
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(mesh, style='wireframe')
+pl.add_mesh(cntrs, color=True)
+pl.show()

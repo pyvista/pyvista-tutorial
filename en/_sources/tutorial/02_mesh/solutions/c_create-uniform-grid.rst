@@ -13641,9 +13641,9 @@ Here's one of these example datasets:
 
     vol = examples.download_knee_full()
 
-    p = pv.Plotter()
-    p.add_volume(vol, cmap="bone", opacity="sigmoid")
-    p.show()
+    pl = pv.Plotter()
+    pl.add_volume(vol, cmap="bone", opacity="sigmoid")
+    pl.show()
 
 
 
@@ -13733,7 +13733,7 @@ Here's one of these example datasets:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 5.370 seconds)
+   **Total running time of the script:** (0 minutes 5.116 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py:

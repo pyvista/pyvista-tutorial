@@ -101,9 +101,9 @@ And now plot this point cloud as-is:
 
 
     # Plot a typical point cloud with no EDL
-    p = pv.Plotter()
-    p.add_mesh(point_cloud, color="tan", point_size=5)
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(point_cloud, color="tan", point_size=5)
+    pl.show()
 
 
 
@@ -152,10 +152,10 @@ Try plotting that point cloud with Eye-Dome-Lighting yourself below:
 .. code-block:: Python
 
 
-    p = pv.Plotter()
-    p.add_mesh(point_cloud, color="tan", point_size=5)
-    p.enable_eye_dome_lighting()  # Turn on eye dome lighting here
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(point_cloud, color="tan", point_size=5)
+    pl.enable_eye_dome_lighting()  # Turn on eye dome lighting here
+    pl.show()
 
 
 
@@ -203,10 +203,10 @@ the ``add_mesh`` call.
 .. code-block:: Python
 
 
-    p = pv.Plotter()
-    p.add_mesh(point_cloud, scalars="Elevation", point_size=5)
-    p.enable_eye_dome_lighting()  # Turn on eye dome lighting here
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(point_cloud, scalars="Elevation", point_size=5)
+    pl.enable_eye_dome_lighting()  # Turn on eye dome lighting here
+    pl.show()
 
 
 
@@ -255,7 +255,7 @@ the ``add_mesh`` call.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 36.099 seconds)
+   **Total running time of the script:** (0 minutes 36.182 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_c_edl.py:

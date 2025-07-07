@@ -77,30 +77,30 @@ Now let's plot them all in one window
 .. code-block:: Python
 
 
-    p = pv.Plotter(shape=(3, 3))
+    pl = pv.Plotter(shape=(3, 3))
     # Top row
-    p.subplot(0, 0)
-    p.add_mesh(cyl, color="tan", show_edges=True)
-    p.subplot(0, 1)
-    p.add_mesh(arrow, color="tan", show_edges=True)
-    p.subplot(0, 2)
-    p.add_mesh(sphere, color="tan", show_edges=True)
+    pl.subplot(0, 0)
+    pl.add_mesh(cyl, color="tan", show_edges=True)
+    pl.subplot(0, 1)
+    pl.add_mesh(arrow, color="tan", show_edges=True)
+    pl.subplot(0, 2)
+    pl.add_mesh(sphere, color="tan", show_edges=True)
     # Middle row
-    p.subplot(1, 0)
-    p.add_mesh(plane, color="tan", show_edges=True)
-    p.subplot(1, 1)
-    p.add_mesh(line, color="tan", line_width=3)
-    p.subplot(1, 2)
-    p.add_mesh(box, color="tan", show_edges=True)
+    pl.subplot(1, 0)
+    pl.add_mesh(plane, color="tan", show_edges=True)
+    pl.subplot(1, 1)
+    pl.add_mesh(line, color="tan", line_width=3)
+    pl.subplot(1, 2)
+    pl.add_mesh(box, color="tan", show_edges=True)
     # Bottom row
-    p.subplot(2, 0)
-    p.add_mesh(cone, color="tan", show_edges=True)
-    p.subplot(2, 1)
-    p.add_mesh(poly, color="tan", show_edges=True)
-    p.subplot(2, 2)
-    p.add_mesh(disc, color="tan", show_edges=True)
+    pl.subplot(2, 0)
+    pl.add_mesh(cone, color="tan", show_edges=True)
+    pl.subplot(2, 1)
+    pl.add_mesh(poly, color="tan", show_edges=True)
+    pl.subplot(2, 2)
+    pl.add_mesh(disc, color="tan", show_edges=True)
     # Render all of them
-    p.show()
+    pl.show()
     # Export this plotter as an interactive scene to a HTML file.
     # p.export_html("a_basic.html")
 
@@ -151,7 +151,7 @@ Now let's plot them all in one window
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.932 seconds)
+   **Total running time of the script:** (0 minutes 0.979 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_intro_a_basic.py:

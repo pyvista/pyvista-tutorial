@@ -1628,10 +1628,10 @@ Remember that you will have to wrap the output of the algorithm with :func:`pyvi
 
 .. code-block:: Python
 
-    p = pv.Plotter()
-    p.add_mesh(mesh)
-    p.add_mesh(outline, color="k")
-    p.show()
+    pl = pv.Plotter()
+    pl.add_mesh(mesh)
+    pl.add_mesh(outline, color="k")
+    pl.show()
 
 
 
@@ -1691,7 +1691,7 @@ See https://kitware.github.io/vtk-examples/site/Python/
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.812 seconds)
+   **Total running time of the script:** (0 minutes 0.819 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_c_vtk_algorithms.py:

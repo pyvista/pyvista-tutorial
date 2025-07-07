@@ -1,3 +1,3 @@
-p = pv.Plotter()
-p.add_mesh(mesh, cmap='coolwarm')
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(mesh, cmap='coolwarm')
+pl.show()

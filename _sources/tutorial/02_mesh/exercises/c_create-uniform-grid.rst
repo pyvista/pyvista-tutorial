@@ -247,9 +247,9 @@ Here's one of these example datasets:
 
     vol = examples.download_knee_full()
 
-    p = pv.Plotter()
-    p.add_volume(vol, cmap="bone", opacity="sigmoid")
-    p.show()
+    pl = pv.Plotter()
+    pl.add_volume(vol, cmap="bone", opacity="sigmoid")
+    pl.show()
 
 
 .. GENERATED FROM PYTHON SOURCE LINES 127-130

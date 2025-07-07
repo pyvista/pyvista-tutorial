@@ -59,9 +59,9 @@ scene with a box widget that controls its extent, the
 .. code-block:: Python
 
 
-    p = pv.Plotter()
-    p.add_mesh_clip_box(mesh, color="white")
-    p.show(cpos=[-1, -1, 0.2])
+    pl = pv.Plotter()
+    pl.add_mesh_clip_box(mesh, color="white")
+    pl.show(cpos=[-1, -1, 0.2])
 
 
 
@@ -106,7 +106,7 @@ After interacting with the scene, the clipped mesh is available as:
 
 .. code-block:: Python
 
-    p.box_clipped_meshes
+    pl.box_clipped_meshes
 
 
 
@@ -117,7 +117,7 @@ After interacting with the scene, the clipped mesh is available as:
  .. code-block:: none
 
 
-    [UnstructuredGrid (0x7fee23d08a00)
+    [UnstructuredGrid (0x7fa1847d1f00)
       N Cells:    2018232
       N Points:   1009118
       X Bounds:   -1.194e+02, 1.194e+02
@@ -140,7 +140,7 @@ After interacting with the scene, the clipped mesh is available as:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 15.613 seconds)
+   **Total running time of the script:** (0 minutes 15.548 seconds)
 
 
 .. _sphx_glr_download_tutorial_08_widgets_a_box-widget.py:
