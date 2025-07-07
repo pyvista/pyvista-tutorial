@@ -4,6 +4,7 @@ imageio>=2.5.0
 imageio-ffmpeg
 ipywidgets<9.0.0
 jupyterlab<5.0.0
+jupytext
 matplotlib
 pyvista[all]
 sphinx
