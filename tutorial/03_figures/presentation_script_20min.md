@@ -20,9 +20,9 @@ from pyvista import examples
 mesh = pv.Wavelet()
 
 # Create a plotter instance
-p = pv.Plotter()
-p.add_mesh(mesh)
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(mesh)
+pl.show()
 ```
 
 The workflow is simple:
@@ -42,9 +42,10 @@ Let's see how window size affects our visualization:
 
 ```python
 # High-resolution plotter for publication
-p = pv.Plotter(window_size=[2000, 1500], background='white')
-p.add_mesh(mesh, cmap='viridis')
-p.show()
+pl = pv.Plotter(window_size=[2000, 1500])
+pl.background_color = 'pink'
+pl.add_mesh(mesh, cmap='viridis')
+pl.show()
 ```
 
 This makes a high-resolution figure perfect for papers or presentations."
@@ -56,22 +57,22 @@ This makes a high-resolution figure perfect for papers or presentations."
 **Color and Colormaps:**
 
 ```python
-p = pv.Plotter()
+pl = pv.Plotter()
 # Single color
-p.add_mesh(mesh, color='red')
+pl.add_mesh(mesh, color='red')
 # Or use a colormap
-p.add_mesh(mesh, cmap='coolwarm')
+pl.add_mesh(mesh, cmap='coolwarm')
 # Control color limits
-p.add_mesh(mesh, clim=[0, 100])
-p.show()
+pl.add_mesh(mesh, clim=[0, 100])
+pl.show()
 ```
 
 **Edge Visibility:**
 
 ```python
-p = pv.Plotter()
-p.add_mesh(mesh, show_edges=True, edge_color='black')
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(mesh, show_edges=True, edge_color='black')
+pl.show()
 ```
 
 Showing edges is very useful for understanding mesh structure or making technical drawings.
@@ -82,12 +83,12 @@ Showing edges is very useful for understanding mesh structure or making technica
 # Load terrain data for better demonstration
 mesh = examples.download_st_helens().warp_by_scalar()
 
-p = pv.Plotter()
+pl = pv.Plotter()
 # Constant opacity
-p.add_mesh(mesh, opacity=0.5)
+pl.add_mesh(mesh, opacity=0.5)
 # Or use linear transfer function
-p.add_mesh(mesh, opacity='linear', cmap='terrain')
-p.show()
+pl.add_mesh(mesh, opacity='linear', cmap='terrain')
+pl.show()
 ```
 
 The 'linear' opacity makes a function where lower values are more see-through - perfect for volume rendering effects.
@@ -114,15 +115,15 @@ centers = [(0, 1, 0), (0, 0, 0), (0, 2, 0), (-1, 0, 0), (-1, 2, 0)]
 solids = [pv.PlatonicSolid(kind, radius=0.4, center=center)
           for kind, center in zip(kinds, centers)]
 
-p = pv.Plotter(window_size=[1000, 1000])
+pl = pv.Plotter(window_size=[1000, 1000])
 for solid in solids:
-    p.add_mesh(solid, color='silver', specular=1.0, specular_power=10)
+    pl.add_mesh(solid, color='silver', specular=1.0, specular_power=10)
 
 # Add environment elements
-p.view_vector((5.0, 2, 3))
-p.add_floor('-z', lighting=True, color='tan', pad=1.0)
-p.enable_shadows()
-p.show()
+pl.view_vector((5.0, 2, 3))
+pl.add_floor('-z', lighting=True, color='tan', pad=1.0)
+pl.enable_shadows()
+pl.show()
 ```
 
 This example shows several advanced techniques:
@@ -145,17 +146,17 @@ The key to complex scenes is planning. Plan your scene like a photographer:
 
 ```python
 # Basic side-by-side comparison
-p = pv.Plotter(shape=(1, 2))
+pl = pv.Plotter(shape=(1, 2))
 
-p.subplot(0, 0)
-p.add_mesh(pv.Sphere(), color='red')
-p.add_text('Sphere', position='upper_edge')
+pl.subplot(0, 0)
+pl.add_mesh(pv.Sphere(), color='red')
+pl.add_text('Sphere', position='upper_edge')
 
-p.subplot(0, 1)
-p.add_mesh(pv.Cube(), color='blue')
-p.add_text('Cube', position='upper_edge')
+pl.subplot(0, 1)
+pl.add_mesh(pv.Cube(), color='blue')
+pl.add_text('Cube', position='upper_edge')
 
-p.show()
+pl.show()
 ```
 
 But the real power comes when comparing different ways to show the same data:
@@ -165,22 +166,22 @@ mesh = pv.Wavelet()
 contours = mesh.contour()
 slices = mesh.slice_orthogonal()
 
-p = pv.Plotter(shape=(1, 2))
+pl = pv.Plotter(shape=(1, 2))
 
 # Contour view
-p.subplot(0, 0)
-p.add_mesh(contours, opacity=0.5)
-p.add_text('Isosurfaces', position='upper_edge')
+pl.subplot(0, 0)
+pl.add_mesh(contours, opacity=0.5)
+pl.add_text('Isosurfaces', position='upper_edge')
 
 # Slice view
-p.subplot(0, 1)
-p.add_mesh(slices)
-p.add_text('Orthogonal Slices', position='upper_edge')
+pl.subplot(0, 1)
+pl.add_mesh(slices)
+pl.add_text('Orthogonal Slices', position='upper_edge')
 
 # Link cameras for synchronized interaction
-p.link_views()
-p.view_isometric()
-p.show()
+pl.link_views()
+pl.view_isometric()
+pl.show()
 ```
 
 The `link_views()` method is very powerful - when you rotate one view, all linked views rotate together, keeping spatial relationships.
@@ -200,26 +201,26 @@ The `link_views()` method is very powerful - when you rotate one view, all linke
 ```python
 mesh = examples.load_random_hills()
 
-p = pv.Plotter()
-p.add_mesh(mesh, cmap='terrain')
+pl = pv.Plotter()
+pl.add_mesh(mesh, cmap='terrain')
 
 # Add coordinate axes
-p.show_axes()
+pl.show_axes()
 
 # Add bounding box with labels
-p.show_bounds(
+pl.show_bounds(
     grid='front',
     location='outer',
     all_edges=True,
 )
 
 # Add a scale ruler
-p.add_ruler()
+pl.add_ruler()
 
 # Add orientation widget
-p.add_axes()
+pl.add_axes()
 
-p.show()
+pl.show()
 ```
 
 **Customizing Spatial References:**
@@ -242,28 +243,28 @@ These elements change a pretty picture into a measured visualization good for sc
 mesh = examples.load_nut()
 
 # Default flat shading
-p = pv.Plotter(shape=(2, 2))
-p.subplot(0, 0)
-p.add_mesh(mesh)
-p.add_text('Flat Shading (Default)', position='upper_edge')
+pl = pv.Plotter(shape=(2, 2))
+pl.subplot(0, 0)
+pl.add_mesh(mesh)
+pl.add_text('Flat Shading (Default)', position='upper_edge')
 
 # Smooth shading
-p.subplot(0, 1)
-p.add_mesh(mesh, smooth_shading=True)
-p.add_text('Smooth Shading', position='upper_edge')
+pl.subplot(0, 1)
+pl.add_mesh(mesh, smooth_shading=True)
+pl.add_text('Smooth Shading', position='upper_edge')
 
 # Smooth with edge preservation
-p.subplot(1, 0)
-p.add_mesh(mesh, smooth_shading=True, split_sharp_edges=True)
-p.add_text('Smooth + Sharp Edges', position='upper_edge')
+pl.subplot(1, 0)
+pl.add_mesh(mesh, smooth_shading=True, split_sharp_edges=True)
+pl.add_text('Smooth + Sharp Edges', position='upper_edge')
 
 # Physically based rendering
-p.subplot(1, 1)
-p.add_mesh(mesh, color='white', pbr=True, metallic=0.8, roughness=0.2)
-p.add_text('Physically Based Rendering', position='upper_edge')
+pl.subplot(1, 1)
+pl.add_mesh(mesh, color='white', pbr=True, metallic=0.8, roughness=0.2)
+pl.add_text('Physically Based Rendering', position='upper_edge')
 
-p.link_views()
-p.show()
+pl.link_views()
+pl.show()
 ```
 
 **Understanding Shading Options:**
@@ -309,14 +310,14 @@ topo.texture_map_to_plane(origin, point_u, point_v, inplace=True)
 # Load and apply the GeoTIFF texture
 texture = pv.read_texture('geological_map.tif')
 
-p = pv.Plotter(window_size=[3072, 2304])  # High resolution
-p.add_mesh(topo, texture=texture)
-p.camera_position = [
+pl = pv.Plotter(window_size=[3072, 2304])  # High resolution
+pl.add_mesh(topo, texture=texture)
+pl.camera_position = [
     (337461.41, 4257141.43, 2738.50),  # Camera location
     (339000.41, 4260394.94, 1724.07),  # Focal point
     (0.105, 0.250, 0.962),              # View up vector
 ]
-p.show()
+pl.show()
 ```
 
 **Key Concepts:**
