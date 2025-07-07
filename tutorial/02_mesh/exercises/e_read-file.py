@@ -26,6 +26,8 @@ help(pv.read)
 # %%
 # PyVista supports a wide variety of file formats. The supported file
 # extensions are listed in an internal function:
+#
+# See https://docs.pyvista.org/api/readers/_autosummary/pyvista.get_reader#pyvista.get_reader
 help(pv.core.utilities.reader.get_reader)
 
 
@@ -64,6 +66,9 @@ mesh.faces.reshape(-1, 4)[:, 1:]  # triangular faces
 #
 # Here are a few other examples - simply replace ``examples.download_*`` in the
 # examples below with ``pyvista.read('path/to/you/file.ext')``
+#
+# We have a gallery of the example datasets available here:
+# https://docs.pyvista.org/api/examples/dataset_gallery
 
 # %%
 # Example STL file:
