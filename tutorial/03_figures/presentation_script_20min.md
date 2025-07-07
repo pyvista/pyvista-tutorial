@@ -1,6 +1,7 @@
 # PyVista Figures and Visualization Tutorial - 20-Minute Presentation Script
 
 ## Introduction (1.5 minutes)
+
 "Welcome to the PyVista Figures and Visualization tutorial. Today, we'll learn how to make great pictures with PyVista's powerful plotting tools.
 
 Making pictures of data is more than just showing numbers - it's about telling a story, finding new things, and sharing information clearly. PyVista gives you easy Python tools to make everything from simple 3D pictures to complex multi-view figures with advanced drawing techniques.
@@ -8,6 +9,7 @@ Making pictures of data is more than just showing numbers - it's about telling a
 In this session, we'll cover the basic building blocks of PyVista visualization: the Plotter class, mesh display options, subplotting, shading techniques, texture mapping, and even making animated GIFs. By the end, you'll have the tools to make pictures that not only show information but also interest your audience."
 
 ## The Plotter Class - Your Canvas (2.5 minutes)
+
 "At the center of PyVista's visualization system is the `Plotter` class. Think of it as your 3D canvas, like Matplotlib's figure, but made for three-dimensional data.
 
 ```python
@@ -24,17 +26,20 @@ p.show()
 ```
 
 The workflow is intuitive:
+
 1. Create a Plotter instance
 2. Add meshes or other objects to it
 3. Show the result
 
 But the real power comes from changing settings. The Plotter constructor takes many parameters:
+
 - `window_size`: Control the resolution of your output
 - `background`: Set the background color
 - `off_screen`: Render without showing (useful for batch processing)
 - `notebook`: Enable inline display in Jupyter notebooks
 
 Let's see how window size affects our visualization:
+
 ```python
 # High-resolution plotter for publication
 p = pv.Plotter(window_size=[2000, 1500], background='white')
@@ -45,9 +50,11 @@ p.show()
 This makes a high-resolution figure perfect for papers or presentations."
 
 ## The add_mesh Method - Styling Your Data (3 minutes)
+
 "The `add_mesh` method is where the magic happens. It's your main tool for controlling how data looks in your picture. Let's look at its key parameters:
 
 **Color and Colormaps:**
+
 ```python
 p = pv.Plotter()
 # Single color
@@ -60,14 +67,17 @@ p.show()
 ```
 
 **Edge Visibility:**
+
 ```python
 p = pv.Plotter()
 p.add_mesh(mesh, show_edges=True, edge_color='black')
 p.show()
 ```
+
 Showing edges is very useful for understanding mesh structure or making technical drawings.
 
 **Opacity Control:**
+
 ```python
 # Load terrain data for better demonstration
 mesh = examples.download_st_helens().warp_by_scalar()
@@ -84,6 +94,7 @@ The 'linear' opacity makes a function where lower values are more see-through - 
 
 **Advanced Styling:**
 The `add_mesh` method supports over 50 parameters! Some important ones:
+
 - `lighting`: Enable/disable lighting effects
 - `smooth_shading`: Toggle between flat and smooth shading
 - `specular`: Control surface shininess
@@ -92,6 +103,7 @@ The `add_mesh` method supports over 50 parameters! Some important ones:
 - `interpolate_before_map`: Improve color mapping quality"
 
 ## Building Complex Scenes (2.5 minutes)
+
 "Real-world pictures often need multiple objects. PyVista is great at making complex scenes by calling `add_mesh` many times:
 
 ```python
@@ -99,7 +111,7 @@ The `add_mesh` method supports over 50 parameters! Some important ones:
 kinds = ['tetrahedron', 'cube', 'octahedron', 'dodecahedron', 'icosahedron']
 centers = [(0, 1, 0), (0, 0, 0), (0, 2, 0), (-1, 0, 0), (-1, 2, 0)]
 
-solids = [pv.PlatonicSolid(kind, radius=0.4, center=center) 
+solids = [pv.PlatonicSolid(kind, radius=0.4, center=center)
           for kind, center in zip(kinds, centers)]
 
 p = pv.Plotter(window_size=[1000, 1000])
@@ -114,18 +126,21 @@ p.show()
 ```
 
 This example shows several advanced techniques:
+
 - Multiple objects with consistent styling
 - Environmental elements (floor)
 - Shadow rendering for realism
 - Custom camera positioning
 
 The key to complex scenes is planning. Plan your scene like a photographer:
+
 - What's the main subject?
 - What supporting elements provide context?
 - How does lighting enhance the story?
 - What viewing angle best conveys the information?"
 
 ## Subplotting - Multiple Views (3 minutes)
+
 "Comparing different parts of your data side-by-side is very important for analysis. PyVista's subplotting system makes this easy:
 
 ```python
@@ -171,6 +186,7 @@ p.show()
 The `link_views()` method is very powerful - when you rotate one view, all linked views rotate together, keeping spatial relationships.
 
 **Advanced Subplotting Tips:**
+
 - Use `shape=(rows, cols)` for grid layouts
 - `subplot(row, col)` to activate specific subplot
 - Each subplot maintains independent settings
@@ -178,6 +194,7 @@ The `link_views()` method is very powerful - when you rotate one view, all linke
 - Use consistent lighting for visual coherence"
 
 ## Axes, Bounds, and Spatial Context (2 minutes)
+
 "Scientific pictures need spatial reference. PyVista gives several tools for orientation:
 
 ```python
@@ -206,6 +223,7 @@ p.show()
 ```
 
 **Customizing Spatial References:**
+
 - `show_axes()`: Displays coordinate system axes
 - `show_bounds()`: Creates labeled bounding box
   - `grid`: Add grid lines ('front', 'back', 'both')
@@ -216,6 +234,7 @@ p.show()
 These elements change a pretty picture into a measured visualization good for scientific communication."
 
 ## Advanced Shading Techniques (3 minutes)
+
 "Shading greatly affects how we see 3D geometry. Let's look at PyVista's shading options:
 
 ```python
@@ -270,6 +289,7 @@ p.show()
    - More realistic material appearance"
 
 ## Texture Mapping - Real-World Imagery (3 minutes)
+
 "Texture mapping puts 2D images onto 3D geometry. This is very valuable for geographic data, medical imaging, and photo-realistic rendering.
 
 Let's look at a real-world example - putting a geological map on topography:
@@ -280,7 +300,7 @@ topo = pv.read('topo_clean.vtk')
 
 # Define texture coordinates using ground control points
 origin = [310967.75, 4238841.04, 0.0]  # Bottom-left
-point_u = [358682.94, 4238841.04, 0.0]  # Bottom-right  
+point_u = [358682.94, 4238841.04, 0.0]  # Bottom-right
 point_v = [310967.75, 4276281.99, 0.0]  # Top-left
 
 # Map the texture coordinates
@@ -300,17 +320,20 @@ p.show()
 ```
 
 **Key Concepts:**
+
 1. **Texture Coordinates**: Define how 2D image maps to 3D surface
 2. **Ground Control Points**: Real-world coordinates for georeferencing
 3. **High Resolution**: Larger window sizes for detailed textures
 
 **Applications:**
+
 - Satellite imagery on terrain models
 - Medical imaging on anatomical surfaces
 - Material textures for realistic rendering
 - Data visualization on geographic context"
 
 ## Creating Animated Visualizations (2.5 minutes)
+
 "Still images tell stories, but animations bring data to life. PyVista makes creating GIFs easy:
 
 ```python
@@ -345,11 +368,11 @@ nframe = 15
 for phase in np.linspace(0, 2 * np.pi, nframe + 1)[:nframe]:
     z = np.sin(r + phase)
     pts[:, -1] = z.ravel()
-    
+
     # Update geometry and scalars
     plotter.update_coordinates(pts, render=False)
     plotter.update_scalars(z.ravel(), render=False)
-    
+
     # Write frame
     plotter.write_frame()
 
@@ -357,6 +380,7 @@ plotter.close()
 ```
 
 **Animation Best Practices:**
+
 1. Use `lighting=False` for consistent colors
 2. Fix color scales with `clim`
 3. Keep frame count reasonable (15-30 fps)
@@ -364,16 +388,19 @@ plotter.close()
 5. Use `off_screen=True` for batch processing
 
 **Advanced Animation Techniques:**
+
 - Camera orbits with `plotter.orbit()`
 - Time-varying data with `update_scalars()`
 - Morphing geometry with `update_coordinates()`
 - Multi-view animations with subplots"
 
 ## Best Practices and Performance (2 minutes)
+
 "Let's talk about how to make good, fast visualizations:
 
 **Visual Design:**
-1. **Color Choice**: 
+
+1. **Color Choice**:
    - Use even colormaps ('viridis', 'plasma')
    - Avoid rainbow for number data
    - Think about colorblind-friendly palettes
@@ -389,6 +416,7 @@ plotter.close()
    - Smooth transitions: `fly_to()` method
 
 **Making Things Faster:**
+
 1. **Big Datasets**:
    - Decimate meshes: `mesh.decimate(0.9)`
    - Use LOD actors for multiple detail levels
@@ -405,30 +433,36 @@ plotter.close()
    - Reuse plotter instances when possible
 
 **Publication Quality:**
+
 1. High resolution: `window_size=[3000, 2000]`
 2. White background for print
 3. Consistent font sizes
 4. Export as vector when possible"
 
 ## Real-World Applications Showcase (1.5 minutes)
+
 "Let's see how these techniques work together in real applications:
 
 **Medical Imaging:**
+
 - Smooth shading for organic structures
 - Opacity for revealing internal features
 - Multiple views for comprehensive analysis
 
 **Engineering:**
+
 - Edge display for technical drawings
 - PBR for realistic material representation
 - Animations for assembly instructions
 
 **Geoscience:**
+
 - Texture mapping for satellite imagery
 - Contours for elevation analysis
 - Time series animations for temporal data
 
 **Scientific Computing:**
+
 - Glyphs for vector fields
 - Isosurfaces for scalar fields
 - Subplots for parameter studies
@@ -436,7 +470,9 @@ plotter.close()
 Each field has special needs, but PyVista's flexible toolkit can handle them all."
 
 ## Conclusion and Next Steps (1 minute)
+
 "We've looked at the rich visualization abilities of PyVista:
+
 - The Plotter class as your 3D canvas
 - Mesh styling with add_mesh
 - Multi-view layouts with subplotting
@@ -445,6 +481,7 @@ Each field has special needs, but PyVista's flexible toolkit can handle them all
 - Animation for dynamic storytelling
 
 Main points:
+
 1. Start simple, add complexity gradually
 2. Let your data guide picture choices
 3. Think about your audience - scientists, engineers, or regular people
@@ -452,6 +489,7 @@ Main points:
 5. PyVista's API is consistent and easy to find
 
 Your next steps:
+
 - Try with your own data
 - Look at the PyVista gallery for ideas
 - Join the community for support and ideas
@@ -462,6 +500,7 @@ Remember: great pictures don't just show data, they find insights and tell great
 ---
 
 ## Timing Breakdown
+
 - Introduction: 1.5 minutes
 - Plotter Class: 2.5 minutes
 - add_mesh Method: 3 minutes
@@ -474,9 +513,10 @@ Remember: great pictures don't just show data, they find insights and tell great
 - Best Practices: 2 minutes
 - Applications: 1.5 minutes
 - Conclusion: 1 minute
-**Total: 20 minutes**
+  **Total: 20 minutes**
 
 ## Presenter Notes
+
 1. **Code Preparation**: Pre-load all datasets to avoid download delays
 2. **Live Coding**: Balance between live demos and prepared results
 3. **Interactivity**: Rotate/zoom models to show 3D nature
