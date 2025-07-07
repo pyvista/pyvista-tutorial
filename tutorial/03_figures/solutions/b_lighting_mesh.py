@@ -35,20 +35,20 @@ mesh.plot(lighting=False, cpos=cpos, show_scalar_bar=False)
 # Demonstration of the specular property
 #
 # Feel free to adjust the specular value in the ``s`` variable.
-p = pv.Plotter(shape=(1, 2), window_size=[1500, 500])
+pl = pv.Plotter(shape=(1, 2), window_size=[1500, 500])
 
-p.subplot(0, 0)
-p.add_mesh(mesh, show_scalar_bar=False)
-p.add_text("No Specular")
+pl.subplot(0, 0)
+pl.add_mesh(mesh, show_scalar_bar=False)
+pl.add_text("No Specular")
 
-p.subplot(0, 1)
+pl.subplot(0, 1)
 specular = 1.0
-p.add_mesh(mesh, specular=specular, show_scalar_bar=False)
-p.add_text(f"Specular of {specular}")
+pl.add_mesh(mesh, specular=specular, show_scalar_bar=False)
+pl.add_text(f"Specular of {specular}")
 
-p.link_views()
-p.view_isometric()
-p.show(cpos=cpos)
+pl.link_views()
+pl.view_isometric()
+pl.show(cpos=cpos)
 
 # %%
 # Specular power (feel free to adjust)
