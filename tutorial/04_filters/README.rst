@@ -26,14 +26,14 @@ complete list):
 * `outline_corners()`_: Outlines the corners of the data extent
 * `extract_geometry()`_: Extract surface geometry
 
-.. _slice(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice.html
-.. _slice_orthogonal(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_orthogonal.html
-.. _slice_along_axis(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.slice_along_axis.html
-.. _threshold(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.threshold.html
-.. _threshold_percent(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.threshold_percent.html
-.. _clip(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.clip.html
-.. _outline_corners(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.outline_corners.html
-.. _extract_geometry(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.DataSetFilters.extract_geometry.html
+.. _slice(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.slice.html
+.. _slice_orthogonal(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.slice_orthogonal.html
+.. _slice_along_axis(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.slice_along_axis.html
+.. _threshold(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.threshold.html
+.. _threshold_percent(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.threshold_percent.html
+.. _clip(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.clip.html
+.. _outline_corners(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.outline_corners.html
+.. _extract_geometry(): https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.extract_geometry.html
 
 
 To use these filters, call the method of your choice directly on your data
