@@ -60,17 +60,26 @@ pl.show()
 # topology of a mesh. In the examples above, cells are defined by the lines
 # (edges colored in black) connecting points (colored in red). For example, a
 # cell in the beam example is a voxel defined by the region between eight
-# points in that mesh:
+# points in that mesh. Here we can extract one of the cells from the mesh,
+# show some information about it, and plot its location among the mesh.
 
 mesh = examples.load_hexbeam()
+
+single_cell = mesh.get_cell(mesh.n_cells - 1)
+single_cell
+
+###############################################################################
 
 pl = pv.Plotter()
 pl.add_mesh(mesh, show_edges=True, color="white")
 pl.add_points(mesh.points, color="red", point_size=20)
-
-single_cell = mesh.extract_cells(mesh.n_cells - 1)
-pl.add_mesh(single_cell, color="pink", edge_color="blue", line_width=5, show_edges=True)
-
+pl.add_mesh(
+    single_cell.cast_to_unstructured_grid(),
+    color="pink",
+    edge_color="blue",
+    line_width=5,
+    show_edges=True,
+)
 pl.camera_position = [(6.20, 3.00, 7.50), (0.16, 0.13, 2.65), (-0.28, 0.94, -0.21)]
 pl.show()
 

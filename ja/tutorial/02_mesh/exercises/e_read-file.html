@@ -512,6 +512,7 @@ document.write(`
 </pre></div>
 </div>
 <p>PyVistaは様々なファイル形式をサポートしています．サポートされているファイル拡張子は，内部関数にリストアップされています．</p>
+<p>See <a class="reference external" href="https://docs.pyvista.org/api/readers/_autosummary/pyvista.get_reader#pyvista.get_reader">https://docs.pyvista.org/api/readers/_autosummary/pyvista.get_reader#pyvista.get_reader</a></p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/readers/_autosummary/pyvista.get_reader.html#pyvista.get_reader" title="pyvista.get_reader" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">utilities</span><span class="o">.</span><span class="n">reader</span><span class="o">.</span><span class="n">get_reader</span></a><span class="p">)</span>
 </pre></div>
 </div>
@@ -537,6 +538,8 @@ document.write(`
 </div>
 <p>他のファイルタイプのロードも同じくらい簡単です．ファイルパスを <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> 関数に渡すだけです．</p>
 <p>以下の例の <code class="docutils literal notranslate"><span class="pre">examples.download_*</span></code> を <code class="docutils literal notranslate"><span class="pre">pyvista.read('path/to/you/file.ext')</span></code> に置き換えるだけで，他のいくつかの例があります．</p>
+<p>We have a gallery of the example datasets available here:
+<a class="reference external" href="https://docs.pyvista.org/api/examples/dataset_gallery">https://docs.pyvista.org/api/examples/dataset_gallery</a></p>
 <p>STLファイルの例:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">mesh</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_cad_model</span><span class="p">()</span>
 <span class="n">cpos</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">107.0</span><span class="p">,</span> <span class="mf">68.5</span><span class="p">,</span> <span class="mf">204.0</span><span class="p">),</span> <span class="p">(</span><span class="mf">128.0</span><span class="p">,</span> <span class="mf">86.5</span><span class="p">,</span> <span class="mf">223.5</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.36</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.8</span><span class="p">)]</span>

@@ -526,11 +526,11 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>  <span class="c1"># output first 5 rows</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.70928971, 0.17883489, 0.66214606],
-       [0.78901575, 0.96646528, 0.28925662],
-       [0.43088123, 0.07643539, 0.15441509],
-       [0.31064875, 0.03294736, 0.02159688],
-       [0.48048384, 0.05565919, 0.2076963 ]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>array([[0.77548076, 0.07908811, 0.80590894],
+       [0.34924763, 0.11233864, 0.6298272 ],
+       [0.9656307 , 0.94597211, 0.49150957],
+       [0.03256938, 0.84843793, 0.53823523],
+       [0.83660807, 0.95073246, 0.50222818]])
 </pre></div>
 </div>
 <p>Pass numpy array of points (n by 3) to PolyData</p>
@@ -545,9 +545,9 @@ You can create one by defining a 2D array of Cartesian coordinates like so:</p>
 <tr><td>N Cells</td><td>100</td></tr>
 <tr><td>N Points</td><td>100</td></tr>
 <tr><td>N Strips</td><td>0</td></tr>
-<tr><td>X Bounds</td><td>2.102e-02, 9.951e-01</td></tr>
-<tr><td>Y Bounds</td><td>2.537e-02, 9.948e-01</td></tr>
-<tr><td>Z Bounds</td><td>6.891e-03, 9.978e-01</td></tr>
+<tr><td>X Bounds</td><td>1.905e-03, 9.991e-01</td></tr>
+<tr><td>Y Bounds</td><td>6.386e-03, 9.960e-01</td></tr>
+<tr><td>Z Bounds</td><td>3.876e-03, 9.939e-01</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -621,16 +621,36 @@ Interactive Scene</label><div class="sd-tab-content docutils">
 topology of a mesh. In the examples above, cells are defined by the lines
 (edges colored in black) connecting points (colored in red). For example, a
 cell in the beam example is a voxel defined by the region between eight
-points in that mesh:</p>
+points in that mesh. Here we can extract one of the cells from the mesh,
+show some information about it, and plot its location among the mesh.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_hexbeam</span><span class="p">()</span>
 
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.Cell.html#pyvista.Cell" title="pyvista.Cell" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">single_cell</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.get_cell.html#pyvista.DataSet.get_cell" title="pyvista.DataSet.get_cell" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">mesh</span><span class="o">.</span><span class="n">get_cell</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.n_cells.html#pyvista.DataSet.n_cells" title="pyvista.DataSet.n_cells" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">mesh</span><span class="o">.</span><span class="n">n_cells</span></a> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.Cell.html#pyvista.Cell" title="pyvista.Cell" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">single_cell</span></a>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Cell (0x7f102cc5ebc0)
+  Type:        &lt;CellType.HEXAHEDRON: 12&gt;
+  Linear:      True
+  Dimension:   3
+  N Points:    8
+  N Faces:     6
+  N Edges:     12
+  X Bounds:    5.000e-01, 1.000e+00
+  Y Bounds:    5.000e-01, 1.000e+00
+  Z Bounds:    4.500e+00, 5.000e+00
+</pre></div>
+</div>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_points.html#pyvista.Plotter.add_points" title="pyvista.Plotter.add_points" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">add_points</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyDataFilters.points.html#pyvista.PolyDataFilters.points" title="pyvista.PolyDataFilters.points" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-attribute"><span class="n">mesh</span><span class="o">.</span><span class="n">points</span></a><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">point_size</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-
-<a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UnstructuredGrid.html#pyvista.UnstructuredGrid" title="pyvista.UnstructuredGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">single_cell</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSetFilters.extract_cells.html#pyvista.DataSetFilters.extract_cells" title="pyvista.DataSetFilters.extract_cells" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">mesh</span><span class="o">.</span><span class="n">extract_cells</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.n_cells.html#pyvista.DataSet.n_cells" title="pyvista.DataSet.n_cells" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">mesh</span><span class="o">.</span><span class="n">n_cells</span></a> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.UnstructuredGrid.html#pyvista.UnstructuredGrid" title="pyvista.UnstructuredGrid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">single_cell</span></a><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
+<a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html#pyvista.Plotter.add_mesh" title="pyvista.Plotter.add_mesh" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">add_mesh</span></a><span class="p">(</span>
+    <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.Cell.cast_to_unstructured_grid.html#pyvista.Cell.cast_to_unstructured_grid" title="pyvista.Cell.cast_to_unstructured_grid" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">single_cell</span><span class="o">.</span><span class="n">cast_to_unstructured_grid</span></a><span class="p">(),</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;pink&quot;</span><span class="p">,</span>
+    <span class="n">edge_color</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span>
+    <span class="n">line_width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.camera_position.html#pyvista.Plotter.camera_position" title="pyvista.Plotter.camera_position" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">pl</span><span class="o">.</span><span class="n">camera_position</span></a> <span class="o">=</span> <span class="p">[(</span><span class="mf">6.20</span><span class="p">,</span> <span class="mf">3.00</span><span class="p">,</span> <span class="mf">7.50</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.13</span><span class="p">,</span> <span class="mf">2.65</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.28</span><span class="p">,</span> <span class="mf">0.94</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21</span><span class="p">)]</span>
 <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.show.html#pyvista.Plotter.show" title="pyvista.Plotter.show" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-method"><span class="n">pl</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
@@ -785,7 +805,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/a_lesson_mesh.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.971 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 2.961 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-a-lesson-mesh-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/a_lesson_mesh.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo5.svg" style="width: 150px;" />
