@@ -13,7 +13,7 @@ Create a surface from a set of points through a Delaunay triangulation.
 import numpy as np
 import pyvista as pv
 
-###############################################################################
+# %%
 # Simple Triangulations
 # +++++++++++++++++++++
 #
@@ -31,7 +31,7 @@ zz = A * np.exp(-0.5 * ((xx / b) ** 2.0 + (yy / b) ** 2.0))
 points = np.c_[xx.reshape(-1), yy.reshape(-1), zz.reshape(-1)]
 points[0:5, :]
 
-###############################################################################
+# %%
 # Now use those points to create a point cloud PyVista data object. This will
 # be encompassed in a :class:`pyvista.PolyData` object.
 
@@ -39,13 +39,13 @@ points[0:5, :]
 cloud = ...
 cloud.plot(point_size=15)
 
-###############################################################################
+# %%
 # Now that we have a PyVista data structure of the points, we can perform a
 # triangulation to turn those boring discrete points into a connected surface.
 # See :func:`pyvista.UnstructuredGridFilters.delaunay_2d`.
 help(cloud.delaunay_2d)
 
-###############################################################################
+# %%
 # Apply the ``delaunay_2d`` filter.
 
 surf = ...
@@ -54,7 +54,7 @@ surf = ...
 surf.plot(show_edges=True)
 
 
-###############################################################################
+# %%
 # Clean Edges & Triangulations
 # ++++++++++++++++++++++++++++
 
@@ -70,21 +70,21 @@ points[:, 1] += np.random.rand(len(points)) * 0.3
 cloud = pv.PolyData(points)
 cloud
 
-###############################################################################
+# %%
 cloud.plot(cpos="xy")
 
-###############################################################################
+# %%
 # Run the triangulation on these points
 surf = cloud.delaunay_2d()
 surf.plot(cpos="xy", show_edges=True)
 
-###############################################################################
+# %%
 # Note that some of the outer edges are unconstrained and the triangulation
 # added unwanted triangles. We can mitigate that with the ``alpha`` parameter.
 surf = cloud.delaunay_2d(alpha=...)
 surf.plot(cpos="xy", show_edges=True)
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

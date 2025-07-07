@@ -92,7 +92,7 @@ light_kit.AddLightsToRenderer(renderer)
 
 import pathlib
 
-###############################################################################
+# %%
 # Load input mesh from a vtkPartitionedDataSetCollection file
 from vtkmodules.vtkIOXML import vtkXMLPartitionedDataSetCollectionReader
 
@@ -109,11 +109,11 @@ actor.mapper = (reactor >> vtkCompositePolyDataMapper()).last
 actor.property.opacity = 0.2
 renderer.AddActor(actor)
 
-###############################################################################
+# %%
 # Construct magpy coil objects for each coil in the reactor mesh.
 coils = build_magnetic_coils(reactor, current=1000)
 
-###############################################################################
+# %%
 # Compute B, H in a 32x32x32 grid
 
 grid = vtkImageData(extent=(-16, 16, -16, 16, -16, 16), spacing=(0.1, 0.1, 0.1))
@@ -123,12 +123,12 @@ grid.point_data.set_array("B (mT)", b)
 h = coils.getH(grid_points)
 grid.point_data.set_array("H (A/m)", h)
 
-###############################################################################
+# %%
 # Show coils
 magpy.show(coils, arrow=True)
 save_dataset(grid, "data/solution.vti")
 
-###############################################################################
+# %%
 # Compute streamlines of B field induced by toroidal coils.
 trace_streamlines = vtkStreamTracer(
     integrator_type=vtkStreamTracer.RUNGE_KUTTA45,
@@ -143,7 +143,7 @@ create_sphere = vtkSphereSource(theta_resolution=16)
 grid >> select_ports(0, trace_streamlines)
 create_sphere >> select_ports(1, trace_streamlines)
 
-###############################################################################
+# %%
 # Visualize streamlines
 from vtkmodules.vtkFiltersCore import vtkTubeFilter
 
@@ -153,7 +153,7 @@ actor.mapper = (
 ).last
 renderer.AddActor(actor)
 
-###############################################################################
+# %%
 # Animate the disk position such that it oscillates between y=-1 and y=1.
 from itertools import cycle
 
@@ -172,7 +172,7 @@ class vtkTimerCallback:  # noqa: N801
         self.window.Render()
 
 
-###############################################################################
+# %%
 # Sign up to receive TimerEvent
 
 cb = vtkTimerCallback(create_sphere, window, nsteps=250)

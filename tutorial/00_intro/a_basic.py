@@ -9,7 +9,7 @@ This is the "Hello, world!" of PyVista.
 
 import pyvista as pv
 
-###############################################################################
+# %%
 # This runs through several of the available geometric objects available in
 # VTK which PyVista provides simple convenience methods for generating.
 #
@@ -25,7 +25,7 @@ cone = pv.Cone()
 poly = pv.Polygon()
 disc = pv.Disc()
 
-###############################################################################
+# %%
 # Now let's plot them all in one window
 
 p = pv.Plotter(shape=(3, 3))
@@ -55,7 +55,7 @@ p.show()
 # Export this plotter as an interactive scene to a HTML file.
 # p.export_html("a_basic.html")
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>
