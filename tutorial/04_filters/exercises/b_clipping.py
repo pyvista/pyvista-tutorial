@@ -9,7 +9,7 @@ Clip/cut any dataset using using planes or boxes.
 import pyvista as pv
 from pyvista import examples
 
-###############################################################################
+# %%
 # Clip with Plane
 # +++++++++++++++
 #
@@ -18,15 +18,15 @@ from pyvista import examples
 dataset = examples.download_bunny_coarse()
 dataset
 
-###############################################################################
+# %%
 help(dataset.clip)
 
-###############################################################################
+# %%
 # Perform a clip with a Y axis normal
 clipped = ...
 clipped
 
-###############################################################################
+# %%
 # Plot the result.
 p = pv.Plotter()
 p.add_mesh(dataset, style="wireframe", color="blue", label="Input")
@@ -36,7 +36,7 @@ p.camera_position = [(0.24, 0.32, 0.7), (0.02, 0.03, -0.02), (-0.12, 0.93, -0.34
 p.show()
 
 
-###############################################################################
+# %%
 # Clip with Bounds
 # ++++++++++++++++
 #
@@ -46,17 +46,17 @@ p.show()
 # First, download an example dataset.
 dataset = examples.download_office()
 
-###############################################################################
+# %%
 help(dataset.clip_box)
 
-###############################################################################
+# %%
 # Clip the dataset with a bounding box defined by the values in ``bounds``
 # ``(xmin, xmax, ymin, ymax, zmin, zmax)``
 bounds = [2, 4.5, 2, 4.5, 1, 3]
 clipped = ...
 clipped
 
-###############################################################################
+# %%
 # Plot the original dataset and the clipped one.
 p = pv.Plotter()
 p.add_mesh(dataset, style="wireframe", color="blue", label="Input")
@@ -65,7 +65,7 @@ p.add_legend()
 p.show()
 
 
-###############################################################################
+# %%
 # Clip with Rotated Box
 # +++++++++++++++++++++
 #
@@ -82,7 +82,7 @@ p.add_mesh(roi, opacity=0.75, color="red")
 p.add_mesh(mesh, opacity=0.5)
 p.show()
 
-###############################################################################
+# %%
 # Run the box clipping algorithm with the defined box geometry.
 extracted = ...
 
@@ -96,7 +96,7 @@ p.link_views()
 p.view_isometric()
 p.show()
 
-###############################################################################
+# %%
 # Crinkled Clipping
 # +++++++++++++++++
 # Crinkled clipping is useful if you don't want the clip filter to truly clip
@@ -111,20 +111,20 @@ p.show()
 # Input mesh
 mesh = pv.Wavelet()
 
-###############################################################################
+# %%
 # Define clipping plane
 normal = (1, 1, 1)
 plane = pv.Plane(i_size=30, j_size=30, direction=normal)
 
-###############################################################################
+# %%
 # Perform a standard clip
 clipped = mesh.clip(normal=normal)
 
-###############################################################################
+# %%
 # Perform a crinkled clip to compare
 crinkled = mesh.clip(..., normal=normal)
 
-###############################################################################
+# %%
 # Plot comparison
 p = pv.Plotter(shape=(1, 2))
 p.add_mesh(clipped, show_edges=True)
@@ -135,7 +135,7 @@ p.add_mesh(plane.extract_feature_edges(), color="r")
 p.link_views()
 p.show()
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

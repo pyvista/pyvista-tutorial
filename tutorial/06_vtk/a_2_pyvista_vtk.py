@@ -17,7 +17,7 @@ import pyvista as pv
 import vtk
 from pyvista import examples
 
-###############################################################################
+# %%
 # Create a circle using vtk
 polygonSource = vtk.vtkRegularPolygonSource()  # noqa: N816
 polygonSource.GeneratePolygonOff()
@@ -26,12 +26,12 @@ polygonSource.SetRadius(5.0)
 polygonSource.SetCenter(0.0, 0.0, 0.0)
 polygonSource.Update()
 
-###############################################################################
+# %%
 # wrap and plot using pyvista
 mesh = pv.wrap(polygonSource.GetOutput())
 mesh.plot(line_width=3, cpos="xy", color="k")
 
-###############################################################################
+# %%
 # In this manner, you can get the "best of both worlds" should you need
 # the flexibility of PyVista and the raw power of VTK.
 #
@@ -39,7 +39,7 @@ mesh.plot(line_width=3, cpos="xy", color="k")
 #    You can use :func:`pyvista.Polygon` for a one line replacement of
 #    the above VTK code.
 
-###############################################################################
+# %%
 # VTK Algorithms
 # ~~~~~~~~~~~~~~
 #
@@ -47,15 +47,15 @@ mesh.plot(line_width=3, cpos="xy", color="k")
 
 mesh = examples.download_bunny_coarse()
 
-###############################################################################
+# %%
 # Initialize VTK algorithm
 splatter = vtk.vtkGaussianSplatter()
 
-###############################################################################
+# %%
 # Pass PyVista object as input to VTK
 splatter.SetInputData(mesh)
 
-###############################################################################
+# %%
 # Set parameters
 n = 200
 splatter.SetSampleDimensions(n, n, n)
@@ -64,27 +64,27 @@ splatter.SetExponentFactor(-10)
 splatter.SetEccentricity(2)
 splatter.Update()
 
-###############################################################################
+# %%
 # Retrieve output and wrap with PyVista
 vol = pv.wrap(splatter.GetOutput())
 
-###############################################################################
+# %%
 # Use PyVista to produce contours
 cntrs = vol.contour([0.95 * splatter.GetRadius()])
 
-###############################################################################
+# %%
 # Use PyVista to plot
 p = pv.Plotter()
 p.add_mesh(mesh, style="wireframe")
 p.add_mesh(cntrs, color=True)
 p.show()
 
-###############################################################################
+# %%
 # .. note::
 #
 #     The above example was adapted from VTK's `Embed Points Into Volume <https://kitware.github.io/vtk-examples/site/Cxx/PolyData/EmbedPointsIntoVolume/>`_
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

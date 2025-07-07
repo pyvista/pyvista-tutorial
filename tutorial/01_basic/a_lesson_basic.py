@@ -17,7 +17,7 @@ from pyvista import examples
 # pv.set_plot_theme('document')
 
 
-###############################################################################
+# %%
 # Using Existing Data
 # ~~~~~~~~~~~~~~~~~~~
 # There are two main ways of getting data into PyVista: creating it yourself from
@@ -35,13 +35,13 @@ from pyvista import examples
 dataset = examples.download_saddle_surface()
 dataset
 
-###############################################################################
+# %%
 # Note how this is a :class:`pyvista.PolyData`, which is effectively a surface
 # dataset containing points, lines, and/or faces. We can immediately plot this with:
 
 dataset.plot()
 
-###############################################################################
+# %%
 # This is a fairly basic plot. You can change how its plotted by adding
 # parameters as ``show_edges=True`` or changing the color by setting ``color`` to
 # a different value. All of this is described in PyVista's API documentation in
@@ -51,7 +51,7 @@ dataset.plot()
 dataset = examples.download_frog()
 dataset
 
-###############################################################################
+# %%
 # This is a :class:`pyvista.ImageData`, which is a dataset containing a uniform
 # set of points with consistent spacing. When we plot this dataset, we have the
 # option of enabling volumetric plotting, which plots individual cells based on
@@ -60,7 +60,7 @@ dataset
 dataset.plot(volume=True)
 
 
-###############################################################################
+# %%
 # Read from a file
 # ~~~~~~~~~~~~~~~~
 # You can read datasets directly from a file if you have access to it on your
@@ -75,13 +75,13 @@ dataset.plot(volume=True)
 dataset = pv.read("ironProt.vtk")
 dataset
 
-###############################################################################
+# %%
 # This is again a :class:`pyvista.ImageData` and we can plot it volumetrically
 # with:
 
 dataset.plot(volume=True)
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>

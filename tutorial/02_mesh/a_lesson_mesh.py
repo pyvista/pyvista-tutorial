@@ -12,7 +12,7 @@ import numpy as np
 import pyvista as pv
 from pyvista import examples
 
-###############################################################################
+# %%
 # What is a Point?
 # ^^^^^^^^^^^^^^^^
 #
@@ -22,15 +22,15 @@ from pyvista import examples
 points = np.random.rand(100, 3)
 points[:5, :]  # output first 5 rows
 
-###############################################################################
+# %%
 # Pass numpy array of points (n by 3) to PolyData
 mesh = pv.PolyData(points)
 mesh
 
-###############################################################################
+# %%
 mesh.plot(point_size=10, style="points")
 
-###############################################################################
+# %%
 # But it's important to note that most meshes have some sort of connectivity
 # between points such as this gridded mesh:
 
@@ -43,7 +43,7 @@ pl.add_points(mesh.points, color="red", point_size=20, render_points_as_spheres=
 pl.camera_position = cpos
 pl.show()
 
-###############################################################################
+# %%
 mesh = examples.download_bunny_coarse()
 
 pl = pv.Plotter()
@@ -52,7 +52,7 @@ pl.add_points(mesh.points, color="red", point_size=10)
 pl.camera_position = [(0.02, 0.30, 0.73), (0.02, 0.03, -0.022), (-0.03, 0.94, -0.34)]
 pl.show()
 
-###############################################################################
+# %%
 # What is a Cell?
 # ^^^^^^^^^^^^^^^
 #
@@ -74,12 +74,12 @@ pl.add_mesh(single_cell, color="pink", edge_color="blue", line_width=5, show_edg
 pl.camera_position = [(6.20, 3.00, 7.50), (0.16, 0.13, 2.65), (-0.28, 0.94, -0.21)]
 pl.show()
 
-###############################################################################
+# %%
 # Cells aren't limited to voxels, they could be a triangle between three
 # points, a line between two points, or even a single point could be its own
 # cell (but that's a special case).
 
-###############################################################################
+# %%
 # What are attributes?
 # ^^^^^^^^^^^^^^^^^^^^
 #
@@ -90,7 +90,7 @@ pl.show()
 # dictionary-like attribute attached to any PyVista mesh accessible as one
 # of the following:
 
-###############################################################################
+# %%
 # Point Data
 # ~~~~~~~~~~
 # Point data refers to arrays of values (scalars, vectors, etc.) that live on
@@ -101,7 +101,7 @@ pl.show()
 mesh.point_data["my point values"] = np.arange(mesh.n_points)
 mesh.plot(scalars="my point values", cpos=cpos, show_edges=True)
 
-###############################################################################
+# %%
 # Cell Data
 # ~~~~~~~~~~
 # Cell data refers to arrays of values (scalars, vectors, etc.) that live
@@ -111,7 +111,7 @@ mesh.plot(scalars="my point values", cpos=cpos, show_edges=True)
 mesh.cell_data["my cell values"] = np.arange(mesh.n_cells)
 mesh.plot(scalars="my cell values", cpos=cpos, show_edges=True)
 
-###############################################################################
+# %%
 # Here's a comparison of point data versus cell data and how point data is
 # interpolated across cells when mapping colors. This is unlike cell data
 # which has a single value across the cell's domain:
@@ -128,7 +128,7 @@ pl.add_mesh(uni, scalars="Spatial Cell Data", show_edges=True)
 pl.link_views()
 pl.show()
 
-###############################################################################
+# %%
 # Field Data
 # ~~~~~~~~~~
 # Field data is not directly associated with either the points or cells but
@@ -137,7 +137,7 @@ mesh = pv.Cube()
 mesh.field_data["metadata"] = ["Foo", "bar"]
 mesh.field_data
 
-###############################################################################
+# %%
 # Assigning Scalars to a Mesh
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #
@@ -158,7 +158,7 @@ pl.subplot(0, 1)
 pl.add_mesh(other_cube, cmap="coolwarm")
 pl.show()
 
-###############################################################################
+# %%
 # .. raw:: html
 #
 #     <center>
