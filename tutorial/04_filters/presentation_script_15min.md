@@ -6,7 +6,7 @@
 
 In scientific visualization, we often work with complex 3D datasets that have more information than we can show at once. Filters are our tools for getting, changing, and highlighting the specific information we need. Think of filters as smart data mining tools that help us find patterns and insights hidden in our 3D data.
 
-Today, we'll look at how PyVista makes these powerful operations easy through a simple, Pythonic interface."
+In this section, we'll look at how PyVista makes these powerful operations easy through a simple, Pythonic interface."
 
 ## What Are Filters and Why Use Them? (2 minutes)
 
