@@ -32,9 +32,9 @@ point_cloud
 # And now plot this point cloud as-is:
 
 # Plot a typical point cloud with no EDL
-p = pv.Plotter()
-p.add_mesh(point_cloud, color="tan", point_size=5)
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(point_cloud, color="tan", point_size=5)
+pl.show()
 
 
 # %%
@@ -43,10 +43,10 @@ p.show()
 #
 # Try plotting that point cloud with Eye-Dome-Lighting yourself below:
 
-p = pv.Plotter()
-p.add_mesh(point_cloud, color="tan", point_size=5)
-p.enable_eye_dome_lighting()  # Turn on eye dome lighting here
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(point_cloud, color="tan", point_size=5)
+pl.enable_eye_dome_lighting()  # Turn on eye dome lighting here
+pl.show()
 
 
 # %%
@@ -54,10 +54,10 @@ p.show()
 # above block but by specifying a ``scalars`` array instead of ``color`` in
 # the ``add_mesh`` call.
 
-p = pv.Plotter()
-p.add_mesh(point_cloud, scalars="Elevation", point_size=5)
-p.enable_eye_dome_lighting()  # Turn on eye dome lighting here
-p.show()
+pl = pv.Plotter()
+pl.add_mesh(point_cloud, scalars="Elevation", point_size=5)
+pl.enable_eye_dome_lighting()  # Turn on eye dome lighting here
+pl.show()
 
 # %%
 # .. raw:: html
