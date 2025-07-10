@@ -59,6 +59,7 @@ jobs:
           echo PYVISTA_EXAMPLE_DATA_PATH=$(python -c "from pyvista import examples; print(examples.USER_DATA_PATH)") >> $GITHUB_ENV
 
       - uses: actions/checkout@v4
+        if: matrix.builder == 'mini18n-html'
         with:
           repository: pyvista/pyvista-tutorial-translations
           path: pyvista-tutorial-translations
