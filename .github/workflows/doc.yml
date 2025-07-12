@@ -23,6 +23,9 @@ jobs:
       issues: read
       repository-projects: read
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        builder: [html, mini18n-html]
     steps:
       - uses: actions/checkout@v4
         with:
@@ -55,32 +58,28 @@ jobs:
           python -c "import pyvista;print(pyvista.Report())"
           echo PYVISTA_EXAMPLE_DATA_PATH=$(python -c "from pyvista import examples; print(examples.USER_DATA_PATH)") >> $GITHUB_ENV
 
-      - name: Build Documentation
-        run: make -C doc html SPHINXOPTS="-W --keep-going"
-
       - uses: actions/checkout@v4
+        if: matrix.builder == 'mini18n-html'
         with:
           repository: pyvista/pyvista-tutorial-translations
           path: pyvista-tutorial-translations
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Build I18N Documentation
-        run: |
-          make -C doc mini18n-html SPHINXOPTS="-W --keep-going"
-          find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
+      - name: Build Documentation
+        run: make -C doc ${{ matrix.builder }} SPHINXOPTS="-W --keep-going"
 
       - name: Tar build
-        run: tar -zcvf doc-build.tar.gz doc/build/
+        run: tar -zcvf doc-build-${{ matrix.builder }}.tar.gz doc/build/
 
       - uses: actions/upload-artifact@v4
         with:
-          name: doc-build
-          path: doc-build.tar.gz
+          name: doc-build-${{ matrix.builder }}
+          path: doc-build-${{ matrix.builder }}.tar.gz
 
       - uses: actions/upload-artifact@v4
         with:
-          name: tutorial
+          name: tutorial-${{ matrix.builder }}
           path: doc/source/tutorial
       - name: Get Notebooks
         run: |
@@ -90,7 +89,7 @@ jobs:
           rm _notebooks/doc/source/tutorial/09_trame/*.ipynb
       - uses: actions/upload-artifact@v4
         with:
-          name: tutorial-notebooks
+          name: tutorial-notebooks-${{ matrix.builder }}
           path: _notebooks
 
   deploy:
@@ -110,17 +109,28 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: doc-build
+          name: doc-build-html
+          path: .
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: doc-build-mini18n-html
           path: .
 
       - name: UnTar build
-        run: tar -xzvf doc-build.tar.gz
+        run: tar -xzvf doc-build-html.tar.gz
+
+      - name: UnTar build
+        run: tar -xzvf doc-build-mini18n-html.tar.gz
 
       - name: Zip Notebooks
         run: |
           cp -r doc/build/html/notebooks/tutorial/ notebooks
           zip -r notebooks.zip notebooks/
           mv notebooks.zip doc/build/html/
+
+      - name: Copy I18N Documentation
+        run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -162,17 +172,28 @@ jobs:
 
       - uses: actions/download-artifact@v4
         with:
-          name: doc-build
+          name: doc-build-html
+          path: .
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: doc-build-mini18n-html
           path: .
 
       - name: UnTar build
-        run: tar -xzvf doc-build.tar.gz
+        run: tar -xzvf doc-build-html.tar.gz
+
+      - name: UnTar build
+        run: tar -xzvf doc-build-mini18n-html.tar.gz
 
       - name: Zip Notebooks
         run: |
           cp -r doc/build/html/notebooks/tutorial/ notebooks
           zip -r notebooks.zip notebooks/
           mv notebooks.zip doc/build/html/
+
+      - name: Copy I18N Documentation
+        run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
       - uses: nwtgck/actions-netlify@v3.0
         with:
