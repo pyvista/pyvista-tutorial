@@ -27,7 +27,7 @@ docs = [
   'pypandoc==1.15',
   'pytest-sphinx==0.6.3',
   'pyvista-xarray==0.1.7',
-  'pyvista[all]==0.45.2',
+  'pyvista[all]==0.45.3',
   'scipy==1.15.2',
   'sphinx-autobuild==2024.10.3',
   'sphinx-book-theme==1.1.4',
