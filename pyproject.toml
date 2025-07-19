@@ -38,7 +38,7 @@ docs = [
   'sphinxcontrib-websupport==2.0.0',
   'sphinxcontrib.asciinema==0.4.2',
   'trame-client==3.9.1',
-  'trame-server==3.4.2',
+  'trame-server==3.5.0',
   'trame-vtk==2.9.0',
   'trame-vuetify==3.0.1',
   'trame==3.10.2',
