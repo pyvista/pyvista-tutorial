@@ -11457,8 +11457,13 @@ Now create your own :class:`pyvista.ImageData` from a 3D NumPy array!
      |  ----------------------------------------------------------------------
      |  Methods inherited from pyvista.core._vtk_core.DisableVtkSnakeCase:
      |
-     |  __getattribute__(self, attr)
+     |  __getattribute__(self, item)
      |      Return getattr(self, name).
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from pyvista.core._vtk_core.DisableVtkSnakeCase:
+     |
+     |  check_attribute(target, attr)
      |
      |  ----------------------------------------------------------------------
      |  Class methods inherited from pyvista.core._vtk_core.vtkPyVistaOverride:
@@ -13733,7 +13738,7 @@ Here's one of these example datasets:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 4.978 seconds)
+   **Total running time of the script:** (0 minutes 5.127 seconds)
 
 
 .. _sphx_glr_download_tutorial_02_mesh_solutions_c_create-uniform-grid.py:
