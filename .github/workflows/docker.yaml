@@ -40,7 +40,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       - name: Build and push the Jupyter Docker image
-        uses: docker/build-push-action@4f58ea7 # v6.9.0
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: Dockerfile
