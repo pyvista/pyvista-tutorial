@@ -195,7 +195,7 @@ jobs:
       - name: Copy I18N Documentation
         run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
-      - uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0.0
+      - uses: nwtgck/actions-netlify@v3
         with:
           publish-dir: doc/build/html
           production-branch: main
