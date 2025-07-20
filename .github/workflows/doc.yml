@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - uses: syphar/restore-virtualenv@e536692 # v1.2.1
+      - uses: syphar/restore-virtualenv@v1
         id: cache-virtualenv
 
       - name: Install OS Packages
