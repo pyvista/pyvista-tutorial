@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - uses: syphar/restore-virtualenv@c23446cde59e2779e6bf8f4dc27aa5c0d6b9ec97 # v1.2
+      - uses: syphar/restore-virtualenv@c23446cde59e2779e6bf8f4dc27aa5c0d6b9ec97
         id: cache-virtualenv
 
       - name: Install OS Packages
@@ -133,7 +133,7 @@ jobs:
         run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
       - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3e66a12a2e531d2a7974b4e2762e08 # v4.0.0
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3e66a12a2e531d2a7974b4e2762e08
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: doc/build/html
@@ -150,7 +150,7 @@ jobs:
           cp Dockerfile tutorial-content/
 
       - name: Deploy to Tutorial branch
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3e66a12a2e531d2a7974b4e2762e08 # v4.0.0
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3e66a12a2e531d2a7974b4e2762e08
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: tutorial-content/
@@ -195,7 +195,7 @@ jobs:
       - name: Copy I18N Documentation
         run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
-      - uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654 # v3.0.0
+      - uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654
         with:
           publish-dir: doc/build/html
           production-branch: main
