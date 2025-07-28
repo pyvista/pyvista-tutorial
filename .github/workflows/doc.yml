@@ -36,7 +36,7 @@ jobs:
         with:
           python-version: "3.12"
 
-      - uses: syphar/restore-virtualenv@e536692 # v1.2.1
+      - uses: syphar/restore-virtualenv@e5366920f1f90205e6e7e150e9b231e7a9593038 # v1.2.1
         id: cache-virtualenv
 
       - name: Install OS Packages
@@ -133,7 +133,7 @@ jobs:
         run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
       - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@4f9cc66 # v4.0.0
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3e66a12a2e531d2a7974b4e2762e08 # v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: doc/build/html
@@ -150,7 +150,7 @@ jobs:
           cp Dockerfile tutorial-content/
 
       - name: Deploy to Tutorial branch
-        uses: peaceiris/actions-gh-pages@4f9cc66 # v4.0.0
+        uses: peaceiris/actions-gh-pages@4f9cc6602d3e66a12a2e531d2a7974b4e2762e08 # v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: tutorial-content/
