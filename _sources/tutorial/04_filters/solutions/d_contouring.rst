@@ -371,7 +371,7 @@ of 50 and 200
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 8.904 seconds)
+   **Total running time of the script:** (0 minutes 10.066 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_d_contouring.py:
