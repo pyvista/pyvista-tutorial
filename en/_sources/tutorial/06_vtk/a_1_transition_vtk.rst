@@ -539,7 +539,7 @@ you may want to use VTK classes directly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.923 seconds)
+   **Total running time of the script:** (0 minutes 1.934 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_a_1_transition_vtk.py:

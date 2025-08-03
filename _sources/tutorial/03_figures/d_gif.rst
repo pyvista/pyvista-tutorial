@@ -91,9 +91,9 @@ Generate a moving gif from an active plotter.
 
  .. code-block:: none
 
-    /home/runner/.virtualenvs/.venv/lib/python3.12/site-packages/pyvista/plotting/plotter.py:4892: PyVistaDeprecationWarning: This method is deprecated and will be removed in a future version of PyVista. Directly modify the points of a mesh in-place instead.
+    /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pyvista/plotting/plotter.py:4892: PyVistaDeprecationWarning: This method is deprecated and will be removed in a future version of PyVista. Directly modify the points of a mesh in-place instead.
       warnings.warn(
-    /home/runner/.virtualenvs/.venv/lib/python3.12/site-packages/pyvista/plotting/plotter.py:4814: PyVistaDeprecationWarning: This method is deprecated and will be removed in a future version of PyVista. Directly modify the scalars of a mesh in-place instead.
+    /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pyvista/plotting/plotter.py:4814: PyVistaDeprecationWarning: This method is deprecated and will be removed in a future version of PyVista. Directly modify the scalars of a mesh in-place instead.
       warnings.warn(
 
 

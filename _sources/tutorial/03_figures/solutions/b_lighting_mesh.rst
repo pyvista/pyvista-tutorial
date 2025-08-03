@@ -306,7 +306,7 @@ For detailed control over lighting conditions in general see the
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 9.604 seconds)
+   **Total running time of the script:** (0 minutes 9.563 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_b_lighting_mesh.py:
