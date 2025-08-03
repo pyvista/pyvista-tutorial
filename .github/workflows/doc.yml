@@ -35,9 +35,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - uses: syphar/restore-virtualenv@c23446cde59e2779e6bf8f4dc27aa5c0d6b9ec97
-        id: cache-virtualenv
+          cache: "pip"
 
       - name: Install OS Packages
         run: |
