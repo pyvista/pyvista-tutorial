@@ -34,6 +34,12 @@ PyVista can be installed on several environments, including, but not limited to:
 
          conda install -c conda-forge pyvista jupyterlab trame trame-vuetify trame-vtk ipywidgets
 
+   .. tab-item:: pixi
+
+      .. code::
+
+         pixi add pyvista jupyterlab trame trame-vuetify trame-vtk ipywidgets
+
 
 
 
