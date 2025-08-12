@@ -48,7 +48,7 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt -y install libgeos-dev
-          uv pip install -e .[docs]
+          uv pip install --system -e .[docs]
 
       - name: PyVista Report
         run: |
