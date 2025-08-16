@@ -35,6 +35,7 @@ jobs:
       - uses: astral-sh/setup-uv@e92bafb6253dcd438e0484186d7669ea7a8ca1cc
         with:
           python-version: "3.12"
+          cache: pyproject.toml
 
       - name: Install OS Packages
         run: |
