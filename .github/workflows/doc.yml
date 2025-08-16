@@ -50,6 +50,10 @@ jobs:
           sudo apt -y install libgeos-dev
           sudo -E env "PATH=$PATH" $(which uv) pip install --system --break-system-packages --editable ".[docs]"
 
+      - name: Clean uv cache (non-critical)
+        run: |
+          $(which uv) cache clean || true
+
       - name: PyVista Report
         run: |
           python -c "import pyvista;print(pyvista.Report())"
