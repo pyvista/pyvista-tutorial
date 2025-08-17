@@ -50,15 +50,11 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt -y install libgeos-dev
-          sudo -E env "PATH=$PATH" $(which uv) pip install --system --break-system-packages --editable ".[docs]"
-
-      - name: Clean uv cache (non-critical)
-        run: |
-          $(which uv) cache clean || true
+          uv pip install --system --editable ".[docs]"
 
       - name: PyVista Report
         run: |
-          python -c "import pyvista;print(pyvista.Report())"
+          uv run python -c "import pyvista;print(pyvista.Report())"
           echo PYVISTA_EXAMPLE_DATA_PATH=$(python -c "from pyvista import examples; print(examples.USER_DATA_PATH)") >> $GITHUB_ENV
 
       - uses: actions/checkout@v5
@@ -70,7 +66,7 @@ jobs:
           persist-credentials: false
 
       - name: Build Documentation
-        run: make -C doc ${{ matrix.builder }} SPHINXOPTS="-W --keep-going"
+        run: uv run make -C doc ${{ matrix.builder }} SPHINXOPTS="-W --keep-going"
 
       - name: Tar build
         run: tar -zcvf doc-build-${{ matrix.builder }}.tar.gz doc/build/
