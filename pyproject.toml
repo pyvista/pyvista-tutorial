@@ -17,7 +17,7 @@ docs = [
   'ipywidgets==8.1.7',
   'jupyter_sphinx==0.5.3',
   'jupyterlab==4.4.5',
-  'lxml==6.0.0',
+  'lxml==6.0.1',
   'matplotlib==3.10.1',
   'meshio==5.3.5',
   'mypy-extensions==1.1.0',
