@@ -16,7 +16,7 @@ docs = [
   'ipygany==0.5.0',
   'ipywidgets==8.1.7',
   'jupyter_sphinx==0.5.3',
-  'jupyterlab==4.4.5',
+  'jupyterlab==4.4.6',
   'lxml==6.0.0',
   'matplotlib==3.10.1',
   'meshio==5.3.5',
@@ -44,7 +44,7 @@ docs = [
   'trame==3.11.0',
   'trimesh==4.7.4',
   'typed-ast==1.5.5',
-  'typing_extensions==4.14.1',
+  'typing_extensions==4.15.0',
   'vtk-xref==0.1.0',
   'vtk<9.6',
 ]
