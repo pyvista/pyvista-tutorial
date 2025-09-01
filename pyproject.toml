@@ -42,7 +42,7 @@ docs = [
   'trame-vtk==2.9.1',
   'trame-vuetify==3.0.1',
   'trame==3.11.0',
-  'trimesh==4.7.1',
+  'trimesh==4.7.4',
   'typed-ast==1.5.5',
   'typing_extensions==4.14.1',
   'vtk-xref==0.1.0',
