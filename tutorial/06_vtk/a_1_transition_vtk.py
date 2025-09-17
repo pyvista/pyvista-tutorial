@@ -15,7 +15,7 @@ structure using VTK Python's bindings, one would write the following:
 
 from math import cos, sin
 
-import vtk
+from vtk import vtkDoubleArray, vtkImageData, vtkPoints, vtkPolyData, vtkCellArray
 
 # %%
 # Create values for a 300x300 image dataset
@@ -25,7 +25,7 @@ import vtk
 # .. code-block:: python
 #
 #   127.5 + (1.0 + sin(x/25.0)*cos(y/25.0))
-values = vtk.vtkDoubleArray()
+values = vtkDoubleArray()
 values.SetName("values")
 values.SetNumberOfComponents(1)
 values.SetNumberOfTuples(300 * 300)
@@ -36,7 +36,7 @@ for x in range(300):
 
 # %%
 # Create the image structure
-image_data = vtk.vtkImageData()
+image_data = vtkImageData()
 image_data.SetOrigin(0, 0, 0)
 image_data.SetSpacing(1, 1, 1)
 image_data.SetDimensions(300, 300, 1)
@@ -142,7 +142,7 @@ grid.plot(cpos="xy", show_scalar_bar=False, cmap="coolwarm")
 # one would normally loop through all the points of a list and supply
 # that to a  :vtk:`vtkPoints` class.  For example:
 
-vtk_array = vtk.vtkDoubleArray()
+vtk_array = vtkDoubleArray()
 vtk_array.SetNumberOfComponents(3)
 vtk_array.SetNumberOfValues(9)
 vtk_array.SetValue(0, 0)
@@ -154,7 +154,7 @@ vtk_array.SetValue(5, 0)
 vtk_array.SetValue(6, 0.5)
 vtk_array.SetValue(7, 0.667)
 vtk_array.SetValue(8, 0)
-vtk_points = vtk.vtkPoints()
+vtk_points = vtkPoints()
 vtk_points.SetData(vtk_array)
 
 # %%
@@ -177,7 +177,7 @@ poly_data = pv.PolyData(np_points)
 # %%
 # Whereas in VTK you would have to do:
 
-vtk_poly_data = vtk.vtkPolyData()
+vtk_poly_data = vtkPolyData()
 vtk_poly_data.SetPoints(vtk_points)
 
 # %%
@@ -186,7 +186,7 @@ vtk_poly_data.SetPoints(vtk_points)
 # :func:`InsertCellPoint`.  For example, to create a single cell
 # (triangle) and then assign it to :vtk:`vtkPolyData`:
 
-cell_arr = vtk.vtkCellArray()
+cell_arr = vtkCellArray()
 cell_arr.InsertNextCell(3)
 cell_arr.InsertCellPoint(0)
 cell_arr.InsertCellPoint(1)
