@@ -46,7 +46,7 @@ docs = [
   'typed-ast==1.5.5',
   'typing_extensions==4.15.0',
   'vtk-xref==0.1.0',
-  'vtk<9.6',
+  'vtk<9.5.1',
 ]
 
 [tool.ruff]
