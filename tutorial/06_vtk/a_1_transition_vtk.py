@@ -15,7 +15,7 @@ structure using VTK Python's bindings, one would write the following:
 
 from math import cos, sin
 
-from vtk import vtkDoubleArray, vtkImageData, vtkPoints, vtkPolyData, vtkCellArray
+from vtk import vtkCellArray, vtkDoubleArray, vtkImageData, vtkPoints, vtkPolyData
 
 # %%
 # Create values for a 300x300 image dataset
