@@ -214,7 +214,8 @@ sphinx_gallery_conf = {
     # path where to save gallery generated examples
     "gallery_dirs": [d.lstrip("../../") for d in tutorial_dirs],  # noqa: B005
     # Don't execute any files containing "exercise" in the filename
-    "filename_pattern": r"^((?!exercise|trame|wasm|vtk_next).)*$",
+    # Also skip VTK transition files that cause segfault in CI
+    "filename_pattern": r"^((?!exercise|trame|wasm|vtk_next|a_1_transition_vtk|a_2_pyvista_vtk|b_create_vtk|c_vtk_algorithms).)*$",
     # Remove the 'Download all examples' button from the top level gallery
     "download_all_examples": False,
     # Remove sphinx configuration comments from code blocks
