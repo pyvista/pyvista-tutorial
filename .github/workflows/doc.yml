@@ -105,7 +105,6 @@ jobs:
       - name: UnTar build
         run: tar -xzvf doc-build-html.tar.gz
 
-
       - name: Zip Notebooks
         run: |
           cp -r doc/build/html/notebooks/tutorial/ notebooks
