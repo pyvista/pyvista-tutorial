@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        builder: [html, mini18n-html]
+        builder: [html]
     steps:
       - uses: actions/checkout@v5
         with:
@@ -55,14 +55,6 @@ jobs:
         run: |
           python -c "import pyvista;print(pyvista.Report())"
           echo PYVISTA_EXAMPLE_DATA_PATH=$(python -c "from pyvista import examples; print(examples.USER_DATA_PATH)") >> $GITHUB_ENV
-
-      - uses: actions/checkout@v5
-        if: matrix.builder == 'mini18n-html'
-        with:
-          repository: pyvista/pyvista-tutorial-translations
-          path: pyvista-tutorial-translations
-          fetch-depth: 0
-          persist-credentials: false
 
       - name: Build Documentation
         run: make -C doc ${{ matrix.builder }} SPHINXOPTS="-W --keep-going"
@@ -110,25 +102,15 @@ jobs:
           name: doc-build-html
           path: .
 
-      - uses: actions/download-artifact@v5
-        with:
-          name: doc-build-mini18n-html
-          path: .
-
       - name: UnTar build
         run: tar -xzvf doc-build-html.tar.gz
 
-      - name: UnTar build
-        run: tar -xzvf doc-build-mini18n-html.tar.gz
 
       - name: Zip Notebooks
         run: |
           cp -r doc/build/html/notebooks/tutorial/ notebooks
           zip -r notebooks.zip notebooks/
           mv notebooks.zip doc/build/html/
-
-      - name: Copy I18N Documentation
-        run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
       - name: Deploy to GH Pages
         uses: peaceiris/actions-gh-pages@4f9cc6602d3e66a12a2e531d2a7974b4e2762e08
@@ -173,25 +155,14 @@ jobs:
           name: doc-build-html
           path: .
 
-      - uses: actions/download-artifact@v5
-        with:
-          name: doc-build-mini18n-html
-          path: .
-
       - name: UnTar build
         run: tar -xzvf doc-build-html.tar.gz
-
-      - name: UnTar build
-        run: tar -xzvf doc-build-mini18n-html.tar.gz
 
       - name: Zip Notebooks
         run: |
           cp -r doc/build/html/notebooks/tutorial/ notebooks
           zip -r notebooks.zip notebooks/
           mv notebooks.zip doc/build/html/
-
-      - name: Copy I18N Documentation
-        run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
       - uses: nwtgck/actions-netlify@4cbaf4c08f1a7bfa537d6113472ef4424e4eb654
         with:
