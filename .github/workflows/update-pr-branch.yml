@@ -10,7 +10,9 @@ jobs:
       pull-requests: write
       issues: read
       repository-projects: read
+      contents: write
     runs-on: ubuntu-latest
+    if: github.repository == 'pyvista/pyvista-tutorial'
     steps:
       - name: Automatically update PR
         uses: adRise/update-pr-branch@1982757e254dab9d5bbb8478b35a2b20411270d9
@@ -22,3 +24,4 @@ jobs:
           sort: "created"
           direction: "desc"
           require_auto_merge_enabled: true
+          allow_ongoing_checks: true
