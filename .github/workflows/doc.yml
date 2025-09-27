@@ -131,7 +131,7 @@ jobs:
         run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
       - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3e66a12a2e531d2a7974b4e2762e08
+        uses: peaceiris/actions-gh-pages@4b09552702d0b65573696410d4707c765da2630b
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: doc/build/html
@@ -148,7 +148,7 @@ jobs:
           cp Dockerfile tutorial-content/
 
       - name: Deploy to Tutorial branch
-        uses: peaceiris/actions-gh-pages@4f9cc6602d3e66a12a2e531d2a7974b4e2762e08
+        uses: peaceiris/actions-gh-pages@4b09552702d0b65573696410d4707c765da2630b
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: tutorial-content/
