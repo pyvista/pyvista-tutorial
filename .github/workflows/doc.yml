@@ -32,10 +32,11 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@e92bafb6253dcd438e0484186d7669ea7a8ca1cc
         with:
           python-version: "3.12"
-          cache: "pip"
+          enable-cache: true
+          cache-dependency-glob: pyproject.toml
 
       - name: Install OS Packages
         run: |
@@ -49,11 +50,11 @@ jobs:
       - name: Install Dependencies
         run: |
           sudo apt -y install libgeos-dev
-          pip install -e .[docs]
+          uv pip install --system --editable ".[docs]"
 
       - name: PyVista Report
         run: |
-          python -c "import pyvista;print(pyvista.Report())"
+          uv run python -c "import pyvista;print(pyvista.Report())"
           echo PYVISTA_EXAMPLE_DATA_PATH=$(python -c "from pyvista import examples; print(examples.USER_DATA_PATH)") >> $GITHUB_ENV
 
       - uses: actions/checkout@v5
@@ -65,7 +66,7 @@ jobs:
           persist-credentials: false
 
       - name: Build Documentation
-        run: make -C doc ${{ matrix.builder }} SPHINXOPTS="-W --keep-going"
+        run: uv run make -C doc ${{ matrix.builder }} SPHINXOPTS="-W --keep-going"
 
       - name: Tar build
         run: tar -zcvf doc-build-${{ matrix.builder }}.tar.gz doc/build/
