@@ -24,7 +24,7 @@ docs = [
   'mypy==1.18.2',
   'numpydoc==1.9.0',
   'osmnx==2.0.6',
-  'pypandoc==1.15',
+  'pypandoc==1.16.2',
   'pytest-sphinx==0.6.3',
   'pyvista-xarray==0.1.7',
   'pyvista[all]==0.46.4',
