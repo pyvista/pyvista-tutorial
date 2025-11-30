@@ -2,10 +2,9 @@ version: 2
 updates:
   - package-ecosystem: "pip"
     directory: "/"
-    insecure-external-code-execution: allow
     schedule:
       interval: "monthly"
-    open-pull-requests-limit: 100
+    open-pull-requests-limit: 5
     groups:
       trame:
         patterns:
@@ -15,12 +14,12 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
-    open-pull-requests-limit: 100
+    open-pull-requests-limit: 5
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "daily"
-    open-pull-requests-limit: 100
+    open-pull-requests-limit: 5
     labels:
       - "maintenance"
       - "dependencies"
