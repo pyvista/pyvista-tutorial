@@ -47,6 +47,7 @@ repos:
     rev: v1.16.3
     hooks:
       - id: zizmor
+        args: ["--min-severity=high"]
 
   - repo: https://github.com/sphinx-contrib/sphinx-lint
     rev: v1.0.2
