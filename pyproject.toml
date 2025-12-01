@@ -21,7 +21,7 @@ docs = [
   'matplotlib==3.10.1',
   'meshio==5.3.5',
   'mypy-extensions==1.1.0',
-  'mypy==1.18.2',
+  'mypy==1.19.0',
   'numpydoc==1.9.0',
   'osmnx==2.0.7',
   'pypandoc==1.15',
