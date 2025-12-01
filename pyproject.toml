@@ -36,7 +36,7 @@ docs = [
   'sphinx-notfound-page==1.1.0',
   'sphinx_design==0.6.1',
   'sphinxcontrib-websupport==2.0.0',
-  'sphinxcontrib.asciinema==0.4.2',
+  'sphinxcontrib.asciinema==0.4.3',
   'trame-client==3.11.2',
   'trame-server==3.8.1',
   'trame-vtk==2.10.0',
