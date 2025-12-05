@@ -93,13 +93,18 @@ jobs:
   deploy:
     name: Publish Documentation
     permissions:
-      contents: write
+      contents: read
+      pages: write
+      id-token: write
       pull-requests: read
       issues: read
       repository-projects: read
     runs-on: ubuntu-latest
     needs: build-doc
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
         with:
@@ -130,12 +135,48 @@ jobs:
       - name: Copy I18N Documentation
         run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
-      - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@4b09552702d0b65573696410d4707c765da2630b
+      - name: Add CNAME file
+        run: echo "tutorial.pyvista.org" > doc/build/html/CNAME
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: doc/build/html
-          cname: tutorial.pyvista.org
+          path: doc/build/html
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy-tutorial:
+    name: Publish Tutorial Content
+    permissions:
+      contents: write
+      pull-requests: read
+      issues: read
+      repository-projects: read
+    runs-on: ubuntu-latest
+    needs: build-doc
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@v5
+        with:
+          name: doc-build-html
+          path: .
+
+      - name: UnTar build
+        run: tar -xzvf doc-build-html.tar.gz
+
+      - name: Zip Notebooks
+        run: |
+          cp -r doc/build/html/notebooks/tutorial/ notebooks
+          zip -r notebooks.zip notebooks/
 
       - name: Copy Tutorial Content
         run: |
