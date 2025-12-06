@@ -70,12 +70,12 @@ jobs:
       - name: Tar build
         run: tar -zcvf doc-build-${{ matrix.builder }}.tar.gz doc/build/
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: doc-build-${{ matrix.builder }}
           path: doc-build-${{ matrix.builder }}.tar.gz
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: tutorial-${{ matrix.builder }}
           path: doc/source/tutorial
@@ -85,7 +85,7 @@ jobs:
           find doc/source/tutorial -type f -name '*.ipynb' | cpio -p -d -v _notebooks/
           find doc/source/tutorial/09_trame -type f -name '*.py' | cpio -p -d -v _notebooks/
           rm _notebooks/doc/source/tutorial/09_trame/*.ipynb
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: tutorial-notebooks-${{ matrix.builder }}
           path: _notebooks
