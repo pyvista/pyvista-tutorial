@@ -249,6 +249,7 @@ html_sidebars = {
 }
 mini18n_default_language = "en"
 mini18n_support_languages = ["en", "ja"]
+mini18n_build_style = "nested"
 locale_dirs = ["../../pyvista-tutorial-translations/locale"]
 
 
