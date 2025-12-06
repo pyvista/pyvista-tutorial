@@ -131,7 +131,7 @@ jobs:
         run: find doc/build/mini18n-html -mindepth 1 -maxdepth 1 -type d -exec cp -rf {} doc/build/html/ \;
 
       - name: Deploy to GH Pages
-        uses: peaceiris/actions-gh-pages@v4  # zizmor: ignore[unpinned-uses]
+        uses: peaceiris/actions-gh-pages@v4 # zizmor: ignore[unpinned-uses]
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: doc/build/html
@@ -148,7 +148,7 @@ jobs:
           cp Dockerfile tutorial-content/
 
       - name: Deploy to Tutorial branch
-        uses: peaceiris/actions-gh-pages@v4  # zizmor: ignore[unpinned-uses]
+        uses: peaceiris/actions-gh-pages@v4 # zizmor: ignore[unpinned-uses]
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: tutorial-content/
