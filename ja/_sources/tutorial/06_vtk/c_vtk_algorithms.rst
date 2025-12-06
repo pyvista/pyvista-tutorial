@@ -928,6 +928,10 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |      C++: virtual void SetInformation(vtkInformation *)
      |
      |  SetInputArrayToProcess(...)
+     |      SetInputArrayToProcess(self, name:str, fieldAssociation:int)
+     |          -> None
+     |      C++: void SetInputArrayToProcess(const char *name,
+     |          int fieldAssociation)
      |      SetInputArrayToProcess(self, idx:int, port:int, connection:int,
      |          fieldAssociation:int, name:str) -> None
      |      C++: virtual void SetInputArrayToProcess(int idx, int port,
@@ -946,12 +950,14 @@ Let's start out with a simple VTK filter: ``vtkOutlineFilter``
      |          const char *attributeTypeorName)
      |
      |      Set the input data arrays that this algorithm will process.
-     |      Specifically the idx array that this algorithm will process
-     |      (starting from 0) is the array on port, connection with the
-     |      specified association and name or attribute type (such as
-     |      SCALARS). The fieldAssociation refers to which field in the data
-     |      object the array is stored. See vtkDataObject::FieldAssociations
-     |      for detail.
+     |      Default to SetInputArrayToProcess(0, 0, 0, fieldAssociation,
+     |      name)
+     |      @param name the name of the array to process
+     |      @param fieldAssociation the field in the data object where the
+     |          array is stored.
+     |      See vtkDataObject::FieldAssociations for detail.
+     |
+     |      @see void SetInputArrayToProcess(int, int, int, int, const char*)
      |
      |  SetInputConnection(...)
      |      SetInputConnection(self, port:int, input:vtkAlgorithmOutput)
@@ -1691,7 +1697,7 @@ See https://kitware.github.io/vtk-examples/site/Python/
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.830 seconds)
+   **Total running time of the script:** (0 minutes 0.821 seconds)
 
 
 .. _sphx_glr_download_tutorial_06_vtk_c_vtk_algorithms.py:

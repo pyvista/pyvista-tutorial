@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../../_static/thebelab-helper.js"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -237,7 +237,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/02_mesh/solutions/b_create-point-cloud.html"
+      <option value="en@@/tutorial/02_mesh/solutions/b_create-point-cloud.html"
         selected>en</option>
       <option value="ja@@/ja/tutorial/02_mesh/solutions/b_create-point-cloud.html">ja</option>
     </select>
@@ -491,14 +491,14 @@ to download the full example code. or to run this example in your browser via Bi
 </div>
 <section class="sphx-glr-example-title" id="create-point-cloud">
 <span id="sphx-glr-tutorial-02-mesh-solutions-b-create-point-cloud-py"></span><span id="id1"></span><h1>Create Point Cloud<a class="headerlink" href="#create-point-cloud" title="Link to this heading">#</a></h1>
-<p>Create a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> object from a point cloud of vertices and
+<p>Create a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> object from a point cloud of vertices and
 scalar arrays for those points.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
-<p>Point clouds are generally constructed using <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> and
+<p>Point clouds are generally constructed using <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> and
 can easily have scalar or vector data arrays associated with the individual
 points. In this example, we’ll start by working backwards using a point cloud
 that is available from our <code class="docutils literal notranslate"><span class="pre">examples</span></code> module. This however is no
@@ -518,11 +518,11 @@ locations.</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81003075e+05, 4.40019080e+06, 1.76463000e+03],
-                 [4.81029975e+05, 4.40013350e+06, 1.76241003e+03],
-                 [4.80980775e+05, 4.40009820e+06, 1.77304004e+03],
-                 [4.81106675e+05, 4.40010560e+06, 1.77859998e+03],
-                 [4.81083175e+05, 4.40017020e+06, 1.75921997e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.80955575e+05, 4.40015200e+06, 1.76098999e+03],
+                 [4.81067775e+05, 4.40010500e+06, 1.76109998e+03],
+                 [4.81028875e+05, 4.40016420e+06, 1.76042004e+03],
+                 [4.81045575e+05, 4.40016700e+06, 1.76010999e+03],
+                 [4.81080975e+05, 4.40007600e+06, 1.76193994e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -569,9 +569,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_b_create-point-cloud_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_b_create-point-cloud_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Now what if you have data attributes (scalar or vector arrays) that you’d
 like to associate with every point of your mesh? You can easily add NumPy
@@ -607,16 +605,14 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_b_create-point-cloud_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_b_create-point-cloud_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>That data is kind of boring, right? You can also add data arrays with more
 than one scalar value - perhaps a vector with three elements? Let’s make a
 little function that will compute vectors for every point in the point cloud
 and add those vectors to the mesh.</p>
 <p>This time, we’re going to create a totally new, random point cloud containing
-100 points using <a class="reference external" href="https://numpy.org/devdocs/reference/random/generated/numpy.random.random.html#numpy.random.random" title="(in NumPy v2.4.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.random.random()</span></code></a>.</p>
+100 points using <a class="reference external" href="https://numpy.org/devdocs/reference/random/generated/numpy.random.random.html#numpy.random.random" title="(in NumPy v2.5.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.random.random()</span></code></a>.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a random point cloud with Cartesian coordinates</span>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.rand.html#numpy.random.rand" title="numpy.random.rand" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span></a><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="c1"># Construct PolyData from those points</span>
@@ -634,11 +630,11 @@ and add those vectors to the mesh.</p>
 <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vectors</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.68595785,  0.58592999,  0.43144858],
-                 [-0.10304608,  0.4440803 , -0.89004168],
-                 [-0.52546705,  0.60950488,  0.59362293],
-                 [-0.65683043,  0.75378749,  0.01944756],
-                 [ 0.55488658, -0.80691328,  0.20246441]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.87279972,  0.20283833, -0.44393385],
+                 [ 0.38134262, -0.32193927,  0.86656386],
+                 [-0.25432816, -0.68470859,  0.68300171],
+                 [ 0.50909823,  0.36295228,  0.78043874],
+                 [ 0.70064557,  0.66470023,  0.25936341]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the new mesh:</p>
@@ -672,15 +668,13 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_b_create-point-cloud_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_b_create-point-cloud_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <center>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/b_create-point-cloud.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.587 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.546 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-b-create-point-cloud-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/b_create-point-cloud.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" style="width: 150px;" />

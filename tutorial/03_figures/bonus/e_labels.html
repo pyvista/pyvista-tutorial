@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../../_static/thebelab-helper.js"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -237,7 +237,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/03_figures/bonus/e_labels.html"
+      <option value="en@@/tutorial/03_figures/bonus/e_labels.html"
         selected>en</option>
       <option value="ja@@/ja/tutorial/03_figures/bonus/e_labels.html">ja</option>
     </select>
@@ -516,12 +516,12 @@ point labels to a scene.</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on function add_point_labels in module pyvista.plotting.plotter:
 
-add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, text_color=None, font_family=None, font_file=None, shadow=False, show_points=True, point_color=None, point_size=None, name=None, shape_color=&#39;grey&#39;, shape=&#39;rounded_rect&#39;, fill_shape=True, margin=3, shape_opacity=1.0, pickable=False, render_points_as_spheres=False, tolerance=0.001, reset_camera=None, always_visible=False, render=True, justification_horizontal=None, justification_vertical=None, background_color=None, background_opacity=None)
+add_point_labels(self, points: &#39;MatrixLike[float] | VectorLike[float] | DataSet | _vtk.vtkAlgorithm&#39;, labels: &#39;list[str | int] | str&#39;, italic: &#39;bool&#39; = False, bold: &#39;bool&#39; = True, font_size: &#39;int | None&#39; = None, text_color: &#39;ColorLike | None&#39; = None, font_family: &#39;FontFamilyOptions | None&#39; = None, font_file: &#39;str | None&#39; = None, shadow: &#39;bool&#39; = False, show_points: &#39;bool&#39; = True, point_color: &#39;ColorLike | None&#39; = None, point_size: &#39;float | None&#39; = None, name: &#39;str | None&#39; = None, shape_color: &#39;ColorLike&#39; = &#39;grey&#39;, shape: &quot;Literal[&#39;rect&#39;, &#39;rounded_rect&#39;] | None&quot; = &#39;rounded_rect&#39;, fill_shape: &#39;bool&#39; = True, margin: &#39;int&#39; = 3, shape_opacity: &#39;float&#39; = 1.0, pickable: &#39;bool&#39; = False, render_points_as_spheres: &#39;bool&#39; = False, tolerance: &#39;float&#39; = 0.001, reset_camera: &#39;bool | None&#39; = None, always_visible: &#39;bool&#39; = False, render: &#39;bool&#39; = True, justification_horizontal: &#39;HorizontalOptions | None&#39; = None, justification_vertical: &#39;VerticalOptions | None&#39; = None, background_color: &#39;ColorLike | None&#39; = None, background_opacity: &#39;float | None&#39; = None) -&gt; &#39;_vtk.vtkActor2D&#39;
     Create a point actor with one label from list labels assigned to each point.
 
     Parameters
     ----------
-    points : sequence | pyvista.DataSet | vtk.vtkAlgorithm
+    points : sequence | DataSet | :vtk:`vtkAlgorithm`
         An ``n x 3`` sequence points or :class:`pyvista.DataSet` with
         points or mesh-producing algorithm.
 
@@ -638,16 +638,20 @@ add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, 
             Please use the background color.
             See: https://github.com/pyvista/pyvista/pull/5407
 
-    background_color : pyvista.Color, optional
+    background_color : Color, optional
         Background color of text&#39;s property.
 
-    background_opacity : pyvista.Color, optional
+    background_opacity : float, optional
         Background opacity of text&#39;s property.
 
     Returns
     -------
-    vtk.vtkActor2D
+    :vtk:`vtkActor2D`
         VTK label actor.  Can be used to change properties of the labels.
+
+    See Also
+    --------
+    :ref:`point_labels_example`
 
     Examples
     --------
@@ -691,9 +695,9 @@ node:</p>
 <tr><td>N Cells</td><td>10</td></tr>
 <tr><td>N Points</td><td>10</td></tr>
 <tr><td>N Strips</td><td>0</td></tr>
-<tr><td>X Bounds</td><td>1.978e-02, 9.453e-01</td></tr>
-<tr><td>Y Bounds</td><td>1.097e-01, 9.148e-01</td></tr>
-<tr><td>Z Bounds</td><td>1.877e-01, 7.102e-01</td></tr>
+<tr><td>X Bounds</td><td>4.201e-02, 9.198e-01</td></tr>
+<tr><td>Y Bounds</td><td>9.788e-02, 8.547e-01</td></tr>
+<tr><td>Z Bounds</td><td>2.605e-02, 9.984e-01</td></tr>
 <tr><td>N Arrays</td><td>1</td></tr>
 </table>
 
@@ -723,9 +727,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_e_labels_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_e_labels_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 </section>
 <section id="label-node-locations">
@@ -757,9 +759,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_e_labels_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_e_labels_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 </section>
 <section id="label-scalar-values">
@@ -789,15 +789,13 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_e_labels_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/bonus/images/sphx_glr_e_labels_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <center>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/bonus/e_labels.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.821 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 0.767 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-figures-bonus-e-labels-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/bonus/e_labels.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo9.svg" style="width: 150px;" />

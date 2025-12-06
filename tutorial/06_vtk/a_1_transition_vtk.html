@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -237,7 +237,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/06_vtk/a_1_transition_vtk.html"
+      <option value="en@@/tutorial/06_vtk/a_1_transition_vtk.html"
         selected>en</option>
       <option value="ja@@/ja/tutorial/06_vtk/a_1_transition_vtk.html">ja</option>
     </select>
@@ -570,13 +570,13 @@ This section effectively replaces the vtkDoubleArray.</p>
 <p>Here, PyVista has done several things for us:</p>
 <ol class="arabic">
 <li><p>PyVista combines the dimensionality of the data (in the shape of
-the <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) with the values of the data in one line. VTK uses
+the <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) with the values of the data in one line. VTK uses
 “tuples” to describe the shape of the data (where it sits in space)
 and “components” to describe the type of data (1 = scalars/scalar
 fields, 2 = vectors/vector fields, n = tensors/tensor
 fields). Here, shape and values are stored concretely in one
 variable.</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> wraps <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>, just with a
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> wraps <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>, just with a
 different name; they are both containers of evenly spaced points. Your
 data does not have to be an “image” to use it with
 <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>; rather, like images, values in the dataset are
@@ -633,9 +633,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/06_vtk/images/sphx_glr_a_1_transition_vtk_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/06_vtk/images/sphx_glr_a_1_transition_vtk_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <section id="pointset-construction">
 <h2>PointSet Construction<a class="headerlink" href="#pointset-construction" title="Link to this heading">#</a></h2>
@@ -665,11 +663,11 @@ that to a  <a class="reference external" href="https://vtk.org/doc/nightly/html/
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> to construct a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a>
+<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> to construct a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a>
 object, but this is unnecessary in almost all situations.</p>
 </div>
-<p>Since the end goal is to construct a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span></code></a>, you would simply pass the
-<code class="docutils literal notranslate"><span class="pre">np_points</span></code> array to the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> constructor:</p>
+<p>Since the end goal is to construct a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span></code></a>, you would simply pass the
+<code class="docutils literal notranslate"><span class="pre">np_points</span></code> array to the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> constructor:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">poly_data</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np_points</span></a><span class="p">)</span>
 </pre></div>
 </div>
@@ -691,7 +689,7 @@ VTK you would normally have to loop using <code class="xref py py-func docutils 
 </pre></div>
 </div>
 <p>In PyVista, we can assign this directly in the constructor and then
-access it (or change it) from the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="(in PyVista v0.45.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">faces</span></code></a> attribute.</p>
+access it (or change it) from the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="(in PyVista v0.46.3)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">faces</span></code></a> attribute.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">faces</span></a> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.array.html#numpy.array" title="numpy.array" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">array</span></a><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">poly_data</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span></a><span class="p">(</span><a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np_points</span></a><span class="p">,</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">faces</span></a><span class="p">)</span>
 <a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="pyvista.PolyData.faces" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-property"><span class="n">poly_data</span><span class="o">.</span><span class="n">faces</span></a>
@@ -730,9 +728,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/06_vtk/images/sphx_glr_a_1_transition_vtk_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/tutorial/06_vtk/images/sphx_glr_a_1_transition_vtk_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Under the hood, the collision filter detects mesh collisions using
 oriented bounding box (OBB) trees.  For a single collision, this filter
@@ -746,7 +742,7 @@ you may want to use VTK classes directly.</p>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/06_vtk/a_1_transition_vtk.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.913 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.935 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-06-vtk-a-1-transition-vtk-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/06_vtk/a_1_transition_vtk.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo16.svg" style="width: 150px;" />

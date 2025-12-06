@@ -179,7 +179,7 @@ Let's extract 1D iso-lines of a scalar field from a 2D surface mesh.
         ... )
         >>> out.plot(color='lightblue', smooth_shading=True)
 
-        See :ref:`common_filter_example` or
+        See :ref:`using_filters_example` or
         :ref:`marching_cubes_example` for more examples using this
         filter.
 
@@ -371,7 +371,7 @@ of 50 and 200
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 9.666 seconds)
+   **Total running time of the script:** (0 minutes 9.459 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_d_contouring.py:

@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -237,7 +237,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/06_vtk/index.html"
+      <option value="en@@/tutorial/06_vtk/index.html"
         selected>en</option>
       <option value="ja@@/ja/tutorial/06_vtk/index.html">ja</option>
     </select>
@@ -569,13 +569,13 @@ This section effectively replaces the vtkDoubleArray.</p>
 <p>Here, PyVista has done several things for us:</p>
 <ol class="arabic">
 <li><p>PyVista combines the dimensionality of the data (in the shape of
-the <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) with the values of the data in one line. VTK uses
+the <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a>) with the values of the data in one line. VTK uses
 “tuples” to describe the shape of the data (where it sits in space)
 and “components” to describe the type of data (1 = scalars/scalar
 fields, 2 = vectors/vector fields, n = tensors/tensor
 fields). Here, shape and values are stored concretely in one
 variable.</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> wraps <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>, just with a
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> wraps <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>, just with a
 different name; they are both containers of evenly spaced points. Your
 data does not have to be an “image” to use it with
 <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a>; rather, like images, values in the dataset are
@@ -635,9 +635,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-9_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-9_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <section id="pointset-construction">
 <h3>PointSet Construction<a class="headerlink" href="#pointset-construction" title="Link to this heading">#</a></h3>
@@ -670,11 +668,11 @@ that to a  <a class="reference external" href="https://vtk.org/doc/nightly/html/
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> to construct a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a>
+<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> to construct a <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a>
 object, but this is unnecessary in almost all situations.</p>
 </div>
-<p>Since the end goal is to construct a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span></code></a>, you would simply pass the
-<code class="docutils literal notranslate"><span class="pre">np_points</span></code> array to the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> constructor:</p>
+<p>Since the end goal is to construct a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.html#pyvista.DataSet" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span></code></a>, you would simply pass the
+<code class="docutils literal notranslate"><span class="pre">np_points</span></code> array to the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> constructor:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="n">poly_data</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">np_points</span><span class="p">)</span>
 </pre></div>
@@ -697,7 +695,7 @@ VTK you would normally have to loop using <code class="xref py py-func docutils 
 </pre></div>
 </div>
 <p>In PyVista, we can assign this directly in the constructor and then
-access it (or change it) from the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="(in PyVista v0.45.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">faces</span></code></a> attribute.</p>
+access it (or change it) from the <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.faces.html#pyvista.PolyData.faces" title="(in PyVista v0.46.3)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">faces</span></code></a> attribute.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">faces</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 <span class="n">poly_data</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">np_points</span><span class="p">,</span> <span class="n">faces</span><span class="p">)</span>
 <span class="n">poly_data</span><span class="o">.</span><span class="n">faces</span>
@@ -736,9 +734,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-17_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-17_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Under the hood, the collision filter detects mesh collisions using
 oriented bounding box (OBB) trees.  For a single collision, this filter
@@ -786,15 +782,13 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-18_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-18_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>In this manner, you can get the “best of both worlds” should you need
 the flexibility of PyVista and the raw power of VTK.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Polygon.html#pyvista.Polygon" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Polygon()</span></code></a> for a one line replacement of
+<p>You can use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Polygon.html#pyvista.Polygon" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Polygon()</span></code></a> for a one line replacement of
 the above VTK code.</p>
 </div>
 <section id="vtk-algorithms">
@@ -844,9 +838,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-7">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-19_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/06_vtk/index-19_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

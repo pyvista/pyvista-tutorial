@@ -44,7 +44,7 @@ nframe = 15
 for phase in np.linspace(0, 2 * np.pi, nframe + 1)[:nframe]:
     z = np.sin(r + phase)
     pts[:, -1] = z.ravel()
-    plotter.update_coordinates(pts, render=False)
+    grid.points = pts
     plotter.update_scalars(z.ravel(), render=False)
 
     # Write a frame. This triggers a render.

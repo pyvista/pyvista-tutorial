@@ -192,6 +192,15 @@ GDAL.
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/runner/work/pyvista-tutorial/pyvista-tutorial/tutorial/03_figures/c_geological-map.py:88: PyVistaDeprecationWarning: 
+    c_geological-map.py:88: Arguments 'origin', 'point_u', 'point_v' must be passed as keyword arguments to function 'DataSetFilters.texture_map_to_plane'.
+    From version 0.50, passing these as positional arguments will result in a TypeError.
+      topo.texture_map_to_plane(origin, point_u, point_v, inplace=True)
+
 
 .. raw:: html
 
@@ -345,7 +354,7 @@ Read the GeoTIFF as a ``Texture`` in PyVista:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 16.704 seconds)
+   **Total running time of the script:** (0 minutes 15.288 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_c_geological-map.py:

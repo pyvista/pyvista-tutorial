@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -238,7 +238,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/06_vtk/index.html">en</option>
+      <option value="en@@/tutorial/06_vtk/index.html">en</option>
       <option value="ja@@/ja/tutorial/06_vtk/index.html"
         selected>ja</option>
     </select>
@@ -559,8 +559,8 @@ document.write(`
 </div>
 <p>ここでは，PyVistaがいくつかのことをしてくれています．</p>
 <ol class="arabic">
-<li><p>PyVistaでは，データの次元（ <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.4.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> の形をしている）とデータの値を1行にまとめています．VTKでは，データの形状(空間上の位置)を表すために &quot;タプル&quot; を使用し，データの種類(1=スカラー/スカラーフィールド，2=ベクトル/ベクトルフィールド，n=テンソル/テンソルフィールド)を表すために &quot;コンポーネント&quot; を使用しています．ここでは，1つの変数に形状と値が具体的に格納されています．</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> は <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> をラップしたものです．名前が違うだけで，どちらも等間隔の点のコンテナです．どちらも等間隔の点のコンテナです．  <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> で使用するデータは &quot;画像&quot; である必要はありません．</p>
+<li><p>PyVistaでは，データの次元（ <a class="reference external" href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="(in NumPy v2.5.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></a> の形をしている）とデータの値を1行にまとめています．VTKでは，データの形状(空間上の位置)を表すために &quot;タプル&quot; を使用し，データの種類(1=スカラー/スカラーフィールド，2=ベクトル/ベクトルフィールド，n=テンソル/テンソルフィールド)を表すために &quot;コンポーネント&quot; を使用しています．ここでは，1つの変数に形状と値が具体的に格納されています．</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> は <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> をラップしたものです．名前が違うだけで，どちらも等間隔の点のコンテナです．どちらも等間隔の点のコンテナです．  <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkImageData.html">vtkImageData</a> で使用するデータは &quot;画像&quot; である必要はありません．</p>
 <p>さらに，コンテナが等間隔のデータ用であることがわかっているので， pyvista はデフォルトで原点と間隔を <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0,</span> <span class="pre">0)</span></code> と <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">1,</span> <span class="pre">1)</span></code> に設定します．これは，PyVistaとPythonのもう一つの素晴らしい点です．VTKライブラリのすべてを前もって知っておく必要はなく，非常に簡単に始めることができます．慣れてきて，もっと複雑なことをする必要が出てきたら，もっと深く掘り下げることができます．例えば，原点と間隔の変更は以下のように簡単にできます．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">origin</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 <span class="n">grid</span><span class="o">.</span><span class="n">spacing</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -629,9 +629,9 @@ document.write(`
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p><a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> を使って <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a> オブジェクトを構築することもできますが，ほとんどの状況では必要ありません．</p>
+<p><a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.vtk_points.html#pyvista.vtk_points" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.vtk_points()</span></code></a> を使って <a class="reference external" href="https://vtk.org/doc/nightly/html/classvtkPoints.html">vtkPoints</a> オブジェクトを構築することもできますが，ほとんどの状況では必要ありません．</p>
 </div>
-<p>最終的な目的は， <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span> <span class="pre">&amp;lt;pyvista.core.dataset.DataSet&amp;gt;</span></code> を構築することなので， <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> のコンストラクタに <code class="docutils literal notranslate"><span class="pre">np_points</span></code> の配列を渡すだけです．</p>
+<p>最終的な目的は， <code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.DataSet</span> <span class="pre">&amp;lt;pyvista.core.dataset.DataSet&amp;gt;</span></code> を構築することなので， <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> のコンストラクタに <code class="docutils literal notranslate"><span class="pre">np_points</span></code> の配列を渡すだけです．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="n">poly_data</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">PolyData</span><span class="p">(</span><span class="n">np_points</span><span class="p">)</span>
 </pre></div>
@@ -731,7 +731,7 @@ document.write(`
 <p>このようにして， PyVistaの柔軟性とVTKの原動力の両方を必要とする &quot;best of both worlds&quot; を得ることができるのです．</p>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>上記のVTKコードを1行で置き換えるために， <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Polygon.html#pyvista.Polygon" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Polygon()</span></code></a> を使用することができます．</p>
+<p>上記のVTKコードを1行で置き換えるために， <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Polygon.html#pyvista.Polygon" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Polygon()</span></code></a> を使用することができます．</p>
 </div>
 <section id="vtk-algorithms">
 <h3>VTKアルゴリズム<a class="headerlink" href="#vtk-algorithms" title="Link to this heading">#</a></h3>

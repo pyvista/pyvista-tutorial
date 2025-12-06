@@ -103,7 +103,7 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
         factor : float, default: 1.0
             Scale factor applied to scaling array.
 
-        geom : vtk.vtkDataSet or tuple(vtk.vtkDataSet), optional
+        geom : :vtk:`vtkDataSet` | tuple[:vtk:`vtkDataSet`], optional
             The geometry to use for the glyph. If missing, an arrow glyph
             is used. If a sequence, the datasets inside define a table of
             geometries to choose from based on scalars or vectors. In this
@@ -175,8 +175,8 @@ Glyphying can be done via the :func:`pyvista.DataSetFilters.glyph` filter
         ... )
         >>> pl.show()
 
-        See :ref:`glyph_example` and :ref:`glyph_table_example` for more
-        examples using this filter.
+        See :ref:`glyph_example`, :ref:`movie_glyphs_example`, and
+        :ref:`glyph_table_example` for more examples using this filter.
 
 
 
@@ -397,7 +397,7 @@ Plot the arrows and the sphere.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.338 seconds)
+   **Total running time of the script:** (0 minutes 1.318 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_solutions_e_glyphs.py:

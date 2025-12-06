@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -237,7 +237,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/01_basic/index.html"
+      <option value="en@@/tutorial/01_basic/index.html"
         selected>en</option>
       <option value="ja@@/ja/tutorial/01_basic/index.html">ja</option>
     </select>
@@ -529,7 +529,7 @@ module.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>Note how this is a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a>, which is effectively a surface
+<p>Note how this is a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a>, which is effectively a surface
 dataset containing points, lines, and/or faces. We can immediately plot this with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;tan&#39;</span><span class="p">)</span>
 </pre></div>
@@ -545,9 +545,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/01_basic/index-3_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/01_basic/index-3_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
@@ -555,7 +553,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
 <p>This is a fairly basic plot. You can change how its plotted by adding
 parameters as <code class="docutils literal notranslate"><span class="pre">show_edges=True</span></code> or changing the color by setting <code class="docutils literal notranslate"><span class="pre">color</span></code> to
 a different value. All of this is described in PyVista’s API documentation in
-<a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.plot.html#pyvista.plot" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.plot()</span></code></a>, but for now let’s take a look at another dataset. This
+<a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.plot.html#pyvista.plot" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.plot()</span></code></a>, but for now let’s take a look at another dataset. This
 one is a volumetric dataset.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_frog</span><span class="p">()</span>
 <span class="n">dataset</span>
@@ -564,7 +562,7 @@ one is a volumetric dataset.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>This is a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a>, which is a dataset containing a uniform
+<p>This is a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a>, which is a dataset containing a uniform
 set of points with consistent spacing. When we plot this dataset, we have the
 option of enabling volumetric plotting, which plots individual cells based on
 the content of the data associated with those cells.</p>
@@ -582,9 +580,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/01_basic/index-5_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/01_basic/index-5_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -603,7 +599,7 @@ your notebook (if applicable).</p>
 your computer. This can be one of the many file formats that VTK supports, and
 many more that it doesn’t as PyVista can rely on libraries like <a class="reference external" href="https://github.com/nschloe/meshio">meshio</a>.</p>
 <p>In the following example, we load VTK’s iron protein dataset <a class="reference external" href="https://github.com/naucoin/VTKData/blob/master/Data/ironProt.vtk">ironProt.vtk</a> from a
-file using <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a>.</p>
+file using <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="n">dataset</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;ironProt.vtk&#39;</span><span class="p">)</span>
 <span class="n">dataset</span>
@@ -612,7 +608,7 @@ file using <a class="reference external" href="https://docs.pyvista.org/api/util
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
-<p>This is again a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> and we can plot it volumetrically
+<p>This is again a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> and we can plot it volumetrically
 with:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">volume</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
@@ -628,9 +624,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/01_basic/index-7_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/01_basic/index-7_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>

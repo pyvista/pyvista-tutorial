@@ -66,7 +66,7 @@ Generate a moving gif from an active plotter.
     for phase in np.linspace(0, 2 * np.pi, nframe + 1)[:nframe]:
         z = np.sin(r + phase)
         pts[:, -1] = z.ravel()
-        plotter.update_coordinates(pts, render=False)
+        grid.points = pts
         plotter.update_scalars(z.ravel(), render=False)
 
         # Write a frame. This triggers a render.
@@ -91,9 +91,7 @@ Generate a moving gif from an active plotter.
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pyvista/plotting/plotter.py:4892: PyVistaDeprecationWarning: This method is deprecated and will be removed in a future version of PyVista. Directly modify the points of a mesh in-place instead.
-      warnings.warn(
-    /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pyvista/plotting/plotter.py:4814: PyVistaDeprecationWarning: This method is deprecated and will be removed in a future version of PyVista. Directly modify the scalars of a mesh in-place instead.
+    /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/pyvista/plotting/plotter.py:4989: PyVistaDeprecationWarning: This method is deprecated and will be removed in a future version of PyVista. Directly modify the scalars of a mesh in-place instead.
       warnings.warn(
 
 
@@ -112,7 +110,7 @@ Generate a moving gif from an active plotter.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 2.083 seconds)
+   **Total running time of the script:** (0 minutes 2.082 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_d_gif.py:

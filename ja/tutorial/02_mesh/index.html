@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -238,7 +238,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/02_mesh/index.html">en</option>
+      <option value="en@@/tutorial/02_mesh/index.html">en</option>
       <option value="ja@@/ja/tutorial/02_mesh/index.html"
         selected>ja</option>
     </select>
@@ -524,7 +524,7 @@ document.write(`
 <section id="what-is-a-point">
 <h2>ポイントとは？<a class="headerlink" href="#what-is-a-point" title="Link to this heading">#</a></h2>
 <p>ポイントはメッシュの頂点，つまり基礎となる直交座標です．すべてのPyVistaデータセット (メッシュ!) にはポイントがあり，場合によっては，ポイントクラウドのようにポイントのみを持つメッシュを作成できます．</p>
-<p>たとえば，1 Dおよび2 Dのセルタイプ(セルとは何か簡単に説明します)を持つメッシュ用に作成された <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> クラスを使用して，ポイントクラウドメッシュを作成できます．</p>
+<p>たとえば，1 Dおよび2 Dのセルタイプ(セルとは何か簡単に説明します)を持つメッシュ用に作成された <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> クラスを使用して，ポイントクラウドメッシュを作成できます．</p>
 <p>ポイントクラウドから始めましょう – これは頂点のみを持つメッシュタイプです．作成するには，2 D配列の直交座標を次のように定義します．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
@@ -648,9 +648,9 @@ document.write(`
 <h2>アトリビュートとは?<a class="headerlink" href="#what-are-attributes" title="Link to this heading">#</a></h2>
 <p>アトリビュートは，メッシュのポイントまたはセルに存在するデータ値です．PyVistaでは，ポイントデータとセルデータの両方を処理し，データ辞書に簡単にアクセスして，メッシュのすべてのポイントまたはすべてのセルに存在するアトリビュートの配列を保持できます．これらの属性は，以下のようにアクセスできるPyVistaメッシュに付けられた辞書のような属性にアクセスできます．</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.point_data.html#pyvista.DataSet.point_data" title="(in PyVista v0.45.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">point_data</span></code></a></p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.cell_data.html#pyvista.DataSet.cell_data" title="(in PyVista v0.45.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cell_data</span></code></a></p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataObject.field_data.html#pyvista.DataObject.field_data" title="(in PyVista v0.45.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">field_data</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.point_data.html#pyvista.DataSet.point_data" title="(in PyVista v0.46.3)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">point_data</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.cell_data.html#pyvista.DataSet.cell_data" title="(in PyVista v0.46.3)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">cell_data</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataObject.field_data.html#pyvista.DataObject.field_data" title="(in PyVista v0.46.3)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">field_data</span></code></a></p></li>
 </ul>
 <section id="point-data">
 <h3>ポイントデータ<a class="headerlink" href="#point-data" title="Link to this heading">#</a></h3>

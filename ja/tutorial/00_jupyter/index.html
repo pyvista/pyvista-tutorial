@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -238,7 +238,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/00_jupyter/index.html">en</option>
+      <option value="en@@/tutorial/00_jupyter/index.html">en</option>
       <option value="ja@@/ja/tutorial/00_jupyter/index.html"
         selected>ja</option>
     </select>
@@ -538,7 +538,7 @@ document.write(`
 <li><p><code class="docutils literal notranslate"><span class="pre">'server'</span></code>: 純粋にサーバーレンダリングのビューを使用します．</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">'client'</span></code>：純粋なクライアントレンダリングのビューを使用します（一般的に仮想フレームバッファなしで安全）</p></li>
 </ul>
-<p><a class="reference external" href="https://docs.pyvista.org/user-guide/jupyter/index.html#pyvista.set_jupyter_backend" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_jupyter_backend()</span></code></a> を使用するか， <code class="xref py py-func docutils literal notranslate"><span class="pre">show()</span></code> 呼び出し時に <code class="docutils literal notranslate"><span class="pre">jupyter_backend</span></code> を渡すことでバックエンドを選択することができます．</p>
+<p><a class="reference external" href="https://docs.pyvista.org/user-guide/jupyter/index.html#pyvista.set_jupyter_backend" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">set_jupyter_backend()</span></code></a> を使用するか， <code class="xref py py-func docutils literal notranslate"><span class="pre">show()</span></code> 呼び出し時に <code class="docutils literal notranslate"><span class="pre">jupyter_backend</span></code> を渡すことでバックエンドを選択することができます．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="n">pv</span><span class="o">.</span><span class="n">set_jupyter_backend</span><span class="p">(</span><span class="s1">&#39;client&#39;</span><span class="p">)</span>
 
@@ -599,7 +599,7 @@ document.write(`
 </div>
 <p>拡張機能がインストールされたら、次のフラグを <code class="docutils literal notranslate"><span class="pre">True</span></code> または <code class="docutils literal notranslate"><span class="pre">False</span></code> に設定することで、PyVista がその拡張機能を使用するかどうかを選択できます:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.plotting.themes._TrameConfig.jupyter_extension_enabled.html#pyvista.plotting.themes._TrameConfig.jupyter_extension_enabled" title="(in PyVista v0.45.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pyvista.global_theme.trame.jupyter_extension_enabled</span></code></a></p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.plotting.themes._TrameConfig.jupyter_extension_enabled.html#pyvista.plotting.themes._TrameConfig.jupyter_extension_enabled" title="(in PyVista v0.46.3)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pyvista.global_theme.trame.jupyter_extension_enabled</span></code></a></p></li>
 </ul>
 <div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="Become familiar with PyVista Jupyter backend."><img alt="" src="../../_images/sphx_glr_jupyter_thumb.png" />
 <p><a class="reference internal" href="jupyter.html#sphx-glr-tutorial-00-jupyter-jupyter-py"><span class="std std-ref">PyVistaのJupyterバックエンドを試す</span></a></p>

@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../../_static/thebelab-helper.js"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../../_static/translations.js?v=4755f45a"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
@@ -238,7 +238,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/02_mesh/exercises/c_create-uniform-grid.html">en</option>
+      <option value="en@@/tutorial/02_mesh/exercises/c_create-uniform-grid.html">en</option>
       <option value="ja@@/ja/tutorial/02_mesh/exercises/c_create-uniform-grid.html"
         selected>ja</option>
     </select>
@@ -507,7 +507,7 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 </pre></div>
 </div>
-<p>各軸がXYZデカルト軸に対応する空間データを保持するデータ値の3 D NumPy配列を取ります．この例では，値の3 D NumPy配列をプロットできる3 Dグリッドの空間参照を保持する <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> を作成します．</p>
+<p>各軸がXYZデカルト軸に対応する空間データを保持するデータ値の3 D NumPy配列を取ります．この例では，値の3 D NumPy配列をプロットできる3 Dグリッドの空間参照を保持する <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> を作成します．</p>
 <p>空間的に参照されるデータの3 D NumPy配列を作成します．これは，グリッドが <code class="docutils literal notranslate"><span class="pre">(20,</span> <span class="pre">5,</span> <span class="pre">10)</span></code>, <code class="docutils literal notranslate"><span class="pre">(nx,</span> <span class="pre">ny,</span> <span class="pre">nz)</span></code> であるように空間的に参照さます．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">values</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="n">values</span><span class="o">.</span><span class="n">shape</span>
@@ -535,7 +535,7 @@ document.write(`
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">grid</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">show_edges</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>セルデータが嫌いですか？NumPyの配列を <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> の点データに追加することもできます．初期化時にグリッドの寸法を設定する際に，微妙な違いに注意してください．</p>
+<p>セルデータが嫌いですか？NumPyの配列を <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> の点データに追加することもできます．初期化時にグリッドの寸法を設定する際に，微妙な違いに注意してください．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create the 3D NumPy array of spatially referenced data again.</span>
 <span class="n">values</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 <span class="n">values</span><span class="o">.</span><span class="n">shape</span>
@@ -564,11 +564,11 @@ document.write(`
 </div>
 <section id="exercise">
 <h2>演習<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
-<p>それでは，3D NumPyの配列から，あなた自身の <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> を作ってみましょう!</p>
+<p>それでは，3D NumPyの配列から，あなた自身の <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.ImageData</span></code></a> を作ってみましょう!</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.ImageData.html#pyvista.ImageData" title="pyvista.ImageData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pv</span><span class="o">.</span><span class="n">ImageData</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://numpy.org/devdocs/reference/random/generated/numpy.random.random.html#numpy.random.random" title="(in NumPy v2.4.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.random.random()</span></code></a> を使って3Dデータを生成します．ここでは，ご自分の3D numpy配列を自由に使ってください．</p>
+<p><a class="reference external" href="https://numpy.org/devdocs/reference/random/generated/numpy.random.random.html#numpy.random.random" title="(in NumPy v2.5.dev0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.random.random()</span></code></a> を使って3Dデータを生成します．ここでは，ご自分の3D numpy配列を自由に使ってください．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <a href="https://numpy.org/devdocs/reference/random/generated/numpy.random.random.html#numpy.random.random" title="numpy.random.random" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span></a><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
 <span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>

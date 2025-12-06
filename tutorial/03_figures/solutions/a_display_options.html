@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../../_static/thebelab-helper.js"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -237,7 +237,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/03_figures/solutions/a_display_options.html"
+      <option value="en@@/tutorial/03_figures/solutions/a_display_options.html"
         selected>en</option>
       <option value="ja@@/ja/tutorial/03_figures/solutions/a_display_options.html">ja</option>
     </select>
@@ -510,9 +510,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Let’s take a look at some different options for the <code class="docutils literal notranslate"><span class="pre">add_mesh</span></code> method to
 alter how the above data are displayed.</p>
@@ -522,7 +520,7 @@ alter how the above data are displayed.</p>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Help on method add_mesh in module pyvista.plotting.plotter:
 
-add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None, edge_color=None, point_size=None, line_width=None, opacity=None, flip_scalars=False, lighting=None, n_colors=256, interpolate_before_map=None, cmap=None, label=None, reset_camera=None, scalar_bar_args=None, show_scalar_bar=None, multi_colors=False, name=None, texture=None, render_points_as_spheres=None, render_lines_as_tubes=None, smooth_shading=None, split_sharp_edges=None, ambient=None, diffuse=None, specular=None, specular_power=None, nan_color=None, nan_opacity=1.0, culling=None, rgb=None, categories=False, silhouette=None, use_transparency=False, below_color=None, above_color=None, annotations=None, pickable=True, preference=&#39;point&#39;, log_scale=False, pbr=None, metallic=None, roughness=None, render=True, user_matrix=None, component=None, emissive=None, copy_mesh=False, backface_params=None, show_vertices=None, edge_opacity=None, **kwargs) -&gt; &#39;Actor&#39; method of pyvista.plotting.plotter.Plotter instance
+add_mesh(mesh: &#39;MatrixLike[float] | VectorLike[float] | DataSet | MultiBlock | _vtk.vtkAlgorithm&#39;, color: &#39;ColorLike | None&#39; = None, style: &#39;StyleOptions | None&#39; = None, scalars: &#39;str | NumpyArray[float] | None&#39; = None, clim: &#39;Sequence[float] | None&#39; = None, show_edges: &#39;bool | None&#39; = None, edge_color: &#39;ColorLike | None&#39; = None, point_size: &#39;float | None&#39; = None, line_width: &#39;float | None&#39; = None, opacity: &#39;float | OpacityOptions | Sequence[float] | None&#39; = None, flip_scalars: &#39;bool&#39; = False, lighting: &#39;bool | None&#39; = None, n_colors: &#39;int&#39; = 256, interpolate_before_map: &#39;bool | None&#39; = None, cmap: &#39;ColormapOptions | LookupTable | None&#39; = None, label: &#39;str | None&#39; = None, reset_camera: &#39;bool | None&#39; = None, scalar_bar_args: &#39;ScalarBarArgs | None&#39; = None, show_scalar_bar: &#39;bool | None&#39; = None, multi_colors: &#39;bool&#39; = False, name: &#39;str | None&#39; = None, texture: &#39;pyvista.Texture | NumpyArray[float] | None&#39; = None, render_points_as_spheres: &#39;bool | None&#39; = None, render_lines_as_tubes: &#39;bool | None&#39; = None, smooth_shading: &#39;bool | None&#39; = None, split_sharp_edges: &#39;bool | None&#39; = None, ambient: &#39;float | None&#39; = None, diffuse: &#39;float | None&#39; = None, specular: &#39;float | None&#39; = None, specular_power: &#39;float | None&#39; = None, nan_color: &#39;ColorLike | None&#39; = None, nan_opacity: &#39;float&#39; = 1.0, culling: &#39;CullingOptions | bool | None&#39; = None, rgb: &#39;bool | None&#39; = None, categories: &#39;bool&#39; = False, silhouette: &#39;SilhouetteArgs | bool | None&#39; = None, use_transparency: &#39;bool&#39; = False, below_color: &#39;ColorLike | None&#39; = None, above_color: &#39;ColorLike | None&#39; = None, annotations: &#39;dict[float, str] | None&#39; = None, pickable: &#39;bool&#39; = True, preference: &#39;PointLiteral | CellLiteral&#39; = &#39;point&#39;, log_scale: &#39;bool&#39; = False, pbr: &#39;bool | None&#39; = None, metallic: &#39;float | None&#39; = None, roughness: &#39;float | None&#39; = None, render: &#39;bool&#39; = True, user_matrix: &#39;TransformLike | None&#39; = None, component: &#39;int | None&#39; = None, emissive: &#39;bool | None&#39; = None, copy_mesh: &#39;bool&#39; = False, backface_params: &#39;BackfaceArgs | Property | None&#39; = None, show_vertices: &#39;bool | None&#39; = None, edge_opacity: &#39;float | None&#39; = None, **kwargs) -&gt; &#39;Actor&#39; method of pyvista.plotting.plotter.Plotter instance
     Add any PyVista/VTK mesh or dataset that PyVista can wrap to the scene.
 
     This method is using a mesh representation to view the surfaces
@@ -534,14 +532,14 @@ add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None,
 
     Parameters
     ----------
-    mesh : pyvista.DataSet or pyvista.MultiBlock or vtk.vtkAlgorithm
+    mesh : DataSet | MultiBlock | :vtk:`vtkAlgorithm`
         Any PyVista or VTK mesh is supported. Also, any dataset
         that :func:`pyvista.wrap` can handle including NumPy
         arrays of XYZ points. Plotting also supports VTK algorithm
-        objects (``vtk.vtkAlgorithm`` and ``vtk.vtkAlgorithmOutput``).
+        objects (:vtk:`vtkAlgorithm` and :vtk:`vtkAlgorithmOutput`).
         When passing an algorithm, the rendering pipeline will be
         connected to the passed algorithm to dynamically update
-        the scene.
+        the scene (see :ref:`plotting_algorithms_example` for examples).
 
     color : ColorLike, optional
         Use to make the entire mesh have a single solid color.
@@ -593,7 +591,7 @@ add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None,
         Thickness of lines.  Only valid for wireframe and surface
         representations.  Default ``None``.
 
-    opacity : float | str| array_like
+    opacity : float | str | array_like
         Opacity of the mesh. If a single float value is given, it
         will be the global opacity of the mesh and uniformly
         applied everywhere - should be between 0 and 1. A string
@@ -623,9 +621,11 @@ add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None,
         mapped colors which can result is showing colors that are
         not present in the color map.
 
-    cmap : str | list | pyvista.LookupTable, default: :attr:`pyvista.plotting.themes.Theme.cmap`
+    cmap : str | list | LookupTable, default: :attr:`pyvista.plotting.themes.Theme.cmap`
         If a string, this is the name of the ``matplotlib`` colormap to use
-        when mapping the ``scalars``.  See available Matplotlib colormaps.
+        when mapping the ``scalars``. See :ref:`named_colormaps` for supported
+        colormaps.
+
         Only applicable for when displaying ``scalars``.
         ``colormap`` is also an accepted alias
         for this. If ``colorcet`` or ``cmocean`` are installed, their
@@ -808,7 +808,7 @@ add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None,
     render : bool, default: True
         Force a render when ``True``.
 
-    user_matrix : np.ndarray | vtk.vtkMatrix4x4, default: np.eye(4)
+    user_matrix : TransformLike, default: np.eye(4)
         Matrix passed to the Actor class before rendering. This affects the
         actor/rendering only, not the input volume itself. The user matrix is the
         last transformation applied to the actor before rendering. Defaults to the
@@ -817,7 +817,8 @@ add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None,
     component : int, optional
         Set component of vector valued scalars to plot.  Must be
         nonnegative, if supplied. If ``None``, the magnitude of
-        the vector is plotted.
+        the vector is plotted. See :ref:`vector_component_example`
+        for examples.
 
     emissive : bool, optional
         Treat the points/splats as emissive light sources. Only valid for
@@ -832,9 +833,9 @@ add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None,
         have these updates rendered, e.g. by changing the active scalars or
         through an interactive widget. This should only be set to ``True``
         with caution. Defaults to ``False``. This is ignored if the input
-        is a ``vtkAlgorithm`` subclass.
+        is a :vtk:`vtkAlgorithm` subclass.
 
-    backface_params : dict | pyvista.Property, optional
+    backface_params : dict | Property, optional
         A :class:`pyvista.Property` or a dict of parameters to use for
         backface rendering. This is useful for instance when the inside of
         oriented surfaces has a different color than the outside. When a
@@ -853,6 +854,8 @@ add_mesh(mesh, color=None, style=None, scalars=None, clim=None, show_edges=None,
         * ``vertex_color`` - The color of the vertices
         * ``vertex_style`` - Change style to ``&#39;points_gaussian&#39;``
         * ``vertex_opacity`` - Control the opacity of the vertices
+
+        See :ref:`vertices_example` for examples.
 
     edge_opacity : float, optional
         Edge opacity of the mesh. A single float value that will be applied globally
@@ -984,9 +987,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Plot that mesh with the colored edges and as a show the surface as a solid
 color (use a named color!)</p>
@@ -1003,9 +1004,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Display with a points representation style</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
@@ -1021,9 +1020,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-7">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_004.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_004.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>And adjust the points display size</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
@@ -1039,9 +1036,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-9">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_005.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_005.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Change the color map and the color limits</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
@@ -1057,9 +1052,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-11">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_006.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_006.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Add some opacity</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
@@ -1075,16 +1068,14 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-13">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_007.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/03_figures/solutions/images/sphx_glr_a_display_options_007.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>There you go! Those are a few of the most commonly used display options!</p>
 <center>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/solutions/a_display_options.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.090 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.097 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-03-figures-solutions-a-display-options-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/03_figures/solutions/a_display_options.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo11.svg" style="width: 150px;" />

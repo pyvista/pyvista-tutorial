@@ -67,6 +67,15 @@ terrain that is open or closed
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ .. code-block:: none
+
+    /home/runner/work/pyvista-tutorial/pyvista-tutorial/tutorial/04_filters/bonus/f_sampling_functions_3d.py:27: PyVistaDeprecationWarning: 
+    f_sampling_functions_3d.py:27: Argument 'bounds' must be passed as a keyword argument to function 'sample_function'.
+    From version 0.50, passing this as a positional argument will result in a TypeError.
+      grid = pv.sample_function(noise, [0, 3.0, -0, 1.0, 0, 1.0], dim=(120, 40, 40))
+
 
 .. raw:: html
 
@@ -160,7 +169,7 @@ color limits without blue
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.649 seconds)
+   **Total running time of the script:** (0 minutes 0.639 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_bonus_f_sampling_functions_3d.py:

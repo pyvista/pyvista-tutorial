@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -238,7 +238,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/03_figures/index.html">en</option>
+      <option value="en@@/tutorial/03_figures/index.html">en</option>
       <option value="ja@@/ja/tutorial/03_figures/index.html"
         selected>ja</option>
     </select>
@@ -527,13 +527,13 @@ document.write(`
 <li><p>スムースシェーディングやアイドームライティングなどの洗練されたライティングテクニックを使用する</p></li>
 <li><p>GIFまたはムービーファイルとしてアニメーションを作成します</p></li>
 </ul>
-<p>このセクションでは，PyVista の <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> API の概要と，これらのタスクの実行方法について説明します．このレッスンのゴールは，PyVistaのプロットAPIの包括的な概要ではなく，それがどのように動作し，どのように使えばいいのかを示すことです！このレッスンは，PyVistaのプロットAPIがどのように動作するかを説明します．</p>
+<p>このセクションでは，PyVista の <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> API の概要と，これらのタスクの実行方法について説明します．このレッスンのゴールは，PyVistaのプロットAPIの包括的な概要ではなく，それがどのように動作し，どのように使えばいいのかを示すことです！このレッスンは，PyVistaのプロットAPIがどのように動作するかを説明します．</p>
 <section id="the-basics">
 <h2>基礎編<a class="headerlink" href="#the-basics" title="Link to this heading">#</a></h2>
 <p>PyVistaのプロットAPIはデータセントリックで，3DデータはMatplotlibライクな方法で表示パラメータを変えて個別にシーンに追加されます．</p>
 <section id="add-mesh-to-plotter-object">
 <h3>Plotterオブジェクトにメッシュを追加する<a class="headerlink" href="#add-mesh-to-plotter-object" title="Link to this heading">#</a></h3>
-<p>プロットする場合，ユーザーはまず <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> のインスタンスを作成する必要があります（Matplotlib の図形のようなものです）．それから， <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> メソッドを通して，プロッタのインスタンスにデータを追加します．このワークフローは，典型的には次のようになります．</p>
+<p>プロットする場合，ユーザーはまず <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> のインスタンスを作成する必要があります（Matplotlib の図形のようなものです）．それから， <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> メソッドを通して，プロッタのインスタンスにデータを追加します．このワークフローは，典型的には次のようになります．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 
@@ -668,7 +668,7 @@ document.write(`
 </section>
 <section id="subplotting">
 <h3>サブプロット<a class="headerlink" href="#subplotting" title="Link to this heading">#</a></h3>
-<p>PyVistaのサブプロットAPIを使えば，データセットを横に並べて比較することも簡単にできます．まず <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> オブジェクトの形状を指定して，次に <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.subplot()</span></code> メソッドでアクティブなサブプロットを登録します．これは Matplotlib の API でサブプロットを行う方法と同じように行います．</p>
+<p>PyVistaのサブプロットAPIを使えば，データセットを横に並べて比較することも簡単にできます．まず <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> オブジェクトの形状を指定して，次に <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.subplot()</span></code> メソッドでアクティブなサブプロットを登録します．これは Matplotlib の API でサブプロットを行う方法と同じように行います．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 
 <span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -786,7 +786,7 @@ document.write(`
 <h2>シーンの制御<a class="headerlink" href="#controlling-the-scene" title="Link to this heading">#</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p><a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> のメソッドの一覧は， <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html">API documentation</a> を参照してください．</p>
+<p><a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> のメソッドの一覧は， <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html">API documentation</a> を参照してください．</p>
 </div>
 <section id="axes-and-bounds">
 <h3>軸と境界<a class="headerlink" href="#axes-and-bounds" title="Link to this heading">#</a></h3>

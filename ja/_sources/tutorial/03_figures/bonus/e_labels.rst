@@ -60,12 +60,12 @@ point labels to a scene.
 
     Help on function add_point_labels in module pyvista.plotting.plotter:
 
-    add_point_labels(self, points, labels, italic=False, bold=True, font_size=None, text_color=None, font_family=None, font_file=None, shadow=False, show_points=True, point_color=None, point_size=None, name=None, shape_color='grey', shape='rounded_rect', fill_shape=True, margin=3, shape_opacity=1.0, pickable=False, render_points_as_spheres=False, tolerance=0.001, reset_camera=None, always_visible=False, render=True, justification_horizontal=None, justification_vertical=None, background_color=None, background_opacity=None)
+    add_point_labels(self, points: 'MatrixLike[float] | VectorLike[float] | DataSet | _vtk.vtkAlgorithm', labels: 'list[str | int] | str', italic: 'bool' = False, bold: 'bool' = True, font_size: 'int | None' = None, text_color: 'ColorLike | None' = None, font_family: 'FontFamilyOptions | None' = None, font_file: 'str | None' = None, shadow: 'bool' = False, show_points: 'bool' = True, point_color: 'ColorLike | None' = None, point_size: 'float | None' = None, name: 'str | None' = None, shape_color: 'ColorLike' = 'grey', shape: "Literal['rect', 'rounded_rect'] | None" = 'rounded_rect', fill_shape: 'bool' = True, margin: 'int' = 3, shape_opacity: 'float' = 1.0, pickable: 'bool' = False, render_points_as_spheres: 'bool' = False, tolerance: 'float' = 0.001, reset_camera: 'bool | None' = None, always_visible: 'bool' = False, render: 'bool' = True, justification_horizontal: 'HorizontalOptions | None' = None, justification_vertical: 'VerticalOptions | None' = None, background_color: 'ColorLike | None' = None, background_opacity: 'float | None' = None) -> '_vtk.vtkActor2D'
         Create a point actor with one label from list labels assigned to each point.
 
         Parameters
         ----------
-        points : sequence | pyvista.DataSet | vtk.vtkAlgorithm
+        points : sequence | DataSet | :vtk:`vtkAlgorithm`
             An ``n x 3`` sequence points or :class:`pyvista.DataSet` with
             points or mesh-producing algorithm.
 
@@ -182,16 +182,20 @@ point labels to a scene.
                 Please use the background color.
                 See: https://github.com/pyvista/pyvista/pull/5407
 
-        background_color : pyvista.Color, optional
+        background_color : Color, optional
             Background color of text's property.
 
-        background_opacity : pyvista.Color, optional
+        background_opacity : float, optional
             Background opacity of text's property.
 
         Returns
         -------
-        vtk.vtkActor2D
+        :vtk:`vtkActor2D`
             VTK label actor.  Can be used to change properties of the labels.
+
+        See Also
+        --------
+        :ref:`point_labels_example`
 
         Examples
         --------
@@ -267,9 +271,9 @@ node:
     <tr><td>N Cells</td><td>10</td></tr>
     <tr><td>N Points</td><td>10</td></tr>
     <tr><td>N Strips</td><td>0</td></tr>
-    <tr><td>X Bounds</td><td>7.703e-02, 9.962e-01</td></tr>
-    <tr><td>Y Bounds</td><td>1.188e-02, 9.515e-01</td></tr>
-    <tr><td>Z Bounds</td><td>1.264e-01, 9.332e-01</td></tr>
+    <tr><td>X Bounds</td><td>4.201e-02, 9.198e-01</td></tr>
+    <tr><td>Y Bounds</td><td>9.788e-02, 8.547e-01</td></tr>
+    <tr><td>Z Bounds</td><td>2.605e-02, 9.984e-01</td></tr>
     <tr><td>N Arrays</td><td>1</td></tr>
     </table>
 
@@ -508,7 +512,7 @@ This example will label each point with their scalar values
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.777 seconds)
+   **Total running time of the script:** (0 minutes 0.767 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_bonus_e_labels.py:

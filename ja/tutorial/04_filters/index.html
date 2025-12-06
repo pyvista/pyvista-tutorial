@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/translations.js?v=4755f45a"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -238,7 +238,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/04_filters/index.html">en</option>
+      <option value="en@@/tutorial/04_filters/index.html">en</option>
       <option value="ja@@/ja/tutorial/04_filters/index.html"
         selected>ja</option>
     </select>
@@ -511,8 +511,8 @@ document.write(`
 <p>PyVistaのメッシュオブジェクトには，オブジェクト上で直接すぐに使える一般的なフィルタが用意されています．これらのフィルタには以下のものがあります（完全なリストは <a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/filters.html">Filters API</a> を参照してください）．</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.slice.html">slice()</a> は，入力データセットをユーザー定義平面でスライスします．</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.slice_orthogonal.html">slice_orthogonal()</a>: 3つの直交スライスからなる <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> データセットを作成します．</p></li>
-<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.slice_along_axis.html">slice_along_axis()</a>: 指定された軸に沿った多くのスライスからなる <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> データセットを作成します．</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.slice_orthogonal.html">slice_orthogonal()</a>: 3つの直交スライスからなる <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> データセットを作成します．</p></li>
+<li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.slice_along_axis.html">slice_along_axis()</a>: 指定された軸に沿った多くのスライスからなる <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.MultiBlock.html#pyvista.MultiBlock" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.MultiBlock</span></code></a> データセットを作成します．</p></li>
 <li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.threshold.html">threshold()</a>: データセットを 1 つの値あるいは値の範囲で閾値処理します．</p></li>
 <li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.threshold_percent.html">threshold_percent()</a>: スカラー範囲のパーセンテージによる閾値</p></li>
 <li><p><a class="reference external" href="https://docs.pyvista.org/version/stable/api/core/_autosummary/pyvista.dataobjectfilters.clip.html">clip()</a>: ユーザー定義平面でデータセットを切り取ります．</p></li>

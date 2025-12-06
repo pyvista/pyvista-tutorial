@@ -133,7 +133,7 @@ Client-side rendering only (in browser)
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pyvista/plotting/plotter.py:6959: UserWarning: Not within a jupyter notebook environment.
+    /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/pyvista/plotting/plotter.py:7206: UserWarning: Not within a jupyter notebook environment.
     Ignoring ``jupyter_backend``.
       warnings.warn(
 
@@ -188,7 +188,7 @@ Server-side rendering only
 
  .. code-block:: none
 
-    /opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pyvista/plotting/plotter.py:6959: UserWarning: Not within a jupyter notebook environment.
+    /opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/pyvista/plotting/plotter.py:7206: UserWarning: Not within a jupyter notebook environment.
     Ignoring ``jupyter_backend``.
       warnings.warn(
 
@@ -208,7 +208,7 @@ Server-side rendering only
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 1.831 seconds)
+   **Total running time of the script:** (0 minutes 1.866 seconds)
 
 
 .. _sphx_glr_download_tutorial_00_jupyter_jupyter.py:

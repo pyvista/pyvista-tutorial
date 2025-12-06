@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../../_static/thebelab-helper.js"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../../_static/translations.js?v=4755f45a"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
@@ -238,7 +238,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/04_filters/solutions/e_glyphs.html">en</option>
+      <option value="en@@/tutorial/04_filters/solutions/e_glyphs.html">en</option>
       <option value="ja@@/ja/tutorial/04_filters/solutions/e_glyphs.html"
         selected>ja</option>
     </select>
@@ -532,7 +532,7 @@ glyph(orient: &#39;bool | str&#39; = True, scale: &#39;bool | str&#39; = True, f
     factor : float, default: 1.0
         Scale factor applied to scaling array.
 
-    geom : vtk.vtkDataSet or tuple(vtk.vtkDataSet), optional
+    geom : :vtk:`vtkDataSet` | tuple[:vtk:`vtkDataSet`], optional
         The geometry to use for the glyph. If missing, an arrow glyph
         is used. If a sequence, the datasets inside define a table of
         geometries to choose from based on scalars or vectors. In this
@@ -604,8 +604,8 @@ glyph(orient: &#39;bool | str&#39; = True, scale: &#39;bool | str&#39; = True, f
     ... )
     &gt;&gt;&gt; pl.show()
 
-    See :ref:`glyph_example` and :ref:`glyph_table_example` for more
-    examples using this filter.
+    See :ref:`glyph_example`, :ref:`movie_glyphs_example`, and
+    :ref:`glyph_table_example` for more examples using this filter.
 </pre></div>
 </div>
 <p>入力データセットのすべてのノードにグリフが必要ない場合があります．この場合，マージ許容値を使用して，入力データセットのサブセットのグリフを作成することを選択できます．ここでは，5パーセントのマージ許容値を指定します．これは，バウンディングボックスの長さの5パーセントに相当します．</p>
@@ -627,11 +627,9 @@ glyph(orient: &#39;bool | str&#39; = True, scale: &#39;bool | str&#39; = True, f
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 インタラクティブなシーン</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/04_filters/solutions/images/sphx_glr_e_glyphs_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/04_filters/solutions/images/sphx_glr_e_glyphs_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
-</div>
-<p>一般的な方法は，メッシュオブジェクトに直接ベクトルをロードして，グリフを生成するために <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.arrows.html#pyvista.DataSet.arrows" title="(in PyVista v0.45.2)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pyvista.DataSet.arrows</span></code></a> プロパティにアクセスする方法です．</p>
+<p>一般的な方法は，メッシュオブジェクトに直接ベクトルをロードして，グリフを生成するために <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.DataSet.arrows.html#pyvista.DataSet.arrows" title="(in PyVista v0.46.3)"><code class="xref py py-attr docutils literal notranslate"><span class="pre">pyvista.DataSet.arrows</span></code></a> プロパティにアクセスする方法です．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sphere</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.Sphere.html#pyvista.Sphere" title="pyvista.Sphere" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-function"><span class="n">pv</span><span class="o">.</span><span class="n">Sphere</span></a><span class="p">(</span><span class="n">radius</span><span class="o">=</span><span class="mf">3.14</span><span class="p">)</span>
 
 <span class="c1"># make cool swirly pattern</span>
@@ -671,9 +669,7 @@ glyph(orient: &#39;bool | str&#39; = True, scale: &#39;bool | str&#39; = True, f
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 インタラクティブなシーン</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/04_filters/solutions/images/sphx_glr_e_glyphs_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/04_filters/solutions/images/sphx_glr_e_glyphs_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>矢印と球体をプロットします．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pl</span></a> <span class="o">=</span> <a href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="pyvista.Plotter" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class"><span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span></a><span class="p">()</span>
@@ -690,15 +686,13 @@ glyph(orient: &#39;bool | str&#39; = True, scale: &#39;bool | str&#39; = True, f
 <input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 インタラクティブなシーン</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/04_filters/solutions/images/sphx_glr_e_glyphs_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/04_filters/solutions/images/sphx_glr_e_glyphs_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <center>
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/04_filters/solutions/e_glyphs.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.338 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 1.318 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-04-filters-solutions-e-glyphs-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/04_filters/solutions/e_glyphs.ipynb"><img alt="Binderの起動" src="../../../_images/binder_badge_logo15.svg" style="width: 150px;" />

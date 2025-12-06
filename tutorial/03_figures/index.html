@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../_static/thebelab-helper.js"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -237,7 +237,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/03_figures/index.html"
+      <option value="en@@/tutorial/03_figures/index.html"
         selected>en</option>
       <option value="ja@@/ja/tutorial/03_figures/index.html">ja</option>
     </select>
@@ -528,7 +528,7 @@ most common features include:</p>
 <li><p>Use sophisticated lighting techniques like smooth shading or Eye Dome Lighting</p></li>
 <li><p>Creating animations as GIFs or movie files</p></li>
 </ul>
-<p>This section will overview PyVista’s <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> API and how to perform these tasks.
+<p>This section will overview PyVista’s <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> API and how to perform these tasks.
 The goal of this lesson is not to be a comprehensive overview of PyVista’s plotting API, but
 rather to demonstrate how it works and how you can learn to use it!</p>
 <section id="the-basics">
@@ -537,7 +537,7 @@ rather to demonstrate how it works and how you can learn to use it!</p>
 in a Matplotlib-like fashion.</p>
 <section id="add-mesh-to-plotter-object">
 <h3>Add Mesh to Plotter Object<a class="headerlink" href="#add-mesh-to-plotter-object" title="Link to this heading">#</a></h3>
-<p>When plotting, users must first create a <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> instance (much like a Matplotlib figure). Then data are added to the plotter instance through the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> method. This workflow typically looks like:</p>
+<p>When plotting, users must first create a <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> instance (much like a Matplotlib figure). Then data are added to the plotter instance through the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> method. This workflow typically looks like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 
@@ -559,9 +559,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-2_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-2_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>You can customize how that mesh is displayed through the parameters of the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.add_mesh()</span></code> method. For example, we can change the colormap via the <code class="docutils literal notranslate"><span class="pre">cmap</span></code> argument:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
@@ -580,9 +578,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-3_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-3_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Or show the edges of the mesh with <code class="docutils literal notranslate"><span class="pre">show_edges</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">()</span>
@@ -601,9 +597,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-4_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-4_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Or adjust the opacity to be a scalar value or linear transfer function via the <code class="docutils literal notranslate"><span class="pre">opacity</span></code> argument:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
@@ -627,9 +621,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-7">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-5_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-5_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Take a look at all of the options for <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.add_mesh.html">add_mesh</a>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">add_mesh</span></code> method can be called over and over to add different data to the same <code class="docutils literal notranslate"><span class="pre">Plotter</span></code> scene. For example, we can create many different mesh objects and plot them together:</p>
@@ -675,14 +667,12 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-9">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-6_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-6_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 </section>
 <section id="subplotting">
 <h3>Subplotting<a class="headerlink" href="#subplotting" title="Link to this heading">#</a></h3>
-<p>Creating side-by-side comparisons of datasets is easy with PyVista’s subplotting API. Get started by specifying the shape of the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> object then registering the active subplot by the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.subplot()</span></code> method much like how you subplot with Matplotlib’s API.</p>
+<p>Creating side-by-side comparisons of datasets is easy with PyVista’s subplotting API. Get started by specifying the shape of the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a> object then registering the active subplot by the <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.subplot()</span></code> method much like how you subplot with Matplotlib’s API.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 
 <span class="n">pl</span> <span class="o">=</span> <span class="n">pv</span><span class="o">.</span><span class="n">Plotter</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -707,9 +697,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-11">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-7_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-7_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Below is an example of side-by-side comparisons of the contours and slices of a single dataset.</p>
 <div class="admonition tip">
@@ -745,9 +733,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-13">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-8_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-8_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Other custom layouts are supported by the <code class="docutils literal notranslate"><span class="pre">shape</span></code> argument as string descriptors:</p>
 <ul class="simple">
@@ -792,9 +778,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-15">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-9_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-9_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -806,7 +790,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
 <h2>Controlling the Scene<a class="headerlink" href="#controlling-the-scene" title="Link to this heading">#</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>For a full list of methods on the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.45.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a>, please see the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html">API documentation</a></p>
+<p>For a full list of methods on the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html#pyvista.Plotter" title="(in PyVista v0.46.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.Plotter</span></code></a>, please see the <a class="reference external" href="https://docs.pyvista.org/api/plotting/_autosummary/pyvista.Plotter.html">API documentation</a></p>
 </div>
 <section id="axes-and-bounds">
 <h3>Axes and Bounds<a class="headerlink" href="#axes-and-bounds" title="Link to this heading">#</a></h3>
@@ -833,9 +817,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-17">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-10_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-10_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>And bounds similarly with <code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.Plotter.show_bounds()</span></code></p>
 <div class="admonition tip">
@@ -865,9 +847,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-19">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-11_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../_static/static_viewer.html?fileURL=../_images/plot_directive/tutorial/03_figures/index-11_00_00.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 </section>
 </section>

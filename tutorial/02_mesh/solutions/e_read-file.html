@@ -33,7 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/jupyter-sphinx.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/thebelab.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.6.3.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/asciinema-player_3.12.1.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/no_search_highlight.css?v=4b20ffad" />
     <link rel="stylesheet" type="text/css" href="../../../_static/fontawesome/css/all.css?v=1500ccdc" />
     <link rel="stylesheet" type="text/css" href="../../../_static/table.css?v=f9b2bc2b" />
@@ -55,7 +55,7 @@
     <script src="../../../_static/thebelab-helper.js"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=49e1bf35"></script>
-    <script src="../../../_static/asciinema-player_3.6.3.js"></script>
+    <script src="../../../_static/asciinema-player_3.12.1.js"></script>
     <script src="../../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -237,7 +237,7 @@
                         document.cookie = `lang=${values[0]}; path=/; samesite=Strict; max-age=${60*60*24*400};`;
                         location.href=values[1];
                         }" id="atsphinx-mini18n-select-lang">
-      <option value="en@@/en/tutorial/02_mesh/solutions/e_read-file.html"
+      <option value="en@@/tutorial/02_mesh/solutions/e_read-file.html"
         selected>en</option>
       <option value="ja@@/ja/tutorial/02_mesh/solutions/e_read-file.html">ja</option>
     </select>
@@ -503,7 +503,7 @@ to download the full example code. or to run this example in your browser via Bi
 <span id="read-file-example"></span><span id="sphx-glr-tutorial-02-mesh-solutions-e-read-file-py"></span><h1>Load and Plot from a File<a class="headerlink" href="#load-and-plot-from-a-file" title="Link to this heading">#</a></h1>
 <p>Read a dataset from a known file type.</p>
 <p>We try to make loading a mesh as easy as possible - if your data is in one
-of the many supported file formats, simply use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> to
+of the many supported file formats, simply use <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> to
 load your spatially referenced dataset into a PyVista mesh object.</p>
 <p>The following code block uses a built-in example file and displays an
 airplane mesh.</p>
@@ -768,7 +768,7 @@ file, displays an airplane mesh and returns the camera’s position:</p>
 <a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">filename</span></a>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;/opt/hostedtoolcache/Python/3.12.11/x64/lib/python3.12/site-packages/pyvista/examples/airplane.ply&#39;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/site-packages/pyvista/examples/airplane.ply&#39;
 </pre></div>
 </div>
 <p>Note the above filename, it’s a <code class="docutils literal notranslate"><span class="pre">.ply</span></code> file - one of the many supported
@@ -786,9 +786,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-1">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_001.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>The points from the mesh are directly accessible as a NumPy array:</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyDataFilters.points.html#pyvista.PolyDataFilters.points" title="pyvista.PolyDataFilters.points" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-attribute"><span class="n">mesh</span><span class="o">.</span><span class="n">points</span></a>
@@ -818,7 +816,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 <p>Loading other files types is just as easy! Simply pass your file path to the
-<a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> function and that’s it!</p>
+<a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a> function and that’s it!</p>
 <p>Here are a few other examples - simply replace <code class="docutils literal notranslate"><span class="pre">examples.download_*</span></code> in the
 examples below with <code class="docutils literal notranslate"><span class="pre">pyvista.read('path/to/you/file.ext')</span></code></p>
 <p>Example STL file:</p>
@@ -835,9 +833,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-3">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_002.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Example OBJ file</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_doorman</span><span class="p">()</span>
@@ -852,9 +848,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-5">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_003.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Example BYU file</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_teapot</span><span class="p">()</span>
@@ -869,9 +863,7 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-7">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_004.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_004.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <p>Example VTK file</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><a href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="pyvista.PolyData" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">mesh</span></a> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_bunny_coarse</span><span class="p">()</span>
@@ -887,13 +879,11 @@ Static Scene</label><div class="sd-tab-content docutils">
 <input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
 <label class="sd-tab-label" for="sd-tab-item-9">
 Interactive Scene</label><div class="sd-tab-content docutils">
-
-    <iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_005.vtksz' width='100%%' height='400px' frameborder='0'></iframe>
-</div>
+<iframe src='../../../_static/static_viewer.html?fileURL=../_images/tutorial/02_mesh/solutions/images/sphx_glr_e_read-file_005.vtksz' width='100%%' height='400px' frameborder='0'></iframe></div>
 </div>
 <section id="exercise">
 <h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
-<p>Read a file yourself with <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.45.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a>. If you have a supported file
+<p>Read a file yourself with <a class="reference external" href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.read.html#pyvista.read" title="(in PyVista v0.46.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyvista.read()</span></code></a>. If you have a supported file
 format, use that! Otherwise, download this file:
 <a class="github reference external" href="https://github.com/pyvista/pyvista-tutorial/raw/main/tutorial/02_mesh/scipy.vtk">pyvista/pyvista-tutorial</a></p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># (your code here)</span>
@@ -904,7 +894,7 @@ format, use that! Otherwise, download this file:
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/e_read-file.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 4.362 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 3.621 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-e-read-file-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/e_read-file.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" style="width: 150px;" />
