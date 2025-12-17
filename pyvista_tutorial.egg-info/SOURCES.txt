@@ -1,8 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-pyvista_tutorial.egg-info/PKG-INFO
-pyvista_tutorial.egg-info/SOURCES.txt
-pyvista_tutorial.egg-info/dependency_links.txt
-pyvista_tutorial.egg-info/requires.txt
-pyvista_tutorial.egg-info/top_level.txt
