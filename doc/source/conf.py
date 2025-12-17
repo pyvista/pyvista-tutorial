@@ -254,6 +254,111 @@ locale_dirs = ["../../pyvista-tutorial-translations/locale"]
 
 
 def setup(app) -> None:
+    # Register patched OfflineViewerDirective that works with mini18n nested builds
+    from docutils import nodes
+    from docutils.parsers.rst import Directive
+    from docutils.utils import relative_path
+    import shutil
+    from sphinx.util import logging
+    from trame_vtk.tools.vtksz2html import HTML_VIEWER_PATH
+    
+    logger = logging.getLogger(__name__)
+    
+    class PatchedOfflineViewerDirective(Directive):
+        """Patched version of OfflineViewerDirective that accounts for mini18n nested builds."""
+        required_arguments = 1
+        optional_arguments = 0
+        final_argument_whitespace = True
+        has_content = True
+
+        def run(self):
+            source_dir = Path(self.state.document.settings.env.app.srcdir)
+            output_dir = Path(self.state.document.settings.env.app.outdir)
+            build_dir = Path(self.state.document.settings.env.app.outdir).parent
+
+            # Get current language and build style
+            config = self.state.document.settings.env.app.config
+            current_lang = getattr(config, 'language', 'en')
+            default_lang = getattr(config, 'mini18n_default_language', 'en')
+            build_style = getattr(config, 'mini18n_build_style', None)
+            
+            # Determine if we need to adjust for nested language directory
+            is_nested_non_default = (
+                build_style == 'nested' and 
+                current_lang != default_lang and
+                current_lang is not None
+            )
+
+            # Get source file path
+            source_file = str(Path(self.state.document.current_source).parent / self.arguments[0])
+            source_file = Path(source_file).absolute().resolve()
+            if not Path(source_file).is_file():
+                logger.warning(f'Source file {source_file} does not exist.')
+                return []
+
+            # Copy viewer HTML to _static
+            static_path = Path(output_dir) / '_static'
+            static_path.mkdir(exist_ok=True)
+            if not Path(static_path, Path(HTML_VIEWER_PATH).name).exists():
+                shutil.copy(HTML_VIEWER_PATH, static_path)
+
+            # Calculate destination path for the asset
+            def is_path_relative_to(path, other):
+                """Path.is_relative_to compatibility for Python < 3.9."""
+                try:
+                    return path.is_relative_to(other)
+                except AttributeError:
+                    try:
+                        path.relative_to(other)
+                        return True
+                    except ValueError:
+                        return False
+
+            if is_path_relative_to(source_file, build_dir):
+                dest_partial_path = Path(source_file.parent).relative_to(build_dir)
+            elif is_path_relative_to(source_file, source_dir):
+                dest_partial_path = Path(source_file.parent).relative_to(source_dir)
+            else:
+                logger.warning(
+                    f'Source file {source_file} is not a subpath of either the build directory or '
+                    f'source directory. Cannot extract base path',
+                )
+                return []
+
+            dest_path = Path(output_dir).joinpath('_images').joinpath(dest_partial_path)
+            dest_path.mkdir(parents=True, exist_ok=True)
+            dest_file = dest_path.joinpath(source_file.name).resolve()
+            if source_file != dest_file:
+                try:
+                    shutil.copy(source_file, dest_file)
+                except Exception as e:
+                    logger.warning(f'Failed to copy file from {source_file} to {dest_file}: {e}')
+
+            # Compute the relative path
+            relpath_to_source_root = relative_path(self.state.document.current_source, source_dir)
+            
+            # For nested non-default language builds, add extra "../" to account for language directory
+            if is_nested_non_default:
+                rel_viewer_path = (
+                    Path() / '..' / relpath_to_source_root / '_static' / Path(HTML_VIEWER_PATH).name
+                ).as_posix()
+            else:
+                rel_viewer_path = (
+                    Path() / relpath_to_source_root / '_static' / Path(HTML_VIEWER_PATH).name
+                ).as_posix()
+            
+            rel_asset_path = Path(os.path.relpath(dest_file, static_path)).as_posix()
+            html = (
+                f"<iframe src='{rel_viewer_path}?fileURL={rel_asset_path}' "
+                "width='100%%' height='400px' frameborder='0'></iframe>"
+            )
+
+            raw_node = nodes.raw('', html, format='html')
+            return [raw_node]
+    
+    # Register the patched directive, overriding the default one
+    app.add_directive('offlineviewer', PatchedOfflineViewerDirective, override=True)
+    
     app.add_css_file("copybutton.css")
     app.add_css_file("no_search_highlight.css")
     app.add_css_file("fontawesome/css/all.css")
