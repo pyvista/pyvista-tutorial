@@ -255,14 +255,27 @@ locale_dirs = ["../../pyvista-tutorial-translations/locale"]
 
 def setup(app) -> None:
     # Register patched OfflineViewerDirective that works with mini18n nested builds
+    import os
+    import shutil
+    from pathlib import Path
     from docutils import nodes
     from docutils.parsers.rst import Directive
     from docutils.utils import relative_path
-    import shutil
     from sphinx.util import logging
     from trame_vtk.tools.vtksz2html import HTML_VIEWER_PATH
     
     logger = logging.getLogger(__name__)
+    
+    def is_path_relative_to(path, other):
+        """Path.is_relative_to compatibility for Python < 3.9."""
+        try:
+            return path.is_relative_to(other)
+        except AttributeError:
+            try:
+                path.relative_to(other)
+                return True
+            except ValueError:
+                return False
     
     class PatchedOfflineViewerDirective(Directive):
         """Patched version of OfflineViewerDirective that accounts for mini18n nested builds."""
@@ -274,7 +287,7 @@ def setup(app) -> None:
         def run(self):
             source_dir = Path(self.state.document.settings.env.app.srcdir)
             output_dir = Path(self.state.document.settings.env.app.outdir)
-            build_dir = Path(self.state.document.settings.env.app.outdir).parent
+            build_dir = output_dir.parent
 
             # Get current language and build style
             config = self.state.document.settings.env.app.config
@@ -292,7 +305,7 @@ def setup(app) -> None:
             # Get source file path
             source_file = str(Path(self.state.document.current_source).parent / self.arguments[0])
             source_file = Path(source_file).absolute().resolve()
-            if not Path(source_file).is_file():
+            if not source_file.is_file():
                 logger.warning(f'Source file {source_file} does not exist.')
                 return []
 
@@ -303,17 +316,6 @@ def setup(app) -> None:
                 shutil.copy(HTML_VIEWER_PATH, static_path)
 
             # Calculate destination path for the asset
-            def is_path_relative_to(path, other):
-                """Path.is_relative_to compatibility for Python < 3.9."""
-                try:
-                    return path.is_relative_to(other)
-                except AttributeError:
-                    try:
-                        path.relative_to(other)
-                        return True
-                    except ValueError:
-                        return False
-
             if is_path_relative_to(source_file, build_dir):
                 dest_partial_path = Path(source_file.parent).relative_to(build_dir)
             elif is_path_relative_to(source_file, source_dir):
@@ -331,7 +333,7 @@ def setup(app) -> None:
             if source_file != dest_file:
                 try:
                     shutil.copy(source_file, dest_file)
-                except Exception as e:
+                except (OSError, shutil.Error) as e:
                     logger.warning(f'Failed to copy file from {source_file} to {dest_file}: {e}')
 
             # Compute the relative path
