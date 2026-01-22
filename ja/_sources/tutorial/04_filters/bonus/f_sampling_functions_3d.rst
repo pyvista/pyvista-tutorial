@@ -169,7 +169,7 @@ color limits without blue
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 0.644 seconds)
+   **Total running time of the script:** (0 minutes 0.669 seconds)
 
 
 .. _sphx_glr_download_tutorial_04_filters_bonus_f_sampling_functions_3d.py:
