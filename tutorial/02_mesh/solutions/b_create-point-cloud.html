@@ -491,14 +491,14 @@ to download the full example code. or to run this example in your browser via Bi
 </div>
 <section class="sphx-glr-example-title" id="create-point-cloud">
 <span id="sphx-glr-tutorial-02-mesh-solutions-b-create-point-cloud-py"></span><span id="id1"></span><h1>Create Point Cloud<a class="headerlink" href="#create-point-cloud" title="Link to this heading">#</a></h1>
-<p>Create a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.47.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> object from a point cloud of vertices and
+<p>Create a <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.47.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> object from a point cloud of vertices and
 scalar arrays for those points.</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pv</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pyvista</span><span class="w"> </span><span class="kn">import</span> <span class="n">examples</span>
 </pre></div>
 </div>
-<p>Point clouds are generally constructed using <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.47.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> and
+<p>Point clouds are generally constructed using <a class="reference external" href="https://docs.pyvista.org/api/core/_autosummary/pyvista.PolyData.html#pyvista.PolyData" title="(in PyVista v0.47.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyvista.PolyData</span></code></a> and
 can easily have scalar or vector data arrays associated with the individual
 points. In this example, we’ll start by working backwards using a point cloud
 that is available from our <code class="docutils literal notranslate"><span class="pre">examples</span></code> module. This however is no
@@ -518,11 +518,11 @@ locations.</p>
 <a href="https://numpy.org/devdocs/reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">points</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.80951475e+05, 4.40020780e+06, 1.75879004e+03],
-                 [4.80989275e+05, 4.40024390e+06, 1.75758997e+03],
-                 [4.81081275e+05, 4.40020970e+06, 1.76034998e+03],
-                 [4.80934275e+05, 4.40008940e+06, 1.76443994e+03],
-                 [4.80954275e+05, 4.40023470e+06, 1.75782996e+03]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[4.81110275e+05, 4.40007790e+06, 1.76058997e+03],
+                 [4.80943875e+05, 4.40022120e+06, 1.75806006e+03],
+                 [4.81035675e+05, 4.40013650e+06, 1.77243994e+03],
+                 [4.80960775e+05, 4.40013310e+06, 1.76201001e+03],
+                 [4.80989475e+05, 4.40011020e+06, 1.77076001e+03]])
 </pre></div>
 </div>
 <p>Now that you have a NumPy array of points/vertices either from our sample
@@ -540,7 +540,7 @@ data or your own project, create a PyVista mesh using those points.</p>
 <tr><td>N Strips</td><td>0</td></tr>
 <tr><td>X Bounds</td><td>4.809e+05, 4.811e+05</td></tr>
 <tr><td>Y Bounds</td><td>4.400e+06, 4.400e+06</td></tr>
-<tr><td>Z Bounds</td><td>1.754e+03, 1.784e+03</td></tr>
+<tr><td>Z Bounds</td><td>1.754e+03, 1.785e+03</td></tr>
 <tr><td>N Arrays</td><td>0</td></tr>
 </table>
 
@@ -630,11 +630,11 @@ and add those vectors to the mesh.</p>
 <a href="https://docs.pyvista.org/api/utilities/_autosummary/pyvista.pyvista_ndarray.html#pyvista.pyvista_ndarray" title="pyvista.pyvista_ndarray" class="sphx-glr-backref-module-pyvista sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">vectors</span></a><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span> <span class="p">:]</span>
 </pre></div>
 </div>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[-0.17386739,  0.6355528 ,  0.75222521],
-                 [-0.25562193, -0.47745917,  0.84064866],
-                 [ 0.61412193,  0.19835672,  0.76387752],
-                 [-0.37763103,  0.65727829,  0.65221166],
-                 [ 0.46710945, -0.62660488, -0.62383899]])
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>pyvista_ndarray([[ 0.70217124,  0.58955982,  0.39921769],
+                 [ 0.26159199, -0.84246048, -0.47098829],
+                 [-0.47216434, -0.40862499, -0.78108031],
+                 [-0.76461739, -0.62700839,  0.1490662 ],
+                 [-0.6974302 ,  0.70260432, -0.14120297]])
 </pre></div>
 </div>
 <p>Add the vector array as point data to the new mesh:</p>
@@ -674,7 +674,7 @@ Interactive Scene</label><div class="sd-tab-content docutils">
   <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/solutions/b_create-point-cloud.ipynb">
     <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
   </a>
-</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 5.957 seconds)</p>
+</center><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> (0 minutes 6.372 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-tutorial-02-mesh-solutions-b-create-point-cloud-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/pyvista/pyvista-tutorial/gh-pages?urlpath=lab/tree/notebooks/tutorial/02_mesh/solutions/b_create-point-cloud.ipynb"><img alt="Launch binder" src="../../../_images/binder_badge_logo7.svg" style="width: 150px;" />
