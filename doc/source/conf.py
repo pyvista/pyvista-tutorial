@@ -72,7 +72,7 @@ intersphinx_mapping = {
     "scipy": ("https://docs.scipy.org/doc/scipy/", None),
     "numpy": ("https://numpy.org/devdocs", None),
     "matplotlib": ("https://matplotlib.org/stable", None),
-    "pandas": ("https://pandas.pydata.org/pandas-docs/stable", None),
+    "pandas": ("https://pandas.pydata.org/docs", None),
     "pyvista": ("https://docs.pyvista.org/", None),
     "pyvistaqt": ("https://qtdocs.pyvista.org/", None),
 }
@@ -249,6 +249,7 @@ html_sidebars = {
 }
 mini18n_default_language = "en"
 mini18n_support_languages = ["en", "ja"]
+mini18n_build_style = "nested"
 locale_dirs = ["../../pyvista-tutorial-translations/locale"]
 
 

@@ -25,22 +25,22 @@ jobs:
       github.event_name == 'push' || github.event_name == 'workflow_dispatch' ||
       ( github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository )
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           persist-credentials: false
       - name: Log into the Container registry
-        uses: docker/login-action@184bdaa0721073962dff0199f1fb9940f07167d1
+        uses: docker/login-action@b45d80f862d83dbcd57f89517bcf500b2ab88fb2
         with:
           registry: ${{ env.REGISTRY }}
           username: token
           password: ${{ secrets.GITHUB_TOKEN }}
       - name: Extract metadata for the Jupyter Docker image
         id: meta
-        uses: docker/metadata-action@c1e51972afc2121e065aed6d45c65596fe445f3f
+        uses: docker/metadata-action@030e881283bb7a6894de51c315a6bfe6a94e05cf
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       - name: Build and push the Jupyter Docker image
-        uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83
+        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294
         with:
           context: .
           file: Dockerfile
