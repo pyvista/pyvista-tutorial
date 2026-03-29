@@ -10,7 +10,7 @@ from atsphinx.mini18n import get_template_dir
 faulthandler.enable()
 
 sys.path.insert(0, str(Path(__file__).absolute().parent))
-sys.path.insert(0, str(Path(__file__).absolute().parent / '_ext'))
+sys.path.insert(0, str(Path(__file__).absolute().parent / "_ext"))
 import make_external_gallery  # noqa: E402
 
 make_external_gallery.make_example_gallery()
