@@ -10,6 +10,7 @@ from atsphinx.mini18n import get_template_dir
 faulthandler.enable()
 
 sys.path.insert(0, str(Path(__file__).absolute().parent))
+sys.path.insert(0, str(Path(__file__).absolute().parent / '_ext'))
 import make_external_gallery  # noqa: E402
 
 make_external_gallery.make_example_gallery()
@@ -58,6 +59,7 @@ extensions = [
     "jupyter_sphinx",
     "pyvista.ext.plot_directive",
     "pyvista.ext.viewer_directive",
+    "viewer_directive_fix",
     "sphinx.ext.autodoc",
     "sphinx.ext.intersphinx",
     "sphinx.ext.napoleon",
