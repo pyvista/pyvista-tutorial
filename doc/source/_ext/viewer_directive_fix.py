@@ -19,6 +19,7 @@ import shutil
 from pathlib import Path
 
 from docutils import nodes
+from docutils.parsers.rst import Directive
 from docutils.utils import relative_path  # pragma: no cover
 from sphinx.util import logging
 from trame_vtk.tools.vtksz2html import HTML_VIEWER_PATH
@@ -51,7 +52,7 @@ class FixedOfflineViewerDirective:
         source_file = str(Path(self.state.document.current_source).parent / self.arguments[0])
         source_file = Path(source_file).absolute().resolve()
         if not source_file.is_file():
-            logger.warning(f"Source file {source_file} does not exist.")
+            logger.warning("Source file %s does not exist.", source_file)
             return []
 
         # copy viewer HTML to _static
@@ -67,8 +68,9 @@ class FixedOfflineViewerDirective:
             dest_partial_path = source_file.parent.relative_to(source_dir)
         else:
             logger.warning(
-                f"Source file {source_file} is not a subpath of either the build "
-                f"directory or the source directory. Cannot extract base path.",
+                "Source file %s is not a subpath of either the build "
+                "directory or the source directory. Cannot extract base path.",
+                source_file,
             )
             return []
 
@@ -79,7 +81,7 @@ class FixedOfflineViewerDirective:
             try:
                 shutil.copy(source_file, dest_file)
             except Exception as e:  # noqa: BLE001
-                logger.warning(f"Failed to copy file from {source_file} to {dest_file}: {e}")
+                logger.warning("Failed to copy file from %s to %s: %s", source_file, dest_file, e)
 
         relpath_to_source_root = relative_path(self.state.document.current_source, source_dir)
         rel_viewer_path = (Path() / relpath_to_source_root / "_static" / viewer_name).as_posix()
@@ -91,18 +93,16 @@ class FixedOfflineViewerDirective:
         return [nodes.raw("", html, format="html")]
 
 
+_fixed_directive_class = type(
+    "OfflineViewerDirective",
+    (FixedOfflineViewerDirective, Directive),
+    {},
+)
+
+
 def setup(app):
     """Re-register the offlineviewer directive with the fixed implementation."""
-    from docutils.parsers.rst import Directive
-
-    # Merge the Directive base class into FixedOfflineViewerDirective at
-    # registration time so it satisfies docutils' class-hierarchy check.
-    FixedClass = type(
-        "OfflineViewerDirective",
-        (FixedOfflineViewerDirective, Directive),
-        {},
-    )
-    app.add_directive("offlineviewer", FixedClass, override=True)
+    app.add_directive("offlineviewer", _fixed_directive_class, override=True)
 
     return {
         "version": "0.1",
