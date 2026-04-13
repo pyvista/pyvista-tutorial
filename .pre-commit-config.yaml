@@ -24,13 +24,13 @@ repos:
       - id: check-github-workflows
 
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: v3.8.1
+    rev: v3.8.2
     hooks:
       - id: prettier
         types_or: [yaml, markdown, html, css, scss, javascript, json]
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.15.9
+    rev: v0.15.10
     hooks:
       - id: ruff
         args: [--fix, --show-fixes]
@@ -44,7 +44,7 @@ repos:
         args: [--option, "reorder_arrays=true", --option, "reorder_keys=true"]
 
   - repo: https://github.com/woodruffw/zizmor-pre-commit
-    rev: v1.23.1
+    rev: v1.24.1
     hooks:
       - id: zizmor
         args: ["--min-severity=high"]
