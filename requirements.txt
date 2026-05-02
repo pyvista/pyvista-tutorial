@@ -10,6 +10,6 @@ pyvista[all]
 sphinx
 tqdm
 trame>=2.5.0
-trame-client>=2.9.4
+trame-client>=3.12.1
 trame-server>=2.11.4
-trame-vtk>=2.5.4
+trame-vtk>=2.11.8
