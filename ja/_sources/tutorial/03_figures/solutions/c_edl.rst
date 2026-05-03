@@ -255,7 +255,7 @@ the ``add_mesh`` call.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** (0 minutes 35.639 seconds)
+   **Total running time of the script:** (0 minutes 35.855 seconds)
 
 
 .. _sphx_glr_download_tutorial_03_figures_solutions_c_edl.py:
