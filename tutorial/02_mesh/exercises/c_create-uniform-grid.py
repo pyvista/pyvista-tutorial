@@ -131,7 +131,7 @@ vol.plot(volume=True)
 # .. raw:: html
 #
 #     <center>
-#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/02_mesh/exercises/c_create-uniform-grid.ipynb">
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/tutorial/notebooks/02_mesh/exercises/c_create-uniform-grid.ipynb">
 #         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
 #       </a>
 #     </center>

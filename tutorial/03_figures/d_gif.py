@@ -22,12 +22,13 @@ z = np.sin(r)
 
 # Create and structured surface
 grid = pv.StructuredGrid(x, y, z)
+grid["Height"] = z.ravel()
 
 # Create a plotter object and set the scalars to the Z height
 plotter = pv.Plotter(notebook=False, off_screen=True)
 plotter.add_mesh(
     grid,
-    scalars=z.ravel(),
+    scalars="Height",
     lighting=False,
     show_edges=True,
     scalar_bar_args={"title": "Height"},
@@ -45,7 +46,7 @@ for phase in np.linspace(0, 2 * np.pi, nframe + 1)[:nframe]:
     z = np.sin(r + phase)
     pts[:, -1] = z.ravel()
     grid.points = pts
-    plotter.update_scalars(z.ravel(), render=False)
+    grid["Height"] = z.ravel()
 
     # Write a frame. This triggers a render.
     plotter.write_frame()
@@ -57,7 +58,7 @@ plotter.close()
 # .. raw:: html
 #
 #     <center>
-#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/gh-pages/notebooks/tutorial/03_figures/d_gif.ipynb">
+#       <a target="_blank" href="https://colab.research.google.com/github/pyvista/pyvista-tutorial/blob/tutorial/notebooks/03_figures/d_gif.ipynb">
 #         <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/ width="150px">
 #       </a>
 #     </center>

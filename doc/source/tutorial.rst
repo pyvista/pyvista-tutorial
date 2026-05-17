@@ -28,7 +28,7 @@ interactive, where each lesson page below contains a MyBinder button where you
 can run the notebooks in the `MyBinder <https://mybinder.org/>`_ environment.
 You can also download notebooks and Python scripts for your local environment.
 
-.. button-link:: https://github.com/pyvista/pyvista-tutorial/raw/gh-pages/notebooks.zip
+.. button-link:: https://tutorial.pyvista.org/notebooks.zip
    :color: primary
    :shadow:
 
