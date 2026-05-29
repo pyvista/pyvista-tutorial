@@ -26,7 +26,7 @@ help(pv.read)
 # %%
 # PyVista supports a wide variety of file formats. The supported file
 # extensions are listed in an internal function:
-help(pv.core.utilities.reader.get_reader)
+help(pv.get_reader)
 
 
 # %%

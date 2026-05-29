@@ -28,7 +28,7 @@ help(pv.read)
 # extensions are listed in an internal function:
 #
 # See https://docs.pyvista.org/api/readers/_autosummary/pyvista.get_reader#pyvista.get_reader
-help(pv.core.utilities.reader.get_reader)
+help(pv.get_reader)
 
 
 # %%

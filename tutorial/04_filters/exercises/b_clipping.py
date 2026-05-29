@@ -105,7 +105,7 @@ pl.show()
 #
 # This option is available for :func:`pyvista.DataSetFilters.clip`,
 # :func:`pyvista.DataSetFilters.clip_box`, and
-# :func:`pyvista.DataSetFilters.clip_sruface`, but not available when clipping
+# :func:`pyvista.DataSetFilters.clip_surface`, but not available when clipping
 # by scalar in :func:`pyvista.DataSetFilters.clip_scalar`.
 
 # Input mesh
