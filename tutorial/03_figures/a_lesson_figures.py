@@ -61,7 +61,10 @@ centers = [
     (-1, 2, 0),
 ]
 
-solids = [pv.PlatonicSolid(kind, radius=0.4, center=center) for kind, center in zip(kinds, centers)]
+solids = [
+    pv.PlatonicSolid(kind, radius=0.4, center=center)
+    for kind, center in zip(kinds, centers, strict=True)
+]
 
 pl = pv.Plotter(window_size=[1000, 1000])
 for _ind, solid in enumerate(solids):
