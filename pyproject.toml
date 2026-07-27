@@ -53,7 +53,7 @@ docs = [
 exclude = ['.git', 'build', 'dist', 'doc/_build', 'doc/tutorial', 'pycache__']
 indent-width = 4
 line-length = 100
-lint.ignore = ["COM812", "D203", "D212", "E501", "ERA001", "ISC001"]
+lint.ignore = ["COM812", "CPY001", "D203", "D212", "E501", "ERA001", "ISC001"]
 lint.select = ["ALL"]
 
 [tool.ruff.lint.per-file-ignores]
