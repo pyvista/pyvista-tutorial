@@ -9,7 +9,7 @@ docs = [
   'Sphinx==8.2.1',
   'atsphinx-mini18n==0.5.1',
   'cmocean==4.0.3',
-  'colorcet==3.1.0',
+  'colorcet==3.2.1',
   'geovista==0.5.3',
   'imageio-ffmpeg==0.6.0',
   'imageio>=2.37.2',
