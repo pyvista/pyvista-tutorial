@@ -34,6 +34,7 @@ Please run the following code wherever you are experiencing the bug and paste th
 ```py
 # Get system info
 import pyvista as pv
+
 print(pv.Report())
 ```
 
