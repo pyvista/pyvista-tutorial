@@ -1,6 +1,6 @@
 cmocean
 geovista
-imageio>=2.37.2
+imageio>=2.38.0
 imageio-ffmpeg
 ipywidgets<9.0.0
 jupyterlab<5.0.0
