@@ -9,7 +9,7 @@ matplotlib
 pyvista[all]
 sphinx
 tqdm
-trame>=3.13.2
-trame-client>=3.13.2
-trame-server>=3.12.5
-trame-vtk>=2.11.15
+trame>=4.0.0
+trame-client>=4.1.2
+trame-server>=4.0.0
+trame-vtk>=2.11.17
