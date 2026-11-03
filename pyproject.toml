@@ -1,7 +1,7 @@
 [project]
 dynamic = ['version']
 name = "pyvista-tutorial"
-requires-python = '>=3.10'
+requires-python = '>=3.11'
 
 [project.optional-dependencies]
 all = ['docs']
