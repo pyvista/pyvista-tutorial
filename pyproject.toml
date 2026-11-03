@@ -45,7 +45,7 @@ docs = [
   'trimesh==5.0.0',
   'typing_extensions==4.16.0',
   'vtk-xref==0.1.2',
-  'vtk<9.7',
+  'vtk<9.8',
 ]
 
 [tool.ruff]
