@@ -14,7 +14,7 @@ jobs:
         with:
           persist-credentials: false
       - name: misspell
-        uses: reviewdog/action-misspell@3467363dab5b42db2b1372c5fd2b1771fea2ea48
+        uses: reviewdog/action-misspell@840bfbe9f804da9afb0bd739dc4689012f3fdd2d
         with:
           github_token: ${{ secrets.github_token }}
           locale: "US"
